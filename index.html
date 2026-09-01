@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#0b2b22" />
+<title>RalloPicks — MLB Matchup Board</title>
+<style>
+:root{--bg:#07130f;--panel:#0d241c;--card:#123a2d;--card2:#0c2e24;--yellow:#ffb612;--green:#69e6a7;--red:#ff8f8f;--text:#f7fbf9;--muted:#9fb7ae;--line:rgba(255,182,18,.22);--blue:#77b7ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#164c3a 0,#081b14 38%,#050d0a 100%);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 12px 80px}.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:10px 4px 12px;background:rgba(7,19,15,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.04)}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:46px;height:46px;border-radius:13px;background:var(--yellow);color:#123a2d;font-weight:1000;font-size:24px;display:grid;place-items:center;box-shadow:0 8px 28px rgba(255,182,18,.2)}.brand h1{margin:0;font-size:22px}.sub{font-size:11px;color:var(--muted);margin-top:2px}.live{font-size:10px;font-weight:900;color:var(--green);padding:6px 9px;border:1px solid rgba(105,230,167,.25);border-radius:99px;background:rgba(105,230,167,.08)}
+.nav{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:12px 0}.nav button{border:1px solid rgba(255,255,255,.06);background:#102c22;color:#b8cec5;padding:11px 8px;border-radius:12px;font-size:11px;font-weight:900;cursor:pointer}.nav button.active{background:var(--yellow);color:#15382e;border-color:var(--yellow)}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr) 310px;gap:12px}.panel{background:rgba(11,35,27,.86);border:1px solid rgba(255,255,255,.06);border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.16)}.panel-head{display:flex;justify-content:space-between;align-items:center;padding:14px 15px;border-bottom:1px solid rgba(255,255,255,.06)}.panel-head h2,.panel-head h3{margin:0;font-size:15px}.tiny{font-size:10px;color:var(--muted)}
+.standings{max-height:calc(100vh - 125px);overflow:auto;padding:9px}.division{margin-bottom:10px}.division-title{font-size:10px;color:var(--yellow);font-weight:900;text-transform:uppercase;letter-spacing:.7px;padding:5px 6px}.standing-row{display:grid;grid-template-columns:1fr auto;gap:6px;padding:7px;border-radius:9px;font-size:11px}.standing-row:nth-child(even){background:rgba(255,255,255,.025)}.record{color:var(--muted);font-variant-numeric:tabular-nums}.team-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.board{padding:10px}.section-title{display:flex;justify-content:space-between;align-items:end;margin:5px 3px 10px}.section-title h2{margin:0;font-size:19px}.section-title span{font-size:10px;color:var(--muted)}
+.game-card{background:linear-gradient(145deg,#123d2f,#0c2b22);border:1px solid rgba(255,182,18,.14);border-radius:18px;margin:9px 0;overflow:hidden}.game-main{display:grid;grid-template-columns:1fr 185px;gap:12px;padding:14px;cursor:pointer}.teams{display:grid;gap:10px}.team-line{display:grid;grid-template-columns:38px 1fr auto;gap:9px;align-items:center}.team-logo{width:36px;height:36px;object-fit:contain}.team-abbr{font-size:15px;font-weight:1000}.pitcher{font-size:10px;color:var(--muted);margin-top:2px}.odds{text-align:right;display:grid;grid-template-columns:repeat(2,1fr);gap:6px;align-content:center}.odd{background:rgba(0,0,0,.16);border-radius:10px;padding:8px 6px}.odd b{display:block;color:var(--yellow);font-size:13px}.odd span{font-size:9px;color:var(--muted)}.game-meta{grid-column:1/-1;display:flex;justify-content:space-between;color:var(--muted);font-size:10px;padding-top:4px}.open-cue{color:var(--yellow);font-weight:900}
+.game-detail{display:none;border-top:1px solid rgba(255,255,255,.06);padding:12px;background:rgba(2,14,10,.18)}.game-card.open .game-detail{display:block}.detail-tabs{display:flex;gap:6px;overflow:auto;padding-bottom:9px}.detail-tabs button,.pill-btn{border:1px solid rgba(255,255,255,.08);background:#102f25;color:#c7d9d2;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:900;white-space:nowrap;cursor:pointer}.detail-tabs button.active{background:var(--yellow);color:#123a2d;border-color:var(--yellow)}
+.batter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.batter{background:rgba(17,58,45,.86);border:1px solid rgba(255,255,255,.05);border-radius:15px;padding:10px}.batter-head{display:grid;grid-template-columns:44px 1fr auto;gap:9px;align-items:center}.face{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#0b261d;border:2px solid rgba(255,182,18,.38)}.bat-order{font-size:10px;color:var(--yellow);font-weight:900}.batter-name{font-size:13px;font-weight:1000}.bat-side{font-size:9px;color:var(--muted)}.stats-tabs{display:flex;gap:5px;margin-top:8px}.stats-tabs button{border:0;border-radius:8px;padding:6px 8px;background:#0c2b22;color:#91aca2;font-size:9px;font-weight:900;cursor:pointer}.stats-tabs button.active{background:rgba(255,182,18,.16);color:var(--yellow)}.mini-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:7px}.mini{background:rgba(0,0,0,.15);padding:6px;border-radius:8px;text-align:center}.mini b{display:block;font-size:10px}.mini span{font-size:8px;color:var(--muted)}
+.props{display:flex;gap:5px;overflow:auto;margin-top:8px;padding-bottom:2px}.prop{border:1px solid rgba(255,255,255,.07);background:#09251c;color:#d6e5df;padding:7px 8px;border-radius:9px;font-size:9px;font-weight:900;white-space:nowrap;cursor:pointer}.prop:hover{border-color:var(--yellow);color:var(--yellow)}.arsenal{margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.arsenal-box{background:rgba(0,0,0,.13);border-radius:10px;padding:7px}.arsenal-box strong{font-size:9px;color:var(--yellow);display:block;margin-bottom:4px}.arsenal-box div{font-size:9px;color:#cbdad5;line-height:1.35}
+.parlay{padding:10px;min-height:140px}.empty{padding:20px 10px;text-align:center;color:var(--muted);font-size:11px}.leg{background:#102f25;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:9px;margin-bottom:7px}.leg-top{display:flex;justify-content:space-between;gap:6px}.leg b{font-size:11px}.leg span{font-size:9px;color:var(--muted)}.remove{border:0;background:transparent;color:var(--red);cursor:pointer}.confidence{margin:10px 0 4px}.meter{height:8px;border-radius:99px;background:#09231b;overflow:hidden}.meter i{display:block;height:100%;background:var(--yellow);width:0}.warning{font-size:9px;color:#ffd88a;line-height:1.4;margin-top:7px}.clear{width:100%;border:0;border-radius:10px;padding:9px;background:#173e31;color:#d8e5df;font-size:10px;font-weight:900;cursor:pointer;margin-top:7px}
+.money-board{display:none}.money-board.active{display:block}.money-row{display:grid;grid-template-columns:1fr 100px 100px 80px;gap:6px;align-items:center;background:#123a2d;border-radius:12px;padding:10px;margin:7px 0;font-size:10px}.money-row b{font-size:12px}.ml{color:var(--yellow);font-weight:1000;text-align:center}.total{color:#dce8e4;text-align:center}.status{color:var(--muted);text-align:right}
+.footer-note{font-size:9px;color:#7f9a90;text-align:center;line-height:1.5;margin:18px 5px}.mobile-parlay{display:none}
+@media(max-width:1100px){.layout{grid-template-columns:220px 1fr}.right-col{grid-column:1/-1}.parlay{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.parlay .empty,.parlay .confidence,.parlay .clear,.parlay .warning{grid-column:1/-1}}
+@media(max-width:760px){.app{padding:8px 8px 72px}.layout{display:block}.left-col{margin-bottom:10px}.standings{max-height:240px}.right-col{margin-top:10px}.game-main{grid-template-columns:1fr}.odds{grid-template-columns:repeat(4,1fr);text-align:center}.batter-grid{grid-template-columns:1fr}.nav{position:sticky;top:67px;z-index:25;background:rgba(7,19,15,.95);padding:5px 0}.nav button{font-size:9px;padding:10px 3px}.money-row{grid-template-columns:1fr 74px 74px}.money-row .status{display:none}.parlay{display:block}}
+
+.hidden-view{display:none}.search-box{width:100%;border:1px solid rgba(255,182,18,.22);background:#071f18;color:#fff;border-radius:14px;padding:13px 14px;outline:none}.search-box:focus{border-color:var(--yellow)}
+.search-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}.search-hit{display:grid;grid-template-columns:44px 1fr auto;gap:9px;align-items:center;background:#123a2d;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:9px;cursor:pointer}
+.lab-player{background:linear-gradient(145deg,#123d2f,#0b2a20);border:1px solid rgba(255,182,18,.18);border-radius:18px;padding:14px;margin-top:10px}.lab-head{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center}.lab-head .face{width:64px;height:64px}
+.market-tabs{display:flex;gap:6px;overflow:auto;margin:12px 0 8px}.market-tabs button{border:1px solid rgba(255,255,255,.08);background:#0c2c22;color:#b7cbc3;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:900;white-space:nowrap;cursor:pointer}.market-tabs button.active{background:var(--yellow);color:#123a2d}
+.prop-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.prop-stat{background:rgba(0,0,0,.15);border-radius:11px;padding:9px}.prop-stat b{display:block;font-size:14px;color:var(--yellow)}.prop-stat span{font-size:9px;color:var(--muted)}.prop-stat small{display:block;font-size:9px;color:#d6e2de;margin-top:4px}
+.game-log{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:10px}.log-card{background:#0b2a20;border-radius:10px;padding:7px;text-align:center}.log-card b{font-size:10px}.log-card span{display:block;font-size:8px;color:var(--muted)}
+.hr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.hr-card{display:grid;grid-template-columns:48px 1fr auto;gap:9px;align-items:center;background:#123a2d;border:1px solid rgba(255,182,18,.14);border-radius:14px;padding:10px}.hr-rank{font-weight:1000;color:var(--yellow)}.hr-score{text-align:right}.hr-score b{display:block;color:var(--yellow);font-size:16px}.hr-score span{font-size:8px;color:var(--muted)}
+.note-box{background:rgba(255,182,18,.08);border:1px solid rgba(255,182,18,.16);border-radius:12px;padding:9px 10px;font-size:9px;color:#e5dcc0;line-height:1.45;margin-top:9px}
+@media(max-width:760px){.nav{grid-template-columns:repeat(4,1fr)}.search-results,.hr-grid{grid-template-columns:1fr}.prop-grid{grid-template-columns:repeat(2,1fr)}.game-log{grid-template-columns:repeat(2,1fr)}}
+
+/* V3 interactive player analytics */
+.analytics-shell{margin-top:10px}.analytics-top{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:15px;border:1px solid rgba(255,182,18,.2);border-radius:16px;background:linear-gradient(135deg,#143e31,#102b25)}.analytics-top .face{width:72px;height:72px}.analytics-name{font-size:20px;font-weight:1000}.analytics-sub{font-size:10px;color:var(--muted);margin-top:4px}.fav-btn{border:0;border-radius:10px;background:var(--yellow);color:#173b30;font-weight:1000;padding:9px 11px;cursor:pointer}
+.range-tabs,.analytics-markets{display:flex;gap:6px;overflow-x:auto;padding:9px 0}.range-tabs button,.analytics-markets button{flex:0 0 auto;border:1px solid rgba(255,255,255,.1);background:#10251f;color:#c6d4cf;border-radius:8px;padding:8px 11px;font-size:10px;font-weight:900;cursor:pointer}.range-tabs button.active,.analytics-markets button.active{background:var(--yellow);color:#15372d;border-color:var(--yellow)}
+.analytics-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(240px,.8fr);gap:10px}.analytics-card{border:1px solid rgba(255,255,255,.08);border-radius:14px;background:#0d211c;overflow:hidden}.analytics-title{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.07);font-size:11px;font-weight:1000}.chart-wrap{height:300px;padding:15px 10px 8px;background:linear-gradient(180deg,rgba(0,110,75,.18),rgba(0,0,0,.03));position:relative}.bar-chart{height:235px;display:flex;align-items:flex-end;gap:6px;border-bottom:1px solid rgba(255,255,255,.14);position:relative}.chart-line{position:absolute;left:0;right:0;border-top:1px dashed var(--yellow);z-index:1}.chart-line-label{position:absolute;right:3px;transform:translateY(-100%);font-size:8px;background:#173b30;color:var(--yellow);padding:2px 5px;border-radius:5px}.gamebar{height:100%;flex:1;min-width:22px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative;z-index:2}.gamebar .val{font-size:9px;font-weight:1000;margin-bottom:3px}.gamebar .barcol{width:100%;max-width:42px;min-height:3px;border-radius:6px 6px 2px 2px;background:linear-gradient(#2ee6b2,#0bbf8d)}.gamebar.miss .barcol{background:linear-gradient(#77808e,#4c5564)}.gamebar .date{font-size:7px;color:var(--muted);margin-top:5px;white-space:nowrap}.hit-rates{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:8px}.hit-rate{background:#132b25;border-radius:9px;padding:8px;text-align:center}.hit-rate span{display:block;font-size:7px;color:var(--muted)}.hit-rate b{font-size:15px;color:#31d9e8}
+.matchup-box{padding:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.matchup-stat{background:#142a25;border-radius:9px;padding:10px;text-align:center}.matchup-stat b{display:block;color:var(--yellow);font-size:11px}.matchup-stat span{font-size:7px;color:var(--muted)}
+.arsenal-list{padding:6px 10px}.arsenal-row{display:grid;grid-template-columns:minmax(100px,1.5fr) repeat(3,.65fr);gap:7px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.arsenal-row:last-child{border-bottom:0}.pitch-name{font-size:10px;font-weight:1000}.pitch-name small{display:block;font-size:7px;color:var(--muted);font-weight:500}.metric{text-align:right}.metric b{display:block;font-size:9px}.metric span{font-size:6px;color:var(--muted)}.pitch-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin-right:5px}
+.batter-pitch-card{margin-top:10px}.batter-pitch-row{display:grid;grid-template-columns:minmax(130px,1.5fr) repeat(4,.65fr);gap:7px;align-items:center;padding:9px 11px;border-bottom:1px solid rgba(255,255,255,.06)}
+.line-control{display:flex;gap:6px;align-items:center;padding:0 0 7px;font-size:9px;color:var(--muted)}.line-control input{width:75px;background:#0d211c;border:1px solid rgba(255,255,255,.12);border-radius:7px;color:#fff;padding:6px}
+@media(max-width:760px){.analytics-grid{grid-template-columns:1fr}.chart-wrap{height:270px}.bar-chart{height:205px}.analytics-top{grid-template-columns:58px 1fr}.analytics-top .face{width:58px;height:58px}.fav-btn{grid-column:1/-1}.batter-pitch-row{grid-template-columns:minmax(100px,1.3fr) repeat(4,.7fr)}}
+
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="logo">R</div><div><h1>RalloPicks</h1><div class="sub" id="dateLabel">MLB matchup + prop lab</div></div></div>
+    <div class="live" id="liveState">● LIVE DATA</div>
+  </header>
+
+  <nav class="nav">
+    <button class="active" data-view="matchups">⚾ Matchups</button>
+    <button data-view="props">📊 Player Props</button>
+    <button data-view="batterlab">🔎 Batter Lab</button>
+    <button data-view="top20">🔥 Top 20 HR</button>
+    <button data-view="moneyline">💵 Moneyline</button>
+    <button data-view="standings">🏆 Standings</button>
+    <button data-view="parlay">🧾 Parlay</button>
+  </nav>
+
+  <main class="layout">
+    <aside class="left-col panel" id="standingsPanel">
+      <div class="panel-head"><h3>MLB Standings</h3><span class="tiny" id="standingsStamp">Live</span></div>
+      <div class="standings" id="standings"><div class="empty">Loading standings…</div></div>
+    </aside>
+
+    <section class="panel center-col">
+      <div class="board" id="matchupsView">
+        <div class="section-title"><div><h2>Today's Matchups</h2><span>Tap a game to open every batter</span></div><span id="gameCount"></span></div>
+        <div id="games"><div class="empty">Loading today's MLB slate…</div></div>
+      </div>
+      <div class="board money-board" id="moneylineView">
+        <div class="section-title"><div><h2>Moneyline Board</h2><span>Odds update from secure daily feed</span></div><span id="oddsStamp">—</span></div>
+        <div id="moneyRows"><div class="empty">Loading odds…</div></div>
+      </div>
+      <div class="board hidden-view" id="propsView"><div class="section-title"><div><h2>Player Props</h2><span>Every active hitter on today's slate</span></div><span id="propsCount">—</span></div><input id="propsSearch" class="search-box" placeholder="Search today's hitters..." oninput="filterTodayProps()"><div id="propsRows" class="batter-grid" style="margin-top:10px"><div class="empty">Loading today's hitters…</div></div></div>
+      <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Batter Lab</h2><span>Search any active MLB hitter • L5 / L10 / L20 / Season</span></div><span>PrizePicks research</span></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchBatters(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
+      <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 20 Home Run Board</h2><span>Daily Rallo HR score for teams playing today</span></div><span>Auto-ranked</span></div><div id="top20Rows" class="hr-grid"><div class="empty">Building today's HR board…</div></div><div class="note-box">Research ranking only. Official lineups can change. Exact PrizePicks lines can be added when the daily prop feed is connected.</div></div>
+    </section>
+
+    <aside class="right-col panel" id="parlayPanel">
+      <div class="panel-head"><h3>Parlay Checker</h3><span class="tiny" id="legCount">0 legs</span></div>
+      <div class="parlay" id="parlay"><div class="empty">Tap any batter prop to add a leg.</div></div>
+    </aside>
+  </main>
+
+  <div class="footer-note">RalloPicks is a research tool, not a guarantee. Lines, starters and lineups can change before first pitch. Moneyline data is displayed only when the secure odds updater has produced a current feed.</div>
+</div>
+<script>
+const MLB='https://statsapi.mlb.com/api';
+const today=new Date();
+const ymd=today.toLocaleDateString('en-CA');
+document.getElementById('dateLabel').textContent=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' • MLB matchup + prop lab';
+const state={games:[],odds:[],todayHitters:[],allBatters:[],batterIndexReady:false,currentLab:null,parlay:JSON.parse(localStorage.getItem('ralloParlay')||'[]'),saved:JSON.parse(localStorage.getItem('ralloSaved')||'[]')};
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const logo=id=>`https://www.mlbstatic.com/team-logos/${id}.svg`;
+const face=id=>`https://img.mlbstatic.com/mlb-photos/image/upload/w_120,q_auto:best/v1/people/${id}/headshot/67/current`;
+const fmtOdd=n=>n==null?'—':(n>0?'+'+n:n);
+
+async function j(url){const r=await fetch(url);if(!r.ok)throw new Error(r.status);return r.json()}
+
+async function loadStandings(){
+ try{
+  const d=await j(`${MLB}/v1/standings?leagueId=103,104&season=${today.getFullYear()}&standingsTypes=regularSeason`);
+  document.getElementById('standings').innerHTML=d.records.map(div=>`<div class="division"><div class="division-title">${esc(div.division?.name||'Division')}</div>${div.teamRecords.map(r=>`<div class="standing-row"><span class="team-name">${esc(r.team.name)}</span><span class="record">${r.wins}-${r.losses}</span></div>`).join('')}</div>`).join('');
+  document.getElementById('standingsStamp').textContent='Updated now';
+ }catch(e){document.getElementById('standings').innerHTML='<div class="empty">Standings unavailable right now.</div>'}
+}
+
+function oddsFor(game){return state.odds.find(o=>o.homeTeamId===game.teams.home.team.id&&o.awayTeamId===game.teams.away.team.id)||null}
+function gameCard(g){
+ const o=oddsFor(g),a=g.teams.away,h=g.teams.home,venue=g.venue?.name||'',time=new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
+ const ap=g.teams.away.probablePitcher?.fullName||'Starter TBD',hp=g.teams.home.probablePitcher?.fullName||'Starter TBD';
+ return `<article class="game-card" id="game-${g.gamePk}">
+ <div class="game-main" onclick="toggleGame(${g.gamePk})">
+  <div class="teams">
+   <div class="team-line"><img class="team-logo" src="${logo(a.team.id)}"><div><div class="team-abbr">${esc(a.team.name)}</div><div class="pitcher">${esc(ap)}</div></div><b>${a.score??''}</b></div>
+   <div class="team-line"><img class="team-logo" src="${logo(h.team.id)}"><div><div class="team-abbr">${esc(h.team.name)}</div><div class="pitcher">${esc(hp)}</div></div><b>${h.score??''}</b></div>
+  </div>
+  <div class="odds">
+   <div class="odd"><b>${o?fmtOdd(o.awayMoneyline):'—'}</b><span>Away ML</span></div>
+   <div class="odd"><b>${o?fmtOdd(o.homeMoneyline):'—'}</b><span>Home ML</span></div>
+   <div class="odd"><b>${o?.total??'—'}</b><span>Total</span></div>
+   <div class="odd"><b>${o?.spread??'—'}</b><span>Spread</span></div>
+  </div>
+  <div class="game-meta"><span>${esc(time)} • ${esc(venue)}</span><span class="open-cue">EVERY BATTER ▾</span></div>
+ </div>
+ <div class="game-detail" id="detail-${g.gamePk}"><div class="empty">Open to load hitters…</div></div>
+ </article>`
+}
+
+async function loadGames(){
+ try{
+  const d=await j(`${MLB}/v1/schedule?sportId=1&date=${ymd}&hydrate=probablePitcher,team`);
+  state.games=d.dates?.[0]?.games||[];
+  document.getElementById('gameCount').textContent=state.games.length+' games';
+  document.getElementById('games').innerHTML=state.games.length?state.games.map(gameCard).join(''):'<div class="empty">No MLB games today.</div>';
+  renderMoneyline();
+ }catch(e){document.getElementById('games').innerHTML='<div class="empty">MLB schedule unavailable right now.</div>'}
+}
+
+async function loadOdds(){
+ try{
+  const r=await fetch(`data/odds.json?d=${Date.now()}`);if(!r.ok)throw 0;const d=await r.json();state.odds=d.games||[];document.getElementById('oddsStamp').textContent=d.updatedAt?new Date(d.updatedAt).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'Updated';
+  if(state.games.length)document.getElementById('games').innerHTML=state.games.map(gameCard).join('');renderMoneyline();
+ }catch(e){state.odds=[];document.getElementById('oddsStamp').textContent='Feed not connected';renderMoneyline()}
+}
+function renderMoneyline(){
+ const el=document.getElementById('moneyRows');if(!state.games.length){el.innerHTML='<div class="empty">Loading slate…</div>';return}
+ el.innerHTML=state.games.map(g=>{const o=oddsFor(g);return `<div class="money-row"><div><b>${esc(g.teams.away.team.name)} @ ${esc(g.teams.home.team.name)}</b><div class="tiny">${new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}</div></div><div class="ml">${o?fmtOdd(o.awayMoneyline):'—'} / ${o?fmtOdd(o.homeMoneyline):'—'}</div><div class="total">O/U ${o?.total??'—'}</div><div class="status">${o?.book||'No feed'}</div></div>`}).join('')
+}
+
+async function toggleGame(pk){
+ const card=document.getElementById('game-'+pk),detail=document.getElementById('detail-'+pk);card.classList.toggle('open');if(!card.classList.contains('open')||detail.dataset.loaded)return;detail.dataset.loaded='1';detail.innerHTML='<div class="empty">Loading every active hitter…</div>';
+ try{
+  const feed=await j(`${MLB}/v1.1/game/${pk}/feed/live`),gd=feed.gameData,ls=feed.liveData?.boxscore;
+  const away=await hittersForTeam(gd.teams.away.id,ls?.teams?.away),home=await hittersForTeam(gd.teams.home.id,ls?.teams?.home);
+  const ap=gd.probablePitchers?.away,hp=gd.probablePitchers?.home;
+  detail.innerHTML=`<div class="detail-tabs"><button class="active">All Hitters (${away.length+home.length})</button><button>${esc(gd.teams.away.abbreviation)} (${away.length})</button><button>${esc(gd.teams.home.abbreviation)} (${home.length})</button><button>Pitch Arsenal</button></div><div class="batter-grid">${away.map((p,i)=>batterCard(p,gd.teams.away, hp,i)).join('')}${home.map((p,i)=>batterCard(p,gd.teams.home, ap,i)).join('')}</div>`;
+  hydrateBatterStats(detail);
+ }catch(e){
+  const g=state.games.find(x=>x.gamePk===pk);try{const [a,h]=await Promise.all([rosterHitters(g.teams.away.team.id),rosterHitters(g.teams.home.team.id)]);detail.innerHTML=`<div class="tiny" style="padding:4px 2px 10px">Official lineup not posted yet — showing active roster hitters.</div><div class="batter-grid">${a.map((p,i)=>batterCard(p,g.teams.away.team,g.teams.home.probablePitcher,i)).join('')}${h.map((p,i)=>batterCard(p,g.teams.home.team,g.teams.away.probablePitcher,i)).join('')}</div>`;hydrateBatterStats(detail)}catch(_){detail.innerHTML='<div class="empty">Hitters unavailable until roster/game feed posts.</div>'}}
+}
+async function rosterHitters(teamId){const d=await j(`${MLB}/v1/teams/${teamId}/roster?rosterType=active`);return (d.roster||[]).filter(x=>x.position?.type!=='Pitcher').map(x=>({id:x.person.id,fullName:x.person.fullName,batSide:'—',order:null}))}
+async function hittersForTeam(teamId,box){
+ const ids=box?.battingOrder||[];if(ids.length){const players=box.players||{};return ids.map(id=>players['ID'+id]).filter(Boolean).map((x,i)=>({id:x.person.id,fullName:x.person.fullName,batSide:x.battingStats?'—':'—',order:i+1}))}
+ return rosterHitters(teamId)
+}
+function batterCard(p,team,oppPitcher,i){
+ const id=p.id,name=p.fullName,order=p.order?`#${p.order}`:'Roster',pitch=oppPitcher?.fullName||'Starter TBD';
+ return `<div class="batter" data-player="${id}"><div class="batter-head"><img class="face" src="${face(id)}" onerror="this.style.visibility='hidden'"><div><div class="bat-order">${order} • ${esc(team.abbreviation||team.name)}</div><div class="batter-name">${esc(name)}</div><div class="bat-side">vs ${esc(pitch)}</div></div><button class="pill-btn" onclick="savePlayer(event,${id},'${esc(name).replace(/'/g,"\\'")}')">☆</button></div>
+ <div class="stats-tabs"><button class="active">L5</button><button>L10</button><button>L20</button><button>Season</button></div>
+ <div class="mini-stats stats-${id}"><div class="mini"><b>—</b><span>AVG</span></div><div class="mini"><b>—</b><span>HR</span></div><div class="mini"><b>—</b><span>OPS</span></div><div class="mini"><b>—</b><span>TB</span></div></div>
+ <div class="props">${propButtons(id,name,team.abbreviation||team.name)}</div>
+ <div class="arsenal"><div class="arsenal-box"><strong>HITTER ARSENAL</strong><div class="ha-${id}">Loading power profile…</div></div><div class="arsenal-box"><strong>PITCH MATCHUP</strong><div>Opposing starter: ${esc(pitch)}<br>Pitch mix data refreshes from the daily arsenal feed.</div></div></div></div>`
+}
+async function hydrateBatterStats(root){
+ const cards=[...root.querySelectorAll('.batter')].slice(0,30);for(const c of cards){const id=c.dataset.player;try{const d=await j(`${MLB}/v1/people/${id}/stats?stats=season&group=hitting&season=${today.getFullYear()}`),s=d.stats?.[0]?.splits?.[0]?.stat||{};const box=c.querySelector('.stats-'+id);if(box)box.innerHTML=`<div class="mini"><b>${s.avg??'—'}</b><span>AVG</span></div><div class="mini"><b>${s.homeRuns??'—'}</b><span>HR</span></div><div class="mini"><b>${s.ops??'—'}</b><span>OPS</span></div><div class="mini"><b>${s.totalBases??'—'}</b><span>TB</span></div>`;const ha=c.querySelector('.ha-'+id);if(ha)ha.innerHTML=`${s.homeRuns??'—'} HR • ${s.slugging??'—'} SLG<br>${s.extraBaseHits??'—'} XBH • ${s.stolenBases??'—'} SB<br>${s.atBatsPerHomeRun??'—'} AB/HR`;}catch(e){}}
+}
+const PP_MARKETS=['Hits','Total Bases','Home Runs','RBI','Runs','Hits+Runs+RBI','Hitter Fantasy','Walks','Singles','Doubles','Stolen Bases'];
+function propButtons(id,name,team){return PP_MARKETS.map(x=>`<button class="prop" onclick="addLeg(event,${id},'${esc(name).replace(/'/g,"\\'")}','${x}','${esc(team)}')">+ ${x}</button>`).join('')}
+async function loadTodayHitters(){if(state.todayHitters.length)return state.todayHitters;const seen=new Set(),out=[];for(const g of state.games)for(const side of ['away','home']){const t=g.teams[side].team;try{for(const p of await rosterHitters(t.id))if(!seen.has(p.id)){seen.add(p.id);out.push({...p,teamName:t.name,teamAbbr:t.abbreviation||t.name})}}catch(e){}}state.todayHitters=out;return out}
+async function renderTodayProps(){const root=document.getElementById('propsRows');if(!state.games.length)return;const hitters=await loadTodayHitters();document.getElementById('propsCount').textContent=hitters.length+' hitters';root.innerHTML=hitters.map(p=>`<div class="batter today-prop-card" data-search="${esc((p.fullName+' '+p.teamName).toLowerCase())}"><div class="batter-head"><img class="face" src="${face(p.id)}"><div><div class="bat-order">${esc(p.teamAbbr)}</div><div class="batter-name">${esc(p.fullName)}</div></div><button class="pill-btn" onclick="openBatterLab(${p.id},'${esc(p.fullName).replace(/'/g,"\\'")}','${esc(p.teamAbbr)}');switchView('batterlab')">VIEW</button></div><div class="props">${propButtons(p.id,p.fullName,p.teamAbbr)}</div></div>`).join('')}
+function filterTodayProps(){const q=(document.getElementById('propsSearch').value||'').toLowerCase();document.querySelectorAll('.today-prop-card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'block':'none')}
+async function buildBatterIndex(){if(state.batterIndexReady)return;const d=await j(`${MLB}/v1/teams?sportId=1&season=${today.getFullYear()}`),chunks=await Promise.all((d.teams||[]).map(async t=>{try{const r=await j(`${MLB}/v1/teams/${t.id}/roster?rosterType=active&season=${today.getFullYear()}`);return (r.roster||[]).filter(x=>x.position?.type!=='Pitcher').map(x=>({id:x.person.id,fullName:x.person.fullName,teamName:t.name,teamAbbr:t.abbreviation||t.name}))}catch(e){return []}}));const seen=new Set();state.allBatters=[];for(const ch of chunks)for(const p of ch)if(!seen.has(p.id)){seen.add(p.id);state.allBatters.push(p)}state.batterIndexReady=true}
+let batterSearchTimer;function searchBatters(q){clearTimeout(batterSearchTimer);const root=document.getElementById('batterResults');if(!q||q.trim().length<2){root.innerHTML='';return}batterSearchTimer=setTimeout(async()=>{root.innerHTML='<div class="empty">Searching MLB hitters…</div>';await buildBatterIndex();const s=q.toLowerCase(),hits=state.allBatters.filter(p=>(p.fullName+' '+p.teamName).toLowerCase().includes(s)).slice(0,16);root.innerHTML=hits.map(p=>`<div class="search-hit" onclick="openBatterLab(${p.id},'${esc(p.fullName).replace(/'/g,"\\'")}','${esc(p.teamAbbr)}')"><img class="face" src="${face(p.id)}"><div><div class="batter-name">${esc(p.fullName)}</div><div class="bat-side">${esc(p.teamName)}</div></div><span class="open-cue">OPEN ›</span></div>`).join('')||'<div class="empty">No hitter found.</div>'},180)}
+function statNum(s,k){const v=s?.[k];return Number.isFinite(Number(v))?Number(v):0}function gameFantasy(s){const H=statNum(s,'hits'),D=statNum(s,'doubles'),T=statNum(s,'triples'),HR=statNum(s,'homeRuns'),S=Math.max(0,H-D-T-HR);return S*3+D*5+T*8+HR*10+statNum(s,'runs')*2+statNum(s,'rbi')*2+statNum(s,'baseOnBalls')*2+statNum(s,'hitByPitch')*2+statNum(s,'stolenBases')*5}
+function avg(g,k){if(!g.length)return'—';return (g.reduce((a,x)=>a+Number(k(x.stat||{})),0)/g.length).toFixed(1)}function rate(g,k){if(!g.length)return'—';return Math.round(g.filter(x=>k(x.stat||{})).length/g.length*100)+'%'}
+async function openBatterLab(id,name,team){document.getElementById('batterResults').innerHTML='';document.getElementById('batterSearch').value=name;const root=document.getElementById('batterLabPlayer');root.innerHTML='<div class="empty">Loading game log…</div>';try{const d=await j(`${MLB}/v1/people/${id}/stats?stats=gameLog&group=hitting&season=${today.getFullYear()}`);state.currentLab={id,name,team,games:[...(d.stats?.[0]?.splits||[])].reverse()};renderBatterWindow(5)}catch(e){root.innerHTML='<div class="empty">Game log unavailable.</div>'}}
+
+const ANALYTIC_MARKETS={
+ hits:{label:'Hits',defaultLine:0.5,value:s=>statNum(s,'hits')},
+ totalBases:{label:'Total Bases',defaultLine:1.5,value:s=>statNum(s,'totalBases')},
+ homeRuns:{label:'Home Runs',defaultLine:0.5,value:s=>statNum(s,'homeRuns')},
+ rbi:{label:'RBI',defaultLine:0.5,value:s=>statNum(s,'rbi')},
+ runs:{label:'Runs',defaultLine:0.5,value:s=>statNum(s,'runs')},
+ hrr:{label:'Hits + Runs + RBI',defaultLine:1.5,value:s=>statNum(s,'hits')+statNum(s,'runs')+statNum(s,'rbi')},
+ walks:{label:'Walks',defaultLine:0.5,value:s=>statNum(s,'baseOnBalls')},
+ strikeouts:{label:'Batter Strikeouts',defaultLine:0.5,value:s=>statNum(s,'strikeOuts')},
+ singles:{label:'Singles',defaultLine:0.5,value:s=>Math.max(0,statNum(s,'hits')-statNum(s,'doubles')-statNum(s,'triples')-statNum(s,'homeRuns'))},
+ doubles:{label:'Doubles',defaultLine:0.5,value:s=>statNum(s,'doubles')},
+ triples:{label:'Triples',defaultLine:0.5,value:s=>statNum(s,'triples')},
+ fantasy:{label:'Hitter Fantasy',defaultLine:6.5,value:s=>gameFantasy(s)}
+};
+function setAnalyticMarket(k){if(!state.currentLab)return;state.currentLab.market=k;renderBatterAnalytics()}
+function setAnalyticRange(n){if(!state.currentLab)return;state.currentLab.range=n;renderBatterAnalytics()}
+function updateAnalyticLine(v){if(!state.currentLab)return;state.currentLab.line=Number(v);renderBatterAnalytics()}
+function pctHit(games,market,line){if(!games.length)return 0;return Math.round(games.filter(g=>market.value(g.stat||{})>line).length/games.length*100)}
+function arsenalRows(kind){
+ const pitcher=['4-Seam Fastball','Sinker','Slider','Sweeper','Changeup','Curveball'];
+ const hitter=['4-Seam Fastball','Sinker','Changeup','Slider','Curveball','Sweeper','Cutter'];
+ const arr=kind==='pitcher'?pitcher:hitter;
+ if(kind==='pitcher') return arr.map((p,i)=>`<div class="arsenal-row"><div class="pitch-name"><span class="pitch-dot"></span>${p}<small>Pitch mix loads from matchup feed when available</small></div><div class="metric"><b>—</b><span>USAGE</span></div><div class="metric"><b>—</b><span>MPH</span></div><div class="metric"><b>—</b><span>RESULT</span></div></div>`).join('');
+ return arr.map(p=>`<div class="batter-pitch-row"><div class="pitch-name"><span class="pitch-dot"></span>${p}<small>Results by pitch type</small></div><div class="metric"><b>—</b><span>AVG</span></div><div class="metric"><b>—</b><span>SLG</span></div><div class="metric"><b>—</b><span>WHIFF</span></div><div class="metric"><b>—</b><span>HARD HIT</span></div></div>`).join('');
+}
+function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.range=n;state.currentLab.market=state.currentLab.market||'totalBases';state.currentLab.line=state.currentLab.line??ANALYTIC_MARKETS[state.currentLab.market].defaultLine;renderBatterAnalytics()}
+function renderBatterAnalytics(){
+ const p=state.currentLab;if(!p)return;
+ const n=p.range||10, market=ANALYTIC_MARKETS[p.market||'totalBases'];
+ if(p.lastMarket!==p.market){p.line=market.defaultLine;p.lastMarket=p.market}
+ const all=p.games||[], games=n==='season'?all:all.slice(0,n), line=Number(p.line??market.defaultLine);
+ const vals=games.map(g=>market.value(g.stat||{})), max=Math.max(line+1,...vals,1);
+ const bars=games.map((g,i)=>{const v=vals[i],h=Math.max(3,Math.round(v/max*190)),hit=v>line;return `<div class="gamebar ${hit?'':'miss'}"><div class="val">${Number.isInteger(v)?v:v.toFixed(1)}</div><div class="barcol" style="height:${h}px"></div><div class="date">${esc((g.date||'').slice(5))}</div></div>`}).join('');
+ const l5=pctHit(all.slice(0,5),market,line),l10=pctHit(all.slice(0,10),market,line),l20=pctHit(all.slice(0,20),market,line);
+ const lineBottom=Math.min(220,Math.max(5,line/max*190));
+ document.getElementById('batterLabPlayer').innerHTML=`<div class="analytics-shell">
+  <div class="analytics-top"><img class="face" src="${face(p.id)}"><div><div class="eyebrow">RALLOPICKS PLAYER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Interactive PrizePicks research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">☆ Favorite</button></div>
+  <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setAnalyticRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setAnalyticRange('season')">Season</button></div>
+  <div class="analytics-markets">${Object.entries(ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setAnalyticMarket('${k}')">${m.label}</button>`).join('')}</div>
+  <div class="line-control">Comparison line <input type="number" step="0.5" value="${line}" onchange="updateAnalyticLine(this.value)"> <span>Change this to match the PrizePicks line you see.</span></div>
+  <div class="analytics-grid">
+   <div>
+    <div class="analytics-card"><div class="analytics-title">${market.label} • ${n==='season'?'season':`last ${games.length} games`} • comparison line ${line}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates"><div class="hit-rate"><span>LAST 5 HIT RATE</span><b>${l5}%</b></div><div class="hit-rate"><span>LAST 10 HIT RATE</span><b>${l10}%</b></div><div class="hit-rate"><span>LAST 20 HIT RATE</span><b>${l20}%</b></div></div></div></div>
+    <div class="analytics-card batter-pitch-card"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}<div class="note-box" style="margin:8px">The layout is ready for pitch-type AVG, SLG, whiff and hard-hit data. We’ll populate these from the advanced-stat feed rather than inventing values.</div></div>
+   </div>
+   <div>
+    <div class="analytics-card"><div class="analytics-title">Today's matchup</div><div class="matchup-box"><div class="matchup-stat"><b>Today's opponent</b><span>Loaded from game slate</span></div><div class="matchup-stat"><b>${l5}%</b><span>L5 ${market.label} hit rate</span></div><div class="matchup-stat"><b>${l10}%</b><span>L10 hit rate</span></div><div class="matchup-stat"><b>${l20}%</b><span>L20 hit rate</span></div></div></div>
+    <div class="analytics-card" style="margin-top:10px"><div class="analytics-title">Opposing pitcher • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div><div class="note-box" style="margin:8px">Pitch usage and velocity will populate from the matchup/stat feed when connected.</div></div>
+   </div>
+  </div>
+ </div>`;
+}
+function savePlayer(id,name){state.saved=state.saved||[];if(!state.saved.some(x=>x.id===id))state.saved.push({id,name});localStorage.setItem('ralloSaved',JSON.stringify(state.saved));}
+
+async function loadTop20HR(){const root=document.getElementById('top20Rows');if(!state.games.length)return;try{const teamIds=new Set(state.games.flatMap(g=>[g.teams.away.team.id,g.teams.home.team.id])),d=await j(`${MLB}/v1/stats/leaders?leaderCategories=homeRuns&season=${today.getFullYear()}&sportId=1&limit=100`),leaders=(d.leagueLeaders?.[0]?.leaders||[]).filter(x=>x.team&&teamIds.has(x.team.id)).slice(0,20);root.innerHTML=leaders.map((x,i)=>`<div class="hr-card"><img class="face" src="${face(x.person.id)}"><div><div class="hr-rank">#${i+1} ${esc(x.person.fullName)}</div><div class="bat-side">${esc(x.team.abbreviation||x.team.name)} • ${x.value} HR this season</div><div class="props"><button class="prop" onclick="addLeg(event,${x.person.id},'${esc(x.person.fullName).replace(/'/g,"\\'")}','Home Runs','${esc(x.team.abbreviation||x.team.name)}')">+ HR</button></div></div><div class="hr-score"><b>${Math.min(99,Math.round(48+Number(x.value)*.75))}</b><span>RALLO SCORE</span></div></div>`).join('')}catch(e){root.innerHTML='<div class="empty">HR board unavailable.</div>'}}
+function switchView(v){document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));['matchupsView','moneylineView','propsView','batterlabView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});if(v==='matchups')document.getElementById('matchupsView').style.display='block';if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active')}if(v==='props'){document.getElementById('propsView').style.display='block';renderTodayProps()}if(v==='batterlab')document.getElementById('batterlabView').style.display='block';if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR()}if(v==='standings')document.getElementById('standingsPanel').scrollIntoView({behavior:'smooth'});if(v==='parlay')document.getElementById('parlayPanel').scrollIntoView({behavior:'smooth'})}
+
+function addLeg(ev,id,name,prop,team){ev.stopPropagation();state.parlay.push({id:Date.now()+Math.random(),playerId:id,name,prop,team});saveParlay();renderParlay()}
+function removeLeg(id){state.parlay=state.parlay.filter(x=>x.id!==id);saveParlay();renderParlay()}
+function saveParlay(){localStorage.setItem('ralloParlay',JSON.stringify(state.parlay))}
+function savePlayer(ev,id,name){ev.stopPropagation();if(!state.saved.some(x=>x.id===id))state.saved.push({id,name});localStorage.setItem('ralloSaved',JSON.stringify(state.saved));ev.currentTarget.textContent='★'}
+function renderParlay(){
+ const el=document.getElementById('parlay'),n=state.parlay.length;document.getElementById('legCount').textContent=n+' leg'+(n===1?'':'s');if(!n){el.innerHTML='<div class="empty">Tap any batter prop to add a leg.</div>';return}
+ const samePlayers=new Set(),seen=new Set();state.parlay.forEach(x=>{if(seen.has(x.playerId))samePlayers.add(x.playerId);seen.add(x.playerId)});const confidence=Math.max(12,Math.min(88,82-(n-1)*9-samePlayers.size*8));
+ el.innerHTML=state.parlay.map(x=>`<div class="leg"><div class="leg-top"><div><b>${esc(x.name)}</b><br><span>${esc(x.team)} • ${esc(x.prop)}</span></div><button class="remove" onclick="removeLeg(${x.id})">✕</button></div></div>`).join('')+`<div class="confidence"><div style="display:flex;justify-content:space-between;font-size:10px"><b>Slip health</b><span>${confidence}%</span></div><div class="meter"><i style="width:${confidence}%"></i></div></div>${samePlayers.size?'<div class="warning">⚠ Multiple legs use the same hitter. Correlation can make the slip more volatile.</div>':''}<div class="warning">Combined confidence is a research heuristic, not a true sportsbook probability.</div><button class="clear" onclick="state.parlay=[];saveParlay();renderParlay()">Clear slip</button>`
+}
+
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
+renderParlay();Promise.allSettled([loadStandings(),loadGames(),loadOdds()]).then(()=>{renderTodayProps();loadTop20HR()});
+</script>
+</body>
+</html>
