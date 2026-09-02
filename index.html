@@ -96,7 +96,7 @@ const MLB='https://statsapi.mlb.com/api';
 const today=new Date();
 const ymd=today.toLocaleDateString('en-CA');
 document.getElementById('dateLabel').textContent=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' • MLB matchup + prop lab';
-const state={games:[],odds:[],todayHitters:[],allBatters:[],batterIndexReady:false,currentLab:null,parlay:JSON.parse(localStorage.getItem('ralloParlay')||'[]'),saved:JSON.parse(localStorage.getItem('ralloSaved')||'[]')};
+const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],allBatters:[],batterIndexReady:false,currentLab:null,parlay:JSON.parse(localStorage.getItem('ralloParlay')||'[]'),saved:JSON.parse(localStorage.getItem('ralloSaved')||'[]')};
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const logo=id=>`https://www.mlbstatic.com/team-logos/${id}.svg`;
 const face=id=>`https://img.mlbstatic.com/mlb-photos/image/upload/w_120,q_auto:best/v1/people/${id}/headshot/67/current`;
@@ -112,7 +112,20 @@ async function loadStandings(){
  }catch(e){document.getElementById('standings').innerHTML='<div class="empty">Standings unavailable right now.</div>'}
 }
 
-function oddsFor(game){return state.odds.find(o=>o.homeTeamId===game.teams.home.team.id&&o.awayTeamId===game.teams.away.team.id)||null}
+function normTeam(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'')}
+function bestBook(game){
+ const h=normTeam(game.teams.home.team.name),a=normTeam(game.teams.away.team.name);
+ const row=state.odds.find(o=>normTeam(o.home_team)===h&&normTeam(o.away_team)===a);
+ if(!row)return null;
+ const book=(row.books||[])[0]; if(!book)return null;
+ const h2h=book.markets?.h2h||[],totals=book.markets?.totals||[],spreads=book.markets?.spreads||[];
+ const findTeam=(arr,n)=>arr.find(x=>normTeam(x.name)===normTeam(n));
+ const home=findTeam(h2h,row.home_team),away=findTeam(h2h,row.away_team);
+ const over=totals.find(x=>String(x.name).toLowerCase()==='over');
+ const homeSpread=findTeam(spreads,row.home_team);
+ return {homeMoneyline:home?.price,awayMoneyline:away?.price,total:over?.point??null,spread:homeSpread?.point??null,book:book.title||book.key||'Odds feed'};
+}
+function oddsFor(game){return bestBook(game)}
 function gameCard(g){
  const o=oddsFor(g),a=g.teams.away,h=g.teams.home,venue=g.venue?.name||'',time=new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
  const ap=g.teams.away.probablePitcher?.fullName||'Starter TBD',hp=g.teams.home.probablePitcher?.fullName||'Starter TBD';
@@ -146,10 +159,34 @@ async function loadGames(){
 
 async function loadOdds(){
  try{
-  const r=await fetch(`data/odds.json?d=${Date.now()}`);if(!r.ok)throw 0;const d=await r.json();state.odds=d.games||[];document.getElementById('oddsStamp').textContent=d.updatedAt?new Date(d.updatedAt).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'Updated';
+  const r=await fetch(`data/odds.json?d=${Date.now()}`);if(!r.ok)throw 0;const d=await r.json();state.odds=d.games||[];document.getElementById('oddsStamp').textContent=d.updated_at?new Date(d.updated_at).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'Updated';
   if(state.games.length)document.getElementById('games').innerHTML=state.games.map(gameCard).join('');renderMoneyline();
  }catch(e){state.odds=[];document.getElementById('oddsStamp').textContent='Feed not connected';renderMoneyline()}
 }
+
+async function loadArsenals(){
+ try{
+  const r=await fetch(`data/arsenals.json?d=${Date.now()}`); if(!r.ok)throw 0;
+  const d=await r.json(); state.arsenals=d||{pitchers:{},batters:{}};
+  return d;
+ }catch(e){
+  state.arsenals={pitchers:{},batters:{}};
+ }
+}
+function matchupForTeam(team){
+ const t=normTeam(team);
+ for(const g of state.games){
+  const a=g.teams.away.team,h=g.teams.home.team;
+  if([normTeam(a.name),normTeam(a.abbreviation)].includes(t)){
+   return {opponent:h, pitcher:g.teams.home.probablePitcher||null};
+  }
+  if([normTeam(h.name),normTeam(h.abbreviation)].includes(t)){
+   return {opponent:a, pitcher:g.teams.away.probablePitcher||null};
+  }
+ }
+ return {opponent:null,pitcher:null};
+}
+
 function renderMoneyline(){
  const el=document.getElementById('moneyRows');if(!state.games.length){el.innerHTML='<div class="empty">Loading slate…</div>';return}
  el.innerHTML=state.games.map(g=>{const o=oddsFor(g);return `<div class="money-row"><div><b>${esc(g.teams.away.team.name)} @ ${esc(g.teams.home.team.name)}</b><div class="tiny">${new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}</div></div><div class="ml">${o?fmtOdd(o.awayMoneyline):'—'} / ${o?fmtOdd(o.homeMoneyline):'—'}</div><div class="total">O/U ${o?.total??'—'}</div><div class="status">${o?.book||'No feed'}</div></div>`}).join('')
@@ -191,7 +228,24 @@ async function buildBatterIndex(){if(state.batterIndexReady)return;const d=await
 let batterSearchTimer;function searchBatters(q){clearTimeout(batterSearchTimer);const root=document.getElementById('batterResults');if(!q||q.trim().length<2){root.innerHTML='';return}batterSearchTimer=setTimeout(async()=>{root.innerHTML='<div class="empty">Searching MLB hitters…</div>';await buildBatterIndex();const s=q.toLowerCase(),hits=state.allBatters.filter(p=>(p.fullName+' '+p.teamName).toLowerCase().includes(s)).slice(0,16);root.innerHTML=hits.map(p=>`<div class="search-hit" onclick="openBatterLab(${p.id},'${esc(p.fullName).replace(/'/g,"\\'")}','${esc(p.teamAbbr)}')"><img class="face" src="${face(p.id)}"><div><div class="batter-name">${esc(p.fullName)}</div><div class="bat-side">${esc(p.teamName)}</div></div><span class="open-cue">OPEN ›</span></div>`).join('')||'<div class="empty">No hitter found.</div>'},180)}
 function statNum(s,k){const v=s?.[k];return Number.isFinite(Number(v))?Number(v):0}function gameFantasy(s){const H=statNum(s,'hits'),D=statNum(s,'doubles'),T=statNum(s,'triples'),HR=statNum(s,'homeRuns'),S=Math.max(0,H-D-T-HR);return S*3+D*5+T*8+HR*10+statNum(s,'runs')*2+statNum(s,'rbi')*2+statNum(s,'baseOnBalls')*2+statNum(s,'hitByPitch')*2+statNum(s,'stolenBases')*5}
 function avg(g,k){if(!g.length)return'—';return (g.reduce((a,x)=>a+Number(k(x.stat||{})),0)/g.length).toFixed(1)}function rate(g,k){if(!g.length)return'—';return Math.round(g.filter(x=>k(x.stat||{})).length/g.length*100)+'%'}
-async function openBatterLab(id,name,team){document.getElementById('batterResults').innerHTML='';document.getElementById('batterSearch').value=name;const root=document.getElementById('batterLabPlayer');root.innerHTML='<div class="empty">Loading game log…</div>';try{const d=await j(`${MLB}/v1/people/${id}/stats?stats=gameLog&group=hitting&season=${today.getFullYear()}`);state.currentLab={id,name,team,games:[...(d.stats?.[0]?.splits||[])].reverse()};renderBatterWindow(5)}catch(e){root.innerHTML='<div class="empty">Game log unavailable.</div>'}}
+async function openBatterLab(id,name,team){
+ document.getElementById('batterResults').innerHTML='';
+ document.getElementById('batterSearch').value=name;
+ const root=document.getElementById('batterLabPlayer');
+ root.innerHTML='<div class="empty">Loading game log…</div>';
+ try{
+  const d=await j(`${MLB}/v1/people/${id}/stats?stats=gameLog&group=hitting&season=${today.getFullYear()}`);
+  const matchup=matchupForTeam(team);
+  state.currentLab={
+   id,name,team,
+   games:[...(d.stats?.[0]?.splits||[])].reverse(),
+   opponent:matchup.opponent,
+   pitcher:matchup.pitcher,
+   range:10,market:'totalBases',line:1.5,lastMarket:'totalBases'
+  };
+  renderBatterAnalytics();
+ }catch(e){root.innerHTML='<div class="empty">Game log unavailable.</div>'}
+}
 
 const ANALYTIC_MARKETS={
  hits:{label:'Hits',defaultLine:0.5,value:s=>statNum(s,'hits')},
@@ -212,11 +266,17 @@ function setAnalyticRange(n){if(!state.currentLab)return;state.currentLab.range=
 function updateAnalyticLine(v){if(!state.currentLab)return;state.currentLab.line=Number(v);renderBatterAnalytics()}
 function pctHit(games,market,line){if(!games.length)return 0;return Math.round(games.filter(g=>market.value(g.stat||{})>line).length/games.length*100)}
 function arsenalRows(kind){
- const pitcher=['4-Seam Fastball','Sinker','Slider','Sweeper','Changeup','Curveball'];
- const hitter=['4-Seam Fastball','Sinker','Changeup','Slider','Curveball','Sweeper','Cutter'];
- const arr=kind==='pitcher'?pitcher:hitter;
- if(kind==='pitcher') return arr.map((p,i)=>`<div class="arsenal-row"><div class="pitch-name"><span class="pitch-dot"></span>${p}<small>Pitch mix loads from matchup feed when available</small></div><div class="metric"><b>—</b><span>USAGE</span></div><div class="metric"><b>—</b><span>MPH</span></div><div class="metric"><b>—</b><span>RESULT</span></div></div>`).join('');
- return arr.map(p=>`<div class="batter-pitch-row"><div class="pitch-name"><span class="pitch-dot"></span>${p}<small>Results by pitch type</small></div><div class="metric"><b>—</b><span>AVG</span></div><div class="metric"><b>—</b><span>SLG</span></div><div class="metric"><b>—</b><span>WHIFF</span></div><div class="metric"><b>—</b><span>HARD HIT</span></div></div>`).join('');
+ const p=state.currentLab||{};
+ if(kind==='pitcher'){
+   const pid=p.pitcher?.id;
+   const rows=pid ? (state.arsenals?.pitchers?.[String(pid)]?.pitches||[]) : [];
+   if(!rows.length)return `<div class="note-box" style="margin:8px">No pitcher arsenal data is available yet for ${esc(p.pitcher?.fullName||'today’s starter')}.</div>`;
+   return rows.map(x=>`<div class="arsenal-row"><div class="pitch-name"><span class="pitch-dot"></span>${esc(x.type||x.code)}<small>${x.pitches??'—'} pitches in sample</small></div><div class="metric"><b>${x.usage==null?'—':x.usage+'%'}</b><span>USAGE</span></div><div class="metric"><b>${x.velo==null?'—':x.velo}</b><span>MPH</span></div><div class="metric"><b>${x.whiff==null?'—':x.whiff+'%'}</b><span>WHIFF</span></div></div>`).join('');
+ }
+ const rows=state.arsenals?.batters?.[String(p.id)]?.vsPitch||[];
+ if(!rows.length)return `<div class="note-box" style="margin:8px">No hitter pitch-type data is available yet for this player.</div>`;
+ const fmt=x=>x==null?'—':Number(x).toFixed(3).replace(/^0/,'');
+ return rows.map(x=>`<div class="batter-pitch-row"><div class="pitch-name"><span class="pitch-dot"></span>${esc(x.type||x.code)}<small>${x.pitches??'—'} pitches seen</small></div><div class="metric"><b>${fmt(x.avg)}</b><span>AVG</span></div><div class="metric"><b>${fmt(x.slg)}</b><span>SLG</span></div><div class="metric"><b>${x.whiff==null?'—':x.whiff+'%'}</b><span>WHIFF</span></div><div class="metric"><b>${x.hardHit==null?'—':x.hardHit+'%'}</b><span>HARD HIT</span></div></div>`).join('');
 }
 function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.range=n;state.currentLab.market=state.currentLab.market||'totalBases';state.currentLab.line=state.currentLab.line??ANALYTIC_MARKETS[state.currentLab.market].defaultLine;renderBatterAnalytics()}
 function renderBatterAnalytics(){
@@ -236,11 +296,11 @@ function renderBatterAnalytics(){
   <div class="analytics-grid">
    <div>
     <div class="analytics-card"><div class="analytics-title">${market.label} • ${n==='season'?'season':`last ${games.length} games`} • comparison line ${line}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates"><div class="hit-rate"><span>LAST 5 HIT RATE</span><b>${l5}%</b></div><div class="hit-rate"><span>LAST 10 HIT RATE</span><b>${l10}%</b></div><div class="hit-rate"><span>LAST 20 HIT RATE</span><b>${l20}%</b></div></div></div></div>
-    <div class="analytics-card batter-pitch-card"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}<div class="note-box" style="margin:8px">The layout is ready for pitch-type AVG, SLG, whiff and hard-hit data. We’ll populate these from the advanced-stat feed rather than inventing values.</div></div>
+    <div class="analytics-card batter-pitch-card"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}</div>
    </div>
    <div>
-    <div class="analytics-card"><div class="analytics-title">Today's matchup</div><div class="matchup-box"><div class="matchup-stat"><b>Today's opponent</b><span>Loaded from game slate</span></div><div class="matchup-stat"><b>${l5}%</b><span>L5 ${market.label} hit rate</span></div><div class="matchup-stat"><b>${l10}%</b><span>L10 hit rate</span></div><div class="matchup-stat"><b>${l20}%</b><span>L20 hit rate</span></div></div></div>
-    <div class="analytics-card" style="margin-top:10px"><div class="analytics-title">Opposing pitcher • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div><div class="note-box" style="margin:8px">Pitch usage and velocity will populate from the matchup/stat feed when connected.</div></div>
+    <div class="analytics-card"><div class="analytics-title">Today's matchup</div><div class="matchup-box"><div class="matchup-stat"><b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Today's opponent</span></div><div class="matchup-stat"><b>${l5}%</b><span>L5 ${market.label} hit rate</span></div><div class="matchup-stat"><b>${l10}%</b><span>L10 hit rate</span></div><div class="matchup-stat"><b>${l20}%</b><span>L20 hit rate</span></div></div></div>
+    <div class="analytics-card" style="margin-top:10px"><div class="analytics-title">${esc(p.pitcher?.fullName||'Opposing pitcher')} • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div></div>
    </div>
   </div>
  </div>`;
@@ -261,7 +321,7 @@ function renderParlay(){
 }
 
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
-renderParlay();Promise.allSettled([loadStandings(),loadGames(),loadOdds()]).then(()=>{renderTodayProps();loadTop20HR()});
+renderParlay();Promise.allSettled([loadStandings(),loadGames(),loadOdds(),loadArsenals()]).then(()=>{renderTodayProps();loadTop20HR()});
 </script>
 </body>
 </html>
