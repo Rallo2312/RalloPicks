@@ -194,7 +194,7 @@ data = {
 jobs = [("pitcher", x) for x in pitchers] + [("batter", x) for x in batters]
 
 # Parallel requests make this dramatically faster than the original one-by-one updater.
-with ThreadPoolExecutor(max_workers=12) as ex:
+with ThreadPoolExecutor(max_workers=24) as ex:
     futures = {ex.submit(fetch_one, kind, pid): (kind, pid) for kind, pid in jobs}
     for fut in as_completed(futures):
         kind, pid = futures[fut]
