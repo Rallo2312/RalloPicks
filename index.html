@@ -84,7 +84,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
       <div class="board hidden-view" id="propsView"><div class="section-title"><div><h2>Player Props</h2><span>Today's batters and probable starting pitchers</span></div><span><span id="propsCount">—</span> <span class="feed-badge">● Daily prop feed is connected</span></span></div><div class="range-tabs prop-type-tabs"><button id="batterPropsTab" class="active" onclick="setPropsMode('batters')">⚾ Batter Props</button><button id="pitcherPropsTab" onclick="setPropsMode('pitchers')">🔥 Pitcher Props</button></div><input id="propsSearch" class="search-box" placeholder="Search today's hitters..." oninput="filterTodayProps()"><div id="propsRows" class="batter-grid" style="margin-top:10px"><div class="empty">Loading today's players…</div></div></div>
       <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Player Lab</h2><span>Batter and pitcher research • L5 / L10 / L20 / Season</span></div><span>PrizePicks research</span></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchBatters(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
       <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 20 Home Run Board</h2><span>Daily Rallo HR score for teams playing today</span></div><span>Auto-ranked</span></div><div id="top20Rows" class="hr-grid"><div class="empty">Building today's HR board…</div></div><div class="note-box">Research ranking only. Official lineups can change. Daily prop feed is connected.</div></div>
-      <div class="board hidden-view" id="underratedView"><div class="section-title"><div><h2>Underrated Home Run Board</h2><span>Under-the-radar power hitters outside today's Top 20</span></div><span>💎 Sleeper-ranked</span></div><div id="underratedRows" class="hr-grid"><div class="empty">Finding today's underrated HR hitters…</div></div><div class="note-box">Sleeper rankings combine season home runs with pitch-type hard-hit and slugging results. Research only—not a guarantee.</div></div>
+      <div class="board hidden-view" id="underratedView"><div class="section-title"><div><h2>Underrated Home Run Board</h2><span>Under-the-radar power hitters outside today's Top 20</span></div><span>💎 Sleeper-ranked</span></div><div id="underratedRows" class="hr-grid"><div class="empty">Finding today's underrated HR hitters…</div></div><div class="note-box">Sleeper rankings include only active-roster players and combine season home runs with pitch-type hard-hit and slugging results. Research only—not a guarantee.</div></div>
     </section>
 
     <aside class="right-col panel" id="parlayPanel">
@@ -414,15 +414,25 @@ function renderPitcherAnalytics(){
 
 function savePlayer(id,name){state.saved=state.saved||[];if(!state.saved.some(x=>x.id===id))state.saved.push({id,name});localStorage.setItem('ralloSaved',JSON.stringify(state.saved));}
 
-async function loadTop20HR(){const root=document.getElementById('top20Rows');if(!state.games.length)return;try{const teamIds=new Set(state.games.flatMap(g=>[g.teams.away.team.id,g.teams.home.team.id])),d=await j(`${MLB}/v1/stats/leaders?leaderCategories=homeRuns&season=${today.getFullYear()}&sportId=1&limit=100`),leaders=(d.leagueLeaders?.[0]?.leaders||[]).filter(x=>x.team&&teamIds.has(x.team.id)).slice(0,20);root.innerHTML=leaders.map((x,i)=>`<div class="hr-card"><img class="face" src="${face(x.person.id)}"><div><div class="hr-rank">#${i+1} ${esc(x.person.fullName)}</div><div class="bat-side">${esc(x.team.abbreviation||x.team.name)} • ${x.value} HR this season</div><div class="props"><button class="prop" onclick="addLeg(event,${x.person.id},'${esc(x.person.fullName).replace(/'/g,"\\'")}','Home Runs','${esc(x.team.abbreviation||x.team.name)}')">+ HR</button></div></div><div class="hr-score"><b>${Math.min(99,Math.round(48+Number(x.value)*.75))}</b><span>RALLO SCORE</span></div></div>`).join('')}catch(e){root.innerHTML='<div class="empty">HR board unavailable.</div>'}}
+async function loadTop20HR(){
+ const root=document.getElementById('top20Rows');if(!state.games.length)return;
+ try{
+  const teamIds=new Set(state.games.flatMap(g=>[g.teams.away.team.id,g.teams.home.team.id]));
+  const activeIds=new Set((await loadTodayHitters()).map(x=>x.id));
+  const d=await j(`${MLB}/v1/stats/leaders?leaderCategories=homeRuns&season=${today.getFullYear()}&sportId=1&limit=100`);
+  const leaders=(d.leagueLeaders?.[0]?.leaders||[]).filter(x=>x.team&&teamIds.has(x.team.id)&&activeIds.has(x.person.id)).slice(0,20);
+  root.innerHTML=leaders.map((x,i)=>`<div class="hr-card"><img class="face" src="${face(x.person.id)}"><div><div class="hr-rank">#${i+1} ${esc(x.person.fullName)}</div><div class="bat-side">${esc(x.team.abbreviation||x.team.name)} • ${x.value} HR this season</div><div class="props"><button class="prop" onclick="addLeg(event,${x.person.id},'${esc(x.person.fullName).replace(/'/g,"\\'")}','Home Runs','${esc(x.team.abbreviation||x.team.name)}')">+ HR</button></div></div><div class="hr-score"><b>${Math.min(99,Math.round(48+Number(x.value)*.75))}</b><span>RALLO SCORE</span></div></div>`).join('')||'<div class="empty">No active HR leaders are available today.</div>';
+ }catch(e){root.innerHTML='<div class="empty">HR board unavailable.</div>'}
+}
 function weightedPitchMetric(rows,key){const valid=(rows||[]).filter(x=>Number.isFinite(Number(x?.[key]))),den=valid.reduce((a,x)=>a+(Number(x.pitches)||1),0);return den?valid.reduce((a,x)=>a+Number(x[key])*(Number(x.pitches)||1),0)/den:0}
 async function loadUnderratedHR(){
  const root=document.getElementById('underratedRows');if(!state.games.length)return;
  root.innerHTML='<div class="empty">Finding today’s underrated HR hitters…</div>';
  try{
   const teamIds=new Set(state.games.flatMap(g=>[g.teams.away.team.id,g.teams.home.team.id]));
+  const activeIds=new Set((await loadTodayHitters()).map(x=>x.id));
   const d=await j(`${MLB}/v1/stats/leaders?leaderCategories=homeRuns&season=${today.getFullYear()}&sportId=1&limit=300`);
-  const slate=(d.leagueLeaders?.[0]?.leaders||[]).filter(x=>x.team&&teamIds.has(x.team.id));
+  const slate=(d.leagueLeaders?.[0]?.leaders||[]).filter(x=>x.team&&teamIds.has(x.team.id)&&activeIds.has(x.person.id));
   const obvious=new Set(slate.slice(0,20).map(x=>x.person.id));
   const sleepers=slate.filter(x=>!obvious.has(x.person.id)).map(x=>{
    const rows=state.arsenals?.batters?.[String(x.person.id)]?.vsPitch||[];
@@ -449,7 +459,7 @@ function renderParlay(){
 }
 
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
-renderParlay();Promise.allSettled([loadStandings(),loadGames(),loadOdds(),loadArsenals()]).then(()=>{renderTodayProps();loadTop20HR();loadUnderratedHR()});
+renderParlay();Promise.allSettled([loadStandings(),loadGames(),loadOdds(),loadArsenals()]).then(async()=>{await renderTodayProps();loadTop20HR();loadUnderratedHR()});
 </script>
 </body>
 </html>
