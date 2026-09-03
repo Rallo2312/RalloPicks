@@ -1,213 +1,194 @@
-import csv, io, json, datetime, time, requests
-from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import csv, io, json, datetime, requests
 from pathlib import Path
 
 OUT = Path("data/arsenals.json")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
 TODAY = datetime.date.today()
-START = TODAY - datetime.timedelta(days=45)
-SAVANT = "https://baseballsavant.mlb.com/statcast_search/csv"
+YEAR = TODAY.year
 
-PITCH_NAMES = {
-    "FF":"4-Seam Fastball","SI":"Sinker","FC":"Cutter","SL":"Slider","ST":"Sweeper",
-    "CH":"Changeup","CU":"Curveball","KC":"Knuckle Curve","FS":"Split-Finger",
-    "SV":"Slurve","KN":"Knuckleball","EP":"Eephus"
-}
+MLB = "https://statsapi.mlb.com/api/v1"
+BATTER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year={YEAR}&csv=true"
+PITCHER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year={YEAR}&csv=true"
+MOVEMENT_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-movement?year={YEAR}&csv=true"
 
 session = requests.Session()
-session.headers.update({"User-Agent":"Mozilla/5.0 RalloPicks/1.0"})
+session.headers.update({
+    "User-Agent": "Mozilla/5.0 RalloPicks/1.0",
+    "Accept": "text/csv,application/json;q=0.9,*/*;q=0.8"
+})
 
-def get_json(url, timeout=20):
-    r = session.get(url, timeout=timeout)
+def get_json(url):
+    r = session.get(url, timeout=30)
     r.raise_for_status()
     return r.json()
 
+def get_csv(url):
+    r = session.get(url, timeout=90)
+    r.raise_for_status()
+    txt = r.content.decode("utf-8-sig", errors="replace")
+    return list(csv.DictReader(io.StringIO(txt)))
+
+def to_int(v):
+    try:
+        return int(float(v))
+    except:
+        return None
+
+def to_float(v):
+    try:
+        if v in (None, "", "null", "None"):
+            return None
+        return float(v)
+    except:
+        return None
+
+def first(row, *keys):
+    for k in keys:
+        if k in row and row[k] not in (None, ""):
+            return row[k]
+    return None
+
 def todays_people():
     sched = get_json(
-        f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&date={TODAY.isoformat()}&hydrate=probablePitcher"
+        f"{MLB}/schedule?sportId=1&date={TODAY.isoformat()}&hydrate=probablePitcher"
     )
-    pitchers, batters = set(), set()
 
+    pitchers = set()
     team_ids = set()
+
     for d in sched.get("dates", []):
         for g in d.get("games", []):
             for side in ("away", "home"):
                 team = g.get("teams", {}).get(side, {}).get("team", {})
                 if team.get("id"):
                     team_ids.add(team["id"])
+
                 pp = g.get("teams", {}).get(side, {}).get("probablePitcher")
                 if pp and pp.get("id"):
                     pitchers.add(pp["id"])
 
-    def load_team(tid):
+    batters = set()
+    for tid in team_ids:
         try:
-            r = get_json(
-                f"https://statsapi.mlb.com/api/v1/teams/{tid}/roster?rosterType=active&season={TODAY.year}"
+            roster = get_json(
+                f"{MLB}/teams/{tid}/roster?rosterType=active&season={YEAR}"
             )
-            return [
-                x["person"]["id"] for x in r.get("roster", [])
-                if x.get("position", {}).get("type") != "Pitcher"
-            ]
-        except Exception:
-            return []
+            for x in roster.get("roster", []):
+                if x.get("position", {}).get("type") != "Pitcher":
+                    pid = x.get("person", {}).get("id")
+                    if pid:
+                        batters.add(pid)
+        except Exception as e:
+            print(f"Roster warning for team {tid}: {e}")
 
-    with ThreadPoolExecutor(max_workers=10) as ex:
-        for ids in ex.map(load_team, team_ids):
-            batters.update(ids)
+    return pitchers, batters
 
-    return sorted(pitchers), sorted(batters)
+def build_pitcher_data(rows, movement_rows, wanted):
+    movement = {}
 
-def savant_rows(player_id, player_type):
-    params = [
-        ("all","true"),
-        ("type","details"),
-        ("player_type",player_type),
-        ("player_lookup[]",str(player_id)),
-        ("game_date_gt",START.strftime("%Y-%m-%d")),
-        ("game_date_lt",TODAY.strftime("%Y-%m-%d")),
-        ("hfGT","R|PO|S|"),
-        ("group_by","name"),
-        ("sort_order","desc"),
-        ("min_pitches","0"),
-        ("min_results","0"),
-    ]
-    for attempt in range(2):
-        try:
-            r = session.get(SAVANT, params=params, timeout=20)
-            r.raise_for_status()
-            return list(csv.DictReader(io.StringIO(r.text)))
-        except Exception:
-            if attempt == 0:
-                time.sleep(0.5)
-    return []
+    for r in movement_rows:
+        pid = to_int(first(r, "pitcher_id", "player_id"))
+        ptype = first(r, "pitch_type")
+        if pid is None or not ptype:
+            continue
 
-def fnum(x):
-    try:
-        return float(x)
-    except Exception:
-        return None
+        movement[(pid, ptype)] = {
+            "velo": to_float(first(r, "avg_speed")),
+            "usage": to_float(first(r, "pitch_per")),
+            "pitches": to_int(first(r, "pitches_thrown")),
+        }
 
-def pitcher_summary(rows):
-    by = defaultdict(list)
+    grouped = {}
+
     for r in rows:
-        pt = r.get("pitch_type")
-        if pt:
-            by[pt].append(r)
+        pid = to_int(first(r, "player_id"))
+        if pid is None or pid not in wanted:
+            continue
 
-    total = sum(len(v) for v in by.values()) or 1
-    out = []
-    for pt, rs in sorted(by.items(), key=lambda kv: len(kv[1]), reverse=True):
-        velo = [fnum(x.get("release_speed")) for x in rs]
-        velo = [x for x in velo if x is not None]
+        ptype = first(r, "pitch_type")
+        if not ptype:
+            continue
 
-        swings = 0
-        whiffs = 0
-        for x in rs:
-            d = x.get("description", "")
-            if ("swing" in d) or ("foul" in d) or ("hit_into_play" in d):
-                swings += 1
-            if "swinging_strike" in d:
-                whiffs += 1
+        name = first(r, "pitch_name") or ptype
+        mv = movement.get((pid, ptype), {})
 
-        out.append({
-            "code": pt,
-            "type": PITCH_NAMES.get(pt, pt),
-            "pitches": len(rs),
-            "usage": round(len(rs) / total * 100, 1),
-            "velo": round(sum(velo) / len(velo), 1) if velo else None,
-            "whiff": round(whiffs / swings * 100, 1) if swings else None
-        })
-    return out[:8]
+        item = {
+            "code": ptype,
+            "type": name,
+            "pitches": to_int(first(r, "pitches")) or mv.get("pitches"),
+            "usage": to_float(first(r, "pitch_usage")) or mv.get("usage"),
+            "velo": mv.get("velo"),
+            "whiff": to_float(first(r, "whiff_percent")),
+            "avg": to_float(first(r, "ba")),
+            "slg": to_float(first(r, "slg")),
+            "hardHit": to_float(first(r, "hard_hit_percent")),
+        }
 
-def hitter_summary(rows):
-    by = defaultdict(list)
+        grouped.setdefault(str(pid), []).append(item)
+
+    for pid, arr in grouped.items():
+        arr.sort(key=lambda x: (x["usage"] is None, -(x["usage"] or 0)))
+
+    return {pid: {"pitches": arr[:10]} for pid, arr in grouped.items()}
+
+def build_batter_data(rows, wanted):
+    grouped = {}
+
     for r in rows:
-        pt = r.get("pitch_type")
-        if pt:
-            by[pt].append(r)
+        pid = to_int(first(r, "player_id"))
+        if pid is None or pid not in wanted:
+            continue
 
-    out = []
-    for pt, rs in sorted(by.items(), key=lambda kv: len(kv[1]), reverse=True):
-        ab = hits = tb = 0
-        bbes = hard = swings = whiffs = 0
+        ptype = first(r, "pitch_type")
+        if not ptype:
+            continue
 
-        for r in rs:
-            ev = r.get("events", "")
-            desc = r.get("description", "")
+        item = {
+            "code": ptype,
+            "type": first(r, "pitch_name") or ptype,
+            "pitches": to_int(first(r, "pitches")),
+            "usage": to_float(first(r, "pitch_usage")),
+            "avg": to_float(first(r, "ba")),
+            "slg": to_float(first(r, "slg")),
+            "whiff": to_float(first(r, "whiff_percent")),
+            "hardHit": to_float(first(r, "hard_hit_percent")),
+        }
 
-            if ("swing" in desc) or ("foul" in desc) or ("hit_into_play" in desc):
-                swings += 1
-            if "swinging_strike" in desc:
-                whiffs += 1
+        grouped.setdefault(str(pid), []).append(item)
 
-            ev_speed = fnum(r.get("launch_speed"))
-            if ev_speed is not None:
-                bbes += 1
-                if ev_speed >= 95:
-                    hard += 1
+    for pid, arr in grouped.items():
+        arr.sort(key=lambda x: (x["pitches"] is None, -(x["pitches"] or 0)))
 
-            if ev in {
-                "single","double","triple","home_run","field_out","force_out",
-                "grounded_into_double_play","field_error","fielders_choice",
-                "fielders_choice_out","strikeout"
-            }:
-                ab += 1
-
-            if ev == "single":
-                hits += 1; tb += 1
-            elif ev == "double":
-                hits += 1; tb += 2
-            elif ev == "triple":
-                hits += 1; tb += 3
-            elif ev == "home_run":
-                hits += 1; tb += 4
-
-        out.append({
-            "code": pt,
-            "type": PITCH_NAMES.get(pt, pt),
-            "pitches": len(rs),
-            "avg": round(hits / ab, 3) if ab else None,
-            "slg": round(tb / ab, 3) if ab else None,
-            "whiff": round(whiffs / swings * 100, 1) if swings else None,
-            "hardHit": round(hard / bbes * 100, 1) if bbes else None
-        })
-
-    return out[:8]
-
-def fetch_one(kind, pid):
-    rows = savant_rows(pid, "pitcher" if kind == "pitcher" else "batter")
-    if kind == "pitcher":
-        return str(pid), {"pitches": pitcher_summary(rows)}
-    return str(pid), {"vsPitch": hitter_summary(rows)}
+    return {pid: {"vsPitch": arr[:10]} for pid, arr in grouped.items()}
 
 pitchers, batters = todays_people()
 
+print(f"Today's slate: {len(pitchers)} probable pitchers, {len(batters)} active hitters")
+print("Downloading Baseball Savant league-wide arsenal tables...")
+
+batter_rows = get_csv(BATTER_URL)
+pitcher_rows = get_csv(PITCHER_URL)
+movement_rows = get_csv(MOVEMENT_URL)
+
+print(
+    f"Downloaded {len(batter_rows)} batter arsenal rows, "
+    f"{len(pitcher_rows)} pitcher arsenal rows, "
+    f"{len(movement_rows)} movement rows"
+)
+
 data = {
     "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-    "window_days": 45,
-    "pitchers": {},
-    "batters": {}
+    "season": YEAR,
+    "source": "Baseball Savant pitch arsenal + pitch movement leaderboards",
+    "pitchers": build_pitcher_data(pitcher_rows, movement_rows, pitchers),
+    "batters": build_batter_data(batter_rows, batters),
 }
 
-jobs = [("pitcher", x) for x in pitchers] + [("batter", x) for x in batters]
-
-# Parallel requests make this dramatically faster than the original one-by-one updater.
-with ThreadPoolExecutor(max_workers=24) as ex:
-    futures = {ex.submit(fetch_one, kind, pid): (kind, pid) for kind, pid in jobs}
-    for fut in as_completed(futures):
-        kind, pid = futures[fut]
-        try:
-            key, value = fut.result()
-        except Exception as e:
-            key = str(pid)
-            value = {"pitches": []} if kind == "pitcher" else {"vsPitch": []}
-            value["error"] = str(e)[:120]
-        if kind == "pitcher":
-            data["pitchers"][key] = value
-        else:
-            data["batters"][key] = value
-
 OUT.write_text(json.dumps(data, indent=2), encoding="utf-8")
-print(f"Wrote {OUT}: {len(pitchers)} pitchers, {len(batters)} batters")
+
+print(
+    f"Wrote {OUT}: "
+    f"{len(data['pitchers'])}/{len(pitchers)} pitchers, "
+    f"{len(data['batters'])}/{len(batters)} hitters with arsenal data"
+)
