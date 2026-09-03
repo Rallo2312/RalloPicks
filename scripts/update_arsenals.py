@@ -8,8 +8,8 @@ TODAY = datetime.date.today()
 YEAR = TODAY.year
 
 MLB = "https://statsapi.mlb.com/api/v1"
-BATTER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year={YEAR}&csv=true"
-PITCHER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year={YEAR}&csv=true"
+BATTER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year={YEAR}&min=1&minPitches=1&csv=true"
+PITCHER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year={YEAR}&min=1&minPitches=1&csv=true"
 MOVEMENT_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-movement?year={YEAR}&csv=true"
 
 session = requests.Session()
@@ -56,6 +56,7 @@ def todays_people():
 
     pitchers = set()
     team_ids = set()
+    batters = set()
 
     for d in sched.get("dates", []):
         for g in d.get("games", []):
@@ -68,7 +69,29 @@ def todays_people():
                 if pp and pp.get("id"):
                     pitchers.add(pp["id"])
 
-    batters = set()
+            # The schedule can be incomplete early in the day. The live game feed
+            # contains late pitcher changes and posted batting orders, so merge it in.
+            game_pk = g.get("gamePk")
+            if game_pk:
+                try:
+                    feed = get_json(f"https://statsapi.mlb.com/api/v1.1/game/{game_pk}/feed/live")
+                    game_data = feed.get("gameData", {})
+                    boxscore = feed.get("liveData", {}).get("boxscore", {})
+
+                    for side in ("away", "home"):
+                        pp = game_data.get("probablePitchers", {}).get(side)
+                        if pp and pp.get("id"):
+                            pitchers.add(pp["id"])
+
+                        team_box = boxscore.get("teams", {}).get(side, {})
+                        for pid in team_box.get("battingOrder", []):
+                            try:
+                                batters.add(int(pid))
+                            except (TypeError, ValueError):
+                                pass
+                except Exception as e:
+                    print(f"Live-feed warning for game {game_pk}: {e}")
+
     for tid in team_ids:
         try:
             roster = get_json(
