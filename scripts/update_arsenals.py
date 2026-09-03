@@ -11,6 +11,8 @@ MLB = "https://statsapi.mlb.com/api/v1"
 BATTER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year={YEAR}&min=1&minPitches=1&csv=true"
 PITCHER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year={YEAR}&min=1&minPitches=1&csv=true"
 MOVEMENT_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-movement?year={YEAR}&csv=true"
+PREV_BATTER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year={YEAR - 1}&min=1&minPitches=1&csv=true"
+PREV_PITCHER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year={YEAR - 1}&min=1&minPitches=1&csv=true"
 
 session = requests.Session()
 session.headers.update({
@@ -200,12 +202,29 @@ print(
     f"{len(movement_rows)} movement rows"
 )
 
+pitcher_data = build_pitcher_data(pitcher_rows, movement_rows, pitchers)
+batter_data = build_batter_data(batter_rows, batters)
+
+# A player can occasionally be absent from the current-season CSV despite having
+# a posted MLB lineup. Fill only those gaps with the previous season so the UI
+# still shows a useful pitch profile instead of an empty panel.
+missing_pitchers = pitchers - {int(pid) for pid in pitcher_data}
+missing_batters = batters - {int(pid) for pid in batter_data}
+
+if missing_pitchers:
+    pitcher_data.update(
+        build_pitcher_data(get_csv(PREV_PITCHER_URL), [], missing_pitchers)
+    )
+
+if missing_batters:
+    batter_data.update(build_batter_data(get_csv(PREV_BATTER_URL), missing_batters))
+
 data = {
     "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
     "season": YEAR,
     "source": "Baseball Savant pitch arsenal + pitch movement leaderboards",
-    "pitchers": build_pitcher_data(pitcher_rows, movement_rows, pitchers),
-    "batters": build_batter_data(batter_rows, batters),
+    "pitchers": pitcher_data,
+    "batters": batter_data,
 }
 
 OUT.write_text(json.dumps(data, indent=2), encoding="utf-8")
