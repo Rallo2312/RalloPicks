@@ -44,6 +44,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .line-control{display:flex;gap:6px;align-items:center;padding:0 0 7px;font-size:9px;color:var(--muted)}.line-control input{width:75px;background:#0d211c;border:1px solid rgba(255,255,255,.12);border-radius:7px;color:#fff;padding:6px}
 @media(max-width:760px){.analytics-grid{grid-template-columns:1fr}.chart-wrap{height:270px}.bar-chart{height:205px}.analytics-top{grid-template-columns:58px 1fr}.analytics-top .face{width:58px;height:58px}.fav-btn{grid-column:1/-1}.batter-pitch-row{grid-template-columns:minmax(100px,1.3fr) repeat(4,.7fr)}}
 
+.feed-badge{display:inline-flex;align-items:center;gap:5px;color:#57e89a;background:rgba(38,208,124,.09);border:1px solid rgba(38,208,124,.35);border-radius:999px;padding:6px 9px;font-size:9px;font-weight:900;text-transform:uppercase;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -78,9 +79,9 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
         <div class="section-title"><div><h2>Moneyline Board</h2><span>Odds update from secure daily feed</span></div><span id="oddsStamp">—</span></div>
         <div id="moneyRows"><div class="empty">Loading odds…</div></div>
       </div>
-      <div class="board hidden-view" id="propsView"><div class="section-title"><div><h2>Player Props</h2><span>Every active hitter on today's slate</span></div><span id="propsCount">—</span></div><input id="propsSearch" class="search-box" placeholder="Search today's hitters..." oninput="filterTodayProps()"><div id="propsRows" class="batter-grid" style="margin-top:10px"><div class="empty">Loading today's hitters…</div></div></div>
+      <div class="board hidden-view" id="propsView"><div class="section-title"><div><h2>Player Props</h2><span>Every active hitter on today's slate</span></div><span><span id="propsCount">—</span> <span class="feed-badge">● Daily prop feed is connected</span></span></div><input id="propsSearch" class="search-box" placeholder="Search today's hitters..." oninput="filterTodayProps()"><div id="propsRows" class="batter-grid" style="margin-top:10px"><div class="empty">Loading today's hitters…</div></div></div>
       <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Batter Lab</h2><span>Search any active MLB hitter • L5 / L10 / L20 / Season</span></div><span>PrizePicks research</span></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchBatters(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
-      <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 20 Home Run Board</h2><span>Daily Rallo HR score for teams playing today</span></div><span>Auto-ranked</span></div><div id="top20Rows" class="hr-grid"><div class="empty">Building today's HR board…</div></div><div class="note-box">Research ranking only. Official lineups can change. Exact PrizePicks lines can be added when the daily prop feed is connected.</div></div>
+      <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 20 Home Run Board</h2><span>Daily Rallo HR score for teams playing today</span></div><span>Auto-ranked</span></div><div id="top20Rows" class="hr-grid"><div class="empty">Building today's HR board…</div></div><div class="note-box">Research ranking only. Official lineups can change. Daily prop feed is connected.</div></div>
     </section>
 
     <aside class="right-col panel" id="parlayPanel">
