@@ -82,7 +82,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
         <div id="moneyRows"><div class="empty">Loading odds…</div></div>
       </div>
       <div class="board hidden-view" id="propsView"><div class="section-title"><div><h2>Player Props</h2><span>Today's batters and probable starting pitchers</span></div><span><span id="propsCount">—</span> <span class="feed-badge">● Daily prop feed is connected</span></span></div><div class="range-tabs prop-type-tabs"><button id="batterPropsTab" class="active" onclick="setPropsMode('batters')">⚾ Batter Props</button><button id="pitcherPropsTab" onclick="setPropsMode('pitchers')">🔥 Pitcher Props</button></div><input id="propsSearch" class="search-box" placeholder="Search today's hitters..." oninput="filterTodayProps()"><div id="propsRows" class="batter-grid" style="margin-top:10px"><div class="empty">Loading today's players…</div></div></div>
-      <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Player Lab</h2><span>Batter and pitcher research • L5 / L10 / L20 / Season</span></div><span>PrizePicks research</span></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchBatters(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
+      <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Player Lab</h2><span>Batter and pitcher research • L5 / L10 / L20 / Season</span></div><span>PrizePicks research</span></div><div class="range-tabs prop-type-tabs"><button id="labBatterTab" class="active" onclick="setLabSearchMode('batters')">⚾ Search Batters</button><button id="labPitcherTab" onclick="setLabSearchMode('pitchers')">🔥 Search Pitchers</button></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchPlayers(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
       <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 20 Home Run Board</h2><span>Daily Rallo HR score for teams playing today</span></div><span>Auto-ranked</span></div><div id="top20Rows" class="hr-grid"><div class="empty">Building today's HR board…</div></div><div class="note-box">Research ranking only. Official lineups can change. Daily prop feed is connected.</div></div>
       <div class="board hidden-view" id="underratedView"><div class="section-title"><div><h2>Underrated Home Run Board</h2><span>Under-the-radar power hitters outside today's Top 20</span></div><span>💎 Sleeper-ranked</span></div><div id="underratedRows" class="hr-grid"><div class="empty">Finding today's underrated HR hitters…</div></div><div class="note-box">Sleeper rankings include only active-roster players and combine season home runs with pitch-type hard-hit and slugging results. Research only—not a guarantee.</div></div>
     </section>
@@ -100,7 +100,7 @@ const MLB='https://statsapi.mlb.com/api';
 const today=new Date();
 const ymd=today.toLocaleDateString('en-CA');
 document.getElementById('dateLabel').textContent=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' • MLB matchup + prop lab';
-const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',allBatters:[],batterIndexReady:false,currentLab:null,parlay:JSON.parse(localStorage.getItem('ralloParlay')||'[]'),saved:JSON.parse(localStorage.getItem('ralloSaved')||'[]')};
+const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,parlay:JSON.parse(localStorage.getItem('ralloParlay')||'[]'),saved:JSON.parse(localStorage.getItem('ralloSaved')||'[]')};
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const logo=id=>`https://www.mlbstatic.com/team-logos/${id}.svg`;
 const face=id=>`https://img.mlbstatic.com/mlb-photos/image/upload/w_120,q_auto:best/v1/people/${id}/headshot/67/current`;
@@ -257,7 +257,31 @@ async function renderTodayProps(){
 }
 function filterTodayProps(){const q=(document.getElementById('propsSearch').value||'').toLowerCase();document.querySelectorAll('.today-prop-card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'block':'none')}
 async function buildBatterIndex(){if(state.batterIndexReady)return;const d=await j(`${MLB}/v1/teams?sportId=1&season=${today.getFullYear()}`),chunks=await Promise.all((d.teams||[]).map(async t=>{try{const r=await j(`${MLB}/v1/teams/${t.id}/roster?rosterType=active&season=${today.getFullYear()}`);return (r.roster||[]).filter(x=>x.position?.type!=='Pitcher').map(x=>({id:x.person.id,fullName:x.person.fullName,teamName:t.name,teamAbbr:t.abbreviation||t.name}))}catch(e){return []}}));const seen=new Set();state.allBatters=[];for(const ch of chunks)for(const p of ch)if(!seen.has(p.id)){seen.add(p.id);state.allBatters.push(p)}state.batterIndexReady=true}
-let batterSearchTimer;function searchBatters(q){clearTimeout(batterSearchTimer);const root=document.getElementById('batterResults');if(!q||q.trim().length<2){root.innerHTML='';return}batterSearchTimer=setTimeout(async()=>{root.innerHTML='<div class="empty">Searching MLB hitters…</div>';await buildBatterIndex();const s=q.toLowerCase(),hits=state.allBatters.filter(p=>(p.fullName+' '+p.teamName).toLowerCase().includes(s)).slice(0,16);root.innerHTML=hits.map(p=>`<div class="search-hit" onclick="openBatterLab(${p.id},'${esc(p.fullName).replace(/'/g,"\\'")}','${esc(p.teamAbbr)}')"><img class="face" src="${face(p.id)}"><div><div class="batter-name">${esc(p.fullName)}</div><div class="bat-side">${esc(p.teamName)}</div></div><span class="open-cue">OPEN ›</span></div>`).join('')||'<div class="empty">No hitter found.</div>'},180)}
+async function buildPitcherIndex(){if(state.pitcherIndexReady)return;const d=await j(`${MLB}/v1/teams?sportId=1&season=${today.getFullYear()}`),chunks=await Promise.all((d.teams||[]).map(async t=>{try{const r=await j(`${MLB}/v1/teams/${t.id}/roster?rosterType=active&season=${today.getFullYear()}`);return (r.roster||[]).filter(x=>x.position?.type==='Pitcher').map(x=>({id:x.person.id,fullName:x.person.fullName,teamName:t.name,teamAbbr:t.abbreviation||t.name}))}catch(e){return []}}));const seen=new Set();state.allPitchers=[];for(const ch of chunks)for(const p of ch)if(!seen.has(p.id)){seen.add(p.id);state.allPitchers.push(p)}state.pitcherIndexReady=true}
+function syncLabSearchTabs(){
+ const pitchers=state.labSearchMode==='pitchers';
+ document.getElementById('labBatterTab')?.classList.toggle('active',!pitchers);
+ document.getElementById('labPitcherTab')?.classList.toggle('active',pitchers);
+ const input=document.getElementById('batterSearch');if(input)input.placeholder=pitchers?'Type a pitcher name — e.g. Paul Skenes':'Type a batter name — e.g. Aaron Judge';
+}
+function setLabSearchMode(mode){
+ state.labSearchMode=mode;syncLabSearchTabs();
+ const input=document.getElementById('batterSearch');if(input)input.value='';
+ document.getElementById('batterResults').innerHTML='';
+ document.getElementById('batterLabPlayer').innerHTML='';
+}
+let batterSearchTimer;function searchPlayers(q){
+ clearTimeout(batterSearchTimer);const root=document.getElementById('batterResults');
+ if(!q||q.trim().length<2){root.innerHTML='';return}
+ batterSearchTimer=setTimeout(async()=>{
+  const pitchers=state.labSearchMode==='pitchers';root.innerHTML=`<div class="empty">Searching MLB ${pitchers?'pitchers':'hitters'}…</div>`;
+  if(pitchers)await buildPitcherIndex();else await buildBatterIndex();
+  const term=q.toLowerCase(),pool=pitchers?state.allPitchers:state.allBatters,hits=pool.filter(p=>(p.fullName+' '+p.teamName).toLowerCase().includes(term)).slice(0,16);
+  root.innerHTML=hits.map(p=>`<div class="search-hit" onclick="${pitchers?'openPitcherLab':'openBatterLab'}(${p.id},'${esc(p.fullName).replace(/'/g,"\\'")}','${esc(p.teamAbbr)}')"><img class="face" src="${face(p.id)}"><div><div class="batter-name">${esc(p.fullName)}</div><div class="bat-side">${esc(p.teamName)} • ${pitchers?'Pitcher':'Batter'}</div></div><span class="open-cue">OPEN ›</span></div>`).join('')||`<div class="empty">No ${pitchers?'pitcher':'hitter'} found.</div>`;
+ },180)
+}
+function searchBatters(q){state.labSearchMode='batters';syncLabSearchTabs();searchPlayers(q)}
+
 function statNum(s,k){const v=s?.[k];return Number.isFinite(Number(v))?Number(v):0}function gameFantasy(s){const H=statNum(s,'hits'),D=statNum(s,'doubles'),T=statNum(s,'triples'),HR=statNum(s,'homeRuns'),S=Math.max(0,H-D-T-HR);return S*3+D*5+T*8+HR*10+statNum(s,'runs')*2+statNum(s,'rbi')*2+statNum(s,'baseOnBalls')*2+statNum(s,'hitByPitch')*2+statNum(s,'stolenBases')*5}
 function avg(g,k){if(!g.length)return'—';return (g.reduce((a,x)=>a+Number(k(x.stat||{})),0)/g.length).toFixed(1)}function rate(g,k){if(!g.length)return'—';return Math.round(g.filter(x=>k(x.stat||{})).length/g.length*100)+'%'}
 async function rosterPitchersForMatchup(teamId,starter){
@@ -282,6 +306,7 @@ async function selectMatchupPitcher(id){
  }catch(e){if(state.currentLab?.id===batterId){state.currentLab.bvpLoading=false;state.currentLab.bvpError=true;renderBatterAnalytics()}}
 }
 async function openBatterLab(id,name,team){
+ state.labSearchMode='batters';syncLabSearchTabs();
  document.getElementById('batterResults').innerHTML='';
  document.getElementById('batterSearch').value=name;
  const root=document.getElementById('batterLabPlayer');
@@ -384,6 +409,7 @@ const PITCHER_ANALYTIC_MARKETS={
  pitches:{label:'Pitches Thrown',defaultLine:89.5,value:s=>statNum(s,'numberOfPitches')||statNum(s,'pitchesThrown')}
 };
 async function openPitcherLab(id,name,team){
+ state.labSearchMode='pitchers';syncLabSearchTabs();
  document.getElementById('batterResults').innerHTML='';document.getElementById('batterSearch').value=name;
  const root=document.getElementById('batterLabPlayer');root.innerHTML='<div class="empty">Loading pitcher game log…</div>';
  try{
