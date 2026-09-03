@@ -218,10 +218,17 @@ batter_data = build_batter_data(batter_rows, all_batter_ids)
 missing_pitchers = pitchers - {int(pid) for pid in pitcher_data}
 missing_batters = batters - {int(pid) for pid in batter_data}
 
-if missing_pitchers:
-    pitcher_data.update(
-        build_pitcher_data(get_csv(PREV_PITCHER_URL), [], missing_pitchers)
+for fallback_year in range(YEAR - 1, YEAR - 4, -1):
+    if not missing_pitchers:
+        break
+    fallback_url = (
+        "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats"
+        f"?type=pitcher&year={fallback_year}&min=1&minPitches=1&csv=true"
     )
+    pitcher_data.update(
+        build_pitcher_data(get_csv(fallback_url), [], missing_pitchers)
+    )
+    missing_pitchers = pitchers - {int(pid) for pid in pitcher_data}
 
 if missing_batters:
     batter_data.update(build_batter_data(get_csv(PREV_BATTER_URL), missing_batters))
