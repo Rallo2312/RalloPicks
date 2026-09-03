@@ -202,7 +202,9 @@ print(
     f"{len(movement_rows)} movement rows"
 )
 
-pitcher_data = build_pitcher_data(pitcher_rows, movement_rows, pitchers)
+all_pitcher_ids = {to_int(first(r, "player_id")) for r in pitcher_rows}
+all_pitcher_ids.discard(None)
+pitcher_data = build_pitcher_data(pitcher_rows, movement_rows, all_pitcher_ids)
 
 # Batter Lab can search beyond today's posted roster, so keep every hitter in
 # the Savant table rather than limiting the pitch-type feed to today's slate.
