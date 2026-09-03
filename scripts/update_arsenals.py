@@ -203,7 +203,12 @@ print(
 )
 
 pitcher_data = build_pitcher_data(pitcher_rows, movement_rows, pitchers)
-batter_data = build_batter_data(batter_rows, batters)
+
+# Batter Lab can search beyond today's posted roster, so keep every hitter in
+# the Savant table rather than limiting the pitch-type feed to today's slate.
+all_batter_ids = {to_int(first(r, "player_id")) for r in batter_rows}
+all_batter_ids.discard(None)
+batter_data = build_batter_data(batter_rows, all_batter_ids)
 
 # A player can occasionally be absent from the current-season CSV despite having
 # a posted MLB lineup. Fill only those gaps with the previous season so the UI
