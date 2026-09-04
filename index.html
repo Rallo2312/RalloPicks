@@ -41,7 +41,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .matchup-box{padding:10px;display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.matchup-team-logo{width:34px;height:34px;object-fit:contain;display:block;margin:0 auto 5px}.matchup-stat{background:#142a25;border-radius:9px;padding:10px;text-align:center}.matchup-stat b{display:block;color:var(--yellow);font-size:11px}.matchup-stat span{font-size:7px;color:var(--muted)}
 .arsenal-list{padding:6px 10px}.arsenal-row{display:grid;grid-template-columns:minmax(100px,1.5fr) repeat(3,.65fr);gap:7px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.arsenal-row:last-child{border-bottom:0}.pitch-name{font-size:10px;font-weight:1000}.pitch-name small{display:block;font-size:7px;color:var(--muted);font-weight:500}.metric{text-align:right}.metric b{display:block;font-size:9px}.metric span{font-size:6px;color:var(--muted)}.pitch-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin-right:5px}
 .batter-pitch-card{margin-top:10px}.batter-pitch-row{display:grid;grid-template-columns:minmax(130px,1.5fr) repeat(4,.65fr);gap:7px;align-items:center;padding:9px 11px;border-bottom:1px solid rgba(255,255,255,.06)}
-.line-control{display:flex;gap:6px;align-items:center;padding:0 0 7px;font-size:9px;color:var(--muted)}.line-control input{width:75px;background:#0d211c;border:1px solid rgba(255,255,255,.12);border-radius:7px;color:#fff;padding:6px}
+.line-control{display:flex;gap:6px;align-items:center;padding:0 0 7px;font-size:9px;color:var(--muted)}.line-control input{width:75px;background:#0d211c;border:1px solid rgba(255,255,255,.12);border-radius:7px;color:#fff;padding:6px}.line-adjuster{background:#0b201a;border:1px solid rgba(255,182,18,.2);border-radius:12px;padding:10px;margin:1px 0 10px}.line-adjuster-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.book-select{background:#10251f;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:8px 9px;font-size:10px;font-weight:800}.direction-pills,.tier-pills,.line-stepper{display:flex;gap:5px}.adjust-btn,.tier-btn,.step-btn{border:1px solid rgba(255,255,255,.12);background:#142a24;color:#dce8e3;border-radius:8px;padding:8px 10px;font-size:9px;font-weight:900;cursor:pointer}.adjust-btn.active{background:#21d19f;color:#052018}.tier-btn.goblin.active{background:#39d98a;color:#052018;border-color:#39d98a}.tier-btn.standard.active{background:var(--yellow);color:#1e2f18;border-color:var(--yellow)}.tier-btn.demon.active{background:#ff5f64;color:#fff;border-color:#ff5f64}.line-stepper{align-items:center;margin-left:auto}.line-stepper input{width:66px;text-align:center;background:#071a15;color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:8px}.step-btn{font-size:14px;line-height:1;padding:8px 11px}.line-adjust-note{margin-top:7px;color:var(--muted);font-size:8px}.line-adjust-note b{color:#fff}@media(max-width:760px){.line-stepper{margin-left:0}.line-adjuster-top{align-items:stretch}.book-select{width:100%}.tier-pills{width:100%;overflow-x:auto}.tier-btn{flex:1 0 auto}}
 @media(max-width:760px){.analytics-grid{grid-template-columns:1fr}.chart-wrap{height:270px}.bar-chart{height:205px}.analytics-top{grid-template-columns:58px 1fr}.analytics-top .face{width:58px;height:58px}.fav-btn{grid-column:1/-1}.batter-pitch-row{grid-template-columns:minmax(100px,1.3fr) repeat(4,.7fr)}}
 
 .feed-badge{display:inline-flex;align-items:center;gap:5px;color:#57e89a;background:rgba(38,208,124,.09);border:1px solid rgba(38,208,124,.35);border-radius:999px;padding:6px 9px;font-size:9px;font-weight:900;text-transform:uppercase;white-space:nowrap}
@@ -322,7 +322,7 @@ async function openBatterLab(id,name,team){
    kind:'batter',id,name,team,games:seasonGames,h2hGames,h2hSeasons:years,
    opponent:matchup.opponent,pitcher:matchup.pitcher||pitcherOptions[0],pitcherOptions,
    selectedPitcherId:matchup.pitcher?.id||pitcherOptions[0]?.id||null,bvp:null,bvpLoading:false,
-   range:10,market:'totalBases',line:1.5,lastMarket:'totalBases'
+   range:10,market:'totalBases',line:1.5,baseLine:1.5,lastMarket:'totalBases',book:'PrizePicks',direction:'more',bookLines:{PrizePicks:1.5}
   };
   renderBatterAnalytics();
   if(state.currentLab.selectedPitcherId)selectMatchupPitcher(state.currentLab.selectedPitcherId);
@@ -345,8 +345,18 @@ const ANALYTIC_MARKETS={
 };
 function setAnalyticMarket(k){if(!state.currentLab)return;state.currentLab.market=k;renderBatterAnalytics()}
 function setAnalyticRange(n){if(!state.currentLab)return;state.currentLab.range=n;renderBatterAnalytics()}
-function updateAnalyticLine(v){if(!state.currentLab)return;state.currentLab.line=Number(v);renderBatterAnalytics()}
-function pctHit(games,market,line){if(!games.length)return 0;return Math.round(games.filter(g=>market.value(g.stat||{})>line).length/games.length*100)}
+function updateAnalyticLine(v){if(!state.currentLab)return;setLabLineValue(v)}
+const LAB_BOOKS=['PrizePicks','Underdog','DraftKings','FanDuel','BetMGM','Caesars','BetRivers','ESPN BET'];
+function renderCurrentLab(){if(!state.currentLab)return;if(state.currentLab.kind==='pitcher')renderPitcherAnalytics();else renderBatterAnalytics()}
+function setLabLineValue(v){const p=state.currentLab;if(!p)return;const n=Number(v);if(!Number.isFinite(n))return;p.line=Math.max(0,n);p.bookLines=p.bookLines||{};p.bookLines[p.book||'PrizePicks']=p.line;renderCurrentLab()}
+function setLabBook(v){const p=state.currentLab;if(!p)return;p.bookLines=p.bookLines||{};p.bookLines[p.book||'PrizePicks']=Number(p.line);p.book=v;p.line=Number(p.bookLines[v]??p.baseLine??p.line);renderCurrentLab()}
+function setLabDirection(v){const p=state.currentLab;if(!p)return;p.direction=v==='less'?'less':'more';renderCurrentLab()}
+function shiftLabLine(delta){const p=state.currentLab;if(!p)return;setLabLineValue(Number(p.line||0)+Number(delta)*.5)}
+function labTier(p,line){const base=Number(p.baseLine??line),d=Number(line)-base;if(Math.abs(d)<.001)return'standard';return p.direction==='less'?(d>0?'goblin':'demon'):(d<0?'goblin':'demon')}
+function setLabTier(tier){const p=state.currentLab;if(!p)return;const base=Number(p.baseLine??p.line),dir=p.direction||'more';let line=base;if(tier==='goblin')line=base+(dir==='more'?-1:1);if(tier==='demon')line=base+(dir==='more'?1:-1);setLabLineValue(Math.max(0,line))}
+function lineAdjusterHtml(p,line){const base=Number(p.baseLine??line),dir=p.direction||'more',tier=labTier(p,line),g=Math.max(0,base+(dir==='more'?-1:1)),d=Math.max(0,base+(dir==='more'?1:-1));return `<div class="line-adjuster"><div class="line-adjuster-top"><select class="book-select" onchange="setLabBook(this.value)">${LAB_BOOKS.map(b=>`<option value="${b}" ${b===(p.book||'PrizePicks')?'selected':''}>${b}</option>`).join('')}</select><div class="direction-pills"><button class="adjust-btn ${dir==='more'?'active':''}" onclick="setLabDirection('more')">MORE</button><button class="adjust-btn ${dir==='less'?'active':''}" onclick="setLabDirection('less')">LESS</button></div><div class="tier-pills"><button class="tier-btn goblin ${tier==='goblin'?'active':''}" onclick="setLabTier('goblin')">🟢 GOBLIN ${g}</button><button class="tier-btn standard ${tier==='standard'?'active':''}" onclick="setLabTier('standard')">STANDARD ${base}</button><button class="tier-btn demon ${tier==='demon'?'active':''}" onclick="setLabTier('demon')">🔴 DEMON ${d}</button></div><div class="line-stepper"><button class="step-btn" onclick="shiftLabLine(-1)">−</button><input type="number" step="0.5" min="0" value="${line}" onchange="setLabLineValue(this.value)"><button class="step-btn" onclick="shiftLabLine(1)">+</button></div></div><div class="line-adjust-note"><b>${p.book||'PrizePicks'} • ${dir.toUpperCase()} • ${tier.toUpperCase()}</b> — manual research line. Goblin is easier; Demon is harder. Payouts stay in the sportsbook app.</div></div>`}
+function didHit(v,line,direction){return direction==='less'?v<line:v>line}
+function pctHit(games,market,line,direction='more'){if(!games.length)return 0;return Math.round(games.filter(g=>didHit(market.value(g.stat||{}),line,direction)).length/games.length*100)}
 function arsenalRows(kind){
  const p=state.currentLab||{};
  if(kind==='pitcher'){
@@ -364,12 +374,12 @@ function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.rang
 function renderBatterAnalytics(){
  const p=state.currentLab;if(!p)return;
  const n=p.range||10, market=ANALYTIC_MARKETS[p.market||'totalBases'];
- if(p.lastMarket!==p.market){p.line=market.defaultLine;p.lastMarket=p.market}
- const all=p.games||[], h2h=p.h2hGames||[], games=n==='h2h'?h2h:(n==='season'?all:all.slice(0,n)), line=Number(p.line??market.defaultLine);
+ if(p.lastMarket!==p.market){p.line=market.defaultLine;p.baseLine=market.defaultLine;p.bookLines={[p.book||'PrizePicks']:market.defaultLine};p.lastMarket=p.market}
+ const all=p.games||[], h2h=p.h2hGames||[], games=n==='h2h'?h2h:(n==='season'?all:all.slice(0,n)), line=Number(p.line??market.defaultLine),direction=p.direction||'more';
  const vals=games.map(g=>market.value(g.stat||{})), max=Math.max(line+1,...vals,1);
- const bars=games.length?games.map((g,i)=>{const v=vals[i],h=Math.max(3,Math.round(v/max*190)),hit=v>line;return `<div class="gamebar ${hit?'':'miss'}"><div class="val">${Number.isInteger(v)?v:v.toFixed(1)}</div><div class="barcol" style="height:${h}px"></div><div class="date">${esc((g.date||'').slice(5))}</div></div>`}).join(''):`<div class="empty" style="width:100%">No games against ${esc(p.opponent?.name||'this opponent')} were found in the last three seasons.</div>`;
- const l5=pctHit(all.slice(0,5),market,line),l10=pctHit(all.slice(0,10),market,line),l20=pctHit(all.slice(0,20),market,line);
- const h2hPct=pctHit(h2h,market,line),h2hVals=h2h.map(g=>market.value(g.stat||{}));
+ const bars=games.length?games.map((g,i)=>{const v=vals[i],h=Math.max(3,Math.round(v/max*190)),hit=didHit(v,line,direction);return `<div class="gamebar ${hit?'':'miss'}"><div class="val">${Number.isInteger(v)?v:v.toFixed(1)}</div><div class="barcol" style="height:${h}px"></div><div class="date">${esc((g.date||'').slice(5))}</div></div>`}).join(''):`<div class="empty" style="width:100%">No games against ${esc(p.opponent?.name||'this opponent')} were found in the last three seasons.</div>`;
+ const l5=pctHit(all.slice(0,5),market,line,direction),l10=pctHit(all.slice(0,10),market,line,direction),l20=pctHit(all.slice(0,20),market,line,direction);
+ const h2hPct=pctHit(h2h,market,line,direction),h2hVals=h2h.map(g=>market.value(g.stat||{}));
  const h2hAvg=h2hVals.length?(h2hVals.reduce((a,v)=>a+v,0)/h2hVals.length).toFixed(1):'—';
  const h2hHigh=h2hVals.length?Math.max(...h2hVals):'—';
  const lineBottom=Math.min(220,Math.max(5,line/max*190));
@@ -383,10 +393,10 @@ function renderBatterAnalytics(){
   <div class="analytics-top"><img class="face" src="${face(p.id)}"><div><div class="eyebrow">RALLOPICKS PLAYER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Interactive PrizePicks research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">☆ Favorite</button></div>
   <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setAnalyticRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setAnalyticRange('season')">Season</button><button class="${n==='h2h'?'active':''}" onclick="setAnalyticRange('h2h')">⚔ Head to Head</button></div>
   <div class="analytics-markets">${Object.entries(ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setAnalyticMarket('${k}')">${m.label}</button>`).join('')}</div>
-  <div class="line-control">Comparison line <input type="number" step="0.5" value="${line}" onchange="updateAnalyticLine(this.value)"> <span>Change this to match the PrizePicks line you see.</span></div>
+  ${lineAdjusterHtml(p,line)}
   <div class="analytics-grid">
    <div>
-    <div class="analytics-card"><div class="analytics-title">${market.label} • ${windowLabel} • comparison line ${line}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div>
+    <div class="analytics-card"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTier(p,line).toUpperCase()}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div>
     <div class="analytics-card batter-pitch-card"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}</div>
    </div>
    <div>
@@ -417,20 +427,20 @@ async function openPitcherLab(id,name,team){
   const historyGames=logs.flatMap(d=>d.stats?.[0]?.splits||[]).sort((x,y)=>(y.date||'').localeCompare(x.date||''));
   const opponentId=Number(matchup.opponent?.id),opponentName=(matchup.opponent?.name||'').toLowerCase();
   const h2hGames=historyGames.filter(g=>Number(g.opponent?.id)===opponentId||(opponentName&&String(g.opponent?.name||'').toLowerCase()===opponentName));
-  state.currentLab={kind:'pitcher',id,name,team,pitcher:{id,fullName:name},opponent:matchup.opponent,games:seasonGames,h2hGames,h2hSeasons:years,range:10,market:'strikeOuts',line:5.5,lastMarket:'strikeOuts'};
+  state.currentLab={kind:'pitcher',id,name,team,pitcher:{id,fullName:name},opponent:matchup.opponent,games:seasonGames,h2hGames,h2hSeasons:years,range:10,market:'strikeOuts',line:5.5,baseLine:5.5,lastMarket:'strikeOuts',book:'PrizePicks',direction:'more',bookLines:{PrizePicks:5.5}};
   renderPitcherAnalytics();
  }catch(e){root.innerHTML='<div class="empty">Pitcher game log unavailable.</div>'}
 }
 function setPitcherMarket(k){if(!state.currentLab||state.currentLab.kind!=='pitcher')return;state.currentLab.market=k;renderPitcherAnalytics()}
 function setPitcherRange(n){if(!state.currentLab||state.currentLab.kind!=='pitcher')return;state.currentLab.range=n;renderPitcherAnalytics()}
-function updatePitcherLine(v){if(!state.currentLab||state.currentLab.kind!=='pitcher')return;state.currentLab.line=Number(v);renderPitcherAnalytics()}
+function updatePitcherLine(v){if(!state.currentLab||state.currentLab.kind!=='pitcher')return;setLabLineValue(v)}
 function renderPitcherAnalytics(){
  const p=state.currentLab;if(!p||p.kind!=='pitcher')return;
  const n=p.range||10,market=PITCHER_ANALYTIC_MARKETS[p.market||'strikeOuts'];
- if(p.lastMarket!==p.market){p.line=market.defaultLine;p.lastMarket=p.market}
- const all=p.games||[],h2h=p.h2hGames||[],games=n==='h2h'?h2h:(n==='season'?all:all.slice(0,n)),line=Number(p.line??market.defaultLine),vals=games.map(g=>market.value(g.stat||{})),max=Math.max(line+1,...vals,1);
- const bars=games.length?games.map((g,i)=>{const v=vals[i],h=Math.max(3,Math.round(v/max*190)),hit=v>line;return `<div class="gamebar ${hit?'':'miss'}"><div class="val">${Number.isInteger(v)?v:v.toFixed(1)}</div><div class="barcol" style="height:${h}px"></div><div class="date">${esc((g.date||'').slice(5))}</div></div>`}).join(''):`<div class="empty" style="width:100%">No pitching appearances against ${esc(p.opponent?.name||'this opponent')} were found in the last three seasons.</div>`;
- const pct=g=>pctHit(g,{value:market.value},line),l5=pct(all.slice(0,5)),l10=pct(all.slice(0,10)),l20=pct(all.slice(0,20)),h2hPct=pct(h2h);
+ if(p.lastMarket!==p.market){p.line=market.defaultLine;p.baseLine=market.defaultLine;p.bookLines={[p.book||'PrizePicks']:market.defaultLine};p.lastMarket=p.market}
+ const all=p.games||[],h2h=p.h2hGames||[],games=n==='h2h'?h2h:(n==='season'?all:all.slice(0,n)),line=Number(p.line??market.defaultLine),direction=p.direction||'more',vals=games.map(g=>market.value(g.stat||{})),max=Math.max(line+1,...vals,1);
+ const bars=games.length?games.map((g,i)=>{const v=vals[i],h=Math.max(3,Math.round(v/max*190)),hit=didHit(v,line,direction);return `<div class="gamebar ${hit?'':'miss'}"><div class="val">${Number.isInteger(v)?v:v.toFixed(1)}</div><div class="barcol" style="height:${h}px"></div><div class="date">${esc((g.date||'').slice(5))}</div></div>`}).join(''):`<div class="empty" style="width:100%">No pitching appearances against ${esc(p.opponent?.name||'this opponent')} were found in the last three seasons.</div>`;
+ const pct=g=>pctHit(g,{value:market.value},line,direction),l5=pct(all.slice(0,5)),l10=pct(all.slice(0,10)),l20=pct(all.slice(0,20)),h2hPct=pct(h2h);
  const h2hVals=h2h.map(g=>market.value(g.stat||{})),h2hAvg=h2hVals.length?(h2hVals.reduce((x,v)=>x+v,0)/h2hVals.length).toFixed(1):'—',h2hHigh=h2hVals.length?Math.max(...h2hVals):'—';
  const lineBottom=Math.min(220,Math.max(5,line/max*190)),windowLabel=n==='h2h'?`head to head vs ${esc(p.opponent?.name||'opponent')}`:(n==='season'?'season':`last ${games.length} games`);
  const rateCards=n==='h2h'?`<div class="hit-rate"><span>H2H GAMES</span><b>${h2h.length}</b></div><div class="hit-rate"><span>H2H HIT RATE</span><b>${h2hPct}%</b></div><div class="hit-rate"><span>H2H AVG ${market.label.toUpperCase()}</span><b>${h2hAvg}</b></div>`:`<div class="hit-rate"><span>LAST 5 HIT RATE</span><b>${l5}%</b></div><div class="hit-rate"><span>LAST 10 HIT RATE</span><b>${l10}%</b></div><div class="hit-rate"><span>LAST 20 HIT RATE</span><b>${l20}%</b></div>`;
@@ -438,8 +448,8 @@ function renderPitcherAnalytics(){
   <div class="analytics-top"><img class="face" src="${face(p.id)}"><div><div class="eyebrow">RALLOPICKS PITCHER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Starting pitcher prop research</div></div><button class="fav-btn" onclick="addLeg(event,${p.id},'${esc(p.name).replace(/'/g,"\\'")}','${market.label}','${esc(p.team)}')">+ Add Prop</button></div>
   <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setPitcherRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setPitcherRange('season')">Season</button><button class="${n==='h2h'?'active':''}" onclick="setPitcherRange('h2h')">⚔ Head to Head</button></div>
   <div class="analytics-markets">${Object.entries(PITCHER_ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setPitcherMarket('${k}')">${m.label}</button>`).join('')}</div>
-  <div class="line-control">Comparison line <input type="number" step="0.5" value="${line}" onchange="updatePitcherLine(this.value)"> <span>Change this to match the prop line you see.</span></div>
-  <div class="analytics-grid"><div><div class="analytics-card"><div class="analytics-title">${market.label} • ${windowLabel} • comparison line ${line}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div></div>
+  ${lineAdjusterHtml(p,line)}
+  <div class="analytics-grid"><div><div class="analytics-card"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTier(p,line).toUpperCase()}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div></div>
    <div><div class="analytics-card"><div class="analytics-title">Head to head vs today's opponent</div><div class="matchup-box"><div class="matchup-stat">${p.opponent?.id?`<img class="matchup-team-logo" src="${logo(p.opponent.id)}" alt="">`:''}<b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Opponent</span></div><div class="matchup-stat"><b>${h2h.length}</b><span>Games • last 3 seasons</span></div><div class="matchup-stat"><b>${h2hPct}%</b><span>${market.label} hit rate</span></div><div class="matchup-stat"><b>${h2hAvg} / ${h2hHigh}</b><span>Average / high</span></div></div></div><div class="analytics-card" style="margin-top:10px"><div class="analytics-title">${esc(p.name)} • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div></div></div>
   </div></div>`;
 }
