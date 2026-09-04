@@ -23,6 +23,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .money-board{display:none}.money-board.active{display:block}.money-row{display:grid;grid-template-columns:1fr 100px 100px 80px;gap:6px;align-items:center;background:#123a2d;border-radius:12px;padding:10px;margin:7px 0;font-size:10px}.money-row b{font-size:12px}.money-teams{display:flex;align-items:center;gap:7px}.money-team-logos{display:flex;gap:3px}.money-team-logos img{width:24px;height:24px;object-fit:contain}.ml{color:var(--yellow);font-weight:1000;text-align:center}.total{color:#dce8e4;text-align:center}.status{color:var(--muted);text-align:right}
 .footer-note{font-size:9px;color:#7f9a90;text-align:center;line-height:1.5;margin:18px 5px}
 .membership-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:10px 0 12px;padding:14px 16px;border:1px solid color-mix(in srgb,var(--yellow) 42%,transparent);border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--yellow) 14%,#102b23),rgba(12,46,36,.96));box-shadow:0 12px 35px rgba(0,0,0,.2)}.membership-copy strong{display:block;color:var(--yellow);font-size:15px}.membership-copy span{display:block;margin-top:4px;color:#d7e7e1;font-size:10px;line-height:1.4}.membership-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.membership-actions a,.membership-actions span{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:9px 13px;border-radius:10px;text-decoration:none;font-size:10px;font-weight:1000}.join-link{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#102d23;box-shadow:0 7px 20px color-mix(in srgb,var(--yellow) 22%,transparent)}.manage-link{border:1px solid rgba(255,255,255,.16);background:#102b23;color:#e2eee9}@media(max-width:760px){.membership-bar{align-items:stretch;flex-direction:column}.membership-actions{justify-content:stretch}.membership-actions a,.membership-actions span{flex:1}}
+.membership-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:9px 13px;border:0;border-radius:10px;font-size:10px;font-weight:1000;cursor:pointer}.account-link{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#102d23}.member-dialog{width:min(450px,calc(100% - 24px));padding:0;border:1px solid rgba(255,182,18,.3);border-radius:18px;background:#0b211a;color:var(--text);box-shadow:0 30px 100px rgba(0,0,0,.7)}.member-dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}.member-dialog-body{padding:18px}.member-dialog h2{margin:0 40px 6px 0;color:var(--yellow);font-size:21px}.member-dialog p{color:#cfe0d9;font-size:13px;line-height:1.55}.member-email{width:100%;margin:8px 0;border:1px solid rgba(255,182,18,.3);border-radius:11px;background:#071f18;color:#fff;padding:12px}.member-primary,.member-secondary{width:100%;margin-top:7px;border-radius:11px;padding:11px;font-weight:1000;cursor:pointer}.member-primary{border:0;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#102d23}.member-secondary{border:1px solid rgba(255,255,255,.15);background:#102b23;color:#e2eee9}.member-close{position:absolute;right:12px;top:12px;border:0;border-radius:9px;background:rgba(255,255,255,.1);color:#fff;width:34px;height:34px;font-size:18px;cursor:pointer}.member-message{min-height:20px;margin-top:9px;color:var(--green);font-size:11px;line-height:1.4}.member-message.error{color:#ff9da6}.member-status{padding:10px 12px;border:1px solid rgba(255,255,255,.09);border-radius:11px;background:rgba(0,0,0,.16);font-size:12px;color:#d7e7e1}.member-status b{color:var(--yellow)}
 .left-col{display:grid;gap:12px;align-content:start}.saved-panel{position:sticky;top:84px}.saved-list{padding:9px;display:grid;gap:8px;max-height:46vh;overflow:auto}.saved-card{position:relative;background:linear-gradient(145deg,#123d2f,#0a291f);border:1px solid rgba(255,182,18,.2);border-left:3px solid var(--yellow);border-radius:13px;padding:10px;cursor:pointer}.saved-card:hover{border-color:var(--yellow)}.saved-player{font-size:12px;font-weight:1000;padding-right:24px}.saved-pick{color:var(--yellow);font-size:11px;font-weight:900;margin-top:4px}.saved-meta{color:var(--muted);font-size:8px;margin-top:4px}.saved-remove{position:absolute;right:6px;top:6px;width:24px;height:24px;border:0;border-radius:7px;background:rgba(255,107,120,.12);color:#ff9da6;font-weight:1000;cursor:pointer}.clear-saved{border:0;background:transparent;color:#ff9da6;font-size:9px;font-weight:900;cursor:pointer}.saved-count{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:99px;background:var(--yellow);color:#102d23;font-size:9px;margin-left:5px}
 .player-avatar,.team-badge{display:grid;place-items:center;flex:0 0 auto;color:#fff;font-weight:1000;letter-spacing:.3px;text-shadow:0 1px 2px rgba(0,0,0,.35);background:linear-gradient(145deg,hsl(var(--avatar-hue) 72% 48%),hsl(var(--avatar-hue) 74% 27%));border:2px solid color-mix(in srgb,var(--yellow) 55%,white);box-shadow:0 7px 18px rgba(0,0,0,.24)}.player-avatar{width:44px;height:44px;border-radius:50%;font-size:12px}.player-avatar.large{width:72px;height:72px;font-size:18px}.team-badge{width:36px;height:36px;border-radius:10px 10px 10px 4px;font-size:10px}.team-badge.small{width:24px;height:24px;border-width:1px;border-radius:7px;font-size:7px}.team-badge.matchup{width:42px;height:42px;margin:0 auto 6px}.team-line{grid-template-columns:38px 1fr auto}.standing-row{grid-template-columns:28px 1fr auto}.batter-head,.search-hit{grid-template-columns:44px 1fr auto}.hr-card{grid-template-columns:54px minmax(0,1fr) 76px}.analytics-top{grid-template-columns:72px 1fr auto}.money-team-logos{display:flex;gap:3px}.legal-strip{margin:16px 4px 0;padding:13px;border:1px solid rgba(255,182,18,.18);border-radius:14px;background:rgba(0,0,0,.15);text-align:center}.legal-strip strong{display:block;color:var(--yellow);font-size:11px;margin-bottom:7px}.legal-links{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}.legal-links button{border:1px solid rgba(255,255,255,.1);background:#102b23;color:#d8e6e1;border-radius:8px;padding:7px 9px;font-size:9px;font-weight:900;cursor:pointer}.legal-links button:hover{border-color:var(--yellow)}.policy-dialog{width:min(760px,calc(100% - 24px));max-height:86vh;padding:0;border:1px solid rgba(255,182,18,.28);border-radius:18px;background:#0b211a;color:var(--text);box-shadow:0 30px 100px rgba(0,0,0,.7)}.policy-dialog::backdrop{background:rgba(0,0,0,.76);backdrop-filter:blur(4px)}.policy-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;padding:15px 17px;background:#0d2a21;border-bottom:1px solid rgba(255,255,255,.08);z-index:2}.policy-head h2{margin:0;font-size:18px;color:var(--yellow)}.policy-close{border:0;border-radius:9px;background:rgba(255,255,255,.1);color:#fff;width:34px;height:34px;font-size:18px;cursor:pointer}.policy-body{padding:18px;font-size:14px;line-height:1.65;color:#d8e6e1}.policy-body h3{font-size:15px;color:#fff;margin:20px 0 5px}.policy-body h3:first-child{margin-top:0}.policy-body p,.policy-body ul{margin:7px 0}.policy-body a{color:var(--yellow)}.launch-notice{margin:0 0 10px;padding:10px 12px;border:1px solid rgba(105,230,167,.22);border-radius:12px;background:rgba(105,230,167,.07);font-size:10px;color:#cfe9de;line-height:1.45}
 @media(max-width:1100px){.layout{grid-template-columns:220px 1fr}}
@@ -68,8 +69,8 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
   </nav>
 
   <section class="membership-bar" aria-label="RalloPicks membership">
-    <div class="membership-copy"><strong>Secure membership access is coming soon</strong><span>Enrollment is temporarily paused while account sign-in and subscriber-only Player Lab access are completed.</span></div>
-    <div class="membership-actions"><span class="join-link" aria-disabled="true">Enrollment paused</span><a class="manage-link" href="https://billing.stripe.com/p/login/9B614n2WE4C31Ud4g77g400" target="_blank" rel="noopener noreferrer">Manage membership</a></div>
+    <div class="membership-copy"><strong id="membershipHeadline">Player Lab is for active members</strong><span id="membershipSummary">Sign in with the same email used at checkout. Enrollment remains paused while access is tested.</span></div>
+    <div class="membership-actions"><button class="account-link" id="accountButton" onclick="openMemberDialog()">Member sign in</button><span class="join-link" aria-disabled="true">Enrollment paused</span><a class="manage-link" href="https://billing.stripe.com/p/login/9B614n2WE4C31Ud4g77g400" target="_blank" rel="noopener noreferrer">Manage membership</a></div>
   </section>
 
   <main class="layout">
@@ -103,16 +104,51 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
   <div class="footer-note">RalloPicks provides informational sports research only. It does not accept wagers, guarantee outcomes, or promise profits. Team and player names identify factual subjects only. RalloPicks is not affiliated with, sponsored by, or endorsed by Major League Baseball, its clubs, PrizePicks, Underdog, or any sportsbook.</div>
 </div>
 <dialog class="policy-dialog" id="policyDialog"><div class="policy-head"><h2 id="policyTitle">Policies</h2><button class="policy-close" onclick="closePolicy()" aria-label="Close">×</button></div><div class="policy-body" id="policyBody"></div></dialog>
+<dialog class="member-dialog" id="memberDialog"><button class="member-close" onclick="closeMemberDialog()" aria-label="Close">×</button><div class="member-dialog-body"><h2>Member access</h2><div id="memberSignedOut"><p>Enter the email you used for your RalloPicks membership. We’ll send a secure sign-in link—no password needed.</p><label for="memberEmail" class="tiny">Email address</label><input class="member-email" id="memberEmail" type="email" autocomplete="email" placeholder="you@example.com"><button class="member-primary" id="magicLinkButton" onclick="sendMagicLink()">Email me a sign-in link</button></div><div id="memberSignedIn" hidden><div class="member-status" id="memberStatus">Checking membership…</div><button class="member-primary" id="openLabButton" onclick="openPlayerLabFromDialog()" hidden>Open Player Lab</button><button class="member-secondary" onclick="signOutMember()">Sign out</button></div><div class="member-message" id="memberMessage" aria-live="polite"></div></div></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js" integrity="sha384-AkNSQdptcXlJ0/NBZc4qGk86cDVXcCevwoWgEKIpHOEfbvlXGLlIkimQtONt8KNf" crossorigin="anonymous"></script>
 <script>
 const MLB='https://statsapi.mlb.com/api';
+const SUPABASE_URL='https://bldhqrrjkfclklhfzqxf.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_fl5rrIJuHfodBGPGhy2khQ_VjEhMuhu';
+const supaClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 const today=new Date();
 const ymd=today.toLocaleDateString('en-CA');
 document.getElementById('dateLabel').textContent=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' • MLB matchup + prop lab';
 function loadSaved(){try{const items=JSON.parse(localStorage.getItem('ralloSaved')||'[]');return Array.isArray(items)?items:[]}catch(e){return[]}}
-const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:localStorage.getItem('ralloPlatform')==='Underdog'?'Underdog':'PrizePicks',saved:loadSaved()};
+const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:localStorage.getItem('ralloPlatform')==='Underdog'?'Underdog':'PrizePicks',saved:loadSaved(),session:null,memberActive:false,membershipStatus:'signed_out'};
 function setPlatform(name){const next=name==='Underdog'?'Underdog':'PrizePicks';state.platform=next;localStorage.setItem('ralloPlatform',next);document.body.dataset.platform=next.toLowerCase();document.getElementById('platformPrizePicks')?.classList.toggle('active',next==='PrizePicks');document.getElementById('platformUnderdog')?.classList.toggle('active',next==='Underdog');const label=document.getElementById('labPlatformLabel');if(label)label.textContent=next+' mode';if(state.currentLab){const p=state.currentLab;p.bookLines=p.bookLines||{};p.bookLines[p.book||next]=Number(p.line);p.book=next;p.line=Number(p.bookLines[next]??p.baseLine??p.line);renderCurrentLab()}}
 setPlatform(state.platform);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function memberMessage(text='',error=false){const el=document.getElementById('memberMessage');el.textContent=text;el.classList.toggle('error',error)}
+function openMemberDialog(){renderMembershipUi();const d=document.getElementById('memberDialog');if(!d.open)d.showModal()}
+function closeMemberDialog(){document.getElementById('memberDialog').close()}
+function renderMembershipUi(){
+ const signedIn=!!state.session,signedOutEl=document.getElementById('memberSignedOut'),signedInEl=document.getElementById('memberSignedIn'),status=document.getElementById('memberStatus'),open=document.getElementById('openLabButton'),account=document.getElementById('accountButton'),headline=document.getElementById('membershipHeadline'),summary=document.getElementById('membershipSummary');
+ signedOutEl.hidden=signedIn;signedInEl.hidden=!signedIn;open.hidden=!state.memberActive;
+ if(!signedIn){account.textContent='Member sign in';headline.textContent='Player Lab is for active members';summary.textContent='Sign in with the same email used at checkout. Enrollment remains paused while access is tested.';return}
+ const email=state.session.user?.email||'your email';account.textContent=state.memberActive?'✓ Member active':'Check membership';
+ if(state.membershipStatus==='checking')status.innerHTML=`Signed in as <b>${esc(email)}</b><br>Checking membership…`;
+ else if(state.memberActive){status.innerHTML=`Signed in as <b>${esc(email)}</b><br>Active membership confirmed.`;headline.textContent='Your Player Lab access is active';summary.textContent=`Signed in as ${email}.`;}
+ else{status.innerHTML=`Signed in as <b>${esc(email)}</b><br>No active membership was found for this email.`;headline.textContent='Membership sign-in confirmed';summary.textContent='Player Lab stays locked until an active Stripe membership is found.';}
+}
+async function checkMembership(session){
+ state.session=session||null;state.memberActive=false;state.membershipStatus=session?'checking':'signed_out';renderMembershipUi();
+ if(!session)return false;
+ try{const r=await fetch(`${SUPABASE_URL}/functions/v1/membership-status`,{headers:{Authorization:`Bearer ${session.access_token}`,apikey:SUPABASE_PUBLISHABLE_KEY}}),data=await r.json();if(!r.ok)throw new Error(data.error||'Membership check failed');state.memberActive=data.active===true;state.membershipStatus=data.status||'inactive';renderMembershipUi();return state.memberActive}catch(e){state.membershipStatus='error';renderMembershipUi();memberMessage('We could not verify membership. Please try again.',true);return false}
+}
+async function sendMagicLink(){
+ const input=document.getElementById('memberEmail'),button=document.getElementById('magicLinkButton'),email=input.value.trim();memberMessage();
+ if(!email||!input.checkValidity()){memberMessage('Enter a valid email address.',true);input.focus();return}
+ button.disabled=true;button.textContent='Sending…';
+ const {error}=await supaClient.auth.signInWithOtp({email,options:{emailRedirectTo:'https://rallo2312.github.io/RalloPicks/'}});
+ button.disabled=false;button.textContent='Email me a sign-in link';
+ if(error){memberMessage(error.message||'Could not send the sign-in link.',true);return}
+ memberMessage('Check your email and open the secure sign-in link.');
+}
+async function signOutMember(){await supaClient.auth.signOut();state.session=null;state.memberActive=false;state.membershipStatus='signed_out';memberMessage('Signed out.');renderMembershipUi();}
+function requireMembership(){if(state.memberActive)return true;openMemberDialog();memberMessage(state.session?'An active membership is required to open Player Lab.':'Sign in to open Player Lab.',true);return false}
+function openPlayerLabFromDialog(){if(!state.memberActive)return;closeMemberDialog();switchView('batterlab')}
+async function initMembership(){const {data}=await supaClient.auth.getSession();await checkMembership(data.session);supaClient.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>checkMembership(session),0)});}
 const SAFE_PIXEL='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const logo=id=>SAFE_PIXEL;
 const face=id=>SAFE_PIXEL;
@@ -287,6 +323,7 @@ function setLabSearchMode(mode){
  document.getElementById('batterLabPlayer').innerHTML='';
 }
 let batterSearchTimer;function searchPlayers(q){
+ if(!requireMembership())return;
  clearTimeout(batterSearchTimer);const root=document.getElementById('batterResults');
  if(!q||q.trim().length<2){root.innerHTML='';return}
  batterSearchTimer=setTimeout(async()=>{
@@ -322,6 +359,7 @@ async function selectMatchupPitcher(id){
  }catch(e){if(state.currentLab?.id===batterId){state.currentLab.bvpLoading=false;state.currentLab.bvpError=true;renderBatterAnalytics()}}
 }
 async function openBatterLab(id,name,team){
+ if(!requireMembership())return;
  state.labSearchMode='batters';syncLabSearchTabs();
  document.getElementById('batterResults').innerHTML='';
  document.getElementById('batterSearch').value=name;
@@ -436,6 +474,7 @@ const PITCHER_ANALYTIC_MARKETS={
  pitches:{label:'Pitches Thrown',defaultLine:89.5,value:s=>statNum(s,'numberOfPitches')||statNum(s,'pitchesThrown')}
 };
 async function openPitcherLab(id,name,team){
+ if(!requireMembership())return;
  state.labSearchMode='pitchers';syncLabSearchTabs();
  document.getElementById('batterResults').innerHTML='';document.getElementById('batterSearch').value=name;
  const root=document.getElementById('batterLabPlayer');root.innerHTML='<div class="empty">Loading pitcher game log and head-to-head history…</div>';
@@ -490,7 +529,7 @@ function renderSaved(){
 function removeSaved(i){state.saved.splice(i,1);persistSaved();renderCurrentLab()}
 function clearSaved(){if(!state.saved.length)return;state.saved=[];persistSaved();renderCurrentLab()}
 async function openSavedPick(i){
- const pick={...state.saved[i]};if(!pick)return;switchView('batterlab');
+ if(!requireMembership())return;const pick={...state.saved[i]};if(!pick)return;switchView('batterlab');
  if(pick.kind==='pitcher')await openPitcherLab(pick.id,pick.name,pick.team);else await openBatterLab(pick.id,pick.name,pick.team);
  if(!state.currentLab||Number(state.currentLab.id)!==Number(pick.id))return;
  Object.assign(state.currentLab,{market:pick.market,line:Number(pick.line),baseLine:Number(pick.baseLine),direction:pick.direction,book:pick.book,range:pick.range,bookLines:{[pick.book]:Number(pick.line)},lastMarket:pick.market});
@@ -559,11 +598,13 @@ async function loadTop20HR(){
  }catch(e){root.innerHTML='<div class="empty">Today’s HR research board is temporarily unavailable.</div>'}
  state.hrBoardLoading=false;
 }
-function switchView(v){document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));['matchupsView','moneylineView','batterlabView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});if(v==='matchups')document.getElementById('matchupsView').style.display='block';if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active')}if(v==='batterlab')document.getElementById('batterlabView').style.display='block';if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR()}if(v==='standings')document.getElementById('standingsPanel').scrollIntoView({behavior:'smooth'})}
+function switchView(v){if(v==='batterlab'&&!requireMembership())return;document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));['matchupsView','moneylineView','batterlabView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});if(v==='matchups')document.getElementById('matchupsView').style.display='block';if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active')}if(v==='batterlab')document.getElementById('batterlabView').style.display='block';if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR()}if(v==='standings')document.getElementById('standingsPanel').scrollIntoView({behavior:'smooth'})}
 
 
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
+document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target===e.currentTarget)closeMemberDialog()});
 renderSaved();
+initMembership();
 Promise.allSettled([loadStandings(),loadGames(),loadOdds(),loadArsenals()]).then(()=>loadTop20HR());
 </script>
 </body>
