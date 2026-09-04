@@ -10,7 +10,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 14% 0%,rgba(85,199,255,.18),transparent 28%),radial-gradient(circle at 86% 5%,rgba(198,107,255,.16),transparent 26%),radial-gradient(circle at 50% -10%,#176046 0,#081b14 42%,#050d0a 100%);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}body[data-platform="underdog"]{background:radial-gradient(circle at 12% 0%,rgba(255,122,26,.22),transparent 30%),radial-gradient(circle at 88% 4%,rgba(181,128,255,.2),transparent 28%),radial-gradient(circle at 50% -10%,#4a2418 0,#151016 42%,#08070a 100%)}
 button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 12px 80px}.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:10px 4px 12px;background:rgba(7,19,15,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.04)}
 .brand{display:flex;align-items:center;gap:11px}.brand-logo{width:50px;height:50px;border-radius:16px 16px 16px 6px;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#092018;font-weight:1000;font-size:20px;letter-spacing:-2px;display:grid;place-items:center;border:2px solid rgba(255,255,255,.7);box-shadow:0 10px 30px color-mix(in srgb,var(--yellow) 30%,transparent);transform:rotate(-2deg)}.brand-logo span{transform:rotate(2deg)}.brand h1{margin:0;font-size:22px;letter-spacing:-.5px}.brand h1 em{font-style:normal;color:var(--yellow)}.sub{font-size:11px;color:var(--muted);margin-top:2px}.top-actions{display:flex;align-items:center;gap:9px}.platform-switch{display:flex;padding:4px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.09);border-radius:12px}.platform-switch button{border:0;background:transparent;color:var(--muted);padding:8px 10px;border-radius:9px;font-size:9px;font-weight:1000;cursor:pointer}.platform-switch button.active{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#132018;box-shadow:0 5px 16px color-mix(in srgb,var(--yellow) 25%,transparent)}.live{font-size:10px;font-weight:900;color:var(--green);padding:6px 9px;border:1px solid color-mix(in srgb,var(--green) 30%,transparent);border-radius:99px;background:color-mix(in srgb,var(--green) 9%,transparent)}@media(max-width:760px){.topbar{align-items:flex-start}.top-actions{flex-direction:column;align-items:flex-end}.live{font-size:8px}.platform-switch button{padding:7px 8px;font-size:8px}.brand-logo{width:44px;height:44px}.brand h1{font-size:18px}}
-.nav{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:12px 0}.nav button{border:1px solid rgba(255,255,255,.09);background:linear-gradient(145deg,rgba(16,44,34,.96),rgba(11,30,25,.96));color:#c5d9d1;padding:11px 8px;border-radius:12px;font-size:11px;font-weight:900;cursor:pointer;transition:.18s transform,.18s border-color}.nav button:nth-child(2){border-color:rgba(85,199,255,.24)}.nav button:nth-child(3){border-color:rgba(255,107,120,.24)}.nav button:nth-child(4){border-color:rgba(198,107,255,.24)}.nav button:nth-child(5){border-color:rgba(255,138,53,.24)}.nav button:hover{transform:translateY(-1px);border-color:var(--yellow)}.nav button.active{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#15382e;border-color:var(--yellow);box-shadow:0 7px 20px color-mix(in srgb,var(--yellow) 20%,transparent)}
+.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0}.nav button{border:1px solid rgba(255,255,255,.09);background:linear-gradient(145deg,rgba(16,44,34,.96),rgba(11,30,25,.96));color:#c5d9d1;padding:11px 8px;border-radius:12px;font-size:11px;font-weight:900;cursor:pointer;transition:.18s transform,.18s border-color}.nav button:nth-child(2){border-color:rgba(85,199,255,.24)}.nav button:nth-child(3){border-color:rgba(255,107,120,.24)}.nav button:nth-child(4){border-color:rgba(198,107,255,.24)}.nav button:hover{transform:translateY(-1px);border-color:var(--yellow)}.nav button.active{background:linear-gradient(135deg,var(--yellow),var(--orange));color:#15382e;border-color:var(--yellow);box-shadow:0 7px 20px color-mix(in srgb,var(--yellow) 20%,transparent)}
 .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:12px}.panel{background:linear-gradient(160deg,rgba(14,46,35,.92),rgba(8,28,22,.92));border:1px solid rgba(255,255,255,.09);border-top-color:color-mix(in srgb,var(--yellow) 35%,transparent);border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.2),0 0 35px color-mix(in srgb,var(--blue) 5%,transparent)}.panel-head{display:flex;justify-content:space-between;align-items:center;padding:14px 15px;border-bottom:1px solid rgba(255,255,255,.06)}.panel-head h2,.panel-head h3{margin:0;font-size:15px}.tiny{font-size:10px;color:var(--muted)}
 .standings{max-height:calc(100vh - 125px);overflow:auto;padding:9px}.division{margin-bottom:10px}.division-title{font-size:10px;color:var(--yellow);font-weight:900;text-transform:uppercase;letter-spacing:.7px;padding:5px 6px}.standing-row{display:grid;grid-template-columns:22px 1fr auto;gap:6px;padding:7px;border-radius:9px;font-size:11px;align-items:center}.standing-logo{width:19px;height:19px;object-fit:contain}.standing-row:nth-child(even){background:rgba(255,255,255,.025)}.record{color:var(--muted);font-variant-numeric:tabular-nums}.team-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .board{padding:10px}.section-title{display:flex;justify-content:space-between;align-items:end;margin:5px 3px 10px}.section-title h2{margin:0;font-size:19px}.section-title span{font-size:10px;color:var(--muted)}
@@ -21,6 +21,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .empty{padding:20px 10px;text-align:center;color:var(--muted);font-size:11px}
 .money-board{display:none}.money-board.active{display:block}.money-row{display:grid;grid-template-columns:1fr 100px 100px 80px;gap:6px;align-items:center;background:#123a2d;border-radius:12px;padding:10px;margin:7px 0;font-size:10px}.money-row b{font-size:12px}.money-teams{display:flex;align-items:center;gap:7px}.money-team-logos{display:flex;gap:3px}.money-team-logos img{width:24px;height:24px;object-fit:contain}.ml{color:var(--yellow);font-weight:1000;text-align:center}.total{color:#dce8e4;text-align:center}.status{color:var(--muted);text-align:right}
 .footer-note{font-size:9px;color:#7f9a90;text-align:center;line-height:1.5;margin:18px 5px}
+.left-col{display:grid;gap:12px;align-content:start}.saved-panel{position:sticky;top:84px}.saved-list{padding:9px;display:grid;gap:8px;max-height:46vh;overflow:auto}.saved-card{position:relative;background:linear-gradient(145deg,#123d2f,#0a291f);border:1px solid rgba(255,182,18,.2);border-left:3px solid var(--yellow);border-radius:13px;padding:10px;cursor:pointer}.saved-card:hover{border-color:var(--yellow)}.saved-player{font-size:12px;font-weight:1000;padding-right:24px}.saved-pick{color:var(--yellow);font-size:11px;font-weight:900;margin-top:4px}.saved-meta{color:var(--muted);font-size:8px;margin-top:4px}.saved-remove{position:absolute;right:6px;top:6px;width:24px;height:24px;border:0;border-radius:7px;background:rgba(255,107,120,.12);color:#ff9da6;font-weight:1000;cursor:pointer}.clear-saved{border:0;background:transparent;color:#ff9da6;font-size:9px;font-weight:900;cursor:pointer}.saved-count{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:99px;background:var(--yellow);color:#102d23;font-size:9px;margin-left:5px}
 @media(max-width:1100px){.layout{grid-template-columns:220px 1fr}}
 @media(max-width:760px){.app{padding:8px 8px 72px}.layout{display:block}.left-col{margin-bottom:10px}.standings{max-height:240px}.game-main{grid-template-columns:1fr}.odds{grid-template-columns:repeat(4,1fr);text-align:center}.batter-grid{grid-template-columns:1fr}.nav{position:sticky;top:86px;z-index:25;background:rgba(7,19,15,.95);padding:5px 0}.nav button{font-size:9px;padding:10px 3px}.money-row{grid-template-columns:1fr 74px 74px}.money-row .status{display:none}}
 
@@ -56,21 +57,26 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
   </header>
 
   <nav class="nav">
-    <button class="active" data-view="matchups">⚾ Matchups</button>
-        <button data-view="batterlab">🔎 Player Lab</button>
-    <button data-view="top20">🔥 Top 20 HR</button>
+    <button class="active" data-view="top20">🔥 Top 20 HR</button>
+    <button data-view="batterlab">🔎 Player Lab</button>
     <button data-view="moneyline">💵 Moneyline</button>
     <button data-view="standings">🏆 Standings</button>
   </nav>
 
   <main class="layout">
-    <aside class="left-col panel" id="standingsPanel">
-      <div class="panel-head"><h3>MLB Standings</h3><span class="tiny" id="standingsStamp">Live</span></div>
-      <div class="standings" id="standings"><div class="empty">Loading standings…</div></div>
+    <aside class="left-col">
+      <section class="panel saved-panel" aria-label="Saved picks">
+        <div class="panel-head"><h3>⭐ My Picks <span class="saved-count" id="savedCount">0</span></h3><button class="clear-saved" id="clearSavedBtn" onclick="clearSaved()">CLEAR ALL</button></div>
+        <div class="saved-list" id="savedList"></div>
+      </section>
+      <section class="panel" id="standingsPanel">
+        <div class="panel-head"><h3>MLB Standings</h3><span class="tiny" id="standingsStamp">Live</span></div>
+        <div class="standings" id="standings"><div class="empty">Loading standings…</div></div>
+      </section>
     </aside>
 
     <section class="panel center-col">
-      <div class="board" id="matchupsView">
+      <div class="board hidden-view" id="matchupsView">
         <div class="section-title"><div><h2>Today's Matchups</h2><span>Tap a game to open every batter</span></div><span id="gameCount"></span></div>
         <div id="games"><div class="empty">Loading today's MLB slate…</div></div>
       </div>
@@ -79,7 +85,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
         <div id="moneyRows"><div class="empty">Loading odds…</div></div>
       </div>
             <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Player Lab</h2><span>Batter and pitcher research • L5 / L10 / L20 / Season</span></div><span id="labPlatformLabel">PrizePicks mode</span></div><div class="range-tabs prop-type-tabs"><button id="labBatterTab" class="active" onclick="setLabSearchMode('batters')">⚾ Search Batters</button><button id="labPitcherTab" onclick="setLabSearchMode('pitchers')">🔥 Search Pitchers</button></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchPlayers(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
-      <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 20 HR Chances Today</h2><span>Daily model • recent power • pitcher matchup • pitch mix • park • lineup</span></div><span>Closest-match research</span></div><div id="top20Rows" class="hr-grid"><div class="empty">Open this tab to run today’s HR research model.</div></div><div class="note-box">Rallo HR Chance is a research estimate—not a guarantee or sportsbook probability. Confirmed lineups are used when posted; otherwise the board uses active rosters and probable pitchers.</div></div>
+      <div class="board" id="top20View"><div class="section-title"><div><h2>Top 20 HR Chances Today</h2><span>Daily model • recent power • pitcher matchup • pitch mix • park • lineup</span></div><span>Closest-match research</span></div><div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div><div class="note-box">Rallo HR Chance is a research estimate—not a guarantee or sportsbook probability. Confirmed lineups are used when posted; otherwise the board uses active rosters and probable pitchers.</div></div>
     </section>
 
   </main>
@@ -91,7 +97,8 @@ const MLB='https://statsapi.mlb.com/api';
 const today=new Date();
 const ymd=today.toLocaleDateString('en-CA');
 document.getElementById('dateLabel').textContent=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' • MLB matchup + prop lab';
-const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:localStorage.getItem('ralloPlatform')==='Underdog'?'Underdog':'PrizePicks',saved:JSON.parse(localStorage.getItem('ralloSaved')||'[]')};
+function loadSaved(){try{const items=JSON.parse(localStorage.getItem('ralloSaved')||'[]');return Array.isArray(items)?items:[]}catch(e){return[]}}
+const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:localStorage.getItem('ralloPlatform')==='Underdog'?'Underdog':'PrizePicks',saved:loadSaved()};
 function setPlatform(name){const next=name==='Underdog'?'Underdog':'PrizePicks';state.platform=next;localStorage.setItem('ralloPlatform',next);document.body.dataset.platform=next.toLowerCase();document.getElementById('platformPrizePicks')?.classList.toggle('active',next==='PrizePicks');document.getElementById('platformUnderdog')?.classList.toggle('active',next==='Underdog');const label=document.getElementById('labPlatformLabel');if(label)label.textContent=next+' mode';if(state.currentLab){const p=state.currentLab;p.bookLines=p.bookLines||{};p.bookLines[p.book||next]=Number(p.line);p.book=next;p.line=Number(p.bookLines[next]??p.baseLine??p.line);renderCurrentLab()}}
 setPlatform(state.platform);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -207,7 +214,7 @@ async function hittersForTeam(teamId,box){
 }
 function batterCard(p,team,oppPitcher,i){
  const id=p.id,name=p.fullName,order=p.order?`#${p.order}`:'Roster',pitch=oppPitcher?.fullName||'Starter TBD';
- return `<div class="batter" data-player="${id}"><div class="batter-head"><img class="face" src="${face(id)}" onerror="this.style.visibility='hidden'"><div><div class="bat-order">${order} • ${esc(team.abbreviation||team.name)}</div><div class="batter-name">${esc(name)}</div><div class="bat-side">vs ${esc(pitch)}</div></div><button class="pill-btn" onclick="savePlayer(event,${id},'${esc(name).replace(/'/g,"\\'")}')">☆</button></div>
+ return `<div class="batter" data-player="${id}"><div class="batter-head"><img class="face" src="${face(id)}" onerror="this.style.visibility='hidden'"><div><div class="bat-order">${order} • ${esc(team.abbreviation||team.name)}</div><div class="batter-name">${esc(name)}</div><div class="bat-side">vs ${esc(pitch)}</div></div><button class="pill-btn" onclick="savePlayer(${id},'${esc(name).replace(/'/g,"\\'")}',{kind:'batter',team:'${esc(team.abbreviation||team.name).replace(/'/g,"\\'")}'})">☆</button></div>
  <div class="stats-tabs"><button class="active">L5</button><button>L10</button><button>L20</button><button>Season</button></div>
  <div class="mini-stats stats-${id}"><div class="mini"><b>—</b><span>AVG</span></div><div class="mini"><b>—</b><span>HR</span></div><div class="mini"><b>—</b><span>OPS</span></div><div class="mini"><b>—</b><span>TB</span></div></div>
  <div class="props">${propButtons(id,name,team.abbreviation||team.name)}</div>
@@ -386,7 +393,7 @@ function renderBatterAnalytics(){
  const bvpBody=p.bvpLoading?'<div class="empty">Loading career matchup…</div>':(p.bvpError?'<div class="note-box">Pitcher matchup history is unavailable right now.</div>':(Object.keys(bt).length?`<div class="bvp-grid"><div class="bvp-stat"><b>${bt.hits??0}/${bt.atBats??0}</b><span>HITS / AT-BATS</span></div><div class="bvp-stat"><b>${bt.homeRuns??0}</b><span>HOME RUNS</span></div><div class="bvp-stat"><b>${bt.strikeOuts??0}</b><span>STRIKEOUTS</span></div><div class="bvp-stat"><b>${bt.avg??'—'} / ${bt.ops??'—'}</b><span>AVG / OPS</span></div></div><div class="bvp-years">${bs.map(x=>{const z=x.stat||{};return `<div class="bvp-year"><b>${esc(x.season||'—')}</b><span>${z.atBats??0} AB</span><span>${z.hits??0} H</span><span>${z.homeRuns??0} HR</span><span>${z.avg??'—'} AVG</span><span>${z.ops??'—'} OPS</span></div>`}).join('')}</div>`:'<div class="note-box">No previous plate appearances against this pitcher.</div>'));
  const bvpPanel=`<div class="analytics-card" style="margin-top:10px"><div class="analytics-title">Batter vs pitcher • career history</div><div class="bvp-wrap">${pitcherSelect}${bvpBody}</div></div>`;
  document.getElementById('batterLabPlayer').innerHTML=`<div class="analytics-shell">
-  <div class="analytics-top"><img class="face" src="${face(p.id)}"><div><div class="eyebrow">RALLOPICKS PLAYER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Interactive PrizePicks research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">☆ Favorite</button></div>
+  <div class="analytics-top"><img class="face" src="${face(p.id)}"><div><div class="eyebrow">RALLOPICKS PLAYER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Interactive prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">${isCurrentSaved()?'★ Saved':'☆ Favorite'}</button></div>
   <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setAnalyticRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setAnalyticRange('season')">Season</button><button class="${n==='h2h'?'active':''}" onclick="setAnalyticRange('h2h')">⚔ Head to Head</button></div>
   <div class="analytics-markets">${Object.entries(ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setAnalyticMarket('${k}')">${m.label}</button>`).join('')}</div>
   ${lineAdjusterHtml(p,line)}
@@ -441,7 +448,7 @@ function renderPitcherAnalytics(){
  const lineBottom=Math.min(220,Math.max(5,line/max*190)),windowLabel=n==='h2h'?`head to head vs ${esc(p.opponent?.name||'opponent')}`:(n==='season'?'season':`last ${games.length} games`);
  const rateCards=n==='h2h'?`<div class="hit-rate"><span>H2H GAMES</span><b>${h2h.length}</b></div><div class="hit-rate"><span>H2H HIT RATE</span><b>${h2hPct}%</b></div><div class="hit-rate"><span>H2H AVG ${market.label.toUpperCase()}</span><b>${h2hAvg}</b></div>`:`<div class="hit-rate"><span>LAST 5 HIT RATE</span><b>${l5}%</b></div><div class="hit-rate"><span>LAST 10 HIT RATE</span><b>${l10}%</b></div><div class="hit-rate"><span>LAST 20 HIT RATE</span><b>${l20}%</b></div>`;
  document.getElementById('batterLabPlayer').innerHTML=`<div class="analytics-shell">
-  <div class="analytics-top"><img class="face" src="${face(p.id)}"><div><div class="eyebrow">RALLOPICKS PITCHER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Starting pitcher prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">☆ Favorite</button></div>
+  <div class="analytics-top"><img class="face" src="${face(p.id)}"><div><div class="eyebrow">RALLOPICKS PITCHER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Starting pitcher prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">${isCurrentSaved()?'★ Saved':'☆ Favorite'}</button></div>
   <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setPitcherRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setPitcherRange('season')">Season</button><button class="${n==='h2h'?'active':''}" onclick="setPitcherRange('h2h')">⚔ Head to Head</button></div>
   <div class="analytics-markets">${Object.entries(PITCHER_ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setPitcherMarket('${k}')">${m.label}</button>`).join('')}</div>
   ${lineAdjusterHtml(p,line)}
@@ -450,7 +457,30 @@ function renderPitcherAnalytics(){
   </div></div>`;
 }
 
-function savePlayer(id,name){state.saved=state.saved||[];if(!state.saved.some(x=>x.id===id))state.saved.push({id,name});localStorage.setItem('ralloSaved',JSON.stringify(state.saved));}
+function savedMarketLabel(p){const table=p.kind==='pitcher'?PITCHER_ANALYTIC_MARKETS:ANALYTIC_MARKETS;return table[p.market]?.label||p.market||'Prop'}
+function savedKey(p){return [p.kind||'batter',p.id,p.market,Number(p.line),p.direction||'more',p.book||state.platform].join('|')}
+function currentPick(extra=null){const p=extra||state.currentLab;if(!p?.id)return null;return {kind:p.kind||'batter',id:Number(p.id),name:p.name||'Player',team:p.team||'',market:p.market||(p.kind==='pitcher'?'strikeOuts':'totalBases'),line:Number(p.line??(p.kind==='pitcher'?5.5:1.5)),baseLine:Number(p.baseLine??p.line??(p.kind==='pitcher'?5.5:1.5)),direction:p.direction||'more',book:p.book||state.platform,range:p.range||10}}
+function isCurrentSaved(){const pick=currentPick();return !!pick&&state.saved.some(x=>savedKey(x)===savedKey(pick))}
+function persistSaved(){localStorage.setItem('ralloSaved',JSON.stringify(state.saved));renderSaved()}
+function savePlayer(id,name,extra={}){
+ const pick=(state.currentLab&&Number(state.currentLab.id)===Number(id))?currentPick():currentPick({id,name,...extra});if(!pick)return;
+ const key=savedKey(pick),i=state.saved.findIndex(x=>savedKey(x)===key);if(i>=0)state.saved.splice(i,1);else state.saved.unshift(pick);persistSaved();renderCurrentLab();
+}
+function renderSaved(){
+ const root=document.getElementById('savedList'),count=document.getElementById('savedCount'),clear=document.getElementById('clearSavedBtn');if(!root)return;
+ count.textContent=state.saved.length;clear.style.visibility=state.saved.length?'visible':'hidden';
+ root.innerHTML=state.saved.length?state.saved.map((p,i)=>`<article class="saved-card" onclick="openSavedPick(${i})"><button class="saved-remove" aria-label="Remove ${esc(p.name)}" onclick="event.stopPropagation();removeSaved(${i})">×</button><div class="saved-player">${esc(p.name)}</div><div class="saved-pick">${esc(savedMarketLabel(p))} • ${(p.direction||'more').toUpperCase()} ${Number(p.line)}</div><div class="saved-meta">${esc(p.book||'PrizePicks')} • ${esc(p.team||'MLB')} • Tap to reopen Player Lab</div></article>`).join(''):'<div class="empty">Favorite a pick in Player Lab and it will stay here—even after you close the site.</div>';
+}
+function removeSaved(i){state.saved.splice(i,1);persistSaved();renderCurrentLab()}
+function clearSaved(){if(!state.saved.length)return;state.saved=[];persistSaved();renderCurrentLab()}
+async function openSavedPick(i){
+ const pick={...state.saved[i]};if(!pick)return;switchView('batterlab');
+ if(pick.kind==='pitcher')await openPitcherLab(pick.id,pick.name,pick.team);else await openBatterLab(pick.id,pick.name,pick.team);
+ if(!state.currentLab||Number(state.currentLab.id)!==Number(pick.id))return;
+ Object.assign(state.currentLab,{market:pick.market,line:Number(pick.line),baseLine:Number(pick.baseLine),direction:pick.direction,book:pick.book,range:pick.range,bookLines:{[pick.book]:Number(pick.line)},lastMarket:pick.market});
+ if(pick.book==='PrizePicks'||pick.book==='Underdog'){state.platform=pick.book;localStorage.setItem('ralloPlatform',pick.book);document.body.dataset.platform=pick.book.toLowerCase();document.getElementById('platformPrizePicks')?.classList.toggle('active',pick.book==='PrizePicks');document.getElementById('platformUnderdog')?.classList.toggle('active',pick.book==='Underdog')}
+ renderCurrentLab();
+}
 
 const HR_PARK_FACTORS={'Coors Field':1.14,'Great American Ball Park':1.09,'Yankee Stadium':1.06,'Citizens Bank Park':1.06,'Fenway Park':1.04,'Wrigley Field':1.03,'Globe Life Field':.98,'T-Mobile Park':.94,'Oracle Park':.93,'Petco Park':.94};
 function clamp(n,min,max){return Math.max(min,Math.min(max,n))}
@@ -506,7 +536,8 @@ function switchView(v){document.querySelectorAll('.nav button').forEach(x=>x.cla
 
 
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
-Promise.allSettled([loadStandings(),loadGames(),loadOdds(),loadArsenals()]).then(async()=>{await renderTodayProps()});
+renderSaved();
+Promise.allSettled([loadStandings(),loadGames(),loadOdds(),loadArsenals()]).then(()=>loadTop20HR());
 </script>
 </body>
 </html>
