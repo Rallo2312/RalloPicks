@@ -70,8 +70,8 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
   </nav>
 
   <section class="membership-bar" aria-label="RalloPicks membership">
-    <div class="membership-copy"><strong id="membershipHeadline">Player Lab is for active members</strong><span id="membershipSummary">Sign in with the same email used at checkout. Enrollment remains paused while access is tested.</span></div>
-    <div class="membership-actions"><button class="account-link" id="accountButton" onclick="openMemberDialog()">Member sign in</button><span class="join-link" aria-disabled="true">Enrollment paused</span><a class="manage-link" href="https://billing.stripe.com/p/login/9B614n2WE4C31Ud4g77g400" target="_blank" rel="noopener noreferrer">Manage membership</a></div>
+    <div class="membership-copy"><strong id="membershipHeadline">Player Lab is for active members</strong><span id="membershipSummary">Join for $10/month, then sign in with the same email used at checkout.</span></div>
+    <div class="membership-actions"><button class="account-link" id="accountButton" onclick="openMemberDialog()">Member sign in</button><a class="join-link" href="https://buy.stripe.com/9B614n2WE4C31Ud4g77g400">Join for $10/month</a><a class="manage-link" href="https://billing.stripe.com/p/login/9B614n2WE4C31Ud4g77g400" target="_blank" rel="noopener noreferrer">Manage membership</a></div>
   </section>
 
   <section class="locked-dashboard" id="lockedDashboard">
@@ -133,7 +133,7 @@ function renderMembershipUi(){
  const signedIn=!!state.session,signedOutEl=document.getElementById('memberSignedOut'),signedInEl=document.getElementById('memberSignedIn'),status=document.getElementById('memberStatus'),open=document.getElementById('openLabButton'),account=document.getElementById('accountButton'),headline=document.getElementById('membershipHeadline'),summary=document.getElementById('membershipSummary');
  signedOutEl.hidden=signedIn;signedInEl.hidden=!signedIn;open.hidden=!state.memberActive;
  syncResearchAccess();
- if(!signedIn){account.textContent='Member sign in';headline.textContent='RalloPicks research is for active members';summary.textContent='Sign in with the same email used at checkout. Enrollment remains paused while access is tested.';return}
+ if(!signedIn){account.textContent='Member sign in';headline.textContent='RalloPicks research is for active members';summary.textContent='Join for $10/month, then sign in with the same email used at checkout.';return}
  const email=state.session.user?.email||'your email';account.textContent=state.memberActive?'✓ Member active':'Check membership';
  if(state.membershipStatus==='checking')status.innerHTML=`Signed in as <b>${esc(email)}</b><br>Checking membership…`;
  else if(state.memberActive){status.innerHTML=`Signed in as <b>${esc(email)}</b><br>Active membership confirmed.`;headline.textContent='Your Player Lab access is active';summary.textContent=`Signed in as ${email}.`;}
@@ -148,7 +148,7 @@ async function sendMagicLink(){
  const input=document.getElementById('memberEmail'),button=document.getElementById('magicLinkButton'),email=input.value.trim();memberMessage();
  if(!email||!input.checkValidity()){memberMessage('Enter a valid email address.',true);input.focus();return}
  button.disabled=true;button.textContent='Sending…';
- const {error}=await supaClient.auth.signInWithOtp({email,options:{emailRedirectTo:'https://rallo2312.github.io/RalloPicks/'}});
+ const {error}=await supaClient.auth.signInWithOtp({email,options:{emailRedirectTo:'https://rallopicks.com/'}});
  button.disabled=false;button.textContent='Email me a sign-in link';
  if(error){memberMessage(error.message||'Could not send the sign-in link.',true);return}
  memberMessage('Check your email and open the secure sign-in link.');
@@ -156,7 +156,7 @@ async function sendMagicLink(){
 async function signOutMember(){await supaClient.auth.signOut();state.session=null;state.memberActive=false;state.membershipStatus='signed_out';memberMessage('Signed out.');renderMembershipUi();}
 function requireMembership(){if(state.memberActive)return true;openMemberDialog();memberMessage(state.session?'An active membership is required to open the research dashboard.':'Sign in to open the research dashboard.',true);return false}
 function openPlayerLabFromDialog(){if(!state.memberActive)return;closeMemberDialog();switchView('batterlab')}
-async function initMembership(){const {data}=await supaClient.auth.getSession();await checkMembership(data.session);supaClient.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>checkMembership(session),0)});}
+async function initMembership(){const {data}=await supaClient.auth.getSession();await checkMembership(data.session);if(new URLSearchParams(location.search).get('checkout')==='success'&&!state.memberActive){openMemberDialog();memberMessage('Checkout complete. Sign in with the same email you used at Stripe to unlock your membership.')}supaClient.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>checkMembership(session),0)});}
 const SAFE_PIXEL='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const logo=id=>SAFE_PIXEL;
 const face=id=>SAFE_PIXEL;
