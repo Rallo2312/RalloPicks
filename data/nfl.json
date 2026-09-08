@@ -1,406 +1,542 @@
 {
-  "updated_at": "2026-09-08T02:57:20.127533+00:00",
+  "updated_at": "2026-09-08T03:01:49.241713+00:00",
   "season": 2026,
   "games": [
     {
-      "id": "401872656",
-      "date": "2026-09-10T00:20Z",
+      "id": "2026_01_NE_SEA",
+      "date": "2026-09-10T00:20:00+00:00",
       "name": "New England Patriots at Seattle Seahawks",
       "short_name": "NE @ SEA",
-      "status": "9/9 - 8:20 PM EDT",
+      "status": "Scheduled",
       "venue": "Lumen Field",
       "home": {
-        "id": "26",
+        "id": "SEA",
         "name": "Seattle Seahawks",
         "abbr": "SEA",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
-        "score": "0"
+        "logo": null,
+        "score": ""
       },
       "away": {
-        "id": "17",
+        "id": "NE",
         "name": "New England Patriots",
         "abbr": "NE",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png",
-        "score": "0"
+        "logo": null,
+        "score": ""
       },
-      "odds": null
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -170.0,
+        "away_moneyline": 142.0,
+        "home_spread": -3.5,
+        "spread_price": -102.0,
+        "total": 44.5,
+        "over_price": -108.0
+      }
     },
     {
-      "id": "401872657",
-      "date": "2026-09-11T00:35Z",
+      "id": "2026_01_SF_LA",
+      "date": "2026-09-11T00:35:00+00:00",
       "name": "San Francisco 49ers at Los Angeles Rams",
-      "short_name": "SF VS LAR",
-      "status": "9/10 - 8:35 PM EDT",
+      "short_name": "SF @ LA",
+      "status": "Scheduled",
       "venue": "Melbourne Cricket Ground",
       "home": {
-        "id": "14",
+        "id": "LA",
         "name": "Los Angeles Rams",
-        "abbr": "LAR",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
-        "score": "0"
+        "abbr": "LA",
+        "logo": null,
+        "score": ""
       },
       "away": {
-        "id": "25",
+        "id": "SF",
         "name": "San Francisco 49ers",
         "abbr": "SF",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
-        "score": "0"
+        "logo": null,
+        "score": ""
       },
-      "odds": null
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -185.0,
+        "away_moneyline": 154.0,
+        "home_spread": -3.5,
+        "spread_price": -108.0,
+        "total": 48.5,
+        "over_price": -105.0
+      }
     },
     {
-      "id": "401872925",
-      "date": "2026-09-13T17:00Z",
-      "name": "Tampa Bay Buccaneers at Cincinnati Bengals",
-      "short_name": "TB @ CIN",
-      "status": "9/13 - 1:00 PM EDT",
-      "venue": "Paycor Stadium",
-      "home": {
-        "id": "4",
-        "name": "Cincinnati Bengals",
-        "abbr": "CIN",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "27",
-        "name": "Tampa Bay Buccaneers",
-        "abbr": "TB",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872923",
-      "date": "2026-09-13T17:00Z",
-      "name": "New Orleans Saints at Detroit Lions",
-      "short_name": "NO @ DET",
-      "status": "9/13 - 1:00 PM EDT",
-      "venue": "Ford Field",
-      "home": {
-        "id": "8",
-        "name": "Detroit Lions",
-        "abbr": "DET",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "18",
-        "name": "New Orleans Saints",
-        "abbr": "NO",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872924",
-      "date": "2026-09-13T17:00Z",
-      "name": "New York Jets at Tennessee Titans",
-      "short_name": "NYJ @ TEN",
-      "status": "9/13 - 1:00 PM EDT",
-      "venue": "Nissan Stadium",
-      "home": {
-        "id": "10",
-        "name": "Tennessee Titans",
-        "abbr": "TEN",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "20",
-        "name": "New York Jets",
-        "abbr": "NYJ",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872659",
-      "date": "2026-09-13T17:00Z",
-      "name": "Baltimore Ravens at Indianapolis Colts",
-      "short_name": "BAL @ IND",
-      "status": "9/13 - 1:00 PM EDT",
-      "venue": "Lucas Oil Stadium",
-      "home": {
-        "id": "11",
-        "name": "Indianapolis Colts",
-        "abbr": "IND",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "33",
-        "name": "Baltimore Ravens",
-        "abbr": "BAL",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872658",
-      "date": "2026-09-13T17:00Z",
-      "name": "Atlanta Falcons at Pittsburgh Steelers",
-      "short_name": "ATL @ PIT",
-      "status": "9/13 - 1:00 PM EDT",
-      "venue": "Acrisure Stadium",
-      "home": {
-        "id": "23",
-        "name": "Pittsburgh Steelers",
-        "abbr": "PIT",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "1",
-        "name": "Atlanta Falcons",
-        "abbr": "ATL",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872661",
-      "date": "2026-09-13T17:00Z",
+      "id": "2026_01_CHI_CAR",
+      "date": "2026-09-13T17:00:00+00:00",
       "name": "Chicago Bears at Carolina Panthers",
       "short_name": "CHI @ CAR",
-      "status": "9/13 - 1:00 PM EDT",
+      "status": "Scheduled",
       "venue": "Bank of America Stadium",
       "home": {
-        "id": "29",
+        "id": "CAR",
         "name": "Carolina Panthers",
         "abbr": "CAR",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
-        "score": "0"
+        "logo": null,
+        "score": ""
       },
       "away": {
-        "id": "3",
+        "id": "CHI",
         "name": "Chicago Bears",
         "abbr": "CHI",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
-        "score": "0"
+        "logo": null,
+        "score": ""
       },
-      "odds": null
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": 130.0,
+        "away_moneyline": -155.0,
+        "home_spread": 3.0,
+        "spread_price": -118.0,
+        "total": 47.5,
+        "over_price": -112.0
+      }
     },
     {
-      "id": "401872922",
-      "date": "2026-09-13T17:00Z",
-      "name": "Cleveland Browns at Jacksonville Jaguars",
-      "short_name": "CLE @ JAX",
-      "status": "9/13 - 1:00 PM EDT",
-      "venue": "EverBank Stadium",
+      "id": "2026_01_TB_CIN",
+      "date": "2026-09-13T17:00:00+00:00",
+      "name": "Tampa Bay Buccaneers at Cincinnati Bengals",
+      "short_name": "TB @ CIN",
+      "status": "Scheduled",
+      "venue": "Paycor Stadium",
       "home": {
-        "id": "30",
-        "name": "Jacksonville Jaguars",
-        "abbr": "JAX",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
-        "score": "0"
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "abbr": "CIN",
+        "logo": null,
+        "score": ""
       },
       "away": {
-        "id": "5",
-        "name": "Cleveland Browns",
-        "abbr": "CLE",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
-        "score": "0"
+        "id": "TB",
+        "name": "Tampa Bay Buccaneers",
+        "abbr": "TB",
+        "logo": null,
+        "score": ""
       },
-      "odds": null
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -205.0,
+        "away_moneyline": 170.0,
+        "home_spread": -3.5,
+        "spread_price": -115.0,
+        "total": 50.5,
+        "over_price": -108.0
+      }
     },
     {
-      "id": "401872660",
-      "date": "2026-09-13T17:00Z",
-      "name": "Buffalo Bills at Houston Texans",
-      "short_name": "BUF @ HOU",
-      "status": "9/13 - 1:00 PM EDT",
-      "venue": "Reliant Stadium",
+      "id": "2026_01_NO_DET",
+      "date": "2026-09-13T17:00:00+00:00",
+      "name": "New Orleans Saints at Detroit Lions",
+      "short_name": "NO @ DET",
+      "status": "Scheduled",
+      "venue": "Ford Field",
       "home": {
-        "id": "34",
-        "name": "Houston Texans",
-        "abbr": "HOU",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "2",
-        "name": "Buffalo Bills",
-        "abbr": "BUF",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872928",
-      "date": "2026-09-13T20:25Z",
-      "name": "Miami Dolphins at Las Vegas Raiders",
-      "short_name": "MIA @ LV",
-      "status": "9/13 - 4:25 PM EDT",
-      "venue": "Allegiant Stadium",
-      "home": {
-        "id": "13",
-        "name": "Las Vegas Raiders",
-        "abbr": "LV",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "15",
-        "name": "Miami Dolphins",
-        "abbr": "MIA",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872927",
-      "date": "2026-09-13T20:25Z",
-      "name": "Green Bay Packers at Minnesota Vikings",
-      "short_name": "GB @ MIN",
-      "status": "9/13 - 4:25 PM EDT",
-      "venue": "U.S. Bank Stadium",
-      "home": {
-        "id": "16",
-        "name": "Minnesota Vikings",
-        "abbr": "MIN",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "9",
-        "name": "Green Bay Packers",
-        "abbr": "GB",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872929",
-      "date": "2026-09-13T20:25Z",
-      "name": "Washington Commanders at Philadelphia Eagles",
-      "short_name": "WSH @ PHI",
-      "status": "9/13 - 4:25 PM EDT",
-      "venue": "Lincoln Financial Field",
-      "home": {
-        "id": "21",
-        "name": "Philadelphia Eagles",
-        "abbr": "PHI",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "28",
-        "name": "Washington Commanders",
-        "abbr": "WSH",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872926",
-      "date": "2026-09-13T20:25Z",
-      "name": "Arizona Cardinals at Los Angeles Chargers",
-      "short_name": "ARI @ LAC",
-      "status": "9/13 - 4:25 PM EDT",
-      "venue": "SoFi Stadium",
-      "home": {
-        "id": "24",
-        "name": "Los Angeles Chargers",
-        "abbr": "LAC",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "22",
-        "name": "Arizona Cardinals",
-        "abbr": "ARI",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872930",
-      "date": "2026-09-14T00:20Z",
-      "name": "Dallas Cowboys at New York Giants",
-      "short_name": "DAL @ NYG",
-      "status": "9/13 - 8:20 PM EDT",
-      "venue": "MetLife Stadium",
-      "home": {
-        "id": "19",
-        "name": "New York Giants",
-        "abbr": "NYG",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "6",
-        "name": "Dallas Cowboys",
-        "abbr": "DAL",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872931",
-      "date": "2026-09-15T00:15Z",
-      "name": "Denver Broncos at Kansas City Chiefs",
-      "short_name": "DEN @ KC",
-      "status": "9/14 - 8:15 PM EDT",
-      "venue": "Arrowhead Stadium",
-      "home": {
-        "id": "12",
-        "name": "Kansas City Chiefs",
-        "abbr": "KC",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "7",
-        "name": "Denver Broncos",
-        "abbr": "DEN",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
-        "score": "0"
-      },
-      "odds": null
-    },
-    {
-      "id": "401872932",
-      "date": "2026-09-18T00:15Z",
-      "name": "Detroit Lions at Buffalo Bills",
-      "short_name": "DET @ BUF",
-      "status": "9/17 - 8:15 PM EDT",
-      "venue": "Highmark Stadium",
-      "home": {
-        "id": "2",
-        "name": "Buffalo Bills",
-        "abbr": "BUF",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
-        "score": "0"
-      },
-      "away": {
-        "id": "8",
+        "id": "DET",
         "name": "Detroit Lions",
         "abbr": "DET",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
-        "score": "0"
+        "logo": null,
+        "score": ""
       },
-      "odds": null
+      "away": {
+        "id": "NO",
+        "name": "New Orleans Saints",
+        "abbr": "NO",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -305.0,
+        "away_moneyline": 245.0,
+        "home_spread": -7.0,
+        "spread_price": -105.0,
+        "total": 49.5,
+        "over_price": -118.0
+      }
+    },
+    {
+      "id": "2026_01_BUF_HOU",
+      "date": "2026-09-13T17:00:00+00:00",
+      "name": "Buffalo Bills at Houston Texans",
+      "short_name": "BUF @ HOU",
+      "status": "Scheduled",
+      "venue": "Reliant Stadium",
+      "home": {
+        "id": "HOU",
+        "name": "Houston Texans",
+        "abbr": "HOU",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "abbr": "BUF",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -105.0,
+        "away_moneyline": -115.0,
+        "home_spread": 1.5,
+        "spread_price": -118.0,
+        "total": 44.5,
+        "over_price": -110.0
+      }
+    },
+    {
+      "id": "2026_01_BAL_IND",
+      "date": "2026-09-13T17:00:00+00:00",
+      "name": "Baltimore Ravens at Indianapolis Colts",
+      "short_name": "BAL @ IND",
+      "status": "Scheduled",
+      "venue": "Lucas Oil Stadium",
+      "home": {
+        "id": "IND",
+        "name": "Indianapolis Colts",
+        "abbr": "IND",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "abbr": "BAL",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": 145.0,
+        "away_moneyline": -175.0,
+        "home_spread": 3.5,
+        "spread_price": -115.0,
+        "total": 47.5,
+        "over_price": -115.0
+      }
+    },
+    {
+      "id": "2026_01_CLE_JAX",
+      "date": "2026-09-13T17:00:00+00:00",
+      "name": "Cleveland Browns at Jacksonville Jaguars",
+      "short_name": "CLE @ JAX",
+      "status": "Scheduled",
+      "venue": "EverBank Stadium",
+      "home": {
+        "id": "JAX",
+        "name": "Jacksonville Jaguars",
+        "abbr": "JAX",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "abbr": "CLE",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -440.0,
+        "away_moneyline": 340.0,
+        "home_spread": -8.5,
+        "spread_price": -108.0,
+        "total": 40.5,
+        "over_price": -110.0
+      }
+    },
+    {
+      "id": "2026_01_ATL_PIT",
+      "date": "2026-09-13T17:00:00+00:00",
+      "name": "Atlanta Falcons at Pittsburgh Steelers",
+      "short_name": "ATL @ PIT",
+      "status": "Scheduled",
+      "venue": "Acrisure Stadium",
+      "home": {
+        "id": "PIT",
+        "name": "Pittsburgh Steelers",
+        "abbr": "PIT",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "ATL",
+        "name": "Atlanta Falcons",
+        "abbr": "ATL",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -185.0,
+        "away_moneyline": 154.0,
+        "home_spread": -3.5,
+        "spread_price": -102.0,
+        "total": 42.5,
+        "over_price": -105.0
+      }
+    },
+    {
+      "id": "2026_01_NYJ_TEN",
+      "date": "2026-09-13T17:00:00+00:00",
+      "name": "New York Jets at Tennessee Titans",
+      "short_name": "NYJ @ TEN",
+      "status": "Scheduled",
+      "venue": "Nissan Stadium",
+      "home": {
+        "id": "TEN",
+        "name": "Tennessee Titans",
+        "abbr": "TEN",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "NYJ",
+        "name": "New York Jets",
+        "abbr": "NYJ",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -125.0,
+        "away_moneyline": 105.0,
+        "home_spread": -1.5,
+        "spread_price": -110.0,
+        "total": 39.5,
+        "over_price": -110.0
+      }
+    },
+    {
+      "id": "2026_01_ARI_LAC",
+      "date": "2026-09-13T20:25:00+00:00",
+      "name": "Arizona Cardinals at Los Angeles Chargers",
+      "short_name": "ARI @ LAC",
+      "status": "Scheduled",
+      "venue": "SoFi Stadium",
+      "home": {
+        "id": "LAC",
+        "name": "Los Angeles Chargers",
+        "abbr": "LAC",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "ARI",
+        "name": "Arizona Cardinals",
+        "abbr": "ARI",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -500.0,
+        "away_moneyline": 380.0,
+        "home_spread": -10.0,
+        "spread_price": -105.0,
+        "total": 47.5,
+        "over_price": -108.0
+      }
+    },
+    {
+      "id": "2026_01_MIA_LV",
+      "date": "2026-09-13T20:25:00+00:00",
+      "name": "Miami Dolphins at Las Vegas Raiders",
+      "short_name": "MIA @ LV",
+      "status": "Scheduled",
+      "venue": "Allegiant Stadium",
+      "home": {
+        "id": "LV",
+        "name": "Las Vegas Raiders",
+        "abbr": "LV",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "MIA",
+        "name": "Miami Dolphins",
+        "abbr": "MIA",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -185.0,
+        "away_moneyline": 154.0,
+        "home_spread": -3.5,
+        "spread_price": -105.0,
+        "total": 41.5,
+        "over_price": -102.0
+      }
+    },
+    {
+      "id": "2026_01_GB_MIN",
+      "date": "2026-09-13T20:25:00+00:00",
+      "name": "Green Bay Packers at Minnesota Vikings",
+      "short_name": "GB @ MIN",
+      "status": "Scheduled",
+      "venue": "U.S. Bank Stadium",
+      "home": {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "abbr": "MIN",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "abbr": "GB",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -122.0,
+        "away_moneyline": 102.0,
+        "home_spread": -1.5,
+        "spread_price": -108.0,
+        "total": 46.5,
+        "over_price": -108.0
+      }
+    },
+    {
+      "id": "2026_01_WAS_PHI",
+      "date": "2026-09-13T20:25:00+00:00",
+      "name": "Washington Commanders at Philadelphia Eagles",
+      "short_name": "WAS @ PHI",
+      "status": "Scheduled",
+      "venue": "Lincoln Financial Field",
+      "home": {
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "abbr": "PHI",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "WAS",
+        "name": "Washington Commanders",
+        "abbr": "WAS",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -218.0,
+        "away_moneyline": 180.0,
+        "home_spread": -5.5,
+        "spread_price": -108.0,
+        "total": 44.5,
+        "over_price": -105.0
+      }
+    },
+    {
+      "id": "2026_01_DAL_NYG",
+      "date": "2026-09-14T00:20:00+00:00",
+      "name": "Dallas Cowboys at New York Giants",
+      "short_name": "DAL @ NYG",
+      "status": "Scheduled",
+      "venue": "MetLife Stadium",
+      "home": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "abbr": "NYG",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "abbr": "DAL",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": 136.0,
+        "away_moneyline": -162.0,
+        "home_spread": 3.0,
+        "spread_price": -112.0,
+        "total": 48.5,
+        "over_price": -105.0
+      }
+    },
+    {
+      "id": "2026_01_DEN_KC",
+      "date": "2026-09-15T00:15:00+00:00",
+      "name": "Denver Broncos at Kansas City Chiefs",
+      "short_name": "DEN @ KC",
+      "status": "Scheduled",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "home": {
+        "id": "KC",
+        "name": "Kansas City Chiefs",
+        "abbr": "KC",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "DEN",
+        "name": "Denver Broncos",
+        "abbr": "DEN",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -148.0,
+        "away_moneyline": 124.0,
+        "home_spread": -3.0,
+        "spread_price": 100.0,
+        "total": 43.5,
+        "over_price": -105.0
+      }
+    },
+    {
+      "id": "2026_02_DET_BUF",
+      "date": "2026-09-18T00:15:00+00:00",
+      "name": "Detroit Lions at Buffalo Bills",
+      "short_name": "DET @ BUF",
+      "status": "Scheduled",
+      "venue": "Highmark Stadium",
+      "home": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "abbr": "BUF",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "DET",
+        "name": "Detroit Lions",
+        "abbr": "DET",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -155.0,
+        "away_moneyline": 130.0,
+        "home_spread": -3.0,
+        "spread_price": -110.0,
+        "total": 52.5,
+        "over_price": -105.0
+      }
     }
   ],
   "teams": [
     {
-      "id": "22",
+      "id": "ARI",
       "name": "Arizona Cardinals",
       "abbr": "ARI",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -408,17 +544,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "1",
+      "id": "ATL",
       "name": "Atlanta Falcons",
       "abbr": "ATL",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -426,17 +562,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "33",
+      "id": "BAL",
       "name": "Baltimore Ravens",
       "abbr": "BAL",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -444,17 +580,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "2",
+      "id": "BUF",
       "name": "Buffalo Bills",
       "abbr": "BUF",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -462,17 +598,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "29",
+      "id": "CAR",
       "name": "Carolina Panthers",
       "abbr": "CAR",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -480,17 +616,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "3",
+      "id": "CHI",
       "name": "Chicago Bears",
       "abbr": "CHI",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -498,17 +634,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "4",
+      "id": "CIN",
       "name": "Cincinnati Bengals",
       "abbr": "CIN",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -516,17 +652,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "5",
+      "id": "CLE",
       "name": "Cleveland Browns",
       "abbr": "CLE",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -534,17 +670,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "6",
+      "id": "DAL",
       "name": "Dallas Cowboys",
       "abbr": "DAL",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -552,17 +688,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "7",
+      "id": "DEN",
       "name": "Denver Broncos",
       "abbr": "DEN",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -570,17 +706,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "8",
+      "id": "DET",
       "name": "Detroit Lions",
       "abbr": "DET",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -588,17 +724,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "9",
+      "id": "GB",
       "name": "Green Bay Packers",
       "abbr": "GB",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -606,17 +742,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "34",
+      "id": "HOU",
       "name": "Houston Texans",
       "abbr": "HOU",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -624,17 +760,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "11",
+      "id": "IND",
       "name": "Indianapolis Colts",
       "abbr": "IND",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -642,17 +778,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "30",
+      "id": "JAX",
       "name": "Jacksonville Jaguars",
       "abbr": "JAX",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -660,17 +796,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "12",
+      "id": "KC",
       "name": "Kansas City Chiefs",
       "abbr": "KC",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -678,17 +814,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "13",
+      "id": "LV",
       "name": "Las Vegas Raiders",
       "abbr": "LV",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -696,17 +832,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "24",
+      "id": "LAC",
       "name": "Los Angeles Chargers",
       "abbr": "LAC",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -714,17 +850,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "14",
+      "id": "LA",
       "name": "Los Angeles Rams",
-      "abbr": "LAR",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
-      "conference": "National Football Conference",
+      "abbr": "LA",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -732,17 +868,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "15",
+      "id": "MIA",
       "name": "Miami Dolphins",
       "abbr": "MIA",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -750,17 +886,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "16",
+      "id": "MIN",
       "name": "Minnesota Vikings",
       "abbr": "MIN",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -768,17 +904,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "17",
+      "id": "NE",
       "name": "New England Patriots",
       "abbr": "NE",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -786,17 +922,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "18",
+      "id": "NO",
       "name": "New Orleans Saints",
       "abbr": "NO",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -804,17 +940,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "19",
+      "id": "NYG",
       "name": "New York Giants",
       "abbr": "NYG",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -822,17 +958,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "20",
+      "id": "NYJ",
       "name": "New York Jets",
       "abbr": "NYJ",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -840,17 +976,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "21",
+      "id": "PHI",
       "name": "Philadelphia Eagles",
       "abbr": "PHI",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -858,17 +994,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "23",
+      "id": "PIT",
       "name": "Pittsburgh Steelers",
       "abbr": "PIT",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -876,17 +1012,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "25",
+      "id": "SF",
       "name": "San Francisco 49ers",
       "abbr": "SF",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -894,17 +1030,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "26",
+      "id": "SEA",
       "name": "Seattle Seahawks",
       "abbr": "SEA",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -912,17 +1048,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "27",
+      "id": "TB",
       "name": "Tampa Bay Buccaneers",
       "abbr": "TB",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
-      "conference": "National Football Conference",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -930,17 +1066,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "10",
+      "id": "TEN",
       "name": "Tennessee Titans",
       "abbr": "TEN",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
-      "conference": "American Football Conference",
+      "logo": null,
+      "conference": "AFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -948,17 +1084,17 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null
     },
     {
-      "id": "28",
+      "id": "WAS",
       "name": "Washington Commanders",
-      "abbr": "WSH",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-      "conference": "National Football Conference",
+      "abbr": "WAS",
+      "logo": null,
+      "conference": "NFC",
       "wins": 0,
       "losses": 0,
       "ties": 0,
@@ -966,7 +1102,7 @@
       "points_for": 0.0,
       "points_against": 0.0,
       "point_diff": 0.0,
-      "win_pct": 0.0,
+      "win_pct": 0,
       "offense_rank": null,
       "defense_rank": null,
       "differential_rank": null

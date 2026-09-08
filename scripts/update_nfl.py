@@ -1,4 +1,6 @@
 import datetime as dt
+import csv
+import io
 import json
 import os
 import re
@@ -12,6 +14,7 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
 ESPN_STANDINGS = "https://site.api.espn.com/apis/v2/sports/football/nfl/standings"
 ODDS = "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/"
+NFLVERSE_GAMES = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
 
 
 def get_json(url, params=None):
@@ -50,37 +53,60 @@ def stat_value(stats, name, default=0.0):
 now = dt.datetime.now(dt.timezone.utc)
 season = now.year if now.month >= 3 else now.year - 1
 
-standings_payload = get_json(ESPN_STANDINGS, {"season": season, "seasontype": 2})
+TEAM_INFO = {
+    "ARI": ("Arizona Cardinals", "NFC"), "ATL": ("Atlanta Falcons", "NFC"),
+    "BAL": ("Baltimore Ravens", "AFC"), "BUF": ("Buffalo Bills", "AFC"),
+    "CAR": ("Carolina Panthers", "NFC"), "CHI": ("Chicago Bears", "NFC"),
+    "CIN": ("Cincinnati Bengals", "AFC"), "CLE": ("Cleveland Browns", "AFC"),
+    "DAL": ("Dallas Cowboys", "NFC"), "DEN": ("Denver Broncos", "AFC"),
+    "DET": ("Detroit Lions", "NFC"), "GB": ("Green Bay Packers", "NFC"),
+    "HOU": ("Houston Texans", "AFC"), "IND": ("Indianapolis Colts", "AFC"),
+    "JAX": ("Jacksonville Jaguars", "AFC"), "KC": ("Kansas City Chiefs", "AFC"),
+    "LA": ("Los Angeles Rams", "NFC"), "LAC": ("Los Angeles Chargers", "AFC"),
+    "LV": ("Las Vegas Raiders", "AFC"), "MIA": ("Miami Dolphins", "AFC"),
+    "MIN": ("Minnesota Vikings", "NFC"), "NE": ("New England Patriots", "AFC"),
+    "NO": ("New Orleans Saints", "NFC"), "NYG": ("New York Giants", "NFC"),
+    "NYJ": ("New York Jets", "AFC"), "PHI": ("Philadelphia Eagles", "NFC"),
+    "PIT": ("Pittsburgh Steelers", "AFC"), "SEA": ("Seattle Seahawks", "NFC"),
+    "SF": ("San Francisco 49ers", "NFC"), "TB": ("Tampa Bay Buccaneers", "NFC"),
+    "TEN": ("Tennessee Titans", "AFC"), "WAS": ("Washington Commanders", "NFC"),
+}
+
+request = urllib.request.Request(NFLVERSE_GAMES, headers={"User-Agent": "RalloPicks/1.0"})
+with urllib.request.urlopen(request, timeout=60) as response:
+    schedule_rows = list(csv.DictReader(io.TextIOWrapper(response, encoding="utf-8")))
+season_rows = [row for row in schedule_rows
+               if row.get("season") == str(season) and row.get("game_type") == "REG"]
+
 teams = []
-for conference in standings_payload.get("children", []):
-    conference_name = conference.get("name", "NFL")
-    for entry in conference.get("standings", {}).get("entries", []):
-        team = entry.get("team", {})
-        stats = stat_map(entry)
-        wins = int(stat_value(stats, "wins"))
-        losses = int(stat_value(stats, "losses"))
-        ties = int(stat_value(stats, "ties"))
-        games_played = wins + losses + ties
-        points_for = stat_value(stats, "pointsFor")
-        points_against = stat_value(stats, "pointsAgainst")
-        teams.append({
-            "id": team.get("id"),
-            "name": team.get("displayName") or team.get("name"),
-            "abbr": team.get("abbreviation"),
-            "logo": ((team.get("logos") or [{}])[0]).get("href"),
-            "conference": conference_name,
-            "wins": wins,
-            "losses": losses,
-            "ties": ties,
-            "games_played": games_played,
-            "points_for": points_for,
-            "points_against": points_against,
-            "point_diff": stat_value(stats, "pointDifferential", points_for - points_against),
-            "win_pct": stat_value(stats, "winPercent"),
-            "offense_rank": None,
-            "defense_rank": None,
-            "differential_rank": None,
-        })
+for abbr, (name, conference) in TEAM_INFO.items():
+    team_games = [row for row in season_rows
+                  if row.get("away_team") == abbr or row.get("home_team") == abbr]
+    completed = [row for row in team_games
+                 if row.get("away_score") not in (None, "") and row.get("home_score") not in (None, "")]
+    wins = losses = ties = 0
+    points_for = points_against = 0.0
+    for row in completed:
+        home = row.get("home_team") == abbr
+        scored = number(row.get("home_score") if home else row.get("away_score"))
+        allowed = number(row.get("away_score") if home else row.get("home_score"))
+        points_for += scored
+        points_against += allowed
+        if scored > allowed:
+            wins += 1
+        elif scored < allowed:
+            losses += 1
+        else:
+            ties += 1
+    games_played = len(completed)
+    teams.append({
+        "id": abbr, "name": name, "abbr": abbr, "logo": None,
+        "conference": conference, "wins": wins, "losses": losses, "ties": ties,
+        "games_played": games_played, "points_for": points_for,
+        "points_against": points_against, "point_diff": points_for - points_against,
+        "win_pct": (wins + ties * .5) / games_played if games_played else 0,
+        "offense_rank": None, "defense_rank": None, "differential_rank": None,
+    })
 
 
 def apply_rank(key, rank_key, reverse=False):
@@ -94,41 +120,42 @@ apply_rank("points_for", "offense_rank", reverse=True)
 apply_rank("points_against", "defense_rank", reverse=False)
 apply_rank("point_diff", "differential_rank", reverse=True)
 
-scoreboard_payload = get_json(ESPN_SCOREBOARD, {"dates": season, "seasontype": 2, "limit": 1000})
 window_start = now - dt.timedelta(hours=12)
 window_end = now + dt.timedelta(days=10)
 games = []
-for event in scoreboard_payload.get("events", []):
+for row in season_rows:
     try:
-        event_time = dt.datetime.fromisoformat(event.get("date", "").replace("Z", "+00:00"))
-    except ValueError:
+        event_time = dt.datetime.fromisoformat(
+            f"{row.get('gameday')}T{row.get('gametime') or '12:00'}:00-04:00"
+        ).astimezone(dt.timezone.utc)
+    except (TypeError, ValueError):
         continue
     if not window_start <= event_time <= window_end:
         continue
-    competition = (event.get("competitions") or [{}])[0]
-    competitors = competition.get("competitors", [])
-
     def side(home_away):
-        competitor = next((item for item in competitors if item.get("homeAway") == home_away), {})
-        team = competitor.get("team", {})
+        abbr = row.get(f"{home_away}_team")
+        name = TEAM_INFO.get(abbr, (abbr, "NFL"))[0]
         return {
-            "id": team.get("id"),
-            "name": team.get("displayName") or team.get("name"),
-            "abbr": team.get("abbreviation"),
-            "logo": team.get("logo") or ((team.get("logos") or [{}])[0]).get("href"),
-            "score": competitor.get("score"),
+            "id": abbr, "name": name, "abbr": abbr, "logo": None,
+            "score": row.get(f"{home_away}_score"),
         }
 
     games.append({
-        "id": event.get("id"),
-        "date": event.get("date"),
-        "name": event.get("name"),
-        "short_name": event.get("shortName"),
-        "status": event.get("status", {}).get("type", {}).get("shortDetail") or "Scheduled",
-        "venue": competition.get("venue", {}).get("fullName"),
+        "id": row.get("game_id"), "date": event_time.isoformat(),
+        "name": f"{side('away')['name']} at {side('home')['name']}",
+        "short_name": f"{row.get('away_team')} @ {row.get('home_team')}",
+        "status": "Final" if row.get("home_score") not in (None, "") else "Scheduled",
+        "venue": row.get("stadium"),
         "home": side("home"),
         "away": side("away"),
-        "odds": None,
+        "odds": {
+            "book": "nflverse consensus", "home_moneyline": number(row.get("home_moneyline"), None),
+            "away_moneyline": number(row.get("away_moneyline"), None),
+            "home_spread": -number(row.get("spread_line"), 0),
+            "spread_price": number(row.get("home_spread_odds"), None),
+            "total": number(row.get("total_line"), None),
+            "over_price": number(row.get("over_odds"), None),
+        },
     })
 
 odds_key = os.environ.get("ODDS_API_KEY")
