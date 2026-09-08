@@ -8,7 +8,7 @@ Required GitHub secret:
 Automatic updater:
 - `.github/workflows/update-data.yml`
 - Runs three times per day and can also be run manually from GitHub Actions.
-- Updates `data/odds.json` and `data/arsenals.json`.
+- Updates MLB data plus `data/nfl.json` for NFL matchups, standings, offense/defense ranks, and moneylines.
 
 Website:
 - `index.html`

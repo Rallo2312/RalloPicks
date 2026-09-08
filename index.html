@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#0b2b22" />
-<title>RalloPicks — Independent Baseball Research</title>
-<meta name="description" content="Independent baseball prop research, player analytics, and daily home run estimates. Not a sportsbook. 21+ only." />
+<title>RalloPicks — Independent MLB & NFL Research</title>
+<meta name="description" content="Independent MLB and NFL matchup research, team rankings, player analytics, moneylines, and daily home run estimates. Not a sportsbook. 21+ only." />
 <style>
 :root{--bg:#07130f;--panel:#0d241c;--card:#123a2d;--card2:#0c2e24;--yellow:#ffb612;--green:#69e6a7;--red:#ff6b78;--text:#f7fbf9;--muted:#a8c2b8;--line:rgba(255,182,18,.28);--blue:#55c7ff;--purple:#c66bff;--orange:#ff8a35}body[data-platform="underdog"]{--yellow:#ff7a1a;--green:#cfff47;--line:rgba(255,122,26,.32);--blue:#b580ff;--purple:#ff57bd;--orange:#ffb13b}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 14% 0%,rgba(85,199,255,.18),transparent 28%),radial-gradient(circle at 86% 5%,rgba(198,107,255,.16),transparent 26%),radial-gradient(circle at 50% -10%,#176046 0,#081b14 42%,#050d0a 100%);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}body[data-platform="underdog"]{background:radial-gradient(circle at 12% 0%,rgba(255,122,26,.22),transparent 30%),radial-gradient(circle at 88% 4%,rgba(181,128,255,.2),transparent 28%),radial-gradient(circle at 50% -10%,#4a2418 0,#151016 42%,#08070a 100%)}
@@ -53,32 +53,43 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .feed-badge{display:inline-flex;align-items:center;gap:5px;color:#57e89a;background:rgba(38,208,124,.09);border:1px solid rgba(38,208,124,.35);border-radius:999px;padding:6px 9px;font-size:9px;font-weight:900;text-transform:uppercase;white-space:nowrap}
 .prop-type-tabs{margin:0 0 9px}.pitcher-select{width:100%;background:#09251c;color:#fff;border:1px solid rgba(255,182,18,.32);border-radius:9px;padding:9px;font-size:10px;font-weight:800}.bvp-wrap{padding:10px}.bvp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.bvp-stat{background:#142a25;border-radius:8px;padding:8px;text-align:center}.bvp-stat b{display:block;color:var(--yellow);font-size:12px}.bvp-stat span{font-size:7px;color:var(--muted)}.bvp-years{margin-top:8px}.bvp-year{display:grid;grid-template-columns:44px repeat(5,1fr);gap:5px;font-size:8px;padding:6px 2px;border-top:1px solid rgba(255,255,255,.06);text-align:right}.bvp-year b:first-child{text-align:left;color:var(--yellow)}@media(max-width:760px){.bvp-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.hr-card{grid-template-columns:48px minmax(0,1fr) 66px}.analytics-top{grid-template-columns:58px 1fr}.analytics-top .player-avatar.large{width:58px;height:58px;font-size:15px}.analytics-top .fav-btn{grid-column:1/-1}.saved-panel{position:static}}
+.sport-switch{display:flex;gap:4px;padding:4px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(0,0,0,.22)}.sport-switch button{border:0;border-radius:9px;padding:8px 11px;background:transparent;color:var(--muted);font-size:10px;font-weight:1000;cursor:pointer}.sport-switch button.active{background:#fff;color:#102d23;box-shadow:0 5px 16px rgba(0,0,0,.2)}
+.nfl-rank-list{display:grid;gap:7px;padding:9px}.nfl-rank-row{display:grid;grid-template-columns:34px minmax(0,1fr) 54px 54px;gap:7px;align-items:center;padding:8px;border-radius:11px;background:rgba(255,255,255,.03);font-size:10px}.nfl-rank-row b{font-size:11px}.rank-pill{display:grid;place-items:center;min-height:30px;border:1px solid rgba(255,255,255,.09);border-radius:9px;background:rgba(0,0,0,.16);font-weight:1000}.rank-pill.good{color:var(--green);border-color:color-mix(in srgb,var(--green) 28%,transparent)}.rank-pill.mid{color:var(--yellow)}.rank-pill.tough{color:#ff9da6}.nfl-rank-head{color:var(--muted);font-size:8px;text-align:center}
+.nfl-matchups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.nfl-game-card{padding:14px;border:1px solid rgba(255,182,18,.16);border-radius:17px;background:linear-gradient(145deg,#123d2f,#0b2a20)}.nfl-game-top{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:9px;margin-bottom:11px}.nfl-team-line{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:9px;align-items:center;margin:8px 0}.nfl-team-line strong{font-size:13px}.nfl-record{color:var(--muted);font-size:9px;margin-top:2px}.nfl-score{font-size:13px;font-weight:1000}.nfl-edge-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07)}.nfl-edge{padding:8px;border-radius:10px;background:rgba(0,0,0,.15);font-size:9px;line-height:1.4}.nfl-edge b{display:block;color:var(--yellow);font-size:10px}.nfl-edge.advantage{border:1px solid color-mix(in srgb,var(--green) 30%,transparent);background:color-mix(in srgb,var(--green) 8%,transparent)}.nfl-market{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:9px}.nfl-market div{padding:8px 5px;text-align:center;border-radius:9px;background:rgba(0,0,0,.16)}.nfl-market b{display:block;color:var(--yellow);font-size:11px}.nfl-market span{font-size:8px;color:var(--muted)}
+.nfl-rank-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.nfl-team-rank-card{display:grid;grid-template-columns:38px minmax(0,1fr) repeat(3,54px);gap:8px;align-items:center;padding:10px;border:1px solid rgba(255,255,255,.06);border-radius:13px;background:#123a2d}.nfl-team-rank-card strong{font-size:11px}.nfl-team-rank-card small{display:block;color:var(--muted);font-size:8px;margin-top:3px}.nfl-table{width:100%;border-collapse:collapse;font-size:10px}.nfl-table th,.nfl-table td{padding:9px 7px;border-bottom:1px solid rgba(255,255,255,.06);text-align:right}.nfl-table th{position:sticky;top:0;background:#0d2a21;color:var(--muted);font-size:8px;text-transform:uppercase}.nfl-table th:nth-child(1),.nfl-table td:nth-child(1){text-align:left}.nfl-table-team{display:flex;align-items:center;gap:7px;font-weight:900}.nfl-empty-note{padding:18px;border:1px dashed rgba(255,182,18,.25);border-radius:13px;text-align:center;color:var(--muted);font-size:11px;line-height:1.5}
+@media(max-width:900px){.nfl-matchups,.nfl-rank-grid{grid-template-columns:1fr}}@media(max-width:760px){.sport-switch button{padding:7px 9px}.top-actions{gap:6px}.nfl-market{grid-template-columns:repeat(2,1fr)}.nfl-team-rank-card{grid-template-columns:34px minmax(0,1fr) repeat(3,45px)}.nfl-table{min-width:560px}.nfl-table-wrap{overflow:auto}.nfl-rank-row{grid-template-columns:30px minmax(0,1fr) 48px 48px}}
 </style>
 </head>
 <body>
 <div class="app">
   <header class="topbar">
     <div class="brand"><div class="brand-logo" aria-label="RalloPicks logo"><span>RP</span></div><div><h1>Rallo<em>Picks</em></h1><div class="sub" id="dateLabel">MLB matchup + prop lab</div></div></div>
-    <div class="top-actions"><div class="platform-switch" role="tablist" aria-label="Fantasy platform"><button id="platformPrizePicks" onclick="setPlatform('PrizePicks')">PRIZEPICKS</button><button id="platformUnderdog" onclick="setPlatform('Underdog')">UNDERDOG</button></div><div class="live" id="liveState">● LIVE DATA</div></div>
+    <div class="top-actions"><div class="sport-switch" role="tablist" aria-label="Sport"><button id="sportMLB" class="active" onclick="setSport('MLB')">⚾ MLB</button><button id="sportNFL" onclick="setSport('NFL')">🏈 NFL</button></div><div class="platform-switch" role="tablist" aria-label="Fantasy platform"><button id="platformPrizePicks" onclick="setPlatform('PrizePicks')">PRIZEPICKS</button><button id="platformUnderdog" onclick="setPlatform('Underdog')">UNDERDOG</button></div><div class="live" id="liveState">● LIVE DATA</div></div>
   </header>
 
-  <nav class="nav">
+  <nav class="nav" id="mlbNav">
     <button class="active" data-view="top20">🔥 Top 20 HR</button>
     <button data-view="batterlab">🔎 Player Lab</button>
     <button data-view="moneyline">💵 Moneyline</button>
     <button data-view="standings">🏆 Standings</button>
   </nav>
+  <nav class="nav" id="nflNav" hidden>
+    <button class="active" data-nfl-view="matchups">🏈 Matchups</button>
+    <button data-nfl-view="ranks">📊 Off / Def Ranks</button>
+    <button data-nfl-view="moneyline">💵 Moneyline</button>
+    <button data-nfl-view="standings">🏆 Standings</button>
+  </nav>
 
   <section class="membership-bar" aria-label="RalloPicks membership">
-    <div class="membership-copy"><strong id="membershipHeadline">Player Lab is for active members</strong><span id="membershipSummary">Join for $10/month, then sign in with the same email used at checkout.</span></div>
+    <div class="membership-copy"><strong id="membershipHeadline">RalloPicks research is for active members</strong><span id="membershipSummary">One membership includes MLB and NFL research.</span></div>
     <div class="membership-actions"><button class="account-link" id="accountButton" onclick="openMemberDialog()">Member sign in</button><a class="join-link" href="https://buy.stripe.com/9B614n2WE4C31Ud4g77g400">Join for $10/month</a><a class="manage-link" href="https://billing.stripe.com/p/login/9B614n2WE4C31Ud4g77g400" target="_blank" rel="noopener noreferrer">Manage membership</a></div>
   </section>
 
   <section class="locked-dashboard" id="lockedDashboard">
-    <div class="lock-icon" aria-hidden="true">🔒</div><h2>Members-only research</h2><p>Top 20 HR Chances, Player Lab, Moneyline, standings, matchup data, and saved research are available only to active RalloPicks members.</p><button onclick="openMemberDialog()">Member sign in</button>
+    <div class="lock-icon" aria-hidden="true">🔒</div><h2>Members-only research</h2><p>MLB Player Lab, NFL offense and defense ranks, moneylines, standings, matchup data, and saved research are available only to active RalloPicks members.</p><button onclick="openMemberDialog()">Member sign in</button>
   </section>
 
-  <main class="layout" id="researchLayout" hidden>
+  <main class="layout" id="mlbResearchLayout" hidden>
     <aside class="left-col">
       <section class="panel saved-panel" aria-label="Saved picks">
         <div class="panel-head"><h3>⭐ My Picks <span class="saved-count" id="savedCount">0</span></h3><button class="clear-saved" id="clearSavedBtn" onclick="clearSaved()">CLEAR ALL</button></div>
@@ -105,8 +116,39 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 
   </main>
 
+  <main class="layout" id="nflResearchLayout" hidden>
+    <aside class="left-col">
+      <section class="panel">
+        <div class="panel-head"><h3>🏈 Matchup Radar</h3><span class="tiny">Rank 1–32</span></div>
+        <div class="nfl-rank-list" id="nflRankQuick"><div class="empty">Loading team ranks…</div></div>
+      </section>
+      <section class="panel" id="nflStandingsPanel">
+        <div class="panel-head"><h3>NFL Standings</h3><span class="tiny" id="nflStandingsStamp">Live</span></div>
+        <div class="standings" id="nflStandings"><div class="empty">Loading standings…</div></div>
+      </section>
+    </aside>
+    <section class="panel center-col">
+      <div class="board" id="nflMatchupsView">
+        <div class="section-title"><div><h2>Upcoming NFL Matchups</h2><span>Scoring offense vs. scoring defense • current regular-season ranks</span></div><span id="nflGameCount">—</span></div>
+        <div class="nfl-matchups" id="nflMatchups"><div class="empty">Loading the NFL slate…</div></div>
+      </div>
+      <div class="board hidden-view" id="nflRanksView">
+        <div class="section-title"><div><h2>Offense & Defense Rankings</h2><span>Points per game and points allowed per game • updates after completed games</span></div><span>1–32</span></div>
+        <div class="nfl-rank-grid" id="nflRankGrid"><div class="empty">Loading ranks…</div></div>
+      </div>
+      <div class="board hidden-view" id="nflMoneylineView">
+        <div class="section-title"><div><h2>NFL Moneyline Board</h2><span>Moneyline, spread, and total from the secure daily feed</span></div><span id="nflOddsStamp">—</span></div>
+        <div class="nfl-matchups" id="nflMoneylines"><div class="empty">Loading NFL odds…</div></div>
+      </div>
+      <div class="board hidden-view" id="nflStandingsView">
+        <div class="section-title"><div><h2>NFL Standings</h2><span>Conference records, scoring, and point differential</span></div><span id="nflSeasonLabel">—</span></div>
+        <div class="nfl-table-wrap"><table class="nfl-table"><thead><tr><th>Team</th><th>Record</th><th>PF/G</th><th>PA/G</th><th>Diff</th><th>OFF</th><th>DEF</th></tr></thead><tbody id="nflStandingsTable"></tbody></table></div>
+      </div>
+    </section>
+  </main>
+
   <div class="legal-strip"><strong>Independent sports research • Not a sportsbook • 21+ only</strong><div class="legal-links"><button onclick="showPolicy('terms')">Terms</button><button onclick="showPolicy('privacy')">Privacy</button><button onclick="showPolicy('responsible')">Responsible Play</button><button onclick="showPolicy('subscription')">Subscription & Refunds</button><button onclick="showPolicy('affiliate')">Affiliate Disclosure</button></div></div>
-  <div class="footer-note">RalloPicks provides informational sports research only. It does not accept wagers, guarantee outcomes, or promise profits. Team and player names identify factual subjects only. RalloPicks is not affiliated with, sponsored by, or endorsed by Major League Baseball, its clubs, PrizePicks, Underdog, or any sportsbook.</div>
+  <div class="footer-note">RalloPicks provides informational sports research only. It does not accept wagers, guarantee outcomes, or promise profits. Team and player names identify factual subjects only. RalloPicks is not affiliated with, sponsored by, or endorsed by Major League Baseball, the National Football League, their clubs, PrizePicks, Underdog, or any sportsbook.</div>
 </div>
 <dialog class="policy-dialog" id="policyDialog"><div class="policy-head"><h2 id="policyTitle">Policies</h2><button class="policy-close" onclick="closePolicy()" aria-label="Close">×</button></div><div class="policy-body" id="policyBody"></div></dialog>
 <dialog class="member-dialog" id="memberDialog"><button class="member-close" onclick="closeMemberDialog()" aria-label="Close">×</button><div class="member-dialog-body"><h2>Member access</h2><div id="memberSignedOut"><p>Enter the email you used for your RalloPicks membership. We’ll send a secure sign-in link—no password needed.</p><label for="memberEmail" class="tiny">Email address</label><input class="member-email" id="memberEmail" type="email" autocomplete="email" placeholder="you@example.com"><button class="member-primary" id="magicLinkButton" onclick="sendMagicLink()">Email me a sign-in link</button></div><div id="memberSignedIn" hidden><div class="member-status" id="memberStatus">Checking membership…</div><button class="member-primary" id="openLabButton" onclick="openPlayerLabFromDialog()" hidden>Open Player Lab</button><button class="member-secondary" onclick="signOutMember()">Sign out</button></div><div class="member-message" id="memberMessage" aria-live="polite"></div></div></dialog>
@@ -118,26 +160,28 @@ const SUPABASE_PUBLISHABLE_KEY='sb_publishable_fl5rrIJuHfodBGPGhy2khQ_VjEhMuhu';
 const supaClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 const today=new Date();
 const ymd=today.toLocaleDateString('en-CA');
-document.getElementById('dateLabel').textContent=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' • MLB matchup + prop lab';
+const dateText=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
 function loadSaved(){try{const items=JSON.parse(localStorage.getItem('ralloSaved')||'[]');return Array.isArray(items)?items:[]}catch(e){return[]}}
-const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:localStorage.getItem('ralloPlatform')==='Underdog'?'Underdog':'PrizePicks',saved:loadSaved(),session:null,memberActive:false,membershipStatus:'signed_out',researchStarted:false};
+const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},todayHitters:[],todayPitchers:[],propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:localStorage.getItem('ralloPlatform')==='Underdog'?'Underdog':'PrizePicks',currentSport:localStorage.getItem('ralloSport')==='NFL'?'NFL':'MLB',nfl:{games:[],teams:[],season:null,updatedAt:null},nflLoaded:false,saved:loadSaved(),session:null,memberActive:false,membershipStatus:'signed_out',researchStarted:false};
 function setPlatform(name){const next=name==='Underdog'?'Underdog':'PrizePicks';state.platform=next;localStorage.setItem('ralloPlatform',next);document.body.dataset.platform=next.toLowerCase();document.getElementById('platformPrizePicks')?.classList.toggle('active',next==='PrizePicks');document.getElementById('platformUnderdog')?.classList.toggle('active',next==='Underdog');const label=document.getElementById('labPlatformLabel');if(label)label.textContent=next+' mode';if(state.currentLab){const p=state.currentLab;p.bookLines=p.bookLines||{};p.bookLines[p.book||next]=Number(p.line);p.book=next;p.line=Number(p.bookLines[next]??p.baseLine??p.line);renderCurrentLab()}}
 setPlatform(state.platform);
+function setSport(name){state.currentSport=name==='NFL'?'NFL':'MLB';localStorage.setItem('ralloSport',state.currentSport);document.getElementById('sportMLB').classList.toggle('active',state.currentSport==='MLB');document.getElementById('sportNFL').classList.toggle('active',state.currentSport==='NFL');document.getElementById('mlbNav').hidden=state.currentSport!=='MLB';document.getElementById('nflNav').hidden=state.currentSport!=='NFL';document.getElementById('dateLabel').textContent=dateText+(state.currentSport==='NFL'?' • NFL matchup + rankings lab':' • MLB matchup + prop lab');syncResearchAccess()}
+setSport(state.currentSport);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 function memberMessage(text='',error=false){const el=document.getElementById('memberMessage');el.textContent=text;el.classList.toggle('error',error)}
 function openMemberDialog(){renderMembershipUi();const d=document.getElementById('memberDialog');if(!d.open)d.showModal()}
 function closeMemberDialog(){document.getElementById('memberDialog').close()}
-function syncResearchAccess(){document.getElementById('researchLayout').hidden=!state.memberActive;document.getElementById('lockedDashboard').hidden=state.memberActive;if(state.memberActive)startMemberResearch()}
+function syncResearchAccess(){const unlocked=state.memberActive;document.getElementById('mlbResearchLayout').hidden=!(unlocked&&state.currentSport==='MLB');document.getElementById('nflResearchLayout').hidden=!(unlocked&&state.currentSport==='NFL');document.getElementById('lockedDashboard').hidden=unlocked;if(unlocked){if(state.currentSport==='MLB')startMemberResearch();else loadNFL()}}
 function startMemberResearch(){if(state.researchStarted)return;state.researchStarted=true;renderSaved();Promise.allSettled([loadStandings(),loadGames(),loadOdds(),loadArsenals()]).then(()=>loadTop20HR())}
 function renderMembershipUi(){
  const signedIn=!!state.session,signedOutEl=document.getElementById('memberSignedOut'),signedInEl=document.getElementById('memberSignedIn'),status=document.getElementById('memberStatus'),open=document.getElementById('openLabButton'),account=document.getElementById('accountButton'),headline=document.getElementById('membershipHeadline'),summary=document.getElementById('membershipSummary');
  signedOutEl.hidden=signedIn;signedInEl.hidden=!signedIn;open.hidden=!state.memberActive;
  syncResearchAccess();
- if(!signedIn){account.textContent='Member sign in';headline.textContent='RalloPicks research is for active members';summary.textContent='Join for $10/month, then sign in with the same email used at checkout.';return}
+ if(!signedIn){account.textContent='Member sign in';headline.textContent='RalloPicks research is for active members';summary.textContent='One membership includes MLB and NFL research.';return}
  const email=state.session.user?.email||'your email';account.textContent=state.memberActive?'✓ Member active':'Check membership';
  if(state.membershipStatus==='checking')status.innerHTML=`Signed in as <b>${esc(email)}</b><br>Checking membership…`;
- else if(state.memberActive){status.innerHTML=`Signed in as <b>${esc(email)}</b><br>Active membership confirmed.`;headline.textContent='Your Player Lab access is active';summary.textContent=`Signed in as ${email}.`;}
- else{status.innerHTML=`Signed in as <b>${esc(email)}</b><br>No active membership was found for this email.`;headline.textContent='Membership sign-in confirmed';summary.textContent='Player Lab stays locked until an active Stripe membership is found.';}
+ else if(state.memberActive){status.innerHTML=`Signed in as <b>${esc(email)}</b><br>Active membership confirmed.`;headline.textContent='Your RalloPicks access is active';summary.textContent=`MLB and NFL research unlocked • signed in as ${email}.`;}
+ else{status.innerHTML=`Signed in as <b>${esc(email)}</b><br>No active membership was found for this email.`;headline.textContent='Membership sign-in confirmed';summary.textContent='Research stays locked until an active Stripe membership is found.';}
 }
 async function checkMembership(session){
  state.session=session||null;state.memberActive=false;state.membershipStatus=session?'checking':'signed_out';renderMembershipUi();
@@ -155,7 +199,7 @@ async function sendMagicLink(){
 }
 async function signOutMember(){await supaClient.auth.signOut();state.session=null;state.memberActive=false;state.membershipStatus='signed_out';memberMessage('Signed out.');renderMembershipUi();}
 function requireMembership(){if(state.memberActive)return true;openMemberDialog();memberMessage(state.session?'An active membership is required to open the research dashboard.':'Sign in to open the research dashboard.',true);return false}
-function openPlayerLabFromDialog(){if(!state.memberActive)return;closeMemberDialog();switchView('batterlab')}
+function openPlayerLabFromDialog(){if(!state.memberActive)return;closeMemberDialog();setSport('MLB');switchView('batterlab')}
 async function initMembership(){const {data}=await supaClient.auth.getSession();await checkMembership(data.session);if(new URLSearchParams(location.search).get('checkout')==='success'&&!state.memberActive){openMemberDialog();memberMessage('Checkout complete. Sign in with the same email you used at Stripe to unlock your membership.')}supaClient.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>checkMembership(session),0)});}
 const SAFE_PIXEL='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const logo=id=>SAFE_PIXEL;
@@ -606,10 +650,53 @@ async function loadTop20HR(){
  }catch(e){root.innerHTML='<div class="empty">Today’s HR research board is temporarily unavailable.</div>'}
  state.hrBoardLoading=false;
 }
-function switchView(v){if(!requireMembership())return;document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));['matchupsView','moneylineView','batterlabView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});if(v==='matchups')document.getElementById('matchupsView').style.display='block';if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active')}if(v==='batterlab')document.getElementById('batterlabView').style.display='block';if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR()}if(v==='standings')document.getElementById('standingsPanel').scrollIntoView({behavior:'smooth'})}
+const nflRankText=value=>value?`#${value}`:'NR';
+const nflRankTone=value=>!value?'':value<=10?'good':value<=22?'mid':'tough';
+const nflRecord=team=>team?`${team.wins}-${team.losses}${team.ties?`-${team.ties}`:''}`:'0-0';
+const nflPerGame=(value,games)=>games?Number(value/games).toFixed(1):'—';
+const nflTeamFor=side=>state.nfl.teams.find(team=>String(team.id)===String(side?.id))||state.nfl.teams.find(team=>normTeam(team.name)===normTeam(side?.name))||null;
+function nflRankPill(value,label){return `<span class="rank-pill ${nflRankTone(value)}" title="${esc(label)}">${nflRankText(value)}</span>`}
+function nflEdge(offense,defense,label){
+ if(!offense?.offense_rank||!defense?.defense_rank)return `<div class="nfl-edge"><b>${esc(label)}</b>Ranks activate after completed regular-season games.</div>`;
+ const gap=defense.defense_rank-offense.offense_rank,advantage=Math.abs(gap)>=6;
+ const text=gap>=6?`${offense.abbr} offense advantage`:gap<=-6?`${defense.abbr} defense advantage`:'Balanced matchup';
+ return `<div class="nfl-edge ${advantage?'advantage':''}"><b>${esc(label)}</b>${esc(offense.abbr)} OFF ${nflRankText(offense.offense_rank)} vs ${esc(defense.abbr)} DEF ${nflRankText(defense.defense_rank)}<br>${esc(text)}</div>`;
+}
+function nflGameCard(game,moneyOnly=false){
+ const away=nflTeamFor(game.away),home=nflTeamFor(game.home),odds=game.odds||{},time=new Date(game.date).toLocaleString([],{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+ const markets=`<div class="nfl-market"><div><b>${fmtOdd(odds.away_moneyline)}</b><span>Away ML</span></div><div><b>${fmtOdd(odds.home_moneyline)}</b><span>Home ML</span></div><div><b>${odds.home_spread??'—'}</b><span>Home spread</span></div><div><b>${odds.total??'—'}</b><span>Total</span></div></div>`;
+ return `<article class="nfl-game-card"><div class="nfl-game-top"><span>${esc(time)} • ${esc(game.venue||'Venue TBD')}</span><span>${esc(game.status||'Scheduled')}</span></div><div class="nfl-team-line">${teamBadge(game.away?.abbr||game.away?.name,game.away?.id)}<div><strong>${esc(game.away?.name||'Away')}</strong><div class="nfl-record">${nflRecord(away)} • OFF ${nflRankText(away?.offense_rank)} • DEF ${nflRankText(away?.defense_rank)}</div></div><span class="nfl-score">${esc(game.away?.score||'')}</span></div><div class="nfl-team-line">${teamBadge(game.home?.abbr||game.home?.name,game.home?.id)}<div><strong>${esc(game.home?.name||'Home')}</strong><div class="nfl-record">${nflRecord(home)} • OFF ${nflRankText(home?.offense_rank)} • DEF ${nflRankText(home?.defense_rank)}</div></div><span class="nfl-score">${esc(game.home?.score||'')}</span></div>${moneyOnly?'':`<div class="nfl-edge-grid">${nflEdge(away,home,`${game.away?.abbr||'Away'} passing/scoring path`)}${nflEdge(home,away,`${game.home?.abbr||'Home'} passing/scoring path`)}</div>`}${markets}<div class="tiny" style="margin-top:7px">${esc(odds.book||'Odds feed pending')}</div></article>`;
+}
+function renderNFLRanks(){
+ const ranked=state.nfl.teams.filter(team=>team.games_played>0).sort((a,b)=>(a.differential_rank||99)-(b.differential_rank||99));
+ document.getElementById('nflRankQuick').innerHTML=ranked.length?`<div class="nfl-rank-row nfl-rank-head"><span></span><span style="text-align:left">TEAM</span><span>OFF</span><span>DEF</span></div>${ranked.slice(0,10).map(team=>`<div class="nfl-rank-row">${teamBadge(team.abbr,team.id,'small')}<b>${esc(team.abbr)}</b>${nflRankPill(team.offense_rank,'Scoring offense rank')}${nflRankPill(team.defense_rank,'Scoring defense rank')}</div>`).join('')}`:'<div class="nfl-empty-note">Regular-season ranks activate after Week 1 results. No preseason numbers are being passed off as regular-season research.</div>';
+ document.getElementById('nflRankGrid').innerHTML=state.nfl.teams.map(team=>`<div class="nfl-team-rank-card">${teamBadge(team.abbr,team.id)}<div><strong>${esc(team.name)}</strong><small>${nflRecord(team)} • ${nflPerGame(team.point_diff,team.games_played)} diff/game</small></div>${nflRankPill(team.offense_rank,'Scoring offense rank')}${nflRankPill(team.defense_rank,'Scoring defense rank')}${nflRankPill(team.differential_rank,'Point differential rank')}</div>`).join('');
+}
+function renderNFLStandings(){
+ const conferences=[...new Set(state.nfl.teams.map(team=>team.conference))];
+ document.getElementById('nflStandings').innerHTML=conferences.map(name=>`<div class="division"><div class="division-title">${esc(name)}</div>${state.nfl.teams.filter(team=>team.conference===name).map(team=>`<div class="standing-row">${teamBadge(team.abbr,team.id,'small')}<span class="team-name">${esc(team.name)}</span><span class="record">${nflRecord(team)}</span></div>`).join('')}</div>`).join('');
+ document.getElementById('nflStandingsTable').innerHTML=state.nfl.teams.map(team=>`<tr><td><span class="nfl-table-team">${teamBadge(team.abbr,team.id,'small')}${esc(team.name)}</span></td><td>${nflRecord(team)}</td><td>${nflPerGame(team.points_for,team.games_played)}</td><td>${nflPerGame(team.points_against,team.games_played)}</td><td>${team.games_played?(team.point_diff>0?'+':'')+team.point_diff:'—'}</td><td>${nflRankText(team.offense_rank)}</td><td>${nflRankText(team.defense_rank)}</td></tr>`).join('');
+}
+function renderNFL(){
+ document.getElementById('nflGameCount').textContent=state.nfl.games.length+' games';
+ document.getElementById('nflMatchups').innerHTML=state.nfl.games.length?state.nfl.games.map(game=>nflGameCard(game)).join(''):'<div class="nfl-empty-note">No NFL games are inside the next 10-day window.</div>';
+ const priced=state.nfl.games.filter(game=>game.odds);
+ document.getElementById('nflMoneylines').innerHTML=priced.length?priced.map(game=>nflGameCard(game,true)).join(''):'<div class="nfl-empty-note">NFL lines have not posted yet. The board will fill automatically when the secure odds feed publishes them.</div>';
+ document.getElementById('nflOddsStamp').textContent=state.nfl.updatedAt?new Date(state.nfl.updatedAt).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'—';
+ document.getElementById('nflStandingsStamp').textContent='Season '+state.nfl.season;
+ document.getElementById('nflSeasonLabel').textContent=state.nfl.season+' season';
+ renderNFLRanks();renderNFLStandings();
+}
+async function loadNFL(){
+ if(state.nflLoaded){renderNFL();return}
+ try{const response=await fetch(`data/nfl.json?d=${Date.now()}`);if(!response.ok)throw new Error(response.status);const data=await response.json();state.nfl={games:data.games||[],teams:data.teams||[],season:data.season,updatedAt:data.updated_at};state.nflLoaded=true;renderNFL()}catch(e){['nflMatchups','nflMoneylines','nflRankGrid','nflRankQuick','nflStandings'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<div class="nfl-empty-note">NFL research is temporarily unavailable. Please refresh in a few minutes.</div>'})}
+}
+function switchNflView(view){if(!requireMembership())return;document.querySelectorAll('#nflNav button').forEach(button=>button.classList.toggle('active',button.dataset.nflView===view));['nflMatchupsView','nflRanksView','nflMoneylineView','nflStandingsView'].forEach(id=>document.getElementById(id).style.display='none');const map={matchups:'nflMatchupsView',ranks:'nflRanksView',moneyline:'nflMoneylineView',standings:'nflStandingsView'};document.getElementById(map[view]||map.matchups).style.display='block'}
+function switchView(v){if(!requireMembership())return;document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));['matchupsView','moneylineView','batterlabView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});if(v==='matchups')document.getElementById('matchupsView').style.display='block';if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active')}if(v==='batterlab')document.getElementById('batterlabView').style.display='block';if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR()}if(v==='standings')document.getElementById('standingsPanel').scrollIntoView({behavior:'smooth'})}
 
 
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
+document.querySelectorAll('#mlbNav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
+document.querySelectorAll('#nflNav button').forEach(b=>b.onclick=()=>switchNflView(b.dataset.nflView));
 document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target===e.currentTarget)closeMemberDialog()});
 initMembership();
 </script>
