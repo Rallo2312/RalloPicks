@@ -5,6 +5,7 @@ import json
 import os
 import re
 import urllib.parse
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -234,7 +235,70 @@ for player_id, row in latest_roster.items():
                    "rush_yards": 0, "rush_tds": 0, "receptions": 0,
                    "targets": 0, "rec_yards": 0, "rec_tds": 0},
         "recent": [],
+        "lines": {"PrizePicks": {}, "Underdog": {}},
     })
+
+weekly_stats_url = (
+    f"https://github.com/nflverse/nflverse-data/releases/download/player_stats/"
+    f"stats_player_week_{season}.csv"
+)
+try:
+    stats_request = urllib.request.Request(weekly_stats_url, headers={"User-Agent": "RalloPicks/1.0"})
+    with urllib.request.urlopen(stats_request, timeout=60) as response:
+        weekly_rows = list(csv.DictReader(io.TextIOWrapper(response, encoding="utf-8")))
+except (urllib.error.HTTPError, urllib.error.URLError):
+    weekly_rows = []
+
+players_by_id = {player["id"]: player for player in players}
+for row in weekly_rows:
+    if row.get("season_type") not in {"REG", None, ""}:
+        continue
+    player = players_by_id.get(row.get("player_id"))
+    if not player:
+        continue
+    game = {
+        "week": int(number(row.get("week"))), "opponent": row.get("opponent_team"),
+        "pass_yards": number(row.get("passing_yards")), "pass_tds": number(row.get("passing_tds")),
+        "rush_yards": number(row.get("rushing_yards")), "rush_tds": number(row.get("rushing_tds")),
+        "receptions": number(row.get("receptions")), "targets": number(row.get("targets")),
+        "rec_yards": number(row.get("receiving_yards")), "rec_tds": number(row.get("receiving_tds")),
+    }
+    player["recent"].append(game)
+
+for player in players:
+    player["recent"].sort(key=lambda game: game["week"], reverse=True)
+    season_stats = player["season"]
+    season_stats["games"] = len(player["recent"])
+    for game in player["recent"]:
+        for key in ("pass_yards", "pass_tds", "rush_yards", "rush_tds",
+                    "receptions", "targets", "rec_yards", "rec_tds"):
+            season_stats[key] += game[key]
+
+try:
+    prizepicks = get_json(
+        "https://partner-api.prizepicks.com/projections",
+        {"league_id": 9, "per_page": 250},
+    )
+except (urllib.error.HTTPError, urllib.error.URLError):
+    prizepicks = {"data": [], "included": []}
+
+pp_players = {
+    item.get("id"): item.get("attributes", {})
+    for item in prizepicks.get("included", [])
+    if item.get("type") == "new_player"
+}
+players_by_name = {normalized(player["name"]): player for player in players}
+for projection in prizepicks.get("data", []):
+    attrs = projection.get("attributes", {})
+    if attrs.get("status") != "pre_game" or attrs.get("odds_type") != "standard":
+        continue
+    player_ref = projection.get("relationships", {}).get("new_player", {}).get("data") or {}
+    pp_player = pp_players.get(player_ref.get("id"), {})
+    player = players_by_name.get(normalized(pp_player.get("display_name") or pp_player.get("name")))
+    stat_name = attrs.get("stat_display_name") or attrs.get("stat_type")
+    line = attrs.get("line_score")
+    if player and stat_name and line is not None:
+        player["lines"]["PrizePicks"][stat_name] = number(line)
 position_order = {"QB": 0, "RB": 1, "WR": 2, "TE": 3}
 players.sort(key=lambda player: (position_order[player["position"]], player["team"], player["name"] or ""))
 
