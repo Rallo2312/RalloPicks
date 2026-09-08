@@ -519,6 +519,7 @@ function renderBatterAnalytics(){
   <div class="analytics-markets">${Object.entries(ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setAnalyticMarket('${k}')">${m.label}</button>`).join('')}</div>
   ${lineAdjusterHtml(p,line)}
   ${bestLineFinderHtml(p,market)}
+  ${supportingFactorsHtml(p,market,line,direction)}
   <div class="analytics-grid">
    <div>
     <div class="analytics-card"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div>
@@ -661,6 +662,7 @@ async function pitcherHrProfile(id){
  try{const d=await j(`${MLB}/v1/people/${id}/stats?stats=season&group=pitching&season=${today.getFullYear()}`),s=d.stats?.[0]?.splits?.[0]?.stat||{},ip=inningsNumber(s.inningsPitched);return {hr9:ip?Number(s.homeRuns||0)*9/ip:1.15,era:Number(s.era)||null}}catch(e){return {hr9:1.15,era:null}}
 }
 async function loadTop20HR(){
+ loadTopSix();
  const root=document.getElementById('top20Rows');if(!state.games.length)return;if(state.hrBoardLoading)return;if(state.hrBoardReady)return;
  state.hrBoardLoading=true;root.innerHTML='<div class="empty">Researching active hitters, recent power, probable pitchers, pitch mix, parks and confirmed lineups…</div>';
  try{
@@ -788,5 +790,7 @@ document.querySelectorAll('#nflNav button').forEach(b=>b.onclick=()=>switchNflVi
 document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target===e.currentTarget)closeMemberDialog()});
 initMembership();
 </script>
+<script src="research-upgrades.js"></script>
+<link rel="stylesheet" href="research-upgrades.css">
 </body>
 </html>

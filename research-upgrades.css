@@ -1,0 +1,24 @@
+/* Logo-inspired platform accents; research status colors remain consistent. */
+body[data-platform="prizepicks"]{--yellow:#b990ff;--orange:#d7bcff;--line:#b990ff55;background:radial-gradient(ellipse at top,#30204a,#090c13 70%)}
+body[data-platform="underdog"]{--yellow:#ffdb43;--orange:#ffe878;--green:#69e6a7;--line:#ffdb4355;background:radial-gradient(ellipse at top,#34301c,#0d0e10 70%)}
+body[data-platform="dabble"]{--yellow:#c4a3ff;--orange:#f0a6e8;--green:#69e6a7;--line:#c4a3ff55;background:radial-gradient(ellipse at top,#432661,#100b1e 70%)}
+#platformPrizePicks{color:#d7bcff;border:1px solid #9670d8}
+#platformUnderdog{color:#ffdb43;border:1px solid #b59a31}
+#platformDabble{color:#e0bcff;border:1px solid #a272d4}
+#platformPrizePicks.active{background:#b990ff;color:#170f25}
+#platformUnderdog.active{background:#ffdb43;color:#17150a}
+#platformDabble.active{background:#7541b5;color:#fff}
+.platform-switch{gap:4px;flex-wrap:wrap}.platform-switch button{font-size:12px}
+.six-board{margin-bottom:24px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.six-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.six-card,.why-pick{background:rgba(0,0,0,.2);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.six-card h3{font-size:18px;margin:8px 0}.six-card p,.why-pick p{font-size:14px;line-height:1.6;margin:8px 0}
+.six-card .six-meta{font-size:13px;color:var(--muted)}
+.six-market{color:var(--yellow);font-weight:800;font-size:16px}
+.six-rates{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;font-size:14px}
+.six-rates span{padding:6px;background:#ffffff0b;border-radius:6px}
+.why-pick{margin:12px 0}.why-pick summary{cursor:pointer;font-size:16px;font-weight:800;color:var(--yellow)}
+.why-pick strong,.six-card strong{color:var(--green)}
+.why-pick .warning,.six-card .warning{color:#ffb5bb}
+.six-refresh{background:transparent;color:var(--text);border:1px solid var(--line);padding:10px;border-radius:8px;cursor:pointer}
+@media(max-width:760px){.six-grid{grid-template-columns:1fr}.platform-switch button{font-size:12px;padding:8px 6px}}
