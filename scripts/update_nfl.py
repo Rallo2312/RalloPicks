@@ -52,6 +52,7 @@ def stat_value(stats, name, default=0.0):
 
 now = dt.datetime.now(dt.timezone.utc)
 season = now.year if now.month >= 3 else now.year - 1
+NFLVERSE_ROSTER = f"https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_{season}.csv"
 
 TEAM_INFO = {
     "ARI": ("Arizona Cardinals", "NFC"), "ATL": ("Atlanta Falcons", "NFC"),
@@ -199,10 +200,49 @@ for game in games:
 
 games.sort(key=lambda game: game.get("date") or "")
 teams.sort(key=lambda team: (-team["win_pct"], -team["point_diff"], team["name"] or ""))
+
+roster_request = urllib.request.Request(NFLVERSE_ROSTER, headers={"User-Agent": "RalloPicks/1.0"})
+with urllib.request.urlopen(roster_request, timeout=60) as response:
+    roster_rows = list(csv.DictReader(io.TextIOWrapper(response, encoding="utf-8")))
+latest_roster = {}
+for row in roster_rows:
+    if row.get("position") not in {"QB", "RB", "WR", "TE"}:
+        continue
+    if row.get("status") != "ACT":
+        continue
+    player_id = row.get("gsis_id") or row.get("espn_id") or normalized(row.get("full_name"))
+    if not player_id or not row.get("team"):
+        continue
+    current = latest_roster.get(player_id)
+    if current and int(number(current.get("week"))) > int(number(row.get("week"))):
+        continue
+    latest_roster[player_id] = row
+
+players = []
+for player_id, row in latest_roster.items():
+    players.append({
+        "id": player_id,
+        "name": row.get("full_name") or row.get("football_name"),
+        "team": row.get("team"),
+        "position": row.get("position"),
+        "jersey": row.get("jersey_number"),
+        "status": row.get("status"),
+        "headshot": row.get("headshot_url"),
+        "college": row.get("college"),
+        "experience": int(number(row.get("years_exp"))),
+        "season": {"games": 0, "pass_yards": 0, "pass_tds": 0,
+                   "rush_yards": 0, "rush_tds": 0, "receptions": 0,
+                   "targets": 0, "rec_yards": 0, "rec_tds": 0},
+        "recent": [],
+    })
+position_order = {"QB": 0, "RB": 1, "WR": 2, "TE": 3}
+players.sort(key=lambda player: (position_order[player["position"]], player["team"], player["name"] or ""))
+
 OUT.write_text(json.dumps({
     "updated_at": now.isoformat(),
     "season": season,
     "games": games,
     "teams": teams,
+    "players": players,
 }, indent=2), encoding="utf-8")
-print(f"Wrote {OUT} with {len(games)} upcoming games and {len(teams)} teams")
+print(f"Wrote {OUT} with {len(games)} games, {len(teams)} teams, and {len(players)} players")
