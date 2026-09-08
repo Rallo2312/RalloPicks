@@ -17,7 +17,13 @@ ODDS = "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/"
 def get_json(url, params=None):
     if params:
         url = f"{url}?{urllib.parse.urlencode(params)}"
-    request = urllib.request.Request(url, headers={"User-Agent": "RalloPicks/1.0"})
+    request = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/140.0 Safari/537.36",
+        "Accept": "application/json,text/plain,*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://www.espn.com/",
+    })
     with urllib.request.urlopen(request, timeout=40) as response:
         return json.load(response)
 
