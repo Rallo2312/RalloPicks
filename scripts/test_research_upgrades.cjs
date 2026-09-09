@@ -1,0 +1,43 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const path=require('node:path');
+const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+for(const m of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(m[1]);
+const nodes={};const node=id=>nodes[id]??={innerHTML:'',textContent:'',style:{},prepend(){}};
+const today=new Date(),ymd=today.toLocaleDateString('en-CA');
+let scratched=false,finished=false,logRequests=0;
+const markets=Object.fromEntries(['hits','totalBases','runs','rbi','hrr','walks'].map(k=>[k,{label:k,defaultLine:.5,value:s=>k==='walks'?s.baseOnBalls:k==='hrr'?s.hits+s.runs+s.rbi:s[k]}]));
+const pitcherMarkets={strikeOuts:{label:'Strikeouts',defaultLine:5.5,value:s=>s.strikeOuts},outs:{label:'Pitching Outs',defaultLine:17.5,value:s=>Number(s.inningsPitched)*3}};
+const game={gamePk:1,gameDate:new Date(Date.now()+3600000).toISOString(),status:{abstractGameState:'Preview'},teams:{away:{team:{name:'A'},probablePitcher:{id:20,fullName:'Starter'}},home:{team:{name:'B'}}},venue:{name:'Park'}};
+const players=Object.fromEntries([1,2,3,4,5,6].map(id=>['ID'+id,{person:{id,fullName:'Player '+id}}]));
+const ctx={document:{hidden:false,createElement:()=>({}),getElementById:node,addEventListener(){}},setInterval(){},state:{memberActive:true,currentSport:'MLB',weather:new Map()},MLB:'mock',today,ymd,ANALYTIC_MARKETS:markets,PITCHER_ANALYTIC_MARKETS:pitcherMarkets,esc:String,didHit:(v,l,d)=>d==='less'?v<l:v>l,j:async url=>{
+ if(url.includes('schedule'))return {dates:[{games:finished?[]:[game]}]};
+ if(url.includes('boxscore'))return {teams:{away:{battingOrder:scratched?[2,3,4,5,6]:[1,2,3,4,5,6],players}}};
+ logRequests++;
+ const pitching=url.includes('group=pitching');
+ return {stats:[{splits:Array.from({length:20},(_,i)=>({date:'2025-01-'+String(28-i).padStart(2,'0'),stat: pitching?{gamesStarted:i===0?0:1,strikeOuts:7,inningsPitched:'6.0'}:{plateAppearances:4,hits:2,totalBases:3,runs:i%4?1:0,rbi:1,baseOnBalls:1}}))}]};
+}};
+vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'research-upgrades.js'),'utf8'),ctx);
+const evaluate=s=>vm.runInContext(s,ctx);
+(async()=>{
+ ctx.testGame=game;
+ assert.equal(evaluate('isUpcomingResearchGame(testGame)'),true);
+ for(const status of ['Live','Final']){game.status.abstractGameState=status;assert.equal(evaluate('isUpcomingResearchGame(testGame)'),false);}
+ game.status.abstractGameState='Preview';game.status.detailedState='Postponed';assert.equal(evaluate('isUpcomingResearchGame(testGame)'),false);
+ game.status.detailedState='Scheduled';const future=game.gameDate;game.gameDate=new Date(Date.now()-1000).toISOString();assert.equal(evaluate('isUpcomingResearchGame(testGame)'),false);game.gameDate=future;
+ assert.equal(JSON.stringify(evaluate('comparisonCounts([0,1,2,null,undefined,NaN],1)')),JSON.stringify({n:3,more:1,less:1,ties:1}));
+ assert.equal(evaluate("comparisonValue({market:'hits'},ANALYTIC_MARKETS.hits,{stat:{}})"),null);
+ assert.equal(evaluate("comparisonValue({market:'hits'},ANALYTIC_MARKETS.hits,{stat:{hits:0}})"),0);
+ await evaluate('loadTopSix(true)');
+ assert(node('sixStamp').textContent.includes('6/6'));
+ assert.equal(evaluate("sixRows.some(p=>p.kind==='pitcher')"),true);
+ assert.equal(evaluate("sixRows.find(p=>p.kind==='pitcher').logs.length"),19);
+ const before=logRequests;scratched=true;await evaluate('loadTopSix(true)');
+ assert.equal(evaluate('sixRows.some(p=>p.id===1)'),false);
+ assert.equal(logRequests,before,'completed-game logs should be cached');
+ game.teams.away.probablePitcher=undefined;await evaluate('loadTopSix(true)');
+ assert.equal(evaluate('sixRows.some(p=>p.id===20)'),false);
+ finished=true;await evaluate('loadTopSix(true)');assert.equal(evaluate('sixRows.length'),0);
+ ctx.state.memberActive=false;assert.equal(await evaluate('loadTopSix(true)'),undefined);
+ console.log('PASS: syntax, ties, missing vs zero, six diverse picks, pitcher starts only, scratch removal, starter change, cached logs, finished games, member guard');
+})().catch(e=>{console.error(e);process.exitCode=1;});

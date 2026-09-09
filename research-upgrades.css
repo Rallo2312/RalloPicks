@@ -21,4 +21,11 @@ body[data-platform="dabble"]{--yellow:#c4a3ff;--orange:#f0a6e8;--green:#69e6a7;-
 .why-pick strong,.six-card strong{color:var(--green)}
 .why-pick .warning,.six-card .warning{color:#ffb5bb}
 .six-refresh{background:transparent;color:var(--text);border:1px solid var(--line);padding:10px;border-radius:8px;cursor:pointer}
+.side-comparison{margin:16px 0;padding:16px;background:#0003;border:1px solid var(--line);border-radius:14px}
+.side-comparison h3{font-size:18px;margin:0 0 12px;color:var(--yellow)}
+.comparison-scroll{overflow-x:auto}.side-comparison table{width:100%;border-collapse:collapse;font-size:14px;text-align:left}
+.side-comparison th,.side-comparison td{padding:10px;border-bottom:1px solid #ffffff20;white-space:nowrap}
+.side-comparison caption{text-align:left;font-size:14px;color:var(--muted);padding-bottom:8px}
+.side-comparison p{font-size:14px;line-height:1.6;color:var(--muted)}
+.comparison-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.comparison-actions [aria-pressed="true"]{background:var(--yellow);color:#15101a}
 @media(max-width:760px){.six-grid{grid-template-columns:1fr}.platform-switch button{font-size:12px;padding:8px 6px}}
