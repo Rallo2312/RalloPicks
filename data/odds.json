@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-10T13:25:17.393341+00:00",
+  "updated_at": "2026-09-10T17:24:21.445752+00:00",
   "games": [
     {
       "id": "3ef6a964abad382c28ff1f91886dc99a",
-      "commence_time": "2026-09-10T16:15:00Z",
+      "commence_time": "2026-09-10T16:16:28Z",
       "home_team": "Atlanta Braves",
       "away_team": "Tampa Bay Rays",
       "books": [
@@ -14,79 +14,23 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": -120
+                "price": -145
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -101
+                "price": 111
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
-                "point": 8.5
+                "price": 128,
+                "point": 3.5
               },
               {
                 "name": "Under",
-                "price": -114,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": -112
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 102
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": 100,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -115,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": -112
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 102
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -103,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -117,
-                "point": 8.5
+                "price": -167,
+                "point": 3.5
               }
             ]
           }
@@ -98,23 +42,23 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": -118
+                "price": -125
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": 101
+                "price": -105
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
-                "point": 8.5
+                "price": -118,
+                "point": 3.5
               },
               {
                 "name": "Under",
-                "price": -116,
-                "point": 8.5
+                "price": -118,
+                "point": 3.5
               }
             ]
           }
@@ -126,23 +70,23 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": -116
+                "price": -154
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -102
+                "price": 120
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -106,
-                "point": 8.5
+                "price": 116,
+                "point": 3.5
               },
               {
                 "name": "Under",
-                "price": -114,
-                "point": 8.5
+                "price": -154,
+                "point": 3.5
               }
             ]
           }
@@ -154,11 +98,595 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": -119
+                "price": -165
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -101
+                "price": 125
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -120,
+                "point": 3.0
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 3.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": -140
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 110
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 130,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "price": -165,
+                "point": 3.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": -165
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 118
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 110,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "price": -155,
+                "point": 3.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "01c6d0131073b3384f27ac03c02906e4",
+      "commence_time": "2026-09-10T17:06:00Z",
+      "home_team": "Philadelphia Phillies",
+      "away_team": "Houston Astros",
+      "books": [
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Houston Astros",
+                "price": 136
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -174
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -104,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -128,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Houston Astros",
+                "price": 195
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -250
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -118,
+                "point": 8.0
+              },
+              {
+                "name": "Under",
+                "price": -118,
+                "point": 8.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Houston Astros",
+                "price": 160
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -210
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -120,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Houston Astros",
+                "price": 141
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -185
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -106,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -123,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Houston Astros",
+                "price": 150
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -190
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 105,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -135,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Houston Astros",
+                "price": 145
+              },
+              {
+                "name": "Philadelphia Phillies",
+                "price": -205
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 106,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -148,
+                "point": 7.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "36a89478e8db28447dfe1b5d1f656477",
+      "commence_time": "2026-09-10T20:10:00Z",
+      "home_team": "Seattle Mariners",
+      "away_team": "Texas Rangers",
+      "books": [
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -126
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 105
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -101,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -119,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -121
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 110
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 100,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -115,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -121
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 110
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -103,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -117,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -125
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 106
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -103,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -119,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -126
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 108
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -124,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": 102,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -123
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 103
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 105,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -125,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -125
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 105
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -125,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": 105,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -122
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 111
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 100,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -120,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Seattle Mariners",
+                "price": -124
+              },
+              {
+                "name": "Texas Rangers",
+                "price": 104
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -125,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": 102,
+                "point": 6.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "de5c4fe6a041ce8073e59e063fe7f31f",
+      "commence_time": "2026-09-10T23:05:00Z",
+      "home_team": "New York Yankees",
+      "away_team": "Colorado Rockies",
+      "books": [
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Colorado Rockies",
+                "price": 239
+              },
+              {
+                "name": "New York Yankees",
+                "price": -301
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -107,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "price": -112,
+                "point": 8.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Colorado Rockies",
+                "price": 248
+              },
+              {
+                "name": "New York Yankees",
+                "price": -280
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -102,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "price": -113,
+                "point": 8.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Colorado Rockies",
+                "price": 248
+              },
+              {
+                "name": "New York Yankees",
+                "price": -280
               }
             ],
             "totals": [
@@ -176,17 +704,101 @@
           }
         },
         {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Colorado Rockies",
+                "price": 242
+              },
+              {
+                "name": "New York Yankees",
+                "price": -295
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -109,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "price": -113,
+                "point": 8.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Colorado Rockies",
+                "price": 240
+              },
+              {
+                "name": "New York Yankees",
+                "price": -295
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -108,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "price": -112,
+                "point": 8.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Colorado Rockies",
+                "price": 240
+              },
+              {
+                "name": "New York Yankees",
+                "price": -300
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 8.5
+              }
+            ]
+          }
+        },
+        {
           "key": "betmgm",
           "title": "BetMGM",
           "markets": {
             "h2h": [
               {
-                "name": "Atlanta Braves",
-                "price": -118
+                "name": "Colorado Rockies",
+                "price": 240
               },
               {
-                "name": "Tampa Bay Rays",
-                "price": -102
+                "name": "New York Yankees",
+                "price": -300
               }
             ],
             "totals": [
@@ -209,12 +821,12 @@
           "markets": {
             "h2h": [
               {
-                "name": "Atlanta Braves",
-                "price": -112
+                "name": "Colorado Rockies",
+                "price": 238
               },
               {
-                "name": "Tampa Bay Rays",
-                "price": 102
+                "name": "New York Yankees",
+                "price": -280
               }
             ],
             "totals": [
@@ -226,786 +838,6 @@
               {
                 "name": "Under",
                 "price": -115,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": -118
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -103
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -105,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -117,
-                "point": 8.5
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "01c6d0131073b3384f27ac03c02906e4",
-      "commence_time": "2026-09-10T17:06:00Z",
-      "home_team": "Philadelphia Phillies",
-      "away_team": "Houston Astros",
-      "books": [
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 158
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -188
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -110,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "mybookieag",
-          "title": "MyBookie.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 161
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -191
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -111,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 159
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -194
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -110,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 158
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -193
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -112,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -107,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 155
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -190
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -110,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 160
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -190
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -108,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -113,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 165
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -183
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -116,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -104,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 165
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -183
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -114,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -101,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betus",
-          "title": "BetUS",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Houston Astros",
-                "price": 162
-              },
-              {
-                "name": "Philadelphia Phillies",
-                "price": -184
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 8.5
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "36a89478e8db28447dfe1b5d1f656477",
-      "commence_time": "2026-09-10T20:10:00Z",
-      "home_team": "Seattle Mariners",
-      "away_team": "Texas Rangers",
-      "books": [
-        {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -130
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 108
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -112,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -108,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -123
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 112
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -107,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -107,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -123
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 112
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -110,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "mybookieag",
-          "title": "MyBookie.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -127
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 108
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -113,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -108,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -126
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 108
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -128
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 107
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -105,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -115,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -125
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 105
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betus",
-          "title": "BetUS",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -123
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 112
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -110,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Seattle Mariners",
-                "price": -130
-              },
-              {
-                "name": "Texas Rangers",
-                "price": 108
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -120,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -103,
-                "point": 6.5
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "de5c4fe6a041ce8073e59e063fe7f31f",
-      "commence_time": "2026-09-10T23:05:00Z",
-      "home_team": "New York Yankees",
-      "away_team": "Colorado Rockies",
-      "books": [
-        {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 260
-              },
-              {
-                "name": "New York Yankees",
-                "price": -330
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": 102,
-                "point": 9.0
-              },
-              {
-                "name": "Under",
-                "price": -122,
-                "point": 9.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 277
-              },
-              {
-                "name": "New York Yankees",
-                "price": -315
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -120,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": 105,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 277
-              },
-              {
-                "name": "New York Yankees",
-                "price": -315
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -122,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": 102,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "mybookieag",
-          "title": "MyBookie.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 265
-              },
-              {
-                "name": "New York Yankees",
-                "price": -330
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -102,
-                "point": 9.0
-              },
-              {
-                "name": "Under",
-                "price": -120,
-                "point": 9.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 260
-              },
-              {
-                "name": "New York Yankees",
-                "price": -320
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -122,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": 100,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 265
-              },
-              {
-                "name": "New York Yankees",
-                "price": -335
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": 100,
-                "point": 9.0
-              },
-              {
-                "name": "Under",
-                "price": -120,
-                "point": 9.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 260
-              },
-              {
-                "name": "New York Yankees",
-                "price": -325
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": 100,
-                "point": 9.0
-              },
-              {
-                "name": "Under",
-                "price": -120,
-                "point": 9.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betus",
-          "title": "BetUS",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Colorado Rockies",
-                "price": 266
-              },
-              {
-                "name": "New York Yankees",
-                "price": -315
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -120,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": 100,
                 "point": 8.5
               }
             ]
@@ -1028,13 +860,13 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -112,
-                "point": 9.0
+                "price": -113,
+                "point": 8.5
               },
               {
                 "name": "Under",
-                "price": -129,
-                "point": 9.0
+                "price": -109,
+                "point": 8.5
               }
             ]
           }
@@ -1064,12 +896,12 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -122,
+                "price": -120,
                 "point": 7.5
               },
               {
                 "name": "Under",
-                "price": 100,
+                "price": -102,
                 "point": 7.5
               }
             ]
@@ -1082,22 +914,22 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": -110
+                "price": -108
               },
               {
                 "name": "Pittsburgh Pirates",
-                "price": -110
+                "price": -112
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -120,
+                "price": -115,
                 "point": 7.5
               },
               {
                 "name": "Under",
-                "price": 100,
+                "price": -105,
                 "point": 7.5
               }
             ]
@@ -1110,11 +942,11 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": -110
+                "price": -109
               },
               {
                 "name": "Pittsburgh Pirates",
-                "price": -107
+                "price": -108
               }
             ],
             "totals": [
@@ -1138,17 +970,17 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": -112
+                "price": -110
               },
               {
                 "name": "Pittsburgh Pirates",
-                "price": -108
+                "price": -110
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -118,
+                "price": -119,
                 "point": 7.5
               },
               {
@@ -1176,13 +1008,13 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -118,
-                "point": 7.5
+                "price": 100,
+                "point": 8.0
               },
               {
                 "name": "Under",
-                "price": -102,
-                "point": 7.5
+                "price": -120,
+                "point": 8.0
               }
             ]
           }
@@ -1194,7 +1026,7 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": -110
+                "price": -112
               },
               {
                 "name": "Pittsburgh Pirates",
@@ -1204,12 +1036,12 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -117,
+                "price": -118,
                 "point": 7.5
               },
               {
                 "name": "Under",
-                "price": -105,
+                "price": -103,
                 "point": 7.5
               }
             ]
@@ -1222,11 +1054,11 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": -106
+                "price": -105
               },
               {
                 "name": "Pittsburgh Pirates",
-                "price": -104
+                "price": -105
               }
             ],
             "totals": [
@@ -1250,11 +1082,11 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": -106
+                "price": -105
               },
               {
                 "name": "Pittsburgh Pirates",
-                "price": -104
+                "price": -105
               }
             ],
             "totals": [
@@ -1278,11 +1110,11 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": -106
+                "price": -104
               },
               {
                 "name": "Pittsburgh Pirates",
-                "price": -104
+                "price": -106
               }
             ],
             "totals": [
