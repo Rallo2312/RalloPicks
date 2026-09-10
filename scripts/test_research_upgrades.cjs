@@ -10,7 +10,7 @@ const markets=Object.fromEntries(['hits','totalBases','runs','rbi','hrr','walks'
 const pitcherMarkets={strikeOuts:{label:'Strikeouts',defaultLine:5.5,value:s=>s.strikeOuts},outs:{label:'Pitching Outs',defaultLine:17.5,value:s=>Number(s.inningsPitched)*3}};
 const game={gamePk:1,gameDate:new Date(Date.now()+3600000).toISOString(),status:{abstractGameState:'Preview'},teams:{away:{team:{name:'A'},probablePitcher:{id:20,fullName:'Starter'}},home:{team:{name:'B'}}},venue:{name:'Park'}};
 const players=Object.fromEntries([1,2,3,4,5,6].map(id=>['ID'+id,{person:{id,fullName:'Player '+id}}]));
-const ctx={document:{hidden:false,createElement:()=>({}),getElementById:node,addEventListener(){}},setInterval(){},state:{memberActive:true,currentSport:'MLB',weather:new Map()},MLB:'mock',today,ymd,ANALYTIC_MARKETS:markets,PITCHER_ANALYTIC_MARKETS:pitcherMarkets,esc:String,didHit:(v,l,d)=>d==='less'?v<l:v>l,j:async url=>{
+const ctx={window:{},document:{hidden:false,createElement:()=>({}),getElementById:node,addEventListener(){}},setInterval(){},state:{memberActive:true,currentSport:'MLB',weather:new Map()},MLB:'mock',today,ymd,ANALYTIC_MARKETS:markets,PITCHER_ANALYTIC_MARKETS:pitcherMarkets,esc:String,didHit:(v,l,d)=>d==='less'?v<l:v>l,j:async url=>{
  if(url.includes('schedule'))return {dates:[{games:finished?[]:[game]}]};
  if(url.includes('boxscore'))return {teams:{away:{battingOrder:scratched?[2,3,4,5,6]:[1,2,3,4,5,6],players}}};
  logRequests++;

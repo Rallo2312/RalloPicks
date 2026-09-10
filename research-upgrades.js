@@ -78,14 +78,31 @@ async function loadTopSix(force=false){
     }catch(e){failed++;}
    }
   }));
-  sixRows=selectSix(candidates).filter(p=>Date.parse(p.game.gameDate)>Date.now());
+  // Recheck after fetching logs, then refill from the full qualified pool.
+  const finalSchedule=await j(`${MLB}/v1/schedule?sportId=1&date=${ymd}&hydrate=probablePitcher,team,venue`);
+  const finalGames=(finalSchedule.dates?.[0]?.games||[]).filter(isUpcomingResearchGame),eligible=new Map();
+  let lineupFailures=0;
+  await Promise.all(finalGames.map(async game=>{
+   try{
+    const box=await j(`${MLB}/v1/game/${game.gamePk}/boxscore`);
+    for(const side of ['away','home']){
+     const club=game.teams[side],opponent=game.teams[side==='away'?'home':'away'];
+     const starter=club.probablePitcher;
+     if(starter?.id)eligible.set(`${game.gamePk}:pitcher:${starter.id}`,{game,pitcher:starter});
+     (box.teams?.[side]?.battingOrder||[]).forEach((id,i)=>eligible.set(`${game.gamePk}:batter:${id}`,{game,spot:i+1,pitcher:opponent.probablePitcher}));
+    }
+   }catch{lineupFailures++;}
+  }));
+  if(lineupFailures)window.researchFailed?.('lineups');else window.researchFresh?.('lineups',Date.now());
+  const verified=candidates.filter(p=>eligible.has(`${p.game.gamePk}:${p.kind||'batter'}:${p.id}`)).map(p=>({...p,...eligible.get(`${p.game.gamePk}:${p.kind||'batter'}:${p.id}`)}));
+  sixRows=selectSix(verified).filter(p=>Date.parse(p.game.gameDate)>Date.now());
   root.innerHTML=sixRows.map((p,i)=>{
    const market=(p.kind==='pitcher'?PITCHER_ANALYTIC_MARKETS:ANALYTIC_MARKETS)[p.key],s=sixSample(p.logs,market,p.line,20),weather=state.weather.get(Number(p.game.gamePk));
-   return `<article class="six-card"><div class="six-meta">#${i+1} • ${esc(p.team)} • ${p.kind==='pitcher'?'Probable starter':`Starting lineup #${p.spot}`}</div><h3>${esc(p.name)}</h3><div class="six-market">More than ${p.line} ${esc(market.label)}</div><p class="six-meta">RESEARCH THRESHOLD • not an app line</p><div class="six-rates">${sixRatesHtml(p.logs,market,p.line)}</div><p><strong>Supporting factors:</strong> Cleared this threshold in ${s.hits}/${s.n} ${p.kind==='pitcher'?'starts; listed as today’s probable starter.':'games; listed in today’s starting lineup.'}</p><p>vs ${esc(p.opponent.name)} • ${esc(p.kind==='pitcher'?'Starting pitcher research':p.pitcher?.fullName||'Starter TBD')}<br>${esc(p.game.venue?.name||'Stadium unavailable')} • ${esc(weather?.label||'Weather not available')}</p><p class="warning">Warning signs: ${p.kind==='pitcher'?'Probable starter may change; workload and pitch limits are not modeled. ':''}${p.logs.length<20?'Limited recent sample. ':''}${p.spot>=7?'Lower lineup spot may reduce plate appearances. ':''}${!p.pitcher?'Opposing starter unconfirmed. ':''}Ranking uses recent results, not opponent-adjusted probabilities. Late scratches remain possible.</p><button class="prop" onclick="openSixPick(${i})">View full research</button></article>`;
+   return `<article class="six-card" data-game-date="${p.game.gameDate}"><div class="six-meta">#${i+1} • ${esc(p.team)} • ${p.kind==='pitcher'?'Probable starter':`Starting lineup #${p.spot}`}</div><h3>${esc(p.name)}</h3><div class="six-market">More than ${p.line} ${esc(market.label)}</div><p class="six-meta">RESEARCH THRESHOLD • not an app line</p><div class="six-rates">${sixRatesHtml(p.logs,market,p.line)}</div><p><strong>Supporting factors:</strong> Cleared this threshold in ${s.hits}/${s.n} ${p.kind==='pitcher'?'starts; listed as today’s probable starter.':'games; listed in today’s starting lineup.'}</p><p>vs ${esc(p.opponent.name)} • ${esc(p.kind==='pitcher'?'Starting pitcher research':p.pitcher?.fullName||'Starter TBD')}<br>${esc(p.game.venue?.name||'Stadium unavailable')} • ${esc(weather?.label||'Weather not available')}</p><p class="warning">Warning signs: ${p.kind==='pitcher'?'Probable starter may change; workload and pitch limits are not modeled. ':''}${p.logs.length<20?'Limited recent sample. ':''}${p.spot>=7?'Lower lineup spot may reduce plate appearances. ':''}${!p.pitcher?'Opposing starter unconfirmed. ':''}Ranking uses recent results, not opponent-adjusted probabilities. Late scratches remain possible.</p><button class="prop" onclick="openSixPick(${i})">View full research</button></article>`;
   }).join('')||'<div class="empty">No qualifying picks yet. We need confirmed starting lineups, upcoming games, and at least 10 completed games (or pitching starts) of history. Refresh closer to first pitch.</div>';
-  sixUpdated=Date.now();
+  sixUpdated=Date.now();window.researchFresh?.('six',sixUpdated);window.captureResearchPicks?.(sixRows);
   document.getElementById('sixStamp').textContent=`${ymd} • Checked ${new Date().toLocaleTimeString()} • ${sixRows.length}/6 qualifying picks • ${failed} unavailable player logs. Ranked by L5/L10/L20 hit frequency (20%/30%/50%); one player and stat per card. Rechecks every 5 minutes while this board is visible.`;
- }catch(e){root.innerHTML='<div class="empty">Research unavailable. Please refresh to try again.</div>';document.getElementById('sixStamp').textContent='No current shortlist available.';sixRows=[];}
+ }catch(e){window.researchFailed?.('six');root.innerHTML='<div class="empty">Research unavailable. Please refresh to try again.</div>';document.getElementById('sixStamp').textContent='No current shortlist available.';sixRows=[];}
  finally{sixBusy=false;}
 }
 async function openSixPick(i){
@@ -120,9 +137,9 @@ function refreshVisibleSix(){
  if(document.hidden||!state.memberActive||state.currentSport!=='MLB'||document.getElementById('top20View').style.display==='none')return;
  const localDate=new Date();
  const currentDate=localDate.getFullYear()+'-'+String(localDate.getMonth()+1).padStart(2,'0')+'-'+String(localDate.getDate()).padStart(2,'0');
- if(currentDate!==ymd){sixRows=[];for(const id of ['sixRows','top20Rows','underratedHrRows'])document.getElementById(id).innerHTML='<div class="empty">A new day has started. Refresh the page to load the new slate.</div>';return;}
- document.querySelectorAll('.hr-card[data-game-date]').forEach(card=>{if(Date.parse(card.dataset.gameDate)<=Date.now())card.remove();});
- if(Date.now()-(state.hrBoardChecked||0)>=300000)loadTop20HR();
+ if(currentDate!==ymd){sixRows=[];for(const id of ['sixRows','top20Rows','underratedHrRows'])document.getElementById(id).innerHTML='<div class="empty">A new day has started. Loading the new slate…</div>';window.location.reload();return;}
+ document.querySelectorAll('.hr-card[data-game-date],.six-card[data-game-date]').forEach(card=>{if(Date.parse(card.dataset.gameDate)<=Date.now()){card.remove();state.hrBoardReady=false;}});
+ if(!state.hrBoardReady||Date.now()-(state.hrBoardChecked||0)>=300000)loadTop20HR();
  const expired=sixRows.some(p=>Date.parse(p.game.gameDate)<=Date.now());
  loadTopSix(expired);
 }

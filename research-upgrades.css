@@ -29,3 +29,17 @@ body[data-platform="dabble"]{--yellow:#c4a3ff;--orange:#f0a6e8;--green:#69e6a7;-
 .side-comparison p{font-size:14px;line-height:1.6;color:var(--muted)}
 .comparison-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.comparison-actions [aria-pressed="true"]{background:var(--yellow);color:#15101a}
 @media(max-width:760px){.six-grid{grid-template-columns:1fr}.platform-switch button{font-size:12px;padding:8px 6px}}
+.research-freshness{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:10px 12px;background:#0003;border-radius:10px;border:1px solid var(--line)}
+.fresh-item{font-size:14px;color:var(--muted)}.fresh-warning{color:#ffbd86!important}
+.favorite-player-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0;font-size:14px;color:var(--muted)}
+.favorite-player-tools [aria-pressed=true]{border-color:var(--yellow);color:var(--yellow)}
+.player-watchlist p{font-size:14px;line-height:1.5;margin:12px;color:var(--muted)}
+.watchlist-rows{max-height:420px;overflow-y:auto}.watchlist-rows article{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
+.watch-open{flex:1;min-width:0;text-align:left;background:none;border:0;color:var(--yellow);cursor:pointer;padding:4px}.watch-open strong{font-size:16px}.watch-open span{display:block;font-size:14px;color:var(--muted);margin-top:5px}
+.research-history{border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:22px;background:#0003}
+.research-history summary{cursor:pointer;font-size:18px;color:var(--yellow);font-weight:800}.research-history summary span{display:block;font-size:14px;margin-top:8px;color:var(--muted)}
+.research-history p{font-size:14px;line-height:1.6;color:var(--muted)}.results-summary{display:flex;gap:14px;flex-wrap:wrap;font-size:16px}
+.history-rows article{display:grid;grid-template-columns:1fr 150px;gap:12px;border-top:1px solid var(--line);padding:14px 0;font-size:16px}.history-rows span{display:block;font-size:14px;line-height:1.5;margin-top:4px;color:var(--muted)}
+.result-win b{color:#69e6a7}.result-loss b{color:#ffb5bb}.result-pending b,.result-push b,.result-void b{color:var(--yellow)}
+.research-history button:disabled{opacity:.6;cursor:wait}
+@media(max-width:760px){.history-rows article{grid-template-columns:1fr}.research-freshness{flex-direction:column}.watchlist-rows{max-height:260px}}
