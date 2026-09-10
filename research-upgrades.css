@@ -100,3 +100,57 @@ button,input,select,a{touch-action:manipulation}button:focus-visible,a:focus-vis
 .gamebar .date{height:29px;flex:0 0 29px;margin-top:0;padding-top:6px;line-height:18px}.gamebar .barcol{flex-shrink:0}
 .batter-pitch-row,.arsenal-row{min-width:520px}.batter-pitch-card{overflow-x:auto}.pitch-name{font-size:14px}.pitch-name small,.metric span{font-size:12px}.metric b{font-size:16px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Temporarily pause Best Line Finder without deleting saved comparisons. */
+.line-finder{display:none!important}
+
+/* Player Lab: shrink grid tracks to the phone, not to wide table contents. */
+#batterlabView,#batterLabPlayer,.analytics-shell,.analytics-grid,.analytics-grid>div,
+.nfl-player-detail,.nfl-player-tools{min-width:0;max-width:100%}
+.analytics-card,.side-comparison,.why-pick{min-width:0;max-width:100%}
+@media(max-width:760px){
+ .layout>*,.center-col{min-width:0}
+ #batterlabView .analytics-grid{grid-template-columns:minmax(0,1fr)}
+ #batterlabView .analytics-top>div{min-width:0}
+ #batterlabView .analytics-name,.nfl-player-hero h3{overflow-wrap:anywhere}
+ #batterlabView input,#batterlabView select,.nfl-player-detail input,.nfl-player-detail select{font-size:16px;max-width:100%;min-height:44px}
+ #batterlabView .search-box,#batterlabView .search-input{width:100%;min-width:0}
+ .line-adjuster{padding:12px;background:#151c32;border-color:#3b4560}
+ .line-adjuster-top{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+ .book-select{width:100%;min-width:0;background:#1b233b;padding:12px}
+ .direction-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .tier-pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible}
+ .tier-btn,.adjust-btn{min-width:0;min-height:44px;font-size:14px;padding:10px 5px;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
+ .line-stepper{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:8px;width:100%;margin:0}
+ .line-stepper input{width:100%;min-width:0;font-size:20px!important;padding:10px}
+ .step-btn{min-height:48px;font-size:22px;padding:10px}
+ .line-adjust-note{font-size:14px;line-height:1.6;margin-top:12px;overflow-wrap:anywhere}
+ .analytics-shell .range-tabs,.analytics-shell .analytics-markets{max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain}
+ .analytics-shell .chart-wrap{width:100%;min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;height:340px;padding:18px 8px 8px}
+ .analytics-shell .bar-chart{min-width:0;width:100%;height:255px;gap:4px}
+ .analytics-shell .gamebar{min-width:22px;flex:1 0 22px}
+ .analytics-shell .gamebar .date{font-size:12px;letter-spacing:-.5px}
+ .analytics-shell .gamebar .val{font-size:14px}
+ .analytics-shell .hit-rates{gap:4px;padding:4px;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .analytics-shell .hit-rate{min-width:0;padding:10px 4px}
+ .analytics-shell .hit-rate span{font-size:12px;overflow-wrap:anywhere}
+ .analytics-shell .analytics-title{font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+ .side-comparison{padding:12px}
+ .comparison-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+ .side-comparison th,.side-comparison td{padding:10px 8px;font-size:14px}
+ .comparison-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .comparison-actions button{min-width:0;min-height:44px;white-space:normal}
+ .matchup-box,.bvp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .matchup-stat,.bvp-stat{min-width:0;background:#192139;padding:10px 7px}
+ .matchup-stat b,.bvp-stat b{font-size:16px;overflow-wrap:anywhere}
+ .matchup-stat span,.bvp-stat span{font-size:12px;line-height:1.4;display:block;margin-top:4px}
+ .bvp-years,.arsenal-list,.batter-pitch-card{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+ .bvp-year{min-width:420px;font-size:14px;padding:10px 4px}
+ .pitcher-select{min-width:0;white-space:normal}
+ .nfl-player-hero{grid-template-columns:54px minmax(0,1fr)}
+ .nfl-player-hero .nfl-headshot{width:54px;height:54px}
+ .nfl-position-tabs{max-width:100%;overflow-x:auto}
+ .nfl-position-tabs button{font-size:14px;min-height:44px;flex-shrink:0}
+ .nfl-stat-grid,.nfl-player-detail .hit-rate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:360px){.tier-pills{grid-template-columns:minmax(0,1fr)}.analytics-shell .hit-rates{grid-template-columns:minmax(0,1fr)}}
