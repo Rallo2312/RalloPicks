@@ -1,38 +1,7 @@
 {
-  "updated_at": "2026-09-10T21:22:39.744986+00:00",
+  "updated_at": "2026-09-11T13:26:20.796698+00:00",
   "season": 2026,
   "games": [
-    {
-      "id": "2026_01_SF_LA",
-      "date": "2026-09-11T00:35:00+00:00",
-      "name": "San Francisco 49ers at Los Angeles Rams",
-      "short_name": "SF @ LA",
-      "status": "Scheduled",
-      "venue": "Melbourne Cricket Ground",
-      "home": {
-        "id": "LA",
-        "name": "Los Angeles Rams",
-        "abbr": "LA",
-        "logo": null,
-        "score": ""
-      },
-      "away": {
-        "id": "SF",
-        "name": "San Francisco 49ers",
-        "abbr": "SF",
-        "logo": null,
-        "score": ""
-      },
-      "odds": {
-        "book": "DraftKings",
-        "home_moneyline": -198,
-        "away_moneyline": 164,
-        "home_spread": -3.5,
-        "spread_price": -115,
-        "total": 48.5,
-        "over_price": -102
-      }
-    },
     {
       "id": "2026_01_CHI_CAR",
       "date": "2026-09-13T17:00:00+00:00",
@@ -56,12 +25,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 136,
-        "away_moneyline": -162,
+        "home_moneyline": 142,
+        "away_moneyline": -170,
         "home_spread": 3.0,
         "spread_price": -102,
-        "total": 46.5,
-        "over_price": -115
+        "total": 47.5,
+        "over_price": -110
       }
     },
     {
@@ -118,12 +87,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -305,
-        "away_moneyline": 245,
+        "home_moneyline": -310,
+        "away_moneyline": 250,
         "home_spread": -7.0,
         "spread_price": -108,
-        "total": 50.5,
-        "over_price": -102
+        "total": 49.5,
+        "over_price": -118
       }
     },
     {
@@ -149,8 +118,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 102,
-        "away_moneyline": -122,
+        "home_moneyline": -102,
+        "away_moneyline": -118,
         "home_spread": 1.5,
         "spread_price": -112,
         "total": 44.5,
@@ -211,10 +180,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -470,
-        "away_moneyline": 360,
+        "home_moneyline": -455,
+        "away_moneyline": 350,
         "home_spread": -8.5,
-        "spread_price": -110,
+        "spread_price": -112,
         "total": 39.5,
         "over_price": -118
       }
@@ -340,7 +309,7 @@
         "home_spread": -3.0,
         "spread_price": -112,
         "total": 40.5,
-        "over_price": -112
+        "over_price": -105
       }
     },
     {
@@ -397,9 +366,9 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -218,
-        "away_moneyline": 180,
-        "home_spread": -5.5,
+        "home_moneyline": -250,
+        "away_moneyline": 205,
+        "home_spread": -6.0,
         "spread_price": -108,
         "total": 44.5,
         "over_price": -105
@@ -892,17 +861,66 @@
         "score": ""
       },
       "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": -800.0,
+        "away_moneyline": 560.0,
+        "home_spread": -11.5,
+        "spread_price": -110.0,
+        "total": 45.5,
+        "over_price": -118.0
+      }
+    },
+    {
+      "id": "2026_02_IND_KC",
+      "date": "2026-09-21T00:20:00+00:00",
+      "name": "Indianapolis Colts at Kansas City Chiefs",
+      "short_name": "IND @ KC",
+      "status": "Scheduled",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "home": {
+        "id": "KC",
+        "name": "Kansas City Chiefs",
+        "abbr": "KC",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "IND",
+        "name": "Indianapolis Colts",
+        "abbr": "IND",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
         "book": "DraftKings",
-        "home_moneyline": -675,
-        "away_moneyline": 490,
-        "home_spread": -10.5,
+        "home_moneyline": -310,
+        "away_moneyline": 250,
+        "home_spread": -6.5,
         "spread_price": -110,
-        "total": 46.5,
+        "total": 47.5,
         "over_price": -110
       }
     }
   ],
   "teams": [
+    {
+      "id": "SF",
+      "name": "San Francisco 49ers",
+      "abbr": "SF",
+      "logo": null,
+      "conference": "NFC",
+      "wins": 1,
+      "losses": 0,
+      "ties": 0,
+      "games_played": 1,
+      "points_for": 27.0,
+      "points_against": 7.0,
+      "point_diff": 20.0,
+      "win_pct": 1.0,
+      "offense_rank": 1,
+      "defense_rank": 1,
+      "differential_rank": 1
+    },
     {
       "id": "SEA",
       "name": "Seattle Seahawks",
@@ -917,9 +935,9 @@
       "points_against": 10.0,
       "point_diff": 3.0,
       "win_pct": 1.0,
-      "offense_rank": 1,
-      "defense_rank": 1,
-      "differential_rank": 1
+      "offense_rank": 2,
+      "defense_rank": 2,
+      "differential_rank": 2
     },
     {
       "id": "ARI",
@@ -1246,24 +1264,6 @@
       "differential_rank": null
     },
     {
-      "id": "LA",
-      "name": "Los Angeles Rams",
-      "abbr": "LA",
-      "logo": null,
-      "conference": "NFC",
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "games_played": 0,
-      "points_for": 0.0,
-      "points_against": 0.0,
-      "point_diff": 0.0,
-      "win_pct": 0,
-      "offense_rank": null,
-      "defense_rank": null,
-      "differential_rank": null
-    },
-    {
       "id": "MIA",
       "name": "Miami Dolphins",
       "abbr": "MIA",
@@ -1390,24 +1390,6 @@
       "differential_rank": null
     },
     {
-      "id": "SF",
-      "name": "San Francisco 49ers",
-      "abbr": "SF",
-      "logo": null,
-      "conference": "NFC",
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "games_played": 0,
-      "points_for": 0.0,
-      "points_against": 0.0,
-      "point_diff": 0.0,
-      "win_pct": 0,
-      "offense_rank": null,
-      "defense_rank": null,
-      "differential_rank": null
-    },
-    {
       "id": "TB",
       "name": "Tampa Bay Buccaneers",
       "abbr": "TB",
@@ -1475,9 +1457,27 @@
       "points_against": 13.0,
       "point_diff": -3.0,
       "win_pct": 0.0,
-      "offense_rank": 2,
-      "defense_rank": 2,
-      "differential_rank": 2
+      "offense_rank": 3,
+      "defense_rank": 3,
+      "differential_rank": 3
+    },
+    {
+      "id": "LA",
+      "name": "Los Angeles Rams",
+      "abbr": "LA",
+      "logo": null,
+      "conference": "NFC",
+      "wins": 0,
+      "losses": 1,
+      "ties": 0,
+      "games_played": 1,
+      "points_for": 7.0,
+      "points_against": 27.0,
+      "point_diff": -20.0,
+      "win_pct": 0.0,
+      "offense_rank": 4,
+      "defense_rank": 4,
+      "differential_rank": 4
     }
   ],
   "players": [
@@ -1560,9 +1560,9 @@
       "lines": {
         "PrizePicks": {
           "Pass+Rush Yds": 236.5,
-          "Pass Yards": 222.5,
-          "Longest Completion": 34.5,
+          "Pass Yards": 221.5,
           "Pass Attempts": 34.5,
+          "Longest Completion": 31.5,
           "Pass Comp": 22.0,
           "Fantasy Score": 15.0,
           "Rush Yards": 10.5,
@@ -1679,10 +1679,10 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass+Rush Yds": 201.5,
-          "Pass Yards": 197.5,
-          "Longest Completion": 32.5,
-          "Pass Attempts": 32.5,
+          "Pass+Rush Yds": 203.5,
+          "Pass Yards": 201.5,
+          "Longest Completion": 33.5,
+          "Pass Attempts": 32.0,
           "Pass Comp": 20.0,
           "Fantasy Score": 13.0,
           "Sacks Taken": 2.5,
@@ -1747,12 +1747,13 @@
           "Pass+Rush Yds": 258.5,
           "Pass Yards": 221.5,
           "Rush Yards": 38.5,
-          "Longest Completion": 37.5,
+          "Longest Completion": 36.5,
           "Pass Attempts": 26.5,
           "Fantasy Score": 19.5,
           "Pass Comp": 18.0,
           "Longest Rush": 13.5,
           "Rush Atts": 6.5,
+          "Pass TDs": 1.5,
           "Completion Percentage": 65.9,
           "Comp in 1st 10 Pass Att": 6.5
         },
@@ -1882,9 +1883,10 @@
           "Longest Completion": 33.5,
           "Pass Attempts": 30.5,
           "Pass Comp": 20.0,
-          "Rush Yards": 15.5,
-          "Fantasy Score": 15.5,
+          "Fantasy Score": 16.0,
+          "Rush Yards": 14.5,
           "Longest Rush": 9.5,
+          "Rush Atts": 3.5,
           "Pass+Rush+Rec TDs": 1.5,
           "Completion Percentage": 66.1,
           "Comp in 1st 10 Pass Att": 6.5
@@ -1979,7 +1981,7 @@
           "Fantasy Score": 18.0,
           "Longest Rush": 10.5,
           "Pass TDs": 1.5,
-          "Completion Percentage": 61.8,
+          "Completion Percentage": 61.7,
           "Comp in 1st 10 Pass Att": 6.5
         },
         "Underdog": {}
@@ -2063,13 +2065,13 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass+Rush Yds": 274.5,
+          "Pass+Rush Yds": 279.5,
           "Pass Yards": 268.5,
-          "Longest Completion": 37.5,
+          "Longest Completion": 38.5,
           "Pass Attempts": 34.5,
           "Pass Comp": 24.5,
-          "Fantasy Score": 19.5,
-          "Rush Yards": 6.5,
+          "Fantasy Score": 20.0,
+          "Rush Yards": 7.5,
           "Longest Rush": 6.5,
           "Rush Atts": 2.5,
           "Pass TDs": 2.0,
@@ -2132,8 +2134,8 @@
         "PrizePicks": {
           "Pass+Rush Yds": 199.5,
           "Pass Yards": 178.5,
-          "Longest Completion": 31.5,
           "Pass Attempts": 30.5,
+          "Longest Completion": 27.5,
           "Rush Yards": 19.5,
           "Pass Comp": 18.5,
           "Fantasy Score": 11.5,
@@ -2179,7 +2181,7 @@
       "position": "QB",
       "jersey": "15",
       "status": "ACT",
-      "headshot": "",
+      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ybylky9uitivzresfzt3",
       "college": "Arkansas; Boise State",
       "experience": 0,
       "season": {
@@ -2292,7 +2294,7 @@
         "PrizePicks": {
           "Pass+Rush Yds": 248.5,
           "Pass Yards": 227.5,
-          "Longest Completion": 35.5,
+          "Longest Completion": 34.5,
           "Pass Attempts": 34.5,
           "Pass Comp": 21.0,
           "Fantasy Score": 16.5,
@@ -2384,8 +2386,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass+Rush Yds": 265.5,
           "Pass Yards": 261.5,
+          "Pass+Rush Yds": 261.5,
           "Longest Completion": 36.5,
           "Pass Attempts": 33.5,
           "Pass Comp": 23.5,
@@ -2448,9 +2450,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass+Rush Yds": 249.5,
+          "Pass+Rush Yds": 247.5,
           "Pass Yards": 238.5,
-          "Longest Completion": 37.5,
+          "Longest Completion": 36.5,
           "Pass Attempts": 32.5,
           "Pass Comp": 20.5,
           "Fantasy Score": 17.0,
@@ -2518,7 +2520,7 @@
         "PrizePicks": {
           "Pass+Rush Yds": 228.5,
           "Pass Yards": 219.5,
-          "Longest Completion": 34.5,
+          "Longest Completion": 35.5,
           "Pass Attempts": 31.5,
           "Pass Comp": 20.0,
           "Fantasy Score": 15.5,
@@ -2609,14 +2611,14 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass+Rush Yds": 246.5,
-          "Pass Yards": 232.5,
-          "Longest Completion": 35.5,
+          "Pass+Rush Yds": 249.5,
+          "Pass Yards": 233.5,
+          "Longest Completion": 33.5,
           "Pass Attempts": 32.5,
           "Pass Comp": 21.5,
           "Fantasy Score": 16.5,
-          "Rush Yards": 11.5,
-          "Longest Rush": 8.5,
+          "Rush Yards": 12.5,
+          "Longest Rush": 7.5,
           "INT": 0.5,
           "Completion Percentage": 66.2,
           "Comp in 1st 10 Pass Att": 6.5
@@ -2798,12 +2800,12 @@
         "PrizePicks": {
           "Pass+Rush Yds": 249.5,
           "Pass Yards": 228.5,
-          "Longest Completion": 37.5,
+          "Longest Completion": 34.5,
           "Pass Attempts": 32.5,
           "Pass Comp": 21.5,
           "Fantasy Score": 16.5,
           "Rush Yards": 15.5,
-          "Longest Rush": 9.5,
+          "Longest Rush": 10.5,
           "Sacks Taken": 3.0,
           "Completion Percentage": 66.9,
           "Comp in 1st 10 Pass Att": 6.5
@@ -2834,17 +2836,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 262.5,
-          "Pass+Rush Yds": 259.5,
-          "Longest Completion": 38.5,
-          "Pass Attempts": 34.5,
-          "Pass Comp": 22.5,
-          "Fantasy Score": 18.5,
-          "Sacks Taken": 1.5,
-          "Completion Percentage": 64.1,
-          "Comp in 1st 10 Pass Att": 6.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -2858,33 +2850,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/s0eo3fstv6rkitzbefzu",
       "college": "Georgia; Jones County JC",
       "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041568",
-      "name": "Ty Simpson",
-      "team": "LA",
-      "position": "QB",
-      "jersey": "15",
-      "status": "ACT",
-      "headshot": "",
-      "college": "Alabama",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -2932,7 +2897,7 @@
           "Pass Attempts": 29.5,
           "Rush Yards": 22.5,
           "Pass Comp": 21.0,
-          "Fantasy Score": 19.0,
+          "Fantasy Score": 19.5,
           "Longest Rush": 10.5,
           "Rush Atts": 5.0,
           "Pass TDs": 2.0,
@@ -3048,11 +3013,12 @@
       "lines": {
         "PrizePicks": {
           "Pass Yards": 210.5,
-          "Pass+Rush Yds": 210.5,
+          "Pass+Rush Yds": 209.5,
           "Longest Completion": 33.5,
           "Pass Attempts": 29.0,
           "Pass Comp": 19.5,
-          "Fantasy Score": 13.5,
+          "Fantasy Score": 14.0,
+          "INT": 0.5,
           "Longest Rush": 0.5,
           "Completion Percentage": 66.4,
           "Comp in 1st 10 Pass Att": 6.5
@@ -3149,6 +3115,7 @@
           "Rush Atts": 7.5,
           "Sacks Taken": 3.0,
           "Pass TDs": 1.0,
+          "INT": 0.5,
           "Completion Percentage": 63.6,
           "Comp in 1st 10 Pass Att": 6.5
         },
@@ -3235,12 +3202,12 @@
         "PrizePicks": {
           "Pass+Rush Yds": 251.5,
           "Pass Yards": 222.5,
-          "Longest Completion": 34.5,
+          "Longest Completion": 33.5,
           "Pass Attempts": 31.0,
           "Rush Yards": 23.5,
           "Pass Comp": 21.5,
           "Fantasy Score": 17.5,
-          "Longest Rush": 11.5,
+          "Longest Rush": 10.5,
           "Rush Atts": 5.0,
           "Sacks Taken": 2.5,
           "Pass+Rush+Rec TDs": 1.5,
@@ -3358,11 +3325,11 @@
           "Pass+Rush Yds": 266.5,
           "Pass Yards": 246.5,
           "Longest Completion": 35.5,
-          "Pass Attempts": 32.5,
+          "Pass Attempts": 33.0,
           "Pass Comp": 21.5,
           "Fantasy Score": 17.5,
           "Rush Yards": 16.5,
-          "Longest Rush": 8.5,
+          "Longest Rush": 9.5,
           "Rush Atts": 4.0,
           "Pass+Rush+Rec TDs": 1.5,
           "INT": 0.5,
@@ -3453,7 +3420,7 @@
           "Pass+Rush Yds": 250.5,
           "Pass Yards": 217.5,
           "Longest Completion": 34.5,
-          "Rush Yards": 29.5,
+          "Rush Yards": 31.5,
           "Pass Attempts": 29.0,
           "Fantasy Score": 18.5,
           "Pass Comp": 18.5,
@@ -3520,15 +3487,15 @@
         "PrizePicks": {
           "Pass+Rush Yds": 211.5,
           "Pass Yards": 209.5,
-          "Longest Completion": 31.5,
+          "Longest Completion": 32.5,
           "Pass Attempts": 30.5,
           "Pass Comp": 20.0,
-          "Fantasy Score": 13.0,
+          "Fantasy Score": 12.5,
           "Rush Yards": 6.5,
           "Longest Rush": 4.5,
           "Pass TDs": 1.0,
           "INT": 0.5,
-          "Completion Percentage": 63.9,
+          "Completion Percentage": 64.2,
           "Comp in 1st 10 Pass Att": 6.5
         },
         "Underdog": {}
@@ -3613,7 +3580,7 @@
       "lines": {
         "PrizePicks": {
           "Pass+Rush Yds": 246.5,
-          "Pass Yards": 214.5,
+          "Pass Yards": 211.5,
           "Longest Completion": 35.5,
           "Rush Yards": 29.5,
           "Pass Attempts": 28.5,
@@ -3678,12 +3645,12 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass+Rush Yds": 215.5,
-          "Pass Yards": 211.5,
-          "Longest Completion": 32.5,
+          "Pass+Rush Yds": 218.5,
+          "Pass Yards": 213.5,
+          "Longest Completion": 33.5,
           "Pass Attempts": 31.5,
           "Pass Comp": 21.0,
-          "Fantasy Score": 14.0,
+          "Fantasy Score": 14.5,
           "Rush Atts": 1.5,
           "Longest Rush": 1.5,
           "Rush Yards": 0.5,
@@ -3851,48 +3818,6 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass+Rush Yds": 264.5,
-          "Pass Yards": 241.5,
-          "Longest Completion": 35.5,
-          "Pass Attempts": 34.0,
-          "Pass Comp": 21.5,
-          "Rush Yards": 19.5,
-          "Fantasy Score": 17.5,
-          "Longest Rush": 9.5,
-          "Qtrs w/25+ Pass Yds": 3.5,
-          "Sacks Taken": 2.5,
-          "Pass TDs": 1.5,
-          "Halves w/100+ Pass Yds": 1.5,
-          "Completion Percentage": 65.1,
-          "Comp in 1st 10 Pass Att": 6.5
-        },
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040589",
-      "name": "Kurtis Rourke",
-      "team": "SF",
-      "position": "QB",
-      "jersey": "14",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/rq4swf5c2ar45ljuc0w2",
-      "college": "Indiana",
-      "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
         "PrizePicks": {},
         "Underdog": {}
       }
@@ -3952,8 +3877,8 @@
           "Pass Yards": 232.5,
           "Longest Completion": 35.5,
           "Pass Attempts": 31.5,
-          "Pass Comp": 20.5,
-          "Fantasy Score": 17.0,
+          "Pass Comp": 21.0,
+          "Fantasy Score": 17.5,
           "Rush Yards": 16.5,
           "Longest Rush": 9.5,
           "Rush Atts": 3.5,
@@ -4112,11 +4037,12 @@
           "Pass+Rush Yds": 245.5,
           "Pass Yards": 204.5,
           "Rush Yards": 36.5,
-          "Longest Completion": 32.5,
+          "Longest Completion": 33.5,
           "Pass Attempts": 29.5,
           "Pass Comp": 18.0,
           "Fantasy Score": 16.0,
           "Longest Rush": 12.5,
+          "Rush Atts": 7.5,
           "Pass TDs": 1.0,
           "Completion Percentage": 61.4,
           "Comp in 1st 10 Pass Att": 6.5
@@ -4202,12 +4128,12 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Fantasy Score": 9.5,
+          "Fantasy Score": 10.0,
           "Rush+Rec Yds": 53.5,
-          "Rush Yards": 39.5,
+          "Rush Yards": 38.5,
           "Rec Yards": 14.5,
           "Longest Rush": 11.5,
-          "Longest Rec": 8.5,
+          "Longest Rec": 9.5,
           "Rec Targets": 2.5
         },
         "Underdog": {}
@@ -4237,12 +4163,11 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 33.5,
-          "Rush Yards": 28.5,
+          "Rush+Rec Yds": 35.5,
+          "Rush Yards": 29.5,
           "Longest Rush": 10.5,
-          "Rush Atts": 7.5,
-          "Longest Rec": 2.5,
-          "Rec Yards": 1.5
+          "Rec Yards": 2.5,
+          "Longest Rec": 2.5
         },
         "Underdog": {}
       }
@@ -4275,12 +4200,12 @@
           "Rush Yards": 77.5,
           "Rec Yards": 37.5,
           "Rush Atts": 17.5,
-          "Longest Rush": 15.5,
+          "Longest Rush": 16.5,
           "Longest Rec": 15.5,
           "Rec Targets": 5.5,
           "Rush TDs": 0.5,
           "Rush Yards in First 5 Attempts": 20.5,
-          "Fantasy Score": 19.5,
+          "Fantasy Score": 19.0,
           "Rush Yards Per Carry": 4.1
         },
         "Underdog": {}
@@ -4339,10 +4264,10 @@
         "PrizePicks": {
           "Rush+Rec Yds": 89.5,
           "Rush Yards": 81.5,
+          "Longest Rush": 18.5,
           "Rush Atts": 18.0,
-          "Longest Rush": 16.5,
           "Rec Yards": 5.5,
-          "Longest Rec": 4.5,
+          "Longest Rec": 3.5,
           "Rush Yards in First 5 Attempts": 22.5,
           "Fantasy Score": 14.0,
           "Rush Yards Per Carry": 4.4
@@ -4377,8 +4302,8 @@
           "Rush+Rec Yds": 23.5,
           "Rec Yards": 11.5,
           "Rush Yards": 8.5,
-          "Longest Rec": 8.5,
-          "Longest Rush": 5.5,
+          "Longest Rec": 7.5,
+          "Longest Rush": 6.5,
           "Fantasy Score": 5.0,
           "Rec Targets": 2.5,
           "Recs": 2.0
@@ -4548,7 +4473,7 @@
           "Rush+Rec Yds": 79.5,
           "Rush Yards": 63.5,
           "Longest Rush": 12.5,
-          "Rec Yards": 11.5,
+          "Rec Yards": 12.5,
           "Longest Rec": 8.5,
           "Fantasy Score": 12.5
         },
@@ -4606,12 +4531,12 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 77.5,
+          "Rush+Rec Yds": 79.5,
           "Rush Yards": 65.5,
-          "Rush Atts": 15.5,
-          "Fantasy Score": 14.0,
+          "Rush Atts": 15.0,
+          "Longest Rush": 14.5,
           "Rec Yards": 13.5,
-          "Longest Rush": 13.5,
+          "Fantasy Score": 13.5,
           "Longest Rec": 8.5,
           "Rec Targets": 2.5,
           "Rush TDs": 0.5,
@@ -4645,12 +4570,12 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 34.5,
+          "Rush+Rec Yds": 36.5,
           "Rush Yards": 31.5,
-          "Longest Rush": 9.5,
+          "Longest Rush": 10.5,
           "Rec Yards": 5.5,
           "Longest Rec": 4.5,
-          "Fantasy Score": 6.0
+          "Fantasy Score": 6.5
         },
         "Underdog": {}
       }
@@ -4706,15 +4631,14 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 85.5,
-          "Rush Yards": 57.5,
+          "Rush+Rec Yds": 89.5,
+          "Rush Yards": 58.5,
           "Rec Yards": 23.5,
+          "Longest Rush": 14.5,
           "Rush Atts": 14.5,
-          "Longest Rush": 13.5,
           "Longest Rec": 12.5,
           "Rec Targets": 4.5,
           "Recs": 3.5,
-          "Player TDs": 0.5,
           "Rush Yards in First 5 Attempts": 19.5,
           "Fantasy Score": 15.5,
           "Rush Yards Per Carry": 4.0
@@ -4746,7 +4670,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 30.5,
+          "Rush+Rec Yds": 32.5,
           "Rush Yards": 19.5,
           "Longest Rush": 8.5,
           "Rec Yards": 7.5,
@@ -4869,11 +4793,12 @@
       "lines": {
         "PrizePicks": {
           "Rush+Rec Yds": 72.5,
-          "Rush Yards": 59.5,
+          "Rush Yards": 58.5,
           "Rush Atts": 16.0,
           "Longest Rush": 12.5,
           "Rec Yards": 10.5,
           "Longest Rec": 6.5,
+          "Rec Targets": 2.0,
           "Rush Yards in First 5 Attempts": 18.5,
           "Fantasy Score": 10.5,
           "Rush Yards Per Carry": 3.6
@@ -4987,7 +4912,7 @@
       "lines": {
         "PrizePicks": {
           "Rush+Rec Yds": 88.5,
-          "Rush Yards": 73.5,
+          "Rush Yards": 72.5,
           "Rush Atts": 17.5,
           "Longest Rush": 14.5,
           "Fantasy Score": 14.0,
@@ -5026,7 +4951,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 12.5
+          "Rush Yards": 14.5
         },
         "Underdog": {}
       }
@@ -5276,6 +5201,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 13.5,
+          "Longest Rush": 7.5,
           "Rec Yards": 5.5,
           "Longest Rec": 5.5,
           "Fantasy Score": 4.5
@@ -5334,10 +5260,10 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 57.5,
+          "Rush+Rec Yds": 54.5,
           "Rush Yards": 43.5,
+          "Longest Rush": 12.5,
           "Rush Atts": 12.0,
-          "Longest Rush": 11.5,
           "Rec Yards": 10.5,
           "Longest Rec": 8.5,
           "Rec Targets": 2.5,
@@ -5402,11 +5328,11 @@
         "PrizePicks": {
           "Rush+Rec Yds": 68.5,
           "Rush Yards": 54.5,
+          "Longest Rush": 13.5,
           "Rush Atts": 13.5,
-          "Longest Rush": 12.5,
           "Fantasy Score": 11.0,
           "Rec Yards": 10.5,
-          "Longest Rec": 7.5,
+          "Longest Rec": 8.5,
           "Rec Targets": 2.0,
           "Recs": 1.5,
           "Player TDs": 0.5,
@@ -5442,7 +5368,7 @@
         "PrizePicks": {
           "Rush+Rec Yds": 44.5,
           "Rush Yards": 30.5,
-          "Longest Rush": 9.5,
+          "Longest Rush": 10.5,
           "Rec Yards": 9.5,
           "Longest Rec": 7.5,
           "Rush Atts": 7.5,
@@ -5508,13 +5434,13 @@
           "Rush Yards": 77.5,
           "Rush Atts": 18.5,
           "Rec Yards": 17.5,
-          "Longest Rush": 13.5,
+          "Longest Rush": 16.5,
           "Longest Rec": 9.5,
           "Rec Targets": 3.5,
           "Qtrs w/5+ Rush Yards": 3.5,
           "Halves w/25+ Rush Yds": 1.5,
           "Rush Yards in First 5 Attempts": 20.5,
-          "Fantasy Score": 16.5,
+          "Fantasy Score": 16.0,
           "Rush Yards Per Carry": 4.1
         },
         "Underdog": {}
@@ -5599,7 +5525,7 @@
       "lines": {
         "PrizePicks": {
           "Rush+Rec Yds": 64.5,
-          "Rush Yards": 49.5,
+          "Rush Yards": 48.5,
           "Longest Rush": 12.5,
           "Rec Yards": 11.5,
           "Rush Atts": 11.5,
@@ -5638,8 +5564,9 @@
       "lines": {
         "PrizePicks": {
           "Rush+Rec Yds": 38.5,
-          "Rush Yards": 34.5,
-          "Rush Atts": 8.5,
+          "Rush Yards": 36.5,
+          "Longest Rush": 10.5,
+          "Rush Atts": 9.0,
           "Longest Rec": 0.5,
           "Rec Yards": 0.5,
           "Fantasy Score": 6.0
@@ -5758,16 +5685,16 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 84.5,
+          "Rush+Rec Yds": 82.5,
           "Rush Yards": 60.5,
+          "Rec Yards": 18.5,
           "Rush Atts": 16.0,
-          "Rec Yards": 15.5,
-          "Longest Rush": 15.5,
-          "Longest Rec": 10.5,
+          "Longest Rush": 14.5,
+          "Longest Rec": 8.5,
           "Rec Targets": 3.5,
           "Player TDs": 0.5,
           "Rush Yards in First 5 Attempts": 18.5,
-          "Fantasy Score": 13.5,
+          "Fantasy Score": 14.0,
           "Rush Yards Per Carry": 3.6
         },
         "Underdog": {}
@@ -5796,16 +5723,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush+Rec Yds": 48.5,
-          "Rush Yards": 44.5,
-          "Longest Rush": 12.5,
-          "Rush Atts": 10.0,
-          "Yards on 1st Rush": 3.5,
-          "Rec Yards": 2.5,
-          "Longest Rec": 1.5,
-          "Fantasy Score": 8.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -5832,21 +5750,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush TDs": 0.5,
-          "Rush+Rec Yds": 72.5,
-          "Rush Yards": 56.5,
-          "Rush Atts": 13.0,
-          "Longest Rush": 12.5,
-          "Rec Yards": 10.5,
-          "Longest Rec": 7.5,
-          "Yards on 1st Rec": 4.5,
-          "Yards on 1st Rush": 3.5,
-          "Player TDs": 0.5,
-          "Rush Yards in First 5 Attempts": 20.5,
-          "Fantasy Score": 12.5,
-          "Rush Yards Per Carry": 4.2
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -5984,15 +5888,15 @@
         "PrizePicks": {
           "Rush+Rec Yds": 84.5,
           "Rush Yards": 67.5,
-          "Longest Rush": 15.5,
+          "Longest Rush": 16.5,
           "Rush Atts": 15.5,
           "Rec Yards": 12.5,
-          "Longest Rec": 9.5,
+          "Longest Rec": 8.5,
           "Qtrs w/5+ Rush Yards": 3.5,
           "Rec Targets": 2.5,
           "Rush TDs": 0.5,
           "Rush Yards in First 5 Attempts": 21.5,
-          "Fantasy Score": 14.5,
+          "Fantasy Score": 14.0,
           "Rush Yards Per Carry": 4.2
         },
         "Underdog": {}
@@ -6024,7 +5928,7 @@
         "PrizePicks": {
           "Fantasy Score": 14.5,
           "Rush+Rec Yds": 80.5,
-          "Rush Yards": 59.5,
+          "Rush Yards": 57.5,
           "Rec Yards": 17.5,
           "Rush Atts": 15.0,
           "Longest Rush": 12.5,
@@ -6179,7 +6083,7 @@
           "Rec Yards": 29.5,
           "Longest Rush": 15.5,
           "Rush Atts": 15.0,
-          "Longest Rec": 13.5,
+          "Longest Rec": 12.5,
           "Rec Targets": 5.0,
           "Recs": 4.0,
           "Qtrs w/5+ Rush Yards": 3.5,
@@ -6323,7 +6227,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 51.5,
+          "Rush+Rec Yds": 52.5,
           "Rush Yards": 44.5,
           "Longest Rush": 12.5,
           "Rush Atts": 11.0,
@@ -6604,11 +6508,11 @@
       "lines": {
         "PrizePicks": {
           "Rush+Rec Yds": 68.5,
-          "Rush Yards": 49.5,
+          "Rush Yards": 50.5,
           "Rec Yards": 15.5,
           "Longest Rush": 12.5,
           "Rush Atts": 12.0,
-          "Longest Rec": 10.5,
+          "Longest Rec": 9.5,
           "Rec Targets": 3.0,
           "Player TDs": 0.5,
           "Rush Yards in First 5 Attempts": 19.5,
@@ -6778,10 +6682,9 @@
       "lines": {
         "PrizePicks": {
           "Rush+Rec Yds": 20.5,
-          "Rush Yards": 17.5,
+          "Rush Yards": 16.5,
           "Longest Rush": 7.5,
-          "Fantasy Score": 4.5,
-          "Recs": 0.5
+          "Fantasy Score": 4.5
         },
         "Underdog": {}
       }
@@ -6814,7 +6717,7 @@
           "Rush Yards": 63.5,
           "Rec Yards": 20.5,
           "Rush Atts": 16.5,
-          "Longest Rush": 14.5,
+          "Longest Rush": 13.5,
           "Longest Rec": 11.5,
           "Qtrs w/5+ Rush Yards": 3.5,
           "Rec Targets": 3.0,
@@ -6910,9 +6813,10 @@
           "Rush Atts": 18.5,
           "Longest Rush": 17.5,
           "Rec Yards": 16.5,
-          "Fantasy Score": 15.5,
+          "Fantasy Score": 15.0,
           "Longest Rec": 9.5,
           "Rec Targets": 3.0,
+          "Recs": 2.5,
           "Halves w/25+ Rush Yds": 1.5,
           "Player TDs": 0.5,
           "Rush Yards in First 5 Attempts": 20.5,
@@ -7031,7 +6935,7 @@
         "PrizePicks": {
           "Rush+Rec Yds": 64.5,
           "Rush Yards": 43.5,
-          "Rec Yards": 15.5,
+          "Rec Yards": 16.5,
           "Longest Rush": 11.5,
           "Fantasy Score": 11.5,
           "Rush Atts": 11.0,
@@ -7072,7 +6976,7 @@
           "Longest Rush": 11.5,
           "Rush Atts": 11.5,
           "Rec Yards": 10.5,
-          "Longest Rec": 8.5,
+          "Longest Rec": 7.5,
           "Rush Yards in First 5 Attempts": 19.5,
           "Rush Yards Per Carry": 3.8
         },
@@ -7237,48 +7141,6 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush+Rec Yds": 105.5,
-          "Rush Yards": 60.5,
-          "Rec Yards": 40.5,
-          "Fantasy Score": 18.5,
-          "Longest Rec": 15.5,
-          "Rush Atts": 15.5,
-          "Longest Rush": 13.5,
-          "Rec Targets": 6.5,
-          "Yards on 1st Rec": 6.5,
-          "Recs": 5.0,
-          "Yards on 1st Rush": 3.5,
-          "Rush TDs": 0.5,
-          "Rush Yards in First 5 Attempts": 18.5,
-          "Rush Yards Per Carry": 3.8
-        },
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040177",
-      "name": "Jordan James",
-      "team": "SF",
-      "position": "RB",
-      "jersey": "29",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/un9cfqnwdzugrcy8caoh",
-      "college": "Oregon",
-      "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
         "PrizePicks": {},
         "Underdog": {}
       }
@@ -7333,11 +7195,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 6.5,
-          "Longest Rec": 5.5,
-          "Rec Targets": 1.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -7367,8 +7225,8 @@
         "PrizePicks": {
           "Rush+Rec Yds": 74.5,
           "Rush Yards": 57.5,
+          "Longest Rush": 14.5,
           "Rush Atts": 14.5,
-          "Longest Rush": 13.5,
           "Rec Yards": 13.5,
           "Longest Rec": 9.5,
           "Rec Targets": 2.5,
@@ -7407,7 +7265,9 @@
           "Rush+Rec Yds": 47.5,
           "Rec Yards": 21.5,
           "Rush Yards": 21.5,
-          "Fantasy Score": 9.0,
+          "Longest Rec": 10.5,
+          "Fantasy Score": 9.5,
+          "Longest Rush": 9.5,
           "Rec Targets": 4.0
         },
         "Underdog": {}
@@ -7518,10 +7378,10 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 64.5,
+          "Rush+Rec Yds": 65.5,
           "Rush Yards": 54.5,
           "Rush Atts": 14.0,
-          "Longest Rush": 12.5,
+          "Longest Rush": 13.5,
           "Fantasy Score": 10.5,
           "Rec Yards": 9.5,
           "Longest Rec": 6.5,
@@ -7593,6 +7453,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
+          "Rush+Rec Yds": 52.5,
           "Rush Yards": 40.5,
           "Longest Rush": 12.5,
           "Rush Atts": 10.5,
@@ -7654,7 +7515,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 43.5,
+          "Rush+Rec Yds": 41.5,
           "Rush Yards": 24.5,
           "Rec Yards": 14.5,
           "Longest Rec": 9.5,
@@ -7746,7 +7607,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 18.5,
-          "Longest Rec": 10.5,
+          "Longest Rec": 11.5,
           "Rec Targets": 3.0,
           "Recs": 2.0,
           "Fantasy Score": 4.5
@@ -7779,7 +7640,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 48.5,
-          "Longest Rec": 20.5,
+          "Longest Rec": 19.5,
           "Fantasy Score": 10.5,
           "Rec Targets": 7.0,
           "Recs": 4.0
@@ -7812,7 +7673,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 43.5,
-          "Longest Rec": 17.5,
+          "Longest Rec": 18.5,
           "Rec Targets": 5.5,
           "Recs": 3.5,
           "Fantasy Score": 9.0
@@ -7927,7 +7788,7 @@
         "PrizePicks": {
           "Rec Yards": 64.5,
           "Longest Rec": 21.5,
-          "Rec Targets": 9.0,
+          "Rec Targets": 8.5,
           "Recs": 5.5,
           "Fantasy Score": 13.5
         },
@@ -7958,10 +7819,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 17.5,
+          "Rec Yards": 16.5,
           "Longest Rec": 12.5,
           "Rec Targets": 3.5,
-          "Recs": 2.0,
           "Fantasy Score": 4.5
         },
         "Underdog": {}
@@ -8100,6 +7960,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 19.5,
+          "Longest Rec": 14.5,
           "Fantasy Score": 4.5,
           "Rec Targets": 2.5
         },
@@ -8157,7 +8018,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 25.5,
+          "Rec Yards": 26.5,
+          "Longest Rec": 17.5,
           "Fantasy Score": 5.5,
           "Rec Targets": 3.5,
           "Recs": 2.0
@@ -8190,7 +8052,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 65.5,
-          "Longest Rec": 25.5,
+          "Longest Rec": 24.5,
           "Fantasy Score": 13.5,
           "Rec Targets": 7.0,
           "Recs": 5.0,
@@ -8227,7 +8089,7 @@
           "Longest Rec": 20.5,
           "Fantasy Score": 10.0,
           "Rec Targets": 5.5,
-          "Recs": 3.5
+          "Recs": 4.0
         },
         "Underdog": {}
       }
@@ -8577,10 +8439,9 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 16.5,
-          "Longest Rec": 10.5,
+          "Longest Rec": 11.5,
           "Fantasy Score": 4.0,
-          "Rec Targets": 2.5,
-          "Recs": 1.5
+          "Rec Targets": 2.5
         },
         "Underdog": {}
       }
@@ -8609,8 +8470,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 55.5,
-          "Rush+Rec Yds": 55.5,
+          "Rush+Rec Yds": 57.5,
+          "Rec Yards": 56.5,
           "Longest Rec": 21.5,
           "Rec Targets": 6.5,
           "Fantasy Score": 12.5
@@ -8702,7 +8563,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 14.5,
-          "Longest Rec": 10.5,
+          "Longest Rec": 11.5,
           "Fantasy Score": 3.5,
           "Recs": 1.5
         },
@@ -8851,7 +8712,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 60.5,
-          "Longest Rec": 22.5,
+          "Longest Rec": 23.5,
           "Rec Targets": 7.5,
           "Recs": 5.0,
           "Fantasy Score": 13.5
@@ -8884,7 +8745,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 24.5,
-          "Longest Rec": 13.5,
+          "Longest Rec": 15.5,
           "Rec Targets": 4.0,
           "Fantasy Score": 5.5
         },
@@ -9123,7 +8984,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 70.5,
-          "Longest Rec": 24.5,
+          "Longest Rec": 25.5,
           "Fantasy Score": 14.0,
           "Rec Targets": 8.0,
           "Recs": 5.0
@@ -9182,8 +9043,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
+          "Longest Rec": 8.5,
           "Rec Yards": 8.5,
-          "Longest Rec": 7.5,
           "Rush Yards": 3.5,
           "Fantasy Score": 3.0
         },
@@ -9214,10 +9075,10 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 20.5,
-          "Rush+Rec Yds": 20.5,
-          "Longest Rec": 13.5,
-          "Fantasy Score": 5.5
+          "Rec Yards": 23.5,
+          "Rush+Rec Yds": 21.5,
+          "Longest Rec": 14.5,
+          "Fantasy Score": 6.0
         },
         "Underdog": {}
       }
@@ -9280,7 +9141,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 54.5,
-          "Longest Rec": 20.5,
+          "Longest Rec": 21.5,
           "Fantasy Score": 12.0,
           "Rec Targets": 6.5,
           "Recs": 4.5
@@ -9426,7 +9287,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 77.5,
-          "Longest Rec": 22.5,
+          "Longest Rec": 23.5,
           "Rec Targets": 9.0,
           "Recs": 6.5,
           "Player TDs": 0.5,
@@ -9528,6 +9389,33 @@
       }
     },
     {
+      "id": "00-0035544",
+      "name": "Tom Kennedy",
+      "team": "DET",
+      "position": "WR",
+      "jersey": "85",
+      "status": "ACT",
+      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/cbpuzvde5zqalmkjo0dv",
+      "college": "Bryant",
+      "experience": 7,
+      "season": {
+        "games": 0,
+        "pass_yards": 0,
+        "pass_tds": 0,
+        "rush_yards": 0,
+        "rush_tds": 0,
+        "receptions": 0,
+        "targets": 0,
+        "rec_yards": 0,
+        "rec_tds": 0
+      },
+      "recent": [],
+      "lines": {
+        "PrizePicks": {},
+        "Underdog": {}
+      }
+    },
+    {
       "id": "00-0037091",
       "name": "Bo Melton",
       "team": "GB",
@@ -9578,8 +9466,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 55.5,
-          "Longest Rec": 23.5,
+          "Rec Yards": 54.5,
+          "Longest Rec": 22.5,
           "Fantasy Score": 11.5,
           "Rec Targets": 6.5,
           "Recs": 4.0
@@ -9638,7 +9526,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 41.5,
+          "Rush+Rec Yds": 40.5,
           "Rec Yards": 39.5,
           "Longest Rec": 18.5,
           "Rec Targets": 5.0,
@@ -9672,11 +9560,11 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 41.5,
+          "Rush+Rec Yds": 40.5,
           "Rec Yards": 38.5,
           "Longest Rec": 18.5,
           "Fantasy Score": 9.0,
-          "Rec Targets": 5.5,
+          "Rec Targets": 5.0,
           "Recs": 3.5
         },
         "Underdog": {}
@@ -9760,8 +9648,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 16.5,
+          "Rec Yards": 15.5,
           "Longest Rec": 10.5,
+          "Recs": 1.5,
           "Fantasy Score": 4.0
         },
         "Underdog": {}
@@ -9791,7 +9680,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 24.5,
+          "Rec Yards": 25.5,
           "Longest Rec": 15.5,
           "Fantasy Score": 5.5,
           "Rec Targets": 3.0,
@@ -9824,7 +9713,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 68.5,
+          "Rec Yards": 66.5,
           "Longest Rec": 23.5,
           "Fantasy Score": 14.5,
           "Rec Targets": 8.5,
@@ -9891,7 +9780,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 45.5,
-          "Longest Rec": 20.5,
+          "Longest Rec": 22.5,
           "Fantasy Score": 9.5,
           "Rec Targets": 6.0,
           "Recs": 3.0
@@ -10013,10 +9902,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 34.5,
-          "Longest Rec": 15.5,
-          "Fantasy Score": 8.5,
-          "Recs": 3.5
+          "Rec Yards": 27.5,
+          "Longest Rec": 13.5,
+          "Fantasy Score": 7.5
         },
         "Underdog": {}
       }
@@ -10072,7 +9960,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 36.5,
+          "Rec Yards": 38.5,
           "Longest Rec": 19.5,
           "Rec Targets": 5.0,
           "Recs": 3.0,
@@ -10132,7 +10020,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 37.5,
+          "Rec Yards": 35.5,
           "Longest Rec": 16.5,
           "Rec Targets": 5.0,
           "Recs": 3.5,
@@ -10193,7 +10081,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 52.5,
-          "Longest Rec": 20.5,
+          "Longest Rec": 21.5,
           "Rec Targets": 6.5,
           "Recs": 4.0,
           "Fantasy Score": 11.5
@@ -10338,7 +10226,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 59.5,
-          "Longest Rec": 20.5,
+          "Longest Rec": 21.5,
           "Fantasy Score": 13.5,
           "Rec Targets": 8.0,
           "Recs": 5.5
@@ -10403,39 +10291,12 @@
       "lines": {
         "PrizePicks": {
           "Rush+Rec Yds": 40.5,
-          "Rec Yards": 38.5,
+          "Rec Yards": 37.5,
           "Longest Rec": 18.5,
           "Fantasy Score": 8.5,
           "Rec Targets": 5.5,
           "Rush Atts": 0.5
         },
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041399",
-      "name": "CJ Daniels",
-      "team": "LA",
-      "position": "WR",
-      "jersey": "6",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/jqx2xj6xmri9hrjm8azc",
-      "college": "Miami; LSU; Liberty",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -10462,14 +10323,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 53.5,
-          "Longest Rec": 20.5,
-          "Fantasy Score": 12.5,
-          "Yards on 1st Rec": 10.5,
-          "Rec Targets": 7.5,
-          "Recs": 4.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -10496,10 +10350,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 7.5,
-          "Longest Rec": 5.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -10526,11 +10377,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 0.5,
-          "Longest Rec": 0.5,
-          "Recs": 0.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -10544,44 +10391,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ipy6qw7hdygdfc8k86ba",
       "college": "BYU; Washington",
       "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {
-          "Rec Yards": 90.5,
-          "Rush Yards": 1.5,
-          "Rush+Rec Yds": 92.5,
-          "Longest Rec": 26.5,
-          "Rec Yds in 1st 2 Rec": 20.5,
-          "Fantasy Score": 19.0,
-          "Rec Targets": 10.0,
-          "Yards on 1st Rec": 9.5,
-          "Recs": 7.0,
-          "Qtrs w/1+ Rec": 3.5
-        },
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0036849",
-      "name": "Tutu Atwell",
-      "team": "LA",
-      "position": "WR",
-      "jersey": "8",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/tl2aa9ucbtcwhr1yk3tf",
-      "college": "Louisville",
-      "experience": 5,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -10731,11 +10540,11 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 55.5,
-          "Longest Rec": 19.5,
+          "Rec Yards": 56.5,
+          "Longest Rec": 22.5,
           "Rec Targets": 7.0,
           "Recs": 4.5,
-          "Fantasy Score": 12.0
+          "Fantasy Score": 12.5
         },
         "Underdog": {}
       }
@@ -10765,7 +10574,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 43.5,
-          "Longest Rec": 20.5,
+          "Longest Rec": 19.5,
           "Rec Targets": 5.5,
           "Fantasy Score": 10.0
         },
@@ -10799,7 +10608,6 @@
           "Rec Yards": 26.5,
           "Longest Rec": 15.5,
           "Rec Targets": 3.5,
-          "Recs": 2.5,
           "Fantasy Score": 6.5
         },
         "Underdog": {}
@@ -10947,9 +10755,11 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 48.5,
+          "Rec Yards": 46.5,
+          "Longest Rec": 19.5,
           "Fantasy Score": 10.5,
-          "Rec Targets": 7.5
+          "Rec Targets": 7.0,
+          "Recs": 4.0
         },
         "Underdog": {}
       }
@@ -10979,7 +10789,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 26.5,
-          "Longest Rec": 15.5,
+          "Longest Rec": 16.5,
           "Fantasy Score": 6.0,
           "Rec Targets": 3.5
         },
@@ -11010,8 +10820,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 22.5,
-          "Longest Rec": 14.5
+          "Rec Yards": 18.5,
+          "Longest Rec": 12.5
         },
         "Underdog": {}
       }
@@ -11094,7 +10904,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 27.5,
+          "Rec Yards": 26.5,
           "Longest Rec": 14.5,
           "Fantasy Score": 6.5,
           "Rec Targets": 4.0
@@ -11154,7 +10964,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 22.5,
-          "Longest Rec": 12.5,
+          "Longest Rec": 13.5,
           "Fantasy Score": 6.0,
           "Rec Targets": 3.5,
           "Recs": 2.0
@@ -11187,10 +10997,9 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 43.5,
-          "Longest Rec": 19.5,
+          "Longest Rec": 18.5,
           "Fantasy Score": 9.5,
-          "Rec Targets": 5.5,
-          "Recs": 3.5
+          "Rec Targets": 5.5
         },
         "Underdog": {}
       }
@@ -11496,7 +11305,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 77.5,
-          "Longest Rec": 23.5,
+          "Longest Rec": 24.5,
           "Rec Targets": 9.5,
           "Recs": 6.0,
           "Fantasy Score": 16.0
@@ -11529,7 +11338,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 39.5,
-          "Longest Rec": 16.5,
+          "Longest Rec": 18.5,
           "Rec Targets": 5.0,
           "Recs": 3.5,
           "Fantasy Score": 8.5
@@ -11560,9 +11369,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Fantasy Score": 4.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -11590,9 +11397,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 15.5,
+          "Rec Yards": 19.5,
           "Longest Rec": 12.5,
-          "Fantasy Score": 3.0
+          "Fantasy Score": 4.0
         },
         "Underdog": {}
       }
@@ -11655,7 +11462,7 @@
       "lines": {
         "PrizePicks": {
           "Recs": 5.0,
-          "Rec Yards": 59.5,
+          "Rec Yards": 58.5,
           "Longest Rec": 22.5,
           "Fantasy Score": 13.5,
           "Rec Targets": 8.0
@@ -11959,7 +11766,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 28.5,
+          "Rec Yards": 29.5,
           "Longest Rec": 15.5,
           "Rec Targets": 4.0,
           "Recs": 2.5,
@@ -12020,7 +11827,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 23.5,
-          "Longest Rec": 14.5,
+          "Longest Rec": 13.5,
           "Fantasy Score": 6.0
         },
         "Underdog": {}
@@ -12355,13 +12162,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 29.5,
-          "Longest Rec": 15.5,
-          "Fantasy Score": 7.0,
-          "Rec Targets": 5.0,
-          "Recs": 3.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -12388,15 +12189,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush+Rec Yds": 40.5,
-          "Rec Yards": 30.5,
-          "Longest Rec": 14.5,
-          "Rush Yards": 7.5,
-          "Rec Targets": 4.5,
-          "Recs": 3.0,
-          "Fantasy Score": 8.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -12423,12 +12216,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 10.5,
-          "Longest Rec": 7.5,
-          "Rec Targets": 1.5,
-          "Fantasy Score": 3.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -12460,15 +12248,15 @@
       }
     },
     {
-      "id": "00-0040172",
-      "name": "Jordan Watkins",
+      "id": "00-0034854",
+      "name": "KhaDarel Hodge",
       "team": "SF",
       "position": "WR",
-      "jersey": "17",
+      "jersey": "86",
       "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/agcwewjrj4dfssqkzksp",
-      "college": "Mississippi; Louisville",
-      "experience": 1,
+      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/r6vyxamrbb62lcccap2r",
+      "college": "Prairie View A&M; Hinds CC; Alcorn State",
+      "experience": 8,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -12509,15 +12297,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 50.5,
-          "Rec Yds in 1st 2 Rec": 21.5,
-          "Longest Rec": 19.5,
-          "Fantasy Score": 10.5,
-          "Yards on 1st Rec": 10.5,
-          "Rec Targets": 6.5,
-          "Recs": 3.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -12545,7 +12325,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 41.5,
+          "Rec Yards": 40.5,
           "Longest Rec": 18.5,
           "Rec Targets": 6.0,
           "Recs": 4.0,
@@ -12579,10 +12359,10 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 55.5,
-          "Longest Rec": 20.5,
+          "Longest Rec": 21.5,
           "Rec Targets": 7.0,
           "Recs": 4.0,
-          "Fantasy Score": 11.5
+          "Fantasy Score": 11.0
         },
         "Underdog": {}
       }
@@ -12725,7 +12505,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 27.5,
-          "Longest Rec": 15.5,
+          "Longest Rec": 14.5,
           "Rec Targets": 3.5,
           "Recs": 2.0,
           "Fantasy Score": 6.0
@@ -12843,7 +12623,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 42.5,
+          "Rec Yards": 41.5,
           "Longest Rec": 16.5,
           "Rec Targets": 6.5,
           "Recs": 4.5,
@@ -13018,7 +12798,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 52.5,
-          "Longest Rec": 19.5,
+          "Longest Rec": 21.5,
           "Fantasy Score": 10.5,
           "Rec Targets": 6.0,
           "Recs": 4.0
@@ -13139,7 +12919,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 56.5,
-          "Longest Rec": 19.5,
+          "Longest Rec": 17.5,
           "Rec Targets": 8.0,
           "Recs": 6.0,
           "Fantasy Score": 13.5
@@ -13306,8 +13086,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 34.5,
-          "Longest Rec": 15.5,
+          "Rec Yards": 35.5,
+          "Longest Rec": 16.5,
           "Rec Targets": 4.5,
           "Fantasy Score": 9.0
         },
@@ -13365,8 +13145,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 38.5,
-          "Longest Rec": 18.5,
+          "Rec Yards": 37.5,
+          "Longest Rec": 17.5,
           "Fantasy Score": 8.5,
           "Rec Targets": 4.5,
           "Recs": 3.5
@@ -13484,9 +13264,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 17.5,
+          "Rec Yards": 16.5,
           "Longest Rec": 11.5,
-          "Fantasy Score": 5.0
+          "Fantasy Score": 4.5
         },
         "Underdog": {}
       }
@@ -13570,7 +13350,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 6.5,
-          "Longest Rec": 6.5,
+          "Longest Rec": 5.5,
           "Fantasy Score": 2.0
         },
         "Underdog": {}
@@ -13636,7 +13416,8 @@
           "Rec Yards": 14.5,
           "Longest Rec": 10.5,
           "Fantasy Score": 4.0,
-          "Rec Targets": 2.5
+          "Rec Targets": 2.5,
+          "Recs": 1.5
         },
         "Underdog": {}
       }
@@ -13665,9 +13446,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 51.5,
+          "Rec Yards": 54.5,
           "Longest Rec": 19.5,
-          "Rec Targets": 6.5,
+          "Rec Targets": 7.0,
           "Recs": 4.5,
           "Fantasy Score": 12.0
         },
@@ -13897,11 +13678,11 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 35.5,
+          "Rec Yards": 36.5,
           "Longest Rec": 14.5,
           "Rec Targets": 6.0,
           "Recs": 4.0,
-          "Fantasy Score": 8.5
+          "Fantasy Score": 9.0
         },
         "Underdog": {}
       }
@@ -14188,7 +13969,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 41.5,
+          "Rec Yards": 42.5,
           "Longest Rec": 18.5,
           "Fantasy Score": 10.0,
           "Rec Targets": 5.5,
@@ -14332,8 +14113,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 45.5,
-          "Longest Rec": 17.5,
+          "Rec Yards": 44.5,
+          "Longest Rec": 18.5,
           "Fantasy Score": 10.5,
           "Rec Targets": 5.5,
           "Recs": 4.0
@@ -14419,7 +14200,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 32.5,
+          "Rec Yards": 31.5,
           "Longest Rec": 14.5,
           "Rec Targets": 5.0,
           "Recs": 3.5,
@@ -14533,8 +14314,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 4.5,
-          "Longest Rec": 4.5,
+          "Rec Yards": 3.5,
+          "Longest Rec": 3.5,
           "Fantasy Score": 1.5
         },
         "Underdog": {}
@@ -14564,7 +14345,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 47.5,
+          "Rec Yards": 45.5,
           "Longest Rec": 18.5,
           "Fantasy Score": 11.0,
           "Rec Targets": 7.0,
@@ -14829,12 +14610,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 18.5,
-          "Rec Targets": 3.5,
-          "Recs": 2.0,
-          "Fantasy Score": 6.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -14848,33 +14624,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/iweydtcrfchsl3mt6jtd",
       "college": "Clemson",
       "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041510",
-      "name": "Max Klare",
-      "team": "LA",
-      "position": "TE",
-      "jersey": "86",
-      "status": "ACT",
-      "headshot": "",
-      "college": "Ohio State; Purdue",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -14915,13 +14664,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 24.5,
-          "Longest Rec": 15.5,
-          "Rec Targets": 3.0,
-          "Recs": 2.0,
-          "Fantasy Score": 5.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -14948,12 +14691,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 16.5,
-          "Longest Rec": 10.5,
-          "Rec Targets": 2.5,
-          "Fantasy Score": 3.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -14981,8 +14719,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 17.5,
-          "Longest Rec": 10.5,
+          "Rec Yards": 16.5,
+          "Longest Rec": 11.5,
           "Fantasy Score": 4.5,
           "Rec Targets": 2.5
         },
@@ -15013,7 +14751,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 13.5,
+          "Rec Yards": 12.5,
           "Longest Rec": 9.5,
           "Fantasy Score": 4.5,
           "Recs": 1.5
@@ -15163,7 +14901,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 26.5,
+          "Rec Yards": 27.5,
           "Longest Rec": 13.5,
           "Fantasy Score": 6.0,
           "Rec Targets": 3.5,
@@ -15336,6 +15074,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 27.5,
+          "Longest Rec": 12.5,
           "Fantasy Score": 7.5,
           "Rec Targets": 5.0,
           "Recs": 3.5
@@ -15621,8 +15360,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 18.5,
-          "Longest Rec": 12.5
+          "Rec Yards": 13.5,
+          "Longest Rec": 10.5,
+          "Recs": 1.5
         },
         "Underdog": {}
       }
@@ -15765,10 +15505,9 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 19.5,
-          "Longest Rec": 11.5,
-          "Fantasy Score": 5.0,
-          "Rec Targets": 3.5,
-          "Recs": 2.5
+          "Longest Rec": 12.5,
+          "Fantasy Score": 5.5,
+          "Rec Targets": 3.5
         },
         "Underdog": {}
       }
@@ -15797,9 +15536,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 34.5,
+          "Rec Yards": 35.5,
           "Longest Rec": 15.5,
-          "Fantasy Score": 8.5,
+          "Fantasy Score": 9.0,
           "Rec Targets": 4.5,
           "Recs": 3.5
         },
@@ -15884,8 +15623,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Longest Rec": 1.5,
-          "Rec Yards": 1.5,
+          "Longest Rec": 0.5,
+          "Rec Yards": 0.5,
           "Recs": 0.5
         },
         "Underdog": {}
@@ -15988,7 +15727,7 @@
       "name": "Robert Tonyan",
       "team": "PIT",
       "position": "TE",
-      "jersey": "83",
+      "jersey": "85",
       "status": "ACT",
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/m8h8rzmxq4sjywitqnyb",
       "college": "Indiana State",
@@ -16114,13 +15853,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 34.5,
-          "Longest Rec": 16.5,
-          "Fantasy Score": 8.5,
-          "Yards on 1st Rec": 8.5,
-          "Rec Targets": 4.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -16147,10 +15880,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rec Yards": 9.5,
-          "Longest Rec": 7.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       }
     },
@@ -16233,7 +15963,7 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 28.5,
-          "Longest Rec": 14.5,
+          "Longest Rec": 13.5,
           "Rec Targets": 4.5,
           "Recs": 3.0,
           "Fantasy Score": 7.5
