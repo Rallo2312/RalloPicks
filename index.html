@@ -67,6 +67,12 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .line-finder{margin:10px 0;padding:11px;border:1px solid color-mix(in srgb,var(--blue) 26%,transparent);border-radius:13px;background:rgba(0,0,0,.13)}.line-finder-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:7px}.line-finder-head b{font-size:11px}.line-finder-head span{color:var(--muted);font-size:8px}.line-finder-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.line-option{display:grid;grid-template-columns:minmax(0,1fr) 58px;gap:6px;align-items:center;padding:7px;border:1px solid rgba(255,255,255,.07);border-radius:10px;background:rgba(255,255,255,.025)}.line-option.best{border-color:var(--green);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--green) 22%,transparent)}.line-option strong{display:block;font-size:9px}.line-option small{display:block;color:var(--muted);font-size:7px;margin-top:2px}.line-option.best small{color:var(--green)}.line-option input{width:100%;min-width:0;padding:7px 4px;border:1px solid rgba(255,255,255,.12);border-radius:7px;background:#071f18;color:#fff;text-align:center;font-size:10px}@media(max-width:760px){.line-finder-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 <link rel="stylesheet" href="research-upgrades.css?v=0eee3d209c2eea84fa16e3d366069038630be51b">
+<style>
+.identity-image{position:relative;overflow:hidden}
+.identity-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#151b30}
+.team-badge.identity-image>img{object-fit:contain;padding:3px;background:#eef1f7}
+.hr-list-player .team-badge.small{display:inline-grid;vertical-align:middle;margin-right:5px;width:24px;height:24px}
+</style>
 </head>
 <body>
 <div class="app">
@@ -91,7 +97,7 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 
   <section class="membership-bar" aria-label="RalloPicks membership">
     <div class="membership-copy"><strong id="membershipHeadline">RalloPicks research is for active members</strong><span id="membershipSummary">One membership includes MLB and NFL research.</span></div>
-    <div class="membership-actions"><button class="account-link" id="accountButton" onclick="openMemberDialog()">Member sign in</button><a class="join-link" href="https://buy.stripe.com/9B614n2WE4C31Ud4g77g400">Join for $10/month</a><a class="manage-link" href="https://billing.stripe.com/p/login/9B614n2WE4C31Ud4g77g400" target="_blank" rel="noopener noreferrer">Manage membership</a></div>
+    <div class="membership-actions"><button class="account-link" id="accountButton" onclick="openMemberDialog()">Member sign in</button><a class="manage-link" href="https://billing.stripe.com/p/login/9B614n2WE4C31Ud4g77g400" target="_blank" rel="noopener noreferrer">Manage membership</a></div>
   </section>
 
   <section class="locked-dashboard" id="lockedDashboard">
@@ -215,12 +221,19 @@ function requireMembership(){if(state.memberActive)return true;openMemberDialog(
 function openPlayerLabFromDialog(){if(!state.memberActive)return;closeMemberDialog();setSport('MLB');switchView('batterlab')}
 async function initMembership(){const {data}=await supaClient.auth.getSession();await checkMembership(data.session);if(new URLSearchParams(location.search).get('checkout')==='success'&&!state.memberActive){openMemberDialog();memberMessage('Checkout complete. Sign in with the same email you used at Stripe to unlock your membership.')}supaClient.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>checkMembership(session),0)});}
 const SAFE_PIXEL='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
-const logo=id=>SAFE_PIXEL;
-const face=id=>SAFE_PIXEL;
+const logo=id=>/^\d+$/.test(String(id))?'https://www.mlbstatic.com/team-logos/'+encodeURIComponent(id)+'.svg':SAFE_PIXEL;
+const face=id=>/^\d+$/.test(String(id))?'https://img.mlbstatic.com/mlb-photos/image/upload/w_180,q_auto:best/v1/people/'+encodeURIComponent(id)+'/headshot/67/current':SAFE_PIXEL;
 const initials=name=>String(name||'?').trim().split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();
 const hueFor=value=>{let h=0;for(const c of String(value||''))h=(h*31+c.charCodeAt(0))%360;return h};
-const playerAvatar=(name,id,size='')=>`<span class="player-avatar ${size}" style="--avatar-hue:${hueFor(id||name)}" aria-label="${esc(name)}">${esc(initials(name))}</span>`;
-const teamBadge=(team,id,size='')=>`<span class="team-badge ${size}" style="--avatar-hue:${hueFor(id||team)}" aria-label="${esc(team)}">${esc(String(team||'MLB').replace(/[^A-Za-z]/g,'').slice(0,3).toUpperCase())}</span>`;
+const playerAvatar=(name,id,size='')=>{
+ const nfl=String(id||'').startsWith('00-'),src=nfl?(state.nfl?.players?.find(p=>String(p.id)===String(id))?.headshot||SAFE_PIXEL):face(id);
+ return `<span class="player-avatar ${esc(size)} identity-image" style="--avatar-hue:${hueFor(id||name)}" aria-label="${esc(name)}"><span aria-hidden="true">${esc(initials(name))}</span>${src===SAFE_PIXEL?'':`<img src="${esc(src)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">`}</span>`;
+};
+const teamBadge=(team,id,size='')=>{
+ const key=String(id||team||'').toUpperCase(),nflCodes=['ARI','ATL','BAL','BUF','CAR','CHI','CIN','CLE','DAL','DEN','DET','GB','HOU','IND','JAX','KC','LAC','LAR','LV','MIA','MIN','NE','NO','NYG','NYJ','PHI','PIT','SEA','SF','TB','TEN','WAS','WSH'];
+ const src=/^\d+$/.test(key)?logo(id):nflCodes.includes(key)?'https://a.espncdn.com/i/teamlogos/nfl/500/'+(key==='WAS'?'wsh':key.toLowerCase())+'.png':SAFE_PIXEL;
+ return `<span class="team-badge ${esc(size)} identity-image" style="--avatar-hue:${hueFor(id||team)}" aria-label="${esc(team)}"><span aria-hidden="true">${esc(String(team||'MLB').replace(/[^A-Za-z]/g,'').slice(0,3).toUpperCase())}</span>${src===SAFE_PIXEL?'':`<img src="${esc(src)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">`}</span>`;
+};
 const fmtOdd=n=>n==null?'—':(n>0?'+'+n:n);
 
 async function j(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(r.status);return r.json()}
@@ -703,7 +716,7 @@ function renderHrListRow(x,i,underrated=false){
  const date=new Date(x.gameDate),time=Number.isNaN(date.getTime())?'Time TBD':date.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
  const metrics=[['L10 HR',number(x.recentHR),'Home runs in the last 10 game-log entries'],['Season HR',number(x.hr),'Season home runs'],['Season PA',number(x.pa),'Plate appearances used by the HR model; a fallback may apply'],['P HR/9',number(x.hr9,2),'Opposing pitcher HR per nine innings used by the model; 1.15 fallback when unavailable'],['Temp',weather.temperature==null?'—':number(weather.temperature)+'°F','Game temperature forecast'],['Wind',weather.windSpeed==null?'—':number(weather.windSpeed)+' mph','Wind speed forecast']];
  return `<article data-game-date="${esc(x.gameDate)}" class="hr-card hr-list-row ${underrated?'underrated-card':''}">
-  <div class="hr-list-identity"><span class="hr-list-rank" aria-label="Rank ${i+1}">${String(i+1).padStart(2,'0')}</span>${playerAvatar(x.person.fullName,x.person.id)}<div class="hr-list-player"><strong>${esc(x.person.fullName)}</strong><span>${esc(x.team.abbreviation||x.team.name)} · ${esc(x.oppName)}</span><small>vs ${esc(x.starterName)} · ${esc(time)}</small><span class="lineup-tag ${esc(lineup.status)}">${esc(lineup.label)}</span></div></div>
+  <div class="hr-list-identity"><span class="hr-list-rank" aria-label="Rank ${i+1}">${String(i+1).padStart(2,'0')}</span>${playerAvatar(x.person.fullName,x.person.id)}<div class="hr-list-player"><strong>${esc(x.person.fullName)}</strong><span>${teamBadge(x.team.abbreviation||x.team.name,x.team.id,'small')}${esc(x.team.abbreviation||x.team.name)} · ${esc(x.oppName)}</span><small>vs ${esc(x.starterName)} · ${esc(time)}</small><span class="lineup-tag ${esc(lineup.status)}">${esc(lineup.label)}</span></div></div>
   <div class="hr-list-estimate">${x.dailyResearch?'<span>RESEARCH RANK</span><b>#'+(i+1)+'</b><small>Not a win probability</small>':'<span>HR ESTIMATE</span><b>'+number(x.chance,1)+'%</b><small>Model fair odds '+fmtOdd(fairAmericanOdds(x.chance))+'</small>'}</div>
   <div class="hr-list-stats" role="group" aria-label="${esc(x.person.fullName)} research statistics" tabindex="0">${metrics.map(([label,value,title])=>`<div class="hr-list-stat" title="${esc(title)}"><span>${label}</span><b>${esc(value)}</b></div>`).join('')}</div>
   <details class="hr-list-details"><summary>Matchup research <span aria-hidden="true">＋</span></summary><div class="hr-list-detail-body">${hrResearchHtml(x)}${x.dailyResearch?`<h4>Morning checks and conditions</h4><p>${esc(x.contextNote||"Active roster verified; starting lineup and batting order pending. No confirmed absence found in the sources checked; this is not medical clearance.")}</p><div class="hr-evidence-sources">${(x.sources||[]).map(url=>`<a href="${esc(url)}" target="_blank" rel="noopener">Research source</a>`).join(" · ")}</div>`:""}<p>${esc(x.reason)}</p><div class="hr-factors"><span class="factor-chip park">${esc(x.venue)}</span><span class="factor-chip">${esc(x.pitchLabel)}</span><span class="factor-chip">${esc(weather.label||'Weather unavailable')}${weather.windFlow?' · '+esc(weather.windFlow):''}</span></div><p class="hr-list-note">These are research rankings, not posted app odds or calibrated win probabilities. Missing weather is shown as —. Verified pitch and contact splits appear above as context; unavailable metrics are not invented. Park effects and bullpen exposure are not scored.</p><button class="prop" data-player="${Number(x.person.id)}" data-name="${esc(x.person.fullName)}" data-team="${esc(x.team.abbreviation||x.team.name)}" onclick="openBatterLab(Number(this.dataset.player),this.dataset.name,this.dataset.team);switchView('batterlab')">Open Player Lab</button></div></details>
