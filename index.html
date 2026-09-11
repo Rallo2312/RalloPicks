@@ -213,6 +213,189 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
   #batterlabView>.range-tabs,#batterlabView>.search-box,#batterlabView>.search-results,#batterlabView>#batterLabPlayer{margin-left:12px!important;margin-right:12px!important}
 }
 </style>
+
+<style>
+/* Player Lab: premium player-profile dashboard */
+#batterlabView{background:transparent!important}
+#batterlabView>.section-title{
+  position:relative;overflow:hidden;padding:28px 24px 22px!important;
+  background:
+    radial-gradient(circle at 88% 10%,rgba(105,242,39,.14),transparent 32%),
+    radial-gradient(circle at 8% 0%,rgba(51,214,255,.10),transparent 28%),
+    linear-gradient(135deg,#091427 0%,#07101f 58%,#050b16 100%)!important
+}
+#batterlabView>.section-title:after{
+  content:"PLAYER INTELLIGENCE";position:absolute;right:22px;top:18px;
+  font-size:9px;font-weight:1000;letter-spacing:1.5px;color:var(--rp-neon);
+  border:1px solid rgba(105,242,39,.20);background:rgba(105,242,39,.06);
+  padding:7px 10px;border-radius:999px
+}
+#batterlabView>.section-title h2{font-size:28px!important}
+#batterlabView>.section-title h2:before{content:"◉ ";color:var(--rp-neon)}
+#batterlabView>.section-title span{font-size:10px!important}
+
+#batterlabView>.range-tabs{padding:0!important;margin-top:18px!important;margin-bottom:12px!important}
+#batterlabView>.range-tabs button{
+  min-height:38px;padding:10px 14px!important;border-radius:10px!important;text-transform:uppercase;letter-spacing:.4px
+}
+#batterlabView>.search-box{
+  height:48px;padding:0 16px 0 44px!important;font-size:13px!important;
+  background:
+    linear-gradient(90deg,rgba(105,242,39,.04),transparent 30%),
+    #050b16!important;
+  border-color:#1b2940!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)
+}
+#batterlabView:has(.search-box):before{content:"⌕";position:absolute}
+.search-results{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px!important}
+.search-hit{
+  min-height:66px!important;padding:10px!important;border-radius:13px!important;
+  background:linear-gradient(145deg,#0a1426,#07101d)!important;
+  border:1px solid #18243a!important;transition:.18s ease!important
+}
+.search-hit:hover{transform:translateY(-2px);border-color:rgba(105,242,39,.32)!important;background:#0d1930!important}
+.search-hit .face,.search-hit .player-avatar{border-color:rgba(105,242,39,.34)!important}
+
+.analytics-shell{
+  margin:18px 0 28px!important;padding:0!important;border:1px solid #162238!important;
+  border-radius:20px!important;overflow:hidden!important;
+  background:linear-gradient(180deg,#07101f,#050a14)!important;
+  box-shadow:0 22px 70px rgba(0,0,0,.30)!important
+}
+.analytics-top{
+  position:relative;min-height:132px;padding:22px 24px!important;
+  grid-template-columns:94px 1fr auto!important;gap:18px!important;
+  background:
+    radial-gradient(circle at 88% 40%,rgba(105,242,39,.14),transparent 31%),
+    linear-gradient(110deg,#0a1730 0%,#08111f 58%,#07101d 100%)!important;
+  border:0!important;border-bottom:1px solid #17233a!important;border-radius:0!important
+}
+.analytics-top:after{
+  content:"";position:absolute;left:0;bottom:0;width:42%;height:2px;
+  background:linear-gradient(90deg,var(--rp-neon),var(--rp-cyan),transparent)
+}
+.analytics-top .face,.analytics-top .player-avatar.large{
+  width:88px!important;height:88px!important;border:3px solid rgba(105,242,39,.5)!important;
+  box-shadow:0 0 0 5px rgba(105,242,39,.05),0 15px 35px rgba(0,0,0,.35)!important
+}
+.eyebrow{
+  display:inline-flex!important;align-items:center;gap:6px;margin-bottom:7px!important;
+  color:var(--rp-neon)!important;font-size:8px!important;font-weight:1000!important;letter-spacing:1.4px!important
+}
+.eyebrow:before{content:"●";font-size:8px}
+.analytics-name{font-size:29px!important;letter-spacing:-1px!important;line-height:1!important}
+.analytics-sub{margin-top:7px!important;color:#8c9ab3!important;font-size:11px!important}
+.fav-btn{
+  min-width:108px!important;background:#101b2d!important;color:#eef5ff!important;
+  border:1px solid rgba(105,242,39,.28)!important;border-radius:11px!important;
+  box-shadow:none!important
+}
+.fav-btn:hover{background:rgba(105,242,39,.1)!important;color:var(--rp-neon)!important}
+
+.analytics-shell>.range-tabs,.analytics-shell>.analytics-markets{
+  margin:0!important;padding:10px 16px!important;background:#060d19!important;border-bottom:1px solid #131f33!important
+}
+.analytics-shell>.analytics-markets{padding-top:0!important}
+.analytics-shell>.range-tabs button,.analytics-shell>.analytics-markets button{
+  border-radius:9px!important;background:#0a1424!important;border:1px solid #17243a!important;
+  color:#8090ab!important;padding:9px 12px!important
+}
+.analytics-shell>.range-tabs button.active,.analytics-shell>.analytics-markets button.active{
+  background:linear-gradient(180deg,#15233a,#0f1c2f)!important;color:#fff!important;
+  border-color:rgba(105,242,39,.32)!important;box-shadow:inset 0 -2px 0 var(--rp-neon)!important
+}
+
+.analytics-shell>.line-adjuster,
+.analytics-shell>.line-finder,
+.analytics-shell>.supporting-factors,
+.analytics-shell>.more-less,
+.analytics-shell>.note-box{margin-left:16px!important;margin-right:16px!important}
+.analytics-shell>.line-adjuster{margin-top:14px!important}
+.line-adjuster{
+  background:linear-gradient(145deg,#0b1628,#08111f)!important;
+  border:1px solid #18263e!important;border-radius:14px!important;padding:12px!important
+}
+.book-select,.line-stepper input,.line-control input{
+  background:#050b16!important;border-color:#20304a!important;color:#fff!important
+}
+.adjust-btn,.tier-btn,.step-btn{
+  background:#0b1526!important;border-color:#1e2b41!important;color:#aab7ca!important
+}
+.adjust-btn.active{background:rgba(105,242,39,.12)!important;border-color:rgba(105,242,39,.36)!important;color:var(--rp-neon)!important}
+
+.analytics-grid{
+  padding:16px!important;gap:14px!important;
+  grid-template-columns:minmax(0,1.75fr) minmax(270px,.85fr)!important
+}
+.analytics-card{
+  border:1px solid #17243a!important;border-radius:14px!important;background:#08111f!important;
+  box-shadow:0 10px 30px rgba(0,0,0,.16)!important
+}
+.analytics-title{
+  padding:12px 14px!important;background:#0a1424!important;border-bottom:1px solid #17243a!important;
+  color:#eaf1fb!important;font-size:10px!important;letter-spacing:.25px
+}
+.chart-wrap{
+  height:320px!important;background:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(180deg,rgba(34,211,238,.035),transparent 45%)!important;
+  background-size:100% 46px,52px 100%,100% 100%!important
+}
+.bar-chart{height:245px!important;border-bottom-color:#21304a!important}
+.gamebar .barcol{
+  background:linear-gradient(180deg,#7dff4d,#27c95b)!important;
+  box-shadow:0 0 14px rgba(105,242,39,.12)
+}
+.gamebar.miss .barcol{background:linear-gradient(180deg,#334155,#1e293b)!important;box-shadow:none}
+.chart-line{border-top:1px dashed rgba(105,242,39,.7)!important}
+.chart-line-label{background:#0d1c20!important;color:var(--rp-neon)!important;border:1px solid rgba(105,242,39,.18)}
+.hit-rates{gap:8px!important;padding:10px!important;background:#060d19!important}
+.hit-rate{
+  background:linear-gradient(145deg,#0b1628,#08111f)!important;border:1px solid #17243a!important;
+  border-radius:11px!important;padding:11px!important
+}
+.hit-rate b{font-size:20px!important;color:var(--rp-neon)!important}
+.hit-rate span{font-size:7px!important;letter-spacing:.5px}
+.matchup-box{gap:8px!important;padding:11px!important}
+.matchup-stat,.bvp-stat{
+  background:linear-gradient(145deg,#0b1628,#08111f)!important;border:1px solid #17243a!important;
+  border-radius:11px!important
+}
+.matchup-stat b,.bvp-stat b{color:#f7fbff!important}
+.arsenal-row,.batter-pitch-row{border-bottom-color:#132036!important}
+.pitch-dot{background:var(--rp-neon)!important}
+.bvp-wrap,.arsenal-list{background:#07101d!important}
+
+@media(max-width:900px){
+  .search-results{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .analytics-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:620px){
+  #batterlabView>.section-title{padding:22px 16px 18px!important}
+  #batterlabView>.section-title:after{display:none}
+  #batterlabView>.section-title h2{font-size:23px!important}
+  .search-results{grid-template-columns:1fr!important}
+  .analytics-shell{margin-top:14px!important;border-radius:16px!important}
+  .analytics-top{
+    min-height:118px;padding:16px!important;grid-template-columns:76px 1fr!important;gap:13px!important
+  }
+  .analytics-top .face,.analytics-top .player-avatar.large{width:72px!important;height:72px!important}
+  .analytics-name{font-size:23px!important}
+  .analytics-sub{font-size:9px!important}
+  .fav-btn{grid-column:1/-1!important;width:100%!important}
+  .analytics-shell>.range-tabs,.analytics-shell>.analytics-markets{padding-left:12px!important;padding-right:12px!important}
+  .analytics-grid{padding:12px!important}
+  .chart-wrap{height:280px!important;padding-left:8px!important;padding-right:8px!important}
+  .bar-chart{height:210px!important}
+  .gamebar{min-width:18px!important}.gamebar .date{font-size:6px!important}
+  .analytics-shell>.line-adjuster,
+  .analytics-shell>.line-finder,
+  .analytics-shell>.supporting-factors,
+  .analytics-shell>.more-less,
+  .analytics-shell>.note-box{margin-left:12px!important;margin-right:12px!important}
+}
+</style>
+
 <!-- RALLO PREMIUM REDESIGN END -->
 </head>
 <body>
