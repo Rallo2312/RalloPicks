@@ -73,6 +73,147 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .team-badge.identity-image>img{object-fit:contain;padding:3px;background:#eef1f7}
 .hr-list-player .team-badge.small{display:inline-grid;vertical-align:middle;margin-right:5px;width:24px;height:24px}
 </style>
+
+<!-- RALLO PREMIUM REDESIGN START -->
+<style>
+/* Premium sports-analysis redesign inspired by the user's reference, built as RalloPicks' own visual system. */
+:root{
+  --rp-bg:#030712;--rp-panel:#07101f;--rp-panel2:#0a1427;--rp-card:#0d1830;
+  --rp-line:rgba(148,163,184,.14);--rp-text:#f8fafc;--rp-muted:#7f8da7;
+  --rp-neon:#69f227;--rp-neon2:#20d46b;--rp-cyan:#33d6ff;--rp-danger:#ff5370;
+  --rp-radius:18px;
+}
+html{background:var(--rp-bg)}
+body,body[data-platform="underdog"],body[data-platform="dabble"]{
+  background:
+    radial-gradient(circle at 72% -10%,rgba(35,84,255,.16),transparent 32%),
+    radial-gradient(circle at 0% 18%,rgba(38,226,255,.08),transparent 28%),
+    linear-gradient(180deg,#02050d 0%,#040816 55%,#02050c 100%)!important;
+  color:var(--rp-text);
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:36px 36px}
+.app{max-width:1440px;padding:0 18px 110px}
+.topbar{
+  position:sticky;top:0;z-index:100;margin:0 -18px;padding:14px 22px;
+  background:rgba(2,5,13,.86)!important;backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--rp-line);box-shadow:0 12px 40px rgba(0,0,0,.28)
+}
+.brand-logo{
+  width:46px;height:46px;border-radius:13px;background:linear-gradient(145deg,var(--rp-neon),#26b94c)!important;
+  color:#041008;border:0!important;box-shadow:0 0 30px rgba(105,242,39,.22)!important;transform:none!important
+}
+.brand-logo span{transform:none!important;letter-spacing:-1px}
+.brand h1{font-size:21px;letter-spacing:-.7px}.brand h1 em{color:var(--rp-neon)!important}
+.sub{color:var(--rp-muted);font-size:10px;letter-spacing:.2px}
+.live{background:rgba(105,242,39,.08)!important;border:1px solid rgba(105,242,39,.18)!important;color:var(--rp-neon)!important}
+.sport-switch,.platform-switch{background:#070d18!important;border:1px solid var(--rp-line)!important;border-radius:11px!important}
+.sport-switch button,.platform-switch button{color:#8190aa!important;border-radius:8px!important}
+.sport-switch button.active,.platform-switch button.active{background:#111c30!important;color:#fff!important;box-shadow:inset 0 0 0 1px rgba(105,242,39,.28)!important}
+
+.nav{
+  position:sticky;top:75px;z-index:90;margin:0 -18px 18px;padding:9px 18px;
+  display:flex!important;gap:8px!important;overflow-x:auto;background:rgba(3,7,18,.92)!important;
+  border-bottom:1px solid var(--rp-line);scrollbar-width:none
+}
+.nav::-webkit-scrollbar{display:none}.nav button{
+  flex:0 0 auto;min-width:118px;border:0!important;border-radius:10px!important;background:transparent!important;
+  color:#7d8aa4!important;padding:10px 14px!important;font-size:10px!important;text-transform:uppercase;letter-spacing:.4px
+}
+.nav button.active{background:#0c1628!important;color:#fff!important;box-shadow:inset 0 -2px 0 var(--rp-neon)!important}
+.nav button:hover{transform:none!important;color:#fff!important}
+
+.membership-bar{border:1px solid var(--rp-line)!important;background:linear-gradient(90deg,#091426,#07101f)!important;border-radius:16px!important;box-shadow:none!important}
+.membership-copy strong{color:#fff!important}.membership-copy span{color:var(--rp-muted)!important}
+.join-link,.account-link,.member-primary,.locked-dashboard button{background:var(--rp-neon)!important;color:#031006!important;border-radius:10px!important}
+.manage-link,.member-secondary{background:#0b1424!important;border:1px solid var(--rp-line)!important;color:#dbe6f8!important}
+
+.layout{grid-template-columns:215px minmax(0,1fr)!important;gap:16px!important}
+.panel{
+  background:linear-gradient(180deg,rgba(8,16,31,.98),rgba(5,11,23,.98))!important;
+  border:1px solid var(--rp-line)!important;border-radius:var(--rp-radius)!important;
+  box-shadow:0 18px 55px rgba(0,0,0,.22)!important
+}
+.panel-head{background:#07101e!important;border-bottom:1px solid var(--rp-line)!important}
+.left-col .panel{background:#050b16!important}
+.saved-card,.game-card,.search-hit,.lab-player,.hr-card,.money-row,.batter{
+  background:linear-gradient(145deg,#0b1425,#08101f)!important;border-color:var(--rp-line)!important;
+  box-shadow:none!important
+}
+.center-col{overflow:visible!important}
+.board{padding:18px!important}
+.section-title{margin:0 0 16px!important;align-items:center!important}
+.section-title h2{font-size:22px!important;letter-spacing:-.6px!important}
+.section-title span{color:var(--rp-muted)!important}
+
+#top20View>.section-title:first-child{
+  position:relative;overflow:hidden;margin:-18px -18px 18px!important;padding:28px 24px 24px!important;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(105,242,39,.16),transparent 34%),
+    linear-gradient(135deg,#091225,#07101d);
+  border-bottom:1px solid var(--rp-line)
+}
+#top20View>.section-title:first-child:after{
+  content:"DAILY POWER BOARD";position:absolute;right:22px;top:18px;font-size:9px;font-weight:900;letter-spacing:1.6px;
+  color:var(--rp-neon);padding:7px 9px;border-radius:999px;border:1px solid rgba(105,242,39,.22);background:rgba(105,242,39,.06)
+}
+#top20View>.section-title:first-child h2{font-size:28px!important}
+#top20View>.section-title:first-child span{max-width:680px}
+
+.hr-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important}
+.hr-card{
+  position:relative!important;grid-template-columns:64px minmax(0,1fr) 90px!important;min-height:102px;
+  padding:14px!important;border-left:1px solid var(--rp-line)!important;border-radius:14px!important;overflow:hidden
+}
+.hr-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--rp-neon),var(--rp-cyan))}
+.hr-card .player-avatar,.hr-card .face{width:54px!important;height:54px!important;border:2px solid rgba(105,242,39,.42)!important}
+.hr-card b,.hr-card strong{color:#f8fafc}
+.hr-card .score,.hr-card [class*="score"]{color:var(--rp-neon)!important}
+.underrated-title{margin-top:30px!important;padding-top:22px;border-top:1px solid var(--rp-line)}
+.note-box{background:#060c18!important;border:1px solid var(--rp-line)!important;color:#78869f!important}
+
+#batterlabView{padding:0!important}
+#batterlabView>.section-title{margin:0!important;padding:24px 24px 16px!important;background:linear-gradient(135deg,#0a1427,#07101e)!important;border-bottom:1px solid var(--rp-line)}
+#batterlabView>.range-tabs,#batterlabView>.search-box,#batterlabView>.search-results,#batterlabView>#batterLabPlayer{margin-left:20px!important;margin-right:20px!important}
+#batterlabView>.range-tabs{margin-top:18px!important}
+.search-box{background:#050b16!important;border:1px solid #19243a!important;border-radius:12px!important;color:#fff!important;padding:14px 15px!important}
+.search-box:focus{border-color:var(--rp-neon)!important;box-shadow:0 0 0 3px rgba(105,242,39,.08)}
+.prop-type-tabs button,.market-tabs button,.range-tabs button,.detail-tabs button,.pill-btn{
+  background:#0a1323!important;border:1px solid var(--rp-line)!important;color:#8795ad!important
+}
+.prop-type-tabs button.active,.market-tabs button.active,.range-tabs button.active,.detail-tabs button.active{
+  background:#101d31!important;color:#fff!important;border-color:rgba(105,242,39,.35)!important;box-shadow:inset 0 -2px 0 var(--rp-neon)
+}
+.prop-stat,.mini,.log-card,.arsenal-box{background:#07101d!important;border:1px solid rgba(148,163,184,.09)!important}
+.prop-stat b,.bat-order,.division-title{color:var(--rp-neon)!important}
+
+.locked-dashboard{background:linear-gradient(160deg,#0a1427,#060d19)!important;border:1px solid var(--rp-line)!important}
+.locked-dashboard h2,.member-dialog h2,.policy-head h2{color:var(--rp-neon)!important}
+
+@media(max-width:900px){
+  .app{padding:0 12px 98px}.topbar{margin:0 -12px;padding:11px 12px}.nav{top:70px;margin:0 -12px 12px;padding:8px 12px}
+  .layout{display:block!important}.left-col{display:none!important}.panel{border-radius:14px!important}
+  .hr-grid{grid-template-columns:1fr!important}.board{padding:14px!important}
+  #top20View>.section-title:first-child{margin:-14px -14px 14px!important;padding:23px 17px 19px!important}
+  #top20View>.section-title:first-child:after{display:none}
+  #top20View>.section-title:first-child h2{font-size:24px!important}
+  .section-title h2{font-size:19px!important}
+  .hr-card{grid-template-columns:58px minmax(0,1fr) 76px!important;min-height:94px;padding:12px!important}
+  .membership-bar{margin:10px 0!important}
+}
+@media(max-width:620px){
+  .topbar{align-items:center!important}.brand-logo{width:40px;height:40px}.brand h1{font-size:17px}
+  .top-actions{gap:5px!important}.platform-switch{display:none!important}.live{font-size:7px!important;padding:5px 7px!important}
+  .sport-switch button{padding:7px 9px!important;font-size:8px!important}
+  .nav{position:fixed!important;left:0;right:0;bottom:0;top:auto!important;margin:0!important;padding:8px 8px calc(8px + env(safe-area-inset-bottom))!important;
+    justify-content:space-around;background:rgba(3,7,16,.97)!important;border-top:1px solid #162036;border-bottom:0!important;z-index:200}
+  .nav[hidden]{display:none!important}.nav button{min-width:0!important;flex:1 1 0!important;padding:10px 4px!important;font-size:8px!important;border-radius:9px!important}
+  .nav button.active{background:#0c1729!important;box-shadow:inset 0 0 0 1px rgba(105,242,39,.18)!important;color:var(--rp-neon)!important}
+  .membership-bar{padding:12px!important}.membership-copy span{font-size:9px!important}
+  .hr-card{grid-template-columns:52px minmax(0,1fr) 66px!important;gap:9px!important}.hr-card .player-avatar,.hr-card .face{width:48px!important;height:48px!important}
+  #batterlabView>.range-tabs,#batterlabView>.search-box,#batterlabView>.search-results,#batterlabView>#batterLabPlayer{margin-left:12px!important;margin-right:12px!important}
+}
+</style>
+<!-- RALLO PREMIUM REDESIGN END -->
 </head>
 <body>
 <div class="app">
