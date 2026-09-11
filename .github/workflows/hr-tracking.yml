@@ -1,0 +1,33 @@
+name: Refresh HR contact and results
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['index.html', 'scripts/update_hr_tracking.py', '.github/workflows/hr-tracking.yml']
+  schedule:
+    - cron: '35 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: hr-tracking
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Research and settle recorded selections
+        run: python scripts/update_hr_tracking.py
+      - name: Save research data
+        run: |
+          git config user.name 'rallopicks-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/hr-quality.json data/hr-history.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh HR contact research and final results'
+            git pull --rebase origin main
+            git push
+          fi
