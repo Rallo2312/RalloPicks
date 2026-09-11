@@ -396,6 +396,88 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 }
 </style>
 
+
+<style>
+/* PickFinder-inspired Player Lab profile */
+.analytics-shell{background:#050a19!important;border-color:#20294a!important}
+.analytics-top{
+  background:
+    radial-gradient(circle at 82% 20%,rgba(72,61,255,.38),transparent 34%),
+    linear-gradient(135deg,#11195c 0%,#252a9d 55%,#3935e7 100%)!important;
+  border-bottom:0!important;min-height:150px!important
+}
+.analytics-top:before{content:"PLAYER PROFILE";position:absolute;right:20px;top:18px;font-size:8px;font-weight:1000;letter-spacing:1.4px;color:rgba(255,255,255,.64)}
+.analytics-top:after{width:100%!important;height:1px!important;background:rgba(255,255,255,.14)!important}
+.analytics-top .face,.analytics-top .player-avatar.large{
+  border-color:rgba(255,255,255,.58)!important;box-shadow:0 0 0 5px rgba(8,13,47,.38),0 16px 34px rgba(0,0,0,.34)!important
+}
+.analytics-top .eyebrow{color:#9fe870!important}
+.analytics-name{color:white!important}
+.analytics-sub{color:#d3d7f6!important}
+.fav-btn{background:rgba(10,16,49,.52)!important;border-color:rgba(255,255,255,.2)!important;color:#fff!important}
+
+.lab-quick-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px 14px 12px;
+  background:linear-gradient(180deg,#2e32d6 0,#2a2dc2 56%,#0a1023 56%,#0a1023 100%);
+}
+.lab-quick-grid button{
+  min-height:92px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:#151a31;color:#98a5bd;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-weight:800;cursor:pointer
+}
+.lab-quick-grid button:first-child{color:#fff;box-shadow:inset 0 0 0 1px rgba(117,128,255,.22)}
+.lab-quick-grid button b{font-size:24px;line-height:1;font-weight:600;color:currentColor}
+.lab-quick-grid button span{font-size:10px;white-space:nowrap}
+.lab-quick-grid button:hover{background:#1a2140;color:#fff;border-color:rgba(123,135,255,.38)}
+
+.analytics-shell>.range-tabs,.analytics-shell>.analytics-markets{
+  background:#080e20!important;border-color:#1b2440!important
+}
+.analytics-shell>.range-tabs button,.analytics-shell>.analytics-markets button{
+  background:#11182d!important;border-color:#202b48!important;color:#8896af!important
+}
+.analytics-shell>.range-tabs button.active,.analytics-shell>.analytics-markets button.active{
+  background:#1a2240!important;border-color:#4f5eff!important;box-shadow:inset 0 -2px 0 #6d79ff!important
+}
+.analytics-card{background:#080f23!important;border-color:#1d2745!important}
+.analytics-title{background:#151a31!important;border-color:#202948!important;font-size:12px!important}
+.chart-wrap{
+  background:
+   linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),
+   linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
+   linear-gradient(180deg,rgba(31,209,142,.14),rgba(4,9,24,.02))!important;
+  background-size:100% 46px,52px 100%,100% 100%!important
+}
+.gamebar .barcol{background:linear-gradient(180deg,#25e0a1,#08b881)!important;border-radius:10px 10px 2px 2px!important}
+.gamebar.miss .barcol{background:linear-gradient(180deg,#727b8e,#3f4658)!important}
+.hit-rates{background:#070d1d!important}
+.hit-rate{background:#11182d!important;border-color:#1d2948!important}
+.hit-rate b{color:#31e4ad!important}
+.matchup-stat,.bvp-stat{background:#0d1429!important;border-color:#202a48!important}
+.arsenal-list,.bvp-wrap{background:#080f23!important}
+.arsenal-row{min-height:64px!important}
+.arsenal-row .pitch-name{font-size:12px!important}
+.line-adjuster{background:#0d1428!important;border-color:#202c4d!important}
+.book-select,.line-stepper input,.line-control input{background:#080e1d!important;border-color:#273453!important}
+.adjust-btn,.tier-btn,.step-btn{background:#131a2f!important;border-color:#26314d!important}
+
+@media(max-width:620px){
+  #batterlabView>.section-title{display:none!important}
+  #batterlabView>.range-tabs{margin-top:10px!important}
+  .analytics-shell{border-radius:0!important;border-left:0!important;border-right:0!important;margin-left:-12px!important;margin-right:-12px!important}
+  .analytics-top{min-height:138px!important;padding:18px 16px 15px!important}
+  .analytics-top:before{display:none}
+  .analytics-name{font-size:24px!important}
+  .analytics-sub{font-size:10px!important;line-height:1.45}
+  .lab-quick-grid{grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 10px 13px}
+  .lab-quick-grid button{min-height:84px;border-radius:12px;padding:7px 3px}
+  .lab-quick-grid button b{font-size:21px}.lab-quick-grid button span{font-size:8px}
+  .analytics-shell>.range-tabs,.analytics-shell>.analytics-markets{padding:9px 10px!important}
+  .analytics-shell>.range-tabs button,.analytics-shell>.analytics-markets button{padding:9px 10px!important;font-size:9px!important}
+  .analytics-grid{padding:10px!important}
+  .analytics-card{border-radius:13px!important}
+  .chart-wrap{height:300px!important}
+}
+</style>
 <!-- RALLO PREMIUM REDESIGN END -->
 </head>
 <body>
@@ -833,6 +915,14 @@ function arsenalRows(kind){
  return rows.map(x=>`<div class="batter-pitch-row"><div class="pitch-name"><span class="pitch-dot"></span>${esc(x.type||x.code)}<small>${x.pitches??'—'} pitches seen</small></div><div class="metric"><b>${fmt(x.avg)}</b><span>AVG</span></div><div class="metric"><b>${fmt(x.slg)}</b><span>SLG</span></div><div class="metric"><b>${x.whiff==null?'—':x.whiff+'%'}</b><span>WHIFF</span></div><div class="metric"><b>${x.hardHit==null?'—':x.hardHit+'%'}</b><span>HARD HIT</span></div></div>`).join('');
 }
 function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.range=n;state.currentLab.market=state.currentLab.market||'totalBases';state.currentLab.line=state.currentLab.line??ANALYTIC_MARKETS[state.currentLab.market].defaultLine;renderBatterAnalytics()}
+
+function scrollLabSection(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+function playerLabQuickNav(kind){
+ const items=kind==='pitcher'
+  ?[['⚔','Matchup','lab-matchup'],['◔','Pitch Arsenal','lab-arsenal'],['↗','Trends','lab-trends'],['≡','Ranks','lab-ranks']]
+  :[['⚔','Matchup','lab-matchup'],['◔','Pitch Arsenal','lab-arsenal'],['↗','Trends','lab-trends'],['◎','BvP','lab-bvp']];
+ return '<div class="lab-quick-grid">'+items.map(x=>'<button onclick="scrollLabSection(\''+x[2]+'\')"><b>'+x[0]+'</b><span>'+x[1]+'</span></button>').join('')+'</div>';
+}
 function renderBatterAnalytics(){
  const p=state.currentLab;if(!p)return;
  const n=p.range||10, market=ANALYTIC_MARKETS[p.market||'totalBases'];
@@ -850,9 +940,10 @@ function renderBatterAnalytics(){
  const pitcherOptions=p.pitcherOptions||[],bvp=p.bvp||{},bt=bvp.total||{},bs=[...(bvp.seasons||[])].sort((a,b)=>String(b.season||'').localeCompare(String(a.season||'')));
  const pitcherSelect=pitcherOptions.length?`<select class="pitcher-select" onchange="selectMatchupPitcher(this.value)">${pitcherOptions.map(x=>`<option value="${x.id}" ${Number(x.id)===Number(p.selectedPitcherId)?'selected':''}>${esc(x.fullName)}</option>`).join('')}</select>`:'<div class="note-box">No opposing pitchers are available yet.</div>';
  const bvpBody=p.bvpLoading?'<div class="empty">Loading career matchup…</div>':(p.bvpError?'<div class="note-box">Pitcher matchup history is unavailable right now.</div>':(Object.keys(bt).length?`<div class="bvp-grid"><div class="bvp-stat"><b>${bt.hits??0}/${bt.atBats??0}</b><span>HITS / AT-BATS</span></div><div class="bvp-stat"><b>${bt.homeRuns??0}</b><span>HOME RUNS</span></div><div class="bvp-stat"><b>${bt.strikeOuts??0}</b><span>STRIKEOUTS</span></div><div class="bvp-stat"><b>${bt.avg??'—'} / ${bt.ops??'—'}</b><span>AVG / OPS</span></div></div><div class="bvp-years">${bs.map(x=>{const z=x.stat||{};return `<div class="bvp-year"><b>${esc(x.season||'—')}</b><span>${z.atBats??0} AB</span><span>${z.hits??0} H</span><span>${z.homeRuns??0} HR</span><span>${z.avg??'—'} AVG</span><span>${z.ops??'—'} OPS</span></div>`}).join('')}</div>`:'<div class="note-box">No previous plate appearances against this pitcher.</div>'));
- const bvpPanel=`<div class="analytics-card" style="margin-top:10px"><div class="analytics-title">Batter vs pitcher • career history</div><div class="bvp-wrap">${pitcherSelect}${bvpBody}</div></div>`;
+ const bvpPanel=`<div class="analytics-card" id="lab-bvp" style="margin-top:10px"><div class="analytics-title">Batter vs pitcher • career history</div><div class="bvp-wrap">${pitcherSelect}${bvpBody}</div></div>`;
  document.getElementById('batterLabPlayer').innerHTML=`<div class="analytics-shell">
-  <div class="analytics-top">${playerAvatar(p.name,p.id,'large')}<div><div class="eyebrow">RALLOPICKS PLAYER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Interactive prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">${isCurrentSaved()?'★ Saved':'☆ Favorite'}</button></div>
+  <div class="analytics-top">${playerAvatar(p.name,p.id,'large')}<div><div class="eyebrow">RALLOPICKS PLAYER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • vs ${esc(p.opponent?.name||'Opponent TBD')} • Interactive prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">${isCurrentSaved()?'★ Saved':'☆ Favorite'}</button></div>
+  ${playerLabQuickNav('batter')}
   <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setAnalyticRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setAnalyticRange('season')">Season</button><button class="${n==='h2h'?'active':''}" onclick="setAnalyticRange('h2h')">⚔ Head to Head</button></div>
   <div class="analytics-markets">${Object.entries(ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setAnalyticMarket('${k}')">${m.label}</button>`).join('')}</div>
   ${lineAdjusterHtml(p,line)}
@@ -861,11 +952,11 @@ function renderBatterAnalytics(){
   ${moreLessHtml(p,market,line)}
   <div class="analytics-grid">
    <div>
-    <div class="analytics-card"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div>
-    <div class="analytics-card batter-pitch-card"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}</div>
+    <div class="analytics-card" id="lab-trends"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div>
+    <div class="analytics-card batter-pitch-card" id="lab-arsenal"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}</div>
    </div>
    <div>
-    <div class="analytics-card"><div class="analytics-title">Head to head vs today's opponent</div><div class="matchup-box"><div class="matchup-stat">${p.opponent?.id?teamBadge(p.opponent.abbreviation||p.opponent.name,p.opponent.id,'matchup'):''}<b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Today's opponent</span></div><div class="matchup-stat"><b>${h2h.length}</b><span>Games • last 3 seasons</span></div><div class="matchup-stat"><b>${h2hPct}%</b><span>${market.label} hit rate</span></div><div class="matchup-stat"><b>${h2hAvg} / ${h2hHigh}</b><span>Average / high</span></div></div></div>
+    <div class="analytics-card" id="lab-matchup"><div class="analytics-title">Head to head vs today's opponent</div><div class="matchup-box"><div class="matchup-stat">${p.opponent?.id?teamBadge(p.opponent.abbreviation||p.opponent.name,p.opponent.id,'matchup'):''}<b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Today's opponent</span></div><div class="matchup-stat"><b>${h2h.length}</b><span>Games • last 3 seasons</span></div><div class="matchup-stat"><b>${h2hPct}%</b><span>${market.label} hit rate</span></div><div class="matchup-stat"><b>${h2hAvg} / ${h2hHigh}</b><span>Average / high</span></div></div></div>
     ${bvpPanel}
     <div class="analytics-card" style="margin-top:10px"><div class="analytics-title">${esc(p.pitcher?.fullName||'Opposing pitcher')} • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div></div>
    </div>
@@ -911,14 +1002,15 @@ function renderPitcherAnalytics(){
  const lineBottom=Math.min(220,Math.max(5,line/max*190)),windowLabel=n==='h2h'?`head to head vs ${esc(p.opponent?.name||'opponent')}`:(n==='season'?'season':`last ${games.length} games`);
  const rateCards=n==='h2h'?`<div class="hit-rate"><span>H2H GAMES</span><b>${h2h.length}</b></div><div class="hit-rate"><span>H2H HIT RATE</span><b>${h2hPct}%</b></div><div class="hit-rate"><span>H2H AVG ${market.label.toUpperCase()}</span><b>${h2hAvg}</b></div>`:`<div class="hit-rate"><span>LAST 5 HIT RATE</span><b>${l5}%</b></div><div class="hit-rate"><span>LAST 10 HIT RATE</span><b>${l10}%</b></div><div class="hit-rate"><span>LAST 20 HIT RATE</span><b>${l20}%</b></div>`;
  document.getElementById('batterLabPlayer').innerHTML=`<div class="analytics-shell">
-  <div class="analytics-top">${playerAvatar(p.name,p.id,'large')}<div><div class="eyebrow">RALLOPICKS PITCHER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • Starting pitcher prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">${isCurrentSaved()?'★ Saved':'☆ Favorite'}</button></div>
+  <div class="analytics-top">${playerAvatar(p.name,p.id,'large')}<div><div class="eyebrow">RALLOPICKS PITCHER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • vs ${esc(p.opponent?.name||'Opponent TBD')} • Starting pitcher prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">${isCurrentSaved()?'★ Saved':'☆ Favorite'}</button></div>
+  ${playerLabQuickNav('pitcher')}
   <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setPitcherRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setPitcherRange('season')">Season</button><button class="${n==='h2h'?'active':''}" onclick="setPitcherRange('h2h')">⚔ Head to Head</button></div>
   <div class="analytics-markets">${Object.entries(PITCHER_ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setPitcherMarket('${k}')">${m.label}</button>`).join('')}</div>
   ${lineAdjusterHtml(p,line)}
   ${bestLineFinderHtml(p,market)}
   ${moreLessHtml(p,market,line)}
-  <div class="analytics-grid"><div><div class="analytics-card"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div></div>
-   <div><div class="analytics-card"><div class="analytics-title">Head to head vs today's opponent</div><div class="matchup-box"><div class="matchup-stat">${p.opponent?.id?teamBadge(p.opponent.abbreviation||p.opponent.name,p.opponent.id,'matchup'):''}<b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Opponent</span></div><div class="matchup-stat"><b>${h2h.length}</b><span>Games • last 3 seasons</span></div><div class="matchup-stat"><b>${h2hPct}%</b><span>${market.label} hit rate</span></div><div class="matchup-stat"><b>${h2hAvg} / ${h2hHigh}</b><span>Average / high</span></div></div></div><div class="analytics-card" style="margin-top:10px"><div class="analytics-title">${esc(p.name)} • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div></div></div>
+  <div id="lab-ranks"></div><div class="analytics-grid"><div><div class="analytics-card" id="lab-trends"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div></div>
+   <div><div class="analytics-card" id="lab-matchup"><div class="analytics-title">Head to head vs today's opponent</div><div class="matchup-box"><div class="matchup-stat">${p.opponent?.id?teamBadge(p.opponent.abbreviation||p.opponent.name,p.opponent.id,'matchup'):''}<b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Opponent</span></div><div class="matchup-stat"><b>${h2h.length}</b><span>Games • last 3 seasons</span></div><div class="matchup-stat"><b>${h2hPct}%</b><span>${market.label} hit rate</span></div><div class="matchup-stat"><b>${h2hAvg} / ${h2hHigh}</b><span>Average / high</span></div></div></div><div class="analytics-card" id="lab-arsenal" style="margin-top:10px"><div class="analytics-title">${esc(p.name)} • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div></div></div>
   </div></div>`;
 }
 
