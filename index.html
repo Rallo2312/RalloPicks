@@ -616,6 +616,9 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
  .report-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style><style>
+/* Parlay scanner */
+.parlay-scanner{margin:0 0 12px;padding:13px;border:1px solid rgba(85,199,255,.28);border-radius:15px;background:linear-gradient(145deg,#0b1427,#08101e)}
+.parlay-scanner p{font-size:8px;color:#8d9ab0;line-height:1.55}.parlay-upload{display:inline-flex;align-items:center;justify-content:center;margin-top:6px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#102d23;font-size:9px;font-weight:1000;cursor:pointer}.parlay-upload input{display:none}.parlay-preview{margin-top:9px}.parlay-preview img{max-width:100%;max-height:260px;border-radius:10px;border:1px solid rgba(255,255,255,.08)}.parlay-status{margin-top:8px;font-size:8px;color:#8ca0b8}.parlay-text{width:100%;min-height:120px;margin-top:8px;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:#091221;color:#fff;font-size:9px;resize:vertical}.parlay-score-card{margin-top:9px;padding:12px;border-radius:12px;background:#0d172a;border:1px solid rgba(255,255,255,.08)}.parlay-score-card strong{font-size:34px}.parlay-score-card small{display:block;color:#7d8ca4;font-size:7px}.parlay-score-card ul{padding-left:16px;margin:8px 0 0}.parlay-score-card li{font-size:8px;color:#a9b5c8;margin:4px 0}
 /* Rallo Read recommendation */
 .rallo-read{margin:10px 0;padding:13px;border:1px solid #273652;border-radius:15px;background:linear-gradient(145deg,#0b1427,#08101e);box-shadow:0 12px 30px rgba(0,0,0,.16)}
 .rallo-read.good{border-color:rgba(46,234,139,.42);box-shadow:0 12px 35px rgba(46,234,139,.06)}.rallo-read.bad{border-color:rgba(255,95,108,.35)}
@@ -685,7 +688,20 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 
     <section class="panel center-col">
       <div class="board" id="mlbHomeView"><div id="mlbHomeDashboard"><div class="empty">Building today’s RalloPicks dashboard…</div></div></div>
-      <div class="board hidden-view" id="myBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved MLB + NFL props • line movement • results</span></div><span>Device-local</span></div><div id="myBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
+      <div class="board hidden-view" id="myBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved MLB + NFL props • line movement • results</span></div><span>Device-local</span></div>
+<section class="parlay-scanner">
+  <div class="model-head"><b>📸 Parlay Scanner</b><span>Screenshot → OCR → Rallo Score</span></div>
+  <p>Upload a parlay screenshot. RalloPicks will read the slip, identify likely legs, and give it a research score with risk flags.</p>
+  <label class="parlay-upload">
+    <input id="parlayImageInput" type="file" accept="image/*" onchange="scanParlayScreenshot(this.files?.[0])">
+    <span>📷 Choose parlay screenshot</span>
+  </label>
+  <div id="parlayPreviewWrap" class="parlay-preview" hidden><img id="parlayPreview" alt="Parlay screenshot preview"></div>
+  <div id="parlayScanStatus" class="parlay-status">No screenshot scanned yet.</div>
+  <textarea id="parlayOcrText" class="parlay-text" placeholder="Extracted slip text will appear here. You can edit it before rescoring." oninput="scoreParlayText(this.value)"></textarea>
+  <div id="parlayScoreCard"></div>
+</section>
+<div id="myBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
       <div class="board hidden-view" id="matchupsView">
         <div class="section-title"><div><h2>Today's Matchups</h2><span>Tap a game to open every batter</span></div><span id="gameCount"></span></div>
         <div id="games"><div class="empty">Loading today's MLB slate…</div></div>
@@ -749,6 +765,7 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 </div>
 <dialog class="policy-dialog" id="policyDialog"><div class="policy-head"><h2 id="policyTitle">Policies</h2><button class="policy-close" onclick="closePolicy()" aria-label="Close">×</button></div><div class="policy-body" id="policyBody"></div></dialog>
 <dialog class="member-dialog" id="memberDialog"><button class="member-close" onclick="closeMemberDialog()" aria-label="Close">×</button><div class="member-dialog-body"><h2>Member access</h2><div id="memberSignedOut"><p>Enter the email you used for your RalloPicks membership. We’ll send a secure sign-in link—no password needed.</p><label for="memberEmail" class="tiny">Email address</label><input class="member-email" id="memberEmail" type="email" autocomplete="email" placeholder="you@example.com"><button class="member-primary" id="magicLinkButton" onclick="sendMagicLink()">Email me a sign-in link</button></div><div id="memberSignedIn" hidden><div class="member-status" id="memberStatus">Checking membership…</div><button class="member-primary" id="openLabButton" onclick="openPlayerLabFromDialog()" hidden>Open Player Lab</button><button class="member-secondary" onclick="signOutMember()">Sign out</button></div><div class="member-message" id="memberMessage" aria-live="polite"></div></div></dialog>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js" integrity="sha384-AkNSQdptcXlJ0/NBZc4qGk86cDVXcCevwoWgEKIpHOEfbvlXGLlIkimQtONt8KNf" crossorigin="anonymous"></script>
 <script>
 const MLB='https://statsapi.mlb.com/api';
