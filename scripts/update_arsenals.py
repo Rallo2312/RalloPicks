@@ -148,6 +148,9 @@ def build_pitcher_data(rows, movement_rows, wanted):
             "avg": to_float(first(r, "ba")),
             "slg": to_float(first(r, "slg")),
             "hardHit": to_float(first(r, "hard_hit_percent")),
+            # Savant's batter arsenal CSV exposes home runs by pitch type.
+            # Keep several aliases so this survives minor leaderboard header changes.
+            "homeRuns": to_int(first(r, "home_run", "home_runs", "hr", "hrs", "HR")),
         }
 
         grouped.setdefault(str(pid), []).append(item)
