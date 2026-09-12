@@ -616,6 +616,28 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
  .report-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style><style>
+/* Compact mobile HR research cards */
+@media(max-width:620px){
+ #top20Rows.hr-grid,#sleeperFinderRows.hr-grid,#underratedHrRows.hr-grid{gap:7px}
+ #top20Rows .hr-list-row,#sleeperFinderRows .hr-list-row,#underratedHrRows .hr-list-row{padding:9px!important;gap:7px!important;border-radius:12px!important;grid-template-columns:minmax(0,1.45fr) minmax(92px,.75fr)!important;align-items:start!important}
+ .hr-list-row .hr-list-identity{min-width:0;gap:7px!important}
+ .hr-list-row .player-avatar{width:36px!important;height:36px!important;font-size:9px!important}
+ .hr-list-row .hr-list-rank{font-size:8px!important}
+ .hr-list-row .hr-list-player strong{font-size:13px!important;line-height:1.08!important;overflow-wrap:normal!important;word-break:normal!important}
+ .hr-list-row .hr-list-player span,.hr-list-row .hr-list-player small{font-size:8px!important;line-height:1.3!important}
+ .hr-list-row .lineup-tag{display:inline-flex!important;width:auto!important;padding:4px 6px!important;font-size:7px!important;margin-top:4px!important}
+ .hr-list-row .hr-list-estimate{padding:6px!important;text-align:center!important}
+ .hr-list-row .hr-list-estimate span{font-size:6px!important}
+ .hr-list-row .hr-list-estimate b{font-size:20px!important;line-height:1!important}
+ .hr-list-row .hr-list-estimate small{font-size:6px!important}
+ .hr-list-row .hr-list-stats{grid-column:1/-1!important;display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:3px!important;margin-top:2px!important;padding-top:7px!important}
+ .hr-list-row .hr-list-stat{padding:5px 2px!important;min-width:0!important;text-align:center!important}
+ .hr-list-row .hr-list-stat span{font-size:6px!important;white-space:nowrap!important}
+ .hr-list-row .hr-list-stat b{font-size:11px!important}
+ .hr-list-row .hr-list-details{grid-column:1/-1!important;margin-top:0!important}
+ .hr-list-row .hr-list-details summary{padding:7px 2px!important;font-size:9px!important}
+}
+</style><style>
 /* Parlay scanner */
 .parlay-scanner{margin:0 0 12px;padding:13px;border:1px solid rgba(85,199,255,.28);border-radius:15px;background:linear-gradient(145deg,#0b1427,#08101e)}
 .parlay-scanner p{font-size:8px;color:#8d9ab0;line-height:1.55}.parlay-upload{display:inline-flex;align-items:center;justify-content:center;margin-top:6px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#102d23;font-size:9px;font-weight:1000;cursor:pointer}.parlay-upload input{display:none}.parlay-preview{margin-top:9px}.parlay-preview img{max-width:100%;max-height:260px;border-radius:10px;border:1px solid rgba(255,255,255,.08)}.parlay-status{margin-top:8px;font-size:8px;color:#8ca0b8}.parlay-text{width:100%;min-height:120px;margin-top:8px;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:#091221;color:#fff;font-size:9px;resize:vertical}.parlay-score-card{margin-top:9px;padding:13px;border-radius:14px;background:linear-gradient(145deg,#0d172a,#091221);border:1px solid rgba(255,255,255,.09)}.parlay-score-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.parlay-score-head>div:first-child>small{display:block;color:#7d8ca4;font-size:7px;font-weight:900;letter-spacing:.7px}.parlay-score-head strong{display:block;font-size:42px;line-height:1;margin-top:4px}.parlay-score-head strong em{font-size:11px;color:#7d8ca4;font-style:normal}.parlay-grade{min-width:120px;padding:9px 10px;border-radius:11px;background:#111c31;text-align:right}.parlay-grade b{display:block;font-size:18px}.parlay-grade span{display:block;font-size:7px;color:#9aa7ba;margin-top:3px}.parlay-score-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.parlay-score-meta span{padding:6px 8px;border-radius:999px;background:#101a2d;font-size:7px;color:#b2bfd1}.parlay-meaning{margin-top:9px;padding:10px;border-radius:10px;background:#0b1425}.parlay-meaning b,.parlay-signals b{display:block;font-size:7px;margin-bottom:4px}.parlay-meaning span,.parlay-signals span{display:block;font-size:7px;line-height:1.5;color:#aab6c8}.parlay-signals{margin-top:8px;padding:9px;border-radius:10px;background:#0c1526}.parlay-signals.good{border:1px solid rgba(46,234,139,.2)}.parlay-signals.risk{border:1px solid rgba(255,188,32,.22)}.parlay-disclaimer{display:block;margin-top:8px;color:#6f7d93;font-size:6px;line-height:1.5}@media(max-width:620px){.parlay-score-head{align-items:center}.parlay-grade{min-width:108px}.parlay-score-head strong{font-size:38px}}
