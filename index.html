@@ -478,6 +478,44 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
   .chart-wrap{height:300px!important}
 }
 </style>
+
+<style>
+/* Player Lab v3 reference-dashboard */
+@media(max-width:620px){
+  #batterlabView{margin:0!important;padding:0!important}
+  #batterlabView>.range-tabs,#batterlabView>.search-box,#batterlabView>.search-results{margin-left:10px!important;margin-right:10px!important}
+  #batterLabPlayer{margin-left:0!important;margin-right:0!important}
+  .analytics-shell{margin:8px -12px 0!important;border:0!important;border-radius:0!important;background:#05091a!important}
+  .analytics-top{
+    position:sticky!important;top:0!important;z-index:70!important;
+    grid-template-columns:70px 1fr!important;min-height:128px!important;padding:18px 15px 14px!important;
+    background:linear-gradient(135deg,#11175c,#272b9e 52%,#3c38ef)!important
+  }
+  .analytics-top .face,.analytics-top .player-avatar.large{width:66px!important;height:66px!important}
+  .analytics-name{font-size:22px!important}.analytics-sub{font-size:9px!important;max-width:250px}
+  .analytics-top .fav-btn{position:absolute;right:13px;top:13px;width:auto!important;min-width:0!important;padding:7px 9px!important;font-size:8px!important}
+  .lab-quick-grid{background:#3033dc!important;padding:0 10px 12px!important;grid-template-columns:repeat(4,1fr)!important}
+  .lab-quick-grid button{min-height:92px!important;background:#161a31!important;border-radius:13px!important}
+  .lab-quick-grid button span{font-size:9px!important}.lab-quick-grid button b{font-size:23px!important}
+  .analytics-shell>.range-tabs{order:0;background:#080d20!important;display:flex!important;overflow-x:auto!important;flex-wrap:nowrap!important}
+  .analytics-shell>.analytics-markets{display:flex!important;overflow-x:auto!important;flex-wrap:nowrap!important;gap:6px!important}
+  .analytics-shell>.analytics-markets button{flex:0 0 auto!important;min-width:88px!important}
+  .line-adjuster{border-radius:0!important;margin:0!important;border-left:0!important;border-right:0!important;padding:14px 12px!important}
+  .analytics-grid{display:flex!important;flex-direction:column!important;padding:10px!important;gap:12px!important}
+  .analytics-grid>div{display:contents!important}
+  #lab-trends{order:1!important}
+  #lab-matchup{order:2!important;margin-top:0!important}
+  #lab-arsenal{order:3!important;margin-top:0!important}
+  #lab-bvp{order:4!important}
+  .analytics-card{border-radius:13px!important;overflow:hidden!important}
+  .analytics-title{font-size:13px!important;padding:14px!important}
+  #lab-matchup .matchup-box{display:grid!important;grid-template-columns:repeat(2,1fr)!important;padding:12px!important}
+  #lab-arsenal .arsenal-row{min-height:70px!important;padding:12px!important}
+  .chart-wrap{height:330px!important;padding:10px 8px 0!important}
+  .hit-rates{display:grid!important;grid-template-columns:repeat(3,1fr)!important}
+  .hit-rate{padding:10px 5px!important}.hit-rate b{font-size:17px!important}
+}
+</style>
 <!-- RALLO PREMIUM REDESIGN END -->
 </head>
 <body>
