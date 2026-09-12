@@ -530,3 +530,25 @@ const priorSetSport=window.setSport;window.setSport=function(name){const out=pri
 renderAppBoard();renderAppDashboards();setTimeout(()=>{if(state.currentSport==='NFL')switchNflView('home');else switchView('home')},0);
 setInterval(()=>renderAppDashboards(),120000);
 })();
+
+
+/* Global header player search */
+let topHeaderSearchTimer=null;
+window.topHeaderSearch=function(value,immediate=false){
+  const q=String(value||'').trim();
+  clearTimeout(topHeaderSearchTimer);
+  if(!q)return;
+  const run=()=>{
+    if(state.currentSport==='NFL'){
+      switchNflView('players');
+      const nflInput=document.querySelector('#nflPlayersView input[type="search"],#nflPlayersView input');
+      if(nflInput){nflInput.value=q;nflInput.dispatchEvent(new Event('input',{bubbles:true}));}
+      return;
+    }
+    switchView('batterlab');
+    const lab=document.getElementById('batterSearch');
+    if(lab){lab.value=q;searchPlayers(q);lab.focus({preventScroll:true});}
+    document.getElementById('batterlabView')?.scrollIntoView({behavior:immediate?'smooth':'auto',block:'start'});
+  };
+  if(immediate)run();else topHeaderSearchTimer=setTimeout(run,220);
+};
