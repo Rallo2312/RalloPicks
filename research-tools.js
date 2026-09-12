@@ -540,15 +540,30 @@ window.topHeaderSearch=function(value,immediate=false){
   if(!q)return;
   const run=()=>{
     if(state.currentSport==='NFL'){
-      switchNflView('players');
+      // Use the normal NFL player view when available.
+      try{ switchNflView('players'); }catch{}
       const nflInput=document.querySelector('#nflPlayersView input[type="search"],#nflPlayersView input');
       if(nflInput){nflInput.value=q;nflInput.dispatchEvent(new Event('input',{bubbles:true}));}
       return;
     }
-    switchView('batterlab');
+
+    // Open MLB Player Lab directly so the header search is not blocked by stale membership routing.
+    document.body.classList.remove('player-profile-open');
+    document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view==='batterlab'));
+    ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterRankingsView','top20View'].forEach(id=>{
+      const el=document.getElementById(id); if(el) el.style.display='none';
+    });
+    const view=document.getElementById('batterlabView');
+    if(view){view.style.display='block';view.classList.remove('hidden-view');}
+
     const lab=document.getElementById('batterSearch');
-    if(lab){lab.value=q;searchPlayers(q);lab.focus({preventScroll:true});}
-    document.getElementById('batterlabView')?.scrollIntoView({behavior:immediate?'smooth':'auto',block:'start'});
+    if(lab){
+      lab.value=q;
+      // Call the existing player search directly.
+      searchPlayers(q);
+      lab.focus({preventScroll:true});
+    }
+    view?.scrollIntoView({behavior:immediate?'smooth':'auto',block:'start'});
   };
-  if(immediate)run();else topHeaderSearchTimer=setTimeout(run,220);
+  if(immediate)run(); else topHeaderSearchTimer=setTimeout(run,120);
 };
