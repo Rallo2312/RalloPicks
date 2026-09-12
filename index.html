@@ -583,8 +583,7 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
     <button data-view="moneyline">💵 Moneyline</button>
   </nav>
   <nav class="nav" id="nflNav" hidden>
-    <button class="active" data-nfl-view="matchups">🏈 Matchups</button>
-    <button data-nfl-view="players">🔎 Player Lab</button>
+    <button class="active" data-nfl-view="players">🔎 Player Lab</button>
     <button data-nfl-view="ranks">📊 Off / Def Ranks</button>
     <button data-nfl-view="moneyline">💵 Moneyline</button>
     <button data-nfl-view="standings">🏆 Standings</button>
@@ -635,10 +634,6 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
       </section>
     </aside>
     <section class="panel center-col">
-      <div class="board" id="nflMatchupsView">
-        <div class="section-title"><div><h2>Upcoming NFL Matchups</h2><span>Scoring offense vs. scoring defense • current regular-season ranks</span></div><span id="nflGameCount">—</span></div>
-        <div class="nfl-matchups" id="nflMatchups"><div class="empty">Loading the NFL slate…</div></div>
-      </div>
       <div class="board hidden-view" id="nflRanksView">
         <div class="section-title"><div><h2>Offense & Defense Rankings</h2><span>Points per game and points allowed per game • updates after completed games</span></div><span>1–32</span></div>
         <div class="nfl-rank-grid" id="nflRankGrid"><div class="empty">Loading ranks…</div></div>
@@ -1045,8 +1040,6 @@ function renderBatterAnalytics(){
   <div class="analytics-markets">${Object.entries(ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setAnalyticMarket('${k}')">${m.label}</button>`).join('')}</div>
   ${lineAdjusterHtml(p,line)}
   ${bestLineFinderHtml(p,market)}
-  ${supportingFactorsHtml(p,market,line,direction)}
-  ${moreLessHtml(p,market,line)}
   <div class="analytics-grid">
    <div>
     <div class="analytics-card" id="lab-trends"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div>
@@ -1105,7 +1098,6 @@ function renderPitcherAnalytics(){
   <div class="analytics-markets">${Object.entries(PITCHER_ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setPitcherMarket('${k}')">${m.label}</button>`).join('')}</div>
   ${lineAdjusterHtml(p,line)}
   ${bestLineFinderHtml(p,market)}
-  ${moreLessHtml(p,market,line)}
   <div id="lab-ranks"></div><div class="analytics-grid"><div><div class="analytics-card" id="lab-trends"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div></div>
    <div><div class="analytics-card" id="lab-matchup"><div class="analytics-title">Head to head vs today's opponent</div><div class="matchup-box"><div class="matchup-stat">${p.opponent?.id?teamBadge(p.opponent.abbreviation||p.opponent.name,p.opponent.id,'matchup'):''}<b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Opponent</span></div><div class="matchup-stat"><b>${h2h.length}</b><span>Games • last 3 seasons</span></div><div class="matchup-stat"><b>${h2hPct}%</b><span>${market.label} hit rate</span></div><div class="matchup-stat"><b>${h2hAvg} / ${h2hHigh}</b><span>Average / high</span></div></div></div><div class="analytics-card" id="lab-arsenal" style="margin-top:10px"><div class="analytics-title">${esc(p.name)} • Pitch arsenal</div><div class="arsenal-list">${arsenalRows('pitcher')}</div></div></div>
   </div></div>`;
@@ -1354,8 +1346,6 @@ function openNFLPlayer(id){
  if(shouldScroll)document.getElementById('nflPlayerDetail').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function renderNFL(){
- document.getElementById('nflGameCount').textContent=state.nfl.games.length+' games';
- document.getElementById('nflMatchups').innerHTML=state.nfl.games.length?state.nfl.games.map(game=>nflGameCard(game)).join(''):'<div class="nfl-empty-note">No NFL games are inside the next 10-day window.</div>';
  const priced=state.nfl.games.filter(game=>game.odds);
  document.getElementById('nflMoneylines').innerHTML=priced.length?priced.map(game=>nflGameCard(game,true)).join(''):'<div class="nfl-empty-note">NFL lines have not posted yet. The board will fill automatically when the secure odds feed publishes them.</div>';
  document.getElementById('nflOddsStamp').textContent=state.nfl.updatedAt?new Date(state.nfl.updatedAt).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'—';
@@ -1367,7 +1357,7 @@ async function loadNFL(force=false){
  if(state.nflLoaded&&!force){renderNFL();return}
  try{const response=await fetch(`data/nfl.json?d=${Date.now()}`);if(!response.ok)throw new Error(response.status);const data=await response.json();state.nfl={games:data.games||[],teams:data.teams||[],players:data.players||[],season:data.season,updatedAt:data.updated_at};state.nflLoaded=true;window.researchFresh?.('nfl',data.updated_at);renderNFL();if(state.nflCurrentPlayer)openNFLPlayer(state.nflCurrentPlayer,false)}catch(e){window.researchFailed?.('nfl');['nflMatchups','nflMoneylines','nflRankGrid','nflRankQuick','nflStandings','nflPlayerResults'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<div class="nfl-empty-note">NFL research is temporarily unavailable. Please refresh in a few minutes.</div>'})}
 }
-function switchNflView(view){if(!requireMembership())return;document.querySelectorAll('#nflNav button').forEach(button=>button.classList.toggle('active',button.dataset.nflView===view));['nflMatchupsView','nflPlayersView','nflRanksView','nflMoneylineView','nflStandingsView'].forEach(id=>document.getElementById(id).style.display='none');const map={matchups:'nflMatchupsView',players:'nflPlayersView',ranks:'nflRanksView',moneyline:'nflMoneylineView',standings:'nflStandingsView'};document.getElementById(map[view]||map.matchups).style.display='block'}
+function switchNflView(view){if(!requireMembership())return;document.querySelectorAll('#nflNav button').forEach(button=>button.classList.toggle('active',button.dataset.nflView===view));['nflPlayersView','nflRanksView','nflMoneylineView','nflStandingsView'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none'});const map={players:'nflPlayersView',ranks:'nflRanksView',moneyline:'nflMoneylineView',standings:'nflStandingsView'};const target=map[view]||map.players;const el=document.getElementById(target);if(el)el.style.display='block'}
 function switchView(v){if(!requireMembership())return;if(v!=='batterlab')document.body.classList.remove('player-profile-open');document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));['matchupsView','moneylineView','batterlabView','batterRankingsView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});if(v==='matchups')document.getElementById('matchupsView').style.display='block';if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active')}if(v==='batterlab')document.getElementById('batterlabView').style.display='block';if(v==='rankings'){document.getElementById('batterRankingsView').style.display='block';loadDailyBatterRanks()}if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR()}}
 
 
