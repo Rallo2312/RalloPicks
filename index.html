@@ -1355,8 +1355,7 @@ function renderHrTrackerMini(){
  const high=settled.filter(r=>Number(r.trialScore)>=70),highHits=high.filter(r=>r.status==='hit').length;
  el.innerHTML='<div class="model-head"><b>🧪 Model Tracker</b><span>Pregame picks only</span></div><div class="tracker-grid"><div><b>'+settled.length+'</b><span>SETTLED</span></div><div><b>'+hits+'</b><span>HR HITS</span></div><div><b>'+(settled.length?Math.round(hits/settled.length*100):0)+'%</b><span>ALL HIT RATE</span></div><div><b>'+(top.length?Math.round(topHits/top.length*100):0)+'%</b><span>TOP 10 HIT RATE</span></div><div><b>'+(high.length?Math.round(highHits/high.length*100):0)+'%</b><span>70+ SCORE HIT RATE</span></div></div>';
 }
-await ensureHrModelData();
-
+async function loadTop20HR(){await ensureHrModelData();
  loadTopSix();
  const root=document.getElementById('top20Rows'),under=document.getElementById('underratedHrRows');
  if(state.hrBoardLoading)return;
