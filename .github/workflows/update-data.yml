@@ -7,6 +7,7 @@ on:
     paths:
       - "scripts/update_arsenals.py"
       - "scripts/update_nfl.py"
+      - "scripts/update_hr_odds.py"
       - ".github/workflows/update-data.yml"
   schedule:
     - cron: "15 13,17,21 * * *"
@@ -43,6 +44,12 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/update_nfl.py
+
+      - name: Update verified MLB home run odds
+        env:
+          SPORTSGAMEODDS_API_KEY: ${{ secrets.SPORTSGAMEODDS_API_KEY }}
+        run: python scripts/update_hr_odds.py
+
 
       - name: Save fresh RalloPicks data
         run: |
