@@ -187,7 +187,8 @@ window.addEventListener('storage',event=>{
 
 /* RalloPicks full app suite */
 (()=>{
-const BOARD_KEY='ralloBoardV2',LINE_KEY='ralloLineHistoryV2';
+const BOARD_KEY='ralloBoardV2',LINE_KEY='ralloLineHistoryV2',BATTLE_KEY='ralloPropBattleV1';
+let battleKeys=readResearchStorage(BATTLE_KEY);
 let boardExtras=readResearchStorage(BOARD_KEY).filter(x=>x&&x.id&&x.sport);
 let lineHistory=readResearchStorage(LINE_KEY).filter(x=>x&&x.key&&Number.isFinite(x.line));
 function saveBoard(){writeResearchStorage(BOARD_KEY,boardExtras);renderAppBoard();}
@@ -210,6 +211,7 @@ function currentBoardPick(sport){
 }
 window.addCurrentToBoard=function(sport){
  const p=currentBoardPick(sport);if(!p)return;
+ const rec=sport==='NFL'?nflRecommendation():mlbRecommendation();if(rec?.best){p.ralloScore=rec.best.score;p.bestMarket=rec.best.label;p.trapRisk=trapDetector(sport,rec)?.level||'LOW'}
  const k=boardKey(p),i=boardExtras.findIndex(x=>boardKey(x)===k);
  if(i<0)boardExtras.unshift(p);saveBoard();renderAppDashboards();
 };
@@ -323,6 +325,30 @@ function nflRecommendation(){
  const confidence=best.score>=82?'STRONG':best.score>=70?'GOOD':best.score>=58?'LEAN':'PASS';
  return {best,confidence,reasons:reasons.slice(0,4),concerns:concerns.slice(0,2),alternatives:rows.slice(1,3)};
 }
+
+function trapDetector(sport,rec){
+ if(!rec?.best)return null;
+ const reasons=[],b=rec.best;
+ if(b.rate>=80&&b.score<72)reasons.push('Hot L10 results are stronger than the full matchup score');
+ if(rec.concerns?.length)reasons.push(...rec.concerns);
+ let move=null;
+ if(sport==='MLB'&&state.currentLab)move=movementFor('MLB',state.currentLab.id,state.currentLab.market,state.currentLab.book||state.platform);
+ if(sport==='NFL'){
+  const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));
+  if(p)move=movementFor('NFL',p.id,state.nflMarket,state.platform);
+ }
+ if(move){
+  const unfavorable=(b.direction==='more'&&move.delta>0)||(b.direction==='less'&&move.delta<0);
+  if(unfavorable&&Math.abs(move.delta)>=.5)reasons.push('Line moved against the recommended side: '+move.first+' → '+move.line);
+ }
+ let risk=0;if(b.rate>=80&&b.score<72)risk+=2;risk+=Math.min(2,rec.concerns?.length||0);if(move&&Math.abs(move.delta)>=.5)risk++;
+ const level=risk>=4?'HIGH':risk>=2?'MEDIUM':'LOW',cls=level==='HIGH'?'high':level==='MEDIUM'?'medium':'low';
+ return {level,cls,reasons:reasons.slice(0,3)};
+}
+function trapHtml(t){
+ if(!t)return'';
+ return '<section class="trap-card '+t.cls+'"><div><b>🚫 TRAP DETECTOR</b><strong>'+t.level+' RISK</strong></div><div>'+(t.reasons.length?t.reasons.map(x=>'<span>• '+esc(x)+'</span>').join(''):'<span>✓ No major trap pattern detected from the available data.</span>')+'</div></section>';
+}
 function recommendationHtml(rec,sport){
  if(!rec)return'';
  const b=rec.best,cls=b.score>=72?'good':b.score<55?'bad':'neutral',lean=b.direction==='more'?'MORE':'LESS';
@@ -332,12 +358,12 @@ function decorateMLBApp(){
  const host=document.getElementById('batterLabPlayer'),p=state.currentLab;if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
  const e=mlbEdge(),m=movementFor('MLB',p.id,p.market,p.book||state.platform);
- const rec=mlbRecommendation();tools.innerHTML=recommendationHtml(rec,'MLB')+edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
+ const rec=mlbRecommendation(),trap=trapDetector('MLB',rec);tools.innerHTML=recommendationHtml(rec,'MLB')+trapHtml(trap)+edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
 }
 function decorateNFLApp(){
  const host=document.getElementById('nflPlayerDetail'),p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
- const e=nflEdge(),rec=nflRecommendation();tools.innerHTML=recommendationHtml(rec,'NFL')+edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
+ const e=nflEdge(),rec=nflRecommendation(),trap=trapDetector('NFL',rec);tools.innerHTML=recommendationHtml(rec,'NFL')+trapHtml(trap)+edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
 }
 for(const name of ['renderBatterAnalytics','renderPitcherAnalytics']){
  const prior=window[name];window[name]=function(...args){const v=prior.apply(this,args);decorateMLBApp();return v}
@@ -354,10 +380,31 @@ for(const name of ['renderBatterAnalytics','renderPitcherAnalytics']){
 {
  const prior=window.changeNFLLine;window.changeNFLLine=function(v){const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(p)rememberLine('NFL',p.id,state.nflMarket,state.platform,v);const out=prior.call(this,v);decorateNFLApp();renderAppDashboards();return out}
 }
+
+function persistBattle(){writeResearchStorage(BATTLE_KEY,battleKeys);}
+window.toggleBattlePick=function(k){
+ const i=battleKeys.indexOf(k);
+ if(i>=0)battleKeys.splice(i,1);else{if(battleKeys.length>=4)battleKeys.shift();battleKeys.push(k)}
+ persistBattle();renderAppBoard();
+}
+function battleScore(p){
+ let score=Number(p.ralloScore);
+ if(!Number.isFinite(score))score=50;
+ const move=movementFor(p.sport,p.id,p.market,p.book||state.platform);
+ if(move){const unfavorable=(p.direction==='more'&&move.delta>0)||(p.direction==='less'&&move.delta<0);if(unfavorable)score-=Math.min(8,Math.abs(move.delta)*4)}
+ if(p.trapRisk==='HIGH')score-=8;else if(p.trapRisk==='MEDIUM')score-=3;
+ return Math.max(1,Math.min(99,Math.round(score)));
+}
+function propBattleHtml(picks){
+ const selected=picks.filter(p=>battleKeys.includes(boardKey(p))).slice(0,4);
+ if(selected.length<2)return '<section class="prop-battle"><div class="model-head"><b>⚔️ Prop Battle</b><span>Select 2–4 picks below</span></div><p>Tap “Add to Battle” on picks you want compared. RalloPicks will rank them using the saved Rallo score, trap risk and line movement.</p></section>';
+ const ranked=[...selected].sort((a,b)=>battleScore(b)-battleScore(a));
+ return '<section class="prop-battle"><div class="model-head"><b>⚔️ Prop Battle</b><span>'+selected.length+' selected</span></div><div class="battle-winner">👑 #1 '+esc(ranked[0].name)+' • '+esc(ranked[0].label||ranked[0].market)+' • '+battleScore(ranked[0])+'</div>'+ranked.map((p,i)=>'<article class="battle-row"><b>#'+(i+1)+'</b><div><strong>'+esc(p.name)+'</strong><span>'+esc(p.sport)+' • '+esc(p.label||p.market)+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+'</span><span>Trap: '+esc(p.trapRisk||'UNKNOWN')+'</span></div><em>'+battleScore(p)+'</em></article>').join('')+'<button class="six-refresh" onclick="battleKeys=[];persistBattle();renderAppBoard()">Clear Battle</button></section>';
+}
 function boardCard(p){
  const k=boardKey(p),move=movementFor(p.sport,p.id,p.market,p.book||state.platform),status=p.status||'watching';
  const result=status==='win'?'✅ WIN':status==='loss'?'❌ LOSS':status==='push'?'➖ PUSH':status==='played'?'🎟️ PLAYED':'👀 WATCHING';
- return '<article class="my-board-card"><div><strong>'+esc(p.name)+' • '+esc(p.sport)+'</strong><small>'+esc(p.label||savedMarketLabel(p))+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+' • '+esc(p.book||state.platform)+'</small><small>'+result+(move?' • Line '+move.first+' → '+move.line:'')+'</small><div class="board-actions"><button onclick="gradeBoardPick(\''+esc(k)+'\',\'played\')">Mark played</button><button class="win" onclick="gradeBoardPick(\''+esc(k)+'\',\'win\')">W</button><button class="loss" onclick="gradeBoardPick(\''+esc(k)+'\',\'loss\')">L</button><button onclick="gradeBoardPick(\''+esc(k)+'\',\'push\')">Push</button>'+(p.source==='board'?'<button onclick="removeBoardExtra(\''+esc(k)+'\')">Remove</button>':'')+'</div></div><div><b>'+esc(status.toUpperCase())+'</b></div></article>';
+ const battleOn=battleKeys.includes(k); return '<article class="my-board-card"><div><strong>'+esc(p.name)+' • '+esc(p.sport)+'</strong><small>'+esc(p.label||savedMarketLabel(p))+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+' • '+esc(p.book||state.platform)+'</small><small>'+result+(move?' • Line '+move.first+' → '+move.line:'')+'</small><div class="board-actions"><button onclick="gradeBoardPick(\''+esc(k)+'\',\'played\')">Mark played</button><button class="win" onclick="gradeBoardPick(\''+esc(k)+'\',\'win\')">W</button><button class="loss" onclick="gradeBoardPick(\''+esc(k)+'\',\'loss\')">L</button><button onclick="gradeBoardPick(\''+esc(k)+'\',\'push\')">Push</button>'+(p.source==='board'?'<button onclick="removeBoardExtra(\''+esc(k)+'\')">Remove</button>':'')+'</div></div><div><b>'+esc(status.toUpperCase())+'</b></div></article>';
 }
 function reportHtml(){
  const b=boardExtras.filter(x=>['win','loss','push'].includes(x.status)),w=b.filter(x=>x.status==='win').length,l=b.filter(x=>x.status==='loss').length,p=b.filter(x=>x.status==='push').length,dec=w+l,rate=dec?Math.round(w/dec*100):0;
@@ -366,7 +413,7 @@ function reportHtml(){
  return '<div class="app-home-card" id="appResultsReport"><h3>📈 Model Report Card</h3><div class="report-grid"><div><b>'+w+'-'+l+'</b><span>MY TRACKED PICKS</span></div><div><b>'+rate+'%</b><span>MY DECIDED RATE</span></div><div><b>'+rr+'%</b><span>TOP 6 MODEL RATE</span></div><div><b>'+hrate+'%</b><span>HR BOARD HIT RATE</span></div></div><p>Only recorded pregame or manually marked results are counted. Pushes are excluded from decided win rate. This is performance tracking, not a profit guarantee.</p></div>';
 }
 window.renderAppBoard=function(){
- const picks=allBoardPicks(),html='<div class="my-board-list">'+(picks.length?picks.map(boardCard).join(''):'<div class="empty">Open Player Lab and add props you’re considering.</div>')+'</div>'+reportHtml();
+ const picks=allBoardPicks(),html=propBattleHtml(picks)+'<div class="my-board-list">'+(picks.length?picks.map(boardCard).join(''):'<div class="empty">Open Player Lab and add props you’re considering.</div>')+'</div>'+reportHtml();
  for(const id of ['myBoardRows','nflBoardRows']){const el=document.getElementById(id);if(el)el.innerHTML=html}
 }
 function appAlerts(){
