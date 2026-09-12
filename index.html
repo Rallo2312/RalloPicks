@@ -568,6 +568,16 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 </style><style>
 /* Public personal-use mode: no membership gate */
 .membership-bar,.locked-dashboard,.member-dialog{display:none!important}
+</style><style>
+/* pitch attack matchup */
+.pitch-attack-wrap{padding:8px;background:#070d1d}
+.pitch-attack-row{display:grid;grid-template-columns:minmax(160px,1.7fr) repeat(4,minmax(62px,.7fr));gap:7px;align-items:center;padding:11px 10px;margin:6px 0;border:1px solid #202a48;border-radius:11px;background:#0d1429}
+.pitch-attack-row.good{border-color:rgba(46,234,139,.35);background:linear-gradient(90deg,rgba(46,234,139,.10),#0d1429 45%)}
+.pitch-attack-row.bad{border-color:rgba(255,93,104,.30);background:linear-gradient(90deg,rgba(255,93,104,.09),#0d1429 45%)}
+.pitch-attack-row>div:not(.pitch-attack-name){text-align:center}.pitch-attack-row b{display:block;font-size:13px}.pitch-attack-row span,.pitch-attack-row small{display:block;font-size:7px;color:#8290aa;margin-top:3px}
+.pitch-attack-name b{font-size:12px!important}.pitch-attack-row.good .attack-score b{color:#2eea8b}.pitch-attack-row.bad .attack-score b{color:#ff5d68}
+.pitch-attack-note{font-size:8px;line-height:1.5;color:#74839e;padding:8px 4px 3px}
+@media(max-width:620px){.pitch-attack-wrap{overflow-x:auto}.pitch-attack-row{min-width:590px}.pitch-attack-note{min-width:560px}}
 </style></head>
 <body>
 <div class="app">
@@ -1010,6 +1020,24 @@ function arsenalRows(kind){
    return'neutral'};
  return '<div class="pitch-scroll-hint">⭐ = pitch type this batter has homered on the most • Swipe horizontally to see every stat →</div><div class="pitch-scroll">'+rows.map(x=>`<div class="batter-pitch-row"><div class="pitch-name"><span class="pitch-dot"></span>${starPitch(x)?'<span title="Most home runs vs this pitch" style="margin-right:5px">⭐</span>':''}${esc(x.type||x.code)}<small>${x.pitches??'—'} pitches seen${hrValue(x)!=null?' • '+hrValue(x)+' HR':''}</small></div><div class="metric ${tone('avg',x.avg)}"><b>${fmt(x.avg)}</b><span>AVG</span></div><div class="metric ${tone('slg',x.slg)}"><b>${fmt(x.slg)}</b><span>SLG</span></div><div class="metric ${tone('whiff',x.whiff)}"><b>${x.whiff==null?'—':x.whiff+'%'}</b><span>WHIFF</span></div><div class="metric ${tone('hard',x.hardHit)}"><b>${x.hardHit==null?'—':x.hardHit+'%'}</b><span>HARD HIT</span></div></div>`).join('')+'</div>';
 }
+function pitchAttackMatchupHtml(p){
+ const hitter=state.arsenals?.batters?.[String(p.id)]?.vsPitch||[];
+ const pid=p.pitcher?.id;
+ const pitcher=pid?(state.arsenals?.pitchers?.[String(pid)]?.pitches||[]):[];
+ if(!hitter.length||!pitcher.length)return '<div class="note-box" style="margin:10px">Pitch matchup comparison will appear when both hitter and opposing-pitcher arsenal data are available.</div>';
+ const aliases={FF:['FF','FA'],FA:['FA','FF'],SI:['SI','FT'],FT:['FT','SI'],FC:['FC'],SL:['SL','ST'],ST:['ST','SL'],CU:['CU','KC'],KC:['KC','CU'],CH:['CH','FS'],FS:['FS','CH'],SV:['SV'],KN:['KN']};
+ const norm=x=>String(x||'').toUpperCase();
+ const findPitch=h=>pitcher.find(q=>(aliases[norm(h.code)]||[norm(h.code)]).includes(norm(q.code)));
+ const hr=x=>Number(x?.homeRuns??0);
+ const joined=hitter.map(h=>({h,q:findPitch(h)})).filter(x=>x.q);
+ if(!joined.length)return '<div class="note-box" style="margin:10px">No matching pitch types were found between this hitter and today’s starter.</div>';
+ const maxHr=Math.max(...joined.map(x=>hr(x.h)));
+ const score=x=>{const H=x.h,Q=x.q;let s=50;s+=Math.min(22,hr(H)*2.2);if(Number(H.slg)>=.5)s+=10;else if(Number(H.slg)<.35)s-=10;if(Number(H.hardHit)>=40)s+=8;else if(Number(H.hardHit)<32)s-=7;if(Number(H.whiff)<=25)s+=6;else if(Number(H.whiff)>30)s-=8;s+=Math.min(12,(Number(Q.usage)||0)/4);return Math.max(0,Math.min(100,Math.round(s)))};
+ joined.sort((a,b)=>score(b)-score(a));
+ const best=joined[0],bestScore=score(best);
+ const badge=s=>s>=75?['🔥 GREAT HR FIT','good']:s>=60?['🟢 FAVORABLE','good']:s<45?['🔴 TOUGH MATCHUP','bad']:['⚪ NEUTRAL','neutral'];
+ return '<div class="pitch-attack-wrap">'+joined.slice(0,5).map((x,i)=>{const H=x.h,Q=x.q,s=score(x),b=badge(s),star=hr(H)===maxHr&&maxHr>0;return `<div class="pitch-attack-row ${b[1]}"><div class="pitch-attack-name"><b>${star?'⭐ ':''}${esc(H.type||H.code)}</b><small>${i===0?'BEST PITCH MATCHUP • ':''}${b[0]}</small></div><div><b>${hr(H)}</b><span>HR</span></div><div><b>${H.slg==null?'—':Number(H.slg).toFixed(3).replace(/^0/,'')}</b><span>SLG</span></div><div><b>${Q.usage==null?'—':Q.usage+'%'}</b><span>PITCHER USE</span></div><div class="attack-score"><b>${s}</b><span>FIT</span></div></div>`}).join('')+'<div class="pitch-attack-note">⭐ marks this batter’s most-homered pitch type. FIT combines HR history, SLG, hard-hit/whiff results and how often today’s pitcher uses the pitch.</div></div>';
+}
 function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.range=n;state.currentLab.market=state.currentLab.market||'totalBases';state.currentLab.line=state.currentLab.line??ANALYTIC_MARKETS[state.currentLab.market].defaultLine;renderBatterAnalytics()}
 
 function scrollLabSection(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
@@ -1047,7 +1075,7 @@ function renderBatterAnalytics(){
   <div class="analytics-grid">
    <div>
     <div class="analytics-card" id="lab-trends"><div class="analytics-title">${market.label} • ${windowLabel} • ${esc(p.book||'PrizePicks')} ${direction.toUpperCase()} ${line} • ${labTierLabel(p,line)}</div><div class="chart-wrap"><div class="bar-chart">${bars}<div class="chart-line" style="bottom:${lineBottom+29}px"><span class="chart-line-label">LINE ${line}</span></div></div><div class="hit-rates">${rateCards}</div></div></div>
-    <div class="analytics-card batter-pitch-card" id="lab-arsenal"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}</div>
+    <div class="analytics-card batter-pitch-card" id="lab-arsenal"><div class="analytics-title">⚔️ Hitter vs today's pitcher arsenal</div>${pitchAttackMatchupHtml(p)}</div><div class="analytics-card batter-pitch-card" style="margin-top:10px"><div class="analytics-title">Batter arsenal • Results by pitch type</div>${arsenalRows('hitter')}</div>
    </div>
    <div>
     <div class="analytics-card" id="lab-matchup"><div class="analytics-title">Head to head vs today's opponent</div><div class="matchup-box"><div class="matchup-stat">${p.opponent?.id?teamBadge(p.opponent.abbreviation||p.opponent.name,p.opponent.id,'matchup'):''}<b>${esc(p.opponent?.name||'Opponent TBD')}</b><span>Today's opponent</span></div><div class="matchup-stat"><b>${h2h.length}</b><span>Games • last 3 seasons</span></div><div class="matchup-stat"><b>${h2hPct}%</b><span>${market.label} hit rate</span></div><div class="matchup-stat"><b>${h2hAvg} / ${h2hHigh}</b><span>Average / high</span></div></div></div>
