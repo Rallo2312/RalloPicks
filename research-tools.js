@@ -330,7 +330,46 @@ function nflRecommendation(){
  return {best,confidence,reasons:reasons.slice(0,4),concerns:concerns.slice(0,2),alternatives:rows.slice(1,3)};
 }
 
-function trapDetector(sport,rec){
+function betGate(sport,rec){
+ if(!rec?.best)return {status:'PASS',cls:'pass',label:'🛑 PASS',reason:'Not enough usable data yet',checks:[]};
+ const b=rec.best,checks=[],fail=[];
+ checks.push({ok:b.score>=72,label:'Model score 72+'});
+ checks.push({ok:b.rate>=60,label:'Recent hit rate 60%+'});
+ checks.push({ok:(rec.concerns?.length||0)<=1,label:'No more than 1 major concern'});
+ if(sport==='MLB'){
+  const p=state.currentLab,mix=p&&p.kind==='batter'?arsenalPowerMatch(p.id,p.pitcher?.id):null,q=p?state.hrQuality?.players?.[String(p.id)]:null;
+  if(p?.kind==='batter'&&['homeRuns','totalBases','hits','fantasy'].includes(b.key)){
+   const contactOk=!q||(Number(q.barrelRate||0)>=8||Number(q.hardHitRate||0)>=40);
+   checks.push({ok:contactOk,label:'Contact quality not weak'});
+  }
+  if(mix)checks.push({ok:mix.factor>=.95,label:'Pitch matchup not a clear negative'});
+ }else{
+  const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));
+  const verified=!!p?.lines?.[state.platform]?.[b.label];
+  checks.push({ok:verified,label:'Current app line verified'});
+ }
+ let move=null;
+ if(sport==='MLB'&&state.currentLab)move=movementFor('MLB',state.currentLab.id,state.currentLab.market,state.currentLab.book||state.platform);
+ if(sport==='NFL'){
+  const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(p)move=movementFor('NFL',p.id,state.nflMarket,state.platform);
+ }
+ if(move){
+  const against=(b.direction==='more'&&move.delta>0)||(b.direction==='less'&&move.delta<0);
+  checks.push({ok:!against||Math.abs(move.delta)<.5,label:'Line movement not strongly against us'});
+ }
+ checks.forEach(x=>{if(!x.ok)fail.push(x.label)});
+ const trap=trapDetectorCore(sport,rec);
+ if(trap?.level==='HIGH')fail.push('High trap risk');
+ const passes=checks.filter(x=>x.ok).length,total=checks.length||1;
+ if(!fail.length&&b.score>=82&&b.rate>=70)return {status:'GREEN',cls:'green',label:'🟢 GREEN LIGHT',reason:'Strong score + recent form + no major filter failure',checks,passes,total};
+ if(fail.length<=1&&b.score>=72&&b.rate>=60&&trap?.level!=='HIGH')return {status:'WATCH',cls:'watch',label:'🟡 WATCH',reason:'Close, but one filter still needs attention',checks,passes,total};
+ return {status:'PASS',cls:'pass',label:'🛑 PASS',reason:fail.slice(0,2).join(' • ')||'Edge is not strong enough',checks,passes,total};
+}
+function gateHtml(g){
+ if(!g)return'';
+ return '<section class="bet-gate '+g.cls+'"><div><small>BET FILTER</small><strong>'+esc(g.label)+'</strong><span>'+esc(g.reason)+'</span></div><div class="bet-gate-checks">'+(g.checks||[]).map(x=>'<span class="'+(x.ok?'ok':'no')+'">'+(x.ok?'✓':'×')+' '+esc(x.label)+'</span>').join('')+'</div></section>';
+}
+function trapDetectorCore(sport,rec){
  if(!rec?.best)return null;
  const reasons=[],b=rec.best;
  if(b.rate>=80&&b.score<72)reasons.push('Hot L10 results are stronger than the full matchup score');
@@ -349,6 +388,7 @@ function trapDetector(sport,rec){
  const level=risk>=4?'HIGH':risk>=2?'MEDIUM':'LOW',cls=level==='HIGH'?'high':level==='MEDIUM'?'medium':'low';
  return {level,cls,reasons:reasons.slice(0,3)};
 }
+function trapDetector(sport,rec){return trapDetectorCore(sport,rec);}
 function trapHtml(t){
  if(!t)return'';
  return '<section class="trap-card '+t.cls+'"><div><b>🚫 TRAP DETECTOR</b><strong>'+t.level+' RISK</strong></div><div>'+(t.reasons.length?t.reasons.map(x=>'<span>• '+esc(x)+'</span>').join(''):'<span>✓ No major trap pattern detected from the available data.</span>')+'</div></section>';
@@ -405,19 +445,19 @@ function scoreBreakdownHtml(rec,sport){
 }
 function recommendationHtml(rec,sport){
  if(!rec)return'';
- const b=rec.best,cls=b.score>=72?'good':b.score<55?'bad':'neutral',lean=b.direction==='more'?'MORE':'LESS',directionLabel=b.direction==='more'?'OVER':'UNDER',directionArrow=b.direction==='more'?'🔺':'🔻';
- return '<section class="rallo-read '+cls+'"><div class="rallo-read-head"><div><small>🧠 RALLO READ</small><strong>'+b.score+'<em>/100</em></strong><small style="margin-top:6px;color:'+(b.direction==='more'?'#ffcc55':'#2eea8b')+';font-size:9px">'+esc(rec.confidence)+' '+directionLabel+' '+directionArrow+'</small></div><span>'+esc(rec.confidence)+'</span></div><div class="rallo-read-pick"><div><small>BEST MARKET</small><b>'+esc(b.label)+'</b></div><div><small>LEAN</small><b>'+lean+' '+b.line+'</b></div><div><small>L10</small><b>'+b.rate+'%</b></div></div><div class="rallo-read-copy"><div><b>WHY</b>'+(rec.reasons.length?rec.reasons.map(x=>'<span>✓ '+esc(x)+'</span>').join(''):'<span>• No strong positive signal yet</span>')+'</div><div><b>CONCERN</b>'+(rec.concerns.length?rec.concerns.map(x=>'<span>⚠ '+esc(x)+'</span>').join(''):'<span>• No major model concern flagged</span>')+'</div></div>'+(rec.alternatives?.length?'<div class="rallo-read-alt"><b>Next best:</b> '+rec.alternatives.map(x=>esc(x.label)+' '+(x.direction==='more'?'More ':'Less ')+x.line+' ('+x.score+')').join(' • ')+'</div>':'')+'<div class="rallo-read-note">Rallo Read is a research heuristic from current stats, matchup and available lines — not a guarantee or calibrated win probability.</div></section>';
+ const b=rec.best,gate=betGate(sport,rec),cls=gate.status==='PASS'?'bad':b.score>=72?'good':b.score<55?'bad':'neutral',lean=b.direction==='more'?'MORE':'LESS',directionLabel=b.direction==='more'?'OVER':'UNDER',directionArrow=b.direction==='more'?'🔺':'🔻';
+ return gateHtml(gate)+'<section class="rallo-read '+cls+'"><div class="rallo-read-head"><div><small>🧠 RALLO READ</small><strong>'+b.score+'<em>/100</em></strong><small style="margin-top:6px;color:'+(b.direction==='more'?'#ffcc55':'#2eea8b')+';font-size:9px">'+esc(rec.confidence)+' '+directionLabel+' '+directionArrow+'</small></div><span>'+esc(rec.confidence)+'</span></div><div class="rallo-read-pick"><div><small>BEST MARKET</small><b>'+esc(b.label)+'</b></div><div><small>LEAN</small><b>'+lean+' '+b.line+'</b></div><div><small>L10</small><b>'+b.rate+'%</b></div></div><div class="rallo-read-copy"><div><b>WHY</b>'+(rec.reasons.length?rec.reasons.map(x=>'<span>✓ '+esc(x)+'</span>').join(''):'<span>• No strong positive signal yet</span>')+'</div><div><b>CONCERN</b>'+(rec.concerns.length?rec.concerns.map(x=>'<span>⚠ '+esc(x)+'</span>').join(''):'<span>• No major model concern flagged</span>')+'</div></div>'+(rec.alternatives?.length?'<div class="rallo-read-alt"><b>Next best:</b> '+rec.alternatives.map(x=>esc(x.label)+' '+(x.direction==='more'?'More ':'Less ')+x.line+' ('+x.score+')').join(' • ')+'</div>':'')+'<div class="rallo-read-note">Rallo Read is a research heuristic from current stats, matchup and available lines — not a guarantee or calibrated win probability.</div></section>';
 }
 function decorateMLBApp(){
  const host=document.getElementById('batterLabPlayer'),p=state.currentLab;if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
  const e=mlbEdge(),m=movementFor('MLB',p.id,p.market,p.book||state.platform);
- const rec=mlbRecommendation(),trap=trapDetector('MLB',rec),reg=regressionRadar('MLB');tools.innerHTML=recommendationHtml(rec,'MLB')+scoreBreakdownHtml(rec,'MLB')+regressionHtml(reg)+trapHtml(trap)+edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
+ const rec=mlbRecommendation(),trap=trapDetector('MLB',rec),reg=regressionRadar('MLB'),gate=betGate('MLB',rec);tools.innerHTML=recommendationHtml(rec,'MLB')+scoreBreakdownHtml(rec,'MLB')+regressionHtml(reg)+trapHtml(trap)+edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button>'+(gate.status==='PASS'?'<span class="pass-note">🛑 RalloPicks recommends passing this setup right now.</span>':'')+'</div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
 }
 function decorateNFLApp(){
  const host=document.getElementById('nflPlayerDetail'),p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
- const e=nflEdge(),rec=nflRecommendation(),trap=trapDetector('NFL',rec),reg=regressionRadar('NFL');tools.innerHTML=recommendationHtml(rec,'NFL')+scoreBreakdownHtml(rec,'NFL')+regressionHtml(reg)+trapHtml(trap)+edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
+ const e=nflEdge(),rec=nflRecommendation(),trap=trapDetector('NFL',rec),reg=regressionRadar('NFL'),gate=betGate('NFL',rec);tools.innerHTML=recommendationHtml(rec,'NFL')+scoreBreakdownHtml(rec,'NFL')+regressionHtml(reg)+trapHtml(trap)+edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button>'+(gate.status==='PASS'?'<span class="pass-note">🛑 RalloPicks recommends passing this setup right now.</span>':'')+'</div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
 }
 for(const name of ['renderBatterAnalytics','renderPitcherAnalytics']){
  const prior=window[name];window[name]=function(...args){const v=prior.apply(this,args);decorateMLBApp();return v}
@@ -564,7 +604,10 @@ function appAlerts(){
  return alerts.slice(0,5);
 }
 function top6Names(){
- const rows=(state.dailyBatterRanks||[]).slice(0,6);return rows.length?rows.map((x,i)=>'<p><b>#'+(i+1)+' '+esc(x.name)+'</b> • '+Math.round(x.score)+' • '+esc(x.opponent)+'</p>').join(''):'<p>Full-slate rankings are loading.</p>';
+ const rows=(state.dailyBatterRanks||[]).filter(x=>Number(x.score)>=72&&x.lineup?.status!=='out').slice(0,6);
+ if(!state.dailyBatterRanks?.length)return '<p>Full-slate rankings are loading.</p>';
+ if(!rows.length)return '<p><b>🛑 NO GREEN LIGHTS YET</b></p><p>RalloPicks is not forcing six plays. Check again after lineup, weather and matchup updates.</p>';
+ return '<p><b>🟢 '+rows.length+' GREEN LIGHT'+(rows.length===1?'':'S')+' TODAY</b></p>'+rows.map((x,i)=>'<p><b>#'+(i+1)+' '+esc(x.name)+'</b> • '+Math.round(x.score)+' • '+esc(x.opponent)+'</p>').join('');
 }
 window.renderAppDashboards=function(){
  renderAppBoard();const alerts=appAlerts(),alertHtml=alerts.length?alerts.map(a=>'<div class="alert-row"><span>'+a.icon+'</span><div><b>'+esc(a.title)+'</b><span>'+esc(a.text)+'</span></div></div>').join(''):'<p>No new alerts right now.</p>';
