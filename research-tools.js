@@ -263,16 +263,81 @@ function edgeHtml(e,sport){
  if(!e)return'';const cls=e.score>=72?'good':e.score<55?'bad':'',tier=e.score>=80?'STRONG':e.score>=68?'FAVORABLE':e.score>=55?'WATCH':'TOUGH';
  return '<div class="edge-score-card"><div class="edge-score-number '+cls+'">'+e.score+'</div><div><b>RALLO EDGE SCORE • '+tier+'</b><span>'+esc(e.label||'Current market')+' • '+e.rate+'% L10 hit rate'+(sport==='NFL'&&e.def?' • Opp defense #'+e.def:'')+'</span><span>Research score only — not a guaranteed outcome or calibrated win probability.</span></div></div>';
 }
+
+function mlbRecommendation(){
+ const p=state.currentLab;if(!p)return null;
+ const table=p.kind==='pitcher'?PITCHER_ANALYTIC_MARKETS:ANALYTIC_MARKETS,recent=(p.games||[]).slice(0,10);
+ const rows=Object.entries(table).map(([key,m])=>{
+  const line=key===p.market?Number(p.line):Number(m.defaultLine);
+  const more=pctHit(recent,m,line,'more'),less=pctHit(recent,m,line,'less'),direction=more>=less?'more':'less',rate=Math.max(more,less);
+  let score=42+rate*.46;
+  if(p.kind==='batter'){
+   const mix=arsenalPowerMatch(p.id,p.pitcher?.id);score+=(mix.factor-1)*50;
+   const q=state.hrQuality?.players?.[String(p.id)];
+   if(q&&['homeRuns','totalBases','hits','fantasy'].includes(key))score+=(Number(q.hardHitRate||40)-40)*.15+(Number(q.barrelRate||8)-8)*.32;
+   if(key==='homeRuns'&&Number(q?.barrelRate)>=12)score+=5;
+  }else{
+   const opp=p.opponent?.id?state.dailyBatterRanks.filter(x=>x.teamId===p.opponent.id):[];
+   if(opp.length&&['strikeOuts','earnedRuns','hitsAllowed'].includes(key)){const avg=opp.slice(0,5).reduce((a,x)=>a+x.score,0)/Math.min(5,opp.length);score+=(60-avg)*.12*(direction==='more'?1:-1)}
+  }
+  return {key,label:m.label,line,direction,rate,score:Math.max(1,Math.min(99,Math.round(score)))};
+ }).sort((a,b)=>b.score-a.score);
+ const best=rows[0],second=rows[1],reasons=[],concerns=[];
+ if(best.rate>=70)reasons.push(best.rate+'% L10 hit rate at '+best.line);
+ if(p.kind==='batter'){
+  const mix=arsenalPowerMatch(p.id,p.pitcher?.id),q=state.hrQuality?.players?.[String(p.id)];
+  if(mix.factor>=1.05)reasons.push('Favorable pitch-type matchup');
+  if(Number(q?.barrelRate)>=10)reasons.push(Number(q.barrelRate).toFixed(1)+'% barrel rate');
+  if(Number(q?.hardHitRate)>=45)reasons.push(Number(q.hardHitRate).toFixed(1)+'% hard-hit rate');
+  const game=state.games.find(g=>[g.teams.away.team.abbreviation,g.teams.home.team.abbreviation].includes(p.team));
+  const w=game?weatherForGame(game.gamePk):null;if(w?.factor>=1.03)reasons.push(w.label+' HR environment');
+  if(best.rate>=80&&second&&second.rate<60)concerns.push('Recent results are concentrated in one market');
+  if(mix.factor<=.95)concerns.push('Pitch mix is not a clear advantage');
+  if(Number(q?.barrelRate)<7)concerns.push('Barrel rate is below power-target level');
+ }else{
+  if(best.rate>=70)reasons.push('Recent workload supports this market');
+  if(p.opponent?.name)reasons.push('Opponent matchup included in score');
+ }
+ if(recent.length<7)concerns.push('Small recent sample');
+ const confidence=best.score>=82?'STRONG':best.score>=70?'GOOD':best.score>=58?'LEAN':'PASS';
+ return {best,confidence,reasons:reasons.slice(0,4),concerns:concerns.slice(0,2),alternatives:rows.slice(1,3)};
+}
+function nflRecommendation(){
+ const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!p)return null;
+ const markets=nflMarkets[p.position]||nflMarkets.WR,recent=p.recent||[],opp=nflOpponentFor(p.team),def=opp?.team?.defense_rank;
+ const rows=markets.map(([label,key])=>{
+  const posted=p.lines?.[state.platform]?.[label],manual=state.nflManualLines[nflLineKey(p.id,key,state.platform)],line=Number((key===state.nflMarket?state.nflLine:null)??posted??manual??nflDefaultLine(p.position,key));
+  const more=parseInt(nflRate(recent,key,line,10))||0;
+  const vals=recent.slice(0,10).map(g=>Number(g[key])).filter(Number.isFinite),less=vals.length?Math.round(vals.filter(v=>v<line).length/vals.length*100):0;
+  const direction=more>=less?'more':'less',rate=Math.max(more,less);let score=43+rate*.45;
+  if(def)score+=(def-16.5)*.38*(direction==='more'?1:-1);
+  return {key,label,line,direction,rate,score:Math.max(1,Math.min(99,Math.round(score)))};
+ }).sort((a,b)=>b.score-a.score);
+ const best=rows[0],reasons=[],concerns=[];
+ if(best.rate>=70)reasons.push(best.rate+'% L10 hit rate at '+best.line);
+ if(def>=23&&best.direction==='more')reasons.push('Opponent defense ranks #'+def+' (favorable)');
+ if(def<=10&&best.direction==='less')reasons.push('Top-10 opponent defense supports lower lean');
+ if(recent.length<7)concerns.push('Limited recent-game sample');
+ if(def&&def<=10&&best.direction==='more')concerns.push('Strong opponent defense');
+ if(!p.lines?.[state.platform]?.[best.label])concerns.push('Verify the current '+state.platform+' line');
+ const confidence=best.score>=82?'STRONG':best.score>=70?'GOOD':best.score>=58?'LEAN':'PASS';
+ return {best,confidence,reasons:reasons.slice(0,4),concerns:concerns.slice(0,2),alternatives:rows.slice(1,3)};
+}
+function recommendationHtml(rec,sport){
+ if(!rec)return'';
+ const b=rec.best,cls=b.score>=72?'good':b.score<55?'bad':'neutral',lean=b.direction==='more'?'MORE':'LESS';
+ return '<section class="rallo-read '+cls+'"><div class="rallo-read-head"><div><small>🧠 RALLO READ</small><strong>'+b.score+'<em>/100</em></strong></div><span>'+esc(rec.confidence)+'</span></div><div class="rallo-read-pick"><div><small>BEST MARKET</small><b>'+esc(b.label)+'</b></div><div><small>LEAN</small><b>'+lean+' '+b.line+'</b></div><div><small>L10</small><b>'+b.rate+'%</b></div></div><div class="rallo-read-copy"><div><b>WHY</b>'+(rec.reasons.length?rec.reasons.map(x=>'<span>✓ '+esc(x)+'</span>').join(''):'<span>• No strong positive signal yet</span>')+'</div><div><b>CONCERN</b>'+(rec.concerns.length?rec.concerns.map(x=>'<span>⚠ '+esc(x)+'</span>').join(''):'<span>• No major model concern flagged</span>')+'</div></div>'+(rec.alternatives?.length?'<div class="rallo-read-alt"><b>Next best:</b> '+rec.alternatives.map(x=>esc(x.label)+' '+(x.direction==='more'?'More ':'Less ')+x.line+' ('+x.score+')').join(' • ')+'</div>':'')+'<div class="rallo-read-note">Rallo Read is a research heuristic from current stats, matchup and available lines — not a guarantee or calibrated win probability.</div></section>';
+}
 function decorateMLBApp(){
  const host=document.getElementById('batterLabPlayer'),p=state.currentLab;if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
  const e=mlbEdge(),m=movementFor('MLB',p.id,p.market,p.book||state.platform);
- tools.innerHTML=edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
+ const rec=mlbRecommendation();tools.innerHTML=recommendationHtml(rec,'MLB')+edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
 }
 function decorateNFLApp(){
  const host=document.getElementById('nflPlayerDetail'),p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
- const e=nflEdge();tools.innerHTML=edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
+ const e=nflEdge(),rec=nflRecommendation();tools.innerHTML=recommendationHtml(rec,'NFL')+edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
 }
 for(const name of ['renderBatterAnalytics','renderPitcherAnalytics']){
  const prior=window[name];window[name]=function(...args){const v=prior.apply(this,args);decorateMLBApp();return v}
