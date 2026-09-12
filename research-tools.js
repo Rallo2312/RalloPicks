@@ -187,8 +187,8 @@ window.addEventListener('storage',event=>{
 
 /* RalloPicks full app suite */
 (()=>{
-const BOARD_KEY='ralloBoardV2',LINE_KEY='ralloLineHistoryV2',BATTLE_KEY='ralloPropBattleV1';
-let battleKeys=readResearchStorage(BATTLE_KEY);
+const BOARD_KEY='ralloBoardV2',LINE_KEY='ralloLineHistoryV2',BATTLE_KEY='ralloPropBattleV1',FINAL_KEY='ralloFinalCardV1';
+let battleKeys=readResearchStorage(BATTLE_KEY);let finalKeys=readResearchStorage(FINAL_KEY);
 let boardExtras=readResearchStorage(BOARD_KEY).filter(x=>x&&x.id&&x.sport);
 let lineHistory=readResearchStorage(LINE_KEY).filter(x=>x&&x.key&&Number.isFinite(x.line));
 function saveBoard(){writeResearchStorage(BOARD_KEY,boardExtras);renderAppBoard();}
@@ -349,6 +349,56 @@ function trapHtml(t){
  if(!t)return'';
  return '<section class="trap-card '+t.cls+'"><div><b>🚫 TRAP DETECTOR</b><strong>'+t.level+' RISK</strong></div><div>'+(t.reasons.length?t.reasons.map(x=>'<span>• '+esc(x)+'</span>').join(''):'<span>✓ No major trap pattern detected from the available data.</span>')+'</div></section>';
 }
+
+function regressionRadar(sport){
+ if(sport==='MLB'){
+  const p=state.currentLab;if(!p)return null;
+  const recent=(p.games||[]).slice(0,10),season=(p.games||[]);
+  if(!recent.length||!season.length)return null;
+  const market=(p.kind==='pitcher'?PITCHER_ANALYTIC_MARKETS:ANALYTIC_MARKETS)[p.market];if(!market)return null;
+  const rv=recent.map(g=>market.value(g.stat||{})).filter(Number.isFinite),sv=season.map(g=>market.value(g.stat||{})).filter(Number.isFinite);
+  if(!rv.length||!sv.length)return null;
+  const ravg=rv.reduce((a,b)=>a+b,0)/rv.length,savg=sv.reduce((a,b)=>a+b,0)/sv.length,diff=savg?((ravg-savg)/savg):0;
+  const q=state.hrQuality?.players?.[String(p.id)],qualityBoost=p.kind==='batter'&&q?(Number(q.barrelRate||8)-8)*.02+(Number(q.hardHitRate||40)-40)*.008:0;
+  let label='NORMAL',tone='normal',reason='Recent production is close to the longer-term baseline.';
+  if(diff<=-.18&&qualityBoost>0){label='BUY LOW';tone='buy';reason='Recent results are below baseline while underlying contact remains supportive.'}
+  else if(diff>=.22&&qualityBoost<=0){label='SELL HIGH';tone='sell';reason='Recent results are running well above baseline without matching underlying support.'}
+  else if(diff<=-.22){label='BUY LOW';tone='buy';reason='Recent production is meaningfully below the season baseline.'}
+  else if(diff>=.28){label='SELL HIGH';tone='sell';reason='Recent production is well above the season baseline and may cool.'}
+  return {label,tone,reason,recent:ravg,baseline:savg,diff};
+ }
+ const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!p)return null;
+ const recent=(p.recent||[]).slice(0,10),key=state.nflMarket;if(!recent.length||!key)return null;
+ const vals=recent.map(g=>Number(g[key])).filter(Number.isFinite);if(vals.length<4)return null;
+ const first=vals.slice(0,Math.ceil(vals.length/2)),last=vals.slice(Math.ceil(vals.length/2));
+ const a=first.reduce((x,y)=>x+y,0)/first.length,b=last.length?last.reduce((x,y)=>x+y,0)/last.length:a,diff=a?((b-a)/a):0;
+ let label='NORMAL',tone='normal',reason='Recent usage and production are relatively stable.';
+ if(diff<=-.2){label='BUY LOW';tone='buy';reason='Recent production has cooled meaningfully versus the earlier sample.'}
+ else if(diff>=.25){label='SELL HIGH';tone='sell';reason='Recent production is running well above the earlier sample.'}
+ return {label,tone,reason,recent:b,baseline:a,diff};
+}
+function regressionHtml(r){
+ if(!r)return'';
+ return '<section class="regression-card '+r.tone+'"><div><small>📉 REGRESSION RADAR</small><strong>'+esc(r.label)+'</strong></div><div><b>'+esc(r.reason)+'</b><span>Recent avg '+Number(r.recent).toFixed(1)+' • Baseline '+Number(r.baseline).toFixed(1)+' • '+(r.diff>=0?'+':'')+Math.round(r.diff*100)+'%</span></div></section>';
+}
+function scoreBreakdownHtml(rec,sport){
+ if(!rec?.best)return'';
+ const b=rec.best,items=[];
+ const form=Math.round((b.rate-50)*.36);items.push(['Recent form',form]);
+ if(sport==='MLB'&&state.currentLab){
+  const p=state.currentLab,mix=p.kind==='batter'?arsenalPowerMatch(p.id,p.pitcher?.id):null;
+  if(mix)items.push(['Pitch matchup',Math.round((mix.factor-1)*50)]);
+  const q=state.hrQuality?.players?.[String(p.id)];
+  if(q)items.push(['Contact quality',Math.round((Number(q.barrelRate||8)-8)*.35+(Number(q.hardHitRate||40)-40)*.15)]);
+  const game=state.games.find(g=>[g.teams.away.team.abbreviation,g.teams.home.team.abbreviation].includes(p.team)),w=game?weatherForGame(game.gamePk):null;
+  if(w)items.push(['Weather / park',Math.round((Number(w.factor)-1)*40)]);
+ }else if(sport==='NFL'){
+  const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer)),opp=p?nflOpponentFor(p.team):null,def=opp?.team?.defense_rank;
+  if(def)items.push(['Opponent defense',Math.round((def-16.5)*.38*(b.direction==='more'?1:-1))]);
+ }
+ const t=trapDetector(sport,rec);if(t?.level==='HIGH')items.push(['Trap risk',-8]);else if(t?.level==='MEDIUM')items.push(['Trap risk',-3]);
+ return '<details class="score-breakdown"><summary>🔬 Why '+b.score+'? Score breakdown</summary><div>'+items.map(([name,v])=>'<p><span>'+esc(name)+'</span><b class="'+(v>0?'plus':v<0?'minus':'')+'">'+(v>0?'+':'')+v+'</b></p>').join('')+'<small>Breakdown is an explanatory approximation of the current heuristic, not an independently calibrated model.</small></div></details>';
+}
 function recommendationHtml(rec,sport){
  if(!rec)return'';
  const b=rec.best,cls=b.score>=72?'good':b.score<55?'bad':'neutral',lean=b.direction==='more'?'MORE':'LESS';
@@ -358,12 +408,12 @@ function decorateMLBApp(){
  const host=document.getElementById('batterLabPlayer'),p=state.currentLab;if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
  const e=mlbEdge(),m=movementFor('MLB',p.id,p.market,p.book||state.platform);
- const rec=mlbRecommendation(),trap=trapDetector('MLB',rec);tools.innerHTML=recommendationHtml(rec,'MLB')+trapHtml(trap)+edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
+ const rec=mlbRecommendation(),trap=trapDetector('MLB',rec),reg=regressionRadar('MLB');tools.innerHTML=recommendationHtml(rec,'MLB')+scoreBreakdownHtml(rec,'MLB')+regressionHtml(reg)+trapHtml(trap)+edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
 }
 function decorateNFLApp(){
  const host=document.getElementById('nflPlayerDetail'),p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!host||!p)return;
  let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
- const e=nflEdge(),rec=nflRecommendation(),trap=trapDetector('NFL',rec);tools.innerHTML=recommendationHtml(rec,'NFL')+trapHtml(trap)+edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
+ const e=nflEdge(),rec=nflRecommendation(),trap=trapDetector('NFL',rec),reg=regressionRadar('NFL');tools.innerHTML=recommendationHtml(rec,'NFL')+scoreBreakdownHtml(rec,'NFL')+regressionHtml(reg)+trapHtml(trap)+edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
 }
 for(const name of ['renderBatterAnalytics','renderPitcherAnalytics']){
  const prior=window[name];window[name]=function(...args){const v=prior.apply(this,args);decorateMLBApp();return v}
@@ -401,10 +451,27 @@ function propBattleHtml(picks){
  const ranked=[...selected].sort((a,b)=>battleScore(b)-battleScore(a));
  return '<section class="prop-battle"><div class="model-head"><b>⚔️ Prop Battle</b><span>'+selected.length+' selected</span></div><div class="battle-winner">👑 #1 '+esc(ranked[0].name)+' • '+esc(ranked[0].label||ranked[0].market)+' • '+battleScore(ranked[0])+'</div>'+ranked.map((p,i)=>'<article class="battle-row"><b>#'+(i+1)+'</b><div><strong>'+esc(p.name)+'</strong><span>'+esc(p.sport)+' • '+esc(p.label||p.market)+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+'</span><span>Trap: '+esc(p.trapRisk||'UNKNOWN')+'</span></div><em>'+battleScore(p)+'</em></article>').join('')+'<button class="six-refresh" onclick="battleKeys=[];persistBattle();renderAppBoard()">Clear Battle</button></section>';
 }
+
+function persistFinal(){writeResearchStorage(FINAL_KEY,finalKeys);}
+window.toggleFinalPick=function(k){
+ const i=finalKeys.indexOf(k);
+ if(i>=0)finalKeys.splice(i,1);else{if(finalKeys.length>=6)return;finalKeys.push(k)}
+ persistFinal();renderAppBoard();renderAppDashboards();
+}
+function finalCardHtml(picks){
+ const selected=picks.filter(p=>finalKeys.includes(boardKey(p))).slice(0,6),ranked=[...selected].sort((a,b)=>battleScore(b)-battleScore(a));
+ return '<section class="final-card-builder"><div class="model-head"><b>👑 Final Card Builder</b><span>'+selected.length+'/6 selected</span></div>'+(ranked.length?'<div class="final-card-grid">'+ranked.map((p,i)=>'<article><b>#'+(i+1)+'</b><div><strong>'+esc(p.name)+'</strong><span>'+esc(p.sport)+' • '+esc(p.label||p.market)+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+'</span></div><em>'+battleScore(p)+'</em></article>').join('')+'</div>':'<p>Select picks below to build your final card. RalloPicks ranks them by saved score, trap risk and line movement.</p>')+(selected.length?'<button class="six-refresh" onclick="finalKeys=[];persistFinal();renderAppBoard()">Clear Final Card</button>':'')+'</section>';
+}
+function hiddenEdgesHtml(){
+ const mlb=(state.dailyBatterRanks||[]).filter(x=>x.score>=68).slice(6,18).sort((a,b)=>b.score-a.score).slice(0,5);
+ const nfl=(state.nfl.players||[]).map(p=>{const opp=nflOpponentFor(p.team),def=opp?.team?.defense_rank,s=p.season||{},usage=p.position==='RB'?Number(s.rush_attempts||0)+Number(s.targets||0):p.position==='QB'?Number(s.pass_attempts||0)+Number(s.rush_attempts||0):Number(s.targets||0);let score=45+Math.min(28,usage/10)+(def?Math.max(-5,Math.min(10,(def-16.5)*.6)):0);return {p,score:Math.round(score),def}}).filter(x=>x.score>=65).sort((a,b)=>b.score-a.score).slice(0,5);
+ if(!mlb.length&&!nfl.length)return '<section class="hidden-edge-card"><div class="model-head"><b>💎 Hidden Edge Scanner</b><span>Scanning slate…</span></div><p>Edges will appear after full-slate data finishes loading.</p></section>';
+ return '<section class="hidden-edge-card"><div class="model-head"><b>💎 Hidden Edge Scanner</b><span>Under-the-radar spots</span></div><div class="hidden-edge-grid">'+mlb.map(x=>'<article><b>⚾ '+esc(x.name)+'</b><span>'+esc(x.teamAbbr)+' vs '+esc(x.opponent)+' • '+Math.round(x.score)+'</span><small>'+esc(x.pitchMatch||'Full-slate matchup score')+'</small></article>').join('')+nfl.map(x=>'<article><b>🏈 '+esc(x.p.name)+'</b><span>'+esc(x.p.team)+' • '+Math.round(x.score)+'</span><small>'+(x.def?'Opponent defense #'+x.def:'Usage-driven sleeper')+'</small></article>').join('')+'</div><small>Scanner surfaces model-relative research spots; it does not imply market mispricing unless a verified line is available.</small></section>';
+}
 function boardCard(p){
  const k=boardKey(p),move=movementFor(p.sport,p.id,p.market,p.book||state.platform),status=p.status||'watching';
  const result=status==='win'?'✅ WIN':status==='loss'?'❌ LOSS':status==='push'?'➖ PUSH':status==='played'?'🎟️ PLAYED':'👀 WATCHING';
- const battleOn=battleKeys.includes(k); return '<article class="my-board-card"><div><strong>'+esc(p.name)+' • '+esc(p.sport)+'</strong><small>'+esc(p.label||savedMarketLabel(p))+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+' • '+esc(p.book||state.platform)+'</small><small>'+result+(move?' • Line '+move.first+' → '+move.line:'')+'</small><div class="board-actions"><button onclick="toggleBattlePick(\''+esc(k)+'\')">'+(battleOn?'✓ In Battle':'⚔ Add to Battle')+'</button><button onclick="gradeBoardPick(\''+esc(k)+'\',\'played\')">Mark played</button><button class="win" onclick="gradeBoardPick(\''+esc(k)+'\',\'win\')">W</button><button class="loss" onclick="gradeBoardPick(\''+esc(k)+'\',\'loss\')">L</button><button onclick="gradeBoardPick(\''+esc(k)+'\',\'push\')">Push</button>'+(p.source==='board'?'<button onclick="removeBoardExtra(\''+esc(k)+'\')">Remove</button>':'')+'</div></div><div><b>'+esc(status.toUpperCase())+'</b></div></article>';
+ const battleOn=battleKeys.includes(k),finalOn=finalKeys.includes(k); return '<article class="my-board-card"><div><strong>'+esc(p.name)+' • '+esc(p.sport)+'</strong><small>'+esc(p.label||savedMarketLabel(p))+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+' • '+esc(p.book||state.platform)+'</small><small>'+result+(move?' • Line '+move.first+' → '+move.line:'')+'</small><div class="board-actions"><button onclick="toggleBattlePick(\''+esc(k)+'\')">'+(battleOn?'✓ In Battle':'⚔ Add to Battle')+'</button><button onclick="toggleFinalPick(\''+esc(k)+'\')">'+(finalOn?'👑 Final Card':'＋ Final Card')+'</button><button onclick="gradeBoardPick(\''+esc(k)+'\',\'played\')">Mark played</button><button class="win" onclick="gradeBoardPick(\''+esc(k)+'\',\'win\')">W</button><button class="loss" onclick="gradeBoardPick(\''+esc(k)+'\',\'loss\')">L</button><button onclick="gradeBoardPick(\''+esc(k)+'\',\'push\')">Push</button>'+(p.source==='board'?'<button onclick="removeBoardExtra(\''+esc(k)+'\')">Remove</button>':'')+'</div></div><div><b>'+esc(status.toUpperCase())+'</b></div></article>';
 }
 function reportHtml(){
  const b=boardExtras.filter(x=>['win','loss','push'].includes(x.status)),w=b.filter(x=>x.status==='win').length,l=b.filter(x=>x.status==='loss').length,p=b.filter(x=>x.status==='push').length,dec=w+l,rate=dec?Math.round(w/dec*100):0;
@@ -413,7 +480,7 @@ function reportHtml(){
  return '<div class="app-home-card" id="appResultsReport"><h3>📈 Model Report Card</h3><div class="report-grid"><div><b>'+w+'-'+l+'</b><span>MY TRACKED PICKS</span></div><div><b>'+rate+'%</b><span>MY DECIDED RATE</span></div><div><b>'+rr+'%</b><span>TOP 6 MODEL RATE</span></div><div><b>'+hrate+'%</b><span>HR BOARD HIT RATE</span></div></div><p>Only recorded pregame or manually marked results are counted. Pushes are excluded from decided win rate. This is performance tracking, not a profit guarantee.</p></div>';
 }
 window.renderAppBoard=function(){
- const picks=allBoardPicks(),html=propBattleHtml(picks)+'<div class="my-board-list">'+(picks.length?picks.map(boardCard).join(''):'<div class="empty">Open Player Lab and add props you’re considering.</div>')+'</div>'+reportHtml();
+ const picks=allBoardPicks(),html=finalCardHtml(picks)+propBattleHtml(picks)+'<div class="my-board-list">'+(picks.length?picks.map(boardCard).join(''):'<div class="empty">Open Player Lab and add props you’re considering.</div>')+'</div>'+reportHtml();
  for(const id of ['myBoardRows','nflBoardRows']){const el=document.getElementById(id);if(el)el.innerHTML=html}
 }
 function appAlerts(){
@@ -429,8 +496,8 @@ function top6Names(){
 window.renderAppDashboards=function(){
  renderAppBoard();const alerts=appAlerts(),alertHtml=alerts.length?alerts.map(a=>'<div class="alert-row"><span>'+a.icon+'</span><div><b>'+esc(a.title)+'</b><span>'+esc(a.text)+'</span></div></div>').join(''):'<p>No new alerts right now.</p>';
  const feed=(()=>{try{return JSON.parse(document.getElementById('dailyHrResearch')?.textContent||'null')}catch{return null}})(),hr1=feed?.top10?.[0],weather=researchHealth.get('weather'),weatherText=weather?.at?new Date(weather.at).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'Pending';
- const mlb=document.getElementById('mlbHomeDashboard');if(mlb)mlb.innerHTML='<div class="section-title"><div><h2>RalloPicks Today</h2><span>One screen for today’s research</span></div><span>Weather '+esc(weatherText)+'</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🔥 Top 6 Today</h3>'+top6Names()+'<div class="app-home-actions"><button onclick="switchView(\'rankings\')">Open Rankings</button><button onclick="switchView(\'batterlab\')">Player Lab</button></div></div><div class="app-home-card"><h3>⚾ Best HR Research</h3><strong>'+esc(hr1?.person?.fullName||'Loading…')+'</strong><p>'+(hr1?esc(hr1.reason):'Daily HR board loading.')+'</p><button onclick="switchView(\'top20\')">Open HR Board</button></div><div class="app-home-card"><h3>🚨 Alerts</h3>'+alertHtml+'</div><div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().length+'</strong><p>Saved props across MLB and NFL.</p><button onclick="switchView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>🧪 Results</h3>'+reportHtml()+'</div></div>';
- const nfl=document.getElementById('nflHomeDashboard');if(nfl){const games=state.nfl.games||[],teams=[...(state.nfl.teams||[])].filter(x=>x.games_played>0).sort((a,b)=>(a.offense_rank||99)-(b.offense_rank||99)),best=teams[0];nfl.innerHTML='<div class="section-title"><div><h2>NFL Today</h2><span>Matchups, rankings and saved props</span></div><span>'+games.length+' games loaded</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🏈 NFL Research Center</h3><strong>'+(best?esc(best.name):'Season loading')+'</strong><p>'+(best?'#'+best.offense_rank+' scoring offense • '+nflRecord(best):'Rankings activate from completed games.')+'</p><div class="app-home-actions"><button onclick="switchNflView(\'players\')">Player Lab</button><button onclick="switchNflView(\'ranks\')">Rankings</button></div></div><div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().filter(x=>x.sport==='NFL').length+'</strong><p>NFL props saved for comparison and tracking.</p><button onclick="switchNflView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>📈 App Alerts</h3>'+alertHtml+'</div>'+reportHtml()+'</div>'}
+ const mlb=document.getElementById('mlbHomeDashboard');if(mlb)mlb.innerHTML='<div class="section-title"><div><h2>RalloPicks Today</h2><span>One screen for today’s research</span></div><span>Weather '+esc(weatherText)+'</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🔥 Top 6 Today</h3>'+top6Names()+'<div class="app-home-actions"><button onclick="switchView(\'rankings\')">Open Rankings</button><button onclick="switchView(\'batterlab\')">Player Lab</button></div></div><div class="app-home-card"><h3>⚾ Best HR Research</h3><strong>'+esc(hr1?.person?.fullName||'Loading…')+'</strong><p>'+(hr1?esc(hr1.reason):'Daily HR board loading.')+'</p><button onclick="switchView(\'top20\')">Open HR Board</button></div><div class="app-home-card"><h3>🚨 Alerts</h3>'+alertHtml+'</div>'+hiddenEdgesHtml()<div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().length+'</strong><p>Saved props across MLB and NFL.</p><button onclick="switchView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>🧪 Results</h3>'+reportHtml()+'</div></div>';
+ const nfl=document.getElementById('nflHomeDashboard');if(nfl){const games=state.nfl.games||[],teams=[...(state.nfl.teams||[])].filter(x=>x.games_played>0).sort((a,b)=>(a.offense_rank||99)-(b.offense_rank||99)),best=teams[0];nfl.innerHTML='<div class="section-title"><div><h2>NFL Today</h2><span>Matchups, rankings and saved props</span></div><span>'+games.length+' games loaded</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🏈 NFL Research Center</h3><strong>'+(best?esc(best.name):'Season loading')+'</strong><p>'+(best?'#'+best.offense_rank+' scoring offense • '+nflRecord(best):'Rankings activate from completed games.')+'</p><div class="app-home-actions"><button onclick="switchNflView(\'players\')">Player Lab</button><button onclick="switchNflView(\'ranks\')">Rankings</button></div></div><div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().filter(x=>x.sport==='NFL').length+'</strong><p>NFL props saved for comparison and tracking.</p><button onclick="switchNflView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>📈 App Alerts</h3>'+alertHtml+'</div>'+hiddenEdgesHtml()+reportHtml()+'</div>'}
 };
 const oldMlb=window.switchView;
 window.switchView=function(v){
