@@ -611,6 +611,16 @@ window.renderHrMatchupSpotlights=function(){
  host.innerHTML='<div class="hr-matchup-spotlights">'+sections.join('')+'</div>';
 };
 
+// Keep the matchup scan in sync after rankings/schedule data arrive and when Research is opened.
+function refreshHrMatchupScan(){
+ try{window.renderHrMatchupSpotlights?.()}catch(e){console.warn('HR matchup scan render',e)}
+}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHrMatchupScan()});
+window.addEventListener('focus',refreshHrMatchupScan);
+setTimeout(refreshHrMatchupScan,800);
+setTimeout(refreshHrMatchupScan,2500);
+setInterval(refreshHrMatchupScan,60000);
+
 function hiddenEdgesHtml(){
  const mlb=(state.dailyBatterRanks||[]).filter(x=>x.score>=68).slice(6,18).sort((a,b)=>b.score-a.score).slice(0,5);
  const nfl=(state.nfl.players||[]).map(p=>{const opp=nflOpponentFor(p.team),def=opp?.team?.defense_rank,s=p.season||{},usage=p.position==='RB'?Number(s.rush_attempts||0)+Number(s.targets||0):p.position==='QB'?Number(s.pass_attempts||0)+Number(s.rush_attempts||0):Number(s.targets||0);let score=45+Math.min(28,usage/10)+(def?Math.max(-5,Math.min(10,(def-16.5)*.6)):0);return {p,score:Math.round(score),def}}).filter(x=>x.score>=65).sort((a,b)=>b.score-a.score).slice(0,5);
