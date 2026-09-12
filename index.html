@@ -578,6 +578,16 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 .pitch-attack-name b{font-size:12px!important}.pitch-attack-row.good .attack-score b{color:#2eea8b}.pitch-attack-row.bad .attack-score b{color:#ff5d68}
 .pitch-attack-note{font-size:8px;line-height:1.5;color:#74839e;padding:8px 4px 3px}
 @media(max-width:620px){.pitch-attack-wrap{overflow-x:auto}.pitch-attack-row{min-width:590px}.pitch-attack-note{min-width:560px}}
+</style><style>
+/* HR command center */
+.hr-command{margin:10px;padding:12px;border:1px solid #27324e;border-radius:15px;background:linear-gradient(145deg,#0b1328,#080d1c)}
+.hr-command.good{border-color:rgba(46,234,139,.45);box-shadow:0 0 24px rgba(46,234,139,.07)}.hr-command.bad{border-color:rgba(255,93,104,.38)}
+.hr-command-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.hr-command-top small{display:block;color:#8190aa;font-size:8px;font-weight:900;letter-spacing:.8px}.hr-command-top strong{display:block;font-size:35px;line-height:1;color:#fff;margin-top:4px}.hr-command.good .hr-command-top strong{color:#2eea8b}.hr-command.bad .hr-command-top strong{color:#ff5d68}.hr-command-top em{font-size:11px;color:#77849c;font-style:normal}
+.hr-tier{padding:8px 10px;border-radius:999px;background:#18213a;font-size:9px;font-weight:1000}.good .hr-tier{background:rgba(46,234,139,.12);color:#2eea8b}.bad .hr-tier{background:rgba(255,93,104,.12);color:#ff5d68}
+.hr-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}.hr-summary>div{padding:10px;border-radius:10px;background:#0b1225}.hr-summary b{display:block;font-size:9px;margin-bottom:6px}.hr-summary span{display:block;font-size:8px;color:#a7b2c6;line-height:1.55}
+.hr-contact{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}.hr-mini{padding:8px 4px;text-align:center;border-radius:9px;background:#10182c}.hr-mini b{display:block;font-size:12px}.hr-mini span{display:block;font-size:6px;color:#7d8ba4;margin-top:3px}
+.hr-environment{margin-top:8px;padding:9px;border-radius:9px;background:#0b1225}.hr-environment b{display:block;font-size:9px}.hr-environment span{display:block;color:#7f8ca3;font-size:7px;margin-top:3px;line-height:1.45}
+@media(max-width:620px){.hr-summary{grid-template-columns:1fr}.hr-contact{grid-template-columns:repeat(5,minmax(62px,1fr));overflow-x:auto}.hr-command{margin:8px 10px}.hr-command-top strong{font-size:31px}}
 </style></head>
 <body>
 <div class="app">
@@ -1038,6 +1048,27 @@ function pitchAttackMatchupHtml(p){
  const badge=s=>s>=75?['🔥 GREAT HR FIT','good']:s>=60?['🟢 FAVORABLE','good']:s<45?['🔴 TOUGH MATCHUP','bad']:['⚪ NEUTRAL','neutral'];
  return '<div class="pitch-attack-wrap">'+joined.slice(0,5).map((x,i)=>{const H=x.h,Q=x.q,s=score(x),b=badge(s),star=hr(H)===maxHr&&maxHr>0;return `<div class="pitch-attack-row ${b[1]}"><div class="pitch-attack-name"><b>${star?'⭐ ':''}${esc(H.type||H.code)}</b><small>${i===0?'BEST PITCH MATCHUP • ':''}${b[0]}</small></div><div><b>${hr(H)}</b><span>HR</span></div><div><b>${H.slg==null?'—':Number(H.slg).toFixed(3).replace(/^0/,'')}</b><span>SLG</span></div><div><b>${Q.usage==null?'—':Q.usage+'%'}</b><span>PITCHER USE</span></div><div class="attack-score"><b>${s}</b><span>FIT</span></div></div>`}).join('')+'<div class="pitch-attack-note">⭐ marks this batter’s most-homered pitch type. FIT combines HR history, SLG, hard-hit/whiff results and how often today’s pitcher uses the pitch.</div></div>';
 }
+function hrDecisionDashboard(p){
+ const hitter=state.arsenals?.batters?.[String(p.id)]?.vsPitch||[], pitcher=p.pitcher?.id?(state.arsenals?.pitchers?.[String(p.pitcher.id)]?.pitches||[]):[];
+ const hrs=hitter.reduce((a,x)=>a+Number(x.homeRuns||0),0),best=[...hitter].sort((a,b)=>Number(b.homeRuns||0)-Number(a.homeRuns||0))[0];
+ const aliases={FF:['FF','FA'],FA:['FA','FF'],SI:['SI','FT'],FT:['FT','SI'],FC:['FC'],SL:['SL','ST'],ST:['ST','SL'],CU:['CU','KC'],KC:['KC','CU'],CH:['CH','FS'],FS:['FS','CH']}, norm=x=>String(x||'').toUpperCase();
+ const qp=best&&pitcher.find(q=>(aliases[norm(best.code)]||[norm(best.code)]).includes(norm(q.code)));
+ const games=p.games||[], recent=games.slice(0,10), recentHR=recent.reduce((a,g)=>a+statNum(g.stat||{},'homeRuns'),0);
+ let score=50; if(best){score+=Math.min(20,Number(best.homeRuns||0)*2);score+=Number(best.slg)>=.5?10:Number(best.slg)<.35?-10:0;score+=Number(best.hardHit)>=40?8:Number(best.hardHit)<32?-6:0;score+=Number(best.whiff)<=25?5:Number(best.whiff)>30?-6:0} if(qp)score+=Math.min(12,(Number(qp.usage)||0)/4);score+=Math.min(8,recentHR*3);score=Math.max(0,Math.min(100,Math.round(score)));
+ const tier=score>=80?'TOP HR TARGET':score>=68?'STRONG HR LOOK':score>=55?'WATCH':'AVOID / WEAK';
+ const cls=score>=68?'good':score<55?'bad':'neutral';
+ const reasons=[]; const warnings=[];
+ if(best&&Number(best.homeRuns)>0)reasons.push(`⭐ ${best.type||best.code}: ${best.homeRuns} HR`);
+ if(qp&&Number(qp.usage)>=25)reasons.push(`Pitcher uses ${best.type||best.code} ${qp.usage}%`);
+ if(best&&Number(best.slg)>=.45)reasons.push(`${Number(best.slg).toFixed(3).replace(/^0/,'')} SLG vs best pitch`);
+ if(recentHR>0)reasons.push(`${recentHR} HR in last ${recent.length} games`);
+ if(best&&Number(best.whiff)>30)warnings.push(`High ${best.whiff}% whiff vs best pitch`);
+ if(best&&Number(best.hardHit)<32)warnings.push(`Low ${best.hardHit}% hard-hit vs best pitch`);
+ if(!qp)warnings.push('Starter does not feature hitter’s top HR pitch heavily');
+ if(!warnings.length)warnings.push('No major pitch-type warning flagged');
+ const contact=best?`<div class="hr-mini"><b>${best.hardHit??'—'}%</b><span>HARD HIT</span></div><div class="hr-mini"><b>${best.whiff??'—'}%</b><span>WHIFF</span></div><div class="hr-mini"><b>${recentHR}</b><span>L10 HR</span></div>`:'';
+ return `<div class="hr-command ${cls}" id="lab-hrscore"><div class="hr-command-top"><div><small>RALLO HR MATCHUP SCORE</small><strong>${score}<em>/100</em></strong></div><div class="hr-tier">${tier}</div></div><div class="hr-summary"><div><b>💎 Why I like him</b>${reasons.slice(0,3).map(x=>'<span>✓ '+esc(x)+'</span>').join('')||'<span>Waiting for matchup data</span>'}</div><div><b>🚨 Warning flags</b>${warnings.slice(0,2).map(x=>'<span>• '+esc(x)+'</span>').join('')}</div></div><div class="hr-contact"><div class="hr-mini"><b>${best?esc(best.type||best.code):'—'}</b><span>BEST PITCH</span></div><div class="hr-mini"><b>${best?.homeRuns??'—'}</b><span>HR VS PITCH</span></div>${contact}</div><div class="hr-environment"><b>🏟️ HR Environment</b><span>Park + live weather will be scored here when game-weather data is available; it is not guessed.</span></div></div>`;
+}
 function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.range=n;state.currentLab.market=state.currentLab.market||'totalBases';state.currentLab.line=state.currentLab.line??ANALYTIC_MARKETS[state.currentLab.market].defaultLine;renderBatterAnalytics()}
 
 function scrollLabSection(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
@@ -1067,6 +1098,7 @@ function renderBatterAnalytics(){
  const bvpPanel=`<div class="analytics-card" id="lab-bvp" style="margin-top:10px"><div class="analytics-title">Batter vs pitcher • career history</div><div class="bvp-wrap">${pitcherSelect}${bvpBody}</div></div>`;
  document.getElementById('batterLabPlayer').innerHTML=`<div class="analytics-shell">
   <div class="analytics-top">${playerAvatar(p.name,p.id,'large')}<div><div class="eyebrow">RALLOPICKS PLAYER ANALYTICS</div><div class="analytics-name">${esc(p.name)}</div><div class="analytics-sub">${esc(p.team)} • vs ${esc(p.opponent?.name||'Opponent TBD')} • Interactive prop research</div></div><button class="fav-btn" onclick="savePlayer(${p.id},'${esc(p.name).replace(/'/g,"\\'")}')">${isCurrentSaved()?'★ Saved':'☆ Favorite'}</button></div>
+  ${hrDecisionDashboard(p)}
   ${playerLabQuickNav('batter')}
   <div class="range-tabs">${[5,10,20].map(x=>`<button class="${n===x?'active':''}" onclick="setAnalyticRange(${x})">Last ${x}</button>`).join('')}<button class="${n==='season'?'active':''}" onclick="setAnalyticRange('season')">Season</button><button class="${n==='h2h'?'active':''}" onclick="setAnalyticRange('h2h')">⚔ Head to Head</button></div>
   <div class="analytics-markets">${Object.entries(ANALYTIC_MARKETS).map(([k,m])=>`<button class="${p.market===k?'active':''}" onclick="setAnalyticMarket('${k}')">${m.label}</button>`).join('')}</div>
