@@ -544,18 +544,40 @@ window.renderSleeperFinder=function(){
     <div class="bat-order">SLEEPER #${i+1} • ${esc(x.teamAbbr||'')} • vs ${esc(x.opponent||'TBD')}</div>
     <div class="batter-name">${esc(x.name)}</div>
     <div class="bat-side">${esc(sleeperReason(x))}</div>
+    ${hrOddsHtml(x)}
     <div class="props"><button class="prop" onclick="openBatterLab(${Number(x.id)},'${esc(x.name).replace(/'/g,"\\'")}','${esc(x.teamAbbr||'')}');switchView('batterlab')">🔎 PLAYER LAB</button></div>
    </div>
    <div style="text-align:center"><b style="font-size:18px;color:var(--yellow)">${x.sleeperScore}</b><span style="display:block;font-size:7px;color:var(--muted)">SLEEPER SCORE</span></div>
   </article>`).join('')||'<div class="empty">No strong sleeper HR spots qualify yet. Check again after lineups and matchup data update.</div>';
 };
 
+function normHrOddsName(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'')}
+function hrOddsForPlayer(name){
+ const rows=state.hrOdds?.rows||[],key=normHrOddsName(name);
+ return rows.find(r=>normHrOddsName(r.playerName)===key)||null;
+}
+async function ensureHrOdds(){
+ if(state.hrOddsLoaded||state.hrOddsLoading)return;
+ state.hrOddsLoading=true;
+ try{
+  const r=await fetch('data/hr-odds.json?d='+Date.now(),{cache:'no-store'});
+  if(r.ok)state.hrOdds=await r.json();
+ }catch(e){}
+ state.hrOddsLoaded=true;state.hrOddsLoading=false;
+ window.renderSleeperFinder?.();window.renderHrMatchupSpotlights?.();
+}
+function hrOddsHtml(x){
+ const o=hrOddsForPlayer(x?.name);if(!o)return '<div class="hr-verified-odds pending">Verified HR odds pending</div>';
+ const books=(o.books||[]).slice(0,3).map(b=>esc(b.bookName)+' '+esc(b.odds)).join(' • ');
+ return '<div class="hr-verified-odds"><b>VERIFIED HR ODDS</b><strong>'+esc(o.bestOdds)+' <em>'+esc(o.bestBookName)+'</em></strong>'+(books?'<span>'+books+'</span>':'')+'</div>';
+}
 function hrSpotCard(label,x,tone,detail){
  if(!x)return '';
- return '<article class="hr-spot-card '+tone+'" onclick="openBatterLab('+Number(x.id)+',\''+esc(x.name).replace(/'/g,"\\'")+'\',\''+esc(x.teamAbbr||'')+'\');switchView(\'batterlab\')"><span class="hr-spot-label">'+esc(label)+'</span><div class="hr-spot-player">'+playerAvatar(x.name,x.id)+'<div><strong>'+esc(x.name)+'</strong><small>'+esc(x.teamAbbr||'')+' • vs '+esc(x.pitcher||x.opponent||'TBD')+'</small></div></div><div class="hr-spot-score"><b>'+Math.round(Number(x.score)||0)+'</b>'+esc(detail)+'</div></article>';
+ return '<article class="hr-spot-card '+tone+'" onclick="openBatterLab('+Number(x.id)+',\''+esc(x.name).replace(/'/g,"\\'")+'\',\''+esc(x.teamAbbr||'')+'\');switchView(\'batterlab\')"><span class="hr-spot-label">'+esc(label)+'</span><div class="hr-spot-player">'+playerAvatar(x.name,x.id)+'<div><strong>'+esc(x.name)+'</strong><small>'+esc(x.teamAbbr||'')+' • vs '+esc(x.pitcher||x.opponent||'TBD')+'</small></div></div><div class="hr-spot-score"><b>'+Math.round(Number(x.score)||0)+'</b>'+esc(detail)+'</div>'+hrOddsHtml(x)+'</article>';
 }
 window.renderHrMatchupSpotlights=function(){
  const host=document.getElementById('hrMatchupSpotlights');if(!host)return;
+ ensureHrOdds();
  const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out');
  if(!rows.length){host.innerHTML='';return;}
  const groups=new Map();
