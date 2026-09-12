@@ -690,6 +690,16 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 .rallo-read-alt{margin-top:8px;padding:8px;border-radius:9px;background:#0d1628;font-size:7px;color:#a4b0c2}.rallo-read-note{font-size:6px;color:#6d7a91;margin-top:7px;line-height:1.5}
 @media(max-width:620px){.rallo-read-pick{grid-template-columns:1fr 1fr}.rallo-read-pick>div:last-child{grid-column:1/-1}.rallo-read-copy{grid-template-columns:1fr}}
 </style><style>
+/* Green-light bet filter */
+.bet-gate{margin:10px 0;padding:11px;border-radius:13px;border:1px solid rgba(255,255,255,.09);background:#0a1324;display:grid;grid-template-columns:minmax(170px,.8fr) 1.4fr;gap:10px;align-items:start}
+.bet-gate small{display:block;font-size:7px;color:#8290a8;font-weight:900;letter-spacing:.8px}.bet-gate strong{display:block;font-size:17px;margin-top:3px}.bet-gate span{display:block;font-size:7px;color:#a6b3c5;line-height:1.45;margin-top:3px}
+.bet-gate.green{border-color:rgba(46,234,139,.38);background:linear-gradient(135deg,rgba(46,234,139,.10),#0a1324)}.bet-gate.green strong{color:#2eea8b}
+.bet-gate.watch{border-color:rgba(255,188,32,.36);background:linear-gradient(135deg,rgba(255,188,32,.08),#0a1324)}.bet-gate.watch strong{color:#ffcc55}
+.bet-gate.pass{border-color:rgba(255,101,114,.42);background:linear-gradient(135deg,rgba(255,101,114,.10),#0a1324)}.bet-gate.pass strong{color:#ff6572}
+.bet-gate-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.bet-gate-checks span{padding:6px 7px;border-radius:8px;background:#101a2d;margin:0!important}.bet-gate-checks .ok{color:#8ff0bc}.bet-gate-checks .no{color:#ff9aa3}
+.pass-note{display:inline-flex!important;align-items:center;padding:7px 9px;border-radius:8px;background:rgba(255,101,114,.10);border:1px solid rgba(255,101,114,.22);font-size:7px;color:#ff9aa3}
+@media(max-width:620px){.bet-gate{grid-template-columns:1fr}.bet-gate-checks{grid-template-columns:1fr 1fr}.bet-gate strong{font-size:16px}}
+</style><style>
 /* Prop Battle + Trap Detector */
 .trap-card{margin:8px 0;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#0b1425;display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:start}
 .trap-card>div:first-child b{display:block;font-size:9px}.trap-card strong{display:block;font-size:16px;margin-top:4px}.trap-card span{display:block;font-size:7px;color:#a8b4c6;line-height:1.55}
