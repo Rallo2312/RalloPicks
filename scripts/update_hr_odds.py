@@ -116,6 +116,18 @@ for event in events:
             "books": books,
         })
 
+# Deduplicate players when the provider exposes both 0.5 O/U and Yes/No
+# representations of the same anytime-HR market. Prefer the explicit Yes/No row.
+deduped = {}
+for row in rows:
+    key = (row.get("eventID"), row.get("playerID"))
+    current = deduped.get(key)
+    row_is_yesno = "Any Home Runs" in str(row.get("marketName") or "")
+    current_is_yesno = current and "Any Home Runs" in str(current.get("marketName") or "")
+    if current is None or (row_is_yesno and not current_is_yesno):
+        deduped[key] = row
+
+rows = list(deduped.values())
 rows.sort(key=lambda x: (x.get("startsAt") or "", x.get("playerName") or ""))
 
 OUT.write_text(json.dumps({
