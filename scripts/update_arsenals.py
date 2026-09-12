@@ -13,6 +13,13 @@ PITCHER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?t
 MOVEMENT_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-movement?year={YEAR}&csv=true"
 PREV_BATTER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year={YEAR - 1}&min=1&minPitches=1&csv=true"
 PREV_PITCHER_URL = f"https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year={YEAR - 1}&min=1&minPitches=1&csv=true"
+HOME_RUN_URL = (
+    "https://baseballsavant.mlb.com/statcast_search/csv?"
+    "all=true&type=details&player_type=batter&hfGT=R%7C"
+    f"&hfSea={YEAR}%7C&hfAB=home_run%7C"
+    "&group_by=name&min_pitches=0&min_results=0&min_pas=0"
+    "&sort_col=pitches&player_event_sort=h_launch_speed&sort_order=desc"
+)
 
 session = requests.Session()
 session.headers.update({
@@ -150,7 +157,7 @@ def build_pitcher_data(rows, movement_rows, wanted):
             "hardHit": to_float(first(r, "hard_hit_percent")),
             # Savant's batter arsenal CSV exposes home runs by pitch type.
             # Keep several aliases so this survives minor leaderboard header changes.
-            "homeRuns": to_int(first(r, "home_run", "home_runs", "hr", "hrs", "HR")),
+            "homeRuns": (hr_by_pitch or {}).get((str(pid), str(ptype))),
         }
 
         grouped.setdefault(str(pid), []).append(item)
@@ -160,7 +167,20 @@ def build_pitcher_data(rows, movement_rows, wanted):
 
     return {pid: {"pitches": arr[:10]} for pid, arr in grouped.items()}
 
-def build_batter_data(rows, wanted):
+def build_hr_by_pitch(rows):
+    counts = {}
+    for r in rows:
+        if str(first(r, "events") or "").lower() != "home_run":
+            continue
+        pid = to_int(first(r, "batter"))
+        ptype = first(r, "pitch_type")
+        if pid is None or not ptype:
+            continue
+        key = (str(pid), str(ptype))
+        counts[key] = counts.get(key, 0) + 1
+    return counts
+
+def build_batter_data(rows, wanted, hr_by_pitch=None):
     grouped = {}
 
     for r in rows:
@@ -198,6 +218,13 @@ print("Downloading Baseball Savant league-wide arsenal tables...")
 batter_rows = get_csv(BATTER_URL)
 pitcher_rows = get_csv(PITCHER_URL)
 movement_rows = get_csv(MOVEMENT_URL)
+try:
+    home_run_rows = get_csv(HOME_RUN_URL)
+except Exception as e:
+    print(f"Home-run-by-pitch warning: {e}")
+    home_run_rows = []
+hr_by_pitch = build_hr_by_pitch(home_run_rows)
+print(f"Downloaded {len(home_run_rows)} home-run pitch events across {len(hr_by_pitch)} hitter/pitch-type pairs")
 
 print(
     f"Downloaded {len(batter_rows)} batter arsenal rows, "
@@ -213,7 +240,7 @@ pitcher_data = build_pitcher_data(pitcher_rows, movement_rows, all_pitcher_ids)
 # the Savant table rather than limiting the pitch-type feed to today's slate.
 all_batter_ids = {to_int(first(r, "player_id")) for r in batter_rows}
 all_batter_ids.discard(None)
-batter_data = build_batter_data(batter_rows, all_batter_ids)
+batter_data = build_batter_data(batter_rows, all_batter_ids, hr_by_pitch)
 
 # A player can occasionally be absent from the current-season CSV despite having
 # a posted MLB lineup. Fill only those gaps with the previous season so the UI
@@ -234,7 +261,7 @@ for fallback_year in range(YEAR - 1, YEAR - 4, -1):
     missing_pitchers = pitchers - {int(pid) for pid in pitcher_data}
 
 if missing_batters:
-    batter_data.update(build_batter_data(get_csv(PREV_BATTER_URL), missing_batters))
+    batter_data.update(build_batter_data(get_csv(PREV_BATTER_URL), missing_batters, hr_by_pitch))
 
 data = {
     "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
