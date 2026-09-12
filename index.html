@@ -692,6 +692,30 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 </style><style>
 /* Desktop polish */
 @media(min-width:901px){
+ .app-main-nav{
+   position:sticky!important;top:76px!important;z-index:28!important;
+   width:min(980px,calc(100% - 24px))!important;margin:12px auto 16px!important;
+   padding:6px!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:6px!important;
+   background:rgba(7,13,27,.94)!important;border:1px solid rgba(255,255,255,.08)!important;
+   border-radius:16px!important;backdrop-filter:blur(18px)!important;
+   box-shadow:0 12px 32px rgba(0,0,0,.28)!important
+ }
+ .app-main-nav button{
+   min-height:42px!important;padding:9px 12px!important;border-radius:11px!important;
+   background:transparent!important;border:1px solid transparent!important;
+   color:#8f9db3!important;font-size:10px!important;font-weight:900!important;
+   white-space:nowrap!important;box-shadow:none!important
+ }
+ .app-main-nav button:hover{
+   transform:none!important;background:#101a2e!important;color:#fff!important;
+   border-color:rgba(255,255,255,.08)!important;box-shadow:none!important
+ }
+ .app-main-nav button.active{
+   background:linear-gradient(135deg,#17263f,#112033)!important;
+   color:#fff!important;border-color:rgba(105,242,39,.34)!important;
+   box-shadow:inset 0 -2px 0 #69f227,0 6px 18px rgba(0,0,0,.22)!important
+ }
+
  body{background-attachment:fixed}
  .app{max-width:1600px!important;padding:14px 20px 50px!important}
  .topbar{padding:12px 8px 14px!important;border-radius:0 0 14px 14px}
