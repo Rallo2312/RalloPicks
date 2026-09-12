@@ -12,6 +12,11 @@ def get(url):
     if 'baseballsavant.mlb.com' in url:
         return subprocess.check_output(['curl','-fsS','--retry','2','--max-time','60',url]).decode('utf-8-sig')
     with urllib.request.urlopen(url,timeout=60) as response:return response.read().decode('utf-8-sig')
+def first_value(row,*keys):
+    for key in keys:
+        if key in row and row[key] not in (None,''):
+            return row[key]
+    return None
 def num(value):
     try:
         n=float(value) if value not in (None,'') else None
@@ -34,7 +39,7 @@ def main():
         rows=list(csv.DictReader(io.StringIO(get(contact_url))))
         if not rows or not {'player_id','attempts','brl_percent','ev95percent','avg_hit_speed'}.issubset(rows[0]):raise ValueError('Unexpected Statcast schema')
         for row in rows:
-            quality['players'][row['player_id']]={'bbe':num(row['attempts']),'barrelRate':num(row['brl_percent']),'hardHitRate':num(row['ev95percent']),'exitVelocity':num(row['avg_hit_speed'])}
+            quality['players'][row['player_id']]={'bbe':num(row['attempts']),'barrelRate':num(row['brl_percent']),'hardHitRate':num(row['ev95percent']),'exitVelocity':num(row['avg_hit_speed']),'maxExitVelocity':num(first_value(row,'max_hit_speed','max_ev','max_exit_velocity')),'launchAngle':num(first_value(row,'avg_launch_angle','launch_angle_avg','launch_angle'))}
         quality['status']='ready'
     except Exception as error:quality['error']='Contact source unavailable: '+type(error).__name__
     archive_path=ROOT/'data/hr-history.json'
