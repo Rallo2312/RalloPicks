@@ -579,25 +579,15 @@ window.renderHrMatchupSpotlights=function(){
  const host=document.getElementById('hrMatchupSpotlights');if(!host)return;
  ensureHrOdds();
  const gameByPk=new Map((state.games||[]).map(g=>[String(g.gamePk),g]));
- const oddsByTeam=new Map();
- (state.hrOdds?.rows||[]).forEach(o=>{
-  const start=new Date(o.startsAt).getTime();
-  if(!Number.isFinite(start)||Date.now()>=start)return;
-  [o.awayTeam,o.homeTeam].filter(Boolean).forEach(t=>oddsByTeam.set(normHrOddsName(t),{eventID:o.eventID,startsAt:o.startsAt}));
- });
  const notStarted=x=>{
   const g=gameByPk.get(String(x.gamePk));
-  if(g){
-   const abstract=String(g.status?.abstractGameState||'').toLowerCase();
-   const detailed=String(g.status?.detailedState||'').toLowerCase();
-   const coded=String(g.status?.codedGameState||'');
-   const firstPitch=new Date(g.gameDate).getTime();
-   const started=abstract==='live'||abstract==='final'||/in progress|game over|final|completed/.test(detailed)||['I','F','O'].includes(coded);
-   if(started)return false;
-   if(Number.isFinite(firstPitch)&&Date.now()<firstPitch)return true;
-  }
-  const oddsEvent=oddsByTeam.get(normHrOddsName(x.team||x.teamName||x.teamAbbr));
-  return !!oddsEvent;
+  if(!g)return true; // don't blank the board just because a rank row lacks schedule metadata
+  const abstract=String(g.status?.abstractGameState||'').toLowerCase();
+  const detailed=String(g.status?.detailedState||'').toLowerCase();
+  const coded=String(g.status?.codedGameState||'');
+  const firstPitch=new Date(g.gameDate).getTime();
+  const started=abstract==='live'||abstract==='final'||/in progress|game over|final|completed/.test(detailed)||['I','F','O'].includes(coded)||(Number.isFinite(firstPitch)&&Date.now()>=firstPitch);
+  return !started;
  };
  const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out'&&notStarted(x));
  if(!rows.length){host.innerHTML='<div class="empty">No MLB games that have not started are available right now.</div>';return;}
