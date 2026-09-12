@@ -510,6 +510,31 @@ window.renderSleeperFinder=function(){
   </article>`).join('')||'<div class="empty">No strong sleeper HR spots qualify yet. Check again after lineups and matchup data update.</div>';
 };
 
+function hrSpotCard(label,x,tone,detail){
+ if(!x)return '';
+ return '<article class="hr-spot-card '+tone+'" onclick="openBatterLab('+Number(x.id)+',\''+esc(x.name).replace(/'/g,"\\'")+'\',\''+esc(x.teamAbbr||'')+'\');switchView(\'batterlab\')"><span class="hr-spot-label">'+esc(label)+'</span><div class="hr-spot-player">'+playerAvatar(x.name,x.id)+'<div><strong>'+esc(x.name)+'</strong><small>'+esc(x.teamAbbr||'')+' • vs '+esc(x.pitcher||x.opponent||'TBD')+'</small></div></div><div class="hr-spot-score"><b>'+Math.round(Number(x.score)||0)+'</b>'+esc(detail)+'</div></article>';
+}
+window.renderHrMatchupSpotlights=function(){
+ const host=document.getElementById('hrMatchupSpotlights');if(!host)return;
+ const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out');
+ if(!rows.length){host.innerHTML='';return;}
+ const groups=new Map();
+ rows.forEach(x=>{const k=[x.teamId,x.gamePk].join(':');if(!groups.has(k))groups.set(k,[]);groups.get(k).push(x)});
+ const sections=[...groups.values()].map(teamRows=>{
+  const sorted=[...teamRows].sort((a,b)=>b.score-a.score);
+  const obvious=sorted[0];
+  const hidden=[...teamRows].filter(x=>Number(x.rank)>10).map(x=>{let s=Number(x.score)||0;if(Number(x.barrelRate)>=10)s+=5;if(Number(x.hardHitRate)>=43)s+=4;if(Number(x.hr9)>=1.25)s+=4;if(Number(x.weather?.factor)>1.03)s+=3;return {...x,_hidden:s}}).sort((a,b)=>b._hidden-a._hidden)[0]||sorted[Math.min(1,sorted.length-1)];
+  const power=[...teamRows].map(x=>({...x,_power:(Number(x.barrelRate)||0)*2+(Number(x.hardHitRate)||0)*.35+(Number(x.hr9)||1.15)*8})).sort((a,b)=>b._power-a._power)[0]||obvious;
+  const head=obvious?esc(obvious.teamAbbr||'TEAM')+' vs '+esc(obvious.pitcher||'Starter TBD'):'Matchup';
+  return '<section class="hr-matchup-spotlight"><div class="hr-matchup-head"><strong>'+head+'</strong><span>Rallo matchup scan • tap a player for Player Lab</span></div><div class="hr-matchup-scroll">'+
+   hrSpotCard('🔥 MOST OBVIOUS',obvious,'obvious','Top team HR research score')+
+   hrSpotCard('💎 MOST HIDDEN',hidden,'hidden','Best under-the-radar profile')+
+   hrSpotCard('⚡ BEST POWER MATCH',power,'power','Best barrel / hard-hit / pitcher blend')+
+   '</div></section>';
+ }).slice(0,8);
+ host.innerHTML='<div class="hr-matchup-spotlights">'+sections.join('')+'</div>';
+};
+
 function hiddenEdgesHtml(){
  const mlb=(state.dailyBatterRanks||[]).filter(x=>x.score>=68).slice(6,18).sort((a,b)=>b.score-a.score).slice(0,5);
  const nfl=(state.nfl.players||[]).map(p=>{const opp=nflOpponentFor(p.team),def=opp?.team?.defense_rank,s=p.season||{},usage=p.position==='RB'?Number(s.rush_attempts||0)+Number(s.targets||0):p.position==='QB'?Number(s.pass_attempts||0)+Number(s.rush_attempts||0):Number(s.targets||0);let score=45+Math.min(28,usage/10)+(def?Math.max(-5,Math.min(10,(def-16.5)*.6)):0);return {p,score:Math.round(score),def}}).filter(x=>x.score>=65).sort((a,b)=>b.score-a.score).slice(0,5);
@@ -575,7 +600,7 @@ function routeApp(route){
 }
 document.querySelectorAll('#appBottomNav button').forEach(b=>b.onclick=()=>routeApp(b.dataset.appRoute));
 const priorSetSport=window.setSport;window.setSport=function(name){const out=priorSetSport(name);setTimeout(()=>{name==='NFL'?switchNflView('home'):switchView('home');renderAppDashboards()},0);return out};
-renderAppBoard();renderAppDashboards();setTimeout(()=>{if(state.currentSport==='NFL')switchNflView('home');else switchView('home')},0);
+renderAppBoard();renderAppDashboards();window.renderHrMatchupSpotlights?.();setTimeout(()=>{if(state.currentSport==='NFL')switchNflView('home');else switchView('home')},0);
 setInterval(()=>renderAppDashboards(),120000);
 })();
 
