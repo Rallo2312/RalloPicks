@@ -596,6 +596,25 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 .model-leaderboard,.model-tracker-mini{margin:10px 0;padding:10px;border:1px solid #1d2948;border-radius:14px;background:#07101f}.model-head{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:2px 2px 8px}.model-head b{font-size:11px}.model-head span{font-size:7px;color:#78879f}.model-row{display:grid;grid-template-columns:28px 38px minmax(0,1fr) 42px;gap:7px;align-items:center;padding:7px;border-top:1px solid rgba(255,255,255,.05)}.model-row>.player-avatar{width:34px!important;height:34px!important}.model-row strong{display:block;font-size:10px}.model-row small{display:block;font-size:7px;color:#78879f}.model-row>span{text-align:center;color:#2eea8b;font-size:13px;font-weight:1000}
 .tracker-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.tracker-grid>div{padding:9px 4px;text-align:center;border-radius:9px;background:#0e1729}.tracker-grid b{display:block;font-size:14px}.tracker-grid span{display:block;font-size:6px;color:#78879f;margin-top:3px}
 @media(max-width:620px){.hr-prob-grid{grid-template-columns:1fr}.hr-contact{grid-template-columns:repeat(8,minmax(65px,1fr))!important}.xhr-card{grid-template-columns:repeat(3,1fr)}.tracker-grid{grid-template-columns:repeat(2,1fr)}}
+</style><style>
+/* RalloPicks app shell v2 */
+.app-main-nav{grid-template-columns:repeat(6,1fr)}
+.app-home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.app-home-card{padding:14px;border:1px solid rgba(255,255,255,.08);border-radius:15px;background:linear-gradient(145deg,rgba(13,34,52,.94),rgba(8,20,34,.94))}
+.app-home-card.hero{grid-column:span 2;background:linear-gradient(145deg,rgba(21,58,46,.96),rgba(10,29,24,.96));border-color:rgba(105,230,167,.25)}
+.app-home-card h3{margin:0 0 8px;font-size:13px}.app-home-card strong{font-size:23px}.app-home-card p{font-size:9px;color:var(--muted);line-height:1.55;margin:6px 0}.app-home-actions{display:flex;gap:6px;flex-wrap:wrap}.app-home-actions button{border:1px solid rgba(255,255,255,.1);background:#0d2030;color:#fff;border-radius:9px;padding:8px 10px;font-size:8px;font-weight:900}
+.alert-row{display:flex;gap:8px;align-items:flex-start;padding:8px;border-radius:9px;background:#0b1628;margin:5px 0}.alert-row b{font-size:9px}.alert-row span{display:block;font-size:7px;color:#8391a8;margin-top:2px}
+.my-board-list{display:grid;gap:8px}.my-board-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:11px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:#0b1426}.my-board-card strong{display:block;font-size:11px}.my-board-card small{display:block;font-size:7px;color:#8491a7;margin-top:3px}.board-actions{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.board-actions button{border:1px solid rgba(255,255,255,.1);background:#111c30;color:#fff;border-radius:8px;padding:6px 8px;font-size:7px;font-weight:900}.board-actions button.win{color:#2eea8b}.board-actions button.loss{color:#ff6874}
+.edge-score-card{margin:8px 0;padding:10px;border:1px solid rgba(85,199,255,.25);border-radius:12px;background:#09152a;display:grid;grid-template-columns:80px 1fr;gap:10px;align-items:center}.edge-score-number{text-align:center;font-size:27px;font-weight:1000}.edge-score-number.good{color:#2eea8b}.edge-score-number.bad{color:#ff6572}.edge-score-card b{font-size:10px}.edge-score-card span{display:block;font-size:7px;color:#8290a8;margin-top:3px}
+.line-history-strip{margin:7px 0;padding:8px;border-radius:10px;background:#0a1425;font-size:8px;color:#8c9ab1}
+.report-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.report-grid>div{padding:9px;text-align:center;border-radius:9px;background:#0c1729}.report-grid b{display:block;font-size:14px}.report-grid span{display:block;font-size:6px;color:#8190a6;margin-top:3px}
+.app-bottom-nav{display:none}
+@media(max-width:760px){
+ .app-main-nav{display:none!important}.app{padding-bottom:86px!important}.app-home-grid{grid-template-columns:1fr}.app-home-card.hero{grid-column:span 1}
+ .app-bottom-nav{position:fixed;z-index:120;left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);padding:7px;background:rgba(6,12,24,.94);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.09);border-radius:18px;box-shadow:0 16px 60px rgba(0,0,0,.5)}
+ .app-bottom-nav button{border:0;background:transparent;color:#a6b1c3;padding:7px 3px;border-radius:11px;font-size:16px}.app-bottom-nav button span{display:block;font-size:7px;margin-top:3px}.app-bottom-nav button.active{background:#15233c;color:#fff}
+ .report-grid{grid-template-columns:repeat(2,1fr)}
+}
 </style></head>
 <body>
 <div class="app">
@@ -604,15 +623,19 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
     <div class="top-actions"><div class="sport-switch" role="tablist" aria-label="Sport"><button id="sportMLB" class="active" onclick="setSport('MLB')">⚾ MLB</button><button id="sportNFL" onclick="setSport('NFL')">🏈 NFL</button></div><div class="platform-switch" role="tablist" aria-label="Fantasy platform"><button id="platformPrizePicks" onclick="setPlatform('PrizePicks')">PRIZEPICKS</button><button id="platformUnderdog" onclick="setPlatform('Underdog')">UNDERDOG</button><button id="platformDabble" onclick="setPlatform('Dabble')">DABBLE</button></div><div class="live" id="liveState">● LIVE DATA</div></div>
   </header>
 
-  <nav class="nav" id="mlbNav">
-    <button class="active" data-view="top20">🔥 Top 10 HR</button>
-    <button data-view="rankings">📊 Batter Ranks</button>
+  <nav class="nav app-main-nav" id="mlbNav">
+    <button class="active" data-view="home">🏠 Today</button>
+    <button data-view="top20">🔥 HR Board</button>
+    <button data-view="rankings">📊 Rankings</button>
     <button data-view="batterlab">🔎 Player Lab</button>
+    <button data-view="board">⭐ My Board</button>
     <button data-view="moneyline">💵 Moneyline</button>
   </nav>
-  <nav class="nav" id="nflNav" hidden>
-    <button class="active" data-nfl-view="players">🔎 Player Lab</button>
-    <button data-nfl-view="ranks">📊 Off / Def Ranks</button>
+  <nav class="nav app-main-nav" id="nflNav" hidden>
+    <button class="active" data-nfl-view="home">🏠 Today</button>
+    <button data-nfl-view="players">🔎 Player Lab</button>
+    <button data-nfl-view="ranks">📊 Rankings</button>
+    <button data-nfl-view="board">⭐ My Board</button>
     <button data-nfl-view="moneyline">💵 Moneyline</button>
     <button data-nfl-view="standings">🏆 Standings</button>
   </nav>
@@ -635,6 +658,8 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
     </aside>
 
     <section class="panel center-col">
+      <div class="board" id="mlbHomeView"><div id="mlbHomeDashboard"><div class="empty">Building today’s RalloPicks dashboard…</div></div></div>
+      <div class="board hidden-view" id="myBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved MLB + NFL props • line movement • results</span></div><span>Device-local</span></div><div id="myBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
       <div class="board hidden-view" id="matchupsView">
         <div class="section-title"><div><h2>Today's Matchups</h2><span>Tap a game to open every batter</span></div><span id="gameCount"></span></div>
         <div id="games"><div class="empty">Loading today's MLB slate…</div></div>
@@ -645,7 +670,7 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
       </div>
       <div class="board hidden-view" id="batterRankingsView"><div class="section-title"><div><h2>Daily Batter Rankings</h2><span>Every active hitter • grouped by matchup • ranked across today’s slate</span></div><span id="batterRankStamp">Live model</span></div><input id="dailyRankSearch" class="search-box" placeholder="Filter by batter or team" oninput="filterDailyRanks(this.value)"><div id="dailyRankGames" class="rank-games"><div class="empty">Building today’s batter rankings…</div></div><div class="note-box">The Rallo Batter Score combines season power, OPS, opposing pitcher HR tendency, ballpark, and lineup position. It is a matchup research score—not a guaranteed outcome or sportsbook probability.</div></div>
             <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Player Lab</h2><span>Batter and pitcher research • L5 / L10 / L20 / Season</span></div><span id="labPlatformLabel">PrizePicks mode</span></div><div class="range-tabs prop-type-tabs"><button id="labBatterTab" class="active" onclick="setLabSearchMode('batters')">⚾ Search Batters</button><button id="labPitcherTab" onclick="setLabSearchMode('pitchers')">🔥 Search Pitchers</button></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchPlayers(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
-      <div class="board" id="top20View"><div class="section-title"><div><h2>Top 10 HR Candidates Today</h2><span>Dated research • recent power • pitcher matchup • lineup checks</span></div><span>Research rankings</span></div><div id="weatherEdgeGrid" class="weather-edge-grid"><div class="empty">Loading weather and stadium conditions…</div></div><div id="hrModelLeaderboard" class="model-leaderboard"></div><div id="hrModelTrackerMini" class="model-tracker-mini"></div><div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div><div class="section-title underrated-title"><div><h2>5 Underrated HR Targets</h2><span>Separate lower-total power candidates • not verified betting value</span></div><span>Additional targets</span></div><div id="underratedHrRows" class="hr-grid"><div class="empty">Researching underrated power spots…</div></div><div class="note-box">Research rankings are not win probabilities, guarantees, or sportsbook prices. Weather forecasts can change; confirm conditions and lineups near first pitch.</div></div>
+      <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 10 HR Candidates Today</h2><span>Dated research • recent power • pitcher matchup • lineup checks</span></div><span>Research rankings</span></div><div id="weatherEdgeGrid" class="weather-edge-grid"><div class="empty">Loading weather and stadium conditions…</div></div><div id="hrModelLeaderboard" class="model-leaderboard"></div><div id="hrModelTrackerMini" class="model-tracker-mini"></div><div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div><div class="section-title underrated-title"><div><h2>5 Underrated HR Targets</h2><span>Separate lower-total power candidates • not verified betting value</span></div><span>Additional targets</span></div><div id="underratedHrRows" class="hr-grid"><div class="empty">Researching underrated power spots…</div></div><div class="note-box">Research rankings are not win probabilities, guarantees, or sportsbook prices. Weather forecasts can change; confirm conditions and lineups near first pitch.</div></div>
     </section>
 
   </main>
@@ -662,6 +687,8 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
       </section>
     </aside>
     <section class="panel center-col">
+      <div class="board" id="nflHomeView"><div id="nflHomeDashboard"><div class="empty">Building today’s NFL dashboard…</div></div></div>
+      <div class="board hidden-view" id="nflBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved props across MLB + NFL</span></div><span>Device-local</span></div><div id="nflBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
       <div class="board hidden-view" id="nflRanksView">
         <div class="section-title"><div><h2>Offense & Defense Rankings</h2><span>Points per game and points allowed per game • updates after completed games</span></div><span>1–32</span></div>
         <div class="nfl-rank-grid" id="nflRankGrid"><div class="empty">Loading ranks…</div></div>
@@ -682,6 +709,14 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
       </div>
     </section>
   </main>
+
+  <nav class="app-bottom-nav" id="appBottomNav" aria-label="App navigation">
+    <button data-app-route="home">🏠<span>Today</span></button>
+    <button data-app-route="research">🔥<span>Research</span></button>
+    <button data-app-route="lab">🔎<span>Lab</span></button>
+    <button data-app-route="board">⭐<span>Board</span></button>
+    <button data-app-route="results">📈<span>Results</span></button>
+  </nav>
 
   <div id="siteLegalFooter"><div class="legal-strip"><strong>Independent sports research • Not a sportsbook • 21+ only</strong><div class="legal-links"><button onclick="showPolicy('terms')">Terms</button><button onclick="showPolicy('privacy')">Privacy</button><button onclick="showPolicy('responsible')">Responsible Play</button><button onclick="showPolicy('subscription')">Subscription & Refunds</button><button onclick="showPolicy('affiliate')">Affiliate Disclosure</button></div></div>
   <div class="footer-note">RalloPicks provides informational sports research only. It does not accept wagers, guarantee outcomes, or promise profits. Team and player names identify factual subjects only. RalloPicks is not affiliated with, sponsored by, or endorsed by Major League Baseball, the National Football League, their clubs, PrizePicks, Underdog, or any sportsbook.</div></div>
