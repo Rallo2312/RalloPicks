@@ -183,3 +183,171 @@ window.addEventListener('storage',event=>{
  if(event.key==='ralloFavoritePlayersV1'){favoritePlayers=readResearchStorage(event.key);renderFavoritePlayers();}
  if(event.key==='ralloResearchHistoryV1'){researchHistory=readResearchStorage(event.key);renderResearchHistory();}
 });
+
+
+/* RalloPicks full app suite */
+(()=>{
+const BOARD_KEY='ralloBoardV2',LINE_KEY='ralloLineHistoryV2';
+let boardExtras=readResearchStorage(BOARD_KEY).filter(x=>x&&x.id&&x.sport);
+let lineHistory=readResearchStorage(LINE_KEY).filter(x=>x&&x.key&&Number.isFinite(x.line));
+function saveBoard(){writeResearchStorage(BOARD_KEY,boardExtras);renderAppBoard();}
+function saveLines(){writeResearchStorage(LINE_KEY,lineHistory);}
+function boardKey(p){return [p.sport,p.kind||'',p.id,p.market||'',Number(p.line),p.direction||'more',p.book||''].join('|')}
+function allBoardPicks(){
+ const mlb=(state.saved||[]).map(p=>({...p,sport:'MLB',status:'watching',source:'saved'}));
+ const extras=boardExtras.map(p=>({...p,source:'board'}));
+ const seen=new Set(),out=[];
+ for(const p of [...mlb,...extras]){const k=boardKey(p);if(seen.has(k))continue;seen.add(k);out.push(p)}
+ return out;
+}
+function currentBoardPick(sport){
+ if(sport==='NFL'){
+  const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!p)return null;
+  const markets=nflMarkets[p.position]||nflMarkets.WR,label=markets.find(x=>x[1]===state.nflMarket)?.[0]||markets[0][0],posted=p.lines?.[state.platform]?.[label],manual=state.nflManualLines[nflLineKey(p.id,state.nflMarket,state.platform)],line=Number(state.nflLine??posted??manual??nflDefaultLine(p.position,state.nflMarket));
+  return {sport:'NFL',kind:p.position,id:String(p.id),name:p.name,team:p.team,market:state.nflMarket,label,line,direction:'more',book:state.platform,createdAt:new Date().toISOString(),status:'watching'};
+ }
+ const p=currentPick();return p?{...p,sport:'MLB',label:savedMarketLabel(p),createdAt:new Date().toISOString(),status:'watching'}:null;
+}
+window.addCurrentToBoard=function(sport){
+ const p=currentBoardPick(sport);if(!p)return;
+ const k=boardKey(p),i=boardExtras.findIndex(x=>boardKey(x)===k);
+ if(i<0)boardExtras.unshift(p);saveBoard();renderAppDashboards();
+};
+window.removeBoardExtra=function(k){boardExtras=boardExtras.filter(x=>boardKey(x)!==k);saveBoard();renderAppDashboards();}
+window.gradeBoardPick=function(k,status){
+ const p=boardExtras.find(x=>boardKey(x)===k);
+ if(p){p.status=['win','loss','push','watching','played'].includes(status)?status:'watching';p.gradedAt=new Date().toISOString();saveBoard();renderAppDashboards();return}
+ // Saved MLB cards are mirrored to board; grading creates a tracked snapshot without changing the favorite.
+ const src=(state.saved||[]).map(x=>({...x,sport:'MLB',label:savedMarketLabel(x)})).find(x=>boardKey(x)===k);
+ if(src){boardExtras.unshift({...src,createdAt:new Date().toISOString(),status});saveBoard();renderAppDashboards();}
+};
+function lineKey(sport,pid,market,book){return [sport,pid,market,book].join('|')}
+function rememberLine(sport,pid,market,book,line){
+ line=Number(line);if(!Number.isFinite(line))return;
+ const key=lineKey(sport,pid,market,book),last=[...lineHistory].reverse().find(x=>x.key===key);
+ if(last&&Number(last.line)===line)return;
+ lineHistory.push({key,sport,pid:String(pid),market,book,line,at:new Date().toISOString()});
+ if(lineHistory.length>600)lineHistory=lineHistory.slice(-600);saveLines();
+}
+function movementFor(sport,pid,market,book){
+ const rows=lineHistory.filter(x=>x.key===lineKey(sport,pid,market,book));
+ if(rows.length<2)return null;const first=rows[0],last=rows[rows.length-1],delta=last.line-first.line;
+ return {...last,first:first.line,delta,count:rows.length};
+}
+function lineHistoryHtml(sport,pid,market,book){
+ const m=movementFor(sport,pid,market,book);if(!m)return '<div class="line-history-strip">Line movement starts after RalloPicks sees this line change on your device.</div>';
+ const arrow=m.delta>0?'⬆️':m.delta<0?'⬇️':'↔️';
+ return '<div class="line-history-strip"><b>'+arrow+' LINE MOVEMENT</b> '+m.first+' → '+m.line+' ('+(m.delta>0?'+':'')+m.delta.toFixed(1)+') • '+m.count+' observations • latest '+esc(new Date(m.at).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}))+'</div>';
+}
+function mlbEdge(){
+ const p=state.currentLab;if(!p)return null;
+ const market=(p.kind==='pitcher'?PITCHER_ANALYTIC_MARKETS:ANALYTIC_MARKETS)[p.market];if(!market)return null;
+ const recent=(p.games||[]).slice(0,10),line=Number(p.line),dir=p.direction||'more',rate=pctHit(recent,market,line,dir);
+ let score=45+rate*.42;
+ if(p.kind==='batter'){
+  const mix=arsenalPowerMatch(p.id,p.pitcher?.id);score+=(mix.factor-1)*60;
+  const q=state.hrQuality?.players?.[String(p.id)];if(q){score+=(Number(q.hardHitRate||40)-40)*.18+(Number(q.barrelRate||8)-8)*.4}
+ }else{
+  const opp=p.opponent?.id?state.dailyBatterRanks.filter(x=>x.teamId===p.opponent.id):[];if(opp.length)score-=Math.max(-5,Math.min(5,(opp.slice(0,5).reduce((a,x)=>a+x.score,0)/Math.min(5,opp.length)-60)*.15));
+ }
+ score=Math.max(1,Math.min(99,Math.round(score)));
+ return {score,rate,label:market.label,line,dir};
+}
+function nflEdge(){
+ const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!p)return null;
+ const markets=nflMarkets[p.position]||nflMarkets.WR,label=markets.find(x=>x[1]===state.nflMarket)?.[0]||markets[0][0],posted=p.lines?.[state.platform]?.[label],manual=state.nflManualLines[nflLineKey(p.id,state.nflMarket,state.platform)],line=Number(state.nflLine??posted??manual??nflDefaultLine(p.position,state.nflMarket)),recent=p.recent||[],rate=parseInt(nflRate(recent,state.nflMarket,line,10))||0,opp=nflOpponentFor(p.team),def=opp?.team?.defense_rank;
+ let score=45+rate*.42;if(def)score+=(def-16.5)*.45;score=Math.max(1,Math.min(99,Math.round(score)));
+ return {score,rate,label,line,def};
+}
+function edgeHtml(e,sport){
+ if(!e)return'';const cls=e.score>=72?'good':e.score<55?'bad':'',tier=e.score>=80?'STRONG':e.score>=68?'FAVORABLE':e.score>=55?'WATCH':'TOUGH';
+ return '<div class="edge-score-card"><div class="edge-score-number '+cls+'">'+e.score+'</div><div><b>RALLO EDGE SCORE • '+tier+'</b><span>'+esc(e.label||'Current market')+' • '+e.rate+'% L10 hit rate'+(sport==='NFL'&&e.def?' • Opp defense #'+e.def:'')+'</span><span>Research score only — not a guaranteed outcome or calibrated win probability.</span></div></div>';
+}
+function decorateMLBApp(){
+ const host=document.getElementById('batterLabPlayer'),p=state.currentLab;if(!host||!p)return;
+ let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
+ const e=mlbEdge(),m=movementFor('MLB',p.id,p.market,p.book||state.platform);
+ tools.innerHTML=edgeHtml(e,'MLB')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'MLB\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('MLB',p.id,p.market,p.book||state.platform);
+}
+function decorateNFLApp(){
+ const host=document.getElementById('nflPlayerDetail'),p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(!host||!p)return;
+ let tools=host.querySelector('.app-suite-tools');if(!tools){tools=document.createElement('div');tools.className='app-suite-tools';host.prepend(tools)}
+ const e=nflEdge();tools.innerHTML=edgeHtml(e,'NFL')+'<div class="app-home-actions"><button onclick="addCurrentToBoard(\'NFL\')">⭐ Add to My Board</button></div>'+lineHistoryHtml('NFL',p.id,state.nflMarket,state.platform);
+}
+for(const name of ['renderBatterAnalytics','renderPitcherAnalytics']){
+ const prior=window[name];window[name]=function(...args){const v=prior.apply(this,args);decorateMLBApp();return v}
+}
+{
+ const prior=window.openNFLPlayer;window.openNFLPlayer=function(...args){const v=prior.apply(this,args);decorateNFLApp();return v}
+}
+{
+ const prior=window.setLabLineValue;window.setLabLineValue=function(v){const p=state.currentLab;if(p)rememberLine('MLB',p.id,p.market,p.book||state.platform,v);const out=prior.call(this,v);decorateMLBApp();renderAppDashboards();return out}
+}
+{
+ const prior=window.setCompareLine;window.setCompareLine=function(book,v){const p=state.currentLab;if(p)rememberLine('MLB',p.id,p.market,book,v);const out=prior.call(this,book,v);decorateMLBApp();renderAppDashboards();return out}
+}
+{
+ const prior=window.changeNFLLine;window.changeNFLLine=function(v){const p=state.nfl.players.find(x=>String(x.id)===String(state.nflCurrentPlayer));if(p)rememberLine('NFL',p.id,state.nflMarket,state.platform,v);const out=prior.call(this,v);decorateNFLApp();renderAppDashboards();return out}
+}
+function boardCard(p){
+ const k=boardKey(p),move=movementFor(p.sport,p.id,p.market,p.book||state.platform),status=p.status||'watching';
+ const result=status==='win'?'✅ WIN':status==='loss'?'❌ LOSS':status==='push'?'➖ PUSH':status==='played'?'🎟️ PLAYED':'👀 WATCHING';
+ return '<article class="my-board-card"><div><strong>'+esc(p.name)+' • '+esc(p.sport)+'</strong><small>'+esc(p.label||savedMarketLabel(p))+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+' • '+esc(p.book||state.platform)+'</small><small>'+result+(move?' • Line '+move.first+' → '+move.line:'')+'</small><div class="board-actions"><button onclick="gradeBoardPick(\''+esc(k)+'\',\'played\')">Mark played</button><button class="win" onclick="gradeBoardPick(\''+esc(k)+'\',\'win\')">W</button><button class="loss" onclick="gradeBoardPick(\''+esc(k)+'\',\'loss\')">L</button><button onclick="gradeBoardPick(\''+esc(k)+'\',\'push\')">Push</button>'+(p.source==='board'?'<button onclick="removeBoardExtra(\''+esc(k)+'\')">Remove</button>':'')+'</div></div><div><b>'+esc(status.toUpperCase())+'</b></div></article>';
+}
+function reportHtml(){
+ const b=boardExtras.filter(x=>['win','loss','push'].includes(x.status)),w=b.filter(x=>x.status==='win').length,l=b.filter(x=>x.status==='loss').length,p=b.filter(x=>x.status==='push').length,dec=w+l,rate=dec?Math.round(w/dec*100):0;
+ const rh=researchHistory||[],rd=rh.filter(x=>['win','loss'].includes(x.status)),rw=rd.filter(x=>x.status==='win').length,rr=rd.length?Math.round(rw/rd.length*100):0;
+ const hr=state.hrHistory?.records||[],hs=hr.filter(x=>['hit','miss'].includes(x.status)),hh=hs.filter(x=>x.status==='hit').length,hrate=hs.length?Math.round(hh/hs.length*100):0;
+ return '<div class="app-home-card" id="appResultsReport"><h3>📈 Model Report Card</h3><div class="report-grid"><div><b>'+w+'-'+l+'</b><span>MY TRACKED PICKS</span></div><div><b>'+rate+'%</b><span>MY DECIDED RATE</span></div><div><b>'+rr+'%</b><span>TOP 6 MODEL RATE</span></div><div><b>'+hrate+'%</b><span>HR BOARD HIT RATE</span></div></div><p>Only recorded pregame or manually marked results are counted. Pushes are excluded from decided win rate. This is performance tracking, not a profit guarantee.</p></div>';
+}
+window.renderAppBoard=function(){
+ const picks=allBoardPicks(),html='<div class="my-board-list">'+(picks.length?picks.map(boardCard).join(''):'<div class="empty">Open Player Lab and add props you’re considering.</div>')+'</div>'+reportHtml();
+ for(const id of ['myBoardRows','nflBoardRows']){const el=document.getElementById(id);if(el)el.innerHTML=html}
+}
+function appAlerts(){
+ const alerts=[],moves=[...new Map(lineHistory.slice(-100).map(x=>[x.key,movementFor(x.sport,x.pid,x.market,x.book)])).values()].filter(x=>x&&Math.abs(x.delta)>=.5).slice(-3);
+ moves.forEach(m=>alerts.push({icon:'📈',title:'Line moved',text:m.market+' • '+m.first+' → '+m.line+' on '+m.book}));
+ const weather=researchHealth.get('weather');if(weather?.failed)alerts.push({icon:'🌦️',title:'Weather check needs refresh',text:'One or more weather requests failed. RalloPicks will retry while the app is open.'});
+ const strong=(state.dailyBatterRanks||[]).filter(x=>x.score>=80).slice(0,2);strong.forEach(x=>alerts.push({icon:'🔥',title:'Strong MLB matchup',text:x.name+' • score '+Math.round(x.score)+' vs '+x.opponent}));
+ return alerts.slice(0,5);
+}
+function top6Names(){
+ const rows=(state.dailyBatterRanks||[]).slice(0,6);return rows.length?rows.map((x,i)=>'<p><b>#'+(i+1)+' '+esc(x.name)+'</b> • '+Math.round(x.score)+' • '+esc(x.opponent)+'</p>').join(''):'<p>Full-slate rankings are loading.</p>';
+}
+window.renderAppDashboards=function(){
+ renderAppBoard();const alerts=appAlerts(),alertHtml=alerts.length?alerts.map(a=>'<div class="alert-row"><span>'+a.icon+'</span><div><b>'+esc(a.title)+'</b><span>'+esc(a.text)+'</span></div></div>').join(''):'<p>No new alerts right now.</p>';
+ const feed=(()=>{try{return JSON.parse(document.getElementById('dailyHrResearch')?.textContent||'null')}catch{return null}})(),hr1=feed?.top10?.[0],weather=researchHealth.get('weather'),weatherText=weather?.at?new Date(weather.at).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'Pending';
+ const mlb=document.getElementById('mlbHomeDashboard');if(mlb)mlb.innerHTML='<div class="section-title"><div><h2>RalloPicks Today</h2><span>One screen for today’s research</span></div><span>Weather '+esc(weatherText)+'</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🔥 Top 6 Today</h3>'+top6Names()+'<div class="app-home-actions"><button onclick="switchView(\'rankings\')">Open Rankings</button><button onclick="switchView(\'batterlab\')">Player Lab</button></div></div><div class="app-home-card"><h3>⚾ Best HR Research</h3><strong>'+esc(hr1?.person?.fullName||'Loading…')+'</strong><p>'+(hr1?esc(hr1.reason):'Daily HR board loading.')+'</p><button onclick="switchView(\'top20\')">Open HR Board</button></div><div class="app-home-card"><h3>🚨 Alerts</h3>'+alertHtml+'</div><div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().length+'</strong><p>Saved props across MLB and NFL.</p><button onclick="switchView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>🧪 Results</h3>'+reportHtml()+'</div></div>';
+ const nfl=document.getElementById('nflHomeDashboard');if(nfl){const games=state.nfl.games||[],teams=[...(state.nfl.teams||[])].filter(x=>x.games_played>0).sort((a,b)=>(a.offense_rank||99)-(b.offense_rank||99)),best=teams[0];nfl.innerHTML='<div class="section-title"><div><h2>NFL Today</h2><span>Matchups, rankings and saved props</span></div><span>'+games.length+' games loaded</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🏈 NFL Research Center</h3><strong>'+(best?esc(best.name):'Season loading')+'</strong><p>'+(best?'#'+best.offense_rank+' scoring offense • '+nflRecord(best):'Rankings activate from completed games.')+'</p><div class="app-home-actions"><button onclick="switchNflView(\'players\')">Player Lab</button><button onclick="switchNflView(\'ranks\')">Rankings</button></div></div><div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().filter(x=>x.sport==='NFL').length+'</strong><p>NFL props saved for comparison and tracking.</p><button onclick="switchNflView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>📈 App Alerts</h3>'+alertHtml+'</div>'+reportHtml()+'</div>'}
+};
+const oldMlb=window.switchView;
+window.switchView=function(v){
+ if(v==='home'||v==='board'){
+  if(!requireMembership())return;document.body.classList.remove('player-profile-open');document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));
+  ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
+  const el=document.getElementById(v==='home'?'mlbHomeView':'myBoardView');if(el)el.style.display='block';renderAppDashboards();if(v==='home'){ensureHrModelData();loadDailyBatterRanks().then?.(()=>renderAppDashboards())}return;
+ }
+ return oldMlb(v);
+};
+const oldNfl=window.switchNflView;
+window.switchNflView=function(v){
+ if(v==='home'||v==='board'){
+  if(!requireMembership())return;document.querySelectorAll('#nflNav button').forEach(b=>b.classList.toggle('active',b.dataset.nflView===v));
+  ['nflHomeView','nflBoardView','nflPlayersView','nflRanksView','nflMoneylineView','nflStandingsView'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none'});
+  const el=document.getElementById(v==='home'?'nflHomeView':'nflBoardView');if(el)el.style.display='block';renderAppDashboards();return;
+ }
+ return oldNfl(v);
+};
+function routeApp(route){
+ document.querySelectorAll('#appBottomNav button').forEach(b=>b.classList.toggle('active',b.dataset.appRoute===route));
+ if(route==='home')state.currentSport==='NFL'?switchNflView('home'):switchView('home');
+ if(route==='research')state.currentSport==='NFL'?switchNflView('ranks'):switchView('top20');
+ if(route==='lab')state.currentSport==='NFL'?switchNflView('players'):switchView('batterlab');
+ if(route==='board')state.currentSport==='NFL'?switchNflView('board'):switchView('board');
+ if(route==='results'){state.currentSport==='NFL'?switchNflView('board'):switchView('board');setTimeout(()=>document.getElementById('appResultsReport')?.scrollIntoView({behavior:'smooth',block:'start'}),50)}
+}
+document.querySelectorAll('#appBottomNav button').forEach(b=>b.onclick=()=>routeApp(b.dataset.appRoute));
+const priorSetSport=window.setSport;window.setSport=function(name){const out=priorSetSport(name);setTimeout(()=>{name==='NFL'?switchNflView('home'):switchView('home');renderAppDashboards()},0);return out};
+renderAppBoard();renderAppDashboards();setTimeout(()=>{if(state.currentSport==='NFL')switchNflView('home');else switchView('home')},0);
+setInterval(()=>renderAppDashboards(),120000);
+})();
