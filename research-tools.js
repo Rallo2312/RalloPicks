@@ -462,6 +462,50 @@ function finalCardHtml(picks){
  const selected=picks.filter(p=>finalKeys.includes(boardKey(p))).slice(0,6),ranked=[...selected].sort((a,b)=>battleScore(b)-battleScore(a));
  return '<section class="final-card-builder"><div class="model-head"><b>👑 Final Card Builder</b><span>'+selected.length+'/6 selected</span></div>'+(ranked.length?'<div class="final-card-grid">'+ranked.map((p,i)=>'<article><b>#'+(i+1)+'</b><div><strong>'+esc(p.name)+'</strong><span>'+esc(p.sport)+' • '+esc(p.label||p.market)+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+'</span></div><em>'+battleScore(p)+'</em></article>').join('')+'</div>':'<p>Select picks below to build your final card. RalloPicks ranks them by saved score, trap risk and line movement.</p>')+(selected.length?'<button class="six-refresh" onclick="finalKeys=[];persistFinal();renderAppBoard()">Clear Final Card</button>':'')+'</section>';
 }
+
+function sleeperFinderRows(){
+ const rows=(state.dailyBatterRanks||[])
+  .filter(x=>Number(x.rank)>10&&Number(x.rank)<=45&&Number(x.score)>=58&&x.lineup?.status!=='out')
+  .map(x=>{
+    let sleeperScore=Number(x.score)||0;
+    if(Number(x.barrelRate)>=10)sleeperScore+=5;
+    if(Number(x.hardHitRate)>=43)sleeperScore+=4;
+    if(Number(x.hr9)>=1.25)sleeperScore+=4;
+    if(Number(x.weather?.factor)>1.03)sleeperScore+=3;
+    if(x.pitchMatch&&!/neutral|unknown|tbd/i.test(String(x.pitchMatch)))sleeperScore+=3;
+    if(Number(x.hr)<=30)sleeperScore+=3;
+    return {...x,sleeperScore:Math.round(sleeperScore)};
+  })
+  .sort((a,b)=>b.sleeperScore-a.sleeperScore||a.rank-b.rank)
+  .slice(0,5);
+ return rows;
+}
+function sleeperReason(x){
+ const bits=[];
+ if(Number(x.barrelRate)>=10)bits.push('strong barrel rate');
+ if(Number(x.hardHitRate)>=43)bits.push('hard-contact profile');
+ if(Number(x.hr9)>=1.25)bits.push('HR-prone opposing starter');
+ if(Number(x.weather?.factor)>1.03)bits.push('helpful run environment');
+ if(x.pitchMatch&&!/neutral|unknown|tbd/i.test(String(x.pitchMatch)))bits.push(String(x.pitchMatch));
+ if(Number(x.lineupSpot)&&Number(x.lineupSpot)<=5)bits.push('top-5 lineup spot');
+ return bits.slice(0,3).join(' • ')||'solid full-slate matchup score';
+}
+window.renderSleeperFinder=function(){
+ const host=document.getElementById('sleeperFinderRows');if(!host)return;
+ const rows=sleeperFinderRows();
+ host.innerHTML=rows.map((x,i)=>`
+  <article class="hr-card">
+   ${playerAvatar(x.name,x.id)}
+   <div>
+    <div class="bat-order">SLEEPER #${i+1} • ${esc(x.teamAbbr||'')} • vs ${esc(x.opponent||'TBD')}</div>
+    <div class="batter-name">${esc(x.name)}</div>
+    <div class="bat-side">${esc(sleeperReason(x))}</div>
+    <div class="props"><button class="prop" onclick="openBatterLab(${Number(x.id)},'${esc(x.name).replace(/'/g,"\\'")}','${esc(x.teamAbbr||'')}');switchView('batterlab')">🔎 PLAYER LAB</button></div>
+   </div>
+   <div style="text-align:center"><b style="font-size:18px;color:var(--yellow)">${x.sleeperScore}</b><span style="display:block;font-size:7px;color:var(--muted)">SLEEPER SCORE</span></div>
+  </article>`).join('')||'<div class="empty">No strong sleeper HR spots qualify yet. Check again after lineups and matchup data update.</div>';
+};
+
 function hiddenEdgesHtml(){
  const mlb=(state.dailyBatterRanks||[]).filter(x=>x.score>=68).slice(6,18).sort((a,b)=>b.score-a.score).slice(0,5);
  const nfl=(state.nfl.players||[]).map(p=>{const opp=nflOpponentFor(p.team),def=opp?.team?.defense_rank,s=p.season||{},usage=p.position==='RB'?Number(s.rush_attempts||0)+Number(s.targets||0):p.position==='QB'?Number(s.pass_attempts||0)+Number(s.rush_attempts||0):Number(s.targets||0);let score=45+Math.min(28,usage/10)+(def?Math.max(-5,Math.min(10,(def-16.5)*.6)):0);return {p,score:Math.round(score),def}}).filter(x=>x.score>=65).sort((a,b)=>b.score-a.score).slice(0,5);
