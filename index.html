@@ -547,6 +547,24 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
  body.player-profile-open .analytics-shell>.range-tabs{padding:9px 10px!important}
  body.player-profile-open .analytics-shell>.analytics-markets{padding:9px 10px!important}
 }
+</style><style>
+/* pitch matchup color coding + mobile horizontal scroll */
+.pitch-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;overscroll-behavior-x:contain}
+.pitch-scroll-hint{display:none;padding:8px 12px 2px;color:#7f8da7;font-size:8px;text-align:right}
+.metric.good b{color:#2eea8b!important}
+.metric.bad b{color:#ff5d68!important}
+.metric.neutral b{color:#f5f7fb!important}
+.metric.good{background:rgba(46,234,139,.055)}
+.metric.bad{background:rgba(255,93,104,.05)}
+@media(max-width:620px){
+  .pitch-scroll-hint{display:block}
+  .pitch-scroll{width:100%;overflow-x:auto!important}
+  .batter-pitch-row{grid-template-columns:210px 100px 100px 100px 110px!important;min-width:620px!important;padding:12px 10px!important}
+  .batter-pitch-row .pitch-name{position:sticky;left:0;z-index:2;background:#080f23;padding:8px 8px 8px 2px}
+  .batter-pitch-row .metric{text-align:center!important;border-radius:8px;padding:7px 4px}
+  .batter-pitch-row .metric b{font-size:14px!important}
+  .batter-pitch-row .metric span{font-size:7px!important}
+}
 </style></head>
 <body>
 <div class="app">
@@ -982,7 +1000,13 @@ function arsenalRows(kind){
  const rows=state.arsenals?.batters?.[String(p.id)]?.vsPitch||[];
  if(!rows.length)return `<div class="note-box" style="margin:8px">No hitter pitch-type data is available yet for this player.</div>`;
  const fmt=x=>x==null?'—':Number(x).toFixed(3).replace(/^0/,'');
- return rows.map(x=>`<div class="batter-pitch-row"><div class="pitch-name"><span class="pitch-dot"></span>${esc(x.type||x.code)}<small>${x.pitches??'—'} pitches seen</small></div><div class="metric"><b>${fmt(x.avg)}</b><span>AVG</span></div><div class="metric"><b>${fmt(x.slg)}</b><span>SLG</span></div><div class="metric"><b>${x.whiff==null?'—':x.whiff+'%'}</b><span>WHIFF</span></div><div class="metric"><b>${x.hardHit==null?'—':x.hardHit+'%'}</b><span>HARD HIT</span></div></div>`).join('');
+ const tone=(kind,v)=>{if(v==null||!Number.isFinite(Number(v)))return'neutral';v=Number(v);
+   if(kind==='avg')return v>=.260?'good':v<.220?'bad':'neutral';
+   if(kind==='slg')return v>=.450?'good':v<.350?'bad':'neutral';
+   if(kind==='whiff')return v<=25?'good':v>30?'bad':'neutral';
+   if(kind==='hard')return v>=40?'good':v<32?'bad':'neutral';
+   return'neutral'};
+ return '<div class="pitch-scroll-hint">Swipe horizontally to see every stat →</div><div class="pitch-scroll">'+rows.map(x=>`<div class="batter-pitch-row"><div class="pitch-name"><span class="pitch-dot"></span>${esc(x.type||x.code)}<small>${x.pitches??'—'} pitches seen</small></div><div class="metric ${tone('avg',x.avg)}"><b>${fmt(x.avg)}</b><span>AVG</span></div><div class="metric ${tone('slg',x.slg)}"><b>${fmt(x.slg)}</b><span>SLG</span></div><div class="metric ${tone('whiff',x.whiff)}"><b>${x.whiff==null?'—':x.whiff+'%'}</b><span>WHIFF</span></div><div class="metric ${tone('hard',x.hardHit)}"><b>${x.hardHit==null?'—':x.hardHit+'%'}</b><span>HARD HIT</span></div></div>`).join('')+'</div>';
 }
 function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.range=n;state.currentLab.market=state.currentLab.market||'totalBases';state.currentLab.line=state.currentLab.line??ANALYTIC_MARKETS[state.currentLab.market].defaultLine;renderBatterAnalytics()}
 
