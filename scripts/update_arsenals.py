@@ -201,6 +201,7 @@ def build_batter_data(rows, wanted, hr_by_pitch=None):
             "slg": to_float(first(r, "slg")),
             "whiff": to_float(first(r, "whiff_percent")),
             "hardHit": to_float(first(r, "hard_hit_percent")),
+            "homeRuns": (hr_by_pitch or {}).get((str(pid), str(ptype)), 0),
         }
 
         grouped.setdefault(str(pid), []).append(item)
