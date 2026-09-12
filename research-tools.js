@@ -556,13 +556,8 @@ window.topHeaderSearch=function(value,immediate=false){
     const view=document.getElementById('batterlabView');
     if(view){view.style.display='block';view.classList.remove('hidden-view');}
 
-    const lab=document.getElementById('batterSearch');
-    if(lab){
-      lab.value=q;
-      // Call the existing player search directly.
-      searchPlayers(q);
-      lab.focus({preventScroll:true});
-    }
+    // Use the top-right header as the single player search control.
+    searchPlayers(q);
     view?.scrollIntoView({behavior:immediate?'smooth':'auto',block:'start'});
   };
   if(immediate)run(); else topHeaderSearchTimer=setTimeout(run,120);
