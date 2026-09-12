@@ -578,11 +578,25 @@ function hrSpotCard(label,x,tone,detail){
 window.renderHrMatchupSpotlights=function(){
  const host=document.getElementById('hrMatchupSpotlights');if(!host)return;
  ensureHrOdds();
- const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out');
- if(!rows.length){host.innerHTML='';return;}
+ const gameByPk=new Map((state.games||[]).map(g=>[String(g.gamePk),g]));
+ const notStarted=x=>{
+  const g=gameByPk.get(String(x.gamePk));
+  if(!g)return false;
+  const abstract=String(g.status?.abstractGameState||'').toLowerCase();
+  const detailed=String(g.status?.detailedState||'').toLowerCase();
+  const coded=String(g.status?.codedGameState||'');
+  const firstPitch=new Date(g.gameDate).getTime();
+  const clearlyPregame=abstract==='preview'||/scheduled|pre-game|warmup|delayed start/.test(detailed)||['S','P'].includes(coded);
+  return clearlyPregame&&Number.isFinite(firstPitch)&&Date.now()<firstPitch;
+ };
+ const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out'&&notStarted(x));
+ if(!rows.length){host.innerHTML='<div class="empty">No MLB games that have not started are available right now.</div>';return;}
  const groups=new Map();
  rows.forEach(x=>{const k=[x.teamId,x.gamePk].join(':');if(!groups.has(k))groups.set(k,[]);groups.get(k).push(x)});
- const sections=[...groups.values()].map(teamRows=>{
+ const sections=[...groups.values()].sort((a,b)=>{
+  const ga=gameByPk.get(String(a[0]?.gamePk)),gb=gameByPk.get(String(b[0]?.gamePk));
+  return new Date(ga?.gameDate||0)-new Date(gb?.gameDate||0);
+ }).map(teamRows=>{
   const sorted=[...teamRows].sort((a,b)=>b.score-a.score);
   const obvious=sorted[0];
   const hidden=[...teamRows].filter(x=>Number(x.rank)>10).map(x=>{let s=Number(x.score)||0;if(Number(x.barrelRate)>=10)s+=5;if(Number(x.hardHitRate)>=43)s+=4;if(Number(x.hr9)>=1.25)s+=4;if(Number(x.weather?.factor)>1.03)s+=3;return {...x,_hidden:s}}).sort((a,b)=>b._hidden-a._hidden)[0]||sorted[Math.min(1,sorted.length-1)];
