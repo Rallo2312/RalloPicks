@@ -565,6 +565,9 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
   .batter-pitch-row .metric b{font-size:14px!important}
   .batter-pitch-row .metric span{font-size:7px!important}
 }
+</style><style>
+/* Public personal-use mode: no membership gate */
+.membership-bar,.locked-dashboard,.member-dialog{display:none!important}
 </style></head>
 <body>
 <div class="app">
@@ -673,7 +676,7 @@ const ymd=today.toLocaleDateString('en-CA');
 const dateText=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
 function loadSaved(){try{const items=JSON.parse(localStorage.getItem('ralloSaved')||'[]');return Array.isArray(items)?items:[]}catch(e){return[]}}
 const PLATFORM_NAMES=['PrizePicks','Underdog','Dabble'],savedPlatform=localStorage.getItem('ralloPlatform');
-const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},weather:new Map(),weatherReady:false,todayHitters:[],todayPitchers:[],dailyBatterRanks:[],dailyRanksReady:false,dailyRanksLoading:false,propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:PLATFORM_NAMES.includes(savedPlatform)?savedPlatform:'PrizePicks',currentSport:localStorage.getItem('ralloSport')==='NFL'?'NFL':'MLB',nfl:{games:[],teams:[],players:[],season:null,updatedAt:null},nflLoaded:false,nflPosition:'ALL',nflCurrentPlayer:null,nflMarket:null,nflLine:null,nflManualLines:{},saved:loadSaved(),session:null,memberActive:false,membershipStatus:'signed_out',researchStarted:false};
+const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},weather:new Map(),weatherReady:false,todayHitters:[],todayPitchers:[],dailyBatterRanks:[],dailyRanksReady:false,dailyRanksLoading:false,propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:PLATFORM_NAMES.includes(savedPlatform)?savedPlatform:'PrizePicks',currentSport:localStorage.getItem('ralloSport')==='NFL'?'NFL':'MLB',nfl:{games:[],teams:[],players:[],season:null,updatedAt:null},nflLoaded:false,nflPosition:'ALL',nflCurrentPlayer:null,nflMarket:null,nflLine:null,nflManualLines:{},saved:loadSaved(),session:null,memberActive:true,membershipStatus:'public',researchStarted:false};
 function setPlatform(name){const next=PLATFORM_NAMES.includes(name)?name:'PrizePicks';state.platform=next;localStorage.setItem('ralloPlatform',next);document.body.dataset.platform=next.toLowerCase();PLATFORM_NAMES.forEach(platform=>document.getElementById('platform'+platform)?.classList.toggle('active',next===platform));const label=document.getElementById('labPlatformLabel');if(label)label.textContent=next+' mode';if(state.currentLab){const p=state.currentLab;p.bookLines=p.bookLines||{};p.bookLines[p.book||next]=Number(p.line);p.book=next;p.line=Number(p.bookLines[next]??p.baseLine??p.line);renderCurrentLab()}if(state.nflCurrentPlayer){state.nflLine=null;openNFLPlayer(state.nflCurrentPlayer)}}
 setPlatform(state.platform);
 function setSport(name){state.currentSport=name==='NFL'?'NFL':'MLB';localStorage.setItem('ralloSport',state.currentSport);document.getElementById('sportMLB').classList.toggle('active',state.currentSport==='MLB');document.getElementById('sportNFL').classList.toggle('active',state.currentSport==='NFL');document.getElementById('mlbNav').hidden=state.currentSport!=='MLB';document.getElementById('nflNav').hidden=state.currentSport!=='NFL';document.getElementById('dateLabel').textContent=dateText+(state.currentSport==='NFL'?' • NFL matchup + rankings lab':' • MLB matchup + prop lab');syncLegalFooter();syncResearchAccess()}
@@ -682,7 +685,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&
 function memberMessage(text='',error=false){const el=document.getElementById('memberMessage');el.textContent=text;el.classList.toggle('error',error)}
 function openMemberDialog(){renderMembershipUi();const d=document.getElementById('memberDialog');if(!d.open)d.showModal()}
 function closeMemberDialog(){document.getElementById('memberDialog').close()}
-function syncResearchAccess(){const unlocked=state.memberActive;document.getElementById('mlbResearchLayout').hidden=!(unlocked&&state.currentSport==='MLB');document.getElementById('nflResearchLayout').hidden=!(unlocked&&state.currentSport==='NFL');document.getElementById('lockedDashboard').hidden=unlocked;if(unlocked){if(state.currentSport==='MLB')startMemberResearch();else loadNFL()}}
+function syncResearchAccess(){const unlocked=true;document.getElementById('mlbResearchLayout').hidden=!(unlocked&&state.currentSport==='MLB');document.getElementById('nflResearchLayout').hidden=!(unlocked&&state.currentSport==='NFL');document.getElementById('lockedDashboard').hidden=unlocked;if(unlocked){if(state.currentSport==='MLB')startMemberResearch();else loadNFL()}}
 function syncLegalFooter(){const legal=document.getElementById('siteLegalFooter');if(!legal)return;const playerLabOpen=state.currentSport==='MLB'&&!document.getElementById('batterlabView')?.classList.contains('hidden-view');legal.hidden=playerLabOpen}
 function startMemberResearch(){if(state.researchStarted)return;state.researchStarted=true;renderSaved();Promise.allSettled([loadGames(),loadOdds(),loadArsenals()]).then(()=>loadWeatherEdges()).then(()=>loadTop20HR())}
 function renderMembershipUi(){
@@ -710,9 +713,9 @@ async function sendMagicLink(){
  memberMessage('Check your email and open the secure sign-in link.');
 }
 async function signOutMember(){await supaClient.auth.signOut();state.session=null;state.memberActive=false;state.membershipStatus='signed_out';memberMessage('Signed out.');renderMembershipUi();}
-function requireMembership(){if(state.memberActive)return true;openMemberDialog();memberMessage(state.session?'An active membership is required to open the research dashboard.':'Sign in to open the research dashboard.',true);return false}
+function requireMembership(){return true}
 function openPlayerLabFromDialog(){if(!state.memberActive)return;closeMemberDialog();setSport('MLB');switchView('batterlab')}
-async function initMembership(){const {data}=await supaClient.auth.getSession();await checkMembership(data.session);if(new URLSearchParams(location.search).get('checkout')==='success'&&!state.memberActive){openMemberDialog();memberMessage('Checkout complete. Sign in with the same email you used at Stripe to unlock your membership.')}supaClient.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>checkMembership(session),0)});}
+async function initMembership(){state.memberActive=true;state.membershipStatus='public';syncResearchAccess();}
 const SAFE_PIXEL='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const logo=id=>/^\d+$/.test(String(id))?'https://www.mlbstatic.com/team-logos/'+encodeURIComponent(id)+'.svg':SAFE_PIXEL;
 const face=id=>/^\d+$/.test(String(id))?'https://img.mlbstatic.com/mlb-photos/image/upload/w_180,q_auto:best/v1/people/'+encodeURIComponent(id)+'/headshot/67/current':SAFE_PIXEL;
