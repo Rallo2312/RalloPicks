@@ -262,8 +262,12 @@ function nflEdge(){
  return {score,rate,label,line,def};
 }
 function edgeHtml(e,sport){
- if(!e)return'';const cls=e.score>=72?'good':e.score<55?'bad':'',tier=e.score>=80?'STRONG':e.score>=68?'FAVORABLE':e.score>=55?'WATCH':'TOUGH';
- return '<div class="edge-score-card"><div class="edge-score-number '+cls+'">'+e.score+'</div><div><b>RALLO EDGE SCORE • '+tier+'</b><span>'+esc(e.label||'Current market')+' • '+e.rate+'% L10 hit rate'+(sport==='NFL'&&e.def?' • Opp defense #'+e.def:'')+'</span><span>Research score only — not a guaranteed outcome or calibrated win probability.</span></div></div>';
+ if(!e)return'';
+ const cls=e.score>=72?'good':e.score<55?'bad':'',tier=e.score>=80?'STRONG':e.score>=68?'FAVORABLE':e.score>=55?'WATCH':'TOUGH';
+ const direction=e.dir==='less'?'UNDER':e.dir==='more'?'OVER':'';
+ const arrow=e.dir==='less'?'🔻':e.dir==='more'?'🔺':'';
+ const meaning=e.score>=80?'Excellent research setup':e.score>=68?'Good research setup':e.score>=55?'Mixed setup — use caution':'Weak setup — consider passing';
+ return '<div class="edge-score-card"><div class="edge-score-number '+cls+'">'+e.score+'<small style="display:block;font-size:8px;margin-top:5px">'+tier+'</small></div><div><b>RALLO EDGE SCORE • '+meaning.toUpperCase()+'</b><span>'+esc(e.label||'Current market')+(direction?' • LEAN: '+direction+' '+arrow:'')+' • '+e.rate+'% L10 hit rate'+(sport==='NFL'&&e.def?' • Opp defense #'+e.def:'')+'</span><span><b>WHAT IT MEANS:</b> '+meaning+'. Higher scores mean the available research supports the play more strongly; this is not a win probability.</span></div></div>';
 }
 
 function mlbRecommendation(){
