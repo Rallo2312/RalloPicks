@@ -606,3 +606,55 @@ window.topHeaderSearch=function(value,immediate=false){
   };
   if(immediate)run(); else topHeaderSearchTimer=setTimeout(run,120);
 };
+
+
+/* Parlay screenshot scanner */
+function parlayLegCount(text){
+ const lines=String(text||'').split(/\n+/).map(x=>x.trim()).filter(Boolean);
+ const playerish=lines.filter(x=>/[A-Z][a-z]+\s+[A-Z][a-z]+/.test(x)&&/(more|less|over|under|hits|runs|bases|strikeouts|yards|receptions|touchdown|hr|home run)/i.test(x));
+ if(playerish.length)return Math.min(12,playerish.length);
+ const directional=(String(text||'').match(/\b(MORE|LESS|OVER|UNDER)\b/gi)||[]).length;
+ return Math.min(12,Math.max(1,directional||Math.round(lines.length/4)));
+}
+function scoreParlayRaw(text){
+ const t=String(text||'');
+ const legs=parlayLegCount(t);
+ let score=86;
+ const risks=[],strengths=[];
+ if(legs>=6){score-=22;risks.push('High leg count increases overall parlay risk');}
+ else if(legs===5){score-=15;risks.push('Five-leg slips carry meaningful compounding risk');}
+ else if(legs===4){score-=10;risks.push('Four legs still compound miss risk');}
+ else if(legs<=3)strengths.push('Lower leg count is easier to evaluate');
+ const more=(t.match(/\b(MORE|OVER)\b/gi)||[]).length,less=(t.match(/\b(LESS|UNDER)\b/gi)||[]).length;
+ if(more&&less)strengths.push('Slip is not one-direction only');
+ if(!more&&!less)risks.push('OCR could not confidently detect pick directions');
+ const sameGame=(t.match(/same game|sgp|same team/gi)||[]).length;
+ if(sameGame){score-=8;risks.push('Possible same-game correlation detected');}
+ const jackpot=/flex|power play|6-pick|5-pick|10x|20x|25x|40x/i.test(t);
+ if(jackpot){score-=5;risks.push('High-payout format usually means higher variance');}
+ const names=[...t.matchAll(/\b([A-Z][a-z]+\s+[A-Z][a-z]+)\b/g)].map(m=>m[1]);
+ const duplicateNames=names.filter((n,i,a)=>a.indexOf(n)!==i);
+ if(duplicateNames.length){score-=6;risks.push('Possible repeated player exposure');}
+ score=Math.max(20,Math.min(95,Math.round(score)));
+ return {score,legs,risks,strengths};
+}
+window.scoreParlayText=function(text){
+ const host=document.getElementById('parlayScoreCard');if(!host)return;
+ if(!String(text||'').trim()){host.innerHTML='';return;}
+ const r=scoreParlayRaw(text),label=r.score>=80?'STRONG BUILD':r.score>=65?'SOLID / CHECK LEGS':r.score>=50?'RISKY':'HIGH RISK';
+ host.innerHTML='<div class="parlay-score-card"><small>RALLO PARLAY SCORE</small><strong>'+r.score+'</strong><small>'+esc(label)+' • '+r.legs+' estimated legs</small>'+(r.strengths.length?'<ul>'+r.strengths.map(x=>'<li>✅ '+esc(x)+'</li>').join('')+'</ul>':'')+(r.risks.length?'<ul>'+r.risks.map(x=>'<li>⚠️ '+esc(x)+'</li>').join('')+'</ul>':'')+'<small style="margin-top:8px">This score is a structural research heuristic, not a win probability or guarantee.</small></div>';
+};
+window.scanParlayScreenshot=async function(file){
+ if(!file)return;
+ const preview=document.getElementById('parlayPreview'),wrap=document.getElementById('parlayPreviewWrap'),status=document.getElementById('parlayScanStatus'),text=document.getElementById('parlayOcrText');
+ preview.src=URL.createObjectURL(file);wrap.hidden=false;status.textContent='Reading screenshot…';
+ try{
+  if(!window.Tesseract)throw new Error('OCR library unavailable');
+  const result=await Tesseract.recognize(file,'eng',{logger:m=>{if(m.status==='recognizing text')status.textContent='Reading screenshot… '+Math.round((m.progress||0)*100)+'%';}});
+  const value=result?.data?.text?.trim()||'';
+  text.value=value;status.textContent=value?'Screenshot read successfully. Review the extracted text below.':'Could not detect enough text. Try a clearer screenshot.';
+  scoreParlayText(value);
+ }catch(e){
+  status.textContent='Could not read this screenshot automatically. You can paste or type the slip text below.';
+ }
+};
