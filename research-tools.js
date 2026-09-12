@@ -614,39 +614,44 @@ window.topHeaderSearch=function(value,immediate=false){
 
 /* Parlay screenshot scanner */
 function parlayLegCount(text){
- const lines=String(text||'').split(/\n+/).map(x=>x.trim()).filter(Boolean);
- const playerish=lines.filter(x=>/[A-Z][a-z]+\s+[A-Z][a-z]+/.test(x)&&/(more|less|over|under|hits|runs|bases|strikeouts|yards|receptions|touchdown|hr|home run)/i.test(x));
+ const t=String(text||'');
+ const explicit=t.match(/\b([2-9]|1[0-2])\s*[- ]?pick\b/i);
+ if(explicit)return Number(explicit[1]);
+ const directional=(t.match(/\b(MORE|LESS|OVER|UNDER)\b/gi)||[]).length;
+ if(directional)return Math.min(12,directional);
+ const lines=t.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+ const playerish=lines.filter(x=>/[A-Z][a-z]+\s+[A-Z][a-z]+/.test(x)&&/(hits|runs|bases|strikeouts|yards|receptions|touchdown|hr|home run)/i.test(x));
  if(playerish.length)return Math.min(12,playerish.length);
- const directional=(String(text||'').match(/\b(MORE|LESS|OVER|UNDER)\b/gi)||[]).length;
- return Math.min(12,Math.max(1,directional||Math.round(lines.length/4)));
+ return Math.min(12,Math.max(1,Math.round(lines.length/5)));
 }
 function scoreParlayRaw(text){
  const t=String(text||'');
  const legs=parlayLegCount(t);
- let score=86;
+ let score=90;
  const risks=[],strengths=[];
- if(legs>=6){score-=22;risks.push('High leg count increases overall parlay risk');}
- else if(legs===5){score-=15;risks.push('Five-leg slips carry meaningful compounding risk');}
+ if(legs>=6){score-=24;risks.push('High leg count creates heavy compounding risk');}
+ else if(legs===5){score-=17;risks.push('Five legs create meaningful compounding risk');}
  else if(legs===4){score-=10;risks.push('Four legs still compound miss risk');}
- else if(legs<=3)strengths.push('Lower leg count is easier to evaluate');
+ else if(legs<=3)strengths.push('Lower leg count keeps the slip easier to evaluate');
  const more=(t.match(/\b(MORE|OVER)\b/gi)||[]).length,less=(t.match(/\b(LESS|UNDER)\b/gi)||[]).length;
- if(more&&less)strengths.push('Slip is not one-direction only');
- if(!more&&!less)risks.push('OCR could not confidently detect pick directions');
- const sameGame=(t.match(/same game|sgp|same team/gi)||[]).length;
+ if(more&&less)strengths.push('The slip mixes directions instead of stacking one side only');
+ if(!more&&!less)risks.push('Pick directions were not read clearly from the screenshot');
+ const sameGame=/same game|\bsgp\b|same team/i.test(t);
  if(sameGame){score-=8;risks.push('Possible same-game correlation detected');}
- const jackpot=/flex|power play|6-pick|5-pick|10x|20x|25x|40x/i.test(t);
- if(jackpot){score-=5;risks.push('High-payout format usually means higher variance');}
- const names=[...t.matchAll(/\b([A-Z][a-z]+\s+[A-Z][a-z]+)\b/g)].map(m=>m[1]);
- const duplicateNames=names.filter((n,i,a)=>a.indexOf(n)!==i);
- if(duplicateNames.length){score-=6;risks.push('Possible repeated player exposure');}
+ const highVariance=/power play|6-pick|5-pick|10x|20x|25x|40x/i.test(t);
+ if(highVariance){score-=5;risks.push('High-payout format usually carries more variance');}
+ const explicit=t.match(/\b([2-9]|1[0-2])\s*[- ]?pick\b/i);
+ const legSource=explicit?'detected from slip':'estimated from OCR';
  score=Math.max(20,Math.min(95,Math.round(score)));
- return {score,legs,risks,strengths};
+ const grade=score>=85?'A':score>=75?'B+':score>=65?'B':score>=55?'C':'D';
+ const meaning=score>=85?'Strong structure':score>=75?'Good structure — review each leg':score>=65?'Playable structure — check weak legs':score>=55?'Risky structure':'High-risk structure';
+ return {score,legs,risks,strengths,grade,meaning,legSource};
 }
 window.scoreParlayText=function(text){
  const host=document.getElementById('parlayScoreCard');if(!host)return;
  if(!String(text||'').trim()){host.innerHTML='';return;}
- const r=scoreParlayRaw(text),label=r.score>=80?'STRONG BUILD':r.score>=65?'SOLID / CHECK LEGS':r.score>=50?'RISKY':'HIGH RISK';
- host.innerHTML='<div class="parlay-score-card"><small>RALLO PARLAY SCORE</small><strong>'+r.score+'</strong><small>'+esc(label)+' • '+r.legs+' estimated legs</small>'+(r.strengths.length?'<ul>'+r.strengths.map(x=>'<li>✅ '+esc(x)+'</li>').join('')+'</ul>':'')+(r.risks.length?'<ul>'+r.risks.map(x=>'<li>⚠️ '+esc(x)+'</li>').join('')+'</ul>':'')+'<small style="margin-top:8px">This score is a structural research heuristic, not a win probability or guarantee.</small></div>';
+ const r=scoreParlayRaw(text);
+ host.innerHTML='<div class="parlay-score-card"><div class="parlay-score-head"><div><small>RALLO PARLAY SCORE</small><strong>'+r.score+'<em>/100</em></strong></div><div class="parlay-grade"><b>'+esc(r.grade)+'</b><span>'+esc(r.meaning)+'</span></div></div><div class="parlay-score-meta"><span>🎟️ '+r.legs+' legs</span><span>🔎 '+esc(r.legSource)+'</span></div><div class="parlay-meaning"><b>WHAT IT MEANS</b><span>'+esc(r.meaning)+'. This rates the slip structure and OCR-detected risk — not the chance the parlay wins.</span></div>'+(r.strengths.length?'<div class="parlay-signals good"><b>✅ GOOD</b>'+r.strengths.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div>':'')+(r.risks.length?'<div class="parlay-signals risk"><b>⚠️ CHECK</b>'+r.risks.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div>':'')+'<small class="parlay-disclaimer">Use Player Lab to grade each leg individually before playing the slip.</small></div>';
 };
 window.scanParlayScreenshot=async function(file){
  if(!file)return;
