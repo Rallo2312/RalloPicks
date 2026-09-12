@@ -588,6 +588,14 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 .hr-contact{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}.hr-mini{padding:8px 4px;text-align:center;border-radius:9px;background:#10182c}.hr-mini b{display:block;font-size:12px}.hr-mini span{display:block;font-size:6px;color:#7d8ba4;margin-top:3px}
 .hr-environment{margin-top:8px;padding:9px;border-radius:9px;background:#0b1225}.hr-environment b{display:block;font-size:9px}.hr-environment span{display:block;color:#7f8ca3;font-size:7px;margin-top:3px;line-height:1.45}
 @media(max-width:620px){.hr-summary{grid-template-columns:1fr}.hr-contact{grid-template-columns:repeat(5,minmax(62px,1fr));overflow-x:auto}.hr-command{margin:8px 10px}.hr-command-top strong{font-size:31px}}
+</style><style>
+/* advanced HR model suite */
+.hr-prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}.hr-prob-grid>div{padding:10px;border-radius:10px;background:#0b1225;text-align:center}.hr-prob-grid b{display:block;font-size:14px}.hr-prob-grid span{display:block;font-size:7px;color:#8b98af;margin-top:3px}.hr-prob-grid small{display:block;font-size:6px;color:#66758d;margin-top:3px}
+.perfect-storm{margin:-2px -2px 10px;padding:9px;border-radius:10px;background:linear-gradient(90deg,rgba(255,188,32,.18),rgba(46,234,139,.12));border:1px solid rgba(255,188,32,.35);font-size:10px;font-weight:1000;color:#ffd86b}
+.hr-contact{grid-template-columns:repeat(6,1fr)!important}.xhr-card{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px;padding:8px;border-radius:10px;background:#0b1225}.xhr-card>div{text-align:center;padding:8px;background:#10182c;border-radius:8px}.xhr-card b{display:block;font-size:14px}.xhr-card span{display:block;font-size:7px;color:#7e8aa0;margin-top:3px}.xhr-card>small{grid-column:1/-1;color:#6f7d94;font-size:7px;line-height:1.4}.good-text b{color:#2eea8b}.bad-text b{color:#ff5d68}
+.model-leaderboard,.model-tracker-mini{margin:10px 0;padding:10px;border:1px solid #1d2948;border-radius:14px;background:#07101f}.model-head{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:2px 2px 8px}.model-head b{font-size:11px}.model-head span{font-size:7px;color:#78879f}.model-row{display:grid;grid-template-columns:28px 38px minmax(0,1fr) 42px;gap:7px;align-items:center;padding:7px;border-top:1px solid rgba(255,255,255,.05)}.model-row>.player-avatar{width:34px!important;height:34px!important}.model-row strong{display:block;font-size:10px}.model-row small{display:block;font-size:7px;color:#78879f}.model-row>span{text-align:center;color:#2eea8b;font-size:13px;font-weight:1000}
+.tracker-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.tracker-grid>div{padding:9px 4px;text-align:center;border-radius:9px;background:#0e1729}.tracker-grid b{display:block;font-size:14px}.tracker-grid span{display:block;font-size:6px;color:#78879f;margin-top:3px}
+@media(max-width:620px){.hr-prob-grid{grid-template-columns:1fr}.hr-contact{grid-template-columns:repeat(6,minmax(65px,1fr))!important}.xhr-card{grid-template-columns:repeat(3,1fr)}.tracker-grid{grid-template-columns:repeat(2,1fr)}}
 </style></head>
 <body>
 <div class="app">
@@ -637,7 +645,7 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
       </div>
       <div class="board hidden-view" id="batterRankingsView"><div class="section-title"><div><h2>Daily Batter Rankings</h2><span>Every active hitter • grouped by matchup • ranked across today’s slate</span></div><span id="batterRankStamp">Live model</span></div><input id="dailyRankSearch" class="search-box" placeholder="Filter by batter or team" oninput="filterDailyRanks(this.value)"><div id="dailyRankGames" class="rank-games"><div class="empty">Building today’s batter rankings…</div></div><div class="note-box">The Rallo Batter Score combines season power, OPS, opposing pitcher HR tendency, ballpark, and lineup position. It is a matchup research score—not a guaranteed outcome or sportsbook probability.</div></div>
             <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Player Lab</h2><span>Batter and pitcher research • L5 / L10 / L20 / Season</span></div><span id="labPlatformLabel">PrizePicks mode</span></div><div class="range-tabs prop-type-tabs"><button id="labBatterTab" class="active" onclick="setLabSearchMode('batters')">⚾ Search Batters</button><button id="labPitcherTab" onclick="setLabSearchMode('pitchers')">🔥 Search Pitchers</button></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchPlayers(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
-      <div class="board" id="top20View"><div class="section-title"><div><h2>Top 10 HR Candidates Today</h2><span>Dated research • recent power • pitcher matchup • lineup checks</span></div><span>Research rankings</span></div><div id="weatherEdgeGrid" class="weather-edge-grid"><div class="empty">Loading weather and stadium conditions…</div></div><div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div><div class="section-title underrated-title"><div><h2>5 Underrated HR Targets</h2><span>Separate lower-total power candidates • not verified betting value</span></div><span>Additional targets</span></div><div id="underratedHrRows" class="hr-grid"><div class="empty">Researching underrated power spots…</div></div><div class="note-box">Research rankings are not win probabilities, guarantees, or sportsbook prices. Weather forecasts can change; confirm conditions and lineups near first pitch.</div></div>
+      <div class="board" id="top20View"><div class="section-title"><div><h2>Top 10 HR Candidates Today</h2><span>Dated research • recent power • pitcher matchup • lineup checks</span></div><span>Research rankings</span></div><div id="weatherEdgeGrid" class="weather-edge-grid"><div class="empty">Loading weather and stadium conditions…</div></div><div id="hrModelLeaderboard" class="model-leaderboard"></div><div id="hrModelTrackerMini" class="model-tracker-mini"></div><div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div><div class="section-title underrated-title"><div><h2>5 Underrated HR Targets</h2><span>Separate lower-total power candidates • not verified betting value</span></div><span>Additional targets</span></div><div id="underratedHrRows" class="hr-grid"><div class="empty">Researching underrated power spots…</div></div><div class="note-box">Research rankings are not win probabilities, guarantees, or sportsbook prices. Weather forecasts can change; confirm conditions and lineups near first pitch.</div></div>
     </section>
 
   </main>
@@ -691,7 +699,7 @@ const ymd=today.toLocaleDateString('en-CA');
 const dateText=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
 function loadSaved(){try{const items=JSON.parse(localStorage.getItem('ralloSaved')||'[]');return Array.isArray(items)?items:[]}catch(e){return[]}}
 const PLATFORM_NAMES=['PrizePicks','Underdog','Dabble'],savedPlatform=localStorage.getItem('ralloPlatform');
-const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},weather:new Map(),weatherReady:false,todayHitters:[],todayPitchers:[],dailyBatterRanks:[],dailyRanksReady:false,dailyRanksLoading:false,propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:PLATFORM_NAMES.includes(savedPlatform)?savedPlatform:'PrizePicks',currentSport:localStorage.getItem('ralloSport')==='NFL'?'NFL':'MLB',nfl:{games:[],teams:[],players:[],season:null,updatedAt:null},nflLoaded:false,nflPosition:'ALL',nflCurrentPlayer:null,nflMarket:null,nflLine:null,nflManualLines:{},saved:loadSaved(),session:null,memberActive:true,membershipStatus:'public',researchStarted:false};
+const state={games:[],odds:[],arsenals:{pitchers:{},batters:{}},weather:new Map(),weatherReady:false,todayHitters:[],todayPitchers:[],dailyBatterRanks:[],dailyRanksReady:false,dailyRanksLoading:false,propsMode:'batters',labSearchMode:'batters',allBatters:[],allPitchers:[],batterIndexReady:false,pitcherIndexReady:false,currentLab:null,platform:PLATFORM_NAMES.includes(savedPlatform)?savedPlatform:'PrizePicks',currentSport:localStorage.getItem('ralloSport')==='NFL'?'NFL':'MLB',nfl:{games:[],teams:[],players:[],season:null,updatedAt:null},nflLoaded:false,nflPosition:'ALL',nflCurrentPlayer:null,nflMarket:null,nflLine:null,nflManualLines:{},saved:loadSaved(),session:null,memberActive:true,membershipStatus:'public',researchStarted:false,hrQuality:null,hrHistory:null,hrModelLoaded:false};
 function setPlatform(name){const next=PLATFORM_NAMES.includes(name)?name:'PrizePicks';state.platform=next;localStorage.setItem('ralloPlatform',next);document.body.dataset.platform=next.toLowerCase();PLATFORM_NAMES.forEach(platform=>document.getElementById('platform'+platform)?.classList.toggle('active',next===platform));const label=document.getElementById('labPlatformLabel');if(label)label.textContent=next+' mode';if(state.currentLab){const p=state.currentLab;p.bookLines=p.bookLines||{};p.bookLines[p.book||next]=Number(p.line);p.book=next;p.line=Number(p.bookLines[next]??p.baseLine??p.line);renderCurrentLab()}if(state.nflCurrentPlayer){state.nflLine=null;openNFLPlayer(state.nflCurrentPlayer)}}
 setPlatform(state.platform);
 function setSport(name){state.currentSport=name==='NFL'?'NFL':'MLB';localStorage.setItem('ralloSport',state.currentSport);document.getElementById('sportMLB').classList.toggle('active',state.currentSport==='MLB');document.getElementById('sportNFL').classList.toggle('active',state.currentSport==='NFL');document.getElementById('mlbNav').hidden=state.currentSport!=='MLB';document.getElementById('nflNav').hidden=state.currentSport!=='NFL';document.getElementById('dateLabel').textContent=dateText+(state.currentSport==='NFL'?' • NFL matchup + rankings lab':' • MLB matchup + prop lab');syncLegalFooter();syncResearchAccess()}
@@ -748,6 +756,12 @@ const teamBadge=(team,id,size='')=>{
 const fmtOdd=n=>n==null?'—':(n>0?'+'+n:n);
 
 async function j(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(r.status);return r.json()}
+
+async function ensureHrModelData(){
+ if(state.hrModelLoaded)return;
+ const [q,h]=await Promise.allSettled([fetch('data/hr-quality.json?d='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null),fetch('data/hr-history.json?d='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null)]);
+ state.hrQuality=q.status==='fulfilled'?q.value:null;state.hrHistory=h.status==='fulfilled'?h.value:null;state.hrModelLoaded=true;
+}
 
 async function loadStandings(){
  try{
@@ -956,6 +970,7 @@ async function openBatterLab(id,name,team){
  const root=document.getElementById('batterLabPlayer');
  root.innerHTML='<div class="empty">Loading game log and matchup history…</div>';
  try{
+  await ensureHrModelData();
   const currentYear=today.getFullYear(), years=[currentYear,currentYear-1,currentYear-2];
   const logs=await Promise.all(years.map(season=>j(`${MLB}/v1/people/${id}/stats?stats=gameLog&group=hitting&season=${season}`).catch(()=>({stats:[]}))));
   const seasonGames=[...(logs[0]?.stats?.[0]?.splits||[])].reverse();
@@ -1050,25 +1065,57 @@ function pitchAttackMatchupHtml(p){
 }
 function hrDecisionDashboard(p){
  const hitter=state.arsenals?.batters?.[String(p.id)]?.vsPitch||[], pitcher=p.pitcher?.id?(state.arsenals?.pitchers?.[String(p.pitcher.id)]?.pitches||[]):[];
- const hrs=hitter.reduce((a,x)=>a+Number(x.homeRuns||0),0),best=[...hitter].sort((a,b)=>Number(b.homeRuns||0)-Number(a.homeRuns||0))[0];
+ const quality=state.hrQuality?.players?.[String(p.id)]||null, games=p.games||[], recent=games.slice(0,10), recent5=games.slice(0,5);
+ const seasonHR=games.reduce((a,g)=>a+statNum(g.stat||{},'homeRuns'),0), recentHR=recent.reduce((a,g)=>a+statNum(g.stat||{},'homeRuns'),0), recent5HR=recent5.reduce((a,g)=>a+statNum(g.stat||{},'homeRuns'),0);
+ const best=[...hitter].sort((a,b)=>Number(b.homeRuns||0)-Number(a.homeRuns||0))[0];
  const aliases={FF:['FF','FA'],FA:['FA','FF'],SI:['SI','FT'],FT:['FT','SI'],FC:['FC'],SL:['SL','ST'],ST:['ST','SL'],CU:['CU','KC'],KC:['KC','CU'],CH:['CH','FS'],FS:['FS','CH']}, norm=x=>String(x||'').toUpperCase();
  const qp=best&&pitcher.find(q=>(aliases[norm(best.code)]||[norm(best.code)]).includes(norm(q.code)));
- const games=p.games||[], recent=games.slice(0,10), recentHR=recent.reduce((a,g)=>a+statNum(g.stat||{},'homeRuns'),0);
- let score=50; if(best){score+=Math.min(20,Number(best.homeRuns||0)*2);score+=Number(best.slg)>=.5?10:Number(best.slg)<.35?-10:0;score+=Number(best.hardHit)>=40?8:Number(best.hardHit)<32?-6:0;score+=Number(best.whiff)<=25?5:Number(best.whiff)>30?-6:0} if(qp)score+=Math.min(12,(Number(qp.usage)||0)/4);score+=Math.min(8,recentHR*3);score=Math.max(0,Math.min(100,Math.round(score)));
- const tier=score>=80?'TOP HR TARGET':score>=68?'STRONG HR LOOK':score>=55?'WATCH':'AVOID / WEAK';
- const cls=score>=68?'good':score<55?'bad':'neutral';
- const reasons=[]; const warnings=[];
+ const game=gameForTeamId((state.games.find(g=>[g.teams.away.team.abbreviation,g.teams.home.team.abbreviation].includes(p.team))?.teams.away.team.abbreviation===p.team?state.games.find(g=>[g.teams.away.team.abbreviation,g.teams.home.team.abbreviation].includes(p.team))?.teams.away.team.id:state.games.find(g=>[g.teams.away.team.abbreviation,g.teams.home.team.abbreviation].includes(p.team))?.teams.home.team.id)||0);
+ const w=game?weatherForGame(game.gamePk):null, park=game?Number(HR_PARK_FACTORS[game.venue?.name]||1):1;
+ const pitcherUsage=Number(qp?.usage)||0, pitchSLG=Number(best?.slg)||0, pitchHard=Number(best?.hardHit)||0, pitchWhiff=Number(best?.whiff)||0;
+ const barrel=Number(quality?.barrelRate), hard=Number(quality?.hardHitRate), ev=Number(quality?.exitVelocity), bbe=Number(quality?.bbe);
+ let score=48;
+ if(best){score+=Math.min(18,Number(best.homeRuns||0)*1.8);score+=pitchSLG>=.5?9:pitchSLG<.35?-8:0;score+=pitchHard>=40?6:pitchHard<32?-5:0;score+=pitchWhiff<=25?4:pitchWhiff>30?-5:0}
+ if(qp)score+=Math.min(11,pitcherUsage/4);
+ if(Number.isFinite(barrel)){score+=barrel>=12?10:barrel>=8?5:barrel<5?-6:0}
+ if(Number.isFinite(hard)){score+=hard>=48?6:hard<35?-5:0}
+ if(Number.isFinite(ev)){score+=ev>=92?5:ev<87?-4:0}
+ score+=Math.min(7,recentHR*2.5);
+ if(w)score+=(Number(w.factor)-1)*45; score+=(park-1)*30;
+ score=Math.max(0,Math.min(100,Math.round(score)));
+ const probability=Math.max(4,Math.min(38,Math.round((5+score*.27+(barrel||8)*.22)*10)/10));
+ const tier=score>=82?'TOP HR TARGET':score>=70?'STRONG HR LOOK':score>=57?'WATCH':'AVOID / WEAK', cls=score>=70?'good':score<57?'bad':'neutral';
+ const barrelCount=Number.isFinite(bbe)&&Number.isFinite(barrel)?bbe*barrel/100:null;
+ const xhrProxy=barrelCount==null?null:Math.round(barrelCount*.52*10)/10, gap=xhrProxy==null?null:Math.round((xhrProxy-seasonHR)*10)/10;
+ const trend=(recent5HR>=2||recentHR>=3||(Number.isFinite(barrel)&&barrel>=13))?'🔥 HEATING UP':(recentHR===0&&Number.isFinite(barrel)&&barrel<7?'🧊 COOLING OFF':'⚪ NORMAL');
+ const pitcherBad=()=>{if(!pitcher.length)return null;let total=0,wgt=0;for(const q of pitcher){const wt=Number(q.usage)||Number(q.pitches)||1;const vuln=(Number(q.slg)||0)*100+(Number(q.hardHit)||0)+(Number(q.homeRuns)||0)*2;total+=vuln*wt;wgt+=wt}return wgt?total/wgt:null};
+ const pv=pitcherBad(), pvLabel=pv==null?'Unavailable':pv>=88?'HIGH HR RISK':pv>=70?'MODERATE':'LOWER RISK';
+ const positives=[Number(best?.homeRuns)>0,pitcherUsage>=25,Number.isFinite(barrel)&&barrel>=10,Number.isFinite(hard)&&hard>=45,recentHR>=1,w&&w.factor>=1.03].filter(Boolean).length;
+ const available=[best!=null,qp!=null,Number.isFinite(barrel),Number.isFinite(hard),true,!!w].filter(Boolean).length;
+ const storm=available>=4&&positives>=Math.max(4,available-1);
+ const reasons=[],warnings=[];
  if(best&&Number(best.homeRuns)>0)reasons.push(`⭐ ${best.type||best.code}: ${best.homeRuns} HR`);
- if(qp&&Number(qp.usage)>=25)reasons.push(`Pitcher uses ${best.type||best.code} ${qp.usage}%`);
- if(best&&Number(best.slg)>=.45)reasons.push(`${Number(best.slg).toFixed(3).replace(/^0/,'')} SLG vs best pitch`);
- if(recentHR>0)reasons.push(`${recentHR} HR in last ${recent.length} games`);
- if(best&&Number(best.whiff)>30)warnings.push(`High ${best.whiff}% whiff vs best pitch`);
- if(best&&Number(best.hardHit)<32)warnings.push(`Low ${best.hardHit}% hard-hit vs best pitch`);
+ if(qp&&pitcherUsage>=25)reasons.push(`Starter uses ${best.type||best.code} ${qp.usage}%`);
+ if(Number.isFinite(barrel)&&barrel>=10)reasons.push(`${barrel}% barrel rate`);
+ if(Number.isFinite(hard)&&hard>=45)reasons.push(`${hard}% hard-hit rate`);
+ if(w&&w.factor>1.02)reasons.push(`${w.label} • ${w.temperature==null?'roof-controlled':Math.round(w.temperature)+'°F'}`);
+ if(best&&pitchWhiff>30)warnings.push(`High ${best.whiff}% whiff vs top pitch`);
+ if(Number.isFinite(barrel)&&barrel<6)warnings.push(`Low ${barrel}% barrel rate`);
+ if(pv!=null&&pv<60)warnings.push('Pitcher arsenal has lower damage profile');
  if(!qp)warnings.push('Starter does not feature hitter’s top HR pitch heavily');
- if(!warnings.length)warnings.push('No major pitch-type warning flagged');
- const contact=best?`<div class="hr-mini"><b>${best.hardHit??'—'}%</b><span>HARD HIT</span></div><div class="hr-mini"><b>${best.whiff??'—'}%</b><span>WHIFF</span></div><div class="hr-mini"><b>${recentHR}</b><span>L10 HR</span></div>`:'';
- return `<div class="hr-command ${cls}" id="lab-hrscore"><div class="hr-command-top"><div><small>RALLO HR MATCHUP SCORE</small><strong>${score}<em>/100</em></strong></div><div class="hr-tier">${tier}</div></div><div class="hr-summary"><div><b>💎 Why I like him</b>${reasons.slice(0,3).map(x=>'<span>✓ '+esc(x)+'</span>').join('')||'<span>Waiting for matchup data</span>'}</div><div><b>🚨 Warning flags</b>${warnings.slice(0,2).map(x=>'<span>• '+esc(x)+'</span>').join('')}</div></div><div class="hr-contact"><div class="hr-mini"><b>${best?esc(best.type||best.code):'—'}</b><span>BEST PITCH</span></div><div class="hr-mini"><b>${best?.homeRuns??'—'}</b><span>HR VS PITCH</span></div>${contact}</div><div class="hr-environment"><b>🏟️ HR Environment</b><span>Park + live weather will be scored here when game-weather data is available; it is not guessed.</span></div></div>`;
+ if(!warnings.length)warnings.push('No major model warning flagged');
+ const env=w?`${w.label} • Park ${park.toFixed(2)}x • ${w.temperature==null?w.roof:Math.round(w.temperature)+'°F'} • ${w.windSpeed==null?'Wind —':Math.round(w.windSpeed)+' mph '+w.windFlow}`:'Weather/park data pending';
+ return `<div class="hr-command ${cls}" id="lab-hrscore">
+  ${storm?'<div class="perfect-storm">⚡ PERFECT STORM • '+positives+'/'+available+' positive HR factors</div>':''}
+  <div class="hr-command-top"><div><small>RALLO HR MATCHUP SCORE</small><strong>${score}<em>/100</em></strong></div><div class="hr-tier">${tier}</div></div>
+  <div class="hr-prob-grid"><div><b>${probability}%</b><span>MODEL HR ESTIMATE</span><small>Heuristic estimate, not sportsbook probability</small></div><div><b>${trend}</b><span>POWER TREND</span></div><div><b>${pvLabel}</b><span>PITCHER HR VULNERABILITY</span></div></div>
+  <div class="hr-summary"><div><b>💎 Why I like him</b>${reasons.slice(0,4).map(x=>'<span>✓ '+esc(x)+'</span>').join('')||'<span>Waiting for matchup data</span>'}</div><div><b>🚨 Warning flags</b>${warnings.slice(0,3).map(x=>'<span>• '+esc(x)+'</span>').join('')}</div></div>
+  <div class="hr-contact"><div class="hr-mini"><b>${best?esc(best.type||best.code):'—'}</b><span>BEST PITCH</span></div><div class="hr-mini"><b>${best?.homeRuns??'—'}</b><span>HR VS PITCH</span></div><div class="hr-mini"><b>${quality?.barrelRate??'—'}%</b><span>BARREL RATE</span></div><div class="hr-mini"><b>${quality?.hardHitRate??'—'}%</b><span>HARD HIT</span></div><div class="hr-mini"><b>${quality?.exitVelocity??'—'}</b><span>AVG EV</span></div><div class="hr-mini"><b>${recentHR}</b><span>L10 HR</span></div></div>
+  <div class="xhr-card"><div><b>${xhrProxy==null?'—':xhrProxy}</b><span>CONTACT xHR PROXY</span></div><div><b>${seasonHR}</b><span>ACTUAL HR</span></div><div class="${gap!=null&&gap>2?'good-text':gap!=null&&gap<-2?'bad-text':''}"><b>${gap==null?'—':(gap>0?'+':'')+gap}</b><span>POWER GAP</span></div><small>Contact xHR is a RalloPicks heuristic from season barrels, not official Statcast xHR.</small></div>
+  <div class="hr-environment"><b>🏟️ HR Environment</b><span>${esc(env)}</span></div>
+ </div>`;
 }
+
 function renderBatterWindow(n){if(!state.currentLab)return;state.currentLab.range=n;state.currentLab.market=state.currentLab.market||'totalBases';state.currentLab.line=state.currentLab.line??ANALYTIC_MARKETS[state.currentLab.market].defaultLine;renderBatterAnalytics()}
 
 function scrollLabSection(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
@@ -1291,7 +1338,25 @@ function renderHrListRow(x,i,underrated=false){
   <details class="hr-list-details"><summary>Matchup research <span aria-hidden="true">＋</span></summary><div class="hr-list-detail-body">${hrResearchHtml(x)}${x.dailyResearch?`<h4>Morning checks and conditions</h4><p>${esc(x.contextNote||"Active roster verified; starting lineup and batting order pending. No confirmed absence found in the sources checked; this is not medical clearance.")}</p><div class="hr-evidence-sources">${(x.sources||[]).map(url=>`<a href="${esc(url)}" target="_blank" rel="noopener">Research source</a>`).join(" · ")}</div>`:""}<p>${esc(x.reason)}</p><div class="hr-factors"><span class="factor-chip park">${esc(x.venue)}</span><span class="factor-chip">${esc(x.pitchLabel)}</span><span class="factor-chip">${esc(weather.label||'Weather unavailable')}${weather.windFlow?' · '+esc(weather.windFlow):''}</span></div><p class="hr-list-note">These are research rankings, not posted app odds or calibrated win probabilities. Missing weather is shown as —. Verified pitch and contact splits appear above as context; unavailable metrics are not invented. Park effects and bullpen exposure are not scored.</p><button class="prop" data-player="${Number(x.person.id)}" data-name="${esc(x.person.fullName)}" data-team="${esc(x.team.abbreviation||x.team.name)}" onclick="openBatterLab(Number(this.dataset.player),this.dataset.name,this.dataset.team);switchView('batterlab')">Open Player Lab</button></div></details>
  </article>`;
 }
-async function loadTop20HR(){
+
+function modelScoreForCandidate(x){
+ const q=state.hrQuality?.players?.[String(x.person?.id)]||{},base=Number(x.score)||50;
+ let s=base;s+=(Number(q.barrelRate)||0)*.55+(Number(q.hardHitRate)||0)*.12+((Number(q.exitVelocity)||88)-88)*1.5;
+ return Math.max(0,Math.min(100,Math.round(s)));
+}
+function renderHrModelLeaderboard(rows){
+ const el=document.getElementById('hrModelLeaderboard');if(!el)return;
+ const ranked=[...rows].map(x=>({...x,modelScore:modelScoreForCandidate(x)})).sort((a,b)=>b.modelScore-a.modelScore).slice(0,10);
+ el.innerHTML='<div class="model-head"><b>📊 Rallo HR Model Leaderboard</b><span>Same-day researched pool • contact-adjusted</span></div>'+ranked.map((x,i)=>'<div class="model-row"><b>#'+(i+1)+'</b>'+playerAvatar(x.person.fullName,x.person.id,'')+'<div><strong>'+esc(x.person.fullName)+'</strong><small>'+esc(x.team?.abbreviation||x.team?.name||'')+' • '+esc(x.pitchLabel||'Matchup')+'</small></div><span>'+x.modelScore+'</span></div>').join('');
+}
+function renderHrTrackerMini(){
+ const el=document.getElementById('hrModelTrackerMini');if(!el)return;const rows=state.hrHistory?.records||[],settled=rows.filter(r=>['hit','miss'].includes(r.status)),hits=settled.filter(r=>r.status==='hit').length;
+ const top=settled.filter(r=>r.board==='top10'),topHits=top.filter(r=>r.status==='hit').length;
+ const high=settled.filter(r=>Number(r.trialScore)>=70),highHits=high.filter(r=>r.status==='hit').length;
+ el.innerHTML='<div class="model-head"><b>🧪 Model Tracker</b><span>Pregame picks only</span></div><div class="tracker-grid"><div><b>'+settled.length+'</b><span>SETTLED</span></div><div><b>'+hits+'</b><span>HR HITS</span></div><div><b>'+(settled.length?Math.round(hits/settled.length*100):0)+'%</b><span>ALL HIT RATE</span></div><div><b>'+(top.length?Math.round(topHits/top.length*100):0)+'%</b><span>TOP 10 HIT RATE</span></div><div><b>'+(high.length?Math.round(highHits/high.length*100):0)+'%</b><span>70+ SCORE HIT RATE</span></div></div>';
+}
+await ensureHrModelData();
+
  loadTopSix();
  const root=document.getElementById('top20Rows'),under=document.getElementById('underratedHrRows');
  if(state.hrBoardLoading)return;
@@ -1317,7 +1382,7 @@ async function loadTop20HR(){
    const lineup=lineupInfo(lineups,x.team.id,x.person.id,g.gamePk);if(lineup.status==='out')return [];
    return [{...x,dailyResearch:true,gameDate:g.gameDate,lineup,lineupSpot:lineup.spot}];
   });
-  const top=eligible(feed.top10||[]),other=eligible(feed.underrated||[]);
+  const top=eligible(feed.top10||[]),other=eligible(feed.underrated||[]);renderHrModelLeaderboard([...top,...other]);renderHrTrackerMini();
   const stamp='<p class="hr-list-note">'+esc(feed.date)+' · Researched '+esc(new Date(feed.checkedAt).toLocaleTimeString([],{hour:'numeric',minute:'2-digit',timeZone:'America/Chicago'}))+' Central · '+Number(feed.screened)+' active hitters screened. Lineups rechecked while this board is open.</p>';
   const method='<details class="hr-list-details"><summary>How these players were selected</summary><div class="hr-list-detail-body"><p>'+esc(feed.method)+'</p></div></details>';
   root.innerHTML=stamp+(top.map((x,i)=>renderHrListRow(x,i)).join('')||'<div class="empty">No researched Top 10 players remain eligible.</div>')+method;
