@@ -564,7 +564,38 @@ async function ensureHrOdds(){
   if(r.ok)state.hrOdds=await r.json();
  }catch(e){}
  state.hrOddsLoaded=true;state.hrOddsLoading=false;
- window.renderSleeperFinder?.();window.renderHrMatchupSpotlights?.();
+ window.renderSleeperFinder?.();window.renderHrMatchupSpotlights?.();window.renderHrOddsBoard?.();
+}
+let hrOddsExpanded=false;
+function renderHrOddsBoard(){
+ const host=document.getElementById('hrOddsBoard');if(!host)return;
+ const rows=(state.hrOdds?.rows||[]).filter(o=>{
+  const start=new Date(o.startsAt).getTime();
+  return !Number.isFinite(start)||Date.now()<start;
+ });
+ if(!rows.length){host.innerHTML='<div class="empty">No verified pregame HR odds are available right now.</div>';return;}
+ const q=String(document.getElementById('hrHubSearch')?.value||'').trim().toLowerCase();
+ const filtered=rows.filter(o=>!q||[o.playerName,o.awayTeam,o.homeTeam,o.bestBookName,(o.books||[]).map(b=>b.bookName).join(' ')].join(' ').toLowerCase().includes(q));
+ const shown=hrOddsExpanded?filtered:filtered.slice(0,24);
+ host.innerHTML='<div class="hr-odds-head"><div><b>💵 Verified HR Odds Board</b><span>SportsGameOdds • upcoming games only • best listed price</span></div><span class="hr-odds-count">'+filtered.length+' markets</span></div><div class="hr-odds-list">'+shown.map(o=>{
+  const best=esc(o.bestOdds||'—'),book=esc(o.bestBookName||'Sportsbook'),match=esc((o.awayTeam||'')+' @ '+(o.homeTeam||''));
+  return '<article class="hr-odds-row" data-search="'+esc([o.playerName,o.awayTeam,o.homeTeam,o.bestBookName].join(' ').toLowerCase())+'">'+playerAvatar(o.playerName,o.playerID,'')+'<div><strong>'+esc(o.playerName)+'</strong><small>'+match+'</small></div><div class="hr-odds-price"><b>'+best+'</b><span>'+book+'</span></div></article>';
+ }).join('')+'</div>'+(filtered.length>24?'<div class="hr-odds-more"><button onclick="hrOddsExpanded=!hrOddsExpanded;renderHrOddsBoard()">'+(hrOddsExpanded?'Show fewer':'Show all '+filtered.length)+'</button></div>':'');
+}
+window.renderHrOddsBoard=renderHrOddsBoard;
+window.scrollHrHub=function(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+window.filterHrHub=function(value){
+ const q=String(value||'').trim().toLowerCase();
+ renderHrOddsBoard();
+ for(const id of ['top20Rows','sleeperFinderRows','underratedHrRows']){
+  const host=document.getElementById(id);if(!host)continue;
+  [...host.children].forEach(el=>{
+   if(el.classList.contains('empty'))return;
+   const hit=!q||el.textContent.toLowerCase().includes(q);
+   el.classList.toggle('hr-filter-hidden',!hit);
+  });
+ }
+ document.querySelectorAll('#hrMatchupSpotlights .hr-matchup-spotlight').forEach(el=>el.classList.toggle('hr-filter-hidden',!!q&&!el.textContent.toLowerCase().includes(q)));
 }
 function hrOddsHtml(x){
  const o=hrOddsForPlayer(x?.name);if(!o)return '<div class="hr-verified-odds pending">Verified HR odds pending</div>';
@@ -613,7 +644,7 @@ window.renderHrMatchupSpotlights=function(){
 
 // Keep the matchup scan in sync after rankings/schedule data arrive and when Research is opened.
 function refreshHrMatchupScan(){
- try{window.renderHrMatchupSpotlights?.()}catch(e){console.warn('HR matchup scan render',e)}
+ try{window.renderHrMatchupSpotlights?.();window.renderHrOddsBoard?.()}catch(e){console.warn('HR matchup scan render',e)}
 }
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHrMatchupScan()});
 window.addEventListener('focus',refreshHrMatchupScan);
