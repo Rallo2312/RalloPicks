@@ -1,4 +1,4 @@
-import csv, io, json, datetime, requests
+import csv, io, json, datetime, requests, collections
 from pathlib import Path
 
 OUT = Path("data/arsenals.json")
@@ -116,6 +116,28 @@ def todays_people():
 
     return pitchers, batters
 
+def build_recent_contact(rows, wanted):
+    by_batter = collections.defaultdict(list)
+    pitcher_damage = collections.defaultdict(lambda: {"bbe": 0, "hard": 0, "barrels": 0, "hr": 0})
+    for r in rows:
+        bid = to_int(first(r, "batter")); pid = to_int(first(r, "pitcher"))
+        ev = to_float(first(r, "launch_speed")); la = to_float(first(r, "launch_angle"))
+        event = str(first(r, "events") or "").lower()
+        if bid in wanted and ev is not None:
+            by_batter[bid].append({"date": first(r, "game_date"), "ev": ev, "la": la, "pitch": first(r, "pitch_type"), "zone": to_int(first(r, "zone")), "hr": event == "home_run"})
+        if pid and ev is not None:
+            d=pitcher_damage[pid]; d["bbe"]+=1; d["hard"]+=int(ev>=95); d["barrels"]+=int(ev>=98 and la is not None and 18<=la<=38); d["hr"]+=int(event=="home_run")
+    recent={}
+    for bid,arr in by_batter.items():
+        arr.sort(key=lambda x:x.get("date") or "", reverse=True); last=arr[:30]
+        evs=[x["ev"] for x in last]; ideal=[x for x in last if x.get("la") is not None and x["ev"]>=95 and 18<=x["la"]<=38]
+        pitch=collections.Counter(x.get("pitch") for x in last if x.get("pitch")); zones=collections.Counter(x.get("zone") for x in last if x.get("zone"))
+        recent[str(bid)]={"bbe":len(last),"avgEV":round(sum(evs)/len(evs),1),"hardHitPct":round(100*sum(v>=95 for v in evs)/len(evs),1),"barrelProxyPct":round(100*len(ideal)/len(last),1),"hr":sum(x["hr"] for x in last),"bestPitchTypes":[k for k,_ in pitch.most_common(3)],"hotZones":[k for k,_ in zones.most_common(3)]}
+    pd={}
+    for pid,d in pitcher_damage.items():
+        if d["bbe"]: pd[str(pid)]={"bbe":d["bbe"],"hardHitPct":round(100*d["hard"]/d["bbe"],1),"barrelProxyPct":round(100*d["barrels"]/d["bbe"],1),"hr":d["hr"]}
+    return recent,pd
+
 def build_pitcher_data(rows, movement_rows, wanted):
     movement = {}
 
@@ -226,6 +248,15 @@ except Exception as e:
     home_run_rows = []
 hr_by_pitch = build_hr_by_pitch(home_run_rows)
 print(f"Downloaded {len(home_run_rows)} home-run pitch events across {len(hr_by_pitch)} hitter/pitch-type pairs")
+recent_start = (TODAY - datetime.timedelta(days=21)).isoformat()
+recent_url = ("https://baseballsavant.mlb.com/statcast_search/csv?all=true&type=details&player_type=batter&hfGT=R%7C"
+              f"&game_date_gt={recent_start}&game_date_lt={TODAY.isoformat()}&min_pitches=0&min_results=0&min_pas=0")
+try:
+    recent_rows = get_csv(recent_url)
+except Exception as e:
+    print(f"Recent Statcast warning: {e}"); recent_rows = []
+recent_contact, pitcher_recent_damage = build_recent_contact(recent_rows, batters)
+print(f"Recent contact: {len(recent_contact)} hitters, {len(pitcher_recent_damage)} pitchers")
 
 print(
     f"Downloaded {len(batter_rows)} batter arsenal rows, "
@@ -270,6 +301,8 @@ data = {
     "source": "Baseball Savant pitch arsenal + pitch movement leaderboards",
     "pitchers": pitcher_data,
     "batters": batter_data,
+    "recentContact": recent_contact,
+    "pitcherRecentDamage": pitcher_recent_damage,
 }
 
 OUT.write_text(json.dumps(data, indent=2), encoding="utf-8")
