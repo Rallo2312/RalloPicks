@@ -677,6 +677,18 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 .hr-spot-player strong{display:block;font-size:11px}.hr-spot-player small{display:block;font-size:7px;color:#8d9ab0;margin-top:2px}
 .hr-spot-score{margin-top:6px;font-size:7px;color:#9aa7ba}.hr-verified-odds{margin-top:7px;padding:7px 8px;border-radius:9px;background:#0a1425;border:1px solid rgba(105,242,39,.18)}.hr-verified-odds b{display:block;font-size:6px;letter-spacing:.6px;color:#7f8da3}.hr-verified-odds strong{display:block;font-size:12px;color:#fff;margin-top:2px}.hr-verified-odds strong em{font-style:normal;font-size:7px;color:#7fe7ad;margin-left:3px}.hr-verified-odds span{display:block;font-size:6px;color:#8d9ab0;margin-top:2px}.hr-verified-odds.pending{font-size:6px;color:#748198}.hr-spot-score b{font-size:12px;color:#fff;margin-right:4px}
 @media(max-width:620px){.hr-matchup-scroll{grid-auto-columns:minmax(165px,82%)}.hr-matchup-head{padding:8px}.hr-spot-card{padding:8px}}
+
+.hr-hub-hero{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px;margin:0 0 10px;border-radius:16px;background:linear-gradient(135deg,#101b31,#0b1426 58%,rgba(105,242,39,.08));border:1px solid rgba(105,242,39,.18)}
+.hr-hub-hero small{font-size:7px;letter-spacing:1px;color:#7ee7aa;font-weight:1000}.hr-hub-hero h2{margin:4px 0 3px;font-size:22px}.hr-hub-hero p{margin:0;font-size:8px;color:#8f9db2;line-height:1.45}
+.hr-hub-search{position:relative;width:min(360px,42%)}.hr-hub-search span{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:15px;color:#6f7f96}.hr-hub-search input{width:100%;height:42px;padding:0 12px 0 34px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#081224;color:#fff;outline:none;font-size:10px;font-weight:800}.hr-hub-search input:focus{border-color:rgba(105,242,39,.45);box-shadow:0 0 0 3px rgba(105,242,39,.08)}
+.hr-hub-nav{position:sticky;top:136px;z-index:24;display:flex;gap:6px;overflow:auto;padding:6px;margin:0 0 10px;border-radius:12px;background:rgba(6,13,25,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.07)}.hr-hub-nav button{flex:0 0 auto;border:1px solid transparent;background:transparent;color:#8f9db3;border-radius:9px;padding:7px 10px;font-size:8px;font-weight:900;cursor:pointer}.hr-hub-nav button:hover{background:#111d31;color:#fff;border-color:rgba(255,255,255,.08)}
+.hr-hub-section-label{display:flex;justify-content:space-between;align-items:center;margin:12px 1px 7px}.hr-hub-section-label b{display:block;font-size:11px}.hr-hub-section-label span{display:block;font-size:7px;color:#7f8ca1;margin-top:2px}
+.hr-odds-board{margin:10px 0 14px;padding:10px;border-radius:14px;border:1px solid rgba(85,199,255,.16);background:#081222}
+.hr-odds-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:7px}.hr-odds-head div b{display:block;font-size:11px}.hr-odds-head div span{display:block;font-size:7px;color:#7d8ba1;margin-top:2px}.hr-odds-count{padding:5px 8px;border-radius:999px;background:#101b2f;color:#8fe7b2;font-size:7px;font-weight:900}
+.hr-odds-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.hr-odds-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:7px;align-items:center;padding:8px;border-radius:10px;background:#0d1729;border:1px solid rgba(255,255,255,.06)}.hr-odds-row .player-avatar{width:30px!important;height:30px!important;font-size:7px!important}.hr-odds-row strong{display:block;font-size:9px}.hr-odds-row small{display:block;font-size:6px;color:#7d8ba1;margin-top:2px}.hr-odds-price{text-align:right}.hr-odds-price b{display:block;font-size:11px;color:#fff}.hr-odds-price span{display:block;font-size:6px;color:#77e6a6;margin-top:2px}.hr-odds-more{display:flex;justify-content:center;margin-top:8px}.hr-odds-more button{border:1px solid rgba(255,255,255,.09);background:#101b2f;color:#fff;border-radius:9px;padding:7px 11px;font-size:7px;font-weight:900}
+.hr-filter-hidden{display:none!important}
+@media(max-width:900px){.hr-hub-hero{align-items:stretch}.hr-hub-search{width:45%}.hr-hub-nav{top:8px}.hr-odds-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.hr-hub-hero{display:block;padding:12px}.hr-hub-hero h2{font-size:18px}.hr-hub-search{width:100%;margin-top:10px}.hr-hub-nav{top:6px;margin-left:-2px;margin-right:-2px}.hr-odds-list{grid-template-columns:1fr}.hr-odds-row{padding:7px}.hr-hub-section-label{margin-top:10px}}
 </style><style>
 /* Parlay scanner */
 .parlay-scanner{margin:0 0 12px;padding:13px;border:1px solid rgba(85,199,255,.28);border-radius:15px;background:linear-gradient(145deg,#0b1427,#08101e)}
@@ -878,7 +890,34 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
       </div>
       <div class="board hidden-view" id="batterRankingsView"><div class="section-title"><div><h2>Daily Batter Rankings</h2><span>Every active hitter • grouped by matchup • ranked across today’s slate</span></div><span id="batterRankStamp">Live model</span></div><input id="dailyRankSearch" class="search-box" placeholder="Filter by batter or team" oninput="filterDailyRanks(this.value)"><div id="dailyRankGames" class="rank-games"><div class="empty">Building today’s batter rankings…</div></div><div class="note-box">The Rallo Batter Score combines season power, OPS, opposing pitcher HR tendency, ballpark, and lineup position. It is a matchup research score—not a guaranteed outcome or sportsbook probability.</div></div>
             <div class="board hidden-view" id="batterlabView"><div class="section-title"><div><h2>Player Lab</h2><span>Batter and pitcher research • L5 / L10 / L20 / Season</span></div><span id="labPlatformLabel">PrizePicks mode</span></div><div class="range-tabs prop-type-tabs"><button id="labBatterTab" class="active" onclick="setLabSearchMode('batters')">⚾ Search Batters</button><button id="labPitcherTab" onclick="setLabSearchMode('pitchers')">🔥 Search Pitchers</button></div><input id="batterSearch" class="search-box" placeholder="Type a batter name — e.g. Aaron Judge" oninput="searchPlayers(this.value)"><div id="batterResults" class="search-results"></div><div id="batterLabPlayer"></div></div>
-      <div class="board hidden-view" id="top20View"><div class="section-title"><div><h2>Top 10 HR Candidates Today</h2><span>Dated research • recent power • pitcher matchup • lineup checks</span></div><span>Research rankings</span></div><div id="weatherEdgeGrid" class="weather-edge-grid"><div class="empty">Loading weather and stadium conditions…</div></div><div id="hrModelLeaderboard" class="model-leaderboard"></div><div id="hrModelTrackerMini" class="model-tracker-mini"></div><div id="hrMatchupSpotlights"></div><div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div><div class="section-title sleeper-title"><div><h2>💎 Sleeper Finder</h2><span>3–5 under-the-radar HR spots from the full slate • skips the obvious Top 10 names</span></div><span>Model sleepers</span></div><div id="sleeperFinderRows" class="hr-grid"><div class="empty">Scanning today’s slate for sleeper HR spots…</div></div><div class="section-title underrated-title"><div><h2>5 Underrated HR Targets</h2><span>Separate lower-total power candidates • not verified betting value</span></div><span>Additional targets</span></div><div id="underratedHrRows" class="hr-grid"><div class="empty">Researching underrated power spots…</div></div><div class="note-box">Research rankings are not win probabilities, guarantees, or sportsbook prices. Weather forecasts can change; confirm conditions and lineups near first pitch.</div></div>
+      <div class="board hidden-view" id="top20View">
+  <section class="hr-hub-hero">
+    <div><small>RALLOPICKS • HR RESEARCH HUB</small><h2>Today’s Home Run Board</h2><p>Upcoming matchups, verified sportsbook HR odds, model rankings, sleepers and weather — organized in one place.</p></div>
+    <div class="hr-hub-search"><span>⌕</span><input id="hrHubSearch" placeholder="Search player, team or sportsbook…" oninput="filterHrHub(this.value)"></div>
+  </section>
+  <nav class="hr-hub-nav">
+    <button onclick="scrollHrHub('hrOverview')">Overview</button>
+    <button onclick="scrollHrHub('hrMatchupSpotlights')">Matchups</button>
+    <button onclick="scrollHrHub('hrOddsBoard')">HR Odds</button>
+    <button onclick="scrollHrHub('top20Rows')">Top 10</button>
+    <button onclick="scrollHrHub('sleeperFinderRows')">Sleepers</button>
+    <button onclick="scrollHrHub('underratedHrRows')">Underrated</button>
+  </nav>
+  <div id="hrOverview" class="hr-hub-section-label"><div><b>⚡ Daily Overview</b><span>Model health, weather and recent performance</span></div></div>
+  <div id="weatherEdgeGrid" class="weather-edge-grid"><div class="empty">Loading weather and stadium conditions…</div></div>
+  <div id="hrModelLeaderboard" class="model-leaderboard"></div>
+  <div id="hrModelTrackerMini" class="model-tracker-mini"></div>
+  <div class="hr-hub-section-label"><div><b>🎯 Upcoming Matchup Edges</b><span>Only games that have not started</span></div></div>
+  <div id="hrMatchupSpotlights"></div>
+  <div id="hrOddsBoard" class="hr-odds-board"><div class="empty">Loading verified HR odds…</div></div>
+  <div class="hr-hub-section-label"><div><b>🔥 Top 10 HR Candidates</b><span>Best overall model scores on the remaining slate</span></div></div>
+  <div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div>
+  <div class="section-title sleeper-title"><div><h2>💎 Sleeper Finder</h2><span>3–5 under-the-radar HR spots from the full slate • skips the obvious Top 10 names</span></div><span>Model sleepers</span></div>
+  <div id="sleeperFinderRows" class="hr-grid"><div class="empty">Scanning today’s slate for sleeper HR spots…</div></div>
+  <div class="section-title underrated-title"><div><h2>5 Underrated HR Targets</h2><span>Separate lower-total power candidates • not verified betting value</span></div><span>Additional targets</span></div>
+  <div id="underratedHrRows" class="hr-grid"><div class="empty">Researching underrated power spots…</div></div>
+  <div class="note-box">Research rankings are not win probabilities, guarantees, or sportsbook prices. Weather forecasts can change; confirm conditions and lineups near first pitch.</div>
+</div>
     </section>
 
   </main>
