@@ -478,7 +478,7 @@ for(const name of ['renderBatterAnalytics','renderPitcherAnalytics']){
 function persistBattle(){writeResearchStorage(BATTLE_KEY,battleKeys);}
 window.toggleBattlePick=function(k){
  const i=battleKeys.indexOf(k);
- if(i>=0)battleKeys.splice(i,1);else{if(battleKeys.length>=4)battleKeys.shift();battleKeys.push(k)}
+ if(i>=0)battleKeys.splice(i,1);else{if(battleKeys.length>=10)return;battleKeys.push(k)}
  persistBattle();renderAppBoard();
 }
 function battleScore(p){
@@ -490,8 +490,8 @@ function battleScore(p){
  return Math.max(1,Math.min(99,Math.round(score)));
 }
 function propBattleHtml(picks){
- const selected=picks.filter(p=>battleKeys.includes(boardKey(p))).slice(0,4);
- if(selected.length<2)return '<section class="prop-battle"><div class="model-head"><b>⚔️ Prop Battle</b><span>Select 2–4 picks below</span></div><p>Tap “Add to Battle” on picks you want compared. RalloPicks will rank them using the saved Rallo score, trap risk and line movement.</p></section>';
+ const selected=picks.filter(p=>battleKeys.includes(boardKey(p))).slice(0,10);
+ if(selected.length<2)return '<section class="prop-battle"><div class="model-head"><b>⚔️ Prop Battle</b><span>Select 2–10 picks below</span></div><p>Tap “Add to Battle” on picks you want compared. RalloPicks will rank them using the saved Rallo score, trap risk and line movement.</p></section>';
  const ranked=[...selected].sort((a,b)=>battleScore(b)-battleScore(a));
  return '<section class="prop-battle"><div class="model-head"><b>⚔️ Prop Battle</b><span>'+selected.length+' selected</span></div><div class="battle-winner">👑 #1 '+esc(ranked[0].name)+' • '+esc(ranked[0].label||ranked[0].market)+' • '+battleScore(ranked[0])+'</div>'+ranked.map((p,i)=>'<article class="battle-row"><b>#'+(i+1)+'</b><div><strong>'+esc(p.name)+'</strong><span>'+esc(p.sport)+' • '+esc(p.label||p.market)+' • '+esc((p.direction||'more').toUpperCase())+' '+Number(p.line)+'</span><span>Trap: '+esc(p.trapRisk||'UNKNOWN')+'</span></div><em>'+battleScore(p)+'</em></article>').join('')+'<button class="six-refresh" onclick="battleKeys=[];persistBattle();renderAppBoard()">Clear Battle</button></section>';
 }
