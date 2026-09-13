@@ -1680,11 +1680,26 @@ async function loadTop20HR(){await ensureHrModelData();
  }catch(e){empty('Current slate or player status could not be verified. Please refresh; saved picks are withheld until checks succeed.');state.hrBoardReady=false;window.researchFailed?.('hr');}
  finally{state.hrBoardLoading=false;}
 }
+let dailyRankView='overall';
+function dailyRankCard(x,teamMode=false){
+ return `<article class="daily-rank-card" onclick="openBatterLab(${x.id},'${esc(x.name).replace(/'/g,"\\'")}','${esc(x.teamAbbr)}');switchView('batterlab')"><div class="daily-rank-number">#${teamMode?(x.teamRank||'—'):x.rank}<small style="display:block;font-size:6px;margin-top:2px;color:var(--muted)">${teamMode?'OVERALL #'+x.rank:'TEAM #'+(x.teamRank||'—')}</small></div>${playerAvatar(x.name,x.id)}<div><strong>${esc(x.name)}</strong><span class="lineup-tag ${x.lineup.status}">${esc(x.lineup.label)}</span><small>${esc(x.teamAbbr)} • vs ${esc(x.pitcher)}</small><small>${esc(x.venue)} • ${x.hr} HR • ${x.ops||'—'} OPS${x.bestHrOdds?' • '+esc(x.bestHrOdds)+' '+esc(x.bestHrBook||''):''}</small><small>${esc(x.weather.label)}${x.weather.temperature==null?'':' • '+Math.round(x.weather.temperature)+'°F'}${x.weather.windSpeed==null?'':' • '+Math.round(x.weather.windSpeed)+' mph '+esc(x.weather.windFlow)}</small><small style="color:#9eb0c8">Pitcher ${x.breakdown?.pitcher??'—'} • Pitch fit ${x.breakdown?.pitchMatch??'—'} • Contact ${x.breakdown?.contact??'—'} • Env ${x.breakdown?.environment??'—'} • Lineup ${x.breakdown?.lineup??'—'} • Market ${x.breakdown?.market??'—'} • Season ${x.breakdown?.season??'—'}</small></div><div class="daily-score"><b>${x.score.toFixed(1)}</b><span>MATCHUP HR SCORE</span></div></article>`;
+}
+window.setDailyRankView=function(view){
+ dailyRankView=view==='team'?'team':'overall';
+ document.getElementById('overallRankTab')?.classList.toggle('active',dailyRankView==='overall');
+ document.getElementById('teamRankTab')?.classList.toggle('active',dailyRankView==='team');
+ renderDailyBatterRanks(document.getElementById('dailyRankSearch')?.value||'');
+}
 function renderDailyBatterRanks(query=''){
- const q=String(query).trim().toLowerCase(),root=document.getElementById('dailyRankGames'),rows=state.dailyBatterRanks.filter(x=>!q||(x.name+' '+x.teamAbbr+' '+x.opponent).toLowerCase().includes(q)),groups=[];
- for(const game of state.games){const batters=rows.filter(x=>x.gamePk===game.gamePk);if(batters.length)groups.push({game,batters})}
+ const q=String(query).trim().toLowerCase(),root=document.getElementById('dailyRankGames'),rows=state.dailyBatterRanks.filter(x=>!q||(x.name+' '+x.teamAbbr+' '+x.opponent).toLowerCase().includes(q));
+ if(dailyRankView==='team'){
+  const teams=new Map();for(const x of rows){if(!teams.has(x.teamAbbr))teams.set(x.teamAbbr,[]);teams.get(x.teamAbbr).push(x)}
+  root.innerHTML=[...teams.entries()].sort((a,b)=>a[0].localeCompare(b[0])).map(([team,batters])=>'<section class="team-rank-section"><div class="team-rank-heading"><b>⚾ '+esc(team)+' HR RANK</b><span>'+batters.length+' BATTERS</span></div><div class="rank-batters">'+batters.sort((a,b)=>(a.teamRank||99)-(b.teamRank||99)).map(x=>dailyRankCard(x,true)).join('')+'</div></section>').join('')||'<div class="nfl-empty-note">No active batter matches that filter.</div>';
+  return;
+ }
+ const groups=[];for(const game of state.games){const batters=rows.filter(x=>x.gamePk===game.gamePk);if(batters.length)groups.push({game,batters})}
  root.innerHTML=groups.map((group,gi)=>{const g=group.game,time=new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}),away=g.teams.away.team.abbreviation||g.teams.away.team.name,home=g.teams.home.team.abbreviation||g.teams.home.team.name;
-  return `<details class="rank-game" ${gi===0?'open':''}><summary><div>${esc(away)} @ ${esc(home)}<small>${esc(time)} • ${esc(g.venue?.name||'Venue TBD')}</small></div><span class="rank-game-count">${group.batters.length} BATTERS ▾</span></summary><div class="rank-batters">${group.batters.map(x=>`<article class="daily-rank-card" onclick="openBatterLab(${x.id},'${esc(x.name).replace(/'/g,"\\'")}','${esc(x.teamAbbr)}');switchView('batterlab')"><div class="daily-rank-number">#${x.rank}<small style="display:block;font-size:6px;margin-top:2px;color:var(--muted)">TEAM #${x.teamRank||'—'}</small></div>${playerAvatar(x.name,x.id)}<div><strong>${esc(x.name)}</strong><span class="lineup-tag ${x.lineup.status}">${esc(x.lineup.label)}</span><small>${esc(x.teamAbbr)} • vs ${esc(x.pitcher)}</small><small>${esc(x.venue)} • ${x.hr} HR • ${x.ops||'—'} OPS${x.bestHrOdds?' • '+esc(x.bestHrOdds)+' '+esc(x.bestHrBook||''):''}</small><small>${esc(x.weather.label)}${x.weather.temperature==null?'':' • '+Math.round(x.weather.temperature)+'°F'}${x.weather.windSpeed==null?'':' • '+Math.round(x.weather.windSpeed)+' mph '+esc(x.weather.windFlow)}</small><small style="color:#9eb0c8">Pitcher ${x.breakdown?.pitcher??'—'} • Pitch fit ${x.breakdown?.pitchMatch??'—'} • Contact ${x.breakdown?.contact??'—'} • Env ${x.breakdown?.environment??'—'} • Lineup ${x.breakdown?.lineup??'—'} • Market ${x.breakdown?.market??'—'} • Season ${x.breakdown?.season??'—'}</small></div><div class="daily-score"><b>${x.score.toFixed(1)}</b><span>MATCHUP HR SCORE</span></div></article>`).join('')}</div></details>`}).join('')||'<div class="nfl-empty-note">No active batter matches that filter.</div>';
+  return '<details class="rank-game" '+(gi===0?'open':'')+'><summary><div>'+esc(away)+' @ '+esc(home)+'<small>'+esc(time)+' • '+esc(g.venue?.name||'Venue TBD')+'</small></div><span class="rank-game-count">'+group.batters.length+' BATTERS ▾</span></summary><div class="rank-batters">'+group.batters.map(x=>dailyRankCard(x,false)).join('')+'</div></details>'}).join('')||'<div class="nfl-empty-note">No active batter matches that filter.</div>';
 }
 function filterDailyRanks(query){renderDailyBatterRanks(query)}
 async function loadDailyBatterRanks(){
