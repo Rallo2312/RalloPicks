@@ -1000,7 +1000,7 @@ body{background:
     </div>
     <div id="mlbHomeLabResults" class="home-lab-results"><div class="home-lab-placeholder">Start typing a player name.</div></div>
   </section>
-  <div id="mlbHomeDashboard"><div class="empty">Building today’s RalloPicks dashboard…</div></div>
+  <div class="rallo-reference-strip"><div class="rallo-reference-tile"><b>👑 Top MLB Props Today</b><span>Strongest researched props from the active slate.</span><button onclick="switchView('rankings')">VIEW RANKINGS →</button></div><div class="rallo-reference-tile"><b>⚾ Best HR Picks</b><span>Daily home-run rankings built from matchup research, not season HR totals alone.</span><button onclick="switchView('top20')">VIEW HR BOARD →</button></div><div class="rallo-reference-tile"><b>🧪 Player Lab</b><span>Search any hitter and choose the exact prop you want to research.</span><button onclick="document.getElementById('mlbHomePlayerSearch')?.focus()">SEARCH PLAYER →</button></div></div><div id="mlbHomeDashboard"><div class="empty">Building today’s RalloPicks dashboard…</div></div>
 </div>
       <div class="board hidden-view" id="myBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved MLB + NFL props • line movement • results</span></div><span>Device-local</span></div>
 <section class="parlay-scanner">
@@ -1079,7 +1079,7 @@ body{background:
     </div>
     <div id="nflHomeLabResults" class="home-lab-results"><div class="home-lab-placeholder">Start typing a player name.</div></div>
   </section>
-  <div id="nflHomeDashboard"><div class="empty">Building today’s NFL dashboard…</div></div>
+  <div class="rallo-reference-strip"><div class="rallo-reference-tile"><b>👑 Top NFL Props Today</b><span>Best researched player-prop setups from the current slate.</span><button onclick="switchNflView('research')">VIEW RANKINGS →</button></div><div class="rallo-reference-tile"><b>🏈 Best Anytime TD Picks</b><span>Role, matchup and touchdown research in one board.</span><button onclick="switchNflView('research');setTimeout(()=>document.getElementById('nflAnytimeTdBoard')?.scrollIntoView({behavior:'smooth'}),100)">VIEW TD RANKINGS →</button></div><div class="rallo-reference-tile"><b>🧪 Player Lab</b><span>Search any skill player and choose the exact prop to inspect.</span><button onclick="document.getElementById('nflHomePlayerSearch')?.focus()">SEARCH PLAYER →</button></div></div><div id="nflHomeDashboard"><div class="empty">Building today’s NFL dashboard…</div></div>
 </div>
       <div class="board hidden-view" id="nflBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved props across MLB + NFL</span></div><span>Device-local</span></div><div id="nflBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
       <div class="rallo-quick-filterbar"><button onclick="switchNflView('research')">🎯 PROPS</button><button onclick="switchNflView('research');scrollNFLResearch('nflOverallRanks')">📊 RANKINGS</button><button onclick="switchNflView('research');document.getElementById('nflAnytimeTdBoard')?.scrollIntoView({behavior:'smooth'})">🏈 ANYTIME TD</button><button onclick="switchNflView('players')">🧪 PLAYER LAB</button><button onclick="switchNflView('board')">⭐ MY BOARD</button><button onclick="switchNflView('standings')">🏆 STANDINGS</button></div><div class="board hidden-view" id="nflResearchView">
