@@ -956,7 +956,7 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
         <div id="nflOverallRanks" class="nfl-deep-ranks"></div>
         <div id="nflTeamRanks" class="nfl-deep-ranks" style="display:none"></div>
         <div class="section-title sleeper-title"><div><h2>💎 NFL Sleeper Finder</h2><span>Under-the-radar players with favorable role + matchup combinations</span></div><span>Model sleepers</span></div>
-        <div id="nflSleeperBoard" class="nfl-player-results"></div>
+        <section class="nfl-anytime-td-section"><div id="nflAnytimeTdBoard"></div></section><div id="nflSleeperBoard" class="nfl-player-results"></div>
       </div>
       <div class="board hidden-view" id="nflRanksView">
         <div class="section-title"><div><h2>Offense & Defense Rankings</h2><span>Points per game and points allowed per game • updates after completed games</span></div><span>1–32</span></div>
@@ -1805,6 +1805,25 @@ function nflResearchRows(){
  for(const arr of teams.values())arr.forEach((p,i)=>p.teamRank=i+1);
  return rows;
 }
+function nflAnytimeTdScore(p){
+ const opp=nflOpponentFor(p.team),def=Number(opp?.team?.defense_rank)||16.5,recent=(p.recent||[]).slice(0,10),s=p.season||{};
+ const tdGames=recent.filter(g=>Number(g.rush_tds||0)+Number(g.rec_tds||0)>0).length,tdRate=recent.length?tdGames/recent.length:0;
+ const touches=recent.length?recent.reduce((a,g)=>a+Number(g.rush_attempts||0)+Number(g.targets||0),0)/recent.length:0;
+ const seasonTd=Number(s.rush_tds||0)+Number(s.rec_tds||0),games=Number(s.games||recent.length||1);
+ const tdPerGame=seasonTd/Math.max(games,1);
+ const matchup=clamp((def-8)/24*22,0,22),role=clamp(touches*1.35,0,25),recentTd=clamp(tdRate*24,0,24),season=clamp(tdPerGame*18,0,18);
+ const score=clamp(18+matchup+role+recentTd+season,10,99);
+ return {score,matchup:Math.round(matchup),role:Math.round(role),recentTd:Math.round(recentTd),season:Math.round(season),tdRate:Math.round(tdRate*100),opponent:opp?.side?.abbr||'TBD'};
+}
+function nflAnytimeTdRows(){
+ const rows=(state.nfl.players||[]).filter(p=>['RB','WR','TE','QB'].includes(p.position)).map(p=>({...p,_td:nflAnytimeTdScore(p)})).sort((a,b)=>b._td.score-a._td.score);
+ rows.forEach((p,i)=>p.tdRank=i+1);const teams=new Map();for(const p of rows){if(!teams.has(p.team))teams.set(p.team,[]);teams.get(p.team).push(p)}for(const a of teams.values())a.forEach((p,i)=>p.tdTeamRank=i+1);return rows;
+}
+function nflAnytimeTdCard(p){const r=p._td;return '<article class="nfl-deep-card" onclick="openNFLPlayer(\''+esc(p.id).replace(/'/g,"\\'")+'\');switchNflView(\'players\')"><div class="nfl-deep-rank">#'+p.tdRank+'<small>TEAM #'+p.tdTeamRank+'</small></div>'+nflPlayerImage(p)+'<div><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' • '+esc(p.team)+' • vs '+esc(r.opponent)+'</span><small class="nfl-factor-line">TD L10 '+r.tdRate+'% • Role '+r.role+' • Matchup '+r.matchup+' • Season TD '+r.season+'</small></div><div class="nfl-deep-score"><b>'+Math.round(r.score)+'</b><span>TD SCORE</span></div></article>'}
+window.renderNFLAnytimeTd=function(){
+ const host=document.getElementById('nflAnytimeTdBoard');if(!host)return;const rows=nflAnytimeTdRows();
+ host.innerHTML='<div class="hr-hub-section-label"><div><b>🏈 Anytime TD Rankings</b><span>Daily TD research ranking — role, recent TD rate, season TD production and matchup. Not a win probability.</span></div></div><div class="nfl-td-grid">'+rows.slice(0,30).map(nflAnytimeTdCard).join('')+'</div>';
+}
 function nflDeepCard(p,teamMode=false){
  const r=p._r;
  return '<article class="nfl-deep-card" onclick="openNFLPlayer(\''+esc(p.id).replace(/'/g,"\\'")+'\');switchNflView(\'players\')"><div class="nfl-deep-rank">#'+(teamMode?p.teamRank:p.overallRank)+'<small>'+(teamMode?'OVERALL #'+p.overallRank:'TEAM #'+p.teamRank)+'</small></div>'+nflPlayerImage(p)+'<div><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' • '+esc(p.team)+' • vs '+esc(r.opponent)+'</span><small class="nfl-factor-line">Matchup '+r.breakdown.matchup+' • Role '+r.breakdown.role+' • Recent '+r.breakdown.form+' • Season '+r.breakdown.season+' • Market '+r.breakdown.market+'</small></div><div class="nfl-deep-score"><b>'+Math.round(r.score)+'</b><span>NFL SCORE</span></div></article>';
@@ -1901,7 +1920,7 @@ function renderNFL(){
  document.getElementById('nflOddsStamp').textContent=state.nfl.updatedAt?new Date(state.nfl.updatedAt).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'—';
  document.getElementById('nflStandingsStamp').textContent='Season '+state.nfl.season;
  document.getElementById('nflSeasonLabel').textContent=state.nfl.season+' season';
- renderNFLRanks();renderNFLStandings();renderNFLPlayerResults(document.getElementById('nflPlayerSearch')?.value||'');
+ renderNFLRanks();renderNFLStandings();renderNFLPlayerResults(document.getElementById('nflPlayerSearch')?.value||'');renderNFLAnytimeTd();
 }
 async function loadNFL(force=false){
  if(state.nflLoaded&&!force){renderNFL();return}
