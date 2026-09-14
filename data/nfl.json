@@ -1,410 +1,7 @@
 {
-  "updated_at": "2026-09-14T02:10:50.765390+00:00",
+  "updated_at": "2026-09-14T13:29:30.784154+00:00",
   "season": 2026,
   "games": [
-    {
-      "id": "2026_01_CHI_CAR",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "Chicago Bears at Carolina Panthers",
-      "short_name": "CHI @ CAR",
-      "status": "Final",
-      "venue": "Bank of America Stadium",
-      "home": {
-        "id": "CAR",
-        "name": "Carolina Panthers",
-        "abbr": "CAR",
-        "logo": null,
-        "score": "37"
-      },
-      "away": {
-        "id": "CHI",
-        "name": "Chicago Bears",
-        "abbr": "CHI",
-        "logo": null,
-        "score": "59"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": 140.0,
-        "away_moneyline": -166.0,
-        "home_spread": 3.0,
-        "spread_price": -108.0,
-        "total": 47.5,
-        "over_price": -105.0
-      }
-    },
-    {
-      "id": "2026_01_TB_CIN",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "Tampa Bay Buccaneers at Cincinnati Bengals",
-      "short_name": "TB @ CIN",
-      "status": "Final",
-      "venue": "Paycor Stadium",
-      "home": {
-        "id": "CIN",
-        "name": "Cincinnati Bengals",
-        "abbr": "CIN",
-        "logo": null,
-        "score": "33"
-      },
-      "away": {
-        "id": "TB",
-        "name": "Tampa Bay Buccaneers",
-        "abbr": "TB",
-        "logo": null,
-        "score": "27"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -205.0,
-        "away_moneyline": 170.0,
-        "home_spread": -3.5,
-        "spread_price": -118.0,
-        "total": 50.5,
-        "over_price": -108.0
-      }
-    },
-    {
-      "id": "2026_01_NO_DET",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "New Orleans Saints at Detroit Lions",
-      "short_name": "NO @ DET",
-      "status": "Final",
-      "venue": "Ford Field",
-      "home": {
-        "id": "DET",
-        "name": "Detroit Lions",
-        "abbr": "DET",
-        "logo": null,
-        "score": "31"
-      },
-      "away": {
-        "id": "NO",
-        "name": "New Orleans Saints",
-        "abbr": "NO",
-        "logo": null,
-        "score": "30"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -325.0,
-        "away_moneyline": 260.0,
-        "home_spread": -7.0,
-        "spread_price": -110.0,
-        "total": 49.5,
-        "over_price": -115.0
-      }
-    },
-    {
-      "id": "2026_01_BUF_HOU",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "Buffalo Bills at Houston Texans",
-      "short_name": "BUF @ HOU",
-      "status": "Final",
-      "venue": "Reliant Stadium",
-      "home": {
-        "id": "HOU",
-        "name": "Houston Texans",
-        "abbr": "HOU",
-        "logo": null,
-        "score": "31"
-      },
-      "away": {
-        "id": "BUF",
-        "name": "Buffalo Bills",
-        "abbr": "BUF",
-        "logo": null,
-        "score": "36"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -108.0,
-        "away_moneyline": -112.0,
-        "home_spread": 1.5,
-        "spread_price": -115.0,
-        "total": 44.5,
-        "over_price": -110.0
-      }
-    },
-    {
-      "id": "2026_01_BAL_IND",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "Baltimore Ravens at Indianapolis Colts",
-      "short_name": "BAL @ IND",
-      "status": "Final",
-      "venue": "Lucas Oil Stadium",
-      "home": {
-        "id": "IND",
-        "name": "Indianapolis Colts",
-        "abbr": "IND",
-        "logo": null,
-        "score": "23"
-      },
-      "away": {
-        "id": "BAL",
-        "name": "Baltimore Ravens",
-        "abbr": "BAL",
-        "logo": null,
-        "score": "41"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": 136.0,
-        "away_moneyline": -162.0,
-        "home_spread": 3.0,
-        "spread_price": -112.0,
-        "total": 48.5,
-        "over_price": -102.0
-      }
-    },
-    {
-      "id": "2026_01_CLE_JAX",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "Cleveland Browns at Jacksonville Jaguars",
-      "short_name": "CLE @ JAX",
-      "status": "Final",
-      "venue": "EverBank Stadium",
-      "home": {
-        "id": "JAX",
-        "name": "Jacksonville Jaguars",
-        "abbr": "JAX",
-        "logo": null,
-        "score": "34"
-      },
-      "away": {
-        "id": "CLE",
-        "name": "Cleveland Browns",
-        "abbr": "CLE",
-        "logo": null,
-        "score": "10"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -470.0,
-        "away_moneyline": 360.0,
-        "home_spread": -8.5,
-        "spread_price": -115.0,
-        "total": 40.5,
-        "over_price": -102.0
-      }
-    },
-    {
-      "id": "2026_01_ATL_PIT",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "Atlanta Falcons at Pittsburgh Steelers",
-      "short_name": "ATL @ PIT",
-      "status": "Final",
-      "venue": "Acrisure Stadium",
-      "home": {
-        "id": "PIT",
-        "name": "Pittsburgh Steelers",
-        "abbr": "PIT",
-        "logo": null,
-        "score": "20"
-      },
-      "away": {
-        "id": "ATL",
-        "name": "Atlanta Falcons",
-        "abbr": "ATL",
-        "logo": null,
-        "score": "13"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -298.0,
-        "away_moneyline": 240.0,
-        "home_spread": -6.5,
-        "spread_price": -112.0,
-        "total": 40.5,
-        "over_price": -112.0
-      }
-    },
-    {
-      "id": "2026_01_NYJ_TEN",
-      "date": "2026-09-13T17:00:00+00:00",
-      "name": "New York Jets at Tennessee Titans",
-      "short_name": "NYJ @ TEN",
-      "status": "Final",
-      "venue": "Nissan Stadium",
-      "home": {
-        "id": "TEN",
-        "name": "Tennessee Titans",
-        "abbr": "TEN",
-        "logo": null,
-        "score": "10"
-      },
-      "away": {
-        "id": "NYJ",
-        "name": "New York Jets",
-        "abbr": "NYJ",
-        "logo": null,
-        "score": "23"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -118.0,
-        "away_moneyline": -102.0,
-        "home_spread": -1.5,
-        "spread_price": -105.0,
-        "total": 39.5,
-        "over_price": -110.0
-      }
-    },
-    {
-      "id": "2026_01_ARI_LAC",
-      "date": "2026-09-13T20:25:00+00:00",
-      "name": "Arizona Cardinals at Los Angeles Chargers",
-      "short_name": "ARI @ LAC",
-      "status": "Final",
-      "venue": "SoFi Stadium",
-      "home": {
-        "id": "LAC",
-        "name": "Los Angeles Chargers",
-        "abbr": "LAC",
-        "logo": null,
-        "score": "14"
-      },
-      "away": {
-        "id": "ARI",
-        "name": "Arizona Cardinals",
-        "abbr": "ARI",
-        "logo": null,
-        "score": "26"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -455.0,
-        "away_moneyline": 350.0,
-        "home_spread": -8.5,
-        "spread_price": -118.0,
-        "total": 47.5,
-        "over_price": -102.0
-      }
-    },
-    {
-      "id": "2026_01_MIA_LV",
-      "date": "2026-09-13T20:25:00+00:00",
-      "name": "Miami Dolphins at Las Vegas Raiders",
-      "short_name": "MIA @ LV",
-      "status": "Final",
-      "venue": "Allegiant Stadium",
-      "home": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "abbr": "LV",
-        "logo": null,
-        "score": "27"
-      },
-      "away": {
-        "id": "MIA",
-        "name": "Miami Dolphins",
-        "abbr": "MIA",
-        "logo": null,
-        "score": "13"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -170.0,
-        "away_moneyline": 142.0,
-        "home_spread": -3.0,
-        "spread_price": -110.0,
-        "total": 40.5,
-        "over_price": -110.0
-      }
-    },
-    {
-      "id": "2026_01_GB_MIN",
-      "date": "2026-09-13T20:25:00+00:00",
-      "name": "Green Bay Packers at Minnesota Vikings",
-      "short_name": "GB @ MIN",
-      "status": "Final",
-      "venue": "U.S. Bank Stadium",
-      "home": {
-        "id": "MIN",
-        "name": "Minnesota Vikings",
-        "abbr": "MIN",
-        "logo": null,
-        "score": "39"
-      },
-      "away": {
-        "id": "GB",
-        "name": "Green Bay Packers",
-        "abbr": "GB",
-        "logo": null,
-        "score": "22"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -125.0,
-        "away_moneyline": 105.0,
-        "home_spread": -1.5,
-        "spread_price": -115.0,
-        "total": 46.5,
-        "over_price": -102.0
-      }
-    },
-    {
-      "id": "2026_01_WAS_PHI",
-      "date": "2026-09-13T20:25:00+00:00",
-      "name": "Washington Commanders at Philadelphia Eagles",
-      "short_name": "WAS @ PHI",
-      "status": "Final",
-      "venue": "Lincoln Financial Field",
-      "home": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
-        "abbr": "PHI",
-        "logo": null,
-        "score": "24"
-      },
-      "away": {
-        "id": "WAS",
-        "name": "Washington Commanders",
-        "abbr": "WAS",
-        "logo": null,
-        "score": "22"
-      },
-      "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": -245.0,
-        "away_moneyline": 200.0,
-        "home_spread": -6.0,
-        "spread_price": -110.0,
-        "total": 43.5,
-        "over_price": -115.0
-      }
-    },
-    {
-      "id": "2026_01_DAL_NYG",
-      "date": "2026-09-14T00:20:00+00:00",
-      "name": "Dallas Cowboys at New York Giants",
-      "short_name": "DAL @ NYG",
-      "status": "Scheduled",
-      "venue": "MetLife Stadium",
-      "home": {
-        "id": "NYG",
-        "name": "New York Giants",
-        "abbr": "NYG",
-        "logo": null,
-        "score": ""
-      },
-      "away": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
-        "abbr": "DAL",
-        "logo": null,
-        "score": ""
-      },
-      "odds": {
-        "book": "DraftKings",
-        "home_moneyline": -283,
-        "away_moneyline": 211,
-        "home_spread": -5.5,
-        "spread_price": -116,
-        "total": 44.5,
-        "over_price": -117
-      }
-    },
     {
       "id": "2026_01_DEN_KC",
       "date": "2026-09-15T00:15:00+00:00",
@@ -428,10 +25,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -135,
-        "away_moneyline": 114,
+        "home_moneyline": -130,
+        "away_moneyline": 110,
         "home_spread": -2.5,
-        "spread_price": -110,
+        "spread_price": -108,
         "total": 43.5,
         "over_price": -108
       }
@@ -459,10 +56,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -180,
-        "away_moneyline": 150,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
         "home_spread": -3.5,
-        "spread_price": -105,
+        "spread_price": -112,
         "total": 53.5,
         "over_price": -110
       }
@@ -490,12 +87,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -118,
-        "away_moneyline": -102,
-        "home_spread": -1.5,
-        "spread_price": -110,
-        "total": 44.5,
-        "over_price": -110
+        "home_moneyline": 105,
+        "away_moneyline": -125,
+        "home_spread": 1.5,
+        "spread_price": -112,
+        "total": 43.5,
+        "over_price": -115
       }
     },
     {
@@ -521,12 +118,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -395,
-        "away_moneyline": 310,
+        "home_moneyline": -375,
+        "away_moneyline": 295,
         "home_spread": -8.5,
         "spread_price": -110,
-        "total": 48.5,
-        "over_price": -110
+        "total": 47.5,
+        "over_price": -102
       }
     },
     {
@@ -552,12 +149,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -265,
-        "away_moneyline": 215,
+        "home_moneyline": -250,
+        "away_moneyline": 205,
         "home_spread": -5.5,
         "spread_price": -110,
-        "total": 48.5,
-        "over_price": -110
+        "total": 49.5,
+        "over_price": -108
       }
     },
     {
@@ -583,12 +180,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -142,
-        "away_moneyline": 120,
-        "home_spread": -2.5,
-        "spread_price": -115,
-        "total": 47.5,
-        "over_price": -110
+        "home_moneyline": -148,
+        "away_moneyline": 124,
+        "home_spread": -3.0,
+        "spread_price": -105,
+        "total": 46.5,
+        "over_price": -115
       }
     },
     {
@@ -614,12 +211,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -245,
-        "away_moneyline": 200,
+        "home_moneyline": -238,
+        "away_moneyline": 195,
         "home_spread": -5.5,
         "spread_price": -110,
-        "total": 43.5,
-        "over_price": -105
+        "total": 41.5,
+        "over_price": -115
       }
     },
     {
@@ -648,9 +245,9 @@
         "home_moneyline": 185,
         "away_moneyline": -225,
         "home_spread": 4.5,
-        "spread_price": -110,
-        "total": 45.5,
-        "over_price": -110
+        "spread_price": -112,
+        "total": 44.5,
+        "over_price": -112
       }
     },
     {
@@ -681,7 +278,7 @@
         "home_spread": -8.5,
         "spread_price": -110,
         "total": 40.5,
-        "over_price": -110
+        "over_price": -115
       }
     },
     {
@@ -707,8 +304,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 235,
-        "away_moneyline": -290,
+        "home_moneyline": 250,
+        "away_moneyline": -310,
         "home_spread": 7.0,
         "spread_price": -110,
         "total": 40.5,
@@ -738,12 +335,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -142,
-        "away_moneyline": 120,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
         "home_spread": -2.5,
-        "spread_price": -120,
-        "total": 43.5,
-        "over_price": -110
+        "spread_price": -118,
+        "total": 44.5,
+        "over_price": -115
       }
     },
     {
@@ -800,12 +397,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 190,
-        "away_moneyline": -230,
+        "home_moneyline": 185,
+        "away_moneyline": -225,
         "home_spread": 4.5,
-        "spread_price": -110,
+        "spread_price": -115,
         "total": 41.5,
-        "over_price": -115
+        "over_price": -110
       }
     },
     {
@@ -830,13 +427,13 @@
         "score": ""
       },
       "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": null,
-        "away_moneyline": null,
-        "home_spread": 0,
-        "spread_price": null,
-        "total": null,
-        "over_price": null
+        "book": "DraftKings",
+        "home_moneyline": -198,
+        "away_moneyline": 164,
+        "home_spread": -3.5,
+        "spread_price": -112,
+        "total": 50.5,
+        "over_price": -115
       }
     },
     {
@@ -862,8 +459,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -950,
-        "away_moneyline": 625,
+        "home_moneyline": -900,
+        "away_moneyline": 600,
         "home_spread": -12.5,
         "spread_price": -110,
         "total": 46.5,
@@ -923,13 +520,13 @@
         "score": ""
       },
       "odds": {
-        "book": "nflverse consensus",
-        "home_moneyline": null,
-        "away_moneyline": null,
-        "home_spread": 0,
-        "spread_price": null,
-        "total": null,
-        "over_price": null
+        "book": "DraftKings",
+        "home_moneyline": -345,
+        "away_moneyline": 275,
+        "home_spread": -7.0,
+        "spread_price": -115,
+        "total": 48.5,
+        "over_price": -108
       }
     }
   ],
@@ -967,7 +564,7 @@
       "point_diff": 22.0,
       "win_pct": 1.0,
       "offense_rank": 1,
-      "defense_rank": 25,
+      "defense_rank": 27,
       "differential_rank": 2
     },
     {
@@ -984,7 +581,7 @@
       "points_against": 7.0,
       "point_diff": 20.0,
       "win_pct": 1.0,
-      "offense_rank": 12,
+      "offense_rank": 13,
       "defense_rank": 1,
       "differential_rank": 3
     },
@@ -1003,7 +600,7 @@
       "point_diff": 18.0,
       "win_pct": 1.0,
       "offense_rank": 2,
-      "defense_rank": 12,
+      "defense_rank": 13,
       "differential_rank": 4
     },
     {
@@ -1021,7 +618,7 @@
       "point_diff": 17.0,
       "win_pct": 1.0,
       "offense_rank": 3,
-      "defense_rank": 10,
+      "defense_rank": 11,
       "differential_rank": 5
     },
     {
@@ -1038,7 +635,7 @@
       "points_against": 13.0,
       "point_diff": 14.0,
       "win_pct": 1.0,
-      "offense_rank": 11,
+      "offense_rank": 12,
       "defense_rank": 5,
       "differential_rank": 6
     },
@@ -1056,7 +653,7 @@
       "points_against": 10.0,
       "point_diff": 13.0,
       "win_pct": 1.0,
-      "offense_rank": 17,
+      "offense_rank": 18,
       "defense_rank": 3,
       "differential_rank": 7
     },
@@ -1074,9 +671,27 @@
       "points_against": 14.0,
       "point_diff": 12.0,
       "win_pct": 1.0,
-      "offense_rank": 14,
+      "offense_rank": 15,
       "defense_rank": 8,
       "differential_rank": 8
+    },
+    {
+      "id": "NYG",
+      "name": "New York Giants",
+      "abbr": "NYG",
+      "logo": null,
+      "conference": "NFC",
+      "wins": 1,
+      "losses": 0,
+      "ties": 0,
+      "games_played": 1,
+      "points_for": 28.0,
+      "points_against": 20.0,
+      "point_diff": 8.0,
+      "win_pct": 1.0,
+      "offense_rank": 11,
+      "defense_rank": 10,
+      "differential_rank": 9
     },
     {
       "id": "PIT",
@@ -1092,9 +707,9 @@
       "points_against": 13.0,
       "point_diff": 7.0,
       "win_pct": 1.0,
-      "offense_rank": 20,
+      "offense_rank": 22,
       "defense_rank": 7,
-      "differential_rank": 9
+      "differential_rank": 10
     },
     {
       "id": "CIN",
@@ -1111,8 +726,8 @@
       "point_diff": 6.0,
       "win_pct": 1.0,
       "offense_rank": 7,
-      "defense_rank": 16,
-      "differential_rank": 10
+      "defense_rank": 17,
+      "differential_rank": 11
     },
     {
       "id": "BUF",
@@ -1129,8 +744,8 @@
       "point_diff": 5.0,
       "win_pct": 1.0,
       "offense_rank": 5,
-      "defense_rank": 20,
-      "differential_rank": 11
+      "defense_rank": 22,
+      "differential_rank": 12
     },
     {
       "id": "SEA",
@@ -1146,9 +761,9 @@
       "points_against": 10.0,
       "point_diff": 3.0,
       "win_pct": 1.0,
-      "offense_rank": 24,
+      "offense_rank": 26,
       "defense_rank": 4,
-      "differential_rank": 12
+      "differential_rank": 13
     },
     {
       "id": "PHI",
@@ -1164,9 +779,9 @@
       "points_against": 22.0,
       "point_diff": 2.0,
       "win_pct": 1.0,
-      "offense_rank": 15,
-      "defense_rank": 11,
-      "differential_rank": 13
+      "offense_rank": 16,
+      "defense_rank": 12,
+      "differential_rank": 14
     },
     {
       "id": "DET",
@@ -1183,26 +798,8 @@
       "point_diff": 1.0,
       "win_pct": 1.0,
       "offense_rank": 8,
-      "defense_rank": 19,
-      "differential_rank": 14
-    },
-    {
-      "id": "DAL",
-      "name": "Dallas Cowboys",
-      "abbr": "DAL",
-      "logo": null,
-      "conference": "NFC",
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "games_played": 0,
-      "points_for": 0.0,
-      "points_against": 0.0,
-      "point_diff": 0.0,
-      "win_pct": 0,
-      "offense_rank": null,
-      "defense_rank": null,
-      "differential_rank": null
+      "defense_rank": 21,
+      "differential_rank": 15
     },
     {
       "id": "DEN",
@@ -1241,24 +838,6 @@
       "differential_rank": null
     },
     {
-      "id": "NYG",
-      "name": "New York Giants",
-      "abbr": "NYG",
-      "logo": null,
-      "conference": "NFC",
-      "wins": 0,
-      "losses": 0,
-      "ties": 0,
-      "games_played": 0,
-      "points_for": 0.0,
-      "points_against": 0.0,
-      "point_diff": 0.0,
-      "win_pct": 0,
-      "offense_rank": null,
-      "defense_rank": null,
-      "differential_rank": null
-    },
-    {
       "id": "NO",
       "name": "New Orleans Saints",
       "abbr": "NO",
@@ -1273,8 +852,8 @@
       "point_diff": -1.0,
       "win_pct": 0.0,
       "offense_rank": 10,
-      "defense_rank": 21,
-      "differential_rank": 15
+      "defense_rank": 23,
+      "differential_rank": 16
     },
     {
       "id": "WAS",
@@ -1290,9 +869,9 @@
       "points_against": 24.0,
       "point_diff": -2.0,
       "win_pct": 0.0,
-      "offense_rank": 19,
-      "defense_rank": 14,
-      "differential_rank": 16
+      "offense_rank": 20,
+      "defense_rank": 15,
+      "differential_rank": 17
     },
     {
       "id": "NE",
@@ -1308,9 +887,9 @@
       "points_against": 13.0,
       "point_diff": -3.0,
       "win_pct": 0.0,
-      "offense_rank": 26,
+      "offense_rank": 28,
       "defense_rank": 6,
-      "differential_rank": 17
+      "differential_rank": 18
     },
     {
       "id": "HOU",
@@ -1327,8 +906,8 @@
       "point_diff": -5.0,
       "win_pct": 0.0,
       "offense_rank": 9,
-      "defense_rank": 24,
-      "differential_rank": 18
+      "defense_rank": 26,
+      "differential_rank": 19
     },
     {
       "id": "TB",
@@ -1344,9 +923,9 @@
       "points_against": 33.0,
       "point_diff": -6.0,
       "win_pct": 0.0,
-      "offense_rank": 13,
-      "defense_rank": 22,
-      "differential_rank": 19
+      "offense_rank": 14,
+      "defense_rank": 24,
+      "differential_rank": 20
     },
     {
       "id": "ATL",
@@ -1362,9 +941,27 @@
       "points_against": 20.0,
       "point_diff": -7.0,
       "win_pct": 0.0,
-      "offense_rank": 22,
+      "offense_rank": 24,
       "defense_rank": 9,
-      "differential_rank": 20
+      "differential_rank": 21
+    },
+    {
+      "id": "DAL",
+      "name": "Dallas Cowboys",
+      "abbr": "DAL",
+      "logo": null,
+      "conference": "NFC",
+      "wins": 0,
+      "losses": 1,
+      "ties": 0,
+      "games_played": 1,
+      "points_for": 20.0,
+      "points_against": 28.0,
+      "point_diff": -8.0,
+      "win_pct": 0.0,
+      "offense_rank": 21,
+      "defense_rank": 20,
+      "differential_rank": 22
     },
     {
       "id": "LAC",
@@ -1380,9 +977,9 @@
       "points_against": 26.0,
       "point_diff": -12.0,
       "win_pct": 0.0,
-      "offense_rank": 21,
-      "defense_rank": 15,
-      "differential_rank": 21
+      "offense_rank": 23,
+      "defense_rank": 16,
+      "differential_rank": 23
     },
     {
       "id": "TEN",
@@ -1398,9 +995,9 @@
       "points_against": 23.0,
       "point_diff": -13.0,
       "win_pct": 0.0,
-      "offense_rank": 27,
-      "defense_rank": 13,
-      "differential_rank": 22
+      "offense_rank": 29,
+      "defense_rank": 14,
+      "differential_rank": 24
     },
     {
       "id": "MIA",
@@ -1416,9 +1013,9 @@
       "points_against": 27.0,
       "point_diff": -14.0,
       "win_pct": 0.0,
-      "offense_rank": 23,
-      "defense_rank": 18,
-      "differential_rank": 23
+      "offense_rank": 25,
+      "defense_rank": 19,
+      "differential_rank": 25
     },
     {
       "id": "GB",
@@ -1434,9 +1031,9 @@
       "points_against": 39.0,
       "point_diff": -17.0,
       "win_pct": 0.0,
-      "offense_rank": 18,
-      "defense_rank": 26,
-      "differential_rank": 24
+      "offense_rank": 19,
+      "defense_rank": 28,
+      "differential_rank": 26
     },
     {
       "id": "IND",
@@ -1452,9 +1049,9 @@
       "points_against": 41.0,
       "point_diff": -18.0,
       "win_pct": 0.0,
-      "offense_rank": 16,
-      "defense_rank": 27,
-      "differential_rank": 25
+      "offense_rank": 17,
+      "defense_rank": 29,
+      "differential_rank": 27
     },
     {
       "id": "LA",
@@ -1470,9 +1067,9 @@
       "points_against": 27.0,
       "point_diff": -20.0,
       "win_pct": 0.0,
-      "offense_rank": 28,
-      "defense_rank": 17,
-      "differential_rank": 26
+      "offense_rank": 30,
+      "defense_rank": 18,
+      "differential_rank": 28
     },
     {
       "id": "CAR",
@@ -1489,8 +1086,8 @@
       "point_diff": -22.0,
       "win_pct": 0.0,
       "offense_rank": 4,
-      "defense_rank": 28,
-      "differential_rank": 27
+      "defense_rank": 30,
+      "differential_rank": 29
     },
     {
       "id": "CLE",
@@ -1506,9 +1103,9 @@
       "points_against": 34.0,
       "point_diff": -24.0,
       "win_pct": 0.0,
-      "offense_rank": 25,
-      "defense_rank": 23,
-      "differential_rank": 28
+      "offense_rank": 27,
+      "defense_rank": 25,
+      "differential_rank": 30
     }
   ],
   "players": [
@@ -2237,7 +1834,20 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass+Rush Yds": 248.5,
+          "Pass Yards": 229.5,
+          "Longest Completion": 34.5,
+          "Pass Attempts": 34.5,
+          "Pass Comp": 21.5,
+          "Fantasy Score": 17.0,
+          "Rush Yards": 16.5,
+          "Longest Rush": 9.5,
+          "Sacks Taken": 1.5,
+          "INT": 0.5,
+          "Completion Percentage": 62.1,
+          "Comp in 1st 10 Pass Att": 6.0
+        },
         "Underdog": {}
       }
     },
@@ -2696,7 +2306,20 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass+Rush Yds": 240.5,
+          "Pass Yards": 224.5,
+          "Longest Completion": 34.5,
+          "Pass Attempts": 33.0,
+          "Pass Comp": 21.0,
+          "Fantasy Score": 16.5,
+          "Rush Yards": 13.5,
+          "Longest Rush": 9.5,
+          "Rush Atts": 3.5,
+          "Sacks Taken": 3.0,
+          "Completion Percentage": 66.6,
+          "Comp in 1st 10 Pass Att": 6.5
+        },
         "Underdog": {}
       }
     },
@@ -2723,7 +2346,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 252.5
+        },
         "Underdog": {}
       }
     },
@@ -3074,7 +2699,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 227.5,
+          "Rush Yards": 26.5
+        },
         "Underdog": {}
       }
     },
@@ -3587,7 +3215,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 242.5,
+          "Rush Yards": 18.5
+        },
         "Underdog": {}
       }
     },
@@ -4613,7 +4244,17 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush+Rec Yds": 58.5,
+          "Rush Yards": 50.5,
+          "Rush Atts": 12.5,
+          "Longest Rush": 12.5,
+          "Rec Yards": 3.5,
+          "Longest Rec": 3.5,
+          "Rush Yards in First 5 Attempts": 19.5,
+          "Fantasy Score": 8.5,
+          "Rush Yards Per Carry": 4.0
+        },
         "Underdog": {}
       }
     },
@@ -4667,7 +4308,17 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush+Rec Yds": 38.5,
+          "Rush Yards": 18.5,
+          "Rec Yards": 16.5,
+          "Longest Rec": 10.5,
+          "Fantasy Score": 7.5,
+          "Yards on 1st Rec": 4.5,
+          "Yards on 1st Rush": 3.5,
+          "Rec Targets": 3.0,
+          "Recs": 2.5
+        },
         "Underdog": {}
       }
     },
@@ -5153,7 +4804,14 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush+Rec Yds": 12.5,
+          "Rec Yards": 6.5,
+          "Longest Rec": 5.5,
+          "Longest Rush": 3.5,
+          "Rush Yards": 3.5,
+          "Fantasy Score": 2.5
+        },
         "Underdog": {}
       }
     },
@@ -5180,7 +4838,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 12.5
+        },
         "Underdog": {}
       }
     },
@@ -5207,7 +4867,21 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush+Rec Yds": 85.5,
+          "Rush Yards": 61.5,
+          "Rec Yards": 19.5,
+          "Rush Atts": 16.0,
+          "Longest Rush": 15.5,
+          "Longest Rec": 9.5,
+          "Yards on 1st Rec": 4.5,
+          "Rec Targets": 3.5,
+          "Recs": 3.0,
+          "Player TDs": 0.5,
+          "Rush Yards in First 5 Attempts": 18.5,
+          "Fantasy Score": 14.0,
+          "Rush Yards Per Carry": 3.6
+        },
         "Underdog": {}
       }
     },
@@ -8420,7 +8094,13 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 41.5,
+          "Longest Rec": 18.5,
+          "Yards on 1st Rec": 10.5,
+          "Fantasy Score": 10.0,
+          "Rec Targets": 6.0
+        },
         "Underdog": {}
       }
     },
@@ -8447,7 +8127,14 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 57.5,
+          "Longest Rec": 21.5,
+          "Fantasy Score": 12.0,
+          "Yards on 1st Rec": 11.5,
+          "Rec Targets": 6.5,
+          "Recs": 4.5
+        },
         "Underdog": {}
       }
     },
@@ -8501,7 +8188,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 11.5
+        },
         "Underdog": {}
       }
     },
@@ -8528,7 +8217,12 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 24.5,
+          "Longest Rec": 13.5,
+          "Rec Targets": 3.5,
+          "Fantasy Score": 6.0
+        },
         "Underdog": {}
       }
     },
@@ -9419,7 +9113,13 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 55.5,
+          "Longest Rec": 20.5,
+          "Fantasy Score": 13.5,
+          "Yards on 1st Rec": 8.5,
+          "Rec Targets": 8.0
+        },
         "Underdog": {}
       }
     },
@@ -9446,7 +9146,12 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 18.5,
+          "Longest Rec": 14.5,
+          "Rec Targets": 2.5,
+          "Fantasy Score": 4.0
+        },
         "Underdog": {}
       }
     },
@@ -9473,7 +9178,14 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush+Rec Yds": 39.5,
+          "Rec Yards": 34.5,
+          "Longest Rec": 17.5,
+          "Fantasy Score": 8.5,
+          "Rec Targets": 5.5,
+          "Rush Atts": 0.5
+        },
         "Underdog": {}
       }
     },
@@ -9500,7 +9212,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 51.5
+        },
         "Underdog": {}
       }
     },
@@ -9581,7 +9295,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 91.5
+        },
         "Underdog": {}
       }
     },
@@ -11228,7 +10944,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 83.5
+        },
         "Underdog": {}
       }
     },
@@ -11444,7 +11162,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 50.5
+        },
         "Underdog": {}
       }
     },
@@ -12875,7 +12595,11 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 6.5,
+          "Longest Rec": 5.5,
+          "Fantasy Score": 2.5
+        },
         "Underdog": {}
       }
     },
@@ -12929,7 +12653,12 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 22.5,
+          "Longest Rec": 12.5,
+          "Rec Targets": 4.0,
+          "Fantasy Score": 6.0
+        },
         "Underdog": {}
       }
     },
@@ -13577,7 +13306,12 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 9.5,
+          "Longest Rec": 7.5,
+          "Rec Targets": 1.5,
+          "Fantasy Score": 2.5
+        },
         "Underdog": {}
       }
     },
@@ -13604,7 +13338,14 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rec Yards": 41.5,
+          "Longest Rec": 17.5,
+          "Fantasy Score": 10.0,
+          "Yards on 1st Rec": 7.5,
+          "Rec Targets": 6.0,
+          "Recs": 4.0
+        },
         "Underdog": {}
       }
     },
