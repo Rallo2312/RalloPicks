@@ -950,6 +950,14 @@ body{background:
 .reference-home-toolbar{display:grid;grid-template-columns:auto auto auto auto minmax(180px,1fr) auto;gap:7px;align-items:center;padding:8px;margin-bottom:10px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:#06111f}.reference-home-toolbar>button,.reference-home-toolbar select{height:38px;border-radius:9px;border:1px solid rgba(255,255,255,.08);background:#0a1728;color:#dfe7f2;padding:0 11px;font-size:8px;font-weight:900}.reference-home-toolbar>button.active{background:linear-gradient(135deg,#173922,#0c2418);border-color:rgba(61,239,121,.45);color:#e9ff64}.reference-range-tabs{display:flex;border:1px solid rgba(255,255,255,.08);border-radius:9px;overflow:hidden}.reference-range-tabs span{padding:10px 11px;font-size:8px;color:#95a3b7;border-left:1px solid rgba(255,255,255,.05)}.reference-range-tabs span:first-child{border-left:0}.reference-range-tabs .active{background:#16201a;color:#ecff59;box-shadow:inset 0 0 0 1px rgba(236,255,89,.35)}
 .reference-player-list{display:grid;gap:9px}.reference-player-card{display:grid;grid-template-columns:minmax(230px,1.4fr) minmax(220px,1fr) 110px 110px 82px;gap:9px;align-items:center;padding:11px 12px;border-radius:14px;background:linear-gradient(145deg,#081827,#06111e);border:1px solid rgba(255,255,255,.08);cursor:pointer}.reference-player-card:hover{border-color:rgba(61,239,121,.28)}.reference-player-main{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:center}.reference-player-main .player-avatar,.reference-player-main .nfl-headshot{width:56px!important;height:56px!important}.reference-player-main b{display:block;font-size:13px}.reference-player-main small{display:block;font-size:8px;color:#94a1b4;margin-top:3px}.reference-prop-box{padding:10px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:#091627}.reference-prop-box span{display:block;font-size:8px;color:#cad4e2}.reference-prop-box b{display:inline-block;margin-top:6px;padding:5px 8px;border-radius:7px;background:rgba(57,239,121,.08);color:#6ef2a2;font-size:9px}.reference-side{padding:10px;text-align:center;border-radius:10px;border:1px solid rgba(255,255,255,.07);background:#0b1727}.reference-side.over{background:linear-gradient(145deg,rgba(10,75,48,.8),#0a1b18);border-color:rgba(57,239,121,.25)}.reference-side span,.reference-side small{display:block;font-size:7px;color:#9aabbc}.reference-side b{display:block;font-size:13px;margin:4px 0}.reference-ring{--p:50;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#48ef8b calc(var(--p)*1%),#2b3542 0);position:relative}.reference-ring:after{content:"";position:absolute;inset:7px;border-radius:50%;background:#071321}.reference-ring b,.reference-ring span{position:relative;z-index:1}.reference-ring b{font-size:12px;color:#6cf2a3}.reference-ring span{font-size:5px;color:#8f9caf}.reference-metrics{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.reference-metrics div{padding:7px;text-align:center;background:#081421;border:1px solid rgba(255,255,255,.055);border-radius:8px}.reference-metrics span{display:block;font-size:6px;color:#7f8fa4}.reference-metrics b{display:block;font-size:10px;color:#60ee9b;margin-top:2px}
 @media(max-width:900px){.reference-home-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.reference-range-tabs{grid-column:1/-1}.reference-player-card{grid-template-columns:1fr 1fr}.reference-player-main{grid-column:1/-1}.reference-ring{width:58px;justify-self:end}.reference-metrics{grid-template-columns:repeat(5,1fr)}}@media(max-width:620px){.reference-player-card{grid-template-columns:1fr 1fr}.reference-prop-box{grid-column:1/-1}.reference-ring{display:none}.reference-metrics{grid-template-columns:repeat(3,1fr)}.reference-home-toolbar>button:nth-child(3),.reference-home-toolbar>button:nth-child(4){display:none}}
+</style><style id="home-is-prop-lab-final">
+#mlbHomeView>.app-home-grid,#nflHomeView>.app-home-grid,
+#mlbHomeView>.dashboard-grid,#nflHomeView>.dashboard-grid,
+#mlbHomeView>.home-dashboard-extra,#nflHomeView>.home-dashboard-extra{display:none!important}
+#mlbHomeView,#nflHomeView{min-height:70vh}
+#mlbHomeView .home-prop-lab,#nflHomeView .home-prop-lab{margin-bottom:12px}
+#mlbHomeView .reference-home-toolbar,#nflHomeView .reference-home-toolbar{margin-top:10px}
+#mlbHomeView .reference-player-list,#nflHomeView .reference-player-list{margin-top:10px}
 </style></head>
 <body>
 <div class="app">
@@ -960,7 +968,7 @@ body{background:
   </header>
 
   <nav class="nav app-main-nav" id="mlbNav">
-    <button class="active" data-view="home">🏠 Today</button>
+    <button class="active" data-view="home">🏠 Home</button>
     <button data-view="top20">🔥 HR Board</button>
     <button data-view="rankings">📊 Rankings</button>
     <button data-view="batterlab">🔎 Player Lab</button>
@@ -968,7 +976,7 @@ body{background:
     <button data-view="moneyline">💵 Moneyline</button>
   </nav>
   <nav class="nav app-main-nav" id="nflNav" hidden>
-    <button class="active" data-nfl-view="home">🏠 Today</button>
+    <button class="active" data-nfl-view="home">🏠 Home</button>
     <button data-nfl-view="research">🔥 Research</button>
     <button data-nfl-view="players">🔎 Player Lab</button>
     <button data-nfl-view="ranks">📊 Rankings</button>
@@ -1138,7 +1146,7 @@ body{background:
   </main>
 
   <nav class="app-bottom-nav" id="appBottomNav" aria-label="App navigation">
-    <button data-app-route="home">🏠<span>Today</span></button>
+    <button data-app-route="home">🏠<span>Home</span></button>
     <button data-app-route="research">🔥<span>Research</span></button>
     <button data-app-route="lab">🔎<span>Lab</span></button>
     <button data-app-route="board">⭐<span>Board</span></button>
@@ -2148,8 +2156,32 @@ async function loadNFL(force=false){
  if(state.nflLoaded&&!force){renderNFL();return}
  try{const response=await fetch(`data/nfl.json?d=${Date.now()}`);if(!response.ok)throw new Error(response.status);const data=await response.json();state.nfl={games:data.games||[],teams:data.teams||[],players:data.players||[],season:data.season,updatedAt:data.updated_at};state.nflLoaded=true;window.researchFresh?.('nfl',data.updated_at);renderNFL();if(state.nflCurrentPlayer)openNFLPlayer(state.nflCurrentPlayer,false)}catch(e){window.researchFailed?.('nfl');['nflMatchups','nflMoneylines','nflRankGrid','nflRankQuick','nflStandings','nflPlayerResults'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<div class="nfl-empty-note">NFL research is temporarily unavailable. Please refresh in a few minutes.</div>'})}
 }
-function switchNflView(view){if(!requireMembership())return;document.querySelectorAll('#nflNav button').forEach(button=>button.classList.toggle('active',button.dataset.nflView===view));['nflPlayersView','nflRanksView','nflMoneylineView','nflStandingsView'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none'});const map={players:'nflPlayersView',ranks:'nflRanksView',moneyline:'nflMoneylineView',standings:'nflStandingsView'};const target=map[view]||map.players;const el=document.getElementById(target);if(el)el.style.display='block'}
-function switchView(v){if(!requireMembership())return;if(v!=='batterlab')document.body.classList.remove('player-profile-open');document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));['matchupsView','moneylineView','batterlabView','batterRankingsView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});if(v==='matchups')document.getElementById('matchupsView').style.display='block';if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active')}if(v==='batterlab')document.getElementById('batterlabView').style.display='block';if(v==='rankings'){document.getElementById('batterRankingsView').style.display='block';loadDailyBatterRanks()}if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR();loadDailyBatterRanks().then(()=>{window.renderSleeperFinder?.();window.renderHrMatchupSpotlights?.()})}}
+function switchNflView(view){
+ if(!requireMembership())return;
+ document.querySelectorAll('#nflNav button').forEach(button=>button.classList.toggle('active',button.dataset.nflView===view));
+ ['nflHomeView','nflBoardView','nflResearchView','nflPlayersView','nflRanksView','nflMoneylineView','nflStandingsView'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none'});
+ const map={home:'nflHomeView',research:'nflResearchView',players:'nflPlayersView',ranks:'nflRanksView',board:'nflBoardView',moneyline:'nflMoneylineView',standings:'nflStandingsView'};
+ const target=map[view]||'nflHomeView',el=document.getElementById(target);if(el)el.style.display='block';
+ if(view==='home'){renderReferenceHomeCards();return}
+ if(view==='research'){renderNFLResearch();renderNFLAnytimeTd();return}
+ if(view==='players'){renderNFLPlayerResults(document.getElementById('nflPlayerSearch')?.value||'');return}
+ if(view==='ranks'){renderNFLRanks();return}
+ if(view==='standings'){renderNFLStandings();return}
+}
+function switchView(v){
+ if(!requireMembership())return;
+ if(v!=='batterlab')document.body.classList.remove('player-profile-open');
+ document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));
+ ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
+ if(v==='home'){document.getElementById('mlbHomeView').style.display='block';loadDailyBatterRanks().then(()=>renderReferenceHomeCards());return}
+ if(v==='board'){document.getElementById('myBoardView').style.display='block';renderSaved();return}
+ if(v==='matchups'){document.getElementById('matchupsView').style.display='block';return}
+ if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active');return}
+ if(v==='batterlab'){document.getElementById('batterlabView').style.display='block';return}
+ if(v==='rankings'){document.getElementById('batterRankingsView').style.display='block';loadDailyBatterRanks();return}
+ if(v==='top20'){document.getElementById('top20View').style.display='block';loadTop20HR();loadDailyBatterRanks().then(()=>{window.renderSleeperFinder?.();window.renderHrMatchupSpotlights?.()});return}
+ document.getElementById('mlbHomeView').style.display='block';
+}
 
 
 document.querySelectorAll('#mlbNav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
