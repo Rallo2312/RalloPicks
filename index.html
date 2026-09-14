@@ -822,6 +822,9 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
 .hidden-edge-card{grid-column:1/-1;padding:12px;border:1px solid rgba(91,225,181,.22);border-radius:14px;background:linear-gradient(145deg,#081722,#0a1221)}.hidden-edge-card>small{display:block;font-size:6px;color:#738198;margin-top:8px}.hidden-edge-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.hidden-edge-grid article{padding:9px;border-radius:9px;background:#0d1929}.hidden-edge-grid b{display:block;font-size:9px}.hidden-edge-grid span,.hidden-edge-grid small{display:block;font-size:7px;color:#8391a7;margin-top:3px}
 .final-card-builder{margin-bottom:12px;padding:11px;border:1px solid rgba(255,205,84,.28);border-radius:14px;background:linear-gradient(145deg,#15180e,#0b1321)}.final-card-builder p{font-size:8px;color:#8d99ac;line-height:1.5}.final-card-grid{display:grid;gap:6px}.final-card-grid article{display:grid;grid-template-columns:28px minmax(0,1fr) 42px;gap:7px;align-items:center;padding:8px;border-radius:9px;background:#101927}.final-card-grid strong{display:block;font-size:10px}.final-card-grid span{display:block;font-size:7px;color:#8592a8;margin-top:2px}.final-card-grid em{font-style:normal;color:#ffd665;font-size:14px;font-weight:1000;text-align:center}
 @media(max-width:620px){.regression-card{grid-template-columns:1fr}.hidden-edge-grid{grid-template-columns:1fr}}
+<style>
+.nfl-deep-ranks{display:grid;gap:7px;margin:9px 0 14px}.nfl-deep-card{display:grid;grid-template-columns:42px 42px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px;border-radius:11px;background:#0b1628;border:1px solid rgba(255,255,255,.07);cursor:pointer}.nfl-deep-card:hover{border-color:rgba(105,242,39,.25)}.nfl-deep-rank{font-size:14px;font-weight:1000;text-align:center}.nfl-deep-rank small{display:block;font-size:6px;color:#7f8ca1;margin-top:2px}.nfl-deep-card strong{display:block;font-size:10px}.nfl-deep-card span,.nfl-deep-card small{display:block;font-size:7px;color:#8492a7;margin-top:2px}.nfl-deep-score{text-align:right}.nfl-deep-score b{display:block;font-size:17px;color:#fff}.nfl-deep-score span{font-size:6px;color:#7ee7aa}.nfl-factor-line{font-size:6px!important;color:#9db0c8!important}.nfl-top6-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:8px 0 12px}.nfl-top6-card{padding:10px;border-radius:11px;background:linear-gradient(145deg,#101b30,#0a1424);border:1px solid rgba(105,242,39,.16)}.nfl-top6-card b{display:block;font-size:11px}.nfl-top6-card span{display:block;font-size:7px;color:#8795aa;margin-top:3px}.nfl-team-section{margin-bottom:10px}.nfl-team-section>h4{margin:0 0 5px;padding:7px 9px;border-radius:8px;background:#0b1728;font-size:9px}
+@media(max-width:620px){.nfl-top6-grid{grid-template-columns:1fr 1fr}.nfl-deep-card{grid-template-columns:34px 36px minmax(0,1fr) auto}}
 </style></head>
 <body>
 <div class="app">
@@ -840,6 +843,7 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
   </nav>
   <nav class="nav app-main-nav" id="nflNav" hidden>
     <button class="active" data-nfl-view="home">🏠 Today</button>
+    <button data-nfl-view="research">🔥 Research</button>
     <button data-nfl-view="players">🔎 Player Lab</button>
     <button data-nfl-view="ranks">📊 Rankings</button>
     <button data-nfl-view="board">⭐ My Board</button>
@@ -936,6 +940,24 @@ body.player-profile-open .analytics-card{margin-bottom:12px!important}
     <section class="panel center-col">
       <div class="board" id="nflHomeView"><div id="nflHomeDashboard"><div class="empty">Building today’s NFL dashboard…</div></div></div>
       <div class="board hidden-view" id="nflBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved props across MLB + NFL</span></div><span>Device-local</span></div><div id="nflBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
+      <div class="board hidden-view" id="nflResearchView">
+        <section class="hr-hub-hero nfl-research-hero">
+          <div><small>RALLOPICKS • NFL RESEARCH HUB</small><h2>Today’s NFL Player Board</h2><p>Every active skill player ranked by matchup, role, recent usage, opponent defense and available lines.</p></div>
+          <div class="hr-hub-search"><span>⌕</span><input id="nflResearchSearch" placeholder="Search player, team or position…" oninput="renderNFLResearch(this.value)"></div>
+        </section>
+        <nav class="hr-hub-nav">
+          <button onclick="scrollNFLResearch('nflTopSix')">Top 6</button>
+          <button onclick="scrollNFLResearch('nflOverallRanks')">Overall</button>
+          <button onclick="scrollNFLResearch('nflTeamRanks')">Team Rank</button>
+          <button onclick="scrollNFLResearch('nflSleeperBoard')">Sleepers</button>
+        </nav>
+        <div id="nflTopSix"></div>
+        <div class="rank-view-tabs"><button id="nflOverallRankTab" class="active" onclick="setNFLResearchRankView('overall')">🏆 Overall Rank</button><button id="nflTeamRankTab" onclick="setNFLResearchRankView('team')">🏈 Team Rank</button></div>
+        <div id="nflOverallRanks" class="nfl-deep-ranks"></div>
+        <div id="nflTeamRanks" class="nfl-deep-ranks" style="display:none"></div>
+        <div class="section-title sleeper-title"><div><h2>💎 NFL Sleeper Finder</h2><span>Under-the-radar players with favorable role + matchup combinations</span></div><span>Model sleepers</span></div>
+        <div id="nflSleeperBoard" class="nfl-player-results"></div>
+      </div>
       <div class="board hidden-view" id="nflRanksView">
         <div class="section-title"><div><h2>Offense & Defense Rankings</h2><span>Points per game and points allowed per game • updates after completed games</span></div><span>1–32</span></div>
         <div class="nfl-rank-grid" id="nflRankGrid"><div class="empty">Loading ranks…</div></div>
@@ -1764,6 +1786,47 @@ function renderNFLRanks(){
  const ranked=state.nfl.teams.filter(team=>team.games_played>0).sort((a,b)=>(a.differential_rank||99)-(b.differential_rank||99));
  document.getElementById('nflRankQuick').innerHTML=ranked.length?`<div class="nfl-rank-row nfl-rank-head"><span></span><span style="text-align:left">TEAM</span><span>OFF</span><span>DEF</span></div>${ranked.slice(0,10).map(team=>`<div class="nfl-rank-row">${teamBadge(team.abbr,team.id,'small')}<b>${esc(team.abbr)}</b>${nflRankPill(team.offense_rank,'Scoring offense rank')}${nflRankPill(team.defense_rank,'Scoring defense rank')}</div>`).join('')}`:'<div class="nfl-empty-note">Regular-season ranks activate after Week 1 results. No preseason numbers are being passed off as regular-season research.</div>';
  document.getElementById('nflRankGrid').innerHTML=state.nfl.teams.map(team=>`<div class="nfl-team-rank-card">${teamBadge(team.abbr,team.id)}<div><strong>${esc(team.name)}</strong><small>${nflRecord(team)} • ${nflPerGame(team.point_diff,team.games_played)} diff/game</small></div>${nflRankPill(team.offense_rank,'Scoring offense rank')}${nflRankPill(team.defense_rank,'Scoring defense rank')}${nflRankPill(team.differential_rank,'Point differential rank')}</div>`).join('');
+}
+let nflResearchRankView='overall';
+function nflResearchScore(p){
+ const opp=nflOpponentFor(p.team),def=opp?.team?.defense_rank||16.5,recent=p.recent||[],s=p.season||{};
+ const games=recent.slice(0,5),usage=games.length?games.reduce((a,g)=>a+Number(g.targets||0)+Number(g.rush_attempts||0)+Number(g.pass_attempts||0)*.12,0)/games.length:0;
+ const recentProd=games.length?games.reduce((a,g)=>a+Number(g.rec_yards||0)+Number(g.rush_yards||0)+Number(g.pass_yards||0)*.18+Number(g.receptions||0)*3+Number(g.pass_tds||0)*12,0)/games.length:0;
+ const seasonUsage=p.position==='QB'?Number(s.pass_attempts||0)+Number(s.rush_attempts||0):Number(s.targets||0)+Number(s.rush_attempts||0);
+ const matchup=clamp((def-8)/24*24,0,24),role=clamp(usage*2.2,0,24),form=clamp(recentProd/8,0,18),seasonRole=clamp(seasonUsage/45,0,14);
+ const lineMarkets=nflMarkets[p.position]||[],verified=lineMarkets.filter(([label])=>p.lines?.[state.platform]?.[label]!=null).length;
+ const market=clamp(verified*3,0,9),score=clamp(18+matchup+role+form+seasonRole+market,10,99);
+ return {score,breakdown:{matchup:Math.round(matchup),role:Math.round(role),form:Math.round(form),season:Math.round(seasonRole),market:Math.round(market)},opponent:opp?.side?.abbr||'TBD'};
+}
+function nflResearchRows(){
+ const rows=(state.nfl.players||[]).filter(p=>['QB','RB','WR','TE'].includes(p.position)).map(p=>({...p,_r:nflResearchScore(p)})).sort((a,b)=>b._r.score-a._r.score);
+ rows.forEach((p,i)=>p.overallRank=i+1);
+ const teams=new Map();for(const p of rows){if(!teams.has(p.team))teams.set(p.team,[]);teams.get(p.team).push(p)}
+ for(const arr of teams.values())arr.forEach((p,i)=>p.teamRank=i+1);
+ return rows;
+}
+function nflDeepCard(p,teamMode=false){
+ const r=p._r;
+ return '<article class="nfl-deep-card" onclick="openNFLPlayer(\''+esc(p.id).replace(/'/g,"\\'")+'\');switchNflView(\'players\')"><div class="nfl-deep-rank">#'+(teamMode?p.teamRank:p.overallRank)+'<small>'+(teamMode?'OVERALL #'+p.overallRank:'TEAM #'+p.teamRank)+'</small></div>'+nflPlayerImage(p)+'<div><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' • '+esc(p.team)+' • vs '+esc(r.opponent)+'</span><small class="nfl-factor-line">Matchup '+r.breakdown.matchup+' • Role '+r.breakdown.role+' • Recent '+r.breakdown.form+' • Season '+r.breakdown.season+' • Market '+r.breakdown.market+'</small></div><div class="nfl-deep-score"><b>'+Math.round(r.score)+'</b><span>NFL SCORE</span></div></article>';
+}
+window.setNFLResearchRankView=function(view){
+ nflResearchRankView=view==='team'?'team':'overall';
+ document.getElementById('nflOverallRankTab')?.classList.toggle('active',nflResearchRankView==='overall');
+ document.getElementById('nflTeamRankTab')?.classList.toggle('active',nflResearchRankView==='team');
+ document.getElementById('nflOverallRanks').style.display=nflResearchRankView==='overall'?'grid':'none';
+ document.getElementById('nflTeamRanks').style.display=nflResearchRankView==='team'?'block':'none';
+}
+window.scrollNFLResearch=function(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+window.renderNFLResearch=function(query=''){
+ const q=String(query||document.getElementById('nflResearchSearch')?.value||'').trim().toLowerCase(),all=nflResearchRows(),rows=all.filter(p=>!q||(p.name+' '+p.team+' '+p.position).toLowerCase().includes(q));
+ const top=all.filter(p=>p._r.score>=68).slice(0,6);
+ const topHost=document.getElementById('nflTopSix');if(topHost)topHost.innerHTML='<div class="hr-hub-section-label"><div><b>🔥 Top NFL Research</b><span>Best matchup + role combinations today</span></div></div><div class="nfl-top6-grid">'+(top.length?top.map((p,i)=>'<article class="nfl-top6-card"><b>#'+(i+1)+' '+esc(p.name)+'</b><span>'+esc(p.position)+' • '+esc(p.team)+' • vs '+esc(p._r.opponent)+' • Score '+Math.round(p._r.score)+'</span></article>').join(''):'<div class="empty">No strong NFL research plays qualify yet.</div>')+'</div>';
+ const overall=document.getElementById('nflOverallRanks');if(overall)overall.innerHTML=rows.map(p=>nflDeepCard(p,false)).join('')||'<div class="empty">No players match that search.</div>';
+ const teams=new Map();for(const p of rows){if(!teams.has(p.team))teams.set(p.team,[]);teams.get(p.team).push(p)}
+ const teamHost=document.getElementById('nflTeamRanks');if(teamHost)teamHost.innerHTML=[...teams.entries()].sort().map(([team,arr])=>'<section class="nfl-team-section"><h4>🏈 '+esc(team)+' PLAYER RANK</h4>'+arr.map(p=>nflDeepCard(p,true)).join('')+'</section>').join('');
+ const sleeper=all.filter(p=>p.overallRank>6&&p._r.score>=55&&p._r.breakdown.role>=8).slice(0,8);
+ const sh=document.getElementById('nflSleeperBoard');if(sh)sh.innerHTML=sleeper.map(nflPlayerCard).join('')||'<div class="empty">No sleeper profiles qualify yet.</div>';
+ setNFLResearchRankView(nflResearchRankView);
 }
 function renderNFLStandings(){
  const conferences=[...new Set(state.nfl.teams.map(team=>team.conference))];
