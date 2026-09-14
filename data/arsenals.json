@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T17:25:48.229506+00:00",
+  "updated_at": "2026-09-14T21:25:33.795830+00:00",
   "season": 2026,
   "source": "Baseball Savant pitch arsenal + pitch movement leaderboards",
   "pitchers": {
@@ -109216,87 +109216,6 @@
           "homeRuns": 0
         }
       ]
-    },
-    "669200": {
-      "vsPitch": [
-        {
-          "code": "FF",
-          "type": "4-Seam Fastball",
-          "pitches": 40,
-          "usage": 41.2,
-          "avg": 0.111,
-          "slg": 0.111,
-          "whiff": 33.3,
-          "hardHit": 0.0,
-          "homeRuns": 0
-        },
-        {
-          "code": "SL",
-          "type": "Slider",
-          "pitches": 22,
-          "usage": 22.7,
-          "avg": 0.25,
-          "slg": 0.5,
-          "whiff": 30.0,
-          "hardHit": 66.7,
-          "homeRuns": 0
-        },
-        {
-          "code": "SI",
-          "type": "Sinker",
-          "pitches": 13,
-          "usage": 13.4,
-          "avg": 0.0,
-          "slg": 0.0,
-          "whiff": 0.0,
-          "hardHit": 33.3,
-          "homeRuns": 0
-        },
-        {
-          "code": "CU",
-          "type": "Curveball",
-          "pitches": 9,
-          "usage": 9.3,
-          "avg": 1.0,
-          "slg": 1.0,
-          "whiff": 83.3,
-          "hardHit": 0.0,
-          "homeRuns": 0
-        },
-        {
-          "code": "CH",
-          "type": "Changeup",
-          "pitches": 6,
-          "usage": 6.2,
-          "avg": 0.0,
-          "slg": 0.0,
-          "whiff": 0.0,
-          "hardHit": 100.0,
-          "homeRuns": 0
-        },
-        {
-          "code": "FS",
-          "type": "Split-Finger",
-          "pitches": 3,
-          "usage": 3.1,
-          "avg": 0.0,
-          "slg": 0.0,
-          "whiff": 0.0,
-          "hardHit": 0.0,
-          "homeRuns": 0
-        },
-        {
-          "code": "ST",
-          "type": "Sweeper",
-          "pitches": 3,
-          "usage": 3.1,
-          "avg": 0.0,
-          "slg": 0.0,
-          "whiff": 100.0,
-          "hardHit": null,
-          "homeRuns": 0
-        }
-      ]
     }
   },
   "recentContact": {
@@ -113245,19 +113164,6 @@
         7
       ]
     },
-    "657675": {
-      "bbe": 1,
-      "avgEV": 85.5,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
-      "bestPitchTypes": [
-        "CU"
-      ],
-      "hotZones": [
-        7
-      ]
-    },
     "701785": {
       "bbe": 23,
       "avgEV": 77.7,
@@ -113754,6 +113660,23 @@
       ],
       "hotZones": [
         1
+      ]
+    },
+    "664034": {
+      "bbe": 18,
+      "avgEV": 86.9,
+      "hardHitPct": 38.9,
+      "barrelProxyPct": 16.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        7,
+        8,
+        2
       ]
     },
     "665966": {
