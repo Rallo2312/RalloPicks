@@ -2141,8 +2141,18 @@ function nflRefCard(p){
  '<div class="reference-metrics"><div><span>L10</span><b>'+(rr.over==null?'—':Math.round(rr.over*100)+'%')+'</b></div><div><span>Role</span><b>'+Math.round(rr.role)+'</b></div><div><span>Form</span><b>'+Math.round(rr.form)+'</b></div><div><span>Matchup</span><b>'+Math.round(rr.matchup)+'</b></div><div><span>Team Rank</span><b>#'+(p.teamRank||'—')+'</b></div></div></article>';
 }
 window.renderReferenceHomeCards=function(){
- const mh=document.getElementById('mlbReferencePlayers');if(mh){const rows=(state.dailyBatterRanks||[]).slice(0,8);mh.innerHTML=rows.length?rows.map(mlbRefCard).join(''):'<div class="empty">Building MLB player rows…</div>'}
- const nh=document.getElementById('nflReferencePlayers');if(nh){const rows=nflResearchRows().slice(0,8);nh.innerHTML=rows.length?rows.map(nflRefCard).join(''):'<div class="empty">Building NFL player rows…</div>'}
+ const mh=document.getElementById('mlbReferencePlayers');
+ if(mh){
+   const rows=(state.dailyBatterRanks||[]).slice(0,8);
+   mh.innerHTML=rows.length?rows.map(mlbRefCard).join(''):'<div class="empty">Loading MLB player rows…</div>';
+   if(!rows.length&&!state.dailyRanksLoading){loadDailyBatterRanks().then(()=>{const fresh=(state.dailyBatterRanks||[]).slice(0,8);mh.innerHTML=fresh.length?fresh.map(mlbRefCard).join(''):'<div class="nfl-empty-note">MLB rows are waiting on today’s slate data. Try refresh in a moment.</div>'}).catch(()=>{mh.innerHTML='<div class="nfl-empty-note">MLB player rows could not load. Refresh once.</div>'})}
+ }
+ const nh=document.getElementById('nflReferencePlayers');
+ if(nh){
+   const rows=state.nflLoaded?nflResearchRows().slice(0,8):[];
+   nh.innerHTML=rows.length?rows.map(nflRefCard).join(''):'<div class="empty">Loading NFL player rows…</div>';
+   if(!rows.length&&!state.nflLoaded){loadNFL().then(()=>{const fresh=nflResearchRows().slice(0,8);nh.innerHTML=fresh.length?fresh.map(nflRefCard).join(''):'<div class="nfl-empty-note">NFL rows are waiting on the player feed.</div>'}).catch(()=>{nh.innerHTML='<div class="nfl-empty-note">NFL player rows could not load. Refresh once.</div>'})}
+ }
 }
 function renderNFL(){
  const priced=state.nfl.games.filter(game=>game.odds);
