@@ -977,6 +977,9 @@ body{background:
 .hr-picker-choice{position:relative;z-index:2;pointer-events:auto!important;touch-action:manipulation}
 .hr-picker-choice *{pointer-events:none}
 .hr-picker-strip{position:relative;z-index:1}
+</style><style id="main-nav-click-fix">
+.app-main-nav{position:relative!important;z-index:80!important;pointer-events:auto!important}
+.app-main-nav button{position:relative!important;z-index:81!important;pointer-events:auto!important;touch-action:manipulation!important}
 </style></head>
 <body>
 <div class="app">
@@ -2252,8 +2255,15 @@ function switchView(v){
 }
 
 
-document.querySelectorAll('#mlbNav button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
-document.querySelectorAll('#nflNav button').forEach(b=>b.onclick=()=>switchNflView(b.dataset.nflView));
+// Main navigation: delegated click/touch handling keeps tabs reliable after dynamic renders on mobile.
+document.addEventListener('click',function(e){
+ const mlb=e.target.closest('#mlbNav button[data-view]');
+ if(mlb){e.preventDefault();switchView(mlb.dataset.view);return}
+ const nfl=e.target.closest('#nflNav button[data-nfl-view]');
+ if(nfl){e.preventDefault();switchNflView(nfl.dataset.nflView);return}
+});
+document.querySelectorAll('#mlbNav button').forEach(b=>b.onclick=null);
+document.querySelectorAll('#nflNav button').forEach(b=>b.onclick=null);
 document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target===e.currentTarget)closeMemberDialog()});
 </script>
 <script src="research-upgrades.js"></script>
