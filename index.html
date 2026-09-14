@@ -962,6 +962,10 @@ body{background:
 .rallo-hr-game-picker{margin-top:12px}.rallo-picker-head{display:flex;justify-content:space-between;gap:14px;align-items:end;margin-bottom:10px}.rallo-picker-head small{color:#74f49e;font-size:7px;font-weight:1000;letter-spacing:1.2px}.rallo-picker-head h2{font-size:18px;margin:3px 0}.rallo-picker-head p{font-size:8px;color:#8e9caf;margin:0;max-width:560px}.rallo-picker-head>button{border:1px solid rgba(108,242,139,.25);background:#0a1923;color:#d9e5ed;border-radius:9px;padding:9px 12px;font-size:8px;font-weight:900}
 #ralloHrGamePicker{display:grid;gap:10px}.hr-picker-game{overflow:hidden;border:1px solid rgba(172,255,105,.25);border-top:2px solid #b5ff6c;border-radius:14px;background:linear-gradient(145deg,#071725,#0b1820);box-shadow:0 8px 25px rgba(0,0,0,.18)}.hr-picker-gamehead{display:grid;grid-template-columns:42px 1fr minmax(150px,.7fr);gap:10px;align-items:center;padding:11px 12px;background:linear-gradient(90deg,rgba(43,92,71,.22),rgba(72,38,27,.2))}.hr-picker-gamehead .team-logo{width:36px;height:36px}.hr-picker-gamehead b{display:block;font-size:12px}.hr-picker-gamehead span,.hr-picker-pitcher small{display:block;font-size:7px;color:#8f9daf;margin-top:2px}.hr-picker-pitcher{text-align:right}.hr-picker-pitcher b{font-size:9px;color:#dbe3ec;margin-top:2px}.hr-picker-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:9px}.hr-picker-choice{min-width:0;text-align:left;border:1px solid rgba(255,255,255,.08);background:#0a1725;border-radius:11px;padding:10px;color:#fff;cursor:pointer}.hr-picker-choice:nth-child(1){border-color:rgba(255,112,112,.35);background:linear-gradient(145deg,rgba(69,21,31,.6),#0a1725)}.hr-picker-choice:nth-child(2){border-color:rgba(80,239,145,.38);background:linear-gradient(145deg,rgba(16,65,45,.58),#0a1725)}.hr-picker-choice:nth-child(3){border-color:rgba(90,182,255,.32)}.hr-picker-choice small{display:block;font-size:7px;font-weight:1000;letter-spacing:.6px;color:#a9b7c6}.hr-picker-choice>div{display:flex;gap:7px;align-items:center;margin:7px 0}.hr-picker-choice b{font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hr-picker-choice span{font-size:7px;color:#91a1b2}.hr-picker-face{width:31px!important;height:31px!important;border-radius:50%;object-fit:cover}.hr-picker-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:0 9px 9px}.hr-picker-tabs button{border:1px solid rgba(255,255,255,.07);background:#081522;color:#98a7b8;border-radius:8px;padding:8px 5px;font-size:7px;font-weight:900}.hr-picker-tabs button.active{color:#dfff75;background:#1a2b1b;border-color:#b5ff6c}
 @media(max-width:620px){.rallo-picker-head{align-items:flex-start}.rallo-picker-head p{display:none}.hr-picker-gamehead{grid-template-columns:38px 1fr}.hr-picker-pitcher{grid-column:2;text-align:left}.hr-picker-choices{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.hr-picker-choice{min-width:72%;scroll-snap-align:start}.hr-picker-tabs{grid-template-columns:repeat(5,minmax(58px,1fr));overflow-x:auto}.rallo-picker-head>button{font-size:7px;padding:7px}}
+</style><style id="rallo-picker-slip-layout">
+.hr-picker-viewbar{display:grid;grid-template-columns:1.2fr repeat(4,1fr);align-items:center;border:1px solid rgba(183,255,104,.25);border-radius:11px 11px 0 0;overflow:hidden;background:#081522;margin-top:10px}.hr-picker-viewbar>*{padding:9px;text-align:center;font-size:8px}.hr-picker-viewbar b{text-align:left;color:#d8e2e9}.hr-picker-viewbar button{border:0;border-left:1px solid rgba(255,255,255,.06);background:transparent;color:#91a0af;font-weight:900}.hr-picker-viewbar button.active{background:#21331c;color:#dfff75;box-shadow:inset 0 0 0 1px #b5ff6c}
+#ralloHrGamePicker{gap:8px}.hr-picker-game{border-radius:0 0 12px 12px;margin-bottom:8px}.hr-picker-gamehead{grid-template-columns:38px 1fr minmax(110px,.55fr);padding:9px 10px}.hr-picker-gamehead b{font-size:11px}.hr-picker-strip{display:flex;gap:6px;overflow-x:auto;padding:8px;scroll-snap-type:x mandatory}.hr-picker-strip .hr-picker-choice{min-width:31%;scroll-snap-align:start;padding:8px}.hr-picker-strip .hr-picker-choice small{font-size:6.5px}.hr-picker-strip .hr-picker-choice>div{margin:5px 0}.hr-picker-strip .hr-picker-choice span{white-space:nowrap}.hr-picker-tabs{display:flex;align-items:center;justify-content:space-between;padding:7px 9px;border-top:1px solid rgba(255,255,255,.06)}.hr-picker-tabs button{padding:7px 10px}.hr-picker-tabs span{font-size:7px;color:#8392a2}
+@media(max-width:620px){.rallo-picker-head h2{font-size:16px}.rallo-picker-viewbar{position:sticky;top:0}.hr-picker-gamehead{grid-template-columns:34px 1fr}.hr-picker-pitcher{grid-column:2}.hr-picker-strip .hr-picker-choice{min-width:68%}.hr-picker-tabs span{display:none}.hr-picker-tabs button{width:100%}}
 </style></head>
 <body>
 <div class="app">
@@ -1023,7 +1027,8 @@ body{background:
 </div>
 <div class="rallo-reference-strip"><div class="rallo-reference-tile"><b>👑 Top MLB Props Today</b><span>Strongest current research from the MLB slate.</span><button onclick="switchView('rankings')">VIEW RANKINGS →</button></div><div class="rallo-reference-tile"><b>⚾ Best HR Picks</b><span>Matchup-first home run rankings and verified HR odds.</span><button onclick="switchView('top20')">VIEW HR BOARD →</button></div><div class="rallo-reference-tile"><b>🧪 Player Lab</b><span>Search any hitter and choose the stat you want to research.</span><button onclick="document.getElementById('mlbHomePlayerSearch')?.focus()">SEARCH PLAYER →</button></div></div>
 <section class="rallo-hr-game-picker">
- <div class="rallo-picker-head"><div><small>⚾ RALLOPICKS HR GAME SCANNER</small><h2>Choose a Home Run Spot</h2><p>One compact matchup at a time. Compare the strongest research profiles before opening the full Player Lab.</p></div><button onclick="switchView('rankings')">Overall Rankings →</button></div>
+ <div class="rallo-picker-head"><div><small>⚾ HOME RUN MATCHUPS</small><h2>Choose a Game. Find the Edge.</h2><p>Upcoming games only • ranked by Rallo research, matchup and verified HR market data.</p></div><button onclick="switchView('rankings')">All Rankings →</button></div>
+ <div class="hr-picker-viewbar"><b>VIEW</b><button onclick="setRalloHrWindow('L1')">L1</button><button onclick="setRalloHrWindow('L3')">L3</button><button onclick="setRalloHrWindow('L5')">L5</button><button class="active" onclick="setRalloHrWindow('L10')">L10</button></div>
  <div id="ralloHrGamePicker"><div class="empty">Building today’s upcoming HR matchups…</div></div>
 </section>
 <div id="mlbReferencePlayers" class="reference-player-list" style="display:none"><div class="empty">Loading MLB player research…</div></div>
@@ -2164,27 +2169,24 @@ window.ralloHrWindow=window.ralloHrWindow||'L10';
 window.setRalloHrWindow=function(win){window.ralloHrWindow=win;renderHrGamePicker()}
 window.renderHrGamePicker=function(){
  const root=document.getElementById('ralloHrGamePicker');if(!root)return;
- const all=(state.dailyBatterRanks||[]),now=Date.now();
- const games=(state.games||[]).filter(g=>{const st=String(g.status?.abstractGameState||'').toLowerCase();return new Date(g.gameDate).getTime()>now-10*60*1000&&!['final','live'].includes(st)});
- const win=window.ralloHrWindow||'L10';
+ const all=(state.dailyBatterRanks||[]),now=Date.now(),win=window.ralloHrWindow||'L10';
+ document.querySelectorAll('.hr-picker-viewbar button').forEach(b=>b.classList.toggle('active',b.textContent.trim()===win));
  if(!all.length){root.innerHTML='<div class="empty">Loading today’s batter research…</div>';return}
- const groups=[];
+ const games=(state.games||[]).filter(g=>{const st=String(g.status?.abstractGameState||'').toLowerCase();return new Date(g.gameDate).getTime()>now&&!['final','live'].includes(st)});
+ const cards=[];
  games.forEach(g=>{
-   const away=g.teams?.away?.team,home=g.teams?.home?.team;
-   [[away,home,g.teams?.home?.probablePitcher],[home,away,g.teams?.away?.probablePitcher]].forEach(([batTeam,opp,pitcher])=>{
-    const abbr=batTeam?.abbreviation||'',name=batTeam?.name||abbr;
-    const rows=all.filter(x=>x.teamAbbr===abbr).sort((a,b)=>hrPickerWindowScore(b,win)-hrPickerWindowScore(a,win));
-    if(!rows.length)return;
-    const obvious=rows[0],hidden=rows.filter(x=>x!==obvious).sort((a,b)=>(Number(b.bestHrOdds||0)-Number(a.bestHrOdds||0))||hrPickerWindowScore(b,win)-hrPickerWindowScore(a,win))[0]||rows[1],value=rows.filter(x=>x!==obvious&&x!==hidden).sort((a,b)=>hrPickerWindowScore(b,win)-hrPickerWindowScore(a,win))[0]||rows[1];
-    groups.push({g,batTeam,opp,pitcher,obvious,hidden,value,name});
-   });
+  const away=g.teams?.away?.team,home=g.teams?.home?.team;
+  const ranked=[...(all||[])].filter(x=>x.teamAbbr===(away?.abbreviation||'')||x.teamAbbr===(home?.abbreviation||'')).sort((a,b)=>hrPickerWindowScore(b,win)-hrPickerWindowScore(a,win));
+  if(!ranked.length)return;
+  const top=ranked[0];
+  const hidden=ranked.filter(x=>x.id!==top.id).sort((a,b)=>((Number(b.bestHrOdds)||0)-(Number(a.bestHrOdds)||0))||hrPickerWindowScore(b,win)-hrPickerWindowScore(a,win))[0]||ranked[1];
+  const value=ranked.filter(x=>x.id!==top.id&&x.id!==hidden?.id).sort((a,b)=>hrPickerWindowScore(b,win)-hrPickerWindowScore(a,win))[0]||ranked[1];
+  const topTeam=top?.teamAbbr,battingTeam=topTeam===(away?.abbreviation||'')?away:home;
+  const pitcher=topTeam===(away?.abbreviation||'')?g.teams?.home?.probablePitcher:g.teams?.away?.probablePitcher;
+  const time=new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
+  cards.push('<article class="hr-picker-game"><div class="hr-picker-gamehead">'+teamBadge(battingTeam?.abbreviation||'',battingTeam?.id)+'<div><b>'+esc(away?.abbreviation||away?.name||'AWAY')+' @ '+esc(home?.abbreviation||home?.name||'HOME')+'</b><span>'+esc(time)+' • '+esc(g.venue?.name||'')+'</span></div><div class="hr-picker-pitcher"><small>VS STARTER</small><b>'+esc(pitcher?.fullName||'TBD')+'</b></div></div><div class="hr-picker-strip">'+hrPickerPlayer(top,'⚡ TOP SCORE',win)+hrPickerPlayer(hidden,'📣 MOST ADVERTISED',win)+hrPickerPlayer(value,'💎 MOST HIDDEN',win)+'</div><div class="hr-picker-tabs"><button onclick="event.stopPropagation();switchView(\'rankings\')">VIEW ALL BATTERS</button><span>Tap any player for full Player Lab research →</span></div></article>');
  });
- root.innerHTML=groups.length?groups.map(z=>{
-   const time=new Date(z.g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
-   return '<article class="hr-picker-game"><div class="hr-picker-gamehead">'+teamBadge(z.batTeam.abbreviation||z.name,z.batTeam.id)+'<div><b>'+esc(z.name)+'</b><span>vs '+esc(z.opp?.name||'Opponent')+' • '+esc(time)+'</span></div><div class="hr-picker-pitcher"><small>OPPOSING STARTER</small><b>'+esc(z.pitcher?.fullName||'TBD')+'</b></div></div>'+
-   '<div class="hr-picker-choices">'+hrPickerPlayer(z.obvious,'🔥 TOP RALLO PICK',win)+hrPickerPlayer(z.hidden,'💎 HIDDEN HR',win)+hrPickerPlayer(z.value,'💰 VALUE SPOT',win)+'</div>'+
-   '<div class="hr-picker-tabs">'+['L1','L3','L5','L10'].map(w=>'<button class="'+(win===w?'active':'')+'" onclick="setRalloHrWindow(\''+w+'\')">'+w+'</button>').join('')+'<button onclick="switchView(\'rankings\')">ALL BATTERS →</button></div></article>';
- }).join(''):'<div class="empty">No upcoming MLB games with ranked hitters right now.</div>';
+ root.innerHTML=cards.length?cards.join(''):'<div class="empty">No upcoming MLB games remain today.</div>';
 }
 window.renderReferenceHomeCards=function(){
  renderHrGamePicker();
