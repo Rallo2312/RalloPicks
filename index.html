@@ -2198,7 +2198,6 @@ window.renderHrGamePicker=function(){
   const topTeam=top?.teamAbbr,battingTeam=topTeam===(away?.abbreviation||'')?away:home;
   const pitcher=topTeam===(away?.abbreviation||'')?g.teams?.home?.probablePitcher:g.teams?.away?.probablePitcher;
   const time=new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
-  const status=String(g.status?.detailedState||g.status?.abstractGameState||'Scheduled');
   cards.push('<article class="hr-picker-game"><div class="hr-picker-gamehead">'+teamBadge(battingTeam?.abbreviation||'',battingTeam?.id)+'<div><b>'+esc(away?.abbreviation||away?.name||'AWAY')+' @ '+esc(home?.abbreviation||home?.name||'HOME')+'</b><span>'+esc(time)+' • '+esc(status)+'</span></div><div class="hr-picker-pitcher"><small>VS STARTER</small><b>'+esc(pitcher?.fullName||'TBD')+'</b></div></div><div class="hr-picker-strip">'+hrPickerPlayer(top,'⚡ TOP SCORE',win)+hrPickerPlayer(hidden,'📣 MOST ADVERTISED',win)+hrPickerPlayer(value,'💎 MOST HIDDEN',win)+'</div><div class="hr-picker-tabs"><button onclick="event.stopPropagation();switchView(\'rankings\')">VIEW ALL BATTERS</button><span>Tap any player for full Player Lab research →</span></div></article>');
  });
  root.innerHTML=cards.length?cards.join(''):'<div class="empty">No MLB games are on today’s slate.</div>';
