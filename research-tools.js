@@ -673,11 +673,18 @@ window.renderAppBoard=function(){
  const picks=allBoardPicks(),html=finalCardHtml(picks)+propBattleHtml(picks)+'<div class="my-board-list">'+(picks.length?picks.map(boardCard).join(''):'<div class="empty">Open Player Lab and add props you’re considering.</div>')+'</div>'+reportHtml();
  for(const id of ['myBoardRows','nflBoardRows']){const el=document.getElementById(id);if(el)el.innerHTML=html}
 }
-function appAlerts(){
- const alerts=[],moves=[...new Map(lineHistory.slice(-100).map(x=>[x.key,movementFor(x.sport,x.pid,x.market,x.book)])).values()].filter(x=>x&&Math.abs(x.delta)>=.5).slice(-3);
+function appAlerts(sport=state.currentSport){
+ const alerts=[],moves=[...new Map(lineHistory.slice(-100).map(x=>[x.key,movementFor(x.sport,x.pid,x.market,x.book)])).values()].filter(x=>x&&x.sport===sport&&Math.abs(x.delta)>=.5).slice(-3);
  moves.forEach(m=>alerts.push({icon:'📈',title:'Line moved',text:m.market+' • '+m.first+' → '+m.line+' on '+m.book}));
- const weather=researchHealth.get('weather');if(weather?.failed)alerts.push({icon:'🌦️',title:'Weather check needs refresh',text:'One or more weather requests failed. RalloPicks will retry while the app is open.'});
- const strong=(state.dailyBatterRanks||[]).filter(x=>x.score>=80).slice(0,2);strong.forEach(x=>alerts.push({icon:'🔥',title:'Strong MLB matchup',text:x.name+' • score '+Math.round(x.score)+' vs '+x.opponent}));
+ if(sport==='MLB'){
+  const weather=researchHealth.get('weather');if(weather?.failed)alerts.push({icon:'🌦️',title:'Weather check needs refresh',text:'One or more weather requests failed. RalloPicks will retry while the app is open.'});
+  const strong=(state.dailyBatterRanks||[]).filter(x=>x.score>=80).slice(0,2);strong.forEach(x=>alerts.push({icon:'🔥',title:'Strong MLB matchup',text:x.name+' • score '+Math.round(x.score)+' vs '+x.opponent}));
+ }else{
+  const td=typeof nflAnytimeTdRows==='function'?nflAnytimeTdRows().slice(0,2):[];
+  td.forEach(x=>alerts.push({icon:'🏈',title:'Strong NFL TD setup',text:x.name+' • TD score '+Math.round(x._td.score)+' vs '+x._td.opponent}));
+  const research=typeof nflResearchRows==='function'?nflResearchRows().filter(x=>x._r.score>=75).slice(0,2):[];
+  research.forEach(x=>alerts.push({icon:'🔥',title:'Strong NFL matchup',text:x.name+' • score '+Math.round(x._r.score)+' vs '+x._r.opponent}));
+ }
  return alerts.slice(0,5);
 }
 function top6Names(){
@@ -686,11 +693,35 @@ function top6Names(){
  if(!rows.length)return '<p><b>🛑 NO GREEN LIGHTS YET</b></p><p>RalloPicks is not forcing six plays. Check again after lineup, weather and matchup updates.</p>';
  return '<p><b>🟢 '+rows.length+' GREEN LIGHT'+(rows.length===1?'':'S')+' TODAY</b></p>'+rows.map((x,i)=>'<p><b>#'+(i+1)+' '+esc(x.name)+'</b> • '+Math.round(x.score)+' • '+esc(x.opponent)+'</p>').join('');
 }
+function nflTop6Home(){
+ const rows=typeof nflResearchRows==='function'?nflResearchRows().filter(x=>x._r.score>=68).slice(0,6):[];
+ if(!state.nflLoaded)return '<p>NFL research is loading.</p>';
+ if(!rows.length)return '<p><b>🛑 NO GREEN LIGHTS YET</b></p><p>RalloPicks is not forcing six plays.</p>';
+ return '<p><b>🟢 '+rows.length+' GREEN LIGHT'+(rows.length===1?'':'S')+' TODAY</b></p>'+rows.map((x,i)=>'<p><b>#'+(i+1)+' '+esc(x.name)+'</b> • '+Math.round(x._r.score)+' • vs '+esc(x._r.opponent)+'</p>').join('');
+}
+function nflHiddenEdgesHtml(){
+ const rows=typeof nflResearchRows==='function'?nflResearchRows().filter(x=>x.overallRank>6&&x._r.score>=55).slice(0,5):[];
+ if(!rows.length)return '<section class="hidden-edge-card"><div class="model-head"><b>💎 NFL Hidden Edge Scanner</b><span>Scanning slate…</span></div><p>Edges will appear after NFL research finishes loading.</p></section>';
+ return '<section class="hidden-edge-card"><div class="model-head"><b>💎 NFL Hidden Edge Scanner</b><span>Under-the-radar NFL spots</span></div><div class="hidden-edge-grid">'+rows.map(x=>'<article><b>🏈 '+esc(x.name)+'</b><span>'+esc(x.team)+' • '+Math.round(x._r.score)+'</span><small>vs '+esc(x._r.opponent)+' • role + matchup blend</small></article>').join('')+'</div></section>';
+}
+function nflReportHtml(){
+ const b=boardExtras.filter(x=>x.sport==='NFL'&&['win','loss','push'].includes(x.status)),w=b.filter(x=>x.status==='win').length,l=b.filter(x=>x.status==='loss').length,dec=w+l,rate=dec?Math.round(w/dec*100):0;
+ return '<div class="app-home-card"><h3>📈 NFL Results</h3><div class="report-grid"><div><b>'+w+'-'+l+'</b><span>NFL TRACKED PICKS</span></div><div><b>'+rate+'%</b><span>DECIDED RATE</span></div></div><p>Only NFL picks recorded on My Board are counted.</p></div>';
+}
 window.renderAppDashboards=function(){
- renderAppBoard();const alerts=appAlerts(),alertHtml=alerts.length?alerts.map(a=>'<div class="alert-row"><span>'+a.icon+'</span><div><b>'+esc(a.title)+'</b><span>'+esc(a.text)+'</span></div></div>').join(''):'<p>No new alerts right now.</p>';
+ renderAppBoard();
+ const mlbAlerts=appAlerts('MLB'),nflAlerts=appAlerts('NFL');
+ const alertRows=a=>a.length?a.map(x=>'<div class="alert-row"><span>'+x.icon+'</span><div><b>'+esc(x.title)+'</b><span>'+esc(x.text)+'</span></div></div>').join(''):'<p>No new alerts right now.</p>';
  const feed=(()=>{try{return JSON.parse(document.getElementById('dailyHrResearch')?.textContent||'null')}catch{return null}})(),hr1=feed?.top10?.[0],weather=researchHealth.get('weather'),weatherText=weather?.at?new Date(weather.at).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'Pending';
- const mlb=document.getElementById('mlbHomeDashboard');if(mlb)mlb.innerHTML='<div class="section-title"><div><h2>RalloPicks Today</h2><span>One screen for today’s research</span></div><span>Weather '+esc(weatherText)+'</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🔥 Top 6 Today</h3>'+top6Names()+'<div class="app-home-actions"><button onclick="switchView(\'rankings\')">Open Rankings</button><button onclick="switchView(\'batterlab\')">Player Lab</button></div></div><div class="app-home-card"><h3>⚾ Best HR Research</h3><strong>'+esc(hr1?.person?.fullName||'Loading…')+'</strong><p>'+(hr1?esc(hr1.reason):'Daily HR board loading.')+'</p><button onclick="switchView(\'top20\')">Open HR Board</button></div><div class="app-home-card"><h3>🚨 Alerts</h3>'+alertHtml+'</div>'+hiddenEdgesHtml()+'<div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().length+'</strong><p>Saved props across MLB and NFL.</p><button onclick="switchView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>🧪 Results</h3>'+reportHtml()+'</div></div>';
- const nfl=document.getElementById('nflHomeDashboard');if(nfl){const games=state.nfl.games||[],teams=[...(state.nfl.teams||[])].filter(x=>x.games_played>0).sort((a,b)=>(a.offense_rank||99)-(b.offense_rank||99)),best=teams[0];nfl.innerHTML='<div class="section-title"><div><h2>NFL Today</h2><span>Matchups, rankings and saved props</span></div><span>'+games.length+' games loaded</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🏈 NFL Research Center</h3><strong>'+(best?esc(best.name):'Season loading')+'</strong><p>'+(best?'#'+best.offense_rank+' scoring offense • '+nflRecord(best):'Rankings activate from completed games.')+'</p><div class="app-home-actions"><button onclick="switchNflView(\'players\')">Player Lab</button><button onclick="switchNflView(\'ranks\')">Rankings</button></div></div><div class="app-home-card"><h3>⭐ My Board</h3><strong>'+allBoardPicks().filter(x=>x.sport==='NFL').length+'</strong><p>NFL props saved for comparison and tracking.</p><button onclick="switchNflView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>📈 App Alerts</h3>'+alertHtml+'</div>'+hiddenEdgesHtml()+reportHtml()+'</div>'}
+
+ const mlb=document.getElementById('mlbHomeDashboard');
+ if(mlb)mlb.innerHTML='<div class="section-title"><div><h2>RalloPicks Today</h2><span>MLB research dashboard</span></div><span>Weather '+esc(weatherText)+'</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🔥 Top 6 Today</h3>'+top6Names()+'<div class="app-home-actions"><button onclick="switchView(\'rankings\')">Open Rankings</button><button onclick="switchView(\'batterlab\')">Player Lab</button></div></div><div class="app-home-card"><h3>⚾ Best HR Research</h3><strong>'+esc(hr1?.person?.fullName||'Loading…')+'</strong><p>'+(hr1?esc(hr1.reason):'Daily HR board loading.')+'</p><button onclick="switchView(\'top20\')">Open HR Board</button></div><div class="app-home-card"><h3>🚨 MLB Alerts</h3>'+alertRows(mlbAlerts)+'</div>'+hiddenEdgesHtml()+'<div class="app-home-card"><h3>⭐ My MLB Board</h3><strong>'+allBoardPicks().filter(x=>x.sport==='MLB').length+'</strong><p>Saved MLB props and research.</p><button onclick="switchView(\'board\')">Open Board</button></div><div class="app-home-card"><h3>🧪 MLB Results</h3>'+reportHtml()+'</div></div>';
+
+ const nfl=document.getElementById('nflHomeDashboard');
+ if(nfl){
+  const td=typeof nflAnytimeTdRows==='function'?nflAnytimeTdRows()[0]:null;
+  nfl.innerHTML='<div class="section-title"><div><h2>RalloPicks Today</h2><span>NFL research dashboard</span></div><span>'+(state.nfl.games||[]).length+' NFL games loaded</span></div><div class="app-home-grid"><div class="app-home-card hero"><h3>🔥 Top 6 NFL Today</h3>'+nflTop6Home()+'<div class="app-home-actions"><button onclick="switchNflView(\'research\')">Open Research</button><button onclick="switchNflView(\'players\')">Player Lab</button></div></div><div class="app-home-card"><h3>🏈 Best Anytime TD Research</h3><strong>'+esc(td?.name||'Loading…')+'</strong><p>'+(td?'TD Score '+Math.round(td._td.score)+' • '+esc(td.position)+' • '+esc(td.team)+' vs '+esc(td._td.opponent):'Anytime TD board loading.')+'</p><button onclick="switchNflView(\'research\')">Open TD Rankings</button></div><div class="app-home-card"><h3>🚨 NFL Alerts</h3>'+alertRows(nflAlerts)+'</div>'+nflHiddenEdgesHtml()+'<div class="app-home-card"><h3>⭐ My NFL Board</h3><strong>'+allBoardPicks().filter(x=>x.sport==='NFL').length+'</strong><p>Saved NFL props and research.</p><button onclick="switchNflView(\'board\')">Open Board</button></div>'+nflReportHtml()+'</div>';
+ }
 };
 const oldMlb=window.switchView;
 window.switchView=function(v){
