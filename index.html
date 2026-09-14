@@ -973,6 +973,10 @@ body{background:
 .hr-picker-empty-row{padding:12px;color:#8796a8;font-size:8px;border-top:1px solid rgba(255,255,255,.06)}
 #top20View .hr-hub-nav{margin-bottom:8px!important}
 #top20View .hr-hub-section-label{margin-top:10px!important}
+</style><style id="hr-picker-click-fix">
+.hr-picker-choice{position:relative;z-index:2;pointer-events:auto!important;touch-action:manipulation}
+.hr-picker-choice *{pointer-events:none}
+.hr-picker-strip{position:relative;z-index:1}
 </style></head>
 <body>
 <div class="app">
@@ -2162,7 +2166,7 @@ function hrPickerWindowScore(x,win){
 function hrPickerPlayer(x,label,win){
  if(!x)return '<div class="hr-picker-choice muted"><small>'+label+'</small><b>Waiting for lineup</b><span>—</span></div>';
  const s=hrPickerWindowScore(x,win),od=x.bestHrOdds||'',book=x.bestHrBook||'';
- return '<button class="hr-picker-choice" onclick="event.stopPropagation();openMlbHomeResearch('+x.id+',\''+esc(x.name).replace(/'/g,"\\'")+'\',\''+esc(x.teamAbbr)+'\')"><small>'+label+'</small><div>'+playerHeadshot(x.id,x.name,'hr-picker-face')+'<b>'+esc(x.name)+'</b></div><span>'+s+' Rallo'+(od?' • '+esc(od)+' '+esc(book):'')+'</span></button>';
+ return '<button type="button" class="hr-picker-choice" onclick="openMlbHomeResearch('+x.id+',\''+esc(x.name).replace(/'/g,"\\'")+'\',\''+esc(x.teamAbbr)+'\')"><small>'+label+'</small><div>'+playerAvatar(x.name,x.id)+'<b>'+esc(x.name)+'</b></div><span>'+s+' Rallo'+(od?' • '+esc(od)+' '+esc(book):'')+'</span></button>';
 }
 window.ralloHrWindow=window.ralloHrWindow||'L10';
 window.setRalloHrWindow=function(win){window.ralloHrWindow=win;renderHrGamePicker()}
