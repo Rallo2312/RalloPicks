@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T13:29:30.784154+00:00",
+  "updated_at": "2026-09-14T17:25:48.817656+00:00",
   "season": 2026,
   "games": [
     {
@@ -56,10 +56,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -185,
-        "away_moneyline": 154,
-        "home_spread": -3.5,
-        "spread_price": -112,
+        "home_moneyline": -198,
+        "away_moneyline": 164,
+        "home_spread": -4.5,
+        "spread_price": -108,
         "total": 53.5,
         "over_price": -110
       }
@@ -92,7 +92,7 @@
         "home_spread": 1.5,
         "spread_price": -112,
         "total": 43.5,
-        "over_price": -115
+        "over_price": -118
       }
     },
     {
@@ -118,8 +118,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -375,
-        "away_moneyline": 295,
+        "home_moneyline": -360,
+        "away_moneyline": 285,
         "home_spread": -8.5,
         "spread_price": -110,
         "total": 47.5,
@@ -149,8 +149,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -250,
-        "away_moneyline": 205,
+        "home_moneyline": -245,
+        "away_moneyline": 200,
         "home_spread": -5.5,
         "spread_price": -110,
         "total": 49.5,
@@ -185,7 +185,7 @@
         "home_spread": -3.0,
         "spread_price": -105,
         "total": 46.5,
-        "over_price": -115
+        "over_price": -108
       }
     },
     {
@@ -366,11 +366,11 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -290,
-        "away_moneyline": 235,
+        "home_moneyline": -310,
+        "away_moneyline": 250,
         "home_spread": -7.0,
         "spread_price": -105,
-        "total": 44.5,
+        "total": 43.5,
         "over_price": -110
       }
     },
@@ -428,12 +428,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -198,
-        "away_moneyline": 164,
+        "home_moneyline": -185,
+        "away_moneyline": 154,
         "home_spread": -3.5,
-        "spread_price": -112,
+        "spread_price": -108,
         "total": 50.5,
-        "over_price": -115
+        "over_price": -108
       }
     },
     {
@@ -459,12 +459,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -900,
-        "away_moneyline": 600,
-        "home_spread": -12.5,
-        "spread_price": -110,
-        "total": 46.5,
-        "over_price": -110
+        "home_moneyline": -950,
+        "away_moneyline": 625,
+        "home_spread": -13.5,
+        "spread_price": -105,
+        "total": 45.5,
+        "over_price": -112
       }
     },
     {
@@ -1110,33 +1110,6 @@
   ],
   "players": [
     {
-      "id": "00-0041561",
-      "name": "Carson Beck",
-      "team": "ARI",
-      "position": "QB",
-      "jersey": "19",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/yvybqpgnezk75h9rpobv",
-      "college": "Miami; Georgia",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0035289",
       "name": "Gardner Minshew",
       "team": "ARI",
@@ -1186,7 +1159,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 221.5,
+          "Rush Yards": 11.5
+        },
         "Underdog": {}
       }
     },
@@ -1245,87 +1221,6 @@
       }
     },
     {
-      "id": "00-0039917",
-      "name": "Michael Penix Jr.",
-      "team": "ATL",
-      "position": "QB",
-      "jersey": "9",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/mip4kogkqxwkkya6mvmh",
-      "college": "Washington; Indiana",
-      "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0036212",
-      "name": "Tua Tagovailoa",
-      "team": "ATL",
-      "position": "QB",
-      "jersey": "1",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/tmm4ohds7qci0vqoobhm",
-      "college": "Alabama",
-      "experience": 6,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040981",
-      "name": "Joe Fagnano",
-      "team": "BAL",
-      "position": "QB",
-      "jersey": "12",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/p8uqfsnpx153mn3gjtd3",
-      "college": "Connecticut; Maine",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0034796",
       "name": "Lamar Jackson",
       "team": "BAL",
@@ -1348,7 +1243,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 224.5,
+          "Rush Yards": 39.5
+        },
         "Underdog": {}
       }
     },
@@ -1402,7 +1300,11 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 239.5,
+          "Rush Yards": 30.5,
+          "Player TDs": 0.5
+        },
         "Underdog": {}
       }
     },
@@ -1456,34 +1358,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041149",
-      "name": "Haynes King",
-      "team": "CAR",
-      "position": "QB",
-      "jersey": "16",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/qcloyq4ahyh0hfzo6i0i",
-      "college": "Georgia Tech; Texas A&M",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 212.5,
+          "Rush Yards": 12.5
+        },
         "Underdog": {}
       }
     },
@@ -1537,7 +1415,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 239.5,
+          "Rush Yards": 21.5
+        },
         "Underdog": {}
       }
     },
@@ -1551,60 +1432,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/weixhyzal4ntsyszyepu",
       "college": "Houston",
       "experience": 14,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041172",
-      "name": "Miller Moss",
-      "team": "CHI",
-      "position": "QB",
-      "jersey": "16",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/p86kdskm2q45zetkrx03",
-      "college": "",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0038416",
-      "name": "Tyson Bagent",
-      "team": "CHI",
-      "position": "QB",
-      "jersey": "17",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ymimvligfyrucu0v3p6a",
-      "college": "Shepherd",
-      "experience": 3,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -1645,7 +1472,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 260.5,
+          "Rush Yards": 8.5
+        },
         "Underdog": {}
       }
     },
@@ -1699,7 +1529,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 183.5
+        },
         "Underdog": {}
       }
     },
@@ -1713,33 +1545,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/joe08hz6to2madpko8zl",
       "college": "Colorado; Jackson State University",
       "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041092",
-      "name": "Taylen Green",
-      "team": "CLE",
-      "position": "QB",
-      "jersey": "15",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ybylky9uitivzresfzt3",
-      "college": "Arkansas; Boise State",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -1780,7 +1585,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 262.5,
+          "Rush Yards": 8.5
+        },
         "Underdog": {}
       }
     },
@@ -1837,8 +1645,8 @@
         "PrizePicks": {
           "Pass+Rush Yds": 248.5,
           "Pass Yards": 229.5,
-          "Longest Completion": 34.5,
           "Pass Attempts": 34.5,
+          "Longest Completion": 33.5,
           "Pass Comp": 21.5,
           "Fantasy Score": 17.0,
           "Rush Yards": 16.5,
@@ -1928,7 +1736,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 262.5
+        },
         "Underdog": {}
       }
     },
@@ -1982,7 +1792,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 239.5,
+          "Rush Yards": 8.5
+        },
         "Underdog": {}
       }
     },
@@ -2036,7 +1849,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 228.5,
+          "Rush Yards": 9.5
+        },
         "Underdog": {}
       }
     },
@@ -2117,34 +1933,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040206",
-      "name": "Riley Leonard",
-      "team": "IND",
-      "position": "QB",
-      "jersey": "15",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/okxcrf19ylc0hwfefmwl",
-      "college": "Notre Dame; Duke",
-      "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 230.5
+        },
         "Underdog": {}
       }
     },
@@ -2158,33 +1949,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/haxwyajgngz6quuyqg19",
       "college": "Southern Mississippi",
       "experience": 9,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040234",
-      "name": "Quinn Ewers",
-      "team": "JAX",
-      "position": "QB",
-      "jersey": "10",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/bbcwyjuhyijtqe7jo274",
-      "college": "Texas; Ohio State",
-      "experience": 1,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -2225,7 +1989,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 229.5,
+          "Rush Yards": 16.5
+        },
         "Underdog": {}
       }
     },
@@ -2402,7 +2169,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 234.5,
+          "Rush Yards": 20.5
+        },
         "Underdog": {}
       }
     },
@@ -2416,33 +2186,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/j3psmvvxo13kmbgi60ej",
       "college": "North Dakota State",
       "experience": 5,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0038579",
-      "name": "Aidan O'Connell",
-      "team": "LV",
-      "position": "QB",
-      "jersey": "12",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/bcejxo7ofgk5pszhup12",
-      "college": "Purdue",
-      "experience": 3,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -2510,34 +2253,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040398",
-      "name": "Brady Cook",
-      "team": "MIA",
-      "position": "QB",
-      "jersey": "15",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/sk8u7zzg7e3t4vu7xesg",
-      "college": "Missouri",
-      "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 207.5
+        },
         "Underdog": {}
       }
     },
@@ -2591,7 +2309,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 186.5,
+          "Rush Yards": 39.5
+        },
         "Underdog": {}
       }
     },
@@ -2605,33 +2326,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/vuolixdvigc8axelug66",
       "college": "North Dakota State",
       "experience": 10,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0039923",
-      "name": "J.J. McCarthy",
-      "team": "MIN",
-      "position": "QB",
-      "jersey": "9",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/omybnfokapjw6jwb5dd3",
-      "college": "Michigan",
-      "experience": 2,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -2783,34 +2477,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0037013",
-      "name": "Zach Wilson",
-      "team": "NO",
-      "position": "QB",
-      "jersey": "11",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/i17xpbsar7evcypbhtel",
-      "college": "BYU",
-      "experience": 5,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 242.5,
+          "Rush Yards": 19.5
+        },
         "Underdog": {}
       }
     },
@@ -2864,7 +2534,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 214.5,
+          "Rush Yards": 33.5
+        },
         "Underdog": {}
       }
     },
@@ -2918,7 +2591,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 216.5,
+          "Rush Yards": 7.5
+        },
         "Underdog": {}
       }
     },
@@ -2932,33 +2608,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/sfsneh0bn46e2kwve7sr",
       "college": "TCU",
       "experience": 15,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040891",
-      "name": "Cole Payton",
-      "team": "PHI",
-      "position": "QB",
-      "jersey": "18",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/qt8hajjwkvpynr8nwepz",
-      "college": "North Dakota State",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -2999,34 +2648,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0038400",
-      "name": "Tanner McKee",
-      "team": "PHI",
-      "position": "QB",
-      "jersey": "16",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/oveivzhzv13jrfvkp8zg",
-      "college": "Stanford",
-      "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 206.5,
+          "Rush Yards": 32.5
+        },
         "Underdog": {}
       }
     },
@@ -3053,34 +2678,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041565",
-      "name": "Drew Allar",
-      "team": "PIT",
-      "position": "QB",
-      "jersey": "16",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/sphuqnfrtzwsgeugeycz",
-      "college": "Penn State",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 218.5,
+          "Rush Yards": 0.5
+        },
         "Underdog": {}
       }
     },
@@ -3094,33 +2695,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/oadtxde6hxz1jgrs618o",
       "college": "Oklahoma State",
       "experience": 8,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040203",
-      "name": "Will Howard",
-      "team": "PIT",
-      "position": "QB",
-      "jersey": "18",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/wzt7xj9ownxfit5igpcd",
-      "college": "Ohio State; Kansas State",
-      "experience": 1,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -3217,7 +2791,7 @@
       "lines": {
         "PrizePicks": {
           "Pass Yards": 242.5,
-          "Rush Yards": 18.5
+          "Rush Yards": 20.5
         },
         "Underdog": {}
       }
@@ -3272,7 +2846,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 228.5,
+          "Rush Yards": 17.5
+        },
         "Underdog": {}
       }
     },
@@ -3326,7 +2903,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 199.5,
+          "Rush Yards": 9.5
+        },
         "Underdog": {}
       }
     },
@@ -3340,33 +2920,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/yxs7ix2pmcfv5k1qn1sk",
       "college": "North Carolina",
       "experience": 9,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041117",
-      "name": "Athan Kaliakmanis",
-      "team": "WAS",
-      "position": "QB",
-      "jersey": "16",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ahtbv63jyg8ampmyrxn9",
-      "college": "Rutgers; Minnesota",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -3407,7 +2960,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 215.5,
+          "Rush Yards": 34.5
+        },
         "Underdog": {}
       }
     },
@@ -3488,7 +3044,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 35.5
+        },
         "Underdog": {}
       }
     },
@@ -3542,7 +3100,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 78.5
+        },
         "Underdog": {}
       }
     },
@@ -3596,7 +3156,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 82.5
+        },
         "Underdog": {}
       }
     },
@@ -3736,33 +3298,6 @@
       }
     },
     {
-      "id": "00-0035537",
-      "name": "Ty Johnson",
-      "team": "BUF",
-      "position": "RB",
-      "jersey": "26",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/zruhihypizhtgpvsaj3c",
-      "college": "Maryland",
-      "experience": 7,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0036265",
       "name": "AJ Dillon",
       "team": "CAR",
@@ -3812,7 +3347,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 55.5
+        },
         "Underdog": {}
       }
     },
@@ -3866,7 +3403,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 64.5
+        },
         "Underdog": {}
       }
     },
@@ -3947,7 +3486,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 55.5
+        },
         "Underdog": {}
       }
     },
@@ -4082,7 +3623,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 52.5
+        },
         "Underdog": {}
       }
     },
@@ -4168,33 +3711,6 @@
       }
     },
     {
-      "id": "00-0038389",
-      "name": "Israel Abanikanda",
-      "team": "DAL",
-      "position": "RB",
-      "jersey": "25",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/mt7lgg9gbjcmb2wttxeg",
-      "college": "Pittsburgh",
-      "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -4217,7 +3733,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 69.5
+        },
         "Underdog": {}
       }
     },
@@ -4247,8 +3765,8 @@
         "PrizePicks": {
           "Rush+Rec Yds": 58.5,
           "Rush Yards": 50.5,
+          "Longest Rush": 13.5,
           "Rush Atts": 12.5,
-          "Longest Rush": 12.5,
           "Rec Yards": 3.5,
           "Longest Rec": 3.5,
           "Rush Yards in First 5 Attempts": 19.5,
@@ -4309,7 +3827,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 38.5,
+          "Rush+Rec Yds": 39.5,
           "Rush Yards": 18.5,
           "Rec Yards": 16.5,
           "Longest Rec": 10.5,
@@ -4399,7 +3917,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 79.5
+        },
         "Underdog": {}
       }
     },
@@ -4561,7 +4081,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 57.5
+        },
         "Underdog": {}
       }
     },
@@ -4574,33 +4096,6 @@
       "status": "ACT",
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/y5ntpcenhhhv98uz2fys",
       "college": "USC; Mississippi State",
-      "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040179",
-      "name": "DJ Giddens",
-      "team": "IND",
-      "position": "RB",
-      "jersey": "21",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/y2vrgvb9kbvfpmyb3yzu",
-      "college": "Kansas State",
       "experience": 1,
       "season": {
         "games": 0,
@@ -4642,7 +4137,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 79.5
+        },
         "Underdog": {}
       }
     },
@@ -4723,7 +4220,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 46.5
+        },
         "Underdog": {}
       }
     },
@@ -4805,12 +4304,13 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 12.5,
+          "Rush+Rec Yds": 13.5,
           "Rec Yards": 6.5,
           "Longest Rec": 5.5,
           "Longest Rush": 3.5,
           "Rush Yards": 3.5,
-          "Fantasy Score": 2.5
+          "Fantasy Score": 2.5,
+          "Rush Atts": 1.5
         },
         "Underdog": {}
       }
@@ -4839,7 +4339,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 12.5
+          "Rush Yards": 14.5
         },
         "Underdog": {}
       }
@@ -4868,7 +4368,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 85.5,
+          "Rush+Rec Yds": 89.5,
           "Rush Yards": 61.5,
           "Rec Yards": 19.5,
           "Rush Atts": 16.0,
@@ -4879,7 +4379,7 @@
           "Recs": 3.0,
           "Player TDs": 0.5,
           "Rush Yards in First 5 Attempts": 18.5,
-          "Fantasy Score": 14.0,
+          "Fantasy Score": 14.5,
           "Rush Yards Per Carry": 3.6
         },
         "Underdog": {}
@@ -4935,7 +4435,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 56.5
+        },
         "Underdog": {}
       }
     },
@@ -5070,7 +4572,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 67.5
+        },
         "Underdog": {}
       }
     },
@@ -5097,7 +4601,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 63.5
+        },
         "Underdog": {}
       }
     },
@@ -5232,7 +4738,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 59.5
+        },
         "Underdog": {}
       }
     },
@@ -5327,33 +4835,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/qrvemj4m3g2mqlbgy352",
       "college": "Miami",
       "experience": 6,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041104",
-      "name": "Demond Claiborne",
-      "team": "MIN",
-      "position": "RB",
-      "jersey": "21",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/vmozbbdzgcaqq1yrixeb",
-      "college": "Wake Forest",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -5534,33 +5015,6 @@
       }
     },
     {
-      "id": "00-0033906",
-      "name": "Alvin Kamara",
-      "team": "NO",
-      "position": "RB",
-      "jersey": "41",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/yxebpuskandivlh2iil4",
-      "college": "Tennessee; Hutchinson CC; Alabama",
-      "experience": 9,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0041326",
       "name": "CJ Donaldson",
       "team": "NO",
@@ -5664,7 +5118,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 48.5
+        },
         "Underdog": {}
       }
     },
@@ -5678,33 +5134,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/xy2r2msxjqneml2c1cdc",
       "college": "Florida Atlantic",
       "experience": 7,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0036893",
-      "name": "Najee Harris",
-      "team": "NYG",
-      "position": "RB",
-      "jersey": "23",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/grfxgbvqnzz40r7rdtvk",
-      "college": "Alabama",
-      "experience": 5,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -5853,7 +5282,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 62.5
+        },
         "Underdog": {}
       }
     },
@@ -5867,33 +5298,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/x6r9a5xhtaklbvnqmtw7",
       "college": "South Dakota State",
       "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0036842",
-      "name": "Kene Nwangwu",
-      "team": "NYJ",
-      "position": "RB",
-      "jersey": "3",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/rlnqgz517fsohrndgjrb",
-      "college": "Iowa State",
-      "experience": 5,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -5934,7 +5338,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 78.5
+        },
         "Underdog": {}
       }
     },
@@ -6042,7 +5448,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 40.5
+        },
         "Underdog": {}
       }
     },
@@ -6069,7 +5477,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 41.5
+        },
         "Underdog": {}
       }
     },
@@ -6312,7 +5722,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 59.5
+        },
         "Underdog": {}
       }
     },
@@ -6371,33 +5783,6 @@
       }
     },
     {
-      "id": "00-0038951",
-      "name": "Sean Tucker",
-      "team": "TB",
-      "position": "RB",
-      "jersey": "44",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/wiarwjvy8p6bojlratp4",
-      "college": "Syracuse",
-      "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0037594",
       "name": "Julius Chestnut",
       "team": "TEN",
@@ -6407,33 +5792,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/bkhv6hpjogvs5b31wwrs",
       "college": "Sacred Heart University",
       "experience": 4,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040886",
-      "name": "Nicholas Singleton",
-      "team": "TEN",
-      "position": "RB",
-      "jersey": "32",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ztwqbc0s69cbz5ow0r0q",
-      "college": "Penn State",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -6474,7 +5832,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 42.5
+        },
         "Underdog": {}
       }
     },
@@ -6528,7 +5888,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 48.5
+        },
         "Underdog": {}
       }
     },
@@ -6722,33 +6084,6 @@
       }
     },
     {
-      "id": "00-0041070",
-      "name": "Reggie Virgil",
-      "team": "ARI",
-      "position": "WR",
-      "jersey": "82",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/hmaylhc9nc2zmqjdw1ib",
-      "college": "Texas Tech; Miami (Ohio)",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0036646",
       "name": "Simi Fehoko",
       "team": "ARI",
@@ -6920,60 +6255,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/o0s29hnpztyxqotqdx8h",
       "college": "Cincinnati",
       "experience": 10,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0039792",
-      "name": "Devontez Walker",
-      "team": "BAL",
-      "position": "WR",
-      "jersey": "81",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/x3x3k5ispk44ms0f7vrv",
-      "college": "North Carolina; Kent State; North Carolina Central",
-      "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040876",
-      "name": "Elijah Sarratt",
-      "team": "BAL",
-      "position": "WR",
-      "jersey": "13",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/rbtitvma6hjyotcajqtv",
-      "college": "Indiana; James Madison; St. Francis PA",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -7235,33 +6516,6 @@
       }
     },
     {
-      "id": "00-0041443",
-      "name": "Skyler Bell",
-      "team": "BUF",
-      "position": "WR",
-      "jersey": "13",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/oac3geuuhazbznztufzk",
-      "college": "Connecticut; Wisconsin",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0038840",
       "name": "Brycen Tremayne",
       "team": "CAR",
@@ -7325,33 +6579,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/gggcgfbghcft0xwxtrhk",
       "college": "Colorado; University of South Florida",
       "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0037614",
-      "name": "John Metchie III",
-      "team": "CAR",
-      "position": "WR",
-      "jersey": "13",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/nsjpnskeldxzbzckpfgg",
-      "college": "Alabama",
-      "experience": 4,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -7527,7 +6754,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 0.5
+        },
         "Underdog": {}
       }
     },
@@ -7694,33 +6923,6 @@
       }
     },
     {
-      "id": "00-0040534",
-      "name": "Ke'Shawn Williams",
-      "team": "CIN",
-      "position": "WR",
-      "jersey": "12",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/r7enwgccqv93feuoeurz",
-      "college": "Indiana; Wake Forest",
-      "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0036410",
       "name": "Tee Higgins",
       "team": "CIN",
@@ -7860,7 +7062,7 @@
       "name": "Malachi Corley",
       "team": "CLE",
       "position": "WR",
-      "jersey": "83",
+      "jersey": "11",
       "status": "ACT",
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/lay1p8pvwrglmqorc6ev",
       "college": "Western Kentucky",
@@ -7892,33 +7094,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/rifnnpeub6okv41offnd",
       "college": "Oklahoma State",
       "experience": 5,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040930",
-      "name": "Camden Brown",
-      "team": "DAL",
-      "position": "WR",
-      "jersey": "80",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/tvoztpalnmmattxhdaoa",
-      "college": "Georgia Southern; Auburn",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -8095,10 +7270,10 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 41.5,
+          "Rec Yards": 42.5,
           "Longest Rec": 18.5,
           "Yards on 1st Rec": 10.5,
-          "Fantasy Score": 10.0,
+          "Fantasy Score": 9.5,
           "Rec Targets": 6.0
         },
         "Underdog": {}
@@ -8189,7 +7364,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 11.5
+          "Rec Yards": 11.5,
+          "Longest Rec": 9.5
         },
         "Underdog": {}
       }
@@ -8425,33 +7601,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/tumeg4d32sirkab2xzu5",
       "college": "North Dakota State",
       "experience": 4,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040948",
-      "name": "J. Michael Sturdivant",
-      "team": "GB",
-      "position": "WR",
-      "jersey": "87",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/jpcewjixipg3iuu2ucyq",
-      "college": "Florida; UCLA; California",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -9114,9 +8263,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 55.5,
-          "Longest Rec": 20.5,
-          "Fantasy Score": 13.5,
+          "Rec Yards": 52.5,
+          "Longest Rec": 19.5,
+          "Fantasy Score": 13.0,
           "Yards on 1st Rec": 8.5,
           "Rec Targets": 8.0
         },
@@ -9147,7 +8296,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rec Yards": 18.5,
+          "Rec Yards": 19.5,
           "Longest Rec": 14.5,
           "Rec Targets": 2.5,
           "Fantasy Score": 4.0
@@ -9179,9 +8328,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush+Rec Yds": 39.5,
-          "Rec Yards": 34.5,
-          "Longest Rec": 17.5,
+          "Rush+Rec Yds": 41.5,
+          "Rec Yards": 36.5,
+          "Longest Rec": 18.5,
           "Fantasy Score": 8.5,
           "Rec Targets": 5.5,
           "Rush Atts": 0.5
@@ -9689,33 +8838,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/zgbku18zemqyryvyahd4",
       "college": "Louisville",
       "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0037666",
-      "name": "Jalen Tolbert",
-      "team": "MIA",
-      "position": "WR",
-      "jersey": "1",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/dthrzudnyh1mcrh1det2",
-      "college": "South Alabama",
-      "experience": 4,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -10247,60 +9369,6 @@
       }
     },
     {
-      "id": "00-0040431",
-      "name": "Dalen Cambre",
-      "team": "NYG",
-      "position": "WR",
-      "jersey": "83",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/cfllxq8wvrrciu7ugnyp",
-      "college": "Louisiana",
-      "experience": 1,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0035535",
-      "name": "Darius Slayton",
-      "team": "NYG",
-      "position": "WR",
-      "jersey": "18",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/otksyfjll5waf0vsczeu",
-      "college": "Auburn",
-      "experience": 7,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0036309",
       "name": "Darnell Mooney",
       "team": "NYG",
@@ -10634,33 +9702,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/v1lt8kpvkn0qw5elyaoz",
       "college": "Virginia",
       "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0036980",
-      "name": "Elijah Moore",
-      "team": "PHI",
-      "position": "WR",
-      "jersey": "19",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/wax90oyx9vs0x9j4nt5n",
-      "college": "Mississippi",
-      "experience": 5,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -11223,33 +10264,6 @@
       }
     },
     {
-      "id": "00-0039855",
-      "name": "Jalen McMillan",
-      "team": "TB",
-      "position": "WR",
-      "jersey": "11",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/s8tlj5wsi6cq8kjhp06v",
-      "college": "Washington",
-      "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0039589",
       "name": "Kameron Johnson",
       "team": "TB",
@@ -11547,33 +10561,6 @@
       }
     },
     {
-      "id": "00-0039355",
-      "name": "Luke McCaffrey",
-      "team": "WAS",
-      "position": "WR",
-      "jersey": "11",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/xtxiwlkniuldrqg65n3q",
-      "college": "Rice; Nebraska",
-      "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0031588",
       "name": "Stefon Diggs",
       "team": "WAS",
@@ -11610,33 +10597,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/tmfl2zruajmkrtcg4zxp",
       "college": "Ohio State",
       "experience": 7,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0037742",
-      "name": "Treylon Burks",
-      "team": "WAS",
-      "position": "WR",
-      "jersey": "13",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/bmozbzdxgnnwdniuvgnn",
-      "college": "Arkansas",
-      "experience": 4,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -12114,33 +11074,6 @@
       }
     },
     {
-      "id": "00-0039356",
-      "name": "Ja'Tavion Sanders",
-      "team": "CAR",
-      "position": "TE",
-      "jersey": "0",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/le2akm1cbou170ioctxl",
-      "college": "Texas",
-      "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0040187",
       "name": "Mitchell Evans",
       "team": "CAR",
@@ -12312,33 +11245,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ifkhcxze7lnxkpzjvsmk",
       "college": "Iowa; Michigan",
       "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041116",
-      "name": "Jack Endries",
-      "team": "CIN",
-      "position": "TE",
-      "jersey": "84",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/wxtev9zj048yzxk8ebfu",
-      "college": "Texas; California",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -12597,7 +11503,8 @@
       "lines": {
         "PrizePicks": {
           "Rec Yards": 6.5,
-          "Longest Rec": 5.5,
+          "Longest Rec": 4.5,
+          "Rec Targets": 1.5,
           "Fantasy Score": 2.5
         },
         "Underdog": {}
@@ -12906,33 +11813,6 @@
       }
     },
     {
-      "id": "00-0036556",
-      "name": "Brevin Jordan",
-      "team": "HOU",
-      "position": "TE",
-      "jersey": "9",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/rn42gehfbeflx2px8njx",
-      "college": "Miami",
-      "experience": 5,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0039359",
       "name": "Cade Stover",
       "team": "HOU",
@@ -13185,33 +12065,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/auqtvapzdtpdxg6myw6b",
       "college": "Bowling Green",
       "experience": 5,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041084",
-      "name": "Tanner Koziol",
-      "team": "JAX",
-      "position": "TE",
-      "jersey": "88",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/yx0na9fufgv3snuyecbd",
-      "college": "Houston; Ball State",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -13539,33 +12392,6 @@
       }
     },
     {
-      "id": "00-0039338",
-      "name": "Brock Bowers",
-      "team": "LV",
-      "position": "TE",
-      "jersey": "89",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/waorceny0ggpaeckaol8",
-      "college": "Georgia",
-      "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0035345",
       "name": "Chris Myarick",
       "team": "LV",
@@ -13656,33 +12482,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/kw4cwgjl4kywh6le4sfh",
       "college": "UCLA",
       "experience": 4,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0041077",
-      "name": "Justin Joly",
-      "team": "MIA",
-      "position": "TE",
-      "jersey": "80",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/vglffv5obtvktndulobu",
-      "college": "N.C. State; Connecticut",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -13998,33 +12797,6 @@
       }
     },
     {
-      "id": "00-0041041",
-      "name": "Oscar Delp",
-      "team": "NO",
-      "position": "TE",
-      "jersey": "4",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/a7tu8cb3rnd5ncgbtok5",
-      "college": "Georgia",
-      "experience": 0,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
       "id": "00-0039518",
       "name": "Treyton Welch",
       "team": "NO",
@@ -14115,33 +12887,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/fv2jbzlocr1o3ahkru43",
       "college": "Penn State",
       "experience": 2,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      }
-    },
-    {
-      "id": "00-0040225",
-      "name": "Thomas Fidone II",
-      "team": "NYG",
-      "position": "TE",
-      "jersey": "86",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/vbaqpkcxcfwh9dhzescy",
-      "college": "Nebraska",
-      "experience": 1,
       "season": {
         "games": 0,
         "pass_yards": 0,
