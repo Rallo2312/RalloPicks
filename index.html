@@ -980,6 +980,9 @@ body{background:
 </style><style id="main-nav-click-fix">
 .app-main-nav{position:relative!important;z-index:80!important;pointer-events:auto!important}
 .app-main-nav button{position:relative!important;z-index:81!important;pointer-events:auto!important;touch-action:manipulation!important}
+</style><style id="bottom-nav-click-fix">
+#appBottomNav{pointer-events:auto!important;z-index:150!important}
+#appBottomNav button{pointer-events:auto!important;touch-action:manipulation!important}
 </style></head>
 <body>
 <div class="app">
@@ -2261,6 +2264,20 @@ document.addEventListener('click',function(e){
  if(mlb){e.preventDefault();switchView(mlb.dataset.view);return}
  const nfl=e.target.closest('#nflNav button[data-nfl-view]');
  if(nfl){e.preventDefault();switchNflView(nfl.dataset.nflView);return}
+});
+document.addEventListener('click',function(e){
+ const app=e.target.closest('#appBottomNav button[data-app-route]');
+ if(!app)return;
+ e.preventDefault();
+ const route=app.dataset.appRoute;
+ document.querySelectorAll('#appBottomNav button').forEach(b=>b.classList.toggle('active',b===app));
+ if(state.currentSport==='NFL'){
+   const map={home:'home',research:'research',lab:'players',board:'board',results:'ranks'};
+   switchNflView(map[route]||'home');
+ }else{
+   const map={home:'home',research:'top20',lab:'batterlab',board:'board',results:'rankings'};
+   switchView(map[route]||'home');
+ }
 });
 document.querySelectorAll('#mlbNav button').forEach(b=>b.onclick=null);
 document.querySelectorAll('#nflNav button').forEach(b=>b.onclick=null);
