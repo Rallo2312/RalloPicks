@@ -940,6 +940,12 @@ body{background:
  .app-bottom-nav button.active{background:rgba(78,255,119,.09)!important;color:#eaff72!important;box-shadow:inset 0 0 0 1px rgba(87,255,128,.18)!important}
 }
 .rallo-quick-filterbar{display:flex;gap:7px;align-items:center;overflow-x:auto;padding:8px 0 11px}.rallo-quick-filterbar button{white-space:nowrap;border:1px solid rgba(255,255,255,.08);background:#081526;color:#9eacc0;border-radius:9px;padding:8px 12px;font-size:8px;font-weight:900}.rallo-quick-filterbar button:first-child{border-color:rgba(110,255,73,.35);color:#e9ff5c}
+</style><style id="home-player-lab-ui">
+.home-prop-lab{margin:0 0 14px;padding:16px;border-radius:16px;background:linear-gradient(135deg,#081426,#06111f 60%,rgba(50,230,135,.08));border:1px solid rgba(66,237,145,.22)}
+.home-prop-lab-head small{font-size:8px;font-weight:1000;letter-spacing:.8px;color:#66ef9d}.home-prop-lab-head h2{font-size:24px;letter-spacing:-.6px;margin:4px 0}.home-prop-lab-head p{margin:0;color:#8f9db1;font-size:9px}
+.home-prop-controls{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(220px,.8fr);gap:9px;margin-top:14px}.home-prop-controls label{display:block;font-size:7px;font-weight:900;color:#7f8da3;margin:0 0 5px 2px}.home-prop-controls input,.home-prop-controls select{width:100%;height:44px;border-radius:10px;background:#071221;color:#fff;border:1px solid rgba(255,255,255,.10);padding:0 12px;outline:none}.home-prop-controls input:focus,.home-prop-controls select:focus{border-color:#67ed9c;box-shadow:0 0 0 3px rgba(67,237,145,.09)}
+.home-lab-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}.home-lab-player{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:9px;text-align:left;border:1px solid rgba(255,255,255,.07);background:#0a1728;color:#fff;border-radius:11px;padding:8px;cursor:pointer}.home-lab-player:hover{border-color:rgba(65,237,143,.36)}.home-lab-player .player-avatar,.home-lab-player .nfl-headshot{width:40px!important;height:40px!important}.home-lab-player b{display:block;font-size:10px}.home-lab-player small{display:block;color:#7f8da3;font-size:7px;margin-top:2px}.home-lab-player em{font-style:normal;color:#67ed9c;font-size:7px;font-weight:1000}.home-lab-placeholder{grid-column:1/-1;padding:14px;text-align:center;color:#7f8da3;font-size:9px;border:1px dashed rgba(255,255,255,.08);border-radius:10px}
+@media(max-width:620px){.home-prop-lab{padding:12px}.home-prop-lab-head h2{font-size:18px}.home-prop-controls{grid-template-columns:1fr}.home-lab-results{grid-template-columns:1fr}}
 </style></head>
 <body>
 <div class="app">
@@ -985,7 +991,17 @@ body{background:
     </aside>
 
     <section class="panel center-col">
-      <div class="board" id="mlbHomeView"><div id="mlbHomeDashboard"><div class="empty">Building today’s RalloPicks dashboard…</div></div></div>
+      <div class="board" id="mlbHomeView">
+  <section class="home-prop-lab">
+    <div class="home-prop-lab-head"><div><small>⚾ MLB PLAYER LAB</small><h2>Search a player. Pick a stat. Research it.</h2><p>Choose the prop you want to check, then open the full RalloPicks research card.</p></div></div>
+    <div class="home-prop-controls">
+      <div class="home-search-field"><label>PLAYER</label><input id="mlbHomePlayerSearch" placeholder="Search MLB player…" oninput="searchMlbHomeLab(this.value)"></div>
+      <div class="home-stat-field"><label>STAT / PROP</label><select id="mlbHomeMarket"><option value="homeRuns">Home Runs</option><option value="fantasy">Fantasy Score</option><option value="hits">Hits</option><option value="totalBases">Total Bases</option><option value="rbi">RBI</option><option value="runs">Runs</option><option value="hrr">Hits + Runs + RBI</option><option value="walks">Walks</option><option value="singles">Singles</option><option value="doubles">Doubles</option><option value="triples">Triples</option><option value="strikeouts">Batter Strikeouts</option></select></div>
+    </div>
+    <div id="mlbHomeLabResults" class="home-lab-results"><div class="home-lab-placeholder">Start typing a player name.</div></div>
+  </section>
+  <div id="mlbHomeDashboard"><div class="empty">Building today’s RalloPicks dashboard…</div></div>
+</div>
       <div class="board hidden-view" id="myBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved MLB + NFL props • line movement • results</span></div><span>Device-local</span></div>
 <section class="parlay-scanner">
   <div class="model-head"><b>📸 Parlay Scanner</b><span>Screenshot → OCR → Rallo Score</span></div>
@@ -1054,7 +1070,17 @@ body{background:
       </section>
     </aside>
     <section class="panel center-col">
-      <div class="board" id="nflHomeView"><div id="nflHomeDashboard"><div class="empty">Building today’s NFL dashboard…</div></div></div>
+      <div class="board" id="nflHomeView">
+  <section class="home-prop-lab">
+    <div class="home-prop-lab-head"><div><small>🏈 NFL PLAYER LAB</small><h2>Search a player. Pick a prop. Research it.</h2><p>Choose exactly what you want to check before opening the full NFL Rallo Read.</p></div></div>
+    <div class="home-prop-controls">
+      <div class="home-search-field"><label>PLAYER</label><input id="nflHomePlayerSearch" placeholder="Search NFL player…" oninput="searchNflHomeLab(this.value)"></div>
+      <div class="home-stat-field"><label>STAT / PROP</label><select id="nflHomeMarket"><option value="pass_yards">Pass Yards</option><option value="pass_tds">Passing TDs</option><option value="rush_yards">Rush Yards</option><option value="rec_yards">Receiving Yards</option><option value="receptions">Receptions</option><option value="targets">Targets</option><option value="scrimmage_yards">Rush + Rec Yards</option><option value="anytime_td">Anytime TD</option></select></div>
+    </div>
+    <div id="nflHomeLabResults" class="home-lab-results"><div class="home-lab-placeholder">Start typing a player name.</div></div>
+  </section>
+  <div id="nflHomeDashboard"><div class="empty">Building today’s NFL dashboard…</div></div>
+</div>
       <div class="board hidden-view" id="nflBoardView"><div class="section-title"><div><h2>⭐ My Board</h2><span>Saved props across MLB + NFL</span></div><span>Device-local</span></div><div id="nflBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
       <div class="rallo-quick-filterbar"><button onclick="switchNflView('research')">🎯 PROPS</button><button onclick="switchNflView('research');scrollNFLResearch('nflOverallRanks')">📊 RANKINGS</button><button onclick="switchNflView('research');document.getElementById('nflAnytimeTdBoard')?.scrollIntoView({behavior:'smooth'})">🏈 ANYTIME TD</button><button onclick="switchNflView('players')">🧪 PLAYER LAB</button><button onclick="switchNflView('board')">⭐ MY BOARD</button><button onclick="switchNflView('standings')">🏆 STANDINGS</button></div><div class="board hidden-view" id="nflResearchView">
         <section class="hr-hub-hero nfl-research-hero">
@@ -1363,6 +1389,35 @@ let batterSearchTimer;function searchPlayers(q){
  },180)
 }
 function searchBatters(q){state.labSearchMode='batters';syncLabSearchTabs();searchPlayers(q)}
+async function searchMlbHomeLab(q){
+ const root=document.getElementById('mlbHomeLabResults');if(!root)return;
+ const term=String(q||'').trim().toLowerCase();
+ if(term.length<2){root.innerHTML='<div class="home-lab-placeholder">Start typing a player name.</div>';return}
+ root.innerHTML='<div class="home-lab-placeholder">Searching MLB players…</div>';
+ await buildBatterIndex();
+ const hits=state.allBatters.filter(p=>(p.fullName+' '+p.teamName).toLowerCase().includes(term)).slice(0,12);
+ root.innerHTML=hits.length?hits.map(p=>`<button class="home-lab-player" onclick="openMlbHomeResearch(${p.id},'${esc(p.fullName).replace(/'/g,"\\'")}','${esc(p.teamAbbr)}')">${playerAvatar(p.fullName,p.id)}<span><b>${esc(p.fullName)}</b><small>${esc(p.teamName)}</small></span><em>OPEN ›</em></button>`).join(''):'<div class="home-lab-placeholder">No MLB player found.</div>';
+}
+window.openMlbHomeResearch=function(id,name,team){
+ const market=document.getElementById('mlbHomeMarket')?.value||'homeRuns';
+ openBatterLab(id,name,team);switchView('batterlab');
+ setTimeout(()=>{if(state.currentLab){state.currentLab.market=market;renderBatterAnalytics()}},180);
+}
+function searchNflHomeLab(q){
+ const root=document.getElementById('nflHomeLabResults');if(!root)return;
+ const term=String(q||'').trim().toLowerCase();
+ if(term.length<2){root.innerHTML='<div class="home-lab-placeholder">Start typing a player name.</div>';return}
+ const hits=(state.nfl.players||[]).filter(p=>(p.name+' '+p.team+' '+p.position).toLowerCase().includes(term)).slice(0,12);
+ root.innerHTML=hits.length?hits.map(p=>`<button class="home-lab-player" onclick="openNflHomeResearch('${esc(p.id).replace(/'/g,"\\'")}')">${nflPlayerImage(p)}<span><b>${esc(p.name)}</b><small>${esc(p.position)} • ${esc(p.team)}</small></span><em>OPEN ›</em></button>`).join(''):'<div class="home-lab-placeholder">No NFL player found.</div>';
+}
+window.openNflHomeResearch=function(id){
+ const market=document.getElementById('nflHomeMarket')?.value||'pass_yards';
+ const p=state.nfl.players.find(x=>String(x.id)===String(id));if(!p)return;
+ if(market==='anytime_td'){switchNflView('research');setTimeout(()=>document.getElementById('nflAnytimeTdBoard')?.scrollIntoView({behavior:'smooth',block:'start'}),120);return}
+ state.nflMarket=market;state.nflLine=null;openNFLPlayer(id,false);switchNflView('players');
+ setTimeout(()=>document.getElementById('nflPlayerDetail')?.scrollIntoView({behavior:'smooth',block:'start'}),80);
+}
+
 
 function statNum(s,k){const v=s?.[k];return Number.isFinite(Number(v))?Number(v):0}function gameFantasy(s){const H=statNum(s,'hits'),D=statNum(s,'doubles'),T=statNum(s,'triples'),HR=statNum(s,'homeRuns'),S=Math.max(0,H-D-T-HR);return S*3+D*5+T*8+HR*10+statNum(s,'runs')*2+statNum(s,'rbi')*2+statNum(s,'baseOnBalls')*2+statNum(s,'hitByPitch')*2+statNum(s,'stolenBases')*5}
 function avg(g,k){if(!g.length)return'—';return (g.reduce((a,x)=>a+Number(k(x.stat||{})),0)/g.length).toFixed(1)}function rate(g,k){if(!g.length)return'—';return Math.round(g.filter(x=>k(x.stat||{})).length/g.length*100)+'%'}
