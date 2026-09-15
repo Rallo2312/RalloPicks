@@ -297,10 +297,19 @@ for player in players:
         "rec_yards": 0, "rec_tds": 0, "recent": [],
     }
 
+players_by_name_history = {normalized(player["name"]): player for player in players if player.get("name")}
 for row in previous_rows:
     if row.get("season_type") not in {"REG", None, ""}:
         continue
+    # nflverse weekly stats use GSIS player_id. Prefer that stable ID, but fall
+    # back to the display name so historical data still attaches if the current
+    # roster source emitted a different identifier for the same player.
     player = players_by_id.get(row.get("player_id"))
+    if not player:
+        historical_name = (
+            row.get("player_display_name") or row.get("player_name") or row.get("name")
+        )
+        player = players_by_name_history.get(normalized(historical_name))
     if not player:
         continue
     game = {
@@ -320,6 +329,13 @@ for player in players:
     hist = player["previous_season"]
     hist["recent"].sort(key=lambda game: game["week"], reverse=True)
     hist["games"] = len(hist["recent"])
+
+history_matches = sum(1 for player in players if player["previous_season"]["games"] > 0)
+print(f"Matched {history_matches}/{len(players)} active players to {previous_season} history")
+if previous_rows and history_matches == 0:
+    raise RuntimeError(
+        f"Loaded {len(previous_rows)} rows for {previous_season} but matched zero active players"
+    )
 
 try:
     prizepicks = get_json(
