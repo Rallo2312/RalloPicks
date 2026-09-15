@@ -274,6 +274,53 @@ for player in players:
                     "receptions", "targets", "rec_yards", "rec_tds"):
             season_stats[key] += game[key]
 
+# Add previous-season game logs as a stabilizing research baseline.
+# Current-season role, matchup, and lines remain the primary signals in the UI/model.
+previous_season = season - 1
+previous_weekly_stats_url = (
+    f"https://github.com/nflverse/nflverse-data/releases/download/player_stats/"
+    f"stats_player_week_{previous_season}.csv"
+)
+try:
+    previous_request = urllib.request.Request(
+        previous_weekly_stats_url, headers={"User-Agent": "RalloPicks/1.0"}
+    )
+    with urllib.request.urlopen(previous_request, timeout=60) as response:
+        previous_rows = list(csv.DictReader(io.TextIOWrapper(response, encoding="utf-8")))
+except (urllib.error.HTTPError, urllib.error.URLError):
+    previous_rows = []
+
+for player in players:
+    player["previous_season"] = {
+        "season": previous_season, "games": 0, "pass_yards": 0, "pass_tds": 0,
+        "rush_yards": 0, "rush_tds": 0, "receptions": 0, "targets": 0,
+        "rec_yards": 0, "rec_tds": 0, "recent": [],
+    }
+
+for row in previous_rows:
+    if row.get("season_type") not in {"REG", None, ""}:
+        continue
+    player = players_by_id.get(row.get("player_id"))
+    if not player:
+        continue
+    game = {
+        "week": int(number(row.get("week"))), "opponent": row.get("opponent_team"),
+        "pass_yards": number(row.get("passing_yards")), "pass_tds": number(row.get("passing_tds")),
+        "rush_yards": number(row.get("rushing_yards")), "rush_tds": number(row.get("rushing_tds")),
+        "receptions": number(row.get("receptions")), "targets": number(row.get("targets")),
+        "rec_yards": number(row.get("receiving_yards")), "rec_tds": number(row.get("receiving_tds")),
+    }
+    hist = player["previous_season"]
+    hist["recent"].append(game)
+    for key in ("pass_yards", "pass_tds", "rush_yards", "rush_tds",
+                "receptions", "targets", "rec_yards", "rec_tds"):
+        hist[key] += game[key]
+
+for player in players:
+    hist = player["previous_season"]
+    hist["recent"].sort(key=lambda game: game["week"], reverse=True)
+    hist["games"] = len(hist["recent"])
+
 try:
     prizepicks = get_json(
         "https://partner-api.prizepicks.com/projections",
