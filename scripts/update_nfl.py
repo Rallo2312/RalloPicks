@@ -251,7 +251,7 @@ except (urllib.error.HTTPError, urllib.error.URLError):
 
 players_by_id = {player["id"]: player for player in players}
 for row in weekly_rows:
-    if row.get("season_type") not in {"REG", None, ""}:
+    if row.get("season_type") not in {"REG", "Regular", None, ""}:
         continue
     player = players_by_id.get(row.get("player_id"))
     if not player:
@@ -278,7 +278,7 @@ for player in players:
 # Current-season role, matchup, and lines remain the primary signals in the UI/model.
 previous_season = season - 1
 previous_weekly_stats_url = (
-    f"https://github.com/nflverse/nflverse-data/releases/download/player_stats/"
+    f"https://github.com/nflverse/nflverse-data/releases/download/stats_player/"
     f"stats_player_week_{previous_season}.csv"
 )
 try:
