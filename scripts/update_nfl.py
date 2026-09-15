@@ -294,7 +294,7 @@ for player in players:
     player["previous_season"] = {
         "season": previous_season, "games": 0, "pass_yards": 0, "pass_tds": 0,
         "rush_yards": 0, "rush_tds": 0, "receptions": 0, "targets": 0,
-        "rec_yards": 0, "rec_tds": 0, "recent": [],
+        "rec_yards": 0, "rec_tds": 0, "recent": [], "game_log": [],
     }
 
 players_by_name_history = {normalized(player["name"]): player for player in players if player.get("name")}
@@ -321,6 +321,7 @@ for row in previous_rows:
     }
     hist = player["previous_season"]
     hist["recent"].append(game)
+    hist["game_log"].append(game)
     for key in ("pass_yards", "pass_tds", "rush_yards", "rush_tds",
                 "receptions", "targets", "rec_yards", "rec_tds"):
         hist[key] += game[key]
@@ -328,7 +329,8 @@ for row in previous_rows:
 for player in players:
     hist = player["previous_season"]
     hist["recent"].sort(key=lambda game: game["week"], reverse=True)
-    hist["games"] = len(hist["recent"])
+    hist["game_log"].sort(key=lambda game: game["week"], reverse=True)
+    hist["games"] = len(hist["game_log"])
 
 history_matches = sum(1 for player in players if player["previous_season"]["games"] > 0)
 print(f"Matched {history_matches}/{len(players)} active players to {previous_season} history")
