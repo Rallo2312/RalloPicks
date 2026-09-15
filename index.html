@@ -2107,7 +2107,7 @@ function nflBestLineFinderHtml(p,marketLabel,recent){const rows=COMPARE_BOOKS.ma
 function nflPropResearch(p,key,line,opponent){
  const hist=p.previous_season||p.last_season||p.season_2025||{};
  const currentRecent=Array.isArray(p.recent)?p.recent:[];
- const historicalGames=Array.isArray(hist.games)?hist.games:(Array.isArray(hist.game_log)?hist.game_log:(Array.isArray(hist.recent)?hist.recent:[]));
+ const historicalGames=Array.isArray(hist.game_log)?hist.game_log:(Array.isArray(hist.recent)?hist.recent:[]);
  const recent=(currentRecent.length>=5?currentRecent:currentRecent.concat(historicalGames)).slice(0,10),s=p.season||{},def=Number(opponent?.team?.defense_rank)||16.5;
  const vals=recent.map(g=>nflGameValue(g,key)),avg=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
  const over=vals.length?vals.filter(v=>v>line).length/vals.length:null;
