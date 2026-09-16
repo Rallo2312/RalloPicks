@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T13:28:50.105963+00:00",
+  "updated_at": "2026-09-16T17:24:36.429281+00:00",
   "season": 2026,
   "rows": [
     {
@@ -11,10 +11,18 @@
       "gameDate": "2026-09-16T17:10:00Z",
       "line": 3.5,
       "lineSource": "SportsGameOdds",
-      "l5Rate": 60,
-      "l10Rate": 70,
-      "seasonAvg": 4.2,
+      "l5Rate": 40,
+      "l10Rate": 60,
+      "seasonAvg": 3.95,
       "recent": [
+        {
+          "date": "2026-09-16",
+          "gamePk": 824382,
+          "opponent": "Cleveland Guardians",
+          "strikeouts": 0,
+          "innings": "1.0",
+          "pitches": 14
+        },
         {
           "date": "2026-09-11",
           "gamePk": 823012,
@@ -166,19 +174,11 @@
           "strikeouts": 3,
           "innings": "5.0",
           "pitches": 84
-        },
-        {
-          "date": "2026-05-25",
-          "gamePk": 824598,
-          "opponent": "Minnesota Twins",
-          "strikeouts": 5,
-          "innings": "6.0",
-          "pitches": 94
         }
       ],
       "opponentK": {
         "strikeouts": 1206,
-        "plateAppearances": 5730,
+        "plateAppearances": 5734,
         "kPct": 21.0
       }
     },
@@ -191,10 +191,18 @@
       "gameDate": "2026-09-16T17:10:00Z",
       "line": 6.5,
       "lineSource": "SportsGameOdds",
-      "l5Rate": 40,
+      "l5Rate": 20,
       "l10Rate": 30,
-      "seasonAvg": 6.0,
+      "seasonAvg": 5.75,
       "recent": [
+        {
+          "date": "2026-09-16",
+          "gamePk": 824382,
+          "opponent": "Chicago White Sox",
+          "strikeouts": 1,
+          "innings": "1.0",
+          "pitches": 12
+        },
         {
           "date": "2026-09-11",
           "gamePk": 823659,
@@ -346,19 +354,11 @@
           "strikeouts": 6,
           "innings": "5.2",
           "pitches": 91
-        },
-        {
-          "date": "2026-05-19",
-          "gamePk": 824276,
-          "opponent": "Detroit Tigers",
-          "strikeouts": 6,
-          "innings": "5.0",
-          "pitches": 81
         }
       ],
       "opponentK": {
-        "strikeouts": 1392,
-        "plateAppearances": 5762,
+        "strikeouts": 1393,
+        "plateAppearances": 5766,
         "kPct": 24.2
       }
     },
@@ -369,12 +369,20 @@
       "opponent": "STL",
       "gamePk": 823004,
       "gameDate": "2026-09-16T17:15:00Z",
-      "line": null,
-      "lineSource": null,
-      "l5Rate": null,
-      "l10Rate": null,
-      "seasonAvg": 2.71,
+      "line": 3.5,
+      "lineSource": "SportsGameOdds",
+      "l5Rate": 60,
+      "l10Rate": 38,
+      "seasonAvg": 2.38,
       "recent": [
+        {
+          "date": "2026-09-16",
+          "gamePk": 823004,
+          "opponent": "St. Louis Cardinals",
+          "strikeouts": 0,
+          "innings": "0.0",
+          "pitches": 0
+        },
         {
           "date": "2026-09-11",
           "gamePk": 823173,
@@ -449,8 +457,16 @@
       "lineSource": null,
       "l5Rate": null,
       "l10Rate": null,
-      "seasonAvg": 5.6,
+      "seasonAvg": 5.15,
       "recent": [
+        {
+          "date": "2026-09-16",
+          "gamePk": 823004,
+          "opponent": "San Francisco Giants",
+          "strikeouts": 0,
+          "innings": "0.1",
+          "pitches": 13
+        },
         {
           "date": "2026-09-11",
           "gamePk": 823012,
@@ -602,19 +618,11 @@
           "strikeouts": 10,
           "innings": "5.0",
           "pitches": 101
-        },
-        {
-          "date": "2026-05-19",
-          "gamePk": 823059,
-          "opponent": "Pittsburgh Pirates",
-          "strikeouts": 9,
-          "innings": "4.2",
-          "pitches": 77
         }
       ],
       "opponentK": {
         "strikeouts": 1228,
-        "plateAppearances": 5705,
+        "plateAppearances": 5708,
         "kPct": 21.5
       }
     },
@@ -2573,10 +2581,10 @@
       "opponent": "BAL",
       "gamePk": 823576,
       "gameDate": "2026-09-16T23:10:00Z",
-      "line": null,
-      "lineSource": null,
-      "l5Rate": null,
-      "l10Rate": null,
+      "line": 4.5,
+      "lineSource": "SportsGameOdds",
+      "l5Rate": 20,
+      "l10Rate": 25,
       "seasonAvg": 3.62,
       "recent": [
         {
@@ -2789,10 +2797,10 @@
       "opponent": "ATL",
       "gamePk": 824626,
       "gameDate": "2026-09-16T23:40:00Z",
-      "line": 4.5,
+      "line": 5.5,
       "lineSource": "SportsGameOdds",
       "l5Rate": 20,
-      "l10Rate": 40,
+      "l10Rate": 30,
       "seasonAvg": 4.85,
       "recent": [
         {
