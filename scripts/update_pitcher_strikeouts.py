@@ -25,8 +25,9 @@ def opponent_k(team_id):
 def norm_name(v):
  return "".join(ch for ch in str(v or "").lower() if ch.isalnum())
 def provider_name(entity):
- parts=str(entity or "").split("_")
- if len(parts)>2 and parts[-2].isdigit(): parts=parts[:-2]
+ parts=str(entity or "").replace("-","_").split("_")
+ # SGO player IDs are commonly first_last_<number>_<league>
+ while parts and (parts[-1].isdigit() or parts[-1].lower() in ("mlb","nfl","nba","nhl")): parts.pop()
  return " ".join(p.capitalize() for p in parts)
 def odds_lines():
  if not KEY:return {"by_id":{},"by_name":{}}
@@ -36,14 +37,17 @@ def odds_lines():
   by_id={}; by_name={}
   for e in events:
    for o in (e.get("odds") or {}).values():
-    sid=str(o.get("statID") or "").lower().replace("_","")
-    market=str(o.get("marketName") or "").lower()
-    if "strikeout" not in sid and "strikeout" not in market: continue
-    if "pitch" not in sid and "pitcher" not in market: continue
+    sid=str(o.get("statID") or "").lower().replace("_","").replace("-","")
+    market=str(o.get("marketName") or o.get("statName") or "").lower()
+    # Accept SGO's pitcher strikeout stat variants (strikeouts, pitchingStrikeouts, etc.)
+    if not (("strikeout" in sid or "strikeout" in market) and ("batter" not in sid and "batter" not in market)): continue
     ent=o.get("statEntityID") or o.get("playerID")
     if ent in (None,"all","home","away"): continue
     candidates=[]
-    raw=o.get("bookOverUnder") or o.get("fairOverUnder")
+    raw=o.get("bookOverUnder")
+    if raw is None: raw=o.get("fairOverUnder")
+    if raw is None: raw=o.get("overUnder")
+    if raw is None: raw=o.get("line")
     if raw is not None:
      try:candidates.append(float(raw))
      except:pass
@@ -70,12 +74,19 @@ for day in sched.get("dates",[]):
   for side,opp_side in (("away","home"),("home","away")):
    slot=teams.get(side) or {}; pp=slot.get("probablePitcher") or {}
    if not pp.get("id"): continue
-   opp=(teams.get(opp_side) or {}).get("team") or {}; logs=game_logs(pp["id"]); ks=[float(x["strikeouts"] or 0) for x in logs]
+   team=(slot.get("team") or {})
+   opp=(teams.get(opp_side) or {}).get("team") or {}
+   # Schedule team objects often omit abbreviations; hydrate them from /teams.
+   try:
+    if not team.get("abbreviation") and team.get("id"): team.update(js(f"{MLB}/teams/{team['id']}").get("teams",[{}])[0])
+    if not opp.get("abbreviation") and opp.get("id"): opp.update(js(f"{MLB}/teams/{opp['id']}").get("teams",[{}])[0])
+   except Exception as e: print("team hydrate warning",e)
+   logs=game_logs(pp["id"]); ks=[float(x["strikeouts"] or 0) for x in logs]
    lineinfo=(lines.get("by_id") or {}).get(str(pp["id"])) or (lines.get("by_name") or {}).get(norm_name(pp.get("fullName"))) or {}
    line=lineinfo.get("line")
    def rate(n):
     a=ks[:n]
     return round(100*sum(v>line for v in a)/len(a)) if a and line is not None else None
-   rows.append({"id":pp["id"],"name":pp.get("fullName"),"team":(slot.get("team") or {}).get("abbreviation"),"opponent":opp.get("abbreviation"),"gamePk":g.get("gamePk"),"gameDate":g.get("gameDate"),"line":line,"lineSource":"SportsGameOdds" if line is not None else None,"l5Rate":rate(5),"l10Rate":rate(10),"seasonAvg":round(sum(ks)/len(ks),2) if ks else None,"recent":logs,"opponentK":opponent_k(opp.get("id"))})
+   rows.append({"id":pp["id"],"name":pp.get("fullName"),"team":team.get("abbreviation") or team.get("name"),"opponent":opp.get("abbreviation") or opp.get("name"),"gamePk":g.get("gamePk"),"gameDate":g.get("gameDate"),"line":line,"lineSource":"SportsGameOdds" if line is not None else None,"l5Rate":rate(5),"l10Rate":rate(10),"seasonAvg":round(sum(ks)/len(ks),2) if ks else None,"recent":logs,"opponentK":opponent_k(opp.get("id"))})
 OUT.write_text(json.dumps({"updated_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"season":YEAR,"rows":rows},indent=2))
 print("Wrote",OUT,"with",len(rows),"probable starters")
