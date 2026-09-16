@@ -1011,6 +1011,7 @@ body{background:
   <nav class="nav app-main-nav" id="mlbNav">
     <button class="active" data-view="home">🏠 Home</button>
     <button data-view="top20">🔥 HR Board</button>
+    <button data-view="strikeouts">⚾ Strikeouts</button>
     <button data-view="rankings">📊 Rankings</button>
     <button data-view="batterlab">🔎 Player Lab</button>
     <button data-view="board">⭐ My Board</button>
@@ -1080,6 +1081,7 @@ body{background:
   <div id="parlayScoreCard"></div>
 </section>
 <div id="myBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
+      <div class="board hidden-view" id="strikeoutsView"><div class="section-title"><div><h2>⚾ Pitcher Strikeouts</h2><span>Starting pitchers • K matchup research • current lines</span></div><span>Pitcher Lab</span></div><div class="nfl-empty-note">Pitcher strikeout board is being connected to the MLB pitcher feed. It will rank starters by strikeout form, opponent K tendency, pitch count/workload and current prop line.</div><div id="strikeoutRows"></div></div>
       <div class="board hidden-view" id="matchupsView">
         <div class="section-title"><div><h2>Today's Matchups</h2><span>Tap a game to open every batter</span></div><span id="gameCount"></span></div>
         <div id="games"><div class="empty">Loading today's MLB slate…</div></div>
@@ -2269,8 +2271,9 @@ function switchView(v){
  if(!requireMembership())return;
  if(v!=='batterlab')document.body.classList.remove('player-profile-open');
  document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));
- ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
+ ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View','strikeoutsView'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
  if(v==='home'){document.getElementById('mlbHomeView').style.display='block';loadDailyBatterRanks().then(()=>renderReferenceHomeCards());return}
+ if(v==='strikeouts'){document.getElementById('strikeoutsView').style.display='block';return}
  if(v==='board'){document.getElementById('myBoardView').style.display='block';renderSaved();return}
  if(v==='matchups'){document.getElementById('matchupsView').style.display='block';return}
  if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active');return}
