@@ -81,6 +81,8 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 .nfl-pf-line-label{position:absolute;right:14px;bottom:7px;font-size:10px;color:#8f9bb3;font-weight:800}
 @media(max-width:520px){.nfl-pf-bars{height:205px}.nfl-pf-bars>div{min-width:45px}}
 
+
+.k-card{background:#081827;border:1px solid rgba(105,230,167,.28);border-radius:18px;padding:14px;margin:12px 0}.k-head{display:flex;justify-content:space-between;gap:12px}.k-head h3{margin:3px 0;font-size:20px}.k-head span,.k-head small,.k-foot{color:var(--muted)}.k-score{text-align:center}.k-score b{font-size:28px;color:var(--green)}.k-score small{display:block}.k-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0}.k-metrics div{background:#0b2031;padding:9px 5px;border-radius:10px;text-align:center}.k-metrics small,.k-metrics b{display:block}.k-metrics small{font-size:9px;color:var(--muted)}.k-bars{height:180px;display:flex;align-items:flex-end;gap:4px;overflow-x:auto;border-bottom:1px solid rgba(255,255,255,.1);padding:16px 0 28px}.k-bars>div{height:100%;min-width:42px;display:flex;flex:1;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}.k-bars i{display:block;width:90%;background:#667388;border-radius:9px 9px 2px 2px;min-height:8px}.k-bars i.hit{background:#28df9d}.k-bars b{font-size:12px;margin-bottom:4px}.k-bars small{position:absolute;top:calc(100% + 6px);font-size:9px;color:var(--muted)}.k-foot{display:flex;justify-content:space-between;font-size:10px;margin-top:8px}@media(max-width:520px){.k-metrics{grid-template-columns:repeat(3,1fr)}.k-bars{height:165px}}
 </style>
 <link rel="stylesheet" href="research-upgrades.css?v=0eee3d209c2eea84fa16e3d366069038630be51b">
 <style>
@@ -1081,7 +1083,7 @@ body{background:
   <div id="parlayScoreCard"></div>
 </section>
 <div id="myBoardRows"><div class="empty">Your saved research will appear here.</div></div></div>
-      <div class="board hidden-view" id="strikeoutsView"><div class="section-title"><div><h2>⚾ Pitcher Strikeouts</h2><span>Starting pitchers • K matchup research • current lines</span></div><span>Pitcher Lab</span></div><div class="nfl-empty-note">Pitcher strikeout board is being connected to the MLB pitcher feed. It will rank starters by strikeout form, opponent K tendency, pitch count/workload and current prop line.</div><div id="strikeoutRows"></div></div>
+      <div class="board hidden-view" id="strikeoutsView"><div class="section-title"><div><h2>⚾ Pitcher Strikeouts</h2><span>Starting pitchers • K matchup research • current lines</span></div><span>Pitcher Lab</span></div><div id="strikeoutRows"><div class="empty">Loading pitcher strikeout research…</div></div></div>
       <div class="board hidden-view" id="matchupsView">
         <div class="section-title"><div><h2>Today's Matchups</h2><span>Tap a game to open every batter</span></div><span id="gameCount"></span></div>
         <div id="games"><div class="empty">Loading today's MLB slate…</div></div>
@@ -2255,6 +2257,7 @@ async function loadNFL(force=false){
  if(state.nflLoaded&&!force){renderNFL();return}
  try{const response=await fetch(`data/nfl.json?d=${Date.now()}`);if(!response.ok)throw new Error(response.status);const data=await response.json();state.nfl={games:data.games||[],teams:data.teams||[],players:data.players||[],season:data.season,updatedAt:data.updated_at};state.nflLoaded=true;window.researchFresh?.('nfl',data.updated_at);renderNFL();if(state.nflCurrentPlayer)openNFLPlayer(state.nflCurrentPlayer,false)}catch(e){window.researchFailed?.('nfl');['nflMatchups','nflMoneylines','nflRankGrid','nflRankQuick','nflStandings','nflPlayerResults'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<div class="nfl-empty-note">NFL research is temporarily unavailable. Please refresh in a few minutes.</div>'})}
 }
+async function renderStrikeoutBoard(){const root=document.getElementById('strikeoutRows');if(!root)return;try{const r=await fetch('data/pitcher-strikeouts.json?d='+Date.now());if(!r.ok)throw 0;const d=await r.json(),rows=d.rows||[];root.innerHTML=rows.length?rows.map(p=>{const line=p.line,logs=(p.recent||[]).slice(0,10),max=Math.max(1,...logs.map(g=>Number(g.strikeouts)||0),Number(line)||0);const score=Math.max(20,Math.min(95,Math.round(45+(p.l10Rate??50)*.25+((p.opponentK?.kPct||22)-22)*2)));return `<article class="k-card"><div class="k-head"><div><small>⚾ STARTING PITCHER</small><h3>${esc(p.name||'TBD')}</h3><span>${esc(p.team||'')} vs ${esc(p.opponent||'')}</span></div><div class="k-score"><b>${score}</b><small>RALLO</small></div></div><div class="k-metrics"><div><small>LINE</small><b>${line??'—'}</b></div><div><small>L5</small><b>${p.l5Rate==null?'—':p.l5Rate+'%'}</b></div><div><small>L10</small><b>${p.l10Rate==null?'—':p.l10Rate+'%'}</b></div><div><small>SZN AVG</small><b>${p.seasonAvg??'—'}</b></div><div><small>OPP K%</small><b>${p.opponentK?.kPct==null?'—':p.opponentK.kPct+'%'}</b></div></div><div class="k-bars">${logs.slice().reverse().map(g=>{const v=Number(g.strikeouts)||0,h=Math.max(8,Math.round(v/max*100));return `<div><b>${v}</b><i class="${line!=null&&v>line?'hit':'miss'}" style="height:${h}%"></i><small>${esc(g.opponent||'')}</small></div>`}).join('')}</div><div class="k-foot"><span>Avg pitches: ${logs.filter(g=>g.pitches!=null).length?(logs.reduce((a,g)=>a+(Number(g.pitches)||0),0)/logs.filter(g=>g.pitches!=null).length).toFixed(1):'—'}</span><span>${line!=null?'Current line • '+line:'Line waiting on feed'}</span></div></article>`}).join(''):'<div class="empty">No probable starters are posted yet.</div>'}catch(e){root.innerHTML='<div class="nfl-empty-note">Pitcher strikeout data is waiting on the next data workflow.</div>'}}
 function switchNflView(view){
  if(!requireMembership())return;
  document.querySelectorAll('#nflNav button').forEach(button=>button.classList.toggle('active',button.dataset.nflView===view));
@@ -2273,7 +2276,7 @@ function switchView(v){
  document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));
  ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View','strikeoutsView'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
  if(v==='home'){document.getElementById('mlbHomeView').style.display='block';loadDailyBatterRanks().then(()=>renderReferenceHomeCards());return}
- if(v==='strikeouts'){document.getElementById('strikeoutsView').style.display='block';return}
+ if(v==='strikeouts'){document.getElementById('strikeoutsView').style.display='block';renderStrikeoutBoard();return}
  if(v==='board'){document.getElementById('myBoardView').style.display='block';renderSaved();return}
  if(v==='matchups'){document.getElementById('matchupsView').style.display='block';return}
  if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active');return}
