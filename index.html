@@ -2274,9 +2274,9 @@ function switchView(v){
  if(!requireMembership())return;
  if(v!=='batterlab')document.body.classList.remove('player-profile-open');
  document.querySelectorAll('#mlbNav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));
- ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View','strikeoutsView'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});
+ ['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View','strikeoutsView'].forEach(id=>{const e=document.getElementById(id);if(e){e.style.setProperty('display','none','important');e.classList.remove('active')}});
  if(v==='home'){document.getElementById('mlbHomeView').style.display='block';loadDailyBatterRanks().then(()=>renderReferenceHomeCards());return}
- if(v==='strikeouts'){document.getElementById('strikeoutsView').style.display='block';renderStrikeoutBoard();return}
+ if(v==='strikeouts'){const e=document.getElementById('strikeoutsView');e.style.setProperty('display','block','important');e.classList.add('active');renderStrikeoutBoard();return}
  if(v==='board'){document.getElementById('myBoardView').style.display='block';renderSaved();return}
  if(v==='matchups'){document.getElementById('matchupsView').style.display='block';return}
  if(v==='moneyline'){const e=document.getElementById('moneylineView');e.style.display='block';e.classList.add('active');return}
