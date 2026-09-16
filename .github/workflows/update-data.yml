@@ -47,9 +47,18 @@ jobs:
         run: python scripts/update_nfl.py
 
       - name: Update MLB pitcher strikeout board
+        id: pitcher_strikeouts
+        continue-on-error: true
         env:
           SPORTSGAMEODDS_API_KEY: ${{ secrets.SPORTSGAMEODDS_API_KEY }}
         run: python scripts/update_pitcher_strikeouts.py
+
+      - name: Ensure pitcher strikeout data exists
+        if: always()
+        run: |
+          if [ ! -f data/pitcher-strikeouts.json ]; then
+            printf '%s\n' '{"updated_at":null,"season":2026,"rows":[],"status":"generator_failed"}' > data/pitcher-strikeouts.json
+          fi
 
       - name: Update verified MLB home run odds
         env:
