@@ -1644,8 +1644,10 @@
       },
       "contactCheckedAt": "2026-09-15T12:06:50.631028+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "miss",
+      "hr": 0,
+      "settledAt": "2026-09-16T01:44:44.144406+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/824466/boxscore"
     },
     {
       "key": "2026-09-15:824143:670541",
@@ -1698,8 +1700,10 @@
       },
       "contactCheckedAt": "2026-09-15T12:06:50.631028+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "hit",
+      "hr": 1,
+      "settledAt": "2026-09-16T01:44:44.144406+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/822925/boxscore"
     },
     {
       "key": "2026-09-15:823574:691723",
@@ -1887,8 +1891,10 @@
       },
       "contactCheckedAt": "2026-09-15T12:06:50.631028+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "miss",
+      "hr": 0,
+      "settledAt": "2026-09-16T01:44:44.144406+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/822925/boxscore"
     },
     {
       "key": "2026-09-15:822849:608369",
@@ -1941,8 +1947,10 @@
       },
       "contactCheckedAt": "2026-09-15T12:06:50.631028+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "miss",
+      "hr": 0,
+      "settledAt": "2026-09-16T01:44:44.144406+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/822925/boxscore"
     },
     {
       "key": "2026-09-15:824143:676369",
@@ -1999,5 +2007,5 @@
       "hr": null
     }
   ],
-  "updatedAt": "2026-09-16T00:49:05.849895+00:00"
+  "updatedAt": "2026-09-16T01:44:44.144406+00:00"
 }
