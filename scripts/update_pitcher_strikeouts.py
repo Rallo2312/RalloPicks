@@ -22,19 +22,45 @@ def opponent_k(team_id):
   st=((d.get("stats") or [{}])[0].get("splits") or [{}])[0].get("stat") or {}
   return {"strikeouts":st.get("strikeOuts"),"plateAppearances":st.get("plateAppearances"),"kPct":round(100*float(st.get("strikeOuts",0))/max(1,float(st.get("plateAppearances",0))),1)}
  except: return {}
+def norm_name(v):
+ return "".join(ch for ch in str(v or "").lower() if ch.isalnum())
+def provider_name(entity):
+ parts=str(entity or "").split("_")
+ if len(parts)>2 and parts[-2].isdigit(): parts=parts[:-2]
+ return " ".join(p.capitalize() for p in parts)
 def odds_lines():
- if not KEY:return {}
+ if not KEY:return {"by_id":{},"by_name":{}}
  try:
-  d=requests.get("https://api.sportsgameodds.com/v2/events",params={"leagueID":"MLB","oddsAvailable":"true","limit":100},headers={"x-api-key":KEY},timeout=45).json().get("data") or []
-  out={}
-  for e in d:
+  resp=requests.get("https://api.sportsgameodds.com/v2/events",params={"leagueID":"MLB","oddsAvailable":"true","limit":100},headers={"x-api-key":KEY},timeout=45)
+  resp.raise_for_status(); events=resp.json().get("data") or []
+  by_id={}; by_name={}
+  for e in events:
    for o in (e.get("odds") or {}).values():
-    sid=str(o.get("statID") or "").lower()
-    if "pitch" not in sid or "strikeout" not in sid: continue
-    ent=o.get("statEntityID") or o.get("playerID"); line=o.get("bookOverUnder") or o.get("fairOverUnder")
-    if ent and line is not None: out[str(ent)]={"line":float(line),"market":o.get("marketName"),"providerID":ent}
-  return out
- except Exception as e: print("K odds warning",e); return {}
+    sid=str(o.get("statID") or "").lower().replace("_","")
+    market=str(o.get("marketName") or "").lower()
+    if "strikeout" not in sid and "strikeout" not in market: continue
+    if "pitch" not in sid and "pitcher" not in market: continue
+    ent=o.get("statEntityID") or o.get("playerID")
+    if ent in (None,"all","home","away"): continue
+    candidates=[]
+    raw=o.get("bookOverUnder") or o.get("fairOverUnder")
+    if raw is not None:
+     try:candidates.append(float(raw))
+     except:pass
+    for book_id,b in (o.get("byBookmaker") or {}).items():
+     if not b or not b.get("available",True):continue
+     val=b.get("overUnder")
+     if val is not None:
+      try:candidates.append(float(val))
+      except:pass
+    if not candidates:continue
+    line=candidates[0]; info={"line":line,"market":o.get("marketName") or "Pitcher Strikeouts","providerID":ent}
+    by_id[str(ent)]=info
+    by_name[norm_name(provider_name(ent))]=info
+  print("Matched",len(by_name),"pitcher strikeout prop names from SportsGameOdds")
+  return {"by_id":by_id,"by_name":by_name}
+ except Exception as e:
+  print("K odds warning",e); return {"by_id":{},"by_name":{}}
 
 sched=js(f"{MLB}/schedule",sportId=1,date=TODAY.isoformat(),hydrate="probablePitcher")
 lines=odds_lines(); rows=[]
@@ -45,7 +71,7 @@ for day in sched.get("dates",[]):
    slot=teams.get(side) or {}; pp=slot.get("probablePitcher") or {}
    if not pp.get("id"): continue
    opp=(teams.get(opp_side) or {}).get("team") or {}; logs=game_logs(pp["id"]); ks=[float(x["strikeouts"] or 0) for x in logs]
-   lineinfo=lines.get(str(pp["id"])) or {}
+   lineinfo=(lines.get("by_id") or {}).get(str(pp["id"])) or (lines.get("by_name") or {}).get(norm_name(pp.get("fullName"))) or {}
    line=lineinfo.get("line")
    def rate(n):
     a=ks[:n]
