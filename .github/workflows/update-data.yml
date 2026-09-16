@@ -8,6 +8,7 @@ on:
       - "scripts/update_arsenals.py"
       - "scripts/update_nfl.py"
       - "scripts/update_hr_odds.py"
+      - "scripts/update_pitcher_strikeouts.py"
       - ".github/workflows/update-data.yml"
   schedule:
     - cron: "15 13,17,21 * * *"
@@ -44,6 +45,11 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/update_nfl.py
+
+      - name: Update MLB pitcher strikeout board
+        env:
+          SPORTSGAMEODDS_API_KEY: ${{ secrets.SPORTSGAMEODDS_API_KEY }}
+        run: python scripts/update_pitcher_strikeouts.py
 
       - name: Update verified MLB home run odds
         env:
