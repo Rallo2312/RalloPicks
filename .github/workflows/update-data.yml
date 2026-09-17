@@ -16,6 +16,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-rallopicks-data
+  cancel-in-progress: true
+
 jobs:
   update:
     runs-on: ubuntu-latest
