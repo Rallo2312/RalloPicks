@@ -35,6 +35,13 @@ def fmt_name(player_id: str) -> str:
         parts = parts[:-2]
     return " ".join(p.capitalize() for p in parts)
 
+def implied_probability(price):
+    try:
+        p = int(str(price).replace("+", ""))
+        return round((100 / (p + 100) if p > 0 else (-p) / ((-p) + 100)) * 100, 2)
+    except Exception:
+        return None
+
 def american_value(price):
     try:
         return int(str(price).replace("+", ""))
@@ -101,6 +108,11 @@ for event in events:
             continue
         books.sort(key=lambda x: american_value(x["odds"]), reverse=True)
         best = books[0]
+        implied = implied_probability(best["odds"])
+        fair_implied = implied_probability(odd.get("fairOdds"))
+        # Market context only: this is not the Rallo matchup score. It lets the
+        # research layer compare best available price with provider fair price.
+        market_edge = round(fair_implied - implied, 2) if implied is not None and fair_implied is not None else None
         rows.append({
             "eventID": event_id,
             "startsAt": starts_at,
@@ -112,7 +124,11 @@ for event in events:
             "bestBook": best["book"],
             "bestBookName": best["bookName"],
             "bestOdds": best["odds"],
+            "bestImpliedProbability": implied,
             "fairOdds": odd.get("fairOdds"),
+            "fairImpliedProbability": fair_implied,
+            "marketEdgePct": market_edge,
+            "bookCount": len(books),
             "books": books,
         })
 
@@ -128,13 +144,18 @@ for row in rows:
         deduped[key] = row
 
 rows = list(deduped.values())
-rows.sort(key=lambda x: (x.get("startsAt") or "", x.get("playerName") or ""))
+# Keep the feed useful for research: strongest positive price edge first when
+# fair odds are available, then lower implied HR probability (longer price).
+rows.sort(key=lambda x: (-(x.get("marketEdgePct") if x.get("marketEdgePct") is not None else -999),
+                         x.get("bestImpliedProbability") if x.get("bestImpliedProbability") is not None else 999,
+                         x.get("playerName") or ""))
 
 OUT.write_text(json.dumps({
     "source": "SportsGameOdds",
     "updatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
     "league": "MLB",
     "market": "Anytime Home Run",
+    "methodology": "Best available book price, implied probability, provider fair probability, and price edge; matchup scoring remains separate.",
     "count": len(rows),
     "rows": rows,
 }, indent=2), encoding="utf-8")
