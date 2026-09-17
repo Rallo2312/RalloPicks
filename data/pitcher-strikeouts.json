@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T17:24:49.113570+00:00",
+  "updated_at": "2026-09-17T21:26:16.842894+00:00",
   "season": 2026,
   "methodology": "K skill + opponent K tendency + recent workload + recent K production vs current line; missing inputs neutral",
   "rows": [
@@ -398,6 +398,203 @@
       "rank": 2
     },
     {
+      "id": 656876,
+      "name": "Drew Rasmussen",
+      "team": "TB",
+      "opponent": "ATH",
+      "gamePk": 822924,
+      "gameDate": "2026-09-17T17:10:00Z",
+      "line": null,
+      "lineSource": null,
+      "l5Rate": null,
+      "l10Rate": null,
+      "seasonAvg": 5.9,
+      "recent5Avg": 5.0,
+      "recent": [
+        {
+          "date": "2026-09-17",
+          "gamePk": 822924,
+          "opponent": "Athletics",
+          "strikeouts": 3,
+          "innings": "5.0",
+          "pitches": 76
+        },
+        {
+          "date": "2026-09-11",
+          "gamePk": 822930,
+          "opponent": "Houston Astros",
+          "strikeouts": 4,
+          "innings": "7.0",
+          "pitches": 92
+        },
+        {
+          "date": "2026-09-05",
+          "gamePk": 822850,
+          "opponent": "Texas Rangers",
+          "strikeouts": 7,
+          "innings": "7.0",
+          "pitches": 97
+        },
+        {
+          "date": "2026-08-30",
+          "gamePk": 822933,
+          "opponent": "San Diego Padres",
+          "strikeouts": 6,
+          "innings": "6.0",
+          "pitches": 97
+        },
+        {
+          "date": "2026-08-24",
+          "gamePk": 824235,
+          "opponent": "Detroit Tigers",
+          "strikeouts": 5,
+          "innings": "6.0",
+          "pitches": 103
+        },
+        {
+          "date": "2026-08-19",
+          "gamePk": 822937,
+          "opponent": "Toronto Blue Jays",
+          "strikeouts": 5,
+          "innings": "5.0",
+          "pitches": 86
+        },
+        {
+          "date": "2026-08-12",
+          "gamePk": 824967,
+          "opponent": "Athletics",
+          "strikeouts": 3,
+          "innings": "5.0",
+          "pitches": 84
+        },
+        {
+          "date": "2026-08-07",
+          "gamePk": 823103,
+          "opponent": "Seattle Mariners",
+          "strikeouts": 8,
+          "innings": "7.0",
+          "pitches": 91
+        },
+        {
+          "date": "2026-08-01",
+          "gamePk": 822944,
+          "opponent": "Chicago White Sox",
+          "strikeouts": 10,
+          "innings": "6.0",
+          "pitches": 96
+        },
+        {
+          "date": "2026-07-26",
+          "gamePk": 822950,
+          "opponent": "Cleveland Guardians",
+          "strikeouts": 9,
+          "innings": "7.0",
+          "pitches": 87
+        },
+        {
+          "date": "2026-07-21",
+          "gamePk": 822787,
+          "opponent": "Toronto Blue Jays",
+          "strikeouts": 5,
+          "innings": "5.0",
+          "pitches": 93
+        },
+        {
+          "date": "2026-07-09",
+          "gamePk": 822954,
+          "opponent": "New York Yankees",
+          "strikeouts": 2,
+          "innings": "2.1",
+          "pitches": 61
+        },
+        {
+          "date": "2026-07-04",
+          "gamePk": 824171,
+          "opponent": "Houston Astros",
+          "strikeouts": 2,
+          "innings": "5.0",
+          "pitches": 77
+        },
+        {
+          "date": "2026-06-28",
+          "gamePk": 822959,
+          "opponent": "Arizona Diamondbacks",
+          "strikeouts": 5,
+          "innings": "6.0",
+          "pitches": 99
+        },
+        {
+          "date": "2026-06-22",
+          "gamePk": 822964,
+          "opponent": "Kansas City Royals",
+          "strikeouts": 5,
+          "innings": "6.0",
+          "pitches": 90
+        },
+        {
+          "date": "2026-06-16",
+          "gamePk": 823939,
+          "opponent": "Los Angeles Dodgers",
+          "strikeouts": 7,
+          "innings": "7.0",
+          "pitches": 102
+        },
+        {
+          "date": "2026-06-10",
+          "gamePk": 822970,
+          "opponent": "Boston Red Sox",
+          "strikeouts": 13,
+          "innings": "7.0",
+          "pitches": 97
+        },
+        {
+          "date": "2026-06-05",
+          "gamePk": 823860,
+          "opponent": "Miami Marlins",
+          "strikeouts": 9,
+          "innings": "7.0",
+          "pitches": 87
+        },
+        {
+          "date": "2026-05-30",
+          "gamePk": 822975,
+          "opponent": "Los Angeles Angels",
+          "strikeouts": 4,
+          "innings": "4.0",
+          "pitches": 70
+        },
+        {
+          "date": "2026-05-24",
+          "gamePk": 823544,
+          "opponent": "New York Yankees",
+          "strikeouts": 6,
+          "innings": "7.0",
+          "pitches": 92
+        }
+      ],
+      "opponentK": {
+        "strikeouts": 1304,
+        "plateAppearances": 5794,
+        "kPct": 22.5
+      },
+      "seasonPitching": {
+        "strikeouts": 163,
+        "innings": "165.1",
+        "battersFaced": 645,
+        "kPct": 25.3,
+        "k9": "8.87",
+        "whip": "0.93",
+        "era": "2.72"
+      },
+      "avgPitchesL5": 93.0,
+      "avgInningsL5": 6.2,
+      "h2hGames": 2,
+      "h2hAvgK": 3.0,
+      "researchScore": 60,
+      "lean": null,
+      "rank": 3
+    },
+    {
       "id": 605400,
       "name": "Aaron Nola",
       "team": "PHI",
@@ -592,7 +789,7 @@
       "h2hAvgK": 6.0,
       "researchScore": 60,
       "lean": null,
-      "rank": 3
+      "rank": 4
     },
     {
       "id": 650633,
@@ -605,9 +802,17 @@
       "lineSource": null,
       "l5Rate": null,
       "l10Rate": null,
-      "seasonAvg": 4.45,
-      "recent5Avg": 4.8,
+      "seasonAvg": 4.55,
+      "recent5Avg": 5.2,
       "recent": [
+        {
+          "date": "2026-09-17",
+          "gamePk": 824305,
+          "opponent": "Colorado Rockies",
+          "strikeouts": 6,
+          "innings": "6.0",
+          "pitches": 104
+        },
         {
           "date": "2026-09-12",
           "gamePk": 823170,
@@ -759,37 +964,29 @@
           "strikeouts": 2,
           "innings": "6.0",
           "pitches": 77
-        },
-        {
-          "date": "2026-05-24",
-          "gamePk": 823297,
-          "opponent": "Athletics",
-          "strikeouts": 4,
-          "innings": "3.2",
-          "pitches": 81
         }
       ],
       "opponentK": {
-        "strikeouts": 1321,
-        "plateAppearances": 5801,
+        "strikeouts": 1327,
+        "plateAppearances": 5827,
         "kPct": 22.8
       },
       "seasonPitching": {
-        "strikeouts": 148,
-        "innings": "175.0",
-        "battersFaced": 711,
-        "kPct": 20.8,
-        "k9": "7.61",
-        "whip": "1.15",
+        "strikeouts": 154,
+        "innings": "181.0",
+        "battersFaced": 736,
+        "kPct": 20.9,
+        "k9": "7.66",
+        "whip": "1.16",
         "era": "3.03"
       },
-      "avgPitchesL5": 97.2,
-      "avgInningsL5": 6.53,
-      "h2hGames": 1,
+      "avgPitchesL5": 98.0,
+      "avgInningsL5": 6.4,
+      "h2hGames": 2,
       "h2hAvgK": 6.0,
       "researchScore": 57,
       "lean": null,
-      "rank": 4
+      "rank": 5
     },
     {
       "id": 543243,
@@ -985,203 +1182,6 @@
       "h2hGames": 1,
       "h2hAvgK": 7.0,
       "researchScore": 55,
-      "lean": null,
-      "rank": 5
-    },
-    {
-      "id": 656876,
-      "name": "Drew Rasmussen",
-      "team": "TB",
-      "opponent": "ATH",
-      "gamePk": 822924,
-      "gameDate": "2026-09-17T17:10:00Z",
-      "line": null,
-      "lineSource": null,
-      "l5Rate": null,
-      "l10Rate": null,
-      "seasonAvg": 5.85,
-      "recent5Avg": 4.8,
-      "recent": [
-        {
-          "date": "2026-09-17",
-          "gamePk": 822924,
-          "opponent": "Athletics",
-          "strikeouts": 2,
-          "innings": "1.0",
-          "pitches": 14
-        },
-        {
-          "date": "2026-09-11",
-          "gamePk": 822930,
-          "opponent": "Houston Astros",
-          "strikeouts": 4,
-          "innings": "7.0",
-          "pitches": 92
-        },
-        {
-          "date": "2026-09-05",
-          "gamePk": 822850,
-          "opponent": "Texas Rangers",
-          "strikeouts": 7,
-          "innings": "7.0",
-          "pitches": 97
-        },
-        {
-          "date": "2026-08-30",
-          "gamePk": 822933,
-          "opponent": "San Diego Padres",
-          "strikeouts": 6,
-          "innings": "6.0",
-          "pitches": 97
-        },
-        {
-          "date": "2026-08-24",
-          "gamePk": 824235,
-          "opponent": "Detroit Tigers",
-          "strikeouts": 5,
-          "innings": "6.0",
-          "pitches": 103
-        },
-        {
-          "date": "2026-08-19",
-          "gamePk": 822937,
-          "opponent": "Toronto Blue Jays",
-          "strikeouts": 5,
-          "innings": "5.0",
-          "pitches": 86
-        },
-        {
-          "date": "2026-08-12",
-          "gamePk": 824967,
-          "opponent": "Athletics",
-          "strikeouts": 3,
-          "innings": "5.0",
-          "pitches": 84
-        },
-        {
-          "date": "2026-08-07",
-          "gamePk": 823103,
-          "opponent": "Seattle Mariners",
-          "strikeouts": 8,
-          "innings": "7.0",
-          "pitches": 91
-        },
-        {
-          "date": "2026-08-01",
-          "gamePk": 822944,
-          "opponent": "Chicago White Sox",
-          "strikeouts": 10,
-          "innings": "6.0",
-          "pitches": 96
-        },
-        {
-          "date": "2026-07-26",
-          "gamePk": 822950,
-          "opponent": "Cleveland Guardians",
-          "strikeouts": 9,
-          "innings": "7.0",
-          "pitches": 87
-        },
-        {
-          "date": "2026-07-21",
-          "gamePk": 822787,
-          "opponent": "Toronto Blue Jays",
-          "strikeouts": 5,
-          "innings": "5.0",
-          "pitches": 93
-        },
-        {
-          "date": "2026-07-09",
-          "gamePk": 822954,
-          "opponent": "New York Yankees",
-          "strikeouts": 2,
-          "innings": "2.1",
-          "pitches": 61
-        },
-        {
-          "date": "2026-07-04",
-          "gamePk": 824171,
-          "opponent": "Houston Astros",
-          "strikeouts": 2,
-          "innings": "5.0",
-          "pitches": 77
-        },
-        {
-          "date": "2026-06-28",
-          "gamePk": 822959,
-          "opponent": "Arizona Diamondbacks",
-          "strikeouts": 5,
-          "innings": "6.0",
-          "pitches": 99
-        },
-        {
-          "date": "2026-06-22",
-          "gamePk": 822964,
-          "opponent": "Kansas City Royals",
-          "strikeouts": 5,
-          "innings": "6.0",
-          "pitches": 90
-        },
-        {
-          "date": "2026-06-16",
-          "gamePk": 823939,
-          "opponent": "Los Angeles Dodgers",
-          "strikeouts": 7,
-          "innings": "7.0",
-          "pitches": 102
-        },
-        {
-          "date": "2026-06-10",
-          "gamePk": 822970,
-          "opponent": "Boston Red Sox",
-          "strikeouts": 13,
-          "innings": "7.0",
-          "pitches": 97
-        },
-        {
-          "date": "2026-06-05",
-          "gamePk": 823860,
-          "opponent": "Miami Marlins",
-          "strikeouts": 9,
-          "innings": "7.0",
-          "pitches": 87
-        },
-        {
-          "date": "2026-05-30",
-          "gamePk": 822975,
-          "opponent": "Los Angeles Angels",
-          "strikeouts": 4,
-          "innings": "4.0",
-          "pitches": 70
-        },
-        {
-          "date": "2026-05-24",
-          "gamePk": 823544,
-          "opponent": "New York Yankees",
-          "strikeouts": 6,
-          "innings": "7.0",
-          "pitches": 92
-        }
-      ],
-      "opponentK": {
-        "strikeouts": 1298,
-        "plateAppearances": 5762,
-        "kPct": 22.5
-      },
-      "seasonPitching": {
-        "strikeouts": 162,
-        "innings": "161.1",
-        "battersFaced": 628,
-        "kPct": 25.8,
-        "k9": "9.04",
-        "whip": "0.91",
-        "era": "2.79"
-      },
-      "avgPitchesL5": 80.6,
-      "avgInningsL5": 5.4,
-      "h2hGames": 2,
-      "h2hAvgK": 2.5,
-      "researchScore": 54,
       "lean": null,
       "rank": 6
     },
@@ -1755,8 +1755,8 @@
         }
       ],
       "opponentK": {
-        "strikeouts": 1421,
-        "plateAppearances": 5903,
+        "strikeouts": 1429,
+        "plateAppearances": 5927,
         "kPct": 24.1
       },
       "seasonPitching": {
@@ -1775,6 +1775,91 @@
       "researchScore": 48,
       "lean": null,
       "rank": 9
+    },
+    {
+      "id": 699044,
+      "name": "Miguel Ullola",
+      "team": "HOU",
+      "opponent": "KC",
+      "gamePk": 824141,
+      "gameDate": "2026-09-17T23:15:00Z",
+      "line": null,
+      "lineSource": null,
+      "l5Rate": null,
+      "l10Rate": null,
+      "seasonAvg": 1.67,
+      "recent5Avg": 1.2,
+      "recent": [
+        {
+          "date": "2026-09-11",
+          "gamePk": 822930,
+          "opponent": "Tampa Bay Rays",
+          "strikeouts": 0,
+          "innings": "1.0",
+          "pitches": 13
+        },
+        {
+          "date": "2026-09-06",
+          "gamePk": 824142,
+          "opponent": "Arizona Diamondbacks",
+          "strikeouts": 1,
+          "innings": "1.0",
+          "pitches": 18
+        },
+        {
+          "date": "2026-08-18",
+          "gamePk": 824154,
+          "opponent": "Los Angeles Angels",
+          "strikeouts": 2,
+          "innings": "1.0",
+          "pitches": 11
+        },
+        {
+          "date": "2026-07-26",
+          "gamePk": 824572,
+          "opponent": "Chicago White Sox",
+          "strikeouts": 0,
+          "innings": "1.0",
+          "pitches": 24
+        },
+        {
+          "date": "2026-07-01",
+          "gamePk": 824174,
+          "opponent": "Minnesota Twins",
+          "strikeouts": 3,
+          "innings": "2.0",
+          "pitches": 23
+        },
+        {
+          "date": "2026-06-29",
+          "gamePk": 824176,
+          "opponent": "Minnesota Twins",
+          "strikeouts": 4,
+          "innings": "2.0",
+          "pitches": 30
+        }
+      ],
+      "opponentK": {
+        "strikeouts": 1192,
+        "plateAppearances": 5709,
+        "kPct": 20.9
+      },
+      "seasonPitching": {
+        "strikeouts": 10,
+        "innings": "8.0",
+        "battersFaced": 30,
+        "kPct": 33.3,
+        "k9": "11.25",
+        "whip": "0.75",
+        "era": "3.38"
+      },
+      "avgPitchesL5": 17.8,
+      "avgInningsL5": 1.2,
+      "h2hGames": 0,
+      "h2hAvgK": null,
+      "researchScore": 48,
+      "lean": null,
+      "rank": 10
     },
     {
       "id": 607625,
@@ -1971,401 +2056,7 @@
       "h2hAvgK": null,
       "researchScore": 46,
       "lean": null,
-      "rank": 10
-    },
-    {
-      "id": 685299,
-      "name": "Tanner Gordon",
-      "team": "COL",
-      "opponent": "SD",
-      "gamePk": 824305,
-      "gameDate": "2026-09-17T19:10:00Z",
-      "line": null,
-      "lineSource": null,
-      "l5Rate": null,
-      "l10Rate": null,
-      "seasonAvg": 3.55,
-      "recent5Avg": 3.8,
-      "recent": [
-        {
-          "date": "2026-09-12",
-          "gamePk": 824224,
-          "opponent": "Detroit Tigers",
-          "strikeouts": 5,
-          "innings": "4.0",
-          "pitches": 87
-        },
-        {
-          "date": "2026-09-06",
-          "gamePk": 824309,
-          "opponent": "St. Louis Cardinals",
-          "strikeouts": 4,
-          "innings": "4.2",
-          "pitches": 80
-        },
-        {
-          "date": "2026-08-31",
-          "gamePk": 824314,
-          "opponent": "Baltimore Orioles",
-          "strikeouts": 3,
-          "innings": "5.0",
-          "pitches": 60
-        },
-        {
-          "date": "2026-08-26",
-          "gamePk": 822692,
-          "opponent": "Washington Nationals",
-          "strikeouts": 5,
-          "innings": "7.0",
-          "pitches": 90
-        },
-        {
-          "date": "2026-08-21",
-          "gamePk": 824317,
-          "opponent": "Cleveland Guardians",
-          "strikeouts": 2,
-          "innings": "5.1",
-          "pitches": 82
-        },
-        {
-          "date": "2026-08-15",
-          "gamePk": 823184,
-          "opponent": "San Francisco Giants",
-          "strikeouts": 4,
-          "innings": "4.0",
-          "pitches": 63
-        },
-        {
-          "date": "2026-08-09",
-          "gamePk": 823020,
-          "opponent": "St. Louis Cardinals",
-          "strikeouts": 2,
-          "innings": "3.1",
-          "pitches": 48
-        },
-        {
-          "date": "2026-08-03",
-          "gamePk": 824324,
-          "opponent": "Tampa Bay Rays",
-          "strikeouts": 3,
-          "innings": "6.0",
-          "pitches": 58
-        },
-        {
-          "date": "2026-07-25",
-          "gamePk": 823758,
-          "opponent": "Milwaukee Brewers",
-          "strikeouts": 4,
-          "innings": "2.0",
-          "pitches": 35
-        },
-        {
-          "date": "2026-07-19",
-          "gamePk": 824330,
-          "opponent": "Cincinnati Reds",
-          "strikeouts": 2,
-          "innings": "5.2",
-          "pitches": 66
-        },
-        {
-          "date": "2026-07-10",
-          "gamePk": 823200,
-          "opponent": "San Francisco Giants",
-          "strikeouts": 1,
-          "innings": "5.0",
-          "pitches": 81
-        },
-        {
-          "date": "2026-07-05",
-          "gamePk": 824333,
-          "opponent": "San Francisco Giants",
-          "strikeouts": 7,
-          "innings": "5.0",
-          "pitches": 94
-        },
-        {
-          "date": "2026-06-30",
-          "gamePk": 824338,
-          "opponent": "Miami Marlins",
-          "strikeouts": 4,
-          "innings": "5.0",
-          "pitches": 74
-        },
-        {
-          "date": "2026-05-31",
-          "gamePk": 824354,
-          "opponent": "San Francisco Giants",
-          "strikeouts": 2,
-          "innings": "3.0",
-          "pitches": 75
-        },
-        {
-          "date": "2026-05-25",
-          "gamePk": 823948,
-          "opponent": "Los Angeles Dodgers",
-          "strikeouts": 3,
-          "innings": "5.0",
-          "pitches": 80
-        },
-        {
-          "date": "2026-05-19",
-          "gamePk": 824356,
-          "opponent": "Texas Rangers",
-          "strikeouts": 5,
-          "innings": "6.1",
-          "pitches": 81
-        },
-        {
-          "date": "2026-05-14",
-          "gamePk": 823383,
-          "opponent": "Pittsburgh Pirates",
-          "strikeouts": 5,
-          "innings": "4.0",
-          "pitches": 69
-        },
-        {
-          "date": "2026-05-09",
-          "gamePk": 823468,
-          "opponent": "Philadelphia Phillies",
-          "strikeouts": 3,
-          "innings": "3.0",
-          "pitches": 52
-        },
-        {
-          "date": "2026-05-02",
-          "gamePk": 824365,
-          "opponent": "Atlanta Braves",
-          "strikeouts": 4,
-          "innings": "3.0",
-          "pitches": 41
-        },
-        {
-          "date": "2026-04-28",
-          "gamePk": 824526,
-          "opponent": "Cincinnati Reds",
-          "strikeouts": 3,
-          "innings": "3.0",
-          "pitches": 50
-        }
-      ],
-      "opponentK": {
-        "strikeouts": 1221,
-        "plateAppearances": 5677,
-        "kPct": 21.5
-      },
-      "seasonPitching": {
-        "strikeouts": 81,
-        "innings": "97.1",
-        "battersFaced": 428,
-        "kPct": 18.9,
-        "k9": "7.49",
-        "whip": "1.48",
-        "era": "5.55"
-      },
-      "avgPitchesL5": 79.8,
-      "avgInningsL5": 5.2,
-      "h2hGames": 0,
-      "h2hAvgK": null,
-      "researchScore": 43,
-      "lean": null,
       "rank": 11
-    },
-    {
-      "id": 680736,
-      "name": "Justin Wrobleski",
-      "team": "LAD",
-      "opponent": "CIN",
-      "gamePk": 824464,
-      "gameDate": "2026-09-17T16:40:00Z",
-      "line": null,
-      "lineSource": null,
-      "l5Rate": null,
-      "l10Rate": null,
-      "seasonAvg": 4.9,
-      "recent5Avg": 3.8,
-      "recent": [
-        {
-          "date": "2026-09-17",
-          "gamePk": 824464,
-          "opponent": "Cincinnati Reds",
-          "strikeouts": 2,
-          "innings": "2.0",
-          "pitches": 23
-        },
-        {
-          "date": "2026-09-12",
-          "gamePk": 823819,
-          "opponent": "Miami Marlins",
-          "strikeouts": 1,
-          "innings": "2.0",
-          "pitches": 25
-        },
-        {
-          "date": "2026-09-06",
-          "gamePk": 823903,
-          "opponent": "Washington Nationals",
-          "strikeouts": 6,
-          "innings": "3.0",
-          "pitches": 73
-        },
-        {
-          "date": "2026-09-01",
-          "gamePk": 823908,
-          "opponent": "St. Louis Cardinals",
-          "strikeouts": 4,
-          "innings": "2.0",
-          "pitches": 36
-        },
-        {
-          "date": "2026-08-15",
-          "gamePk": 823914,
-          "opponent": "Milwaukee Brewers",
-          "strikeouts": 6,
-          "innings": "6.0",
-          "pitches": 107
-        },
-        {
-          "date": "2026-08-09",
-          "gamePk": 825050,
-          "opponent": "Arizona Diamondbacks",
-          "strikeouts": 3,
-          "innings": "3.1",
-          "pitches": 76
-        },
-        {
-          "date": "2026-08-03",
-          "gamePk": 824647,
-          "opponent": "Chicago Cubs",
-          "strikeouts": 4,
-          "innings": "4.1",
-          "pitches": 91
-        },
-        {
-          "date": "2026-07-28",
-          "gamePk": 823923,
-          "opponent": "Seattle Mariners",
-          "strikeouts": 7,
-          "innings": "6.0",
-          "pitches": 102
-        },
-        {
-          "date": "2026-07-21",
-          "gamePk": 823437,
-          "opponent": "Philadelphia Phillies",
-          "strikeouts": 7,
-          "innings": "6.1",
-          "pitches": 89
-        },
-        {
-          "date": "2026-07-07",
-          "gamePk": 823929,
-          "opponent": "Colorado Rockies",
-          "strikeouts": 9,
-          "innings": "7.0",
-          "pitches": 94
-        },
-        {
-          "date": "2026-06-30",
-          "gamePk": 824984,
-          "opponent": "Athletics",
-          "strikeouts": 11,
-          "innings": "7.0",
-          "pitches": 110
-        },
-        {
-          "date": "2026-06-23",
-          "gamePk": 823690,
-          "opponent": "Minnesota Twins",
-          "strikeouts": 3,
-          "innings": "7.0",
-          "pitches": 92
-        },
-        {
-          "date": "2026-06-16",
-          "gamePk": 823939,
-          "opponent": "Tampa Bay Rays",
-          "strikeouts": 5,
-          "innings": "6.0",
-          "pitches": 67
-        },
-        {
-          "date": "2026-06-11",
-          "gamePk": 823371,
-          "opponent": "Pittsburgh Pirates",
-          "strikeouts": 1,
-          "innings": "4.2",
-          "pitches": 80
-        },
-        {
-          "date": "2026-06-04",
-          "gamePk": 825076,
-          "opponent": "Arizona Diamondbacks",
-          "strikeouts": 4,
-          "innings": "6.0",
-          "pitches": 84
-        },
-        {
-          "date": "2026-05-29",
-          "gamePk": 823946,
-          "opponent": "Philadelphia Phillies",
-          "strikeouts": 9,
-          "innings": "7.0",
-          "pitches": 88
-        },
-        {
-          "date": "2026-05-22",
-          "gamePk": 823788,
-          "opponent": "Milwaukee Brewers",
-          "strikeouts": 4,
-          "innings": "5.0",
-          "pitches": 100
-        },
-        {
-          "date": "2026-05-16",
-          "gamePk": 824038,
-          "opponent": "Los Angeles Angels",
-          "strikeouts": 5,
-          "innings": "6.0",
-          "pitches": 103
-        },
-        {
-          "date": "2026-05-10",
-          "gamePk": 823954,
-          "opponent": "Atlanta Braves",
-          "strikeouts": 7,
-          "innings": "8.2",
-          "pitches": 100
-        },
-        {
-          "date": "2026-05-03",
-          "gamePk": 823065,
-          "opponent": "St. Louis Cardinals",
-          "strikeouts": 0,
-          "innings": "6.0",
-          "pitches": 83
-        }
-      ],
-      "opponentK": {
-        "strikeouts": 1452,
-        "plateAppearances": 5698,
-        "kPct": 25.5
-      },
-      "seasonPitching": {
-        "strikeouts": 113,
-        "innings": "135.1",
-        "battersFaced": 558,
-        "kPct": 20.3,
-        "k9": "7.51",
-        "whip": "1.14",
-        "era": "3.72"
-      },
-      "avgPitchesL5": 52.8,
-      "avgInningsL5": 3.0,
-      "h2hGames": 1,
-      "h2hAvgK": 2.0,
-      "researchScore": 39,
-      "lean": null,
-      "rank": 12
     },
     {
       "id": 663903,
@@ -2386,8 +2077,8 @@
           "gamePk": 824464,
           "opponent": "Los Angeles Dodgers",
           "strikeouts": 0,
-          "innings": "2.0",
-          "pitches": 54
+          "innings": "3.1",
+          "pitches": 96
         },
         {
           "date": "2026-09-12",
@@ -2543,26 +2234,420 @@
         }
       ],
       "opponentK": {
-        "strikeouts": 1195,
-        "plateAppearances": 5837,
-        "kPct": 20.5
+        "strikeouts": 1198,
+        "plateAppearances": 5867,
+        "kPct": 20.4
       },
       "seasonPitching": {
         "strikeouts": 125,
-        "innings": "152.2",
-        "battersFaced": 696,
-        "kPct": 18.0,
-        "k9": "7.37",
-        "whip": "1.53",
-        "era": "5.54"
+        "innings": "154.0",
+        "battersFaced": 707,
+        "kPct": 17.7,
+        "k9": "7.31",
+        "whip": "1.56",
+        "era": "5.67"
       },
-      "avgPitchesL5": 84.8,
-      "avgInningsL5": 4.2,
+      "avgPitchesL5": 93.2,
+      "avgInningsL5": 4.47,
       "h2hGames": 1,
       "h2hAvgK": 0.0,
-      "researchScore": 39,
+      "researchScore": 42,
+      "lean": null,
+      "rank": 12
+    },
+    {
+      "id": 685299,
+      "name": "Tanner Gordon",
+      "team": "COL",
+      "opponent": "SD",
+      "gamePk": 824305,
+      "gameDate": "2026-09-17T19:10:00Z",
+      "line": null,
+      "lineSource": null,
+      "l5Rate": null,
+      "l10Rate": null,
+      "seasonAvg": 3.55,
+      "recent5Avg": 4.0,
+      "recent": [
+        {
+          "date": "2026-09-17",
+          "gamePk": 824305,
+          "opponent": "San Diego Padres",
+          "strikeouts": 3,
+          "innings": "3.0",
+          "pitches": 86
+        },
+        {
+          "date": "2026-09-12",
+          "gamePk": 824224,
+          "opponent": "Detroit Tigers",
+          "strikeouts": 5,
+          "innings": "4.0",
+          "pitches": 87
+        },
+        {
+          "date": "2026-09-06",
+          "gamePk": 824309,
+          "opponent": "St. Louis Cardinals",
+          "strikeouts": 4,
+          "innings": "4.2",
+          "pitches": 80
+        },
+        {
+          "date": "2026-08-31",
+          "gamePk": 824314,
+          "opponent": "Baltimore Orioles",
+          "strikeouts": 3,
+          "innings": "5.0",
+          "pitches": 60
+        },
+        {
+          "date": "2026-08-26",
+          "gamePk": 822692,
+          "opponent": "Washington Nationals",
+          "strikeouts": 5,
+          "innings": "7.0",
+          "pitches": 90
+        },
+        {
+          "date": "2026-08-21",
+          "gamePk": 824317,
+          "opponent": "Cleveland Guardians",
+          "strikeouts": 2,
+          "innings": "5.1",
+          "pitches": 82
+        },
+        {
+          "date": "2026-08-15",
+          "gamePk": 823184,
+          "opponent": "San Francisco Giants",
+          "strikeouts": 4,
+          "innings": "4.0",
+          "pitches": 63
+        },
+        {
+          "date": "2026-08-09",
+          "gamePk": 823020,
+          "opponent": "St. Louis Cardinals",
+          "strikeouts": 2,
+          "innings": "3.1",
+          "pitches": 48
+        },
+        {
+          "date": "2026-08-03",
+          "gamePk": 824324,
+          "opponent": "Tampa Bay Rays",
+          "strikeouts": 3,
+          "innings": "6.0",
+          "pitches": 58
+        },
+        {
+          "date": "2026-07-25",
+          "gamePk": 823758,
+          "opponent": "Milwaukee Brewers",
+          "strikeouts": 4,
+          "innings": "2.0",
+          "pitches": 35
+        },
+        {
+          "date": "2026-07-19",
+          "gamePk": 824330,
+          "opponent": "Cincinnati Reds",
+          "strikeouts": 2,
+          "innings": "5.2",
+          "pitches": 66
+        },
+        {
+          "date": "2026-07-10",
+          "gamePk": 823200,
+          "opponent": "San Francisco Giants",
+          "strikeouts": 1,
+          "innings": "5.0",
+          "pitches": 81
+        },
+        {
+          "date": "2026-07-05",
+          "gamePk": 824333,
+          "opponent": "San Francisco Giants",
+          "strikeouts": 7,
+          "innings": "5.0",
+          "pitches": 94
+        },
+        {
+          "date": "2026-06-30",
+          "gamePk": 824338,
+          "opponent": "Miami Marlins",
+          "strikeouts": 4,
+          "innings": "5.0",
+          "pitches": 74
+        },
+        {
+          "date": "2026-05-31",
+          "gamePk": 824354,
+          "opponent": "San Francisco Giants",
+          "strikeouts": 2,
+          "innings": "3.0",
+          "pitches": 75
+        },
+        {
+          "date": "2026-05-25",
+          "gamePk": 823948,
+          "opponent": "Los Angeles Dodgers",
+          "strikeouts": 3,
+          "innings": "5.0",
+          "pitches": 80
+        },
+        {
+          "date": "2026-05-19",
+          "gamePk": 824356,
+          "opponent": "Texas Rangers",
+          "strikeouts": 5,
+          "innings": "6.1",
+          "pitches": 81
+        },
+        {
+          "date": "2026-05-14",
+          "gamePk": 823383,
+          "opponent": "Pittsburgh Pirates",
+          "strikeouts": 5,
+          "innings": "4.0",
+          "pitches": 69
+        },
+        {
+          "date": "2026-05-09",
+          "gamePk": 823468,
+          "opponent": "Philadelphia Phillies",
+          "strikeouts": 3,
+          "innings": "3.0",
+          "pitches": 52
+        },
+        {
+          "date": "2026-05-02",
+          "gamePk": 824365,
+          "opponent": "Atlanta Braves",
+          "strikeouts": 4,
+          "innings": "3.0",
+          "pitches": 41
+        }
+      ],
+      "opponentK": {
+        "strikeouts": 1226,
+        "plateAppearances": 5714,
+        "kPct": 21.5
+      },
+      "seasonPitching": {
+        "strikeouts": 84,
+        "innings": "100.1",
+        "battersFaced": 448,
+        "kPct": 18.8,
+        "k9": "7.53",
+        "whip": "1.55",
+        "era": "6.01"
+      },
+      "avgPitchesL5": 80.6,
+      "avgInningsL5": 4.73,
+      "h2hGames": 1,
+      "h2hAvgK": 3.0,
+      "researchScore": 41,
       "lean": null,
       "rank": 13
+    },
+    {
+      "id": 680736,
+      "name": "Justin Wrobleski",
+      "team": "LAD",
+      "opponent": "CIN",
+      "gamePk": 824464,
+      "gameDate": "2026-09-17T16:40:00Z",
+      "line": null,
+      "lineSource": null,
+      "l5Rate": null,
+      "l10Rate": null,
+      "seasonAvg": 4.95,
+      "recent5Avg": 4.0,
+      "recent": [
+        {
+          "date": "2026-09-17",
+          "gamePk": 824464,
+          "opponent": "Cincinnati Reds",
+          "strikeouts": 3,
+          "innings": "3.0",
+          "pitches": 32
+        },
+        {
+          "date": "2026-09-12",
+          "gamePk": 823819,
+          "opponent": "Miami Marlins",
+          "strikeouts": 1,
+          "innings": "2.0",
+          "pitches": 25
+        },
+        {
+          "date": "2026-09-06",
+          "gamePk": 823903,
+          "opponent": "Washington Nationals",
+          "strikeouts": 6,
+          "innings": "3.0",
+          "pitches": 73
+        },
+        {
+          "date": "2026-09-01",
+          "gamePk": 823908,
+          "opponent": "St. Louis Cardinals",
+          "strikeouts": 4,
+          "innings": "2.0",
+          "pitches": 36
+        },
+        {
+          "date": "2026-08-15",
+          "gamePk": 823914,
+          "opponent": "Milwaukee Brewers",
+          "strikeouts": 6,
+          "innings": "6.0",
+          "pitches": 107
+        },
+        {
+          "date": "2026-08-09",
+          "gamePk": 825050,
+          "opponent": "Arizona Diamondbacks",
+          "strikeouts": 3,
+          "innings": "3.1",
+          "pitches": 76
+        },
+        {
+          "date": "2026-08-03",
+          "gamePk": 824647,
+          "opponent": "Chicago Cubs",
+          "strikeouts": 4,
+          "innings": "4.1",
+          "pitches": 91
+        },
+        {
+          "date": "2026-07-28",
+          "gamePk": 823923,
+          "opponent": "Seattle Mariners",
+          "strikeouts": 7,
+          "innings": "6.0",
+          "pitches": 102
+        },
+        {
+          "date": "2026-07-21",
+          "gamePk": 823437,
+          "opponent": "Philadelphia Phillies",
+          "strikeouts": 7,
+          "innings": "6.1",
+          "pitches": 89
+        },
+        {
+          "date": "2026-07-07",
+          "gamePk": 823929,
+          "opponent": "Colorado Rockies",
+          "strikeouts": 9,
+          "innings": "7.0",
+          "pitches": 94
+        },
+        {
+          "date": "2026-06-30",
+          "gamePk": 824984,
+          "opponent": "Athletics",
+          "strikeouts": 11,
+          "innings": "7.0",
+          "pitches": 110
+        },
+        {
+          "date": "2026-06-23",
+          "gamePk": 823690,
+          "opponent": "Minnesota Twins",
+          "strikeouts": 3,
+          "innings": "7.0",
+          "pitches": 92
+        },
+        {
+          "date": "2026-06-16",
+          "gamePk": 823939,
+          "opponent": "Tampa Bay Rays",
+          "strikeouts": 5,
+          "innings": "6.0",
+          "pitches": 67
+        },
+        {
+          "date": "2026-06-11",
+          "gamePk": 823371,
+          "opponent": "Pittsburgh Pirates",
+          "strikeouts": 1,
+          "innings": "4.2",
+          "pitches": 80
+        },
+        {
+          "date": "2026-06-04",
+          "gamePk": 825076,
+          "opponent": "Arizona Diamondbacks",
+          "strikeouts": 4,
+          "innings": "6.0",
+          "pitches": 84
+        },
+        {
+          "date": "2026-05-29",
+          "gamePk": 823946,
+          "opponent": "Philadelphia Phillies",
+          "strikeouts": 9,
+          "innings": "7.0",
+          "pitches": 88
+        },
+        {
+          "date": "2026-05-22",
+          "gamePk": 823788,
+          "opponent": "Milwaukee Brewers",
+          "strikeouts": 4,
+          "innings": "5.0",
+          "pitches": 100
+        },
+        {
+          "date": "2026-05-16",
+          "gamePk": 824038,
+          "opponent": "Los Angeles Angels",
+          "strikeouts": 5,
+          "innings": "6.0",
+          "pitches": 103
+        },
+        {
+          "date": "2026-05-10",
+          "gamePk": 823954,
+          "opponent": "Atlanta Braves",
+          "strikeouts": 7,
+          "innings": "8.2",
+          "pitches": 100
+        },
+        {
+          "date": "2026-05-03",
+          "gamePk": 823065,
+          "opponent": "St. Louis Cardinals",
+          "strikeouts": 0,
+          "innings": "6.0",
+          "pitches": 83
+        }
+      ],
+      "opponentK": {
+        "strikeouts": 1458,
+        "plateAppearances": 5725,
+        "kPct": 25.5
+      },
+      "seasonPitching": {
+        "strikeouts": 114,
+        "innings": "136.1",
+        "battersFaced": 561,
+        "kPct": 20.3,
+        "k9": "7.53",
+        "whip": "1.13",
+        "era": "3.70"
+      },
+      "avgPitchesL5": 54.6,
+      "avgInningsL5": 3.2,
+      "h2hGames": 1,
+      "h2hAvgK": 3.0,
+      "researchScore": 39,
+      "lean": null,
+      "rank": 14
     },
     {
       "id": 607200,
@@ -2759,7 +2844,7 @@
       "h2hAvgK": 4.0,
       "researchScore": 39,
       "lean": null,
-      "rank": 14
+      "rank": 15
     },
     {
       "id": 696062,
@@ -2937,8 +3022,8 @@
         }
       ],
       "opponentK": {
-        "strikeouts": 1281,
-        "plateAppearances": 5934,
+        "strikeouts": 1288,
+        "plateAppearances": 5966,
         "kPct": 21.6
       },
       "seasonPitching": {
@@ -2956,7 +3041,204 @@
       "h2hAvgK": 2.0,
       "researchScore": 38,
       "lean": null,
-      "rank": 15
+      "rank": 16
+    },
+    {
+      "id": 605488,
+      "name": "Jeffrey Springs",
+      "team": "ATH",
+      "opponent": "TB",
+      "gamePk": 822924,
+      "gameDate": "2026-09-17T17:10:00Z",
+      "line": null,
+      "lineSource": null,
+      "l5Rate": null,
+      "l10Rate": null,
+      "seasonAvg": 3.5,
+      "recent5Avg": 4.0,
+      "recent": [
+        {
+          "date": "2026-09-17",
+          "gamePk": 822924,
+          "opponent": "Tampa Bay Rays",
+          "strikeouts": 4,
+          "innings": "3.1",
+          "pitches": 66
+        },
+        {
+          "date": "2026-09-11",
+          "gamePk": 824954,
+          "opponent": "Seattle Mariners",
+          "strikeouts": 1,
+          "innings": "5.0",
+          "pitches": 94
+        },
+        {
+          "date": "2026-09-05",
+          "gamePk": 823094,
+          "opponent": "Seattle Mariners",
+          "strikeouts": 6,
+          "innings": "7.0",
+          "pitches": 81
+        },
+        {
+          "date": "2026-08-30",
+          "gamePk": 824959,
+          "opponent": "Baltimore Orioles",
+          "strikeouts": 6,
+          "innings": "4.2",
+          "pitches": 90
+        },
+        {
+          "date": "2026-08-24",
+          "gamePk": 824964,
+          "opponent": "Minnesota Twins",
+          "strikeouts": 3,
+          "innings": "4.2",
+          "pitches": 89
+        },
+        {
+          "date": "2026-08-19",
+          "gamePk": 824076,
+          "opponent": "Kansas City Royals",
+          "strikeouts": 1,
+          "innings": "5.2",
+          "pitches": 85
+        },
+        {
+          "date": "2026-07-31",
+          "gamePk": 824975,
+          "opponent": "Detroit Tigers",
+          "strikeouts": 2,
+          "innings": "4.0",
+          "pitches": 86
+        },
+        {
+          "date": "2026-07-26",
+          "gamePk": 823678,
+          "opponent": "Minnesota Twins",
+          "strikeouts": 0,
+          "innings": "1.1",
+          "pitches": 36
+        },
+        {
+          "date": "2026-07-20",
+          "gamePk": 825058,
+          "opponent": "Arizona Diamondbacks",
+          "strikeouts": 2,
+          "innings": "5.0",
+          "pitches": 78
+        },
+        {
+          "date": "2026-07-08",
+          "gamePk": 824253,
+          "opponent": "Detroit Tigers",
+          "strikeouts": 4,
+          "innings": "4.1",
+          "pitches": 92
+        },
+        {
+          "date": "2026-06-30",
+          "gamePk": 824984,
+          "opponent": "Los Angeles Dodgers",
+          "strikeouts": 2,
+          "innings": "5.1",
+          "pitches": 92
+        },
+        {
+          "date": "2026-06-25",
+          "gamePk": 823209,
+          "opponent": "San Francisco Giants",
+          "strikeouts": 6,
+          "innings": "5.1",
+          "pitches": 87
+        },
+        {
+          "date": "2026-06-19",
+          "gamePk": 824990,
+          "opponent": "Los Angeles Angels",
+          "strikeouts": 4,
+          "innings": "3.2",
+          "pitches": 86
+        },
+        {
+          "date": "2026-06-14",
+          "gamePk": 824994,
+          "opponent": "Colorado Rockies",
+          "strikeouts": 5,
+          "innings": "4.0",
+          "pitches": 77
+        },
+        {
+          "date": "2026-06-08",
+          "gamePk": 824998,
+          "opponent": "Milwaukee Brewers",
+          "strikeouts": 3,
+          "innings": "5.0",
+          "pitches": 99
+        },
+        {
+          "date": "2026-06-03",
+          "gamePk": 824671,
+          "opponent": "Chicago Cubs",
+          "strikeouts": 3,
+          "innings": "3.2",
+          "pitches": 86
+        },
+        {
+          "date": "2026-05-27",
+          "gamePk": 825003,
+          "opponent": "Seattle Mariners",
+          "strikeouts": 7,
+          "innings": "5.0",
+          "pitches": 84
+        },
+        {
+          "date": "2026-05-22",
+          "gamePk": 823298,
+          "opponent": "San Diego Padres",
+          "strikeouts": 3,
+          "innings": "6.1",
+          "pitches": 95
+        },
+        {
+          "date": "2026-05-17",
+          "gamePk": 825006,
+          "opponent": "San Francisco Giants",
+          "strikeouts": 3,
+          "innings": "6.0",
+          "pitches": 92
+        },
+        {
+          "date": "2026-05-12",
+          "gamePk": 825011,
+          "opponent": "St. Louis Cardinals",
+          "strikeouts": 5,
+          "innings": "5.0",
+          "pitches": 98
+        }
+      ],
+      "opponentK": {
+        "strikeouts": 1057,
+        "plateAppearances": 5735,
+        "kPct": 18.4
+      },
+      "seasonPitching": {
+        "strikeouts": 109,
+        "innings": "138.1",
+        "battersFaced": 612,
+        "kPct": 17.8,
+        "k9": "7.09",
+        "whip": "1.47",
+        "era": "6.18"
+      },
+      "avgPitchesL5": 84.0,
+      "avgInningsL5": 4.93,
+      "h2hGames": 1,
+      "h2hAvgK": 4.0,
+      "researchScore": 37,
+      "lean": null,
+      "rank": 17
     },
     {
       "id": 641302,
@@ -3153,204 +3435,7 @@
       "h2hAvgK": 1.0,
       "researchScore": 33,
       "lean": null,
-      "rank": 16
-    },
-    {
-      "id": 605488,
-      "name": "Jeffrey Springs",
-      "team": "ATH",
-      "opponent": "TB",
-      "gamePk": 822924,
-      "gameDate": "2026-09-17T17:10:00Z",
-      "line": null,
-      "lineSource": null,
-      "l5Rate": null,
-      "l10Rate": null,
-      "seasonAvg": 3.3,
-      "recent5Avg": 3.2,
-      "recent": [
-        {
-          "date": "2026-09-17",
-          "gamePk": 822924,
-          "opponent": "Tampa Bay Rays",
-          "strikeouts": 0,
-          "innings": "0.1",
-          "pitches": 1
-        },
-        {
-          "date": "2026-09-11",
-          "gamePk": 824954,
-          "opponent": "Seattle Mariners",
-          "strikeouts": 1,
-          "innings": "5.0",
-          "pitches": 94
-        },
-        {
-          "date": "2026-09-05",
-          "gamePk": 823094,
-          "opponent": "Seattle Mariners",
-          "strikeouts": 6,
-          "innings": "7.0",
-          "pitches": 81
-        },
-        {
-          "date": "2026-08-30",
-          "gamePk": 824959,
-          "opponent": "Baltimore Orioles",
-          "strikeouts": 6,
-          "innings": "4.2",
-          "pitches": 90
-        },
-        {
-          "date": "2026-08-24",
-          "gamePk": 824964,
-          "opponent": "Minnesota Twins",
-          "strikeouts": 3,
-          "innings": "4.2",
-          "pitches": 89
-        },
-        {
-          "date": "2026-08-19",
-          "gamePk": 824076,
-          "opponent": "Kansas City Royals",
-          "strikeouts": 1,
-          "innings": "5.2",
-          "pitches": 85
-        },
-        {
-          "date": "2026-07-31",
-          "gamePk": 824975,
-          "opponent": "Detroit Tigers",
-          "strikeouts": 2,
-          "innings": "4.0",
-          "pitches": 86
-        },
-        {
-          "date": "2026-07-26",
-          "gamePk": 823678,
-          "opponent": "Minnesota Twins",
-          "strikeouts": 0,
-          "innings": "1.1",
-          "pitches": 36
-        },
-        {
-          "date": "2026-07-20",
-          "gamePk": 825058,
-          "opponent": "Arizona Diamondbacks",
-          "strikeouts": 2,
-          "innings": "5.0",
-          "pitches": 78
-        },
-        {
-          "date": "2026-07-08",
-          "gamePk": 824253,
-          "opponent": "Detroit Tigers",
-          "strikeouts": 4,
-          "innings": "4.1",
-          "pitches": 92
-        },
-        {
-          "date": "2026-06-30",
-          "gamePk": 824984,
-          "opponent": "Los Angeles Dodgers",
-          "strikeouts": 2,
-          "innings": "5.1",
-          "pitches": 92
-        },
-        {
-          "date": "2026-06-25",
-          "gamePk": 823209,
-          "opponent": "San Francisco Giants",
-          "strikeouts": 6,
-          "innings": "5.1",
-          "pitches": 87
-        },
-        {
-          "date": "2026-06-19",
-          "gamePk": 824990,
-          "opponent": "Los Angeles Angels",
-          "strikeouts": 4,
-          "innings": "3.2",
-          "pitches": 86
-        },
-        {
-          "date": "2026-06-14",
-          "gamePk": 824994,
-          "opponent": "Colorado Rockies",
-          "strikeouts": 5,
-          "innings": "4.0",
-          "pitches": 77
-        },
-        {
-          "date": "2026-06-08",
-          "gamePk": 824998,
-          "opponent": "Milwaukee Brewers",
-          "strikeouts": 3,
-          "innings": "5.0",
-          "pitches": 99
-        },
-        {
-          "date": "2026-06-03",
-          "gamePk": 824671,
-          "opponent": "Chicago Cubs",
-          "strikeouts": 3,
-          "innings": "3.2",
-          "pitches": 86
-        },
-        {
-          "date": "2026-05-27",
-          "gamePk": 825003,
-          "opponent": "Seattle Mariners",
-          "strikeouts": 7,
-          "innings": "5.0",
-          "pitches": 84
-        },
-        {
-          "date": "2026-05-22",
-          "gamePk": 823298,
-          "opponent": "San Diego Padres",
-          "strikeouts": 3,
-          "innings": "6.1",
-          "pitches": 95
-        },
-        {
-          "date": "2026-05-17",
-          "gamePk": 825006,
-          "opponent": "San Francisco Giants",
-          "strikeouts": 3,
-          "innings": "6.0",
-          "pitches": 92
-        },
-        {
-          "date": "2026-05-12",
-          "gamePk": 825011,
-          "opponent": "St. Louis Cardinals",
-          "strikeouts": 5,
-          "innings": "5.0",
-          "pitches": 98
-        }
-      ],
-      "opponentK": {
-        "strikeouts": 1048,
-        "plateAppearances": 5696,
-        "kPct": 18.4
-      },
-      "seasonPitching": {
-        "strikeouts": 106,
-        "innings": "135.2",
-        "battersFaced": 596,
-        "kPct": 17.8,
-        "k9": "7.03",
-        "whip": "1.44",
-        "era": "5.90"
-      },
-      "avgPitchesL5": 71.0,
-      "avgInningsL5": 4.33,
-      "h2hGames": 1,
-      "h2hAvgK": 0.0,
-      "researchScore": 31,
-      "lean": null,
-      "rank": 17
+      "rank": 18
     }
   ]
 }
