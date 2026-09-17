@@ -578,8 +578,11 @@ function renderHrOddsBoard(){
  const filtered=rows.filter(o=>!q||[o.playerName,o.awayTeam,o.homeTeam,o.bestBookName,(o.books||[]).map(b=>b.bookName).join(' ')].join(' ').toLowerCase().includes(q));
  const shown=hrOddsExpanded?filtered:filtered.slice(0,24);
  host.innerHTML='<div class="hr-odds-head"><div><b>💵 Verified HR Odds Board</b><span>SportsGameOdds • upcoming games only • best listed price</span></div><span class="hr-odds-count">'+filtered.length+' markets</span></div><div class="hr-odds-list">'+shown.map(o=>{
-  const best=esc(o.bestOdds||'—'),book=esc(o.bestBookName||'Sportsbook'),match=esc((o.awayTeam||'')+' @ '+(o.homeTeam||''));
-  return '<article class="hr-odds-row" data-search="'+esc([o.playerName,o.awayTeam,o.homeTeam,o.bestBookName].join(' ').toLowerCase())+'">'+playerAvatar(o.playerName,o.playerID,'')+'<div><strong>'+esc(o.playerName)+'</strong><small>'+match+'</small></div><div class="hr-odds-price"><b>'+best+'</b><span>'+book+'</span></div></article>';
+   const best=esc(o.bestOdds||'—'),book=esc(o.bestBookName||'Sportsbook'),match=esc((o.awayTeam||'')+' @ '+(o.homeTeam||''));
+   const metric=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v))?Number(v):null;
+   const implied=metric(o.bestImpliedProbability),fair=metric(o.fairImpliedProbability),edge=metric(o.marketEdgePct),books=metric(o.bookCount);
+   const research=[implied!==null?'Implied '+implied.toFixed(1)+'%':'',fair!==null?'Fair '+fair.toFixed(1)+'%':'',edge!==null?'Edge '+(edge>0?'+':'')+edge.toFixed(1)+'%':'',books!==null&&books>0?books+' books':''].filter(Boolean).join(' • ');
+   return '<article class="hr-odds-row" data-search="'+esc([o.playerName,o.awayTeam,o.homeTeam,o.bestBookName].join(' ').toLowerCase())+'">'+playerAvatar(o.playerName,o.playerID,'')+'<div><strong>'+esc(o.playerName)+'</strong><small>'+match+'</small>'+(research?'<small>'+esc(research)+'</small>':'')+'</div><div class="hr-odds-price"><b>'+best+'</b><span>'+book+'</span></div></article>';
  }).join('')+'</div>'+(filtered.length>24?'<div class="hr-odds-more"><button onclick="hrOddsExpanded=!hrOddsExpanded;renderHrOddsBoard()">'+(hrOddsExpanded?'Show fewer':'Show all '+filtered.length)+'</button></div>':'');
 }
 window.renderHrOddsBoard=renderHrOddsBoard;
@@ -600,7 +603,10 @@ window.filterHrHub=function(value){
 function hrOddsHtml(x){
  const o=hrOddsForPlayer(x?.name);if(!o)return '<div class="hr-verified-odds pending">Verified HR odds pending</div>';
  const books=(o.books||[]).slice(0,3).map(b=>esc(b.bookName)+' '+esc(b.odds)).join(' • ');
- return '<div class="hr-verified-odds"><b>VERIFIED HR ODDS</b><strong>'+esc(o.bestOdds)+' <em>'+esc(o.bestBookName)+'</em></strong>'+(books?'<span>'+books+'</span>':'')+'</div>';
+ const metric=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v))?Number(v):null;
+ const implied=metric(o.bestImpliedProbability),fair=metric(o.fairImpliedProbability),edge=metric(o.marketEdgePct),bookCount=metric(o.bookCount);
+ const research=[implied!==null?'Implied '+implied.toFixed(1)+'%':'',fair!==null?'Fair '+fair.toFixed(1)+'%':'',edge!==null?'Edge '+(edge>0?'+':'')+edge.toFixed(1)+'%':'',bookCount!==null&&bookCount>0?bookCount+' books':''].filter(Boolean).join(' • ');
+ return '<div class="hr-verified-odds"><b>VERIFIED HR ODDS</b><strong>'+esc(o.bestOdds)+' <em>'+esc(o.bestBookName)+'</em></strong>'+(research?'<span>'+esc(research)+'</span>':'')+(books?'<span>'+books+'</span>':'')+'</div>';
 }
 function hrSpotCard(label,x,tone,detail){
  if(!x)return '';
