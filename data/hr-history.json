@@ -2131,8 +2131,10 @@
       },
       "contactCheckedAt": "2026-09-16T11:18:39.413522+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "miss",
+      "hr": 0,
+      "settledAt": "2026-09-17T01:41:13.401465+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/822680/boxscore"
     },
     {
       "key": "2026-09-16:824626:621566",
@@ -2185,8 +2187,10 @@
       },
       "contactCheckedAt": "2026-09-16T11:18:39.413522+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "miss",
+      "hr": 0,
+      "settledAt": "2026-09-17T01:41:13.401465+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/822680/boxscore"
     },
     {
       "key": "2026-09-16:823655:700250",
@@ -2440,5 +2444,5 @@
       "hr": null
     }
   ],
-  "updatedAt": "2026-09-17T00:50:00.304158+00:00"
+  "updatedAt": "2026-09-17T01:41:13.401465+00:00"
 }
