@@ -1,17 +1,16 @@
 import datetime
 import json
 import os
+import time
 from pathlib import Path
 
 import requests
 
 OUT = Path("data/hr-odds.json")
 OUT.parent.mkdir(parents=True, exist_ok=True)
+CACHE = Path(".cache/sportsgameodds-mlb-events.json")
 
 API_KEY = os.environ.get("SPORTSGAMEODDS_API_KEY")
-if not API_KEY:
-    raise SystemExit("SPORTSGAMEODDS_API_KEY is not set")
-
 URL = "https://api.sportsgameodds.com/v2/events"
 BOOK_LABELS = {
     "draftkings": "DraftKings",
@@ -48,14 +47,71 @@ def american_value(price):
     except Exception:
         return -999999
 
-resp = requests.get(
-    URL,
-    params={"leagueID": "MLB", "oddsAvailable": "true", "limit": 100},
-    headers={"x-api-key": API_KEY},
-    timeout=45,
-)
-resp.raise_for_status()
-payload = resp.json()
+def backfill_cached_output(reason):
+    """Keep the board usable when the provider is rate limited.
+
+    The four new market fields are derived from already saved prices, so they
+    can still be published without pretending that the odds timestamp is fresh.
+    """
+    now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    try:
+        cached = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    except (OSError, json.JSONDecodeError):
+        cached = {}
+    rows = cached.get("rows") or []
+    for row in rows:
+        implied = implied_probability(row.get("bestOdds"))
+        fair_implied = implied_probability(row.get("fairOdds"))
+        row["bestImpliedProbability"] = implied
+        row["fairImpliedProbability"] = fair_implied
+        row["marketEdgePct"] = round(fair_implied - implied, 2) if implied is not None and fair_implied is not None else None
+        row["bookCount"] = len(row.get("books") or [])
+    cached.update({
+        "source": "SportsGameOdds",
+        "league": "MLB",
+        "market": "Anytime Home Run",
+        "methodology": "Best available book price, implied probability, provider fair probability, and price edge; matchup scoring remains separate.",
+        "count": len(rows),
+        "refreshStatus": "cached_rate_limited",
+        "lastRefreshAttempt": now,
+        "refreshError": str(reason),
+        "rows": rows,
+    })
+    OUT.write_text(json.dumps(cached, indent=2), encoding="utf-8")
+    print(f"SportsGameOdds refresh unavailable ({reason}); preserved and upgraded {len(rows)} cached HR rows")
+
+def fetch_payload():
+    if CACHE.exists():
+        cached = json.loads(CACHE.read_text(encoding="utf-8"))
+        if cached.get("_fetchError"):
+            raise RuntimeError(cached["_fetchError"])
+        return cached
+    if not API_KEY:
+        raise RuntimeError("SPORTSGAMEODDS_API_KEY is not set")
+    for attempt in range(3):
+        resp = requests.get(
+            URL,
+            params={"leagueID": "MLB", "oddsAvailable": "true", "limit": 100},
+            headers={"x-api-key": API_KEY},
+            timeout=45,
+        )
+        if resp.status_code != 429:
+            resp.raise_for_status()
+            return resp.json()
+        retry_after = resp.headers.get("Retry-After")
+        try:
+            delay = min(60, max(1, int(float(retry_after))))
+        except (TypeError, ValueError):
+            delay = 10 * (attempt + 1)
+        print(f"SportsGameOdds rate limited; retrying in {delay}s ({attempt + 1}/3)")
+        time.sleep(delay)
+    raise RuntimeError("SportsGameOdds remained rate limited after 3 attempts")
+
+try:
+    payload = fetch_payload()
+except Exception as exc:
+    backfill_cached_output(exc)
+    raise SystemExit(0)
 events = payload.get("data") or []
 
 rows = []
@@ -156,6 +212,7 @@ OUT.write_text(json.dumps({
     "league": "MLB",
     "market": "Anytime Home Run",
     "methodology": "Best available book price, implied probability, provider fair probability, and price edge; matchup scoring remains separate.",
+    "refreshStatus": "fresh",
     "count": len(rows),
     "rows": rows,
 }, indent=2), encoding="utf-8")
