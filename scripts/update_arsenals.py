@@ -138,7 +138,7 @@ def build_recent_contact(rows, wanted):
         if d["bbe"]: pd[str(pid)]={"bbe":d["bbe"],"hardHitPct":round(100*d["hard"]/d["bbe"],1),"barrelProxyPct":round(100*d["barrels"]/d["bbe"],1),"hr":d["hr"]}
     return recent,pd
 
-def build_pitcher_data(rows, movement_rows, wanted):
+def build_pitcher_data(rows, movement_rows, wanted, hr_by_pitch=None):
     movement = {}
 
     for r in movement_rows:
@@ -266,7 +266,7 @@ print(
 
 all_pitcher_ids = {to_int(first(r, "player_id")) for r in pitcher_rows}
 all_pitcher_ids.discard(None)
-pitcher_data = build_pitcher_data(pitcher_rows, movement_rows, all_pitcher_ids)
+pitcher_data = build_pitcher_data(pitcher_rows, movement_rows, all_pitcher_ids, hr_by_pitch)
 
 # Batter Lab can search beyond today's posted roster, so keep every hitter in
 # the Savant table rather than limiting the pitch-type feed to today's slate.
@@ -288,7 +288,7 @@ for fallback_year in range(YEAR - 1, YEAR - 4, -1):
         f"?type=pitcher&year={fallback_year}&min=1&minPitches=1&csv=true"
     )
     pitcher_data.update(
-        build_pitcher_data(get_csv(fallback_url), [], missing_pitchers)
+        build_pitcher_data(get_csv(fallback_url), [], missing_pitchers, hr_by_pitch)
     )
     missing_pitchers = pitchers - {int(pid) for pid in pitcher_data}
 
