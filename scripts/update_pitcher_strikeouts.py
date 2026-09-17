@@ -1,10 +1,11 @@
-import datetime, json, os, requests
+import datetime, json, os, time, requests
 from pathlib import Path
 
 OUT=Path("data/pitcher-strikeouts.json"); OUT.parent.mkdir(parents=True,exist_ok=True)
 MLB="https://statsapi.mlb.com/api/v1"; TODAY=datetime.date.today(); YEAR=TODAY.year
 KEY=os.environ.get("SPORTSGAMEODDS_API_KEY")
 S=requests.Session(); S.headers.update({"User-Agent":"RalloPicks/1.0"})
+SGO_CACHE=Path(".cache/sportsgameodds-mlb-events.json")
 
 def js(url,**params):
  r=S.get(url,params=params,timeout=45); r.raise_for_status(); return r.json()
@@ -41,10 +42,25 @@ def provider_name(entity):
  while parts and (parts[-1].isdigit() or parts[-1].lower() in ("mlb","nfl","nba","nhl")): parts.pop()
  return " ".join(p.capitalize() for p in parts)
 def odds_lines():
- if not KEY:return {"by_id":{},"by_name":{}}
+ if not KEY:
+  SGO_CACHE.parent.mkdir(parents=True,exist_ok=True)
+  SGO_CACHE.write_text(json.dumps({"_fetchError":"SPORTSGAMEODDS_API_KEY is not set","data":[]}))
+  return {"by_id":{},"by_name":{}}
  try:
-  resp=requests.get("https://api.sportsgameodds.com/v2/events",params={"leagueID":"MLB","oddsAvailable":"true","limit":100},headers={"x-api-key":KEY},timeout=45)
-  resp.raise_for_status(); events=resp.json().get("data") or []
+  payload=None
+  for attempt in range(3):
+   resp=requests.get("https://api.sportsgameodds.com/v2/events",params={"leagueID":"MLB","oddsAvailable":"true","limit":100},headers={"x-api-key":KEY},timeout=45)
+   if resp.status_code != 429:
+    resp.raise_for_status(); payload=resp.json(); break
+   retry_after=resp.headers.get("Retry-After")
+   try: delay=min(60,max(1,int(float(retry_after))))
+   except (TypeError,ValueError): delay=10*(attempt+1)
+   print(f"SportsGameOdds rate limited; retrying in {delay}s ({attempt+1}/3)")
+   time.sleep(delay)
+  if payload is None: raise RuntimeError("SportsGameOdds remained rate limited after 3 attempts")
+  SGO_CACHE.parent.mkdir(parents=True,exist_ok=True)
+  SGO_CACHE.write_text(json.dumps(payload),encoding="utf-8")
+  events=payload.get("data") or []
   by_id={}; by_name={}
   for e in events:
    for o in (e.get("odds") or {}).values():
@@ -75,7 +91,10 @@ def odds_lines():
   print("Matched",len(by_name),"pitcher strikeout prop names from SportsGameOdds")
   return {"by_id":by_id,"by_name":by_name}
  except Exception as e:
-  print("K odds warning",e); return {"by_id":{},"by_name":{}}
+  print("K odds warning",e)
+  SGO_CACHE.parent.mkdir(parents=True,exist_ok=True)
+  SGO_CACHE.write_text(json.dumps({"_fetchError":str(e),"data":[]}),encoding="utf-8")
+  return {"by_id":{},"by_name":{}}
 
 sched=js(f"{MLB}/schedule",sportId=1,date=TODAY.isoformat(),hydrate="probablePitcher")
 lines=odds_lines(); rows=[]
@@ -123,5 +142,8 @@ for day in sched.get("dates",[]):
    lean=None
    if line is not None: lean="OVER" if score>=56 else ("UNDER" if score<=44 else "PASS")
    rows.append({"id":pp["id"],"name":pp.get("fullName"),"team":team.get("abbreviation") or team.get("name"),"opponent":opp.get("abbreviation") or opp.get("name"),"gamePk":g.get("gamePk"),"gameDate":g.get("gameDate"),"line":line,"lineSource":"SportsGameOdds" if line is not None else None,"l5Rate":rate(5),"l10Rate":rate(10),"seasonAvg":round(sum(ks)/len(ks),2) if ks else None,"recent5Avg":recent_avg,"recent":logs,"opponentK":oppk,"seasonPitching":sp,"avgPitchesL5":avg_pitches,"avgInningsL5":avg_innings,"h2hGames":len(h2h),"h2hAvgK":h2h_avg,"researchScore":score,"lean":lean})
-rows.sort(key=lambda x:x.get("researchScore") or 0,reverse=True)\nfor i,row in enumerate(rows,1): row["rank"]=i\nOUT.write_text(json.dumps({"updated_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"season":YEAR,"methodology":"K skill + opponent K tendency + recent workload + recent K production vs current line; missing inputs neutral","rows":rows},indent=2))
+rows.sort(key=lambda x:x.get("researchScore") or 0,reverse=True)
+for i,row in enumerate(rows,1):
+ row["rank"]=i
+OUT.write_text(json.dumps({"updated_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"season":YEAR,"methodology":"K skill + opponent K tendency + recent workload + recent K production vs current line; missing inputs neutral","rows":rows},indent=2))
 print("Wrote",OUT,"with",len(rows),"probable starters")
