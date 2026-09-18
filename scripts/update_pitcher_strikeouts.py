@@ -38,62 +38,38 @@ def opponent_k(team_id):
 def norm_name(v):
  return "".join(ch for ch in str(v or "").lower() if ch.isalnum())
 def odds_lines():
-
  if not KEY:
-  SGO_CACHE.parent.mkdir(parents=True,exist_ok=True)
-  SGO_CACHE.write_text(json.dumps({"_fetchError":"SPORTSGAMEODDS_API_KEY is not set","data":[]}))
+  print("K odds warning: ODDS_API_KEY is not set")
   return {"by_id":{},"by_name":{}}
  try:
-  payload=None
-  for attempt in range(3):
-   resp=requests.get("https://api.sportsgameodds.com/v2/events",params={"leagueID":"MLB","oddsAvailable":"true","limit":100},headers={"x-api-key":KEY},timeout=45)
-   if resp.status_code != 429:
-    resp.raise_for_status(); payload=resp.json(); break
-   retry_after=resp.headers.get("Retry-After")
-   try: delay=min(60,max(1,int(float(retry_after))))
-   except (TypeError,ValueError): delay=10*(attempt+1)
-   print(f"SportsGameOdds rate limited; retrying in {delay}s ({attempt+1}/3)")
-   time.sleep(delay)
-  if payload is None: raise RuntimeError("SportsGameOdds remained rate limited after 3 attempts")
-  SGO_CACHE.parent.mkdir(parents=True,exist_ok=True)
-  SGO_CACHE.write_text(json.dumps(payload),encoding="utf-8")
-  events=payload.get("data") or []
-  by_id={}; by_name={}
+  events=js(f"{ODDS_BASE}/sports/baseball_mlb/events",apiKey=KEY)
+  by_name={}
   for e in events:
-   for o in (e.get("odds") or {}).values():
-    sid=str(o.get("statID") or "").lower().replace("_","").replace("-","")
-    market=str(o.get("marketName") or o.get("statName") or "").lower()
-    # Accept SGO's pitcher strikeout stat variants (strikeouts, pitchingStrikeouts, etc.)
-    if not (("strikeout" in sid or "strikeout" in market) and ("batter" not in sid and "batter" not in market)): continue
-    ent=o.get("statEntityID") or o.get("playerID")
-    if ent in (None,"all","home","away"): continue
-    # Only posted full-game book lines; fairOverUnder is not an app line.
-    if o.get("periodID") not in (None,"game"): continue
-    starts=e.get("startsAt") or (e.get("status") or {}).get("startsAt")
-    try: event_time=datetime.datetime.fromisoformat(starts.replace("Z","+00:00"))
-    except (ValueError,TypeError,AttributeError): continue
-    if event_time.astimezone(ZoneInfo("America/Chicago")).date()!=TODAY: continue
-    book_lines={}
-    for book_id,b in (o.get("byBookmaker") or {}).items():
-     if not b or not b.get("available",True): continue
-     try: val=float(b.get("overUnder"))
-     except (TypeError,ValueError): continue
-     if not math.isfinite(val) or val<0: continue
-     book_lines[book_id]={"line":val,"updatedAt":b.get("lastUpdatedAt")}
-    if not book_lines: continue
-    key=norm_name(provider_name(ent))+"|"+event_time.isoformat()
-    info=by_name.get(key,{"books":{},"providerID":ent})
-    info["books"].update(book_lines)
-    preferred=next((k for k in info["books"] if norm_name(k)=="prizepicks"),sorted(info["books"])[0])
-    info.update({"line":info["books"][preferred]["line"],"book":preferred})
-    by_name[key]=info
-    by_id[str(ent)+"|"+event_time.isoformat()]=info
-  print("Matched",len(by_name),"pitcher strikeout prop names from SportsGameOdds")
-  return {"by_id":by_id,"by_name":by_name}
+   starts=e.get("commence_time")
+   try: event_time=datetime.datetime.fromisoformat(starts.replace("Z","+00:00"))
+   except (ValueError,TypeError,AttributeError): continue
+   if event_time.astimezone(ZoneInfo("America/Chicago")).date()!=TODAY: continue
+   event_id=e.get("id")
+   if not event_id: continue
+   try:
+    payload=js(f"{ODDS_BASE}/sports/baseball_mlb/events/{event_id}/odds",apiKey=KEY,bookmakers="prizepicks",markets="pitcher_strikeouts",oddsFormat="american")
+   except Exception as ex:
+    print("PrizePicks event odds warning",event_id,ex); continue
+   for book in payload.get("bookmakers") or []:
+    if book.get("key")!="prizepicks": continue
+    for market in book.get("markets") or []:
+     if market.get("key")!="pitcher_strikeouts": continue
+     for o in market.get("outcomes") or []:
+      name=o.get("description"); point=o.get("point")
+      if not name or point is None: continue
+      key=norm_name(name)+"|"+event_time.isoformat()
+      info=by_name.setdefault(key,{"books":{},"providerID":name})
+      info["books"]["prizepicks"]={"line":float(point),"updatedAt":market.get("last_update") or book.get("last_update")}
+      info.update({"line":float(point),"book":"prizepicks"})
+  print("Matched",len(by_name),"PrizePicks pitcher strikeout prop names from The Odds API")
+  return {"by_id":{},"by_name":by_name}
  except Exception as e:
   print("K odds warning",e)
-  SGO_CACHE.parent.mkdir(parents=True,exist_ok=True)
-  SGO_CACHE.write_text(json.dumps({"_fetchError":str(e),"data":[]}),encoding="utf-8")
   return {"by_id":{},"by_name":{}}
 
 sched=js(f"{MLB}/schedule",sportId=1,date=TODAY.isoformat(),hydrate="probablePitcher")
