@@ -52,20 +52,24 @@ def odds_lines():
    event_id=e.get("id")
    if not event_id: continue
    try:
-    payload=js(f"{ODDS_BASE}/sports/baseball_mlb/events/{event_id}/odds",apiKey=KEY,bookmakers="prizepicks",markets="pitcher_strikeouts",oddsFormat="american")
+    payload=js(f"{ODDS_BASE}/sports/baseball_mlb/events/{event_id}/odds",apiKey=KEY,regions="us_dfs",bookmakers="prizepicks",markets="pitcher_strikeouts,pitcher_strikeouts_alternate",oddsFormat="american",includeMultipliers="true")
    except Exception as ex:
     print("PrizePicks event odds warning",event_id,ex); continue
    for book in payload.get("bookmakers") or []:
     if book.get("key")!="prizepicks": continue
     for market in book.get("markets") or []:
-     if market.get("key")!="pitcher_strikeouts": continue
+     if market.get("key") not in ("pitcher_strikeouts","pitcher_strikeouts_alternate"): continue
      for o in market.get("outcomes") or []:
       name=o.get("description"); point=o.get("point")
       if not name or point is None: continue
       key=norm_name(name)+"|"+event_time.isoformat()
       info=by_name.setdefault(key,{"books":{},"providerID":name})
-      info["books"]["prizepicks"]={"line":float(point),"updatedAt":market.get("last_update") or book.get("last_update")}
-      info.update({"line":float(point),"book":"prizepicks"})
+      entry={"line":float(point),"updatedAt":market.get("last_update") or book.get("last_update"),"market":market.get("key"),"multiplier":o.get("multiplier")}
+      current=info["books"].get("prizepicks")
+      # Prefer PrizePicks' standard projection over demon/goblin alternate lines.
+      if current is None or (current.get("market")!="pitcher_strikeouts" and market.get("key")=="pitcher_strikeouts"):
+       info["books"]["prizepicks"]=entry
+       info.update({"line":float(point),"book":"prizepicks"})
   print("Matched",len(by_name),"PrizePicks pitcher strikeout prop names from The Odds API")
   return {"by_id":{},"by_name":by_name}
  except Exception as e:
