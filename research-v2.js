@@ -106,7 +106,8 @@
       const score=enhancedScore(x),prob=hrProbability(x),conf=dataConfidence(x);
       const panel='<div class="r2-model-panel"><div><small>MODEL HR EST.</small><b>'+prob.toFixed(1)+'%</b></div><div><small>DATA CONFIDENCE</small><b>'+conf.label+'</b><span>'+conf.pct+'% inputs ready</span></div><div><small>DAILY EDGE</small><b>'+score+'/100</b><span>matchup-weighted</span></div></div>';
       html=html.replace('</article>',panel+'</article>');
-      const pop=Math.round(clampV(((num(x.hr)||0)*1.1)+((num(x.pa)||0)/120)+((num(x.recentHR)||0)*5),0,100));
+      const marketOdds=(()=>{const raw=String(x.bestHrOdds||'').replace('+','');const o=Number(raw);if(!Number.isFinite(o)||o===0)return 0;return o>0?100/(o+100):Math.abs(o)/(Math.abs(o)+100)})();
+      const pop=Math.round(clampV(marketOdds*100*.72+(num(x.hr)||0)*.55+(num(x.recentHR)||0)*3,0,100));
       return html.replace('<article data-game-date=', '<article data-rallo-v2="1" data-game-pk="'+Number(x.gamePk||0)+'" data-player-id="'+Number(x.person?.id||0)+'" data-model-score="'+score+'" data-popularity-proxy="'+pop+'" data-game-date=');
     };
   }
@@ -134,15 +135,16 @@
       const top=sorted[0];
       const advertised=[...rows].sort((a,b)=>Number(b.dataset.popularityProxy)-Number(a.dataset.popularityProxy))[0];
       const hidden=[...rows].sort((a,b)=>{
-        const ae=Number(a.dataset.modelScore)-Number(a.dataset.popularityProxy)*.32;
-        const be=Number(b.dataset.modelScore)-Number(b.dataset.popularityProxy)*.32;
+        const ae=Number(a.dataset.modelScore)-Number(a.dataset.popularityProxy);
+        const be=Number(b.dataset.modelScore)-Number(b.dataset.popularityProxy);
         return be-ae;
       })[0];
       const t=new Date(top.dataset.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
       const oddsOf=card=>card.querySelector('.fair-odds')?.textContent?.trim()||card.innerText.match(/[+-]\\d{3,4}/)?.[0]||'Odds —';
+      const mmOf=card=>{const gap=Math.round(Number(card.dataset.modelScore)-Number(card.dataset.popularityProxy));return (gap>0?'+':'')+gap+' RE';};
       const matchup=metaOf(top).split('•')[0].trim();
-      const pill=(label,c,kind)=>'<div class="r2-edge '+kind+'"><span>'+label+'</span><div>'+avatarOf(c)+'<strong>'+esc(nameOf(c))+'</strong></div><b>'+esc(oddsOf(c))+'</b><small>Score '+Number(c.dataset.modelScore)+'</small></div>';
-      return '<article class="r2-matchup" data-game="'+gamePk+'"><div class="r2-match-head"><div><b>⚾ '+esc(matchup||'MLB Matchup')+'</b><span>vs '+esc(metaOf(top))+' • '+esc(t)+'</span></div><span class="r2-live">Pregame</span></div><div class="r2-edge-grid">'+pill('MOST ADVERTISED*',advertised,'advertised')+pill('MOST HIDDEN',hidden,'hidden')+pill('TOP RALLO SCORE',top,'top')+'</div><div class="r2-ranges"><span>FORM</span>'+[3,5,10].map(n=>'<button data-range="'+n+'" onclick="this.closest(\'.r2-matchup\').querySelectorAll(\'.r2-ranges button\').forEach(b=>b.classList.remove(\'active\'));this.classList.add(\'active\');ralloRangeHint(this.closest(\'.r2-matchup\'),'+n+')">L'+n+'</button>').join('')+'</div><div class="r2-hint">Swipe the cards on mobile. *Advertised is a market-profile proxy until a true popularity feed is connected.</div></article>';
+      const pill=(label,c,kind)=>'<div class="r2-edge '+kind+'"><span>'+label+'</span><div>'+avatarOf(c)+'<strong>'+esc(nameOf(c))+'</strong></div><b>'+esc(mmOf(c))+' · '+esc(oddsOf(c))+'</b><small>Rallo Edge = model score − market/popularity score</small></div>';
+      return '<article class="r2-matchup" data-game="'+gamePk+'"><div class="r2-match-head"><div><b>⚾ '+esc(matchup||'MLB Matchup')+'</b><span>vs '+esc(metaOf(top))+' • '+esc(t)+'</span></div><span class="r2-live">Pregame</span></div><div class="r2-edge-grid">'+pill('MOST ADVERTISED*',advertised,'advertised')+pill('MOST HIDDEN',hidden,'hidden')+pill('TOP RALLO SCORE',top,'top')+'</div><div class="r2-ranges"><span>FORM</span>'+[3,5,10].map(n=>'<button data-range="'+n+'" onclick="this.closest(\'.r2-matchup\').querySelectorAll(\'.r2-ranges button\').forEach(b=>b.classList.remove(\'active\'));this.classList.add(\'active\');ralloRangeHint(this.closest(\'.r2-matchup\'),'+n+')">L'+n+'</button>').join('')+'</div><div class="r2-hint">Swipe the cards on mobile. RE = Rallo Edge. Positive means our model likes the HR matchup more than the market/popularity proxy; negative means the market is stronger than our model. This is our own research metric, not SlipSurge mm.</div></article>';
     }).join('');
     host.innerHTML='<div class="r2-title"><div><h3>⚡ Game-by-Game Edge Board</h3><span>Only games that have not started • deeper Research V2 scoring</span></div></div>'+sections;
   }
