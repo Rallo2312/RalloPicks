@@ -2440,14 +2440,39 @@ document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target
 </style>
 <script id="desktop-nav-hard-fix-js">
 (function(){
- function routeNav(e){
-   const b=e.target.closest&&e.target.closest('#mlbNav button[data-view],#nflNav button[data-nfl-view]');
-   if(!b)return;
-   e.preventDefault();e.stopPropagation();
-   if(b.dataset.view) window.switchView&&window.switchView(b.dataset.view);
-   else if(b.dataset.nflView) window.switchNflView&&window.switchNflView(b.dataset.nflView);
+ function showMlb(view){
+   document.body.classList.remove('player-profile-open');
+   document.querySelectorAll('#mlbNav button[data-view]').forEach(function(b){b.classList.toggle('active',b.dataset.view===view)});
+   var ids=['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View','strikeoutsView'];
+   var map={home:'mlbHomeView',board:'myBoardView',matchups:'matchupsView',moneyline:'moneylineView',batterlab:'batterlabView',rankings:'batterRankingsView',top20:'top20View',strikeouts:'strikeoutsView'};
+   ids.forEach(function(id){var el=document.getElementById(id);if(el)el.style.setProperty('display','none','important')});
+   var target=document.getElementById(map[view]||'mlbHomeView');if(target)target.style.setProperty('display','block','important');
+   try{
+     if(view==='home'){window.loadDailyBatterRanks&&window.loadDailyBatterRanks().then(function(){window.renderReferenceHomeCards&&window.renderReferenceHomeCards()})}
+     if(view==='top20'){window.loadTop20HR&&window.loadTop20HR();window.loadDailyBatterRanks&&window.loadDailyBatterRanks()}
+     if(view==='strikeouts')window.renderStrikeoutBoard&&window.renderStrikeoutBoard();
+     if(view==='rankings')window.loadDailyBatterRanks&&window.loadDailyBatterRanks();
+     if(view==='board')window.renderSaved&&window.renderSaved();
+   }catch(err){console.error('Desktop MLB route render',err)}
+   window.scrollTo({top:0,behavior:'smooth'});
  }
- document.addEventListener('pointerup',routeNav,true);
+ function showNfl(view){
+   document.querySelectorAll('#nflNav button[data-nfl-view]').forEach(function(b){b.classList.toggle('active',b.dataset.nflView===view)});
+   var ids=['nflHomeView','nflBoardView','nflResearchView','nflPlayersView','nflRanksView','nflMoneylineView','nflStandingsView'];
+   var map={home:'nflHomeView',research:'nflResearchView',players:'nflPlayersView',ranks:'nflRanksView',board:'nflBoardView',moneyline:'nflMoneylineView',standings:'nflStandingsView'};
+   ids.forEach(function(id){var el=document.getElementById(id);if(el)el.style.setProperty('display','none','important')});
+   var target=document.getElementById(map[view]||'nflHomeView');if(target)target.style.setProperty('display','block','important');
+   try{if(view==='home')window.renderReferenceHomeCards&&window.renderReferenceHomeCards();if(view==='research'){window.renderNFLResearch&&window.renderNFLResearch();window.renderNFLAnytimeTd&&window.renderNFLAnytimeTd()}if(view==='ranks')window.renderNFLRanks&&window.renderNFLRanks();if(view==='standings')window.renderNFLStandings&&window.renderNFLStandings()}catch(err){console.error('Desktop NFL route render',err)}
+   window.scrollTo({top:0,behavior:'smooth'});
+ }
+ function routeNav(e){
+   if(window.innerWidth<761)return;
+   var b=e.target.closest&&e.target.closest('#mlbNav button[data-view],#nflNav button[data-nfl-view]');
+   if(!b)return;
+   e.preventDefault();e.stopImmediatePropagation();
+   if(b.dataset.view)showMlb(b.dataset.view);else showNfl(b.dataset.nflView);
+ }
+ document.addEventListener('click',routeNav,true);
 })();
 </script>
 </body>
