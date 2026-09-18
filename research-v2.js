@@ -14,12 +14,14 @@
     const l20=windows.find(w=>Number(w.window)===20)||{};
     const pitch=typeof arsenalPowerMatch==='function'?arsenalPowerMatch(x.person?.id,x.starterId):{factor:1};
     const weather=x.weather||{};
+    const market=x.market||x.odds||{};
     let s=50;
+    let dataPoints=0;
 
     // Contact quality: use stable season Statcast as the backbone.
-    if(num(q.barrelRate)!=null) s += (num(q.barrelRate)-8)*1.15;
-    if(num(q.hardHitRate)!=null) s += (num(q.hardHitRate)-38)*0.34;
-    if(num(q.exitVelocity)!=null) s += (num(q.exitVelocity)-88)*1.35;
+    if(num(q.barrelRate)!=null){ s += (num(q.barrelRate)-8)*1.25; dataPoints++; }
+    if(num(q.hardHitRate)!=null){ s += (num(q.hardHitRate)-38)*0.38; dataPoints++; }
+    if(num(q.exitVelocity)!=null){ s += (num(q.exitVelocity)-88)*1.45; dataPoints++; }
 
     // Recent power, with L5 intentionally capped so one hot week cannot dominate.
     if(num(l5.hr)!=null) s += clampV(num(l5.hr)*2.2,0,7);
@@ -41,10 +43,21 @@
     }
 
     // Pitch-type fit now changes the rank instead of being display-only.
-    if(num(pitch.factor)!=null) s += (num(pitch.factor)-1)*44;
+    if(num(pitch.factor)!=null){ s += (num(pitch.factor)-1)*52; dataPoints++; }
 
     // Park/weather context.
-    if(num(weather.factor)!=null) s += (num(weather.factor)-1)*28;
+    if(num(weather.factor)!=null){ s += (num(weather.factor)-1)*24; dataPoints++; }
+
+    // Market confirmation is a sanity check, never the backbone. Short HR prices can confirm an edge;
+    // disagreement reduces confidence rather than automatically removing a hitter.
+    const american=num(market.hrAmerican??market.homeRunAmerican??x.hrOdds?.american??x.hrOdds);
+    if(american!=null){
+      const implied=american>0?100/(american+100):(-american)/((-american)+100);
+      s += clampV((implied-.12)*30,-4,5); dataPoints++;
+    }
+
+    // Prefer complete matchup profiles over eye-catching scores built on missing inputs.
+    if(dataPoints<3) s -= 5;
 
     // Lineup certainty / batting position.
     if(x.lineup?.status==='out') s -= 30;
@@ -67,12 +80,32 @@
   modelScoreForCandidate = enhancedScore;
   window.ralloResearchV2Score = enhancedScore;
 
+  function hrProbability(x){
+    const score=enhancedScore(x);
+    // Conservative display estimate: a calibrated-style mapping, explicitly not a guarantee.
+    // Keep the range realistic for single-game HR events while history accumulates.
+    return clampV(3 + score*.17,3,22);
+  }
+  function dataConfidence(x){
+    const q=state.hrQuality?.players?.[String(x.person?.id)]||x.contactQuality||{},r=x.research||{};
+    let n=0,total=6;
+    if(num(q.barrelRate)!=null&&num(q.hardHitRate)!=null)n++;
+    if(num(q.exitVelocity)!=null)n++;
+    if(num(r.pitcher?.hr9)!=null)n++;
+    if(r.pitchData)n++;
+    if(x.lineup?.status==='confirmed')n++;
+    if(num(x.weather?.factor)!=null)n++;
+    const pct=Math.round(n/total*100);return {pct,label:pct>=80?'HIGH':pct>=55?'MEDIUM':'LIMITED'};
+  }
+
   // Add machine-readable metadata to existing HR cards without rewriting the board renderer.
   if(typeof renderHrListRow==='function'){
     const oldRender=renderHrListRow;
     renderHrListRow=function(x,i,underrated=false){
-      const html=oldRender(x,i,underrated);
-      const score=enhancedScore(x);
+      let html=oldRender(x,i,underrated);
+      const score=enhancedScore(x),prob=hrProbability(x),conf=dataConfidence(x);
+      const panel='<div class="r2-model-panel"><div><small>MODEL HR EST.</small><b>'+prob.toFixed(1)+'%</b></div><div><small>DATA CONFIDENCE</small><b>'+conf.label+'</b><span>'+conf.pct+'% inputs ready</span></div><div><small>DAILY EDGE</small><b>'+score+'/100</b><span>matchup-weighted</span></div></div>';
+      html=html.replace('</article>',panel+'</article>');
       const pop=Math.round(clampV(((num(x.hr)||0)*1.1)+((num(x.pa)||0)/120)+((num(x.recentHR)||0)*5),0,100));
       return html.replace('<article data-game-date=', '<article data-rallo-v2="1" data-game-pk="'+Number(x.gamePk||0)+'" data-player-id="'+Number(x.person?.id||0)+'" data-model-score="'+score+'" data-popularity-proxy="'+pop+'" data-game-date=');
     };
@@ -127,7 +160,7 @@
   .r2-match-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px}.r2-match-head b{font-size:13px}.r2-match-head span{display:block;color:var(--muted);font-size:9px;margin-top:2px}.r2-live{padding:5px 8px;border-radius:99px;background:rgba(105,230,167,.09);color:var(--green)!important;border:1px solid rgba(105,230,167,.2)}
   .r2-edge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.r2-edge{min-width:0;border-radius:12px;padding:9px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.16)}.r2-edge>span{font-size:8px;font-weight:1000;letter-spacing:.6px;color:var(--muted)}.r2-edge>div{display:flex;align-items:center;gap:6px;margin-top:6px;min-width:0}.r2-edge .player-avatar{width:29px;height:29px;font-size:8px}.r2-edge strong{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.r2-edge>b{display:block;font-size:16px;margin-top:5px}.r2-edge.top{border-color:rgba(255,182,18,.35)}.r2-edge.top>b{color:var(--yellow)}.r2-edge.advertised{border-color:rgba(255,107,120,.32)}.r2-edge.advertised>b{color:#ff9da6}.r2-edge.hidden{border-color:rgba(105,230,167,.34)}.r2-edge.hidden>b{color:var(--green)}
   .r2-ranges{display:grid;grid-template-columns:1fr repeat(4,54px);gap:5px;align-items:center;margin-top:9px;padding-top:8px;border-top:1px solid rgba(255,255,255,.06)}.r2-ranges>span{font-size:8px;font-weight:1000;color:var(--muted)}.r2-ranges button{border:1px solid rgba(255,255,255,.08);background:#0b211a;color:#bcd0c8;border-radius:8px;padding:6px;font-size:9px;font-weight:1000}.r2-ranges button.active{border-color:var(--green);color:var(--green)}
-  .r2-hint{margin-top:7px;color:#91aaa0;font-size:8px;line-height:1.4}
+  .r2-hint{margin-top:7px;color:#91aaa0;font-size:8px;line-height:1.4}\n  .r2-model-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:9px 0 0;padding-top:8px;border-top:1px solid rgba(255,255,255,.06)}.r2-model-panel>div{padding:8px;border-radius:10px;background:rgba(0,0,0,.16);text-align:center}.r2-model-panel small,.r2-model-panel span{display:block;font-size:7px;color:var(--muted)}.r2-model-panel b{display:block;margin:3px 0;color:var(--green);font-size:13px}
   @media(max-width:760px){.r2-edge-grid{grid-template-columns:1fr}.r2-ranges{grid-template-columns:1fr repeat(4,44px)}.r2-edge{display:grid;grid-template-columns:1fr auto;align-items:center}.r2-edge>span{grid-column:1/-1}.r2-edge>div{margin-top:4px}.r2-edge>b{margin:0;font-size:18px}}
   `;
   const style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
