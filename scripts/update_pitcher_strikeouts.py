@@ -1,8 +1,9 @@
-import datetime, json, os, time, requests
+import datetime, json, os, time, requests, math
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 OUT=Path("data/pitcher-strikeouts.json"); OUT.parent.mkdir(parents=True,exist_ok=True)
-MLB="https://statsapi.mlb.com/api/v1"; TODAY=datetime.date.today(); YEAR=TODAY.year
+MLB="https://statsapi.mlb.com/api/v1"; TODAY=datetime.datetime.now(ZoneInfo("America/Chicago")).date(); YEAR=TODAY.year
 KEY=os.environ.get("SPORTSGAMEODDS_API_KEY")
 S=requests.Session(); S.headers.update({"User-Agent":"RalloPicks/1.0"})
 SGO_CACHE=Path(".cache/sportsgameodds-mlb-events.json")
@@ -70,24 +71,27 @@ def odds_lines():
     if not (("strikeout" in sid or "strikeout" in market) and ("batter" not in sid and "batter" not in market)): continue
     ent=o.get("statEntityID") or o.get("playerID")
     if ent in (None,"all","home","away"): continue
-    candidates=[]
-    raw=o.get("bookOverUnder")
-    if raw is None: raw=o.get("fairOverUnder")
-    if raw is None: raw=o.get("overUnder")
-    if raw is None: raw=o.get("line")
-    if raw is not None:
-     try:candidates.append(float(raw))
-     except:pass
+    # Only posted full-game book lines; fairOverUnder is not an app line.
+    if o.get("periodID") not in (None,"game"): continue
+    starts=e.get("startsAt") or (e.get("status") or {}).get("startsAt")
+    try: event_time=datetime.datetime.fromisoformat(starts.replace("Z","+00:00"))
+    except (ValueError,TypeError,AttributeError): continue
+    if event_time.astimezone(ZoneInfo("America/Chicago")).date()!=TODAY: continue
+    book_lines={}
     for book_id,b in (o.get("byBookmaker") or {}).items():
-     if not b or not b.get("available",True):continue
-     val=b.get("overUnder")
-     if val is not None:
-      try:candidates.append(float(val))
-      except:pass
-    if not candidates:continue
-    line=candidates[0]; info={"line":line,"market":o.get("marketName") or "Pitcher Strikeouts","providerID":ent}
-    by_id[str(ent)]=info
-    by_name[norm_name(provider_name(ent))]=info
+     if not b or not b.get("available",True): continue
+     try: val=float(b.get("overUnder"))
+     except (TypeError,ValueError): continue
+     if not math.isfinite(val) or val<0: continue
+     book_lines[book_id]={"line":val,"updatedAt":b.get("lastUpdatedAt")}
+    if not book_lines: continue
+    key=norm_name(provider_name(ent))+"|"+event_time.isoformat()
+    info=by_name.get(key,{"books":{},"providerID":ent})
+    info["books"].update(book_lines)
+    preferred=next((k for k in info["books"] if norm_name(k)=="prizepicks"),sorted(info["books"])[0])
+    info.update({"line":info["books"][preferred]["line"],"book":preferred})
+    by_name[key]=info
+    by_id[str(ent)+"|"+event_time.isoformat()]=info
   print("Matched",len(by_name),"pitcher strikeout prop names from SportsGameOdds")
   return {"by_id":by_id,"by_name":by_name}
  except Exception as e:
@@ -112,7 +116,8 @@ for day in sched.get("dates",[]):
     if not opp.get("abbreviation") and opp.get("id"): opp.update(js(f"{MLB}/teams/{opp['id']}").get("teams",[{}])[0])
    except Exception as e: print("team hydrate warning",e)
    logs=game_logs(pp["id"]); ks=[float(x["strikeouts"] or 0) for x in logs]
-   lineinfo=(lines.get("by_id") or {}).get(str(pp["id"])) or (lines.get("by_name") or {}).get(norm_name(pp.get("fullName"))) or {}
+   event_key=datetime.datetime.fromisoformat(g["gameDate"].replace("Z","+00:00")).isoformat()
+   lineinfo=(lines.get("by_id") or {}).get(str(pp["id"])+"|"+event_key) or (lines.get("by_name") or {}).get(norm_name(pp.get("fullName"))+"|"+event_key) or {}
    line=lineinfo.get("line")
    def rate(n):
     a=ks[:n]
@@ -141,9 +146,10 @@ for day in sched.get("dates",[]):
    score=round(max(1,min(99,score)))
    lean=None
    if line is not None: lean="OVER" if score>=56 else ("UNDER" if score<=44 else "PASS")
-   rows.append({"id":pp["id"],"name":pp.get("fullName"),"team":team.get("abbreviation") or team.get("name"),"opponent":opp.get("abbreviation") or opp.get("name"),"gamePk":g.get("gamePk"),"gameDate":g.get("gameDate"),"line":line,"lineSource":"SportsGameOdds" if line is not None else None,"l5Rate":rate(5),"l10Rate":rate(10),"seasonAvg":round(sum(ks)/len(ks),2) if ks else None,"recent5Avg":recent_avg,"recent":logs,"opponentK":oppk,"seasonPitching":sp,"avgPitchesL5":avg_pitches,"avgInningsL5":avg_innings,"h2hGames":len(h2h),"h2hAvgK":h2h_avg,"researchScore":score,"lean":lean})
+   rows.append({"id":pp["id"],"name":pp.get("fullName"),"team":team.get("abbreviation") or team.get("name"),"opponent":opp.get("abbreviation") or opp.get("name"),"gamePk":g.get("gamePk"),"gameDate":g.get("gameDate"),"line":line,"lineSource":lineinfo.get("book"),"bookLines":lineinfo.get("books",{}),"lineProvider":"SportsGameOdds" if line is not None else None,"l5Rate":rate(5),"l10Rate":rate(10),"seasonAvg":round(sum(ks)/len(ks),2) if ks else None,"recent5Avg":recent_avg,"recent":logs,"opponentK":oppk,"seasonPitching":sp,"avgPitchesL5":avg_pitches,"avgInningsL5":avg_innings,"h2hGames":len(h2h),"h2hAvgK":h2h_avg,"researchScore":score,"lean":lean})
 rows.sort(key=lambda x:x.get("researchScore") or 0,reverse=True)
 for i,row in enumerate(rows,1):
  row["rank"]=i
 OUT.write_text(json.dumps({"updated_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"season":YEAR,"methodology":"K skill + opponent K tendency + recent workload + recent K production vs current line; missing inputs neutral","rows":rows},indent=2))
 print("Wrote",OUT,"with",len(rows),"probable starters")
+
