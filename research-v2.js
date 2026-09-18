@@ -121,6 +121,16 @@
   function avatarOf(card){return card.querySelector('.player-avatar')?.outerHTML||''}
   function metaOf(card){return card.querySelector('.hr-list-player small')?.textContent?.trim()||''}
 
+  function heatTone(v,goodHigh=true){if(v==null||!Number.isFinite(Number(v)))return 'neutral';v=Number(v);const good=goodHigh?v>=65:v<=35,bad=goodHigh?v<45:v>65;return good?'good':bad?'bad':'mid'}
+  function buildMatchupMatrix(){
+    const host=document.getElementById('hrMatchupMatrix');if(!host)return;
+    const cards=[...document.querySelectorAll('#top20Rows .hr-list-row[data-rallo-v2="1"],#underratedHrRows .hr-list-row[data-rallo-v2="1"]')].filter(x=>Date.parse(x.dataset.gameDate)>Date.now()-60000);
+    if(!cards.length){host.innerHTML='<div class="empty">Waiting for today’s researched hitters…</div>';return}
+    const rows=[...new Map(cards.map(x=>[x.dataset.playerId,x])).values()].sort((a,b)=>Number(b.dataset.modelScore)-Number(a.dataset.modelScore));
+    const cell=(v,t)=>'<td class="r2-heat '+t+'">'+esc(v==null?'—':v)+'</td>';
+    host.innerHTML='<div class="r2-matrix-wrap"><table class="r2-matrix"><thead><tr><th>HITTER</th><th>HR SCORE</th><th>RALLO EDGE</th><th>MARKET</th><th>RECENT</th></tr></thead><tbody>'+rows.map(card=>{const score=Number(card.dataset.modelScore),pop=Number(card.dataset.popularityProxy),edge=Math.round(score-pop),recent=rangeSignal(card,10);return '<tr onclick="cardClick=\''+card.dataset.playerId+'\';card.click()"><th>'+avatarOf(card)+'<span>'+esc(nameOf(card))+'</span></th>'+cell(score,heatTone(score))+cell((edge>0?'+':'')+edge,edge>=8?'good':edge<=-8?'bad':'mid')+cell(pop,heatTone(pop))+cell(recent==null?'—':recent+' HR',recent>=3?'good':recent===0?'bad':'mid')+'</tr>'}).join('')+'</tbody></table></div><div class="r2-hint">Green = stronger signal • yellow = neutral • red = weaker signal. Swipe horizontally on mobile; tap a hitter to open full research.</div>';
+  }
+
   function buildMatchupBoard(){
     const host=document.getElementById('hrMatchupSpotlights');
     if(!host)return;
@@ -159,6 +169,7 @@
   };
 
   const css=`
+  .r2-matrix-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 16px;border:1px solid rgba(196,255,102,.18);border-radius:14px}.r2-matrix{width:100%;min-width:680px;border-collapse:separate;border-spacing:2px;background:#07130f}.r2-matrix th,.r2-matrix td{padding:9px 10px;font-size:9px;text-align:center}.r2-matrix thead th{position:sticky;top:0;background:#10251d;color:#a8bbb4;z-index:2}.r2-matrix tbody th{position:sticky;left:0;background:#0d211a;z-index:1;text-align:left;display:flex;align-items:center;gap:7px;min-width:165px}.r2-matrix .player-avatar{width:27px;height:27px}.r2-heat{font-weight:1000;border-radius:5px}.r2-heat.good{background:rgba(57,255,136,.24);color:#75ffa7}.r2-heat.mid{background:rgba(255,194,71,.23);color:#ffd46d}.r2-heat.bad{background:rgba(255,91,103,.24);color:#ff8992}.r2-heat.neutral{background:rgba(255,255,255,.06);color:#dce8e3}
   .r2-title{display:flex;justify-content:space-between;align-items:end;margin:14px 2px 8px}.r2-title h3{margin:0;font-size:17px}.r2-title span{font-size:10px;color:var(--muted)}
   .r2-matchup{margin:9px 0;padding:11px;border-radius:16px;border:1px solid rgba(196,255,102,.24);background:linear-gradient(145deg,#0d261e,#101d23);box-shadow:0 12px 30px rgba(0,0,0,.18)}
   .r2-match-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px}.r2-match-head b{font-size:13px}.r2-match-head span{display:block;color:var(--muted);font-size:9px;margin-top:2px}.r2-live{padding:5px 8px;border-radius:99px;background:rgba(105,230,167,.09);color:var(--green)!important;border:1px solid rgba(105,230,167,.2)}
@@ -169,7 +180,7 @@
   `;
   const style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
 
-  const obs=new MutationObserver(()=>{clearTimeout(window.__r2Timer);window.__r2Timer=setTimeout(buildMatchupBoard,120)});
+  const obs=new MutationObserver(()=>{clearTimeout(window.__r2Timer);window.__r2Timer=setTimeout(()=>{buildMatchupBoard();buildMatchupMatrix()},120)});
   ['top20Rows','underratedHrRows','sleeperFinderRows'].forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el,{childList:true,subtree:true})});
-  setTimeout(buildMatchupBoard,900);
+  setTimeout(()=>{buildMatchupBoard();buildMatchupMatrix()},900);
 })();
