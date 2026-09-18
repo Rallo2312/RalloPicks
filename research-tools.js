@@ -626,8 +626,8 @@ window.renderHrMatchupSpotlights=function(){
   const started=abstract==='live'||abstract==='final'||/in progress|game over|final|completed/.test(detailed)||['I','F','O'].includes(coded)||(Number.isFinite(firstPitch)&&Date.now()>=firstPitch);
   return !started;
  };
- const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out'&&notStarted(x));
- if(!rows.length){host.innerHTML='<div class="empty">No MLB games that have not started are available right now.</div>';return;}
+ const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out');
+ if(!rows.length){host.innerHTML='<div class="empty">No MLB matchup research is available for today yet.</div>';return;}
  const groups=new Map();
  rows.forEach(x=>{const k=[x.teamId,x.gamePk].join(':');if(!groups.has(k))groups.set(k,[]);groups.get(k).push(x)});
  const sections=[...groups.values()].sort((a,b)=>{
@@ -639,7 +639,15 @@ window.renderHrMatchupSpotlights=function(){
   const hidden=[...teamRows].filter(x=>Number(x.rank)>10).map(x=>{let s=Number(x.score)||0;if(Number(x.barrelRate)>=10)s+=5;if(Number(x.hardHitRate)>=43)s+=4;if(Number(x.hr9)>=1.25)s+=4;if(Number(x.weather?.factor)>1.03)s+=3;return {...x,_hidden:s}}).sort((a,b)=>b._hidden-a._hidden)[0]||sorted[Math.min(1,sorted.length-1)];
   const power=[...teamRows].map(x=>({...x,_power:(Number(x.barrelRate)||0)*2+(Number(x.hardHitRate)||0)*.35+(Number(x.hr9)||1.15)*8})).sort((a,b)=>b._power-a._power)[0]||obvious;
   const head=obvious?esc(obvious.teamAbbr||'TEAM')+' vs '+esc(obvious.pitcher||'Starter TBD'):'Matchup';
-  return '<section class="hr-matchup-spotlight"><div class="hr-matchup-head"><strong>'+head+'</strong><span>Rallo matchup scan • tap a player for Player Lab</span></div><div class="hr-matchup-scroll">'+
+  const game=gameByPk.get(String(obvious?.gamePk));
+  const abstract=String(game?.status?.abstractGameState||'').toLowerCase();
+  const detailed=String(game?.status?.detailedState||'').toLowerCase();
+  const coded=String(game?.status?.codedGameState||'');
+  const firstPitch=new Date(game?.gameDate||obvious?.gameDate||0).getTime();
+  const isFinal=abstract==='final'||/game over|final|completed/.test(detailed)||['F','O'].includes(coded);
+  const isLive=!isFinal&&(abstract==='live'||/in progress/.test(detailed)||coded==='I'||(Number.isFinite(firstPitch)&&Date.now()>=firstPitch));
+  const gameStatus=isFinal?'FINAL':isLive?'LIVE':'UPCOMING';
+  return '<section class="hr-matchup-spotlight"><div class="hr-matchup-head"><strong>'+head+'</strong><span>'+gameStatus+' • Rallo matchup scan • tap a player for Player Lab</span></div><div class="hr-matchup-scroll">'+
    hrSpotCard('🔥 MOST OBVIOUS',obvious,'obvious','Top team HR research score')+
    hrSpotCard('💎 MOST HIDDEN',hidden,'hidden','Best under-the-radar profile')+
    hrSpotCard('⚡ BEST POWER MATCH',power,'power','Best barrel / hard-hit / pitcher blend')+
