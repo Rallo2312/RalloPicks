@@ -2429,8 +2429,9 @@ document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target
 <style id="desktop-view-visibility-fix">
 /* Desktop routing must override the base .hidden-view rule. */
 @media(min-width:761px){
-  #mlbResearchLayout:not([hidden]),#nflResearchLayout:not([hidden]){display:grid!important}
-  #mlbResearchLayout .center-col,#nflResearchLayout .center-col{display:block!important;min-height:520px!important}
+  #mlbResearchLayout:not([hidden]),#nflResearchLayout:not([hidden]){display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%!important;min-width:0!important}
+  #mlbResearchLayout>.left-col,#nflResearchLayout>.left-col{display:none!important}
+  #mlbResearchLayout .center-col,#nflResearchLayout .center-col{display:block!important;width:100%!important;min-width:0!important;min-height:520px!important;grid-column:1!important}
   #mlbHomeView,#myBoardView,#matchupsView,#moneylineView,#batterlabView,#batterRankingsView,#top20View,#strikeoutsView,
   #nflHomeView,#nflBoardView,#nflResearchView,#nflPlayersView,#nflRanksView,#nflMoneylineView,#nflStandingsView{visibility:visible!important}
 }
