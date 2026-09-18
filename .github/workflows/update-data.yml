@@ -57,7 +57,7 @@ jobs:
         id: pitcher_strikeouts
         continue-on-error: true
         env:
-          SPORTSGAMEODDS_API_KEY: ${{ secrets.SPORTSGAMEODDS_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/update_pitcher_strikeouts.py
 
       - name: Ensure pitcher strikeout data exists
