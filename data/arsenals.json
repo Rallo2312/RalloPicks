@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T21:25:12.133637+00:00",
+  "updated_at": "2026-09-18T05:06:42.960296+00:00",
   "season": 2026,
   "source": "Baseball Savant pitch arsenal + pitch movement leaderboards",
   "pitchers": {
@@ -109567,9 +109567,199 @@
           "homeRuns": 0
         }
       ]
+    },
+    "680577": {
+      "vsPitch": [
+        {
+          "code": "FF",
+          "type": "4-Seam Fastball",
+          "pitches": 129,
+          "usage": 37.1,
+          "avg": 0.097,
+          "slg": 0.097,
+          "whiff": 24.3,
+          "hardHit": 38.9,
+          "homeRuns": 0
+        },
+        {
+          "code": "SI",
+          "type": "Sinker",
+          "pitches": 59,
+          "usage": 17.0,
+          "avg": 0.143,
+          "slg": 0.143,
+          "whiff": 16.7,
+          "hardHit": 20.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "SL",
+          "type": "Slider",
+          "pitches": 44,
+          "usage": 12.6,
+          "avg": 0.25,
+          "slg": 0.5,
+          "whiff": 34.8,
+          "hardHit": 62.5,
+          "homeRuns": 0
+        },
+        {
+          "code": "FC",
+          "type": "Cutter",
+          "pitches": 32,
+          "usage": 9.2,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 0.0,
+          "hardHit": 14.3,
+          "homeRuns": 0
+        },
+        {
+          "code": "CU",
+          "type": "Curveball",
+          "pitches": 29,
+          "usage": 8.3,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 37.5,
+          "hardHit": 0.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "CH",
+          "type": "Changeup",
+          "pitches": 27,
+          "usage": 7.8,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 66.7,
+          "hardHit": 0.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "FS",
+          "type": "Split-Finger",
+          "pitches": 12,
+          "usage": 3.4,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 20.0,
+          "hardHit": 100.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "ST",
+          "type": "Sweeper",
+          "pitches": 10,
+          "usage": 2.9,
+          "avg": 0.25,
+          "slg": 1.0,
+          "whiff": 0.0,
+          "hardHit": 50.0,
+          "homeRuns": 0
+        }
+      ]
+    },
+    "676480": {
+      "vsPitch": [
+        {
+          "code": "FF",
+          "type": "4-Seam Fastball",
+          "pitches": 32,
+          "usage": 25.0,
+          "avg": 0.2,
+          "slg": 0.5,
+          "whiff": 25.0,
+          "hardHit": 33.3,
+          "homeRuns": 0
+        },
+        {
+          "code": "SI",
+          "type": "Sinker",
+          "pitches": 25,
+          "usage": 19.5,
+          "avg": 0.333,
+          "slg": 0.333,
+          "whiff": 11.1,
+          "hardHit": 33.3,
+          "homeRuns": 0
+        },
+        {
+          "code": "SL",
+          "type": "Slider",
+          "pitches": 23,
+          "usage": 18.0,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 33.3,
+          "hardHit": 0.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "ST",
+          "type": "Sweeper",
+          "pitches": 17,
+          "usage": 13.3,
+          "avg": 0.5,
+          "slg": 1.0,
+          "whiff": 28.6,
+          "hardHit": 50.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "CH",
+          "type": "Changeup",
+          "pitches": 14,
+          "usage": 10.9,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 0.0,
+          "hardHit": 0.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "CU",
+          "type": "Curveball",
+          "pitches": 8,
+          "usage": 6.3,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 60.0,
+          "hardHit": 0.0,
+          "homeRuns": 0
+        },
+        {
+          "code": "FC",
+          "type": "Cutter",
+          "pitches": 7,
+          "usage": 5.5,
+          "avg": 0.0,
+          "slg": 0.0,
+          "whiff": 33.3,
+          "hardHit": null,
+          "homeRuns": 0
+        }
+      ]
     }
   },
   "recentContact": {
+    "647304": {
+      "bbe": 30,
+      "avgEV": 85.8,
+      "hardHitPct": 36.7,
+      "barrelProxyPct": 13.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CU",
+        "SL"
+      ],
+      "hotZones": [
+        11,
+        5,
+        2
+      ]
+    },
     "518692": {
       "bbe": 28,
       "avgEV": 80.8,
@@ -109585,6 +109775,40 @@
         5,
         4,
         3
+      ]
+    },
+    "645277": {
+      "bbe": 30,
+      "avgEV": 78.9,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 3.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FS"
+      ],
+      "hotZones": [
+        13,
+        9,
+        1
+      ]
+    },
+    "663728": {
+      "bbe": 30,
+      "avgEV": 86.5,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "SL"
+      ],
+      "hotZones": [
+        5,
+        14,
+        2
       ]
     },
     "668904": {
@@ -109604,21 +109828,21 @@
         7
       ]
     },
-    "669257": {
-      "bbe": 25,
-      "avgEV": 78.8,
-      "hardHitPct": 24.0,
-      "barrelProxyPct": 8.0,
-      "hr": 0,
+    "621566": {
+      "bbe": 30,
+      "avgEV": 80.8,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
       "bestPitchTypes": [
-        "SL",
+        "FF",
         "ST",
-        "FF"
+        "CH"
       ],
       "hotZones": [
-        6,
-        5,
-        8
+        8,
+        2,
+        5
       ]
     },
     "683146": {
@@ -109638,6 +109862,74 @@
         6
       ]
     },
+    "669257": {
+      "bbe": 25,
+      "avgEV": 78.8,
+      "hardHitPct": 24.0,
+      "barrelProxyPct": 8.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SL",
+        "ST",
+        "FF"
+      ],
+      "hotZones": [
+        6,
+        5,
+        8
+      ]
+    },
+    "686948": {
+      "bbe": 30,
+      "avgEV": 86.3,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 20.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "FS"
+      ],
+      "hotZones": [
+        5,
+        12,
+        8
+      ]
+    },
+    "671218": {
+      "bbe": 14,
+      "avgEV": 84.5,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FC",
+        "FF",
+        "ST"
+      ],
+      "hotZones": [
+        7,
+        5,
+        9
+      ]
+    },
+    "691594": {
+      "bbe": 30,
+      "avgEV": 84.6,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 10.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SL",
+        "SI",
+        "FF"
+      ],
+      "hotZones": [
+        11,
+        13,
+        9
+      ]
+    },
     "665019": {
       "bbe": 30,
       "avgEV": 83.6,
@@ -109653,6 +109945,23 @@
         12,
         13,
         5
+      ]
+    },
+    "686611": {
+      "bbe": 25,
+      "avgEV": 79.0,
+      "hardHitPct": 24.0,
+      "barrelProxyPct": 16.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "SL"
+      ],
+      "hotZones": [
+        4,
+        5,
+        8
       ]
     },
     "592885": {
@@ -109689,21 +109998,21 @@
         3
       ]
     },
-    "687859": {
-      "bbe": 18,
-      "avgEV": 83.4,
-      "hardHitPct": 16.7,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
+    "660670": {
+      "bbe": 30,
+      "avgEV": 82.0,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 10.0,
+      "hr": 2,
       "bestPitchTypes": [
-        "SI",
-        "SL",
-        "KC"
+        "FF",
+        "FS",
+        "SI"
       ],
       "hotZones": [
-        5,
-        2,
-        8
+        7,
+        11,
+        1
       ]
     },
     "687093": {
@@ -109723,6 +110032,40 @@
         4
       ]
     },
+    "687859": {
+      "bbe": 18,
+      "avgEV": 83.4,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "SL",
+        "KC"
+      ],
+      "hotZones": [
+        5,
+        2,
+        8
+      ]
+    },
+    "703520": {
+      "bbe": 30,
+      "avgEV": 76.5,
+      "hardHitPct": 6.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SL"
+      ],
+      "hotZones": [
+        12,
+        2,
+        5
+      ]
+    },
     "605141": {
       "bbe": 30,
       "avgEV": 85.8,
@@ -109740,38 +110083,38 @@
         14
       ]
     },
-    "685133": {
-      "bbe": 25,
-      "avgEV": 84.5,
-      "hardHitPct": 24.0,
-      "barrelProxyPct": 4.0,
+    "672695": {
+      "bbe": 30,
+      "avgEV": 78.1,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
         "SI",
-        "SL"
+        "CH"
       ],
       "hotZones": [
-        5,
-        8,
-        4
+        1,
+        6,
+        5
       ]
     },
-    "668804": {
-      "bbe": 30,
-      "avgEV": 83.5,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 6.7,
-      "hr": 1,
+    "664702": {
+      "bbe": 17,
+      "avgEV": 77.3,
+      "hardHitPct": 5.9,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
       "bestPitchTypes": [
-        "CH",
         "FF",
+        "SL",
         "SI"
       ],
       "hotZones": [
-        2,
-        6,
-        4
+        12,
+        5,
+        6
       ]
     },
     "682668": {
@@ -109791,6 +110134,57 @@
         8
       ]
     },
+    "668804": {
+      "bbe": 30,
+      "avgEV": 83.5,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "SI"
+      ],
+      "hotZones": [
+        2,
+        6,
+        4
+      ]
+    },
+    "685133": {
+      "bbe": 25,
+      "avgEV": 84.5,
+      "hardHitPct": 24.0,
+      "barrelProxyPct": 4.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        5,
+        8,
+        4
+      ]
+    },
+    "641355": {
+      "bbe": 30,
+      "avgEV": 84.2,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 10.0,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "SI"
+      ],
+      "hotZones": [
+        3,
+        7,
+        11
+      ]
+    },
     "543760": {
       "bbe": 29,
       "avgEV": 84.8,
@@ -109806,6 +110200,40 @@
         5,
         8,
         6
+      ]
+    },
+    "673490": {
+      "bbe": 16,
+      "avgEV": 79.9,
+      "hardHitPct": 12.5,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FS"
+      ],
+      "hotZones": [
+        5,
+        4,
+        9
+      ]
+    },
+    "641487": {
+      "bbe": 30,
+      "avgEV": 86.4,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 16.7,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        4,
+        13
       ]
     },
     "669394": {
@@ -109825,6 +110253,40 @@
         1
       ]
     },
+    "678391": {
+      "bbe": 19,
+      "avgEV": 80.2,
+      "hardHitPct": 15.8,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "SI"
+      ],
+      "hotZones": [
+        4,
+        2,
+        5
+      ]
+    },
+    "672515": {
+      "bbe": 30,
+      "avgEV": 84.0,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 16.7,
+      "hr": 3,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "ST"
+      ],
+      "hotZones": [
+        5,
+        12,
+        14
+      ]
+    },
     "605137": {
       "bbe": 22,
       "avgEV": 80.7,
@@ -109842,21 +110304,21 @@
         12
       ]
     },
-    "808959": {
-      "bbe": 14,
-      "avgEV": 81.8,
-      "hardHitPct": 14.3,
-      "barrelProxyPct": 7.1,
-      "hr": 0,
+    "700250": {
+      "bbe": 30,
+      "avgEV": 82.8,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
       "bestPitchTypes": [
         "FF",
         "SI",
-        "SL"
+        "FC"
       ],
       "hotZones": [
-        6,
-        9,
-        14
+        4,
+        8,
+        5
       ]
     },
     "664040": {
@@ -109893,6 +110355,23 @@
         8
       ]
     },
+    "808959": {
+      "bbe": 14,
+      "avgEV": 81.8,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 7.1,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        6,
+        9,
+        14
+      ]
+    },
     "676724": {
       "bbe": 30,
       "avgEV": 86.8,
@@ -109927,21 +110406,55 @@
         7
       ]
     },
-    "691182": {
+    "672640": {
       "bbe": 30,
-      "avgEV": 79.1,
-      "hardHitPct": 13.3,
+      "avgEV": 84.1,
+      "hardHitPct": 16.7,
       "barrelProxyPct": 3.3,
-      "hr": 1,
+      "hr": 0,
       "bestPitchTypes": [
+        "SI",
         "FF",
-        "SL",
-        "SI"
+        "SL"
       ],
       "hotZones": [
         5,
-        11,
-        8
+        4,
+        2
+      ]
+    },
+    "608324": {
+      "bbe": 30,
+      "avgEV": 84.8,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 10.0,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        8,
+        11
+      ]
+    },
+    "699024": {
+      "bbe": 30,
+      "avgEV": 88.6,
+      "hardHitPct": 46.7,
+      "barrelProxyPct": 13.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CU",
+        "SI"
+      ],
+      "hotZones": [
+        4,
+        2,
+        13
       ]
     },
     "593428": {
@@ -109961,6 +110474,105 @@
         12
       ]
     },
+    "691182": {
+      "bbe": 30,
+      "avgEV": 79.1,
+      "hardHitPct": 13.3,
+      "barrelProxyPct": 3.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        11,
+        8
+      ]
+    },
+    "806367": {
+      "bbe": 30,
+      "avgEV": 83.6,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "ST"
+      ],
+      "hotZones": [
+        8,
+        2,
+        5
+      ]
+    },
+    "686668": {
+      "bbe": 15,
+      "avgEV": 87.8,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        4,
+        5,
+        8
+      ]
+    },
+    "642215": {
+      "bbe": 30,
+      "avgEV": 79.5,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "SL"
+      ],
+      "hotZones": [
+        5,
+        4,
+        8
+      ]
+    },
+    "678218": {
+      "bbe": 9,
+      "avgEV": 83.4,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FS",
+        "SL"
+      ],
+      "hotZones": [
+        2,
+        3,
+        6
+      ]
+    },
+    "802139": {
+      "bbe": 3,
+      "avgEV": 90.0,
+      "hardHitPct": 66.7,
+      "barrelProxyPct": 66.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF"
+      ],
+      "hotZones": [
+        5
+      ]
+    },
     "663968": {
       "bbe": 28,
       "avgEV": 84.4,
@@ -109978,20 +110590,54 @@
         13
       ]
     },
-    "686668": {
+    "686681": {
+      "bbe": 25,
+      "avgEV": 77.9,
+      "hardHitPct": 24.0,
+      "barrelProxyPct": 12.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SI",
+        "CH",
+        "FF"
+      ],
+      "hotZones": [
+        6,
+        13,
+        5
+      ]
+    },
+    "681715": {
+      "bbe": 30,
+      "avgEV": 82.7,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "SL"
+      ],
+      "hotZones": [
+        2,
+        9,
+        5
+      ]
+    },
+    "680777": {
       "bbe": 15,
-      "avgEV": 87.8,
-      "hardHitPct": 26.7,
+      "avgEV": 82.4,
+      "hardHitPct": 13.3,
       "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "SL",
-        "FC"
+        "CH",
+        "SL"
       ],
       "hotZones": [
+        12,
         4,
-        5,
         8
       ]
     },
@@ -110012,40 +110658,6 @@
         7
       ]
     },
-    "680777": {
-      "bbe": 15,
-      "avgEV": 82.4,
-      "hardHitPct": 13.3,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
-      "bestPitchTypes": [
-        "FF",
-        "CH",
-        "SL"
-      ],
-      "hotZones": [
-        12,
-        4,
-        8
-      ]
-    },
-    "686681": {
-      "bbe": 25,
-      "avgEV": 77.9,
-      "hardHitPct": 24.0,
-      "barrelProxyPct": 12.0,
-      "hr": 1,
-      "bestPitchTypes": [
-        "SI",
-        "CH",
-        "FF"
-      ],
-      "hotZones": [
-        6,
-        13,
-        5
-      ]
-    },
     "701538": {
       "bbe": 28,
       "avgEV": 92.8,
@@ -110063,6 +110675,23 @@
         13
       ]
     },
+    "694376": {
+      "bbe": 26,
+      "avgEV": 82.2,
+      "hardHitPct": 19.2,
+      "barrelProxyPct": 7.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        3,
+        11
+      ]
+    },
     "691720": {
       "bbe": 26,
       "avgEV": 86.3,
@@ -110078,6 +110707,40 @@
         8,
         5,
         14
+      ]
+    },
+    "669221": {
+      "bbe": 20,
+      "avgEV": 78.8,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 15.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "CU"
+      ],
+      "hotZones": [
+        5,
+        11,
+        6
+      ]
+    },
+    "683011": {
+      "bbe": 29,
+      "avgEV": 85.8,
+      "hardHitPct": 31.0,
+      "barrelProxyPct": 17.2,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "ST"
+      ],
+      "hotZones": [
+        2,
+        1,
+        5
       ]
     },
     "691019": {
@@ -110131,21 +110794,38 @@
         8
       ]
     },
-    "664034": {
-      "bbe": 29,
-      "avgEV": 80.5,
-      "hardHitPct": 20.7,
-      "barrelProxyPct": 10.3,
-      "hr": 0,
+    "702284": {
+      "bbe": 30,
+      "avgEV": 83.8,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 13.3,
+      "hr": 1,
       "bestPitchTypes": [
         "FF",
-        "ST",
+        "SI",
+        "ST"
+      ],
+      "hotZones": [
+        8,
+        5,
+        1
+      ]
+    },
+    "663457": {
+      "bbe": 30,
+      "avgEV": 87.2,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 3.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
         "SL"
       ],
       "hotZones": [
-        6,
-        14,
-        1
+        4,
+        8,
+        11
       ]
     },
     "608369": {
@@ -110165,6 +110845,53 @@
         9
       ]
     },
+    "663586": {
+      "bbe": 30,
+      "avgEV": 82.2,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 6.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FS",
+        "FF",
+        "FC"
+      ],
+      "hotZones": [
+        6,
+        4,
+        5
+      ]
+    },
+    "664034": {
+      "bbe": 29,
+      "avgEV": 80.5,
+      "hardHitPct": 20.7,
+      "barrelProxyPct": 10.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "ST",
+        "SL"
+      ],
+      "hotZones": [
+        6,
+        14,
+        1
+      ]
+    },
+    "686780": {
+      "bbe": 1,
+      "avgEV": 92.6,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SL"
+      ],
+      "hotZones": [
+        2
+      ]
+    },
     "694249": {
       "bbe": 30,
       "avgEV": 87.8,
@@ -110180,6 +110907,23 @@
         6,
         2,
         13
+      ]
+    },
+    "694374": {
+      "bbe": 20,
+      "avgEV": 80.5,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 15.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "ST"
+      ],
+      "hotZones": [
+        12,
+        6,
+        5
       ]
     },
     "521692": {
@@ -110199,6 +110943,23 @@
         9
       ]
     },
+    "694192": {
+      "bbe": 23,
+      "avgEV": 85.6,
+      "hardHitPct": 39.1,
+      "barrelProxyPct": 8.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CU"
+      ],
+      "hotZones": [
+        6,
+        4,
+        3
+      ]
+    },
     "502054": {
       "bbe": 4,
       "avgEV": 95.4,
@@ -110216,21 +110977,38 @@
         2
       ]
     },
-    "694192": {
-      "bbe": 23,
-      "avgEV": 85.6,
-      "hardHitPct": 39.1,
-      "barrelProxyPct": 8.7,
+    "701675": {
+      "bbe": 30,
+      "avgEV": 80.9,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 16.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CU"
+      ],
+      "hotZones": [
+        8,
+        12,
+        14
+      ]
+    },
+    "676391": {
+      "bbe": 24,
+      "avgEV": 81.6,
+      "hardHitPct": 12.5,
+      "barrelProxyPct": 8.3,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
         "SL",
-        "CU"
+        "SI"
       ],
       "hotZones": [
-        6,
-        4,
-        3
+        14,
+        12,
+        11
       ]
     },
     "669743": {
@@ -110267,21 +111045,21 @@
         4
       ]
     },
-    "592518": {
+    "807712": {
       "bbe": 30,
-      "avgEV": 84.8,
+      "avgEV": 77.0,
       "hardHitPct": 23.3,
-      "barrelProxyPct": 10.0,
-      "hr": 2,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
       "bestPitchTypes": [
-        "ST",
-        "SL",
-        "CH"
+        "FF",
+        "CU",
+        "ST"
       ],
       "hotZones": [
-        9,
-        14,
-        13
+        6,
+        5,
+        7
       ]
     },
     "686469": {
@@ -110301,21 +111079,38 @@
         5
       ]
     },
-    "807712": {
+    "669065": {
       "bbe": 30,
-      "avgEV": 77.0,
-      "hardHitPct": 23.3,
-      "barrelProxyPct": 3.3,
+      "avgEV": 84.6,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 6.7,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "CU",
-        "ST"
+        "FC",
+        "CU"
       ],
       "hotZones": [
-        6,
-        5,
-        7
+        12,
+        4,
+        5
+      ]
+    },
+    "592518": {
+      "bbe": 30,
+      "avgEV": 84.8,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 10.0,
+      "hr": 2,
+      "bestPitchTypes": [
+        "ST",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        9,
+        14,
+        13
       ]
     },
     "694378": {
@@ -110335,21 +111130,21 @@
         4
       ]
     },
-    "681393": {
-      "bbe": 25,
-      "avgEV": 85.5,
-      "hardHitPct": 32.0,
-      "barrelProxyPct": 24.0,
+    "682928": {
+      "bbe": 30,
+      "avgEV": 88.8,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 13.3,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "SI",
-        "SL"
+        "FS",
+        "CH"
       ],
       "hotZones": [
-        6,
-        5,
-        2
+        4,
+        13,
+        12
       ]
     },
     "679822": {
@@ -110366,6 +111161,108 @@
       "hotZones": [
         6,
         9,
+        3
+      ]
+    },
+    "681393": {
+      "bbe": 24,
+      "avgEV": 86.0,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 25.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        6,
+        5,
+        2
+      ]
+    },
+    "701678": {
+      "bbe": 30,
+      "avgEV": 80.2,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 10.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CU",
+        "SI"
+      ],
+      "hotZones": [
+        1,
+        5,
+        9
+      ]
+    },
+    "656976": {
+      "bbe": 16,
+      "avgEV": 89.5,
+      "hardHitPct": 37.5,
+      "barrelProxyPct": 6.2,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CU",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        8,
+        1
+      ]
+    },
+    "665923": {
+      "bbe": 23,
+      "avgEV": 71.6,
+      "hardHitPct": 4.3,
+      "barrelProxyPct": 4.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CH"
+      ],
+      "hotZones": [
+        5,
+        1,
+        14
+      ]
+    },
+    "687957": {
+      "bbe": 30,
+      "avgEV": 79.7,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 13.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "CH",
+        "FF"
+      ],
+      "hotZones": [
+        8,
+        5,
+        4
+      ]
+    },
+    "621493": {
+      "bbe": 6,
+      "avgEV": 84.4,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "SI"
+      ],
+      "hotZones": [
+        9,
+        5,
         3
       ]
     },
@@ -110402,40 +111299,6 @@
         14
       ]
     },
-    "687957": {
-      "bbe": 30,
-      "avgEV": 79.7,
-      "hardHitPct": 23.3,
-      "barrelProxyPct": 13.3,
-      "hr": 0,
-      "bestPitchTypes": [
-        "SI",
-        "CH",
-        "FF"
-      ],
-      "hotZones": [
-        8,
-        5,
-        4
-      ]
-    },
-    "701678": {
-      "bbe": 30,
-      "avgEV": 80.2,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 10.0,
-      "hr": 1,
-      "bestPitchTypes": [
-        "FF",
-        "CU",
-        "SI"
-      ],
-      "hotZones": [
-        1,
-        5,
-        9
-      ]
-    },
     "703607": {
       "bbe": 22,
       "avgEV": 82.3,
@@ -110450,6 +111313,57 @@
       "hotZones": [
         4,
         6,
+        8
+      ]
+    },
+    "669701": {
+      "bbe": 19,
+      "avgEV": 85.3,
+      "hardHitPct": 31.6,
+      "barrelProxyPct": 5.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "SI"
+      ],
+      "hotZones": [
+        6,
+        5,
+        4
+      ]
+    },
+    "695391": {
+      "bbe": 11,
+      "avgEV": 78.1,
+      "hardHitPct": 36.4,
+      "barrelProxyPct": 27.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        3,
+        4,
+        5
+      ]
+    },
+    "662139": {
+      "bbe": 23,
+      "avgEV": 84.1,
+      "hardHitPct": 21.7,
+      "barrelProxyPct": 4.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        2,
         8
       ]
     },
@@ -110470,38 +111384,38 @@
         4
       ]
     },
-    "662139": {
-      "bbe": 23,
-      "avgEV": 84.1,
-      "hardHitPct": 21.7,
-      "barrelProxyPct": 4.3,
-      "hr": 0,
+    "691718": {
+      "bbe": 30,
+      "avgEV": 88.4,
+      "hardHitPct": 46.7,
+      "barrelProxyPct": 20.0,
+      "hr": 3,
       "bestPitchTypes": [
+        "CH",
         "FF",
-        "FC",
         "SI"
       ],
       "hotZones": [
-        5,
-        2,
-        8
+        14,
+        13,
+        9
       ]
     },
-    "677951": {
+    "695336": {
       "bbe": 30,
-      "avgEV": 83.3,
-      "hardHitPct": 23.3,
-      "barrelProxyPct": 3.3,
+      "avgEV": 84.5,
+      "hardHitPct": 40.0,
+      "barrelProxyPct": 10.0,
       "hr": 0,
       "bestPitchTypes": [
-        "FF",
         "SI",
-        "FC"
+        "FF",
+        "ST"
       ],
       "hotZones": [
-        14,
-        2,
-        4
+        8,
+        5,
+        14
       ]
     },
     "678662": {
@@ -110521,6 +111435,23 @@
         9
       ]
     },
+    "669224": {
+      "bbe": 20,
+      "avgEV": 89.8,
+      "hardHitPct": 35.0,
+      "barrelProxyPct": 20.0,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        8,
+        13
+      ]
+    },
     "665487": {
       "bbe": 30,
       "avgEV": 83.8,
@@ -110538,6 +111469,74 @@
         14
       ]
     },
+    "660821": {
+      "bbe": 9,
+      "avgEV": 78.0,
+      "hardHitPct": 11.1,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        12,
+        13,
+        6
+      ]
+    },
+    "694673": {
+      "bbe": 15,
+      "avgEV": 86.5,
+      "hardHitPct": 40.0,
+      "barrelProxyPct": 6.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        4,
+        14
+      ]
+    },
+    "643289": {
+      "bbe": 30,
+      "avgEV": 80.2,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FS",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        13,
+        9
+      ]
+    },
+    "677951": {
+      "bbe": 30,
+      "avgEV": 83.3,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        14,
+        2,
+        4
+      ]
+    },
     "805808": {
       "bbe": 30,
       "avgEV": 85.3,
@@ -110553,6 +111552,74 @@
         5,
         6,
         2
+      ]
+    },
+    "806956": {
+      "bbe": 16,
+      "avgEV": 75.5,
+      "hardHitPct": 18.8,
+      "barrelProxyPct": 6.2,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "FS"
+      ],
+      "hotZones": [
+        5,
+        13,
+        8
+      ]
+    },
+    "805811": {
+      "bbe": 30,
+      "avgEV": 87.1,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        8,
+        5,
+        6
+      ]
+    },
+    "806198": {
+      "bbe": 18,
+      "avgEV": 89.5,
+      "hardHitPct": 27.8,
+      "barrelProxyPct": 11.1,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "SI"
+      ],
+      "hotZones": [
+        4,
+        14,
+        5
+      ]
+    },
+    "643376": {
+      "bbe": 14,
+      "avgEV": 83.9,
+      "hardHitPct": 35.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "SI"
+      ],
+      "hotZones": [
+        9,
+        8,
+        4
       ]
     },
     "666182": {
@@ -110589,91 +111656,6 @@
         5
       ]
     },
-    "643376": {
-      "bbe": 14,
-      "avgEV": 83.9,
-      "hardHitPct": 35.7,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
-      "bestPitchTypes": [
-        "CH",
-        "FF",
-        "SI"
-      ],
-      "hotZones": [
-        9,
-        8,
-        4
-      ]
-    },
-    "806198": {
-      "bbe": 18,
-      "avgEV": 89.5,
-      "hardHitPct": 27.8,
-      "barrelProxyPct": 11.1,
-      "hr": 0,
-      "bestPitchTypes": [
-        "FF",
-        "SL",
-        "SI"
-      ],
-      "hotZones": [
-        4,
-        14,
-        5
-      ]
-    },
-    "806956": {
-      "bbe": 16,
-      "avgEV": 75.5,
-      "hardHitPct": 18.8,
-      "barrelProxyPct": 6.2,
-      "hr": 2,
-      "bestPitchTypes": [
-        "FF",
-        "CH",
-        "FS"
-      ],
-      "hotZones": [
-        5,
-        13,
-        8
-      ]
-    },
-    "701358": {
-      "bbe": 30,
-      "avgEV": 81.4,
-      "hardHitPct": 23.3,
-      "barrelProxyPct": 6.7,
-      "hr": 0,
-      "bestPitchTypes": [
-        "FF",
-        "CH",
-        "SI"
-      ],
-      "hotZones": [
-        4,
-        8,
-        11
-      ]
-    },
-    "807726": {
-      "bbe": 26,
-      "avgEV": 83.9,
-      "hardHitPct": 23.1,
-      "barrelProxyPct": 3.8,
-      "hr": 0,
-      "bestPitchTypes": [
-        "FF",
-        "SI",
-        "ST"
-      ],
-      "hotZones": [
-        6,
-        4,
-        13
-      ]
-    },
     "596115": {
       "bbe": 20,
       "avgEV": 77.5,
@@ -110689,23 +111671,6 @@
         14,
         4,
         3
-      ]
-    },
-    "695600": {
-      "bbe": 22,
-      "avgEV": 79.7,
-      "hardHitPct": 13.6,
-      "barrelProxyPct": 9.1,
-      "hr": 1,
-      "bestPitchTypes": [
-        "SI",
-        "SL",
-        "FF"
-      ],
-      "hotZones": [
-        5,
-        6,
-        4
       ]
     },
     "553869": {
@@ -110742,6 +111707,40 @@
         9
       ]
     },
+    "701358": {
+      "bbe": 30,
+      "avgEV": 81.4,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 6.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        4,
+        8,
+        11
+      ]
+    },
+    "695600": {
+      "bbe": 22,
+      "avgEV": 79.7,
+      "hardHitPct": 13.6,
+      "barrelProxyPct": 9.1,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SI",
+        "SL",
+        "FF"
+      ],
+      "hotZones": [
+        5,
+        6,
+        4
+      ]
+    },
     "663656": {
       "bbe": 28,
       "avgEV": 84.9,
@@ -110757,6 +111756,57 @@
         3,
         4,
         1
+      ]
+    },
+    "807726": {
+      "bbe": 26,
+      "avgEV": 83.9,
+      "hardHitPct": 23.1,
+      "barrelProxyPct": 3.8,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "ST"
+      ],
+      "hotZones": [
+        6,
+        4,
+        13
+      ]
+    },
+    "677594": {
+      "bbe": 30,
+      "avgEV": 83.9,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        14,
+        6,
+        8
+      ]
+    },
+    "669357": {
+      "bbe": 17,
+      "avgEV": 79.7,
+      "hardHitPct": 11.8,
+      "barrelProxyPct": 5.9,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        6,
+        7
       ]
     },
     "665742": {
@@ -110776,28 +111826,28 @@
         8
       ]
     },
-    "814430": {
-      "bbe": 23,
-      "avgEV": 76.1,
-      "hardHitPct": 13.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
+    "571448": {
+      "bbe": 29,
+      "avgEV": 87.2,
+      "hardHitPct": 31.0,
+      "barrelProxyPct": 20.7,
+      "hr": 3,
       "bestPitchTypes": [
+        "ST",
         "FF",
-        "FS",
-        "FC"
+        "CU"
       ],
       "hotZones": [
-        11,
-        8,
-        7
+        14,
+        1,
+        9
       ]
     },
-    "805367": {
-      "bbe": 30,
-      "avgEV": 79.8,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 6.7,
+    "608348": {
+      "bbe": 23,
+      "avgEV": 77.1,
+      "hardHitPct": 17.4,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
@@ -110805,9 +111855,9 @@
         "CH"
       ],
       "hotZones": [
-        14,
-        6,
-        11
+        5,
+        11,
+        1
       ]
     },
     "668952": {
@@ -110827,6 +111877,23 @@
         1
       ]
     },
+    "814430": {
+      "bbe": 23,
+      "avgEV": 76.1,
+      "hardHitPct": 13.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FS",
+        "FC"
+      ],
+      "hotZones": [
+        11,
+        8,
+        7
+      ]
+    },
     "661531": {
       "bbe": 9,
       "avgEV": 72.1,
@@ -110843,21 +111910,55 @@
         6
       ]
     },
-    "686555": {
-      "bbe": 15,
-      "avgEV": 80.8,
-      "hardHitPct": 33.3,
+    "805367": {
+      "bbe": 30,
+      "avgEV": 79.8,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 6.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        14,
+        6,
+        11
+      ]
+    },
+    "641857": {
+      "bbe": 23,
+      "avgEV": 79.1,
+      "hardHitPct": 13.0,
       "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
+        "FC",
+        "SI"
+      ],
+      "hotZones": [
+        6,
+        2,
+        5
+      ]
+    },
+    "690984": {
+      "bbe": 12,
+      "avgEV": 89.3,
+      "hardHitPct": 41.7,
+      "barrelProxyPct": 8.3,
+      "hr": 1,
+      "bestPitchTypes": [
         "SI",
+        "ST",
         "CU"
       ],
       "hotZones": [
         8,
-        6,
-        13
+        5,
+        1
       ]
     },
     "691181": {
@@ -110877,6 +111978,23 @@
         1
       ]
     },
+    "691788": {
+      "bbe": 18,
+      "avgEV": 84.5,
+      "hardHitPct": 27.8,
+      "barrelProxyPct": 11.1,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        13,
+        4,
+        5
+      ]
+    },
     "690924": {
       "bbe": 3,
       "avgEV": 78.1,
@@ -110891,6 +112009,23 @@
       "hotZones": [
         5,
         8
+      ]
+    },
+    "686555": {
+      "bbe": 15,
+      "avgEV": 80.8,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CU"
+      ],
+      "hotZones": [
+        8,
+        6,
+        13
       ]
     },
     "669392": {
@@ -110910,21 +112045,55 @@
         6
       ]
     },
-    "695681": {
-      "bbe": 28,
-      "avgEV": 82.2,
-      "hardHitPct": 14.3,
-      "barrelProxyPct": 3.6,
+    "813841": {
+      "bbe": 30,
+      "avgEV": 74.3,
+      "hardHitPct": 10.0,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
         "SI",
-        "ST"
+        "SL"
       ],
       "hotZones": [
-        2,
-        6,
+        8,
+        5,
         1
+      ]
+    },
+    "699393": {
+      "bbe": 30,
+      "avgEV": 83.5,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 3.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "FC"
+      ],
+      "hotZones": [
+        13,
+        2,
+        5
+      ]
+    },
+    "695734": {
+      "bbe": 18,
+      "avgEV": 81.3,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 11.1,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        1,
+        2,
+        8
       ]
     },
     "671976": {
@@ -110944,38 +112113,55 @@
         12
       ]
     },
-    "596019": {
-      "bbe": 30,
-      "avgEV": 81.6,
-      "hardHitPct": 13.3,
-      "barrelProxyPct": 6.7,
+    "695681": {
+      "bbe": 28,
+      "avgEV": 82.2,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 3.6,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
         "SI",
-        "CH"
+        "ST"
       ],
       "hotZones": [
-        5,
-        9,
-        4
+        2,
+        6,
+        1
       ]
     },
-    "656811": {
-      "bbe": 19,
-      "avgEV": 85.4,
-      "hardHitPct": 21.1,
-      "barrelProxyPct": 10.5,
-      "hr": 1,
+    "672960": {
+      "bbe": 29,
+      "avgEV": 87.7,
+      "hardHitPct": 27.6,
+      "barrelProxyPct": 17.2,
+      "hr": 3,
       "bestPitchTypes": [
+        "SL",
         "FF",
-        "SI",
         "FC"
       ],
       "hotZones": [
-        8,
-        11,
-        9
+        6,
+        9,
+        14
+      ]
+    },
+    "682998": {
+      "bbe": 30,
+      "avgEV": 84.3,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 6.7,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "FS",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        13,
+        3
       ]
     },
     "666139": {
@@ -110995,21 +112181,55 @@
         9
       ]
     },
-    "683734": {
-      "bbe": 7,
-      "avgEV": 82.1,
-      "hardHitPct": 42.9,
-      "barrelProxyPct": 0.0,
+    "656811": {
+      "bbe": 19,
+      "avgEV": 85.4,
+      "hardHitPct": 21.1,
+      "barrelProxyPct": 10.5,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        8,
+        11,
+        9
+      ]
+    },
+    "695491": {
+      "bbe": 19,
+      "avgEV": 86.1,
+      "hardHitPct": 31.6,
+      "barrelProxyPct": 15.8,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SL",
+        "CH",
+        "FC"
+      ],
+      "hotZones": [
+        4,
+        14,
+        2
+      ]
+    },
+    "596019": {
+      "bbe": 30,
+      "avgEV": 81.6,
+      "hardHitPct": 13.3,
+      "barrelProxyPct": 6.7,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "SL",
-        "ST"
+        "SI",
+        "CH"
       ],
       "hotZones": [
-        3,
-        11,
-        1
+        5,
+        9,
+        4
       ]
     },
     "630105": {
@@ -111029,28 +112249,28 @@
         6
       ]
     },
-    "677649": {
-      "bbe": 29,
-      "avgEV": 82.2,
-      "hardHitPct": 24.1,
-      "barrelProxyPct": 3.4,
+    "683734": {
+      "bbe": 7,
+      "avgEV": 82.1,
+      "hardHitPct": 42.9,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "SI",
-        "SL"
+        "SL",
+        "ST"
       ],
       "hotZones": [
-        5,
-        4,
-        9
+        3,
+        11,
+        1
       ]
     },
-    "666126": {
-      "bbe": 25,
-      "avgEV": 81.5,
-      "hardHitPct": 12.0,
-      "barrelProxyPct": 12.0,
+    "695578": {
+      "bbe": 18,
+      "avgEV": 85.6,
+      "hardHitPct": 44.4,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
@@ -111058,25 +112278,25 @@
         "CH"
       ],
       "hotZones": [
-        8,
-        4,
-        1
+        5,
+        3,
+        8
       ]
     },
-    "804668": {
+    "683766": {
       "bbe": 22,
-      "avgEV": 81.6,
-      "hardHitPct": 18.2,
-      "barrelProxyPct": 9.1,
-      "hr": 1,
+      "avgEV": 82.1,
+      "hardHitPct": 22.7,
+      "barrelProxyPct": 4.5,
+      "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "CH",
-        "SI"
+        "SI",
+        "ST"
       ],
       "hotZones": [
-        6,
-        9,
+        1,
+        2,
         4
       ]
     },
@@ -111097,6 +112317,91 @@
         4
       ]
     },
+    "677649": {
+      "bbe": 30,
+      "avgEV": 82.7,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "SL"
+      ],
+      "hotZones": [
+        5,
+        4,
+        9
+      ]
+    },
+    "804668": {
+      "bbe": 22,
+      "avgEV": 81.6,
+      "hardHitPct": 18.2,
+      "barrelProxyPct": 9.1,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        6,
+        9,
+        4
+      ]
+    },
+    "624424": {
+      "bbe": 24,
+      "avgEV": 80.2,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 8.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        2,
+        7,
+        8
+      ]
+    },
+    "666126": {
+      "bbe": 25,
+      "avgEV": 81.5,
+      "hardHitPct": 12.0,
+      "barrelProxyPct": 12.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CH"
+      ],
+      "hotZones": [
+        8,
+        4,
+        1
+      ]
+    },
+    "806146": {
+      "bbe": 29,
+      "avgEV": 82.4,
+      "hardHitPct": 27.6,
+      "barrelProxyPct": 10.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FC",
+        "FF"
+      ],
+      "hotZones": [
+        4,
+        11,
+        5
+      ]
+    },
     "572233": {
       "bbe": 26,
       "avgEV": 79.9,
@@ -111114,21 +112419,21 @@
         4
       ]
     },
-    "620443": {
-      "bbe": 12,
-      "avgEV": 82.8,
-      "hardHitPct": 16.7,
-      "barrelProxyPct": 16.7,
-      "hr": 1,
+    "683083": {
+      "bbe": 6,
+      "avgEV": 56.7,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
       "bestPitchTypes": [
-        "FC",
-        "ST",
-        "FF"
+        "FF",
+        "SI",
+        "FC"
       ],
       "hotZones": [
-        11,
-        4,
-        12
+        5,
+        12,
+        2
       ]
     },
     "694208": {
@@ -111148,54 +112453,54 @@
         1
       ]
     },
-    "668942": {
-      "bbe": 9,
-      "avgEV": 78.4,
-      "hardHitPct": 22.2,
+    "595978": {
+      "bbe": 14,
+      "avgEV": 83.9,
+      "hardHitPct": 28.6,
       "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
-        "FF",
-        "CH",
-        "SI"
+        "FC",
+        "SI",
+        "FF"
       ],
       "hotZones": [
-        9,
         5,
+        4,
         6
       ]
     },
-    "668939": {
-      "bbe": 26,
-      "avgEV": 86.1,
-      "hardHitPct": 19.2,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
+    "620443": {
+      "bbe": 12,
+      "avgEV": 82.8,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 16.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FC",
+        "ST",
+        "FF"
+      ],
+      "hotZones": [
+        11,
+        4,
+        12
+      ]
+    },
+    "669236": {
+      "bbe": 12,
+      "avgEV": 90.1,
+      "hardHitPct": 50.0,
+      "barrelProxyPct": 16.7,
+      "hr": 2,
       "bestPitchTypes": [
         "FF",
         "SL",
         "FC"
       ],
       "hotZones": [
-        5,
         4,
-        2
-      ]
-    },
-    "687597": {
-      "bbe": 23,
-      "avgEV": 79.1,
-      "hardHitPct": 26.1,
-      "barrelProxyPct": 4.3,
-      "hr": 0,
-      "bestPitchTypes": [
-        "FF",
-        "SL",
-        "CH"
-      ],
-      "hotZones": [
-        4,
-        7,
+        6,
         5
       ]
     },
@@ -111216,6 +112521,108 @@
         11
       ]
     },
+    "694212": {
+      "bbe": 13,
+      "avgEV": 90.3,
+      "hardHitPct": 46.2,
+      "barrelProxyPct": 7.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "FS",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        1,
+        12
+      ]
+    },
+    "687597": {
+      "bbe": 23,
+      "avgEV": 79.1,
+      "hardHitPct": 26.1,
+      "barrelProxyPct": 4.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        4,
+        7,
+        5
+      ]
+    },
+    "669364": {
+      "bbe": 14,
+      "avgEV": 83.7,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 7.1,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FC",
+        "FF",
+        "CH"
+      ],
+      "hotZones": [
+        5,
+        1,
+        8
+      ]
+    },
+    "668939": {
+      "bbe": 26,
+      "avgEV": 86.1,
+      "hardHitPct": 19.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        4,
+        2
+      ]
+    },
+    "668942": {
+      "bbe": 9,
+      "avgEV": 78.4,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        9,
+        5,
+        6
+      ]
+    },
+    "686527": {
+      "bbe": 29,
+      "avgEV": 84.4,
+      "hardHitPct": 34.5,
+      "barrelProxyPct": 17.2,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        4,
+        1
+      ]
+    },
     "575929": {
       "bbe": 15,
       "avgEV": 90.6,
@@ -111231,6 +112638,57 @@
         14,
         5,
         13
+      ]
+    },
+    "814154": {
+      "bbe": 10,
+      "avgEV": 74.2,
+      "hardHitPct": 10.0,
+      "barrelProxyPct": 10.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        14,
+        11,
+        4
+      ]
+    },
+    "543807": {
+      "bbe": 30,
+      "avgEV": 84.6,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "SI"
+      ],
+      "hotZones": [
+        6,
+        5,
+        9
+      ]
+    },
+    "687952": {
+      "bbe": 26,
+      "avgEV": 82.0,
+      "hardHitPct": 30.8,
+      "barrelProxyPct": 11.5,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        6,
+        2,
+        14
       ]
     },
     "673237": {
@@ -111250,6 +112708,23 @@
         12
       ]
     },
+    "660688": {
+      "bbe": 15,
+      "avgEV": 74.5,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 13.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "FS"
+      ],
+      "hotZones": [
+        14,
+        11,
+        13
+      ]
+    },
     "695720": {
       "bbe": 17,
       "avgEV": 74.3,
@@ -111265,6 +112740,57 @@
         14,
         13,
         7
+      ]
+    },
+    "805300": {
+      "bbe": 30,
+      "avgEV": 74.1,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 13.3,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        6,
+        3,
+        5
+      ]
+    },
+    "663538": {
+      "bbe": 30,
+      "avgEV": 82.3,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 10.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        14,
+        4
+      ]
+    },
+    "668227": {
+      "bbe": 30,
+      "avgEV": 86.3,
+      "hardHitPct": 36.7,
+      "barrelProxyPct": 13.3,
+      "hr": 2,
+      "bestPitchTypes": [
+        "SL",
+        "FF",
+        "CH"
+      ],
+      "hotZones": [
+        14,
+        6,
+        2
       ]
     },
     "665833": {
@@ -111284,23 +112810,6 @@
         8
       ]
     },
-    "670231": {
-      "bbe": 22,
-      "avgEV": 84.0,
-      "hardHitPct": 31.8,
-      "barrelProxyPct": 9.1,
-      "hr": 1,
-      "bestPitchTypes": [
-        "FF",
-        "ST",
-        "FC"
-      ],
-      "hotZones": [
-        14,
-        5,
-        9
-      ]
-    },
     "677800": {
       "bbe": 30,
       "avgEV": 82.9,
@@ -111318,12 +112827,63 @@
         4
       ]
     },
-    "514888": {
-      "bbe": 30,
-      "avgEV": 80.2,
-      "hardHitPct": 10.0,
-      "barrelProxyPct": 6.7,
+    "670231": {
+      "bbe": 22,
+      "avgEV": 84.0,
+      "hardHitPct": 31.8,
+      "barrelProxyPct": 9.1,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "ST",
+        "FC"
+      ],
+      "hotZones": [
+        14,
+        5,
+        9
+      ]
+    },
+    "664023": {
+      "bbe": 20,
+      "avgEV": 88.7,
+      "hardHitPct": 40.0,
+      "barrelProxyPct": 25.0,
       "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        4,
+        6,
+        5
+      ]
+    },
+    "691723": {
+      "bbe": 30,
+      "avgEV": 85.7,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 3.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "ST"
+      ],
+      "hotZones": [
+        6,
+        5,
+        3
+      ]
+    },
+    "703601": {
+      "bbe": 29,
+      "avgEV": 82.4,
+      "hardHitPct": 31.0,
+      "barrelProxyPct": 13.8,
+      "hr": 1,
       "bestPitchTypes": [
         "FF",
         "SI",
@@ -111331,8 +112891,8 @@
       ],
       "hotZones": [
         5,
-        13,
-        4
+        4,
+        7
       ]
     },
     "687401": {
@@ -111352,12 +112912,12 @@
         6
       ]
     },
-    "703601": {
+    "514888": {
       "bbe": 29,
-      "avgEV": 82.4,
-      "hardHitPct": 31.0,
-      "barrelProxyPct": 13.8,
-      "hr": 1,
+      "avgEV": 79.9,
+      "hardHitPct": 10.3,
+      "barrelProxyPct": 6.9,
+      "hr": 0,
       "bestPitchTypes": [
         "FF",
         "SI",
@@ -111365,8 +112925,76 @@
       ],
       "hotZones": [
         5,
+        13,
+        4
+      ]
+    },
+    "668800": {
+      "bbe": 14,
+      "avgEV": 82.8,
+      "hardHitPct": 28.6,
+      "barrelProxyPct": 7.1,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CU",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        11,
+        4
+      ]
+    },
+    "681807": {
+      "bbe": 7,
+      "avgEV": 82.6,
+      "hardHitPct": 42.9,
+      "barrelProxyPct": 28.6,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        8,
+        1,
+        9
+      ]
+    },
+    "665052": {
+      "bbe": 21,
+      "avgEV": 81.2,
+      "hardHitPct": 19.0,
+      "barrelProxyPct": 14.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "CH",
+        "FC",
+        "FF"
+      ],
+      "hotZones": [
         4,
-        7
+        5,
+        14
+      ]
+    },
+    "663330": {
+      "bbe": 12,
+      "avgEV": 92.3,
+      "hardHitPct": 58.3,
+      "barrelProxyPct": 16.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "FC"
+      ],
+      "hotZones": [
+        4,
+        14,
+        5
       ]
     },
     "693307": {
@@ -111420,23 +113048,6 @@
         8
       ]
     },
-    "663330": {
-      "bbe": 12,
-      "avgEV": 92.3,
-      "hardHitPct": 58.3,
-      "barrelProxyPct": 16.7,
-      "hr": 0,
-      "bestPitchTypes": [
-        "CH",
-        "FF",
-        "FC"
-      ],
-      "hotZones": [
-        4,
-        14,
-        5
-      ]
-    },
     "622268": {
       "bbe": 24,
       "avgEV": 80.9,
@@ -111454,21 +113065,38 @@
         7
       ]
     },
-    "701350": {
-      "bbe": 27,
-      "avgEV": 86.0,
+    "677008": {
+      "bbe": 9,
+      "avgEV": 82.7,
       "hardHitPct": 22.2,
-      "barrelProxyPct": 3.7,
+      "barrelProxyPct": 11.1,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "ST",
-        "SL"
+        "FC",
+        "FO"
       ],
       "hotZones": [
-        13,
+        1,
+        12,
+        9
+      ]
+    },
+    "683002": {
+      "bbe": 30,
+      "avgEV": 77.6,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
         5,
-        8
+        9,
+        12
       ]
     },
     "682985": {
@@ -111505,6 +113133,40 @@
         6
       ]
     },
+    "701350": {
+      "bbe": 27,
+      "avgEV": 86.0,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 3.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "ST",
+        "SL"
+      ],
+      "hotZones": [
+        13,
+        5,
+        8
+      ]
+    },
+    "664770": {
+      "bbe": 30,
+      "avgEV": 75.0,
+      "hardHitPct": 10.0,
+      "barrelProxyPct": 6.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CH"
+      ],
+      "hotZones": [
+        2,
+        1,
+        14
+      ]
+    },
     "802415": {
       "bbe": 25,
       "avgEV": 76.2,
@@ -111522,6 +113184,23 @@
         5
       ]
     },
+    "676475": {
+      "bbe": 29,
+      "avgEV": 86.3,
+      "hardHitPct": 41.4,
+      "barrelProxyPct": 13.8,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "FC"
+      ],
+      "hotZones": [
+        13,
+        5,
+        6
+      ]
+    },
     "661388": {
       "bbe": 19,
       "avgEV": 91.1,
@@ -111537,6 +113216,40 @@
         5,
         4,
         3
+      ]
+    },
+    "606466": {
+      "bbe": 30,
+      "avgEV": 84.0,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 6.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FS",
+        "SL"
+      ],
+      "hotZones": [
+        4,
+        8,
+        5
+      ]
+    },
+    "683953": {
+      "bbe": 30,
+      "avgEV": 81.2,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 6.7,
+      "hr": 3,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "SI"
+      ],
+      "hotZones": [
+        6,
+        7,
+        8
       ]
     },
     "664761": {
@@ -111588,6 +113301,23 @@
         13,
         9,
         4
+      ]
+    },
+    "673548": {
+      "bbe": 28,
+      "avgEV": 83.7,
+      "hardHitPct": 35.7,
+      "barrelProxyPct": 7.1,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        6,
+        9
       ]
     },
     "680869": {
@@ -111658,6 +113388,74 @@
         6
       ]
     },
+    "677588": {
+      "bbe": 7,
+      "avgEV": 73.1,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "FS"
+      ],
+      "hotZones": [
+        5,
+        3,
+        13
+      ]
+    },
+    "666176": {
+      "bbe": 27,
+      "avgEV": 84.9,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 7.4,
+      "hr": 2,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "SL"
+      ],
+      "hotZones": [
+        7,
+        8,
+        9
+      ]
+    },
+    "624413": {
+      "bbe": 30,
+      "avgEV": 86.2,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 13.3,
+      "hr": 3,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CU"
+      ],
+      "hotZones": [
+        5,
+        8,
+        6
+      ]
+    },
+    "808982": {
+      "bbe": 30,
+      "avgEV": 84.1,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        5,
+        4,
+        7
+      ]
+    },
     "670541": {
       "bbe": 11,
       "avgEV": 91.7,
@@ -111673,6 +113471,40 @@
         9,
         8,
         4
+      ]
+    },
+    "608070": {
+      "bbe": 27,
+      "avgEV": 79.1,
+      "hardHitPct": 11.1,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        2,
+        13,
+        5
+      ]
+    },
+    "681297": {
+      "bbe": 20,
+      "avgEV": 79.8,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CU"
+      ],
+      "hotZones": [
+        5,
+        6,
+        2
       ]
     },
     "671732": {
@@ -111708,21 +113540,21 @@
         11
       ]
     },
-    "641343": {
-      "bbe": 24,
-      "avgEV": 83.9,
-      "hardHitPct": 29.2,
-      "barrelProxyPct": 16.7,
-      "hr": 2,
+    "680757": {
+      "bbe": 30,
+      "avgEV": 79.5,
+      "hardHitPct": 13.3,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
       "bestPitchTypes": [
         "FF",
-        "SI",
-        "FC"
+        "SL",
+        "SI"
       ],
       "hotZones": [
         5,
-        3,
-        6
+        12,
+        4
       ]
     },
     "665161": {
@@ -111740,6 +113572,23 @@
         6,
         9,
         1
+      ]
+    },
+    "641343": {
+      "bbe": 24,
+      "avgEV": 83.9,
+      "hardHitPct": 29.2,
+      "barrelProxyPct": 16.7,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        3,
+        6
       ]
     },
     "669127": {
@@ -111776,6 +113625,23 @@
         7
       ]
     },
+    "701398": {
+      "bbe": 30,
+      "avgEV": 82.1,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CU"
+      ],
+      "hotZones": [
+        13,
+        8,
+        2
+      ]
+    },
     "669242": {
       "bbe": 26,
       "avgEV": 79.3,
@@ -111793,20 +113659,54 @@
         7
       ]
     },
-    "701398": {
+    "677956": {
+      "bbe": 12,
+      "avgEV": 79.1,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 8.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "FC"
+      ],
+      "hotZones": [
+        6,
+        14,
+        1
+      ]
+    },
+    "687263": {
       "bbe": 30,
-      "avgEV": 82.1,
-      "hardHitPct": 26.7,
-      "barrelProxyPct": 0.0,
+      "avgEV": 82.9,
+      "hardHitPct": 23.3,
+      "barrelProxyPct": 10.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "ST"
+      ],
+      "hotZones": [
+        14,
+        2,
+        6
+      ]
+    },
+    "643446": {
+      "bbe": 30,
+      "avgEV": 79.5,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 10.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
         "SI",
-        "CU"
+        "FS"
       ],
       "hotZones": [
         13,
-        8,
+        5,
         2
       ]
     },
@@ -111827,40 +113727,6 @@
         14
       ]
     },
-    "643446": {
-      "bbe": 30,
-      "avgEV": 79.5,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 10.0,
-      "hr": 0,
-      "bestPitchTypes": [
-        "FF",
-        "SI",
-        "FS"
-      ],
-      "hotZones": [
-        13,
-        5,
-        2
-      ]
-    },
-    "687263": {
-      "bbe": 30,
-      "avgEV": 82.9,
-      "hardHitPct": 23.3,
-      "barrelProxyPct": 10.0,
-      "hr": 1,
-      "bestPitchTypes": [
-        "FF",
-        "SL",
-        "ST"
-      ],
-      "hotZones": [
-        14,
-        2,
-        6
-      ]
-    },
     "668723": {
       "bbe": 9,
       "avgEV": 79.7,
@@ -111875,6 +113741,23 @@
       "hotZones": [
         8,
         5,
+        4
+      ]
+    },
+    "677587": {
+      "bbe": 30,
+      "avgEV": 85.5,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        14,
+        2,
         4
       ]
     },
@@ -111896,10 +113779,10 @@
       ]
     },
     "650490": {
-      "bbe": 29,
+      "bbe": 30,
       "avgEV": 83.8,
-      "hardHitPct": 27.6,
-      "barrelProxyPct": 6.9,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 6.7,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
@@ -111913,20 +113796,20 @@
       ]
     },
     "624428": {
-      "bbe": 10,
-      "avgEV": 76.6,
+      "bbe": 11,
+      "avgEV": 76.9,
       "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
-        "KC",
         "SL",
+        "KC",
         "FC"
       ],
       "hotZones": [
-        13,
         4,
-        1
+        13,
+        5
       ]
     },
     "643396": {
@@ -111943,6 +113826,40 @@
       "hotZones": [
         2,
         5,
+        1
+      ]
+    },
+    "571771": {
+      "bbe": 12,
+      "avgEV": 80.6,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 8.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "ST"
+      ],
+      "hotZones": [
+        9,
+        14,
+        6
+      ]
+    },
+    "686765": {
+      "bbe": 19,
+      "avgEV": 82.5,
+      "hardHitPct": 21.1,
+      "barrelProxyPct": 15.8,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        11,
         1
       ]
     },
@@ -111963,23 +113880,6 @@
         1
       ]
     },
-    "686765": {
-      "bbe": 19,
-      "avgEV": 82.5,
-      "hardHitPct": 21.1,
-      "barrelProxyPct": 15.8,
-      "hr": 1,
-      "bestPitchTypes": [
-        "FF",
-        "SL",
-        "FC"
-      ],
-      "hotZones": [
-        5,
-        11,
-        1
-      ]
-    },
     "663743": {
       "bbe": 11,
       "avgEV": 93.5,
@@ -111997,21 +113897,38 @@
         11
       ]
     },
-    "571771": {
-      "bbe": 12,
-      "avgEV": 80.6,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 8.3,
+    "645305": {
+      "bbe": 10,
+      "avgEV": 80.7,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 10.0,
       "hr": 0,
       "bestPitchTypes": [
-        "CH",
+        "FC",
         "FF",
-        "ST"
+        "SI"
       ],
       "hotZones": [
-        9,
-        14,
-        6
+        5,
+        4,
+        11
+      ]
+    },
+    "607208": {
+      "bbe": 21,
+      "avgEV": 84.2,
+      "hardHitPct": 19.0,
+      "barrelProxyPct": 9.5,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SL"
+      ],
+      "hotZones": [
+        8,
+        2,
+        14
       ]
     },
     "681082": {
@@ -112031,21 +113948,21 @@
         4
       ]
     },
-    "607208": {
-      "bbe": 21,
-      "avgEV": 84.2,
-      "hardHitPct": 19.0,
-      "barrelProxyPct": 9.5,
+    "621438": {
+      "bbe": 11,
+      "avgEV": 84.7,
+      "hardHitPct": 18.2,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
+        "SI",
         "FF",
-        "CH",
-        "SL"
+        "FC"
       ],
       "hotZones": [
-        8,
-        2,
-        14
+        5,
+        14,
+        9
       ]
     },
     "682829": {
@@ -112083,8 +114000,8 @@
       ]
     },
     "622761": {
-      "bbe": 13,
-      "avgEV": 76.8,
+      "bbe": 14,
+      "avgEV": 75.9,
       "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0,
@@ -112168,10 +114085,10 @@
       ]
     },
     "694671": {
-      "bbe": 26,
+      "bbe": 25,
       "avgEV": 80.8,
-      "hardHitPct": 11.5,
-      "barrelProxyPct": 11.5,
+      "hardHitPct": 12.0,
+      "barrelProxyPct": 12.0,
       "hr": 1,
       "bestPitchTypes": [
         "FF",
@@ -112182,6 +114099,23 @@
         6,
         5,
         7
+      ]
+    },
+    "683737": {
+      "bbe": 30,
+      "avgEV": 80.1,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "CU"
+      ],
+      "hotZones": [
+        1,
+        2,
+        8
       ]
     },
     "680776": {
@@ -112201,6 +114135,57 @@
         5
       ]
     },
+    "671739": {
+      "bbe": 30,
+      "avgEV": 80.1,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FS"
+      ],
+      "hotZones": [
+        14,
+        12,
+        11
+      ]
+    },
+    "694197": {
+      "bbe": 12,
+      "avgEV": 84.9,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 8.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CH"
+      ],
+      "hotZones": [
+        5,
+        7,
+        1
+      ]
+    },
+    "665877": {
+      "bbe": 16,
+      "avgEV": 85.4,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 12.5,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        1,
+        4
+      ]
+    },
     "663886": {
       "bbe": 28,
       "avgEV": 82.6,
@@ -112216,6 +114201,57 @@
         5,
         2,
         6
+      ]
+    },
+    "671277": {
+      "bbe": 28,
+      "avgEV": 82.8,
+      "hardHitPct": 32.1,
+      "barrelProxyPct": 10.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        4,
+        13,
+        7
+      ]
+    },
+    "573262": {
+      "bbe": 26,
+      "avgEV": 82.5,
+      "hardHitPct": 23.1,
+      "barrelProxyPct": 11.5,
+      "hr": 1,
+      "bestPitchTypes": [
+        "ST",
+        "FF",
+        "CH"
+      ],
+      "hotZones": [
+        14,
+        8,
+        13
+      ]
+    },
+    "671056": {
+      "bbe": 25,
+      "avgEV": 86.7,
+      "hardHitPct": 40.0,
+      "barrelProxyPct": 16.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CU"
+      ],
+      "hotZones": [
+        8,
+        5,
+        4
       ]
     },
     "664728": {
@@ -112252,23 +114288,6 @@
         13
       ]
     },
-    "670623": {
-      "bbe": 30,
-      "avgEV": 82.0,
-      "hardHitPct": 30.0,
-      "barrelProxyPct": 6.7,
-      "hr": 2,
-      "bestPitchTypes": [
-        "FF",
-        "SI",
-        "CH"
-      ],
-      "hotZones": [
-        8,
-        9,
-        5
-      ]
-    },
     "624431": {
       "bbe": 12,
       "avgEV": 72.3,
@@ -112286,21 +114305,55 @@
         2
       ]
     },
-    "668709": {
-      "bbe": 26,
-      "avgEV": 88.3,
-      "hardHitPct": 34.6,
-      "barrelProxyPct": 7.7,
-      "hr": 0,
+    "676609": {
+      "bbe": 22,
+      "avgEV": 74.9,
+      "hardHitPct": 9.1,
+      "barrelProxyPct": 9.1,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FC",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        14,
+        12,
+        13
+      ]
+    },
+    "670623": {
+      "bbe": 30,
+      "avgEV": 82.0,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 6.7,
+      "hr": 2,
       "bestPitchTypes": [
         "FF",
         "SI",
-        "FS"
+        "CH"
       ],
       "hotZones": [
-        4,
-        5,
-        2
+        8,
+        9,
+        5
+      ]
+    },
+    "665489": {
+      "bbe": 28,
+      "avgEV": 80.4,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 14.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SI",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        9,
+        11,
+        7
       ]
     },
     "690976": {
@@ -112320,6 +114373,40 @@
         9
       ]
     },
+    "502671": {
+      "bbe": 9,
+      "avgEV": 82.4,
+      "hardHitPct": 44.4,
+      "barrelProxyPct": 11.1,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FC",
+        "FF",
+        "ST"
+      ],
+      "hotZones": [
+        5,
+        6,
+        8
+      ]
+    },
+    "668709": {
+      "bbe": 26,
+      "avgEV": 88.3,
+      "hardHitPct": 34.6,
+      "barrelProxyPct": 7.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FS"
+      ],
+      "hotZones": [
+        4,
+        5,
+        2
+      ]
+    },
     "682877": {
       "bbe": 29,
       "avgEV": 85.4,
@@ -112335,6 +114422,22 @@
         4,
         2,
         5
+      ]
+    },
+    "699912": {
+      "bbe": 3,
+      "avgEV": 77.9,
+      "hardHitPct": 66.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "SI",
+        "FF"
+      ],
+      "hotZones": [
+        6,
+        2
       ]
     },
     "656941": {
@@ -112439,6 +114542,23 @@
         8
       ]
     },
+    "691023": {
+      "bbe": 17,
+      "avgEV": 95.0,
+      "hardHitPct": 47.1,
+      "barrelProxyPct": 5.9,
+      "hr": 0,
+      "bestPitchTypes": [
+        "ST",
+        "FF",
+        "SI"
+      ],
+      "hotZones": [
+        2,
+        13,
+        9
+      ]
+    },
     "606192": {
       "bbe": 16,
       "avgEV": 88.3,
@@ -112454,6 +114574,23 @@
         4,
         8,
         1
+      ]
+    },
+    "665953": {
+      "bbe": 15,
+      "avgEV": 87.1,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 6.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        6,
+        4,
+        5
       ]
     },
     "642350": {
@@ -112473,6 +114610,40 @@
         8
       ]
     },
+    "682987": {
+      "bbe": 22,
+      "avgEV": 85.7,
+      "hardHitPct": 27.3,
+      "barrelProxyPct": 18.2,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "ST",
+        "CH"
+      ],
+      "hotZones": [
+        6,
+        13,
+        8
+      ]
+    },
+    "687637": {
+      "bbe": 30,
+      "avgEV": 78.4,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 10.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        6,
+        8
+      ]
+    },
     "823550": {
       "bbe": 2,
       "avgEV": 70.3,
@@ -112485,6 +114656,23 @@
       "hotZones": [
         4,
         6
+      ]
+    },
+    "592450": {
+      "bbe": 18,
+      "avgEV": 82.8,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 11.1,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "CU"
+      ],
+      "hotZones": [
+        7,
+        6,
+        14
       ]
     },
     "681508": {
@@ -112502,6 +114690,23 @@
         13,
         8,
         5
+      ]
+    },
+    "663494": {
+      "bbe": 11,
+      "avgEV": 74.1,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "ST"
+      ],
+      "hotZones": [
+        8,
+        1,
+        6
       ]
     },
     "678489": {
@@ -112589,6 +114794,23 @@
         5
       ]
     },
+    "691781": {
+      "bbe": 18,
+      "avgEV": 90.4,
+      "hardHitPct": 44.4,
+      "barrelProxyPct": 5.6,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "SL"
+      ],
+      "hotZones": [
+        13,
+        11,
+        8
+      ]
+    },
     "803011": {
       "bbe": 23,
       "avgEV": 85.6,
@@ -112604,6 +114826,23 @@
         5,
         8,
         13
+      ]
+    },
+    "687551": {
+      "bbe": 17,
+      "avgEV": 82.5,
+      "hardHitPct": 23.5,
+      "barrelProxyPct": 11.8,
+      "hr": 2,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        6,
+        5,
+        2
       ]
     },
     "691777": {
@@ -112640,6 +114879,57 @@
         11
       ]
     },
+    "687529": {
+      "bbe": 7,
+      "avgEV": 81.2,
+      "hardHitPct": 57.1,
+      "barrelProxyPct": 14.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "KC"
+      ],
+      "hotZones": [
+        6,
+        5,
+        13
+      ]
+    },
+    "701852": {
+      "bbe": 12,
+      "avgEV": 80.3,
+      "hardHitPct": 8.3,
+      "barrelProxyPct": 0.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "SI"
+      ],
+      "hotZones": [
+        1,
+        5,
+        11
+      ]
+    },
+    "695670": {
+      "bbe": 10,
+      "avgEV": 84.7,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 10.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SL",
+        "SI",
+        "FF"
+      ],
+      "hotZones": [
+        6,
+        5,
+        1
+      ]
+    },
     "699302": {
       "bbe": 30,
       "avgEV": 82.7,
@@ -112655,6 +114945,90 @@
         3,
         12,
         5
+      ]
+    },
+    "665804": {
+      "bbe": 7,
+      "avgEV": 82.0,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 14.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "CU",
+        "FC",
+        "CH"
+      ],
+      "hotZones": [
+        4,
+        7,
+        13
+      ]
+    },
+    "678545": {
+      "bbe": 8,
+      "avgEV": 87.4,
+      "hardHitPct": 12.5,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "CH"
+      ],
+      "hotZones": [
+        11,
+        5,
+        8
+      ]
+    },
+    "696285": {
+      "bbe": 19,
+      "avgEV": 81.9,
+      "hardHitPct": 15.8,
+      "barrelProxyPct": 10.5,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "SL"
+      ],
+      "hotZones": [
+        6,
+        4,
+        2
+      ]
+    },
+    "807713": {
+      "bbe": 4,
+      "avgEV": 71.7,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "SI"
+      ],
+      "hotZones": [
+        14,
+        13,
+        8
+      ]
+    },
+    "691277": {
+      "bbe": 7,
+      "avgEV": 78.6,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FC",
+        "SL"
+      ],
+      "hotZones": [
+        1,
+        2,
+        3
       ]
     },
     "691728": {
@@ -112691,6 +115065,38 @@
         1
       ]
     },
+    "688363": {
+      "bbe": 3,
+      "avgEV": 93.8,
+      "hardHitPct": 66.7,
+      "barrelProxyPct": 33.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF"
+      ],
+      "hotZones": [
+        5,
+        2,
+        8
+      ]
+    },
+    "691002": {
+      "bbe": 16,
+      "avgEV": 83.4,
+      "hardHitPct": 31.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SL",
+        "FF",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        9,
+        3
+      ]
+    },
     "664954": {
       "bbe": 12,
       "avgEV": 82.2,
@@ -112708,21 +115114,21 @@
         14
       ]
     },
-    "687462": {
-      "bbe": 9,
-      "avgEV": 80.5,
-      "hardHitPct": 11.1,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
+    "682663": {
+      "bbe": 24,
+      "avgEV": 81.1,
+      "hardHitPct": 20.8,
+      "barrelProxyPct": 4.2,
+      "hr": 1,
       "bestPitchTypes": [
         "FF",
-        "SL",
-        "FC"
+        "SI",
+        "SV"
       ],
       "hotZones": [
         2,
-        1,
-        11
+        5,
+        1
       ]
     },
     "699115": {
@@ -112742,6 +115148,23 @@
         4
       ]
     },
+    "687462": {
+      "bbe": 9,
+      "avgEV": 80.5,
+      "hardHitPct": 11.1,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "FC"
+      ],
+      "hotZones": [
+        2,
+        1,
+        11
+      ]
+    },
     "676439": {
       "bbe": 8,
       "avgEV": 87.8,
@@ -112759,21 +115182,21 @@
         7
       ]
     },
-    "668670": {
-      "bbe": 3,
-      "avgEV": 69.6,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
+    "672275": {
+      "bbe": 15,
+      "avgEV": 85.3,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 6.7,
       "hr": 0,
       "bestPitchTypes": [
         "CH",
-        "FF",
-        "CU"
+        "SL",
+        "FF"
       ],
       "hotZones": [
-        12,
-        11,
-        14
+        9,
+        8,
+        5
       ]
     },
     "666018": {
@@ -112793,6 +115216,23 @@
         8
       ]
     },
+    "668670": {
+      "bbe": 3,
+      "avgEV": 69.6,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "CU"
+      ],
+      "hotZones": [
+        12,
+        11,
+        14
+      ]
+    },
     "664774": {
       "bbe": 6,
       "avgEV": 77.2,
@@ -112808,21 +115248,6 @@
         6,
         4,
         14
-      ]
-    },
-    "677943": {
-      "bbe": 3,
-      "avgEV": 80.5,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
-      "bestPitchTypes": [
-        "FC",
-        "FS"
-      ],
-      "hotZones": [
-        6,
-        7
       ]
     },
     "650559": {
@@ -112842,6 +115267,55 @@
         6
       ]
     },
+    "677943": {
+      "bbe": 3,
+      "avgEV": 80.5,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FC",
+        "FS"
+      ],
+      "hotZones": [
+        6,
+        7
+      ]
+    },
+    "665926": {
+      "bbe": 30,
+      "avgEV": 80.0,
+      "hardHitPct": 13.3,
+      "barrelProxyPct": 3.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "SI"
+      ],
+      "hotZones": [
+        11,
+        3,
+        12
+      ]
+    },
+    "691026": {
+      "bbe": 21,
+      "avgEV": 84.6,
+      "hardHitPct": 23.8,
+      "barrelProxyPct": 4.8,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "FC"
+      ],
+      "hotZones": [
+        4,
+        14,
+        5
+      ]
+    },
     "641680": {
       "bbe": 13,
       "avgEV": 77.6,
@@ -112856,6 +115330,23 @@
       "hotZones": [
         5,
         12,
+        11
+      ]
+    },
+    "801126": {
+      "bbe": 7,
+      "avgEV": 76.9,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 14.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "ST",
+        "FC",
+        "FS"
+      ],
+      "hotZones": [
+        6,
+        8,
         11
       ]
     },
@@ -112874,6 +115365,23 @@
         6,
         5,
         2
+      ]
+    },
+    "663993": {
+      "bbe": 19,
+      "avgEV": 85.0,
+      "hardHitPct": 36.8,
+      "barrelProxyPct": 10.5,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "CU"
+      ],
+      "hotZones": [
+        5,
+        4,
+        8
       ]
     },
     "656775": {
@@ -112927,6 +115435,40 @@
         3
       ]
     },
+    "650968": {
+      "bbe": 6,
+      "avgEV": 88.6,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "ST",
+        "FC"
+      ],
+      "hotZones": [
+        5,
+        4,
+        3
+      ]
+    },
+    "703155": {
+      "bbe": 6,
+      "avgEV": 82.6,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 16.7,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FC",
+        "ST",
+        "FF"
+      ],
+      "hotZones": [
+        13,
+        2,
+        6
+      ]
+    },
     "669134": {
       "bbe": 30,
       "avgEV": 83.4,
@@ -112961,6 +115503,23 @@
         9
       ]
     },
+    "672386": {
+      "bbe": 24,
+      "avgEV": 79.2,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 4.2,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SL",
+        "FF",
+        "FC"
+      ],
+      "hotZones": [
+        14,
+        7,
+        2
+      ]
+    },
     "669720": {
       "bbe": 7,
       "avgEV": 93.9,
@@ -112976,6 +115535,22 @@
         5,
         8,
         6
+      ]
+    },
+    "676551": {
+      "bbe": 3,
+      "avgEV": 84.6,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 33.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI"
+      ],
+      "hotZones": [
+        5,
+        11,
+        4
       ]
     },
     "666152": {
@@ -112995,6 +115570,23 @@
         5
       ]
     },
+    "691783": {
+      "bbe": 21,
+      "avgEV": 82.9,
+      "hardHitPct": 28.6,
+      "barrelProxyPct": 14.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "ST"
+      ],
+      "hotZones": [
+        5,
+        6,
+        11
+      ]
+    },
     "666160": {
       "bbe": 15,
       "avgEV": 82.8,
@@ -113008,6 +115600,23 @@
       ],
       "hotZones": [
         4,
+        6,
+        13
+      ]
+    },
+    "801501": {
+      "bbe": 4,
+      "avgEV": 80.1,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CU",
+        "SI"
+      ],
+      "hotZones": [
+        5,
         6,
         13
       ]
@@ -113080,22 +115689,6 @@
         4
       ]
     },
-    "694497": {
-      "bbe": 5,
-      "avgEV": 67.6,
-      "hardHitPct": 40.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0,
-      "bestPitchTypes": [
-        "CH",
-        "FC"
-      ],
-      "hotZones": [
-        13,
-        11,
-        5
-      ]
-    },
     "695731": {
       "bbe": 19,
       "avgEV": 81.4,
@@ -113113,6 +115706,22 @@
         8
       ]
     },
+    "694497": {
+      "bbe": 5,
+      "avgEV": 67.6,
+      "hardHitPct": 40.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FC"
+      ],
+      "hotZones": [
+        13,
+        11,
+        5
+      ]
+    },
     "672580": {
       "bbe": 2,
       "avgEV": 95.4,
@@ -113125,6 +115734,40 @@
       "hotZones": [
         7,
         3
+      ]
+    },
+    "665750": {
+      "bbe": 11,
+      "avgEV": 74.2,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "ST"
+      ],
+      "hotZones": [
+        3,
+        13,
+        1
+      ]
+    },
+    "807727": {
+      "bbe": 5,
+      "avgEV": 74.2,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "SL"
+      ],
+      "hotZones": [
+        9,
+        14,
+        8
       ]
     },
     "695657": {
@@ -113144,19 +115787,53 @@
         11
       ]
     },
-    "655316": {
-      "bbe": 3,
-      "avgEV": 90.9,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 33.3,
+    "691858": {
+      "bbe": 6,
+      "avgEV": 75.8,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF",
-        "FC"
+        "FC",
+        "CH"
       ],
       "hotZones": [
-        13,
-        2
+        2,
+        3,
+        11
+      ]
+    },
+    "676914": {
+      "bbe": 3,
+      "avgEV": 92.9,
+      "hardHitPct": 66.7,
+      "barrelProxyPct": 33.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "FF"
+      ],
+      "hotZones": [
+        5,
+        1,
+        3
+      ]
+    },
+    "687363": {
+      "bbe": 4,
+      "avgEV": 77.2,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH"
+      ],
+      "hotZones": [
+        9,
+        1,
+        3
       ]
     },
     "666624": {
@@ -113173,6 +115850,21 @@
         11,
         6,
         4
+      ]
+    },
+    "655316": {
+      "bbe": 3,
+      "avgEV": 90.9,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 33.3,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FC"
+      ],
+      "hotZones": [
+        13,
+        2
       ]
     },
     "686475": {
@@ -113208,6 +115900,23 @@
         5
       ]
     },
+    "545121": {
+      "bbe": 13,
+      "avgEV": 86.0,
+      "hardHitPct": 23.1,
+      "barrelProxyPct": 7.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CH",
+        "FS"
+      ],
+      "hotZones": [
+        2,
+        1,
+        6
+      ]
+    },
     "696030": {
       "bbe": 1,
       "avgEV": 74.0,
@@ -113219,6 +115928,40 @@
       ],
       "hotZones": [
         11
+      ]
+    },
+    "703197": {
+      "bbe": 17,
+      "avgEV": 83.6,
+      "hardHitPct": 29.4,
+      "barrelProxyPct": 23.5,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "CU",
+        "SL"
+      ],
+      "hotZones": [
+        6,
+        5,
+        4
+      ]
+    },
+    "814439": {
+      "bbe": 6,
+      "avgEV": 65.8,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "FC",
+        "CH"
+      ],
+      "hotZones": [
+        14,
+        13,
+        12
       ]
     },
     "643217": {
@@ -113238,6 +115981,36 @@
         7
       ]
     },
+    "800050": {
+      "bbe": 23,
+      "avgEV": 82.4,
+      "hardHitPct": 30.4,
+      "barrelProxyPct": 13.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FC",
+        "SI",
+        "FF"
+      ],
+      "hotZones": [
+        5,
+        9,
+        8
+      ]
+    },
+    "665966": {
+      "bbe": 1,
+      "avgEV": 31.9,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF"
+      ],
+      "hotZones": [
+        5
+      ]
+    },
     "677347": {
       "bbe": 10,
       "avgEV": 74.0,
@@ -113253,6 +116026,23 @@
         4,
         2,
         12
+      ]
+    },
+    "682657": {
+      "bbe": 25,
+      "avgEV": 84.1,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 8.0,
+      "hr": 1,
+      "bestPitchTypes": [
+        "FF",
+        "SI",
+        "CH"
+      ],
+      "hotZones": [
+        5,
+        8,
+        6
       ]
     },
     "518595": {
@@ -113356,6 +116146,36 @@
         2
       ]
     },
+    "682177": {
+      "bbe": 1,
+      "avgEV": 103.2,
+      "hardHitPct": 100.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF"
+      ],
+      "hotZones": [
+        8
+      ]
+    },
+    "640902": {
+      "bbe": 6,
+      "avgEV": 79.4,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 16.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "SL",
+        "CH"
+      ],
+      "hotZones": [
+        13,
+        12,
+        7
+      ]
+    },
     "663616": {
       "bbe": 5,
       "avgEV": 81.9,
@@ -113437,6 +116257,23 @@
         8
       ]
     },
+    "543510": {
+      "bbe": 5,
+      "avgEV": 78.2,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 20.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "CH",
+        "FF",
+        "SI"
+      ],
+      "hotZones": [
+        2,
+        11,
+        14
+      ]
+    },
     "666211": {
       "bbe": 11,
       "avgEV": 84.5,
@@ -113454,23 +116291,6 @@
         6
       ]
     },
-    "669397": {
-      "bbe": 7,
-      "avgEV": 80.5,
-      "hardHitPct": 14.3,
-      "barrelProxyPct": 14.3,
-      "hr": 1,
-      "bestPitchTypes": [
-        "SI",
-        "FF",
-        "CH"
-      ],
-      "hotZones": [
-        9,
-        5,
-        13
-      ]
-    },
     "676369": {
       "bbe": 4,
       "avgEV": 84.6,
@@ -113486,6 +116306,23 @@
         8,
         4,
         11
+      ]
+    },
+    "669397": {
+      "bbe": 7,
+      "avgEV": 80.5,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 14.3,
+      "hr": 1,
+      "bestPitchTypes": [
+        "SI",
+        "FF",
+        "CH"
+      ],
+      "hotZones": [
+        9,
+        5,
+        13
       ]
     },
     "670032": {
@@ -113520,6 +116357,22 @@
         9,
         13,
         5
+      ]
+    },
+    "642708": {
+      "bbe": 6,
+      "avgEV": 90.3,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 16.7,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF",
+        "CU"
+      ],
+      "hotZones": [
+        7,
+        5,
+        14
       ]
     },
     "543877": {
@@ -113568,6 +116421,32 @@
         4
       ]
     },
+    "571657": {
+      "bbe": 1,
+      "avgEV": 74.4,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "EP"
+      ],
+      "hotZones": [
+        12
+      ]
+    },
+    "680577": {
+      "bbe": 1,
+      "avgEV": 87.8,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "EP"
+      ],
+      "hotZones": [
+        11
+      ]
+    },
     "687749": {
       "bbe": 3,
       "avgEV": 79.9,
@@ -113582,6 +116461,21 @@
         1,
         3,
         11
+      ]
+    },
+    "645302": {
+      "bbe": 2,
+      "avgEV": 68.4,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FS",
+        "FA"
+      ],
+      "hotZones": [
+        14,
+        9
       ]
     },
     "683021": {
@@ -113633,11 +116527,41 @@
         11
       ]
     },
+    "681230": {
+      "bbe": 4,
+      "avgEV": 76.0,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "ST",
+        "CH",
+        "FF"
+      ],
+      "hotZones": [
+        14,
+        11,
+        12
+      ]
+    },
     "695257": {
       "bbe": 1,
       "avgEV": 97.5,
       "hardHitPct": 100.0,
       "barrelProxyPct": 100.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "FF"
+      ],
+      "hotZones": [
+        5
+      ]
+    },
+    "815873": {
+      "bbe": 1,
+      "avgEV": 71.9,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
       "hr": 0,
       "bestPitchTypes": [
         "FF"
@@ -113654,17 +116578,17 @@
       "barrelProxyPct": 6.6,
       "hr": 0
     },
-    "684007": {
-      "bbe": 69,
-      "hardHitPct": 20.3,
-      "barrelProxyPct": 7.2,
-      "hr": 1
-    },
     "671096": {
       "bbe": 40,
       "hardHitPct": 32.5,
       "barrelProxyPct": 7.5,
       "hr": 2
+    },
+    "684007": {
+      "bbe": 69,
+      "hardHitPct": 20.3,
+      "barrelProxyPct": 7.2,
+      "hr": 1
     },
     "607074": {
       "bbe": 49,
@@ -113673,9 +116597,9 @@
       "hr": 1
     },
     "605135": {
-      "bbe": 69,
-      "hardHitPct": 27.5,
-      "barrelProxyPct": 5.8,
+      "bbe": 70,
+      "hardHitPct": 27.1,
+      "barrelProxyPct": 5.7,
       "hr": 1
     },
     "805673": {
@@ -113690,23 +116614,17 @@
       "barrelProxyPct": 3.5,
       "hr": 1
     },
-    "683003": {
-      "bbe": 27,
-      "hardHitPct": 22.2,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "554430": {
       "bbe": 35,
       "hardHitPct": 25.7,
       "barrelProxyPct": 2.9,
       "hr": 0
     },
-    "592662": {
-      "bbe": 54,
-      "hardHitPct": 25.9,
-      "barrelProxyPct": 3.7,
-      "hr": 2
+    "683003": {
+      "bbe": 27,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0
     },
     "669923": {
       "bbe": 51,
@@ -113714,17 +116632,17 @@
       "barrelProxyPct": 3.9,
       "hr": 1
     },
+    "592662": {
+      "bbe": 54,
+      "hardHitPct": 25.9,
+      "barrelProxyPct": 3.7,
+      "hr": 2
+    },
     "672456": {
       "bbe": 30,
       "hardHitPct": 10.0,
       "barrelProxyPct": 3.3,
       "hr": 0
-    },
-    "701656": {
-      "bbe": 36,
-      "hardHitPct": 19.4,
-      "barrelProxyPct": 5.6,
-      "hr": 2
     },
     "687473": {
       "bbe": 62,
@@ -113738,16 +116656,22 @@
       "barrelProxyPct": 4.5,
       "hr": 1
     },
+    "701656": {
+      "bbe": 36,
+      "hardHitPct": 19.4,
+      "barrelProxyPct": 5.6,
+      "hr": 2
+    },
     "687562": {
       "bbe": 37,
       "hardHitPct": 13.5,
       "barrelProxyPct": 5.4,
       "hr": 0
     },
-    "690279": {
-      "bbe": 54,
-      "hardHitPct": 31.5,
-      "barrelProxyPct": 7.4,
+    "702275": {
+      "bbe": 28,
+      "hardHitPct": 32.1,
+      "barrelProxyPct": 14.3,
       "hr": 2
     },
     "683627": {
@@ -113756,10 +116680,10 @@
       "barrelProxyPct": 11.3,
       "hr": 0
     },
-    "702275": {
-      "bbe": 28,
-      "hardHitPct": 32.1,
-      "barrelProxyPct": 14.3,
+    "690279": {
+      "bbe": 54,
+      "hardHitPct": 31.5,
+      "barrelProxyPct": 7.4,
       "hr": 2
     },
     "669461": {
@@ -113775,10 +116699,10 @@
       "hr": 1
     },
     "453286": {
-      "bbe": 54,
-      "hardHitPct": 29.6,
-      "barrelProxyPct": 3.7,
-      "hr": 0
+      "bbe": 55,
+      "hardHitPct": 30.9,
+      "barrelProxyPct": 5.5,
+      "hr": 1
     },
     "607259": {
       "bbe": 32,
@@ -113834,17 +116758,17 @@
       "barrelProxyPct": 13.3,
       "hr": 1
     },
-    "702566": {
-      "bbe": 16,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 6.2,
-      "hr": 1
-    },
     "543135": {
       "bbe": 34,
       "hardHitPct": 20.6,
       "barrelProxyPct": 2.9,
       "hr": 0
+    },
+    "702566": {
+      "bbe": 16,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 6.2,
+      "hr": 1
     },
     "702021": {
       "bbe": 26,
@@ -113882,16 +116806,16 @@
       "barrelProxyPct": 8.3,
       "hr": 0
     },
-    "642376": {
-      "bbe": 10,
-      "hardHitPct": 30.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "693686": {
       "bbe": 24,
       "hardHitPct": 20.8,
       "barrelProxyPct": 4.2,
+      "hr": 0
+    },
+    "642376": {
+      "bbe": 10,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "693308": {
@@ -113930,27 +116854,27 @@
       "barrelProxyPct": 8.3,
       "hr": 1
     },
+    "688158": {
+      "bbe": 16,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 12.5,
+      "hr": 0
+    },
     "669020": {
       "bbe": 23,
       "hardHitPct": 13.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "641755": {
-      "bbe": 18,
-      "hardHitPct": 16.7,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "815083": {
-      "bbe": 9,
-      "hardHitPct": 44.4,
-      "barrelProxyPct": 11.1,
+    "686751": {
+      "bbe": 22,
+      "hardHitPct": 22.7,
+      "barrelProxyPct": 4.5,
       "hr": 0
     },
     "673513": {
-      "bbe": 25,
-      "hardHitPct": 4.0,
+      "bbe": 26,
+      "hardHitPct": 3.8,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -113960,16 +116884,22 @@
       "barrelProxyPct": 6.2,
       "hr": 0
     },
-    "688158": {
-      "bbe": 16,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 12.5,
+    "815083": {
+      "bbe": 9,
+      "hardHitPct": 44.4,
+      "barrelProxyPct": 11.1,
       "hr": 0
     },
-    "686751": {
-      "bbe": 22,
-      "hardHitPct": 22.7,
-      "barrelProxyPct": 4.5,
+    "641755": {
+      "bbe": 18,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "657376": {
+      "bbe": 6,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "687330": {
@@ -113980,12 +116910,6 @@
     },
     "688692": {
       "bbe": 5,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "657376": {
-      "bbe": 6,
       "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
@@ -114003,10 +116927,16 @@
       "hr": 0
     },
     "621345": {
-      "bbe": 25,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 8.0,
+      "bbe": 26,
+      "hardHitPct": 19.2,
+      "barrelProxyPct": 7.7,
       "hr": 2
+    },
+    "687396": {
+      "bbe": 20,
+      "hardHitPct": 10.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
     },
     "670062": {
       "bbe": 18,
@@ -114020,9 +116950,9 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "687396": {
-      "bbe": 21,
-      "hardHitPct": 9.5,
+    "677020": {
+      "bbe": 24,
+      "hardHitPct": 20.8,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114032,9 +116962,21 @@
       "barrelProxyPct": 6.2,
       "hr": 1
     },
+    "668933": {
+      "bbe": 18,
+      "hardHitPct": 5.6,
+      "barrelProxyPct": 5.6,
+      "hr": 0
+    },
     "681867": {
       "bbe": 23,
       "hardHitPct": 8.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "661395": {
+      "bbe": 6,
+      "hardHitPct": 16.7,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114050,23 +116992,11 @@
       "barrelProxyPct": 7.1,
       "hr": 0
     },
-    "668933": {
-      "bbe": 18,
-      "hardHitPct": 5.6,
-      "barrelProxyPct": 5.6,
-      "hr": 0
-    },
-    "661395": {
-      "bbe": 6,
-      "hardHitPct": 16.7,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "677020": {
-      "bbe": 24,
-      "hardHitPct": 20.8,
-      "barrelProxyPct": 0.0,
-      "hr": 0
+    "656240": {
+      "bbe": 20,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 10.0,
+      "hr": 1
     },
     "678606": {
       "bbe": 7,
@@ -114074,23 +117004,17 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "656240": {
-      "bbe": 20,
-      "hardHitPct": 30.0,
-      "barrelProxyPct": 10.0,
-      "hr": 1
-    },
     "605483": {
       "bbe": 36,
       "hardHitPct": 22.2,
       "barrelProxyPct": 2.8,
       "hr": 0
     },
-    "678020": {
-      "bbe": 13,
-      "hardHitPct": 30.8,
-      "barrelProxyPct": 7.7,
-      "hr": 1
+    "837227": {
+      "bbe": 7,
+      "hardHitPct": 28.6,
+      "barrelProxyPct": 0.0,
+      "hr": 0
     },
     "672782": {
       "bbe": 15,
@@ -114110,18 +117034,6 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "837227": {
-      "bbe": 7,
-      "hardHitPct": 28.6,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "670103": {
-      "bbe": 7,
-      "hardHitPct": 14.3,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "687911": {
       "bbe": 21,
       "hardHitPct": 19.0,
@@ -114133,6 +117045,18 @@
       "hardHitPct": 20.0,
       "barrelProxyPct": 0.0,
       "hr": 0
+    },
+    "670103": {
+      "bbe": 7,
+      "hardHitPct": 14.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "678020": {
+      "bbe": 13,
+      "hardHitPct": 30.8,
+      "barrelProxyPct": 7.7,
+      "hr": 1
     },
     "669270": {
       "bbe": 17,
@@ -114146,28 +117070,22 @@
       "barrelProxyPct": 16.7,
       "hr": 0
     },
-    "518886": {
-      "bbe": 10,
-      "hardHitPct": 30.0,
-      "barrelProxyPct": 10.0,
-      "hr": 0
-    },
     "681911": {
       "bbe": 13,
       "hardHitPct": 7.7,
       "barrelProxyPct": 7.7,
       "hr": 0
     },
-    "641941": {
-      "bbe": 14,
-      "hardHitPct": 21.4,
-      "barrelProxyPct": 0.0,
+    "518886": {
+      "bbe": 10,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 10.0,
       "hr": 0
     },
-    "683769": {
-      "bbe": 23,
-      "hardHitPct": 26.1,
-      "barrelProxyPct": 8.7,
+    "642701": {
+      "bbe": 19,
+      "hardHitPct": 21.1,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "676617": {
@@ -114176,15 +117094,15 @@
       "barrelProxyPct": 6.7,
       "hr": 2
     },
-    "663878": {
-      "bbe": 15,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 13.3,
+    "683769": {
+      "bbe": 23,
+      "hardHitPct": 26.1,
+      "barrelProxyPct": 8.7,
       "hr": 0
     },
-    "642701": {
-      "bbe": 18,
-      "hardHitPct": 16.7,
+    "641941": {
+      "bbe": 14,
+      "hardHitPct": 21.4,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114194,16 +117112,22 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
+    "621237": {
+      "bbe": 15,
+      "hardHitPct": 13.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
     "670990": {
       "bbe": 4,
       "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "621237": {
+    "663878": {
       "bbe": 15,
-      "hardHitPct": 13.3,
-      "barrelProxyPct": 0.0,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 13.3,
       "hr": 0
     },
     "674444": {
@@ -114213,14 +117137,20 @@
       "hr": 1
     },
     "595014": {
-      "bbe": 10,
-      "hardHitPct": 30.0,
-      "barrelProxyPct": 10.0,
+      "bbe": 11,
+      "hardHitPct": 27.3,
+      "barrelProxyPct": 9.1,
       "hr": 0
     },
     "669711": {
       "bbe": 14,
       "hardHitPct": 7.1,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "700669": {
+      "bbe": 17,
+      "hardHitPct": 23.5,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114230,41 +117160,11 @@
       "barrelProxyPct": 11.1,
       "hr": 0
     },
-    "700669": {
-      "bbe": 17,
-      "hardHitPct": 23.5,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "668941": {
       "bbe": 11,
       "hardHitPct": 9.1,
       "barrelProxyPct": 9.1,
       "hr": 1
-    },
-    "663992": {
-      "bbe": 11,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "622608": {
-      "bbe": 12,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 8.3,
-      "hr": 1
-    },
-    "666974": {
-      "bbe": 6,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "675848": {
-      "bbe": 24,
-      "hardHitPct": 20.8,
-      "barrelProxyPct": 0.0,
-      "hr": 0
     },
     "667297": {
       "bbe": 11,
@@ -114278,22 +117178,28 @@
       "barrelProxyPct": 5.6,
       "hr": 0
     },
-    "663947": {
-      "bbe": 11,
-      "hardHitPct": 45.5,
+    "666974": {
+      "bbe": 6,
+      "hardHitPct": 33.3,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "645261": {
-      "bbe": 38,
-      "hardHitPct": 31.6,
-      "barrelProxyPct": 5.3,
+    "663992": {
+      "bbe": 11,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "622608": {
+      "bbe": 12,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 8.3,
       "hr": 1
     },
-    "596001": {
-      "bbe": 11,
-      "hardHitPct": 54.5,
-      "barrelProxyPct": 9.1,
+    "675848": {
+      "bbe": 24,
+      "hardHitPct": 20.8,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "642121": {
@@ -114302,27 +117208,21 @@
       "barrelProxyPct": 22.2,
       "hr": 0
     },
-    "675660": {
-      "bbe": 24,
-      "hardHitPct": 37.5,
-      "barrelProxyPct": 8.3,
-      "hr": 2
+    "645261": {
+      "bbe": 38,
+      "hardHitPct": 31.6,
+      "barrelProxyPct": 5.3,
+      "hr": 1
     },
-    "689254": {
+    "663947": {
       "bbe": 11,
-      "hardHitPct": 36.4,
+      "hardHitPct": 45.5,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "656546": {
-      "bbe": 8,
-      "hardHitPct": 12.5,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "671922": {
+    "596001": {
       "bbe": 11,
-      "hardHitPct": 27.3,
+      "hardHitPct": 54.5,
       "barrelProxyPct": 9.1,
       "hr": 0
     },
@@ -114332,9 +117232,33 @@
       "barrelProxyPct": 25.0,
       "hr": 0
     },
+    "689254": {
+      "bbe": 11,
+      "hardHitPct": 36.4,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
     "621112": {
       "bbe": 15,
       "hardHitPct": 33.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "675660": {
+      "bbe": 24,
+      "hardHitPct": 37.5,
+      "barrelProxyPct": 8.3,
+      "hr": 2
+    },
+    "671922": {
+      "bbe": 11,
+      "hardHitPct": 27.3,
+      "barrelProxyPct": 9.1,
+      "hr": 0
+    },
+    "656546": {
+      "bbe": 8,
+      "hardHitPct": 12.5,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114350,9 +117274,9 @@
       "barrelProxyPct": 5.3,
       "hr": 0
     },
-    "672442": {
-      "bbe": 8,
-      "hardHitPct": 0.0,
+    "642528": {
+      "bbe": 13,
+      "hardHitPct": 23.1,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114362,21 +117286,27 @@
       "barrelProxyPct": 14.3,
       "hr": 0
     },
+    "672442": {
+      "bbe": 8,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
     "592155": {
       "bbe": 10,
       "hardHitPct": 10.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "642528": {
-      "bbe": 13,
-      "hardHitPct": 23.1,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "656271": {
       "bbe": 8,
       "hardHitPct": 25.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "656730": {
+      "bbe": 9,
+      "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114398,8 +117328,8 @@
       "barrelProxyPct": 7.7,
       "hr": 1
     },
-    "656730": {
-      "bbe": 9,
+    "676510": {
+      "bbe": 7,
       "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
@@ -114410,9 +117340,9 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "676510": {
-      "bbe": 7,
-      "hardHitPct": 0.0,
+    "689296": {
+      "bbe": 16,
+      "hardHitPct": 25.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114422,28 +117352,16 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "543238": {
-      "bbe": 2,
-      "hardHitPct": 50.0,
-      "barrelProxyPct": 50.0,
-      "hr": 0
-    },
-    "689296": {
-      "bbe": 16,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "663687": {
       "bbe": 20,
       "hardHitPct": 25.0,
       "barrelProxyPct": 10.0,
       "hr": 1
     },
-    "670167": {
-      "bbe": 9,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 0.0,
+    "543238": {
+      "bbe": 2,
+      "hardHitPct": 50.0,
+      "barrelProxyPct": 50.0,
       "hr": 0
     },
     "689266": {
@@ -114452,9 +117370,9 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "622088": {
-      "bbe": 11,
-      "hardHitPct": 9.1,
+    "670167": {
+      "bbe": 9,
+      "hardHitPct": 33.3,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114462,6 +117380,12 @@
       "bbe": 13,
       "hardHitPct": 7.7,
       "barrelProxyPct": 7.7,
+      "hr": 0
+    },
+    "622088": {
+      "bbe": 11,
+      "hardHitPct": 9.1,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "691769": {
@@ -114482,16 +117406,16 @@
       "barrelProxyPct": 8.3,
       "hr": 3
     },
-    "669467": {
-      "bbe": 29,
-      "hardHitPct": 27.6,
-      "barrelProxyPct": 3.4,
-      "hr": 1
-    },
     "641927": {
       "bbe": 44,
       "hardHitPct": 25.0,
       "barrelProxyPct": 4.5,
+      "hr": 1
+    },
+    "669467": {
+      "bbe": 29,
+      "hardHitPct": 27.6,
+      "barrelProxyPct": 3.4,
       "hr": 1
     },
     "650911": {
@@ -114518,23 +117442,17 @@
       "barrelProxyPct": 5.0,
       "hr": 1
     },
-    "621111": {
-      "bbe": 33,
-      "hardHitPct": 24.2,
-      "barrelProxyPct": 6.1,
-      "hr": 1
-    },
     "594798": {
       "bbe": 23,
       "hardHitPct": 34.8,
       "barrelProxyPct": 8.7,
       "hr": 1
     },
-    "808967": {
-      "bbe": 26,
-      "hardHitPct": 11.5,
-      "barrelProxyPct": 0.0,
-      "hr": 0
+    "621111": {
+      "bbe": 33,
+      "hardHitPct": 24.2,
+      "barrelProxyPct": 6.1,
+      "hr": 1
     },
     "695076": {
       "bbe": 22,
@@ -114545,6 +117463,12 @@
     "686613": {
       "bbe": 18,
       "hardHitPct": 22.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "808967": {
+      "bbe": 26,
+      "hardHitPct": 11.5,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114560,17 +117484,17 @@
       "barrelProxyPct": 6.5,
       "hr": 0
     },
-    "800600": {
-      "bbe": 30,
-      "hardHitPct": 26.7,
-      "barrelProxyPct": 3.3,
-      "hr": 1
-    },
     "623454": {
       "bbe": 31,
       "hardHitPct": 6.5,
       "barrelProxyPct": 0.0,
       "hr": 0
+    },
+    "800600": {
+      "bbe": 30,
+      "hardHitPct": 26.7,
+      "barrelProxyPct": 3.3,
+      "hr": 1
     },
     "656492": {
       "bbe": 20,
@@ -114668,17 +117592,17 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "681190": {
-      "bbe": 34,
-      "hardHitPct": 23.5,
-      "barrelProxyPct": 2.9,
-      "hr": 1
-    },
     "699008": {
       "bbe": 41,
       "hardHitPct": 26.8,
       "barrelProxyPct": 4.9,
       "hr": 0
+    },
+    "681190": {
+      "bbe": 34,
+      "hardHitPct": 23.5,
+      "barrelProxyPct": 2.9,
+      "hr": 1
     },
     "685464": {
       "bbe": 8,
@@ -114710,16 +117634,16 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "671345": {
-      "bbe": 21,
-      "hardHitPct": 19.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "676879": {
       "bbe": 17,
       "hardHitPct": 23.5,
       "barrelProxyPct": 11.8,
+      "hr": 0
+    },
+    "671345": {
+      "bbe": 21,
+      "hardHitPct": 19.0,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "702193": {
@@ -114734,17 +117658,17 @@
       "barrelProxyPct": 4.0,
       "hr": 0
     },
-    "691799": {
-      "bbe": 19,
-      "hardHitPct": 31.6,
-      "barrelProxyPct": 5.3,
-      "hr": 1
-    },
     "664199": {
       "bbe": 20,
       "hardHitPct": 25.0,
       "barrelProxyPct": 5.0,
       "hr": 0
+    },
+    "691799": {
+      "bbe": 19,
+      "hardHitPct": 31.6,
+      "barrelProxyPct": 5.3,
+      "hr": 1
     },
     "669684": {
       "bbe": 17,
@@ -114758,6 +117682,12 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
+    "680755": {
+      "bbe": 11,
+      "hardHitPct": 45.5,
+      "barrelProxyPct": 9.1,
+      "hr": 1
+    },
     "656641": {
       "bbe": 20,
       "hardHitPct": 35.0,
@@ -114770,28 +117700,10 @@
       "barrelProxyPct": 14.3,
       "hr": 0
     },
-    "680755": {
-      "bbe": 11,
-      "hardHitPct": 45.5,
-      "barrelProxyPct": 9.1,
-      "hr": 1
-    },
     "593974": {
       "bbe": 15,
       "hardHitPct": 33.3,
       "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "572955": {
-      "bbe": 8,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 0.0,
-      "hr": 1
-    },
-    "682120": {
-      "bbe": 22,
-      "hardHitPct": 27.3,
-      "barrelProxyPct": 4.5,
       "hr": 0
     },
     "663558": {
@@ -114800,11 +117712,29 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
+    "682120": {
+      "bbe": 22,
+      "hardHitPct": 27.3,
+      "barrelProxyPct": 4.5,
+      "hr": 0
+    },
+    "572955": {
+      "bbe": 8,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 0.0,
+      "hr": 1
+    },
     "702752": {
       "bbe": 13,
       "hardHitPct": 30.8,
       "barrelProxyPct": 7.7,
       "hr": 1
+    },
+    "805299": {
+      "bbe": 8,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
     },
     "621097": {
       "bbe": 17,
@@ -114812,9 +117742,9 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "805299": {
-      "bbe": 8,
-      "hardHitPct": 25.0,
+    "681320": {
+      "bbe": 13,
+      "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114830,22 +117760,16 @@
       "barrelProxyPct": 7.7,
       "hr": 0
     },
-    "681320": {
-      "bbe": 13,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
+    "680767": {
+      "bbe": 18,
+      "hardHitPct": 44.4,
+      "barrelProxyPct": 5.6,
       "hr": 0
     },
     "552640": {
       "bbe": 10,
       "hardHitPct": 10.0,
       "barrelProxyPct": 10.0,
-      "hr": 0
-    },
-    "680767": {
-      "bbe": 18,
-      "hardHitPct": 44.4,
-      "barrelProxyPct": 5.6,
       "hr": 0
     },
     "573009": {
@@ -114860,21 +117784,15 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "678394": {
-      "bbe": 8,
-      "hardHitPct": 12.5,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "669084": {
-      "bbe": 19,
-      "hardHitPct": 21.1,
-      "barrelProxyPct": 5.3,
-      "hr": 1
-    },
     "621016": {
       "bbe": 6,
       "hardHitPct": 16.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "678394": {
+      "bbe": 8,
+      "hardHitPct": 12.5,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114884,16 +117802,10 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "801725": {
-      "bbe": 15,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 6.7,
-      "hr": 0
-    },
-    "657097": {
-      "bbe": 11,
-      "hardHitPct": 36.4,
-      "barrelProxyPct": 18.2,
+    "669084": {
+      "bbe": 19,
+      "hardHitPct": 21.1,
+      "barrelProxyPct": 5.3,
       "hr": 1
     },
     "640448": {
@@ -114901,6 +117813,18 @@
       "hardHitPct": 31.6,
       "barrelProxyPct": 15.8,
       "hr": 1
+    },
+    "657097": {
+      "bbe": 11,
+      "hardHitPct": 36.4,
+      "barrelProxyPct": 18.2,
+      "hr": 1
+    },
+    "801725": {
+      "bbe": 15,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 6.7,
+      "hr": 0
     },
     "642397": {
       "bbe": 8,
@@ -114914,22 +117838,16 @@
       "barrelProxyPct": 10.0,
       "hr": 1
     },
-    "687941": {
-      "bbe": 6,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "656945": {
       "bbe": 7,
       "hardHitPct": 14.3,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "656464": {
-      "bbe": 21,
-      "hardHitPct": 19.0,
-      "barrelProxyPct": 4.8,
+    "687941": {
+      "bbe": 6,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "664991": {
@@ -114944,21 +117862,33 @@
       "barrelProxyPct": 11.1,
       "hr": 0
     },
+    "656464": {
+      "bbe": 21,
+      "hardHitPct": 19.0,
+      "barrelProxyPct": 4.8,
+      "hr": 0
+    },
+    "694494": {
+      "bbe": 15,
+      "hardHitPct": 13.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "663893": {
+      "bbe": 7,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
     "628452": {
       "bbe": 9,
       "hardHitPct": 44.4,
       "barrelProxyPct": 11.1,
       "hr": 0
     },
-    "663893": {
-      "bbe": 8,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "694494": {
-      "bbe": 15,
-      "hardHitPct": 13.3,
+    "820862": {
+      "bbe": 12,
+      "hardHitPct": 25.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114968,9 +117898,9 @@
       "barrelProxyPct": 11.1,
       "hr": 1
     },
-    "820862": {
-      "bbe": 12,
-      "hardHitPct": 25.0,
+    "681544": {
+      "bbe": 5,
+      "hardHitPct": 20.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -114980,15 +117910,15 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "681544": {
-      "bbe": 5,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "676534": {
       "bbe": 13,
       "hardHitPct": 30.8,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "668674": {
+      "bbe": 5,
+      "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -115004,23 +117934,17 @@
       "barrelProxyPct": 4.2,
       "hr": 0
     },
-    "668674": {
-      "bbe": 5,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
+    "641302": {
+      "bbe": 13,
+      "hardHitPct": 15.4,
+      "barrelProxyPct": 7.7,
+      "hr": 1
     },
     "623352": {
       "bbe": 5,
       "hardHitPct": 20.0,
       "barrelProxyPct": 0.0,
       "hr": 0
-    },
-    "641302": {
-      "bbe": 13,
-      "hardHitPct": 15.4,
-      "barrelProxyPct": 7.7,
-      "hr": 1
     },
     "650960": {
       "bbe": 2,
@@ -115034,18 +117958,6 @@
       "barrelProxyPct": 6.2,
       "hr": 1
     },
-    "670329": {
-      "bbe": 12,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 8.3,
-      "hr": 0
-    },
-    "666661": {
-      "bbe": 8,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "663542": {
       "bbe": 11,
       "hardHitPct": 27.3,
@@ -115058,16 +117970,22 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
+    "666661": {
+      "bbe": 8,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
     "642100": {
       "bbe": 13,
       "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "642048": {
-      "bbe": 10,
-      "hardHitPct": 10.0,
-      "barrelProxyPct": 0.0,
+    "670329": {
+      "bbe": 12,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 8.3,
       "hr": 0
     },
     "673540": {
@@ -115076,21 +117994,27 @@
       "barrelProxyPct": 10.0,
       "hr": 1
     },
-    "663767": {
-      "bbe": 12,
-      "hardHitPct": 25.0,
+    "642048": {
+      "bbe": 10,
+      "hardHitPct": 10.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "679885": {
-      "bbe": 10,
-      "hardHitPct": 30.0,
+    "663767": {
+      "bbe": 13,
+      "hardHitPct": 23.1,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
     "622554": {
       "bbe": 18,
       "hardHitPct": 11.1,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "679885": {
+      "bbe": 9,
+      "hardHitPct": 33.3,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -115106,12 +118030,6 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "695380": {
-      "bbe": 18,
-      "hardHitPct": 27.8,
-      "barrelProxyPct": 5.6,
-      "hr": 1
-    },
     "695418": {
       "bbe": 9,
       "hardHitPct": 22.2,
@@ -115124,10 +118042,10 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "650556": {
-      "bbe": 8,
-      "hardHitPct": 25.0,
-      "barrelProxyPct": 12.5,
+    "695380": {
+      "bbe": 17,
+      "hardHitPct": 29.4,
+      "barrelProxyPct": 5.9,
       "hr": 1
     },
     "680742": {
@@ -115136,9 +118054,15 @@
       "barrelProxyPct": 11.1,
       "hr": 1
     },
-    "696062": {
-      "bbe": 16,
+    "650556": {
+      "bbe": 8,
       "hardHitPct": 25.0,
+      "barrelProxyPct": 12.5,
+      "hr": 1
+    },
+    "696062": {
+      "bbe": 17,
+      "hardHitPct": 23.5,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -115178,17 +118102,17 @@
       "barrelProxyPct": 5.9,
       "hr": 2
     },
-    "672282": {
-      "bbe": 29,
-      "hardHitPct": 37.9,
-      "barrelProxyPct": 17.2,
-      "hr": 1
-    },
     "680732": {
       "bbe": 29,
       "hardHitPct": 24.1,
       "barrelProxyPct": 3.4,
       "hr": 0
+    },
+    "672282": {
+      "bbe": 29,
+      "hardHitPct": 37.9,
+      "barrelProxyPct": 17.2,
+      "hr": 1
     },
     "665152": {
       "bbe": 30,
@@ -115250,17 +118174,17 @@
       "barrelProxyPct": 6.5,
       "hr": 1
     },
-    "669203": {
-      "bbe": 25,
-      "hardHitPct": 28.0,
-      "barrelProxyPct": 8.0,
-      "hr": 2
-    },
     "675512": {
       "bbe": 22,
       "hardHitPct": 13.6,
       "barrelProxyPct": 0.0,
       "hr": 0
+    },
+    "669203": {
+      "bbe": 25,
+      "hardHitPct": 28.0,
+      "barrelProxyPct": 8.0,
+      "hr": 2
     },
     "663554": {
       "bbe": 31,
@@ -115292,15 +118216,15 @@
       "barrelProxyPct": 12.5,
       "hr": 0
     },
-    "621074": {
-      "bbe": 15,
-      "hardHitPct": 13.3,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "592773": {
       "bbe": 12,
       "hardHitPct": 8.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "621074": {
+      "bbe": 15,
+      "hardHitPct": 13.3,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -115322,22 +118246,28 @@
       "barrelProxyPct": 8.7,
       "hr": 0
     },
-    "690829": {
-      "bbe": 12,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 16.7,
-      "hr": 0
-    },
     "699134": {
       "bbe": 16,
       "hardHitPct": 37.5,
       "barrelProxyPct": 18.8,
       "hr": 3
     },
+    "690829": {
+      "bbe": 12,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 16.7,
+      "hr": 0
+    },
     "815081": {
-      "bbe": 13,
-      "hardHitPct": 30.8,
-      "barrelProxyPct": 15.4,
+      "bbe": 12,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 16.7,
+      "hr": 0
+    },
+    "606996": {
+      "bbe": 9,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 11.1,
       "hr": 0
     },
     "623465": {
@@ -115346,21 +118276,9 @@
       "barrelProxyPct": 7.7,
       "hr": 1
     },
-    "606996": {
-      "bbe": 9,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 11.1,
-      "hr": 0
-    },
     "605242": {
       "bbe": 4,
       "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "695243": {
-      "bbe": 11,
-      "hardHitPct": 9.1,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -115370,16 +118288,16 @@
       "barrelProxyPct": 16.7,
       "hr": 1
     },
-    "445276": {
+    "695243": {
       "bbe": 11,
       "hardHitPct": 9.1,
-      "barrelProxyPct": 9.1,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "641401": {
-      "bbe": 6,
-      "hardHitPct": 16.7,
-      "barrelProxyPct": 0.0,
+    "445276": {
+      "bbe": 10,
+      "hardHitPct": 10.0,
+      "barrelProxyPct": 10.0,
       "hr": 0
     },
     "682825": {
@@ -115394,16 +118312,16 @@
       "barrelProxyPct": 13.3,
       "hr": 2
     },
+    "641401": {
+      "bbe": 6,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
     "676620": {
       "bbe": 13,
       "hardHitPct": 7.7,
       "barrelProxyPct": 7.7,
-      "hr": 1
-    },
-    "670950": {
-      "bbe": 29,
-      "hardHitPct": 37.9,
-      "barrelProxyPct": 3.4,
       "hr": 1
     },
     "670970": {
@@ -115412,10 +118330,22 @@
       "barrelProxyPct": 9.1,
       "hr": 0
     },
+    "670950": {
+      "bbe": 29,
+      "hardHitPct": 37.9,
+      "barrelProxyPct": 3.4,
+      "hr": 1
+    },
     "682982": {
       "bbe": 15,
       "hardHitPct": 20.0,
       "barrelProxyPct": 13.3,
+      "hr": 1
+    },
+    "623149": {
+      "bbe": 14,
+      "hardHitPct": 21.4,
+      "barrelProxyPct": 7.1,
       "hr": 1
     },
     "605447": {
@@ -115423,12 +118353,6 @@
       "hardHitPct": 35.3,
       "barrelProxyPct": 0.0,
       "hr": 0
-    },
-    "623149": {
-      "bbe": 15,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 6.7,
-      "hr": 1
     },
     "660825": {
       "bbe": 4,
@@ -115526,17 +118450,17 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "702070": {
-      "bbe": 33,
-      "hardHitPct": 36.4,
-      "barrelProxyPct": 6.1,
-      "hr": 1
-    },
     "571510": {
       "bbe": 34,
       "hardHitPct": 17.6,
       "barrelProxyPct": 2.9,
       "hr": 0
+    },
+    "702070": {
+      "bbe": 33,
+      "hardHitPct": 36.4,
+      "barrelProxyPct": 6.1,
+      "hr": 1
     },
     "657746": {
       "bbe": 30,
@@ -115544,17 +118468,17 @@
       "barrelProxyPct": 3.3,
       "hr": 2
     },
-    "695549": {
-      "bbe": 24,
-      "hardHitPct": 16.7,
-      "barrelProxyPct": 8.3,
-      "hr": 1
-    },
     "681035": {
       "bbe": 23,
       "hardHitPct": 21.7,
       "barrelProxyPct": 0.0,
       "hr": 2
+    },
+    "695549": {
+      "bbe": 24,
+      "hardHitPct": 16.7,
+      "barrelProxyPct": 8.3,
+      "hr": 1
     },
     "642547": {
       "bbe": 28,
@@ -115580,12 +118504,6 @@
       "barrelProxyPct": 13.0,
       "hr": 1
     },
-    "689818": {
-      "bbe": 22,
-      "hardHitPct": 31.8,
-      "barrelProxyPct": 4.5,
-      "hr": 0
-    },
     "615698": {
       "bbe": 26,
       "hardHitPct": 30.8,
@@ -115598,10 +118516,22 @@
       "barrelProxyPct": 7.7,
       "hr": 1
     },
+    "689818": {
+      "bbe": 22,
+      "hardHitPct": 31.8,
+      "barrelProxyPct": 4.5,
+      "hr": 0
+    },
     "601713": {
       "bbe": 25,
       "hardHitPct": 28.0,
       "barrelProxyPct": 8.0,
+      "hr": 1
+    },
+    "669713": {
+      "bbe": 25,
+      "hardHitPct": 40.0,
+      "barrelProxyPct": 0.0,
       "hr": 1
     },
     "669854": {
@@ -115609,12 +118539,6 @@
       "hardHitPct": 25.0,
       "barrelProxyPct": 8.3,
       "hr": 2
-    },
-    "669713": {
-      "bbe": 25,
-      "hardHitPct": 40.0,
-      "barrelProxyPct": 0.0,
-      "hr": 1
     },
     "695505": {
       "bbe": 8,
@@ -115646,16 +118570,16 @@
       "barrelProxyPct": 7.7,
       "hr": 1
     },
-    "678061": {
-      "bbe": 10,
-      "hardHitPct": 30.0,
-      "barrelProxyPct": 10.0,
-      "hr": 0
-    },
     "688642": {
       "bbe": 12,
       "hardHitPct": 33.3,
       "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "678061": {
+      "bbe": 10,
+      "hardHitPct": 30.0,
+      "barrelProxyPct": 10.0,
       "hr": 0
     },
     "684665": {
@@ -115676,16 +118600,16 @@
       "barrelProxyPct": 14.3,
       "hr": 2
     },
-    "677955": {
-      "bbe": 13,
-      "hardHitPct": 23.1,
-      "barrelProxyPct": 7.7,
-      "hr": 0
-    },
     "547973": {
       "bbe": 7,
       "hardHitPct": 28.6,
       "barrelProxyPct": 14.3,
+      "hr": 0
+    },
+    "677955": {
+      "bbe": 13,
+      "hardHitPct": 23.1,
+      "barrelProxyPct": 7.7,
       "hr": 0
     },
     "664129": {
@@ -115695,9 +118619,9 @@
       "hr": 0
     },
     "683618": {
-      "bbe": 17,
-      "hardHitPct": 23.5,
-      "barrelProxyPct": 5.9,
+      "bbe": 16,
+      "hardHitPct": 25.0,
+      "barrelProxyPct": 6.2,
       "hr": 0
     },
     "811315": {
@@ -115730,33 +118654,21 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "686934": {
-      "bbe": 9,
-      "hardHitPct": 22.2,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "669276": {
       "bbe": 13,
       "hardHitPct": 15.4,
       "barrelProxyPct": 7.7,
       "hr": 0
     },
+    "686934": {
+      "bbe": 9,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
     "670036": {
       "bbe": 5,
       "hardHitPct": 20.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "571927": {
-      "bbe": 5,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "643511": {
-      "bbe": 7,
-      "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -115766,10 +118678,16 @@
       "barrelProxyPct": 33.3,
       "hr": 0
     },
-    "671162": {
-      "bbe": 8,
-      "hardHitPct": 12.5,
-      "barrelProxyPct": 12.5,
+    "643511": {
+      "bbe": 7,
+      "hardHitPct": 0.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "571927": {
+      "bbe": 5,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "676477": {
@@ -115784,15 +118702,21 @@
       "barrelProxyPct": 7.7,
       "hr": 0
     },
-    "596133": {
-      "bbe": 4,
-      "hardHitPct": 0.0,
-      "barrelProxyPct": 0.0,
+    "671162": {
+      "bbe": 8,
+      "hardHitPct": 12.5,
+      "barrelProxyPct": 12.5,
       "hr": 0
     },
     "682254": {
       "bbe": 4,
       "hardHitPct": 25.0,
+      "barrelProxyPct": 0.0,
+      "hr": 0
+    },
+    "596133": {
+      "bbe": 4,
+      "hardHitPct": 0.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -115820,17 +118744,17 @@
       "barrelProxyPct": 5.9,
       "hr": 2
     },
-    "674841": {
-      "bbe": 29,
-      "hardHitPct": 13.8,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "605280": {
       "bbe": 23,
       "hardHitPct": 30.4,
       "barrelProxyPct": 4.3,
       "hr": 1
+    },
+    "674841": {
+      "bbe": 29,
+      "hardHitPct": 13.8,
+      "barrelProxyPct": 0.0,
+      "hr": 0
     },
     "663903": {
       "bbe": 27,
@@ -115868,11 +118792,11 @@
       "barrelProxyPct": 10.7,
       "hr": 2
     },
-    "685299": {
-      "bbe": 33,
-      "hardHitPct": 30.3,
-      "barrelProxyPct": 9.1,
-      "hr": 1
+    "677976": {
+      "bbe": 27,
+      "hardHitPct": 22.2,
+      "barrelProxyPct": 0.0,
+      "hr": 0
     },
     "804267": {
       "bbe": 38,
@@ -115880,17 +118804,23 @@
       "barrelProxyPct": 5.3,
       "hr": 1
     },
-    "677976": {
-      "bbe": 27,
-      "hardHitPct": 22.2,
-      "barrelProxyPct": 0.0,
-      "hr": 0
+    "685299": {
+      "bbe": 33,
+      "hardHitPct": 30.3,
+      "barrelProxyPct": 9.1,
+      "hr": 1
     },
     "693855": {
       "bbe": 23,
       "hardHitPct": 34.8,
       "barrelProxyPct": 4.3,
       "hr": 1
+    },
+    "687570": {
+      "bbe": 37,
+      "hardHitPct": 18.9,
+      "barrelProxyPct": 0.0,
+      "hr": 0
     },
     "543037": {
       "bbe": 34,
@@ -115903,12 +118833,6 @@
       "hardHitPct": 13.8,
       "barrelProxyPct": 3.4,
       "hr": 1
-    },
-    "687570": {
-      "bbe": 37,
-      "hardHitPct": 18.9,
-      "barrelProxyPct": 0.0,
-      "hr": 0
     },
     "693433": {
       "bbe": 32,
@@ -115970,16 +118894,16 @@
       "barrelProxyPct": 11.8,
       "hr": 2
     },
-    "689147": {
-      "bbe": 10,
-      "hardHitPct": 40.0,
-      "barrelProxyPct": 0.0,
-      "hr": 0
-    },
     "571882": {
       "bbe": 12,
       "hardHitPct": 16.7,
       "barrelProxyPct": 8.3,
+      "hr": 0
+    },
+    "689147": {
+      "bbe": 10,
+      "hardHitPct": 40.0,
+      "barrelProxyPct": 0.0,
       "hr": 0
     },
     "681517": {
@@ -116036,16 +118960,16 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "656638": {
-      "bbe": 7,
-      "hardHitPct": 57.1,
-      "barrelProxyPct": 14.3,
-      "hr": 0
-    },
     "680736": {
       "bbe": 11,
       "hardHitPct": 18.2,
       "barrelProxyPct": 9.1,
+      "hr": 0
+    },
+    "656638": {
+      "bbe": 7,
+      "hardHitPct": 57.1,
+      "barrelProxyPct": 14.3,
       "hr": 0
     },
     "664126": {
@@ -116091,8 +119015,8 @@
       "hr": 1
     },
     "669330": {
-      "bbe": 6,
-      "hardHitPct": 16.7,
+      "bbe": 5,
+      "hardHitPct": 20.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
@@ -116150,17 +119074,17 @@
       "barrelProxyPct": 0.0,
       "hr": 0
     },
-    "607625": {
-      "bbe": 25,
-      "hardHitPct": 20.0,
-      "barrelProxyPct": 8.0,
-      "hr": 1
-    },
     "669160": {
       "bbe": 29,
       "hardHitPct": 20.7,
       "barrelProxyPct": 3.4,
       "hr": 0
+    },
+    "607625": {
+      "bbe": 25,
+      "hardHitPct": 20.0,
+      "barrelProxyPct": 8.0,
+      "hr": 1
     },
     "805074": {
       "bbe": 23,
@@ -116169,9 +119093,9 @@
       "hr": 0
     },
     "814490": {
-      "bbe": 25,
-      "hardHitPct": 28.0,
-      "barrelProxyPct": 12.0,
+      "bbe": 26,
+      "hardHitPct": 26.9,
+      "barrelProxyPct": 11.5,
       "hr": 1
     },
     "694753": {
@@ -116217,26 +119141,26 @@
       "hr": 1
     },
     "699044": {
-      "bbe": 3,
-      "hardHitPct": 33.3,
+      "bbe": 4,
+      "hardHitPct": 25.0,
       "barrelProxyPct": 0.0,
       "hr": 0
     },
     "688297": {
-      "bbe": 5,
-      "hardHitPct": 80.0,
+      "bbe": 6,
+      "hardHitPct": 66.7,
       "barrelProxyPct": 0.0,
-      "hr": 0
-    },
-    "690925": {
-      "bbe": 3,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 33.3,
       "hr": 0
     },
     "663423": {
       "bbe": 4,
       "hardHitPct": 50.0,
+      "barrelProxyPct": 25.0,
+      "hr": 0
+    },
+    "690925": {
+      "bbe": 4,
+      "hardHitPct": 25.0,
       "barrelProxyPct": 25.0,
       "hr": 0
     }
