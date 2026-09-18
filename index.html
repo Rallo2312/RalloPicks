@@ -1204,6 +1204,8 @@ body .app [hidden]{display:none!important}
   <div class="hr-hub-section-label"><div><b>🎯 Upcoming Matchup Edges</b><span>Only games that have not started</span></div></div>
   <div id="hrMatchupSpotlights"></div>
   <div id="hrOddsBoard" class="hr-odds-board"><div class="empty">Loading verified HR odds…</div></div>
+  <div class="hr-hub-section-label"><div><b>⭐ Top 3 Home Run Players of the Day</b><span>Highest-ranked eligible hitters from today’s remaining slate</span></div></div>
+  <div id="top3HrRows" class="hr-grid"><div class="empty">Researching today’s Top 3 HR players…</div></div>
   <div class="hr-hub-section-label"><div><b>🔥 Top 10 HR Candidates</b><span>Best overall model scores on the remaining slate</span></div></div>
   <div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div>
   <div class="section-title sleeper-title"><div><h2>💎 Sleeper Finder</h2><span>3–5 under-the-radar HR spots from the full slate • skips the obvious Top 10 names</span></div><span>Model sleepers</span></div>
@@ -2074,8 +2076,9 @@ async function loadTop20HR(){await ensureHrModelData();
   const stamp='<p class="hr-list-note">'+esc(feed.date)+' · Researched '+esc(new Date(feed.checkedAt).toLocaleTimeString([],{hour:'numeric',minute:'2-digit',timeZone:'America/Chicago'}))+' Central · '+Number(feed.screened)+' active hitters screened. Lineups rechecked while this board is open.</p>';
   const method='<p class="hr-list-note">Rankings use sample-adjusted HR/PA, barrels, handedness splits, starter HR tendency, recent HR-game frequency and confirmed batting order. Candidate coverage is limited to the published daily research pool; predictive improvement has not yet been validated.</p><details class="hr-list-details"><summary>How these players were selected</summary><div class="hr-list-detail-body"><p>'+esc(feed.method)+'</p></div></details>';
   const leaders=top.filter(x=>x.lineup?.status==='confirmed'&&!x.research?.pitcher?.missing&&x.contactQuality?.bbe>=50&&x.pa>=100).slice(0,3);
-  const topThree='<section class="hr-top-three"><h3>⭐ Top 3 Home Run Players of the Day</h3><p>Confirmed starters in remaining games · research rank, not a guarantee.</p>'+(leaders.length?leaders.map((x,i)=>renderHrListRow(x,i)).join(''):'<div class="empty">Waiting for confirmed lineups and sufficient matchup evidence.</div>')+(leaders.length<3?'<p>Only '+leaders.length+' players currently meet the evidence checks.</p>':'')+'</section><h3>Top 10 HR Research</h3>';
-  root.innerHTML=stamp+topThree+(top.map((x,i)=>renderHrListRow(x,i)).join('')||'<div class="empty">No researched Top 10 players remain eligible.</div>')+method;
+  const top3Root=document.getElementById('top3HrRows');
+  if(top3Root)top3Root.innerHTML=leaders.length?leaders.map((x,i)=>renderHrListRow(x,i)).join(''):'<div class="empty">Waiting for confirmed lineups and sufficient matchup evidence.</div>';
+  root.innerHTML=stamp+(top.map((x,i)=>renderHrListRow(x,i)).join('')||'<div class="empty">No researched Top 10 players remain eligible.</div>')+method;
   under.innerHTML=stamp+(other.map((x,i)=>renderHrListRow(x,i,true)).join('')||'<div class="empty">No researched Underrated players remain eligible.</div>');
   state.hrBoardReady=true;state.hrBoardChecked=Date.now();window.researchFresh?.('hr',feed.checkedAt);
   if(lineups.unavailable)window.researchFailed?.('lineups');else window.researchFresh?.('lineups',Date.now());
