@@ -1087,7 +1087,11 @@ body .app [hidden]{display:none!important}
  body .app .nav[hidden]{display:none!important}
 }
 @media(prefers-reduced-motion:reduce){body *{scroll-behavior:auto!important;transition:none!important}}
-</style></head>
+</style>
+<style id="team-matchup-rows">
+.hr-team-heading{display:flex;align-items:center;gap:10px;padding:14px;flex-wrap:wrap}.hr-team-heading>div{min-width:0}.hr-team-heading b{display:block;font-size:14px}.hr-team-heading small{display:block;font-size:10px;color:#b0c6b8;margin-top:4px}.hr-team-pitcher{margin-left:auto;display:flex;align-items:center;gap:8px}.hr-team-pitcher .player-avatar{width:34px;height:34px;min-width:34px}.hr-team-row .hr-picker-strip{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px;padding:10px}.hr-team-row .hr-picker-choice{min-width:0!important;padding:12px!important}.hr-team-row .hr-picker-choice b{overflow-wrap:anywhere;font-size:13px!important}.hr-team-row .hr-picker-choice span{font-size:10px!important}.hr-team-row summary{cursor:pointer;color:#ffdb71;font-weight:800;padding:13px;border-top:1px solid #365744;font-size:11px}.hr-team-all{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:10px}.hr-team-note{padding:0 14px 12px;color:#aac1b1;font-size:10px}@media(max-width:600px){.hr-team-pitcher{margin-left:0;width:100%;padding-left:6px}.hr-team-row .hr-picker-choice>div{flex-direction:column;align-items:flex-start}.hr-team-row .hr-picker-choice{padding:8px!important}.hr-team-all{grid-template-columns:repeat(2,minmax(0,1fr))}.hr-team-row .hr-picker-choice small{font-size:8px!important}}
+</style>
+</head>
 <body>
 <div class="app">
   <header class="topbar">
@@ -1150,7 +1154,7 @@ body .app [hidden]{display:none!important}
 <div class="rallo-reference-strip"><div class="rallo-reference-tile"><b>👑 Top MLB Props Today</b><span>Strongest current research from the MLB slate.</span><button onclick="switchView('rankings')">VIEW RANKINGS →</button></div><div class="rallo-reference-tile"><b>⚾ Best HR Picks</b><span>Matchup-first home run rankings and verified HR odds.</span><button onclick="switchView('top20')">VIEW HR BOARD →</button></div><div class="rallo-reference-tile"><b>🧪 Player Lab</b><span>Search any hitter and choose the stat you want to research.</span><button onclick="document.getElementById('mlbHomePlayerSearch')?.focus()">SEARCH PLAYER →</button></div></div>
 <section class="rallo-hr-game-picker">
  <div class="rallo-picker-head"><div><small>⚾ HOME RUN MATCHUPS</small><h2>Choose a Game. Find the Edge.</h2><p>Upcoming games only • ranked by Rallo research, matchup and verified HR market data.</p></div><button onclick="switchView('rankings')">All Rankings →</button></div>
- <div class="hr-picker-viewbar" style="display:block"><b>TOP 3 PER UPCOMING MATCHUP • TODAY</b></div>
+ <div class="hr-picker-viewbar" style="display:block"><b>EVERY TEAM • UPCOMING GAMES TODAY</b></div>
  <div id="ralloHrGamePicker"><div class="empty">Building today’s upcoming HR matchups…</div></div>
 </section>
 <div id="mlbReferencePlayers" class="reference-player-list" style="display:none"><div class="empty">Loading MLB player research…</div></div>
@@ -2323,9 +2327,9 @@ function hrPickerEligibleGames(games,now=Date.now()){
  const day=d=>new Date(d).toLocaleDateString('en-CA',{timeZone:'America/Chicago'});
  return games.filter(g=>Number.isFinite(Date.parse(g.gameDate))&&day(g.gameDate)===day(now)&&Date.parse(g.gameDate)>now&&!/final|live|progress|postpon|cancel|suspend|completed/i.test(String(g.status?.abstractGameState||'')+' '+String(g.status?.detailedState||''))).sort((a,b)=>Date.parse(a.gameDate)-Date.parse(b.gameDate));
 }
-function hrPickerCandidates(rows,g){
+function hrPickerCandidates(rows,g,teamId=null,limit=3){
  const seen=new Set();
- return rows.filter(x=>String(x.gamePk)===String(g.gamePk)&&[g.teams?.away?.team?.id,g.teams?.home?.team?.id].some(id=>id!=null&&String(id)===String(x.teamId))&&x.lineup?.status!=='out'&&Number.isFinite(Number(x.score))).sort((a,b)=>Number(b.score)-Number(a.score)||String(a.id).localeCompare(String(b.id))).filter(x=>{if(seen.has(String(x.id)))return false;seen.add(String(x.id));return true}).slice(0,3);
+ return rows.filter(x=>(teamId==null||String(x.teamId)===String(teamId))&&String(x.gamePk)===String(g.gamePk)&&[g.teams?.away?.team?.id,g.teams?.home?.team?.id].some(id=>id!=null&&String(id)===String(x.teamId))&&x.lineup?.status!=='out'&&Number.isFinite(Number(x.score))).sort((a,b)=>Number(b.score)-Number(a.score)||String(a.id).localeCompare(String(b.id))).filter(x=>{if(seen.has(String(x.id)))return false;seen.add(String(x.id));return true}).slice(0,limit);
 }
 function hrPickerPlayer(x,label){
  if(!x)return '<div class="hr-picker-choice muted"><small>'+label+'</small><b>Not enough eligible hitters</b></div>';
@@ -2333,12 +2337,16 @@ function hrPickerPlayer(x,label){
 }
 window.renderHrGamePicker=function(){
  const root=document.getElementById('ralloHrGamePicker');if(!root)return;
+ const expanded=new Set([...root.querySelectorAll('details[open][data-team-game]')].map(e=>e.dataset.teamGame));
  const games=hrPickerEligibleGames(state.games||[]),all=state.dailyBatterRanks||[];
- if(!games.length){root.innerHTML='<div class="empty">No upcoming games remain on today’s slate. Completed games are excluded.</div>';return}
+ if(!games.length){root.innerHTML='<div class="empty">No upcoming games remain on today’s slate.</div>';return}
  root.innerHTML=games.map(g=>{
-  const away=g.teams?.away?.team,home=g.teams?.home?.team,ranked=hrPickerCandidates(all,g);
   const time=new Date(g.gameDate).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
-  return '<article class="hr-picker-game"><div class="hr-picker-gamehead">'+teamBadge(away?.abbreviation||'',away?.id)+'<div><b>'+esc(away?.abbreviation||away?.name||'AWAY')+' @ '+esc(home?.abbreviation||home?.name||'HOME')+'</b><span>'+esc(time)+' • '+esc(g.status?.detailedState||'Scheduled')+'</span></div></div><div class="hr-picker-strip">'+(ranked.length?ranked.map((x,i)=>hrPickerPlayer(x,['⚡ #1 MATCHUP SCORE','#2 MATCHUP SCORE','#3 MATCHUP SCORE'][i])).join(''):'<div class="empty">Waiting for this game’s eligible hitter research.</div>')+'</div><div class="hr-picker-tabs"><button onclick="event.stopPropagation();switchView(\'rankings\')">VIEW ALL BATTERS</button><span>Ranked by matchup score • pending lineups are provisional</span></div></article>';
+  return ['away','home'].map(side=>{
+   const team=g.teams?.[side]?.team,other=g.teams?.[side==='away'?'home':'away'],pitcher=other?.probablePitcher;
+   const rows=hrPickerCandidates(all,g,team?.id,99),key=g.gamePk+'-'+team?.id;
+   return '<article class="hr-picker-game hr-team-row"><div class="hr-team-heading">'+teamBadge(team?.abbreviation||'',team?.id)+'<div><b>'+esc(team?.name||'Team pending')+'</b><small>'+esc(time)+' • vs '+esc(other?.team?.abbreviation||other?.team?.name||'TBD')+'</small></div><div class="hr-team-pitcher">'+(pitcher?.id?playerAvatar(pitcher.fullName,pitcher.id):'')+'<div><small>OPPOSING STARTER</small><b>'+esc(pitcher?.fullName||'Starter pending')+'</b></div></div></div><div class="hr-picker-strip">'+(rows.length?rows.slice(0,3).map((x,i)=>hrPickerPlayer(x,['⚡ TOP MATCHUP SCORE','#2 TEAM SCORE','#3 TEAM SCORE'][i])).join(''):'<div class="empty">Waiting for this team’s eligible hitter research.</div>')+'</div><details data-team-game="'+key+'" '+(expanded.has(key)?'open':'')+'><summary>VIEW TEAM HITTERS ('+rows.length+')</summary><div class="hr-team-all">'+(rows.length?rows.map((x,i)=>hrPickerPlayer(x,'#'+(i+1)+' TEAM RANK')).join(''):'<p>Player research is pending.</p>')+'</div></details><p class="hr-team-note">Matchup scores • unconfirmed lineups are provisional. Tap a player for game history.</p></article>';
+  }).join('');
  }).join('');
 }
 window.renderReferenceHomeCards=function(){
@@ -2521,6 +2529,7 @@ setSport(state.currentSport);
 </script>
 </body>
 </html>
+
 
 
 
