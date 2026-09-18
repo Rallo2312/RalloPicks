@@ -2426,6 +2426,15 @@ document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target
 #strikeoutsView{background:linear-gradient(180deg,#05271d,#061d19)!important}.k-premium{background:linear-gradient(145deg,#081b2b,#071725)!important;border:1px solid rgba(45,229,139,.38)!important;border-radius:22px!important;padding:68px 18px 18px!important;box-shadow:0 16px 42px rgba(0,0,0,.2)!important}.k-premium .k-head{display:grid!important;grid-template-columns:minmax(0,1fr) 100px 150px;align-items:center;gap:14px}.k-current{padding:12px;border:1px solid rgba(86,183,255,.24);border-radius:14px;background:#0b2031;text-align:center}.k-current small,.k-current span{display:block;color:var(--muted);font-size:8px}.k-current b{display:block;font-size:22px;margin:4px 0}.k-books{display:grid;grid-template-columns:minmax(0,320px);gap:8px;margin:14px 0 8px}.k-book{padding:11px 8px;text-align:center;border:1px solid rgba(255,255,255,.1);border-radius:13px;background:#0a2030}.k-book small,.k-book span{display:block;font-size:7px;color:var(--muted)}.k-book small{font-weight:1000;letter-spacing:.4px}.k-book small i{display:inline-grid;place-items:center;width:17px;height:17px;margin-right:5px;border-radius:5px;background:#6f35ff;color:#fff;font-style:normal}.k-book b{display:block;font-size:20px;margin:5px 0}.k-book.prizepicks small{color:#c586ff}.k-book.underdog small{color:#ffd43b}.k-book.dabble small{color:#b982ff}.k-book.fanduel small{color:#52a8ff}.k-lower{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(210px,.7fr);gap:10px;margin-top:10px}.k-lower>div,.k-notes{padding:11px;border:1px solid rgba(255,255,255,.07);border-radius:14px;background:#071522}.k-lower h4,.k-notes h4{margin:0 0 8px;font-size:10px}.k-notes p{margin:7px 0;font-size:9px;color:#b5c2c8}.k-notes p::first-letter{color:#2de58b}.k-premium .k-score b{font-size:42px!important;color:#75e4ae!important}.k-premium .k-score small{font-size:8px}.k-premium .k-rank{background:rgba(119,70,220,.28)!important;border-color:#8668e8!important;color:#c9b8ff!important}
 @media(max-width:760px){.k-premium{padding:62px 12px 14px!important;border-radius:18px!important}.k-premium .k-head{grid-template-columns:minmax(0,1fr) 74px!important}.k-current{grid-column:1/-1;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:left}.k-current b{text-align:center}.k-current span{text-align:right}.k-books{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:3px}.k-book{min-width:132px;scroll-snap-align:start}.k-lower{grid-template-columns:1fr}.k-premium .k-pitcher-ident>.player-avatar{width:68px!important;height:68px!important;min-width:68px!important}.k-premium .k-pitcher-ident h3{font-size:18px!important}.k-premium .k-score b{font-size:36px!important}}
 </style>
+<style id="desktop-view-visibility-fix">
+/* Desktop routing must override the base .hidden-view rule. */
+@media(min-width:761px){
+  #mlbResearchLayout:not([hidden]),#nflResearchLayout:not([hidden]){display:grid!important}
+  #mlbResearchLayout .center-col,#nflResearchLayout .center-col{display:block!important;min-height:520px!important}
+  #mlbHomeView,#myBoardView,#matchupsView,#moneylineView,#batterlabView,#batterRankingsView,#top20View,#strikeoutsView,
+  #nflHomeView,#nflBoardView,#nflResearchView,#nflPlayersView,#nflRanksView,#nflMoneylineView,#nflStandingsView{visibility:visible!important}
+}
+</style>
 <style id="desktop-nav-hard-fix">
 @media(min-width:761px){
   #mlbNav.app-main-nav,#nflNav.app-main-nav{
@@ -2446,7 +2455,7 @@ document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target
    var ids=['mlbHomeView','myBoardView','matchupsView','moneylineView','batterlabView','batterRankingsView','top20View','strikeoutsView'];
    var map={home:'mlbHomeView',board:'myBoardView',matchups:'matchupsView',moneyline:'moneylineView',batterlab:'batterlabView',rankings:'batterRankingsView',top20:'top20View',strikeouts:'strikeoutsView'};
    ids.forEach(function(id){var el=document.getElementById(id);if(el)el.style.setProperty('display','none','important')});
-   var target=document.getElementById(map[view]||'mlbHomeView');if(target)target.style.setProperty('display','block','important');
+   var target=document.getElementById(map[view]||'mlbHomeView');if(target){target.classList.remove('hidden-view');target.style.setProperty('display','block','important')}
    try{
      if(view==='home'){window.loadDailyBatterRanks&&window.loadDailyBatterRanks().then(function(){window.renderReferenceHomeCards&&window.renderReferenceHomeCards()})}
      if(view==='top20'){window.loadTop20HR&&window.loadTop20HR();window.loadDailyBatterRanks&&window.loadDailyBatterRanks()}
@@ -2461,7 +2470,7 @@ document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target
    var ids=['nflHomeView','nflBoardView','nflResearchView','nflPlayersView','nflRanksView','nflMoneylineView','nflStandingsView'];
    var map={home:'nflHomeView',research:'nflResearchView',players:'nflPlayersView',ranks:'nflRanksView',board:'nflBoardView',moneyline:'nflMoneylineView',standings:'nflStandingsView'};
    ids.forEach(function(id){var el=document.getElementById(id);if(el)el.style.setProperty('display','none','important')});
-   var target=document.getElementById(map[view]||'nflHomeView');if(target)target.style.setProperty('display','block','important');
+   var target=document.getElementById(map[view]||'nflHomeView');if(target){target.classList.remove('hidden-view');target.style.setProperty('display','block','important')}
    try{if(view==='home')window.renderReferenceHomeCards&&window.renderReferenceHomeCards();if(view==='research'){window.renderNFLResearch&&window.renderNFLResearch();window.renderNFLAnytimeTd&&window.renderNFLAnytimeTd()}if(view==='ranks')window.renderNFLRanks&&window.renderNFLRanks();if(view==='standings')window.renderNFLStandings&&window.renderNFLStandings()}catch(err){console.error('Desktop NFL route render',err)}
    window.scrollTo({top:0,behavior:'smooth'});
  }
