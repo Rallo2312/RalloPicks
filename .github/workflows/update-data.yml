@@ -80,3 +80,4 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "Auto-update MLB and NFL data"
           git push
+
