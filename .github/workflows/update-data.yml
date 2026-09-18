@@ -44,11 +44,13 @@ jobs:
         run: python scripts/update_arsenals.py
 
       - name: Update MLB moneylines
+        continue-on-error: true
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/update_odds.py
 
       - name: Update NFL matchups, rankings, and moneylines
+        continue-on-error: true
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/update_nfl.py
