@@ -2429,9 +2429,13 @@ document.getElementById('memberDialog').addEventListener('click',e=>{if(e.target
 <style id="desktop-view-visibility-fix">
 /* Desktop routing must override the base .hidden-view rule. */
 @media(min-width:761px){
-  #mlbResearchLayout:not([hidden]),#nflResearchLayout:not([hidden]){display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%!important;min-width:0!important}
-  #mlbResearchLayout>.left-col,#nflResearchLayout>.left-col{display:none!important}
-  #mlbResearchLayout .center-col,#nflResearchLayout .center-col{display:block!important;width:100%!important;min-width:0!important;min-height:520px!important;grid-column:1!important}
+  body .app>#mlbResearchLayout:not([hidden]),body .app>#nflResearchLayout:not([hidden]){
+    display:block!important;grid-column:2!important;grid-row:2!important;width:100%!important;min-width:0!important;max-width:none!important;margin:0!important;
+  }
+  body .app>#mlbResearchLayout>.left-col,body .app>#nflResearchLayout>.left-col{display:none!important}
+  body .app>#mlbResearchLayout>.center-col,body .app>#nflResearchLayout>.center-col{
+    display:block!important;position:relative!important;width:100%!important;min-width:0!important;max-width:none!important;min-height:520px!important;margin:0!important;grid-column:auto!important;
+  }
   #mlbHomeView,#myBoardView,#matchupsView,#moneylineView,#batterlabView,#batterRankingsView,#top20View,#strikeoutsView,
   #nflHomeView,#nflBoardView,#nflResearchView,#nflPlayersView,#nflRanksView,#nflMoneylineView,#nflStandingsView{visibility:visible!important}
 }
