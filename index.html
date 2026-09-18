@@ -107,6 +107,36 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 @media (min-width:1300px){
   .hr-matchup-spotlights{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* RalloPicks 2026 compact dashboard redesign */
+@media (min-width:900px){
+ body{background:radial-gradient(circle at 50% -20%,#123b2e 0,#06140f 48%,#030907 100%)}
+ .app{max-width:1600px!important;padding:8px 22px 38px!important}
+ .topbar{min-height:64px;padding:8px 12px!important;border:1px solid rgba(105,230,167,.12);border-radius:0 0 14px 14px}
+ .brand-logo{width:38px!important;height:38px!important}.brand h1{font-size:21px!important}.sub{font-size:9px!important}
+ .header-search-wrap{min-width:300px!important}
+ .hr-hub-section-label{margin:14px 0 7px!important;padding:8px 11px!important}
+ .hr-matchup-spotlights{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .hr-matchup-spotlight{margin:0!important;border-radius:13px!important;overflow:hidden}
+ .hr-matchup-head{padding:9px 11px!important;min-height:48px!important}.hr-matchup-head strong{font-size:15px!important}.hr-matchup-head span{font-size:9px!important}
+ .hr-matchup-scroll{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;overflow:visible!important;padding:8px!important}
+ .hr-spot-card{width:auto!important;min-width:0!important;min-height:0!important;padding:9px!important;border-radius:11px!important}
+ .hr-spot-label{font-size:8px!important;letter-spacing:.7px!important}
+ .hr-spot-player{margin-top:6px!important}.hr-spot-player .player-avatar{width:34px!important;height:34px!important}.hr-spot-player strong{font-size:11px!important}.hr-spot-player small{font-size:8px!important}
+ .hr-spot-score{margin-top:6px!important}.hr-spot-score b{font-size:20px!important}
+ .hr-verified-odds{padding:7px!important;margin-top:7px!important;border-radius:9px!important}.hr-verified-odds>b{font-size:7px!important}.hr-verified-odds strong{font-size:17px!important}.hr-verified-odds span{font-size:8px!important;line-height:1.35!important}
+ .r2-title{margin:12px 0 7px!important}.r2-matchup{padding:9px!important;margin:7px 0!important}.r2-edge-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;overflow:visible!important}.r2-edge{width:auto!important;max-width:none!important;flex:auto!important;padding:8px!important}
+ .hr-grid{gap:9px!important}.hr-list-row{border-radius:12px!important}
+ .r2-matrix{min-width:1100px!important}
+}
+@media (min-width:1400px){
+ .hr-matchup-spotlights{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media (max-width:899px){
+ .app{padding-left:10px!important;padding-right:10px!important}
+ .hr-matchup-scroll{scroll-snap-type:x mandatory!important}
+ .hr-spot-card{scroll-snap-align:start}
+}
 </style>
 <link rel="stylesheet" href="research-upgrades.css?v=0eee3d209c2eea84fa16e3d366069038630be51b">
 <style>
