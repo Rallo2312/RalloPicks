@@ -4,9 +4,9 @@ from pathlib import Path
 
 OUT=Path("data/pitcher-strikeouts.json"); OUT.parent.mkdir(parents=True,exist_ok=True)
 MLB="https://statsapi.mlb.com/api/v1"; TODAY=datetime.datetime.now(ZoneInfo("America/Chicago")).date(); YEAR=TODAY.year
-KEY=os.environ.get("SPORTSGAMEODDS_API_KEY")
+KEY=os.environ.get("ODDS_API_KEY")
 S=requests.Session(); S.headers.update({"User-Agent":"RalloPicks/1.0"})
-SGO_CACHE=Path(".cache/sportsgameodds-mlb-events.json")
+ODDS_BASE="https://api.the-odds-api.com/v4"
 
 def js(url,**params):
  r=S.get(url,params=params,timeout=45); r.raise_for_status(); return r.json()
@@ -37,12 +37,8 @@ def opponent_k(team_id):
  except: return {}
 def norm_name(v):
  return "".join(ch for ch in str(v or "").lower() if ch.isalnum())
-def provider_name(entity):
- parts=str(entity or "").replace("-","_").split("_")
- # SGO player IDs are commonly first_last_<number>_<league>
- while parts and (parts[-1].isdigit() or parts[-1].lower() in ("mlb","nfl","nba","nhl")): parts.pop()
- return " ".join(p.capitalize() for p in parts)
 def odds_lines():
+
  if not KEY:
   SGO_CACHE.parent.mkdir(parents=True,exist_ok=True)
   SGO_CACHE.write_text(json.dumps({"_fetchError":"SPORTSGAMEODDS_API_KEY is not set","data":[]}))
@@ -146,7 +142,7 @@ for day in sched.get("dates",[]):
    score=round(max(1,min(99,score)))
    lean=None
    if line is not None: lean="OVER" if score>=56 else ("UNDER" if score<=44 else "PASS")
-   rows.append({"id":pp["id"],"name":pp.get("fullName"),"team":team.get("abbreviation") or team.get("name"),"opponent":opp.get("abbreviation") or opp.get("name"),"gamePk":g.get("gamePk"),"gameDate":g.get("gameDate"),"line":line,"lineSource":lineinfo.get("book"),"bookLines":lineinfo.get("books",{}),"lineProvider":"SportsGameOdds" if line is not None else None,"l5Rate":rate(5),"l10Rate":rate(10),"seasonAvg":round(sum(ks)/len(ks),2) if ks else None,"recent5Avg":recent_avg,"recent":logs,"opponentK":oppk,"seasonPitching":sp,"avgPitchesL5":avg_pitches,"avgInningsL5":avg_innings,"h2hGames":len(h2h),"h2hAvgK":h2h_avg,"researchScore":score,"lean":lean})
+   rows.append({"id":pp["id"],"name":pp.get("fullName"),"team":team.get("abbreviation") or team.get("name"),"opponent":opp.get("abbreviation") or opp.get("name"),"gamePk":g.get("gamePk"),"gameDate":g.get("gameDate"),"line":line,"lineSource":lineinfo.get("book"),"bookLines":lineinfo.get("books",{}),"lineProvider":"The Odds API" if line is not None else None,"l5Rate":rate(5),"l10Rate":rate(10),"seasonAvg":round(sum(ks)/len(ks),2) if ks else None,"recent5Avg":recent_avg,"recent":logs,"opponentK":oppk,"seasonPitching":sp,"avgPitchesL5":avg_pitches,"avgInningsL5":avg_innings,"h2hGames":len(h2h),"h2hAvgK":h2h_avg,"researchScore":score,"lean":lean})
 rows.sort(key=lambda x:x.get("researchScore") or 0,reverse=True)
 for i,row in enumerate(rows,1):
  row["rank"]=i
