@@ -2,7 +2,7 @@ import datetime, json, os, time, requests, math
 from zoneinfo import ZoneInfo
 from pathlib import Path
 
-OUT=Path("data/pitcher-strikeouts.json"); OUT.parent.mkdir(parents=True,exist_ok=True)
+OUT=Path("data/pitcher-strikeouts.json"); HIST=Path("data/pitcher-k-history.json"); OUT.parent.mkdir(parents=True,exist_ok=True)
 MLB="https://statsapi.mlb.com/api/v1"; TODAY=datetime.datetime.now(ZoneInfo("America/Chicago")).date(); YEAR=TODAY.year
 KEY=os.environ.get("ODDS_API_KEY")
 S=requests.Session(); S.headers.update({"User-Agent":"RalloPicks/1.0"})
@@ -127,5 +127,39 @@ rows.sort(key=lambda x:x.get("researchScore") or 0,reverse=True)
 for i,row in enumerate(rows,1):
  row["rank"]=i
 OUT.write_text(json.dumps({"updated_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"season":YEAR,"methodology":"K skill + opponent K tendency + recent workload + recent K production vs current line; missing inputs neutral","rows":rows},indent=2))
-print("Wrote",OUT,"with",len(rows),"probable starters")
+print("Wrote",OUT,"with",len(rows),"probable starters")\n
+# Settle previously tracked K calls, then snapshot today's verified-line calls.
+try:
+ history={"version":1,"records":[]}
+ if HIST.exists():
+  history=json.loads(HIST.read_text())
+ records=history.get("records") or []
+ for rec in records:
+  if rec.get("status")!="pending": continue
+  try:
+   gd=datetime.date.fromisoformat(rec["date"])
+   if gd>=TODAY: continue
+   logs=game_logs(rec["pitcherId"])
+   game=next((x for x in logs if str(x.get("gamePk"))==str(rec.get("gamePk"))),None)
+   if not game: continue
+   actual=float(game.get("strikeouts") or 0); line=float(rec["line"]); lean=rec.get("lean")
+   if actual==line: status="push"
+   elif lean=="OVER": status="hit" if actual>line else "miss"
+   elif lean=="UNDER": status="hit" if actual<line else "miss"
+   else: status="pass"
+   rec.update({"status":status,"actualKs":actual,"settledAt":datetime.datetime.now(datetime.timezone.utc).isoformat()})
+  except Exception as ex: print("K settle warning",ex)
+ existing={r.get("key") for r in records}
+ for row in rows:
+  if row.get("line") is None or row.get("lean") not in ("OVER","UNDER"): continue
+  key=f"{TODAY.isoformat()}:{row.get('gamePk')}:{row.get('id')}:{row.get('line')}"
+  if key in existing: continue
+  records.append({"key":key,"date":TODAY.isoformat(),"gamePk":row.get("gamePk"),"gameDate":row.get("gameDate"),"pitcherId":row.get("id"),"name":row.get("name"),"team":row.get("team"),"opponent":row.get("opponent"),"line":row.get("line"),"lean":row.get("lean"),"researchScore":row.get("researchScore"),"lineSource":row.get("lineSource"),"status":"pending","recordedAt":datetime.datetime.now(datetime.timezone.utc).isoformat()})
+ history["records"]=records
+ history["updatedAt"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ HIST.write_text(json.dumps(history,indent=2))
+ print("Updated",HIST,"with",len(records),"tracked K calls")
+except Exception as e:
+ print("K history warning",e)
+
 
