@@ -1303,6 +1303,14 @@ input,select,.search-box{background:#090f1e!important;border-color:rgba(139,92,2
 #top20Rows .hr-list-estimate b,#top3HrRows .hr-list-estimate b{color:#67e8f9!important}
 #top20Rows .hr-list-details,#top3HrRows .hr-list-details{grid-column:1/-1;margin-top:0!important}
 @media(max-width:900px){#top20Rows .hr-list-row,#top3HrRows .hr-list-row{grid-template-columns:1fr 80px!important}#top20Rows .hr-list-stats,#top3HrRows .hr-list-stats{grid-column:1/-1;grid-template-columns:repeat(3,1fr)!important}}
+</style>\n<style id="rp-final-theme-v13">
+html,body,.app{background:#050814!important;background-image:radial-gradient(circle at 15% 0,rgba(91,33,182,.16),transparent 30%),radial-gradient(circle at 90% 10%,rgba(8,145,178,.12),transparent 28%)!important}
+.left-col,.left-col .panel,.reference-home-toolbar,.home-prop-lab,.hr-card,.k-card,.team-rank-section,.rank-game,.daily-rank-card,.nfl-player-card,.nfl-team-rank-card,.nfl-player-detail,.nfl-prop-panel,.hit-rate,.search-box,.prop-type-tabs button{background-color:#091020!important;background-image:linear-gradient(145deg,rgba(13,20,40,.98),rgba(6,10,22,.98))!important;border-color:rgba(139,92,246,.18)!important}
+:root{--green:#22d3ee!important;--yellow:#a78bfa!important}
+.rp-top-hr-hero{margin:8px 0 12px;padding:13px 15px;border-radius:15px;border:1px solid rgba(34,211,238,.28);background:linear-gradient(110deg,rgba(88,28,135,.32),rgba(8,47,73,.38),#090f20);box-shadow:0 0 30px rgba(99,102,241,.08)}
+.rp-hero-kicker{font-size:7px;font-weight:1000;letter-spacing:.13em;color:#67e8f9;margin-bottom:8px}.rp-hero-body{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:11px;align-items:center}.rp-hero-body .player-avatar{width:54px!important;height:54px!important}.rp-hero-copy h3,.rp-hero-body h3{margin:0;font-size:18px}.rp-hero-copy p,.rp-hero-body p{margin:4px 0;color:#94a3b8;font-size:9px}.rp-hero-signals{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.rp-hero-signals span{font-size:7px;padding:5px 7px;border-radius:999px;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.22);color:#c4b5fd}.rp-hero-score{font-size:27px;font-weight:1000;color:#67e8f9;text-align:center}.rp-hero-score small{display:block;font-size:6px;color:#94a3b8}
+#weatherCheckedStamp{display:none!important}
+@media(max-width:600px){.rp-top-hr-hero{padding:11px}.rp-hero-body{grid-template-columns:auto 1fr}.rp-hero-score{grid-column:1/-1;text-align:left;font-size:20px}.rp-hero-signals span{font-size:6px}}
 </style>\n</head>
 <body>
 <div class="app">
@@ -1427,7 +1435,7 @@ input,select,.search-box{background:#090f1e!important;border-color:rgba(139,92,2
   <div id="hrMatchupSpotlights"></div><div class="hr-hub-section-label"><div><b>🟩 Matchup Matrix</b><span>Heat-map view of today’s researched hitters • swipe on mobile</span></div></div><div id="hrMatchupMatrix"><div class="empty">Building today’s matchup matrix…</div></div>
   <div id="hrOddsBoard" class="hr-odds-board"><div class="empty">Loading verified HR odds…</div></div>
   <div class="hr-hub-section-label"><div><b>⭐ Top 3 Home Run Players of the Day</b><span>Highest-ranked eligible hitters from today’s remaining slate</span></div></div>
-  <div id="top3HrRows" class="hr-grid"><div class="empty">Researching today’s Top 3 HR players…</div></div>
+  <section id="rpTopHrHero" class="rp-top-hr-hero"><div class="rp-hero-kicker">👑 TOP HR PICK</div><div class="rp-hero-body"><div><h3>Researching today’s strongest HR setup…</h3><p>Waiting for verified slate, starter and lineup data.</p></div><div class="rp-hero-score">—<small>RALLO SCORE</small></div></div></section><div id="top3HrRows" class="hr-grid"><div class="empty">Researching today’s Top 3 HR players…</div></div>
   <div class="hr-hub-section-label"><div><b>🔥 Top 10 HR Candidates</b><span>Best overall model scores on the remaining slate</span></div></div>
   <div id="top20Rows" class="hr-grid"><div class="empty">Researching today’s best home run chances…</div></div>
   <div class="section-title sleeper-title"><div><h2>💎 Sleeper Finder</h2><span>3–5 under-the-radar HR spots from the full slate • skips the obvious Top 10 names</span></div><span>Model sleepers</span></div>
@@ -2300,6 +2308,7 @@ async function loadTop20HR(){await ensureHrModelData();
   const leaders=top.filter(x=>x.lineup?.status==='confirmed'&&!x.research?.pitcher?.missing&&x.contactQuality?.bbe>=50&&x.pa>=100).slice(0,3);
   const top3Root=document.getElementById('top3HrRows');
   if(top3Root)top3Root.innerHTML=leaders.length?leaders.map((x,i)=>renderHrListRow(x,i)).join(''):'<div class="empty">Waiting for confirmed lineups and sufficient matchup evidence.</div>';
+  const heroRoot=document.getElementById('rpTopHrHero'),heroPick=leaders[0]||top[0];if(heroRoot&&heroPick){const s=modelScoreForCandidate(heroPick),q=heroPick.contactQuality||{},pp=heroPick.research?.pitcher||{},od=heroPick.bestHrOdds||heroPick.verifiedOdds||'—';heroRoot.innerHTML='<div class="rp-hero-kicker">👑 TOP HR PICK • #1 RESEARCH RANK</div><div class="rp-hero-body">'+playerAvatar(heroPick.person.fullName,heroPick.person.id)+'<div class="rp-hero-copy"><h3>'+esc(heroPick.person.fullName)+'</h3><p>'+esc(heroPick.team?.abbreviation||'')+' • vs '+esc(heroPick.starterName||'TBD')+' • Verified HR odds '+esc(od)+'</p><div class="rp-hero-signals"><span>BARREL '+(q.barrelRate==null?'—':Number(q.barrelRate).toFixed(1)+'%')+'</span><span>HARD HIT '+(q.hardHitRate==null?'—':Number(q.hardHitRate).toFixed(1)+'%')+'</span><span>P HR/9 '+(pp.hr9==null?'—':Number(pp.hr9).toFixed(2))+'</span><span>L10 HR '+(heroPick.recentHR??'—')+'</span></div></div><div class="rp-hero-score">'+Number(s).toFixed(1)+'<small>RALLO SCORE</small></div></div>'}
   root.innerHTML=stamp+(top.map((x,i)=>renderHrListRow(x,i)).join('')||'<div class="empty">No researched Top 10 players remain eligible.</div>')+method;
   under.innerHTML=stamp+(other.map((x,i)=>renderHrListRow(x,i,true)).join('')||'<div class="empty">No researched Underrated players remain eligible.</div>');
   state.hrBoardReady=true;state.hrBoardChecked=Date.now();window.researchFresh?.('hr',feed.checkedAt);
