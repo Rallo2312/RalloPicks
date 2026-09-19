@@ -1284,6 +1284,12 @@ input,select,.search-box{background:#090f1e!important;border-color:rgba(139,92,2
 .rp-model-insights-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}.rp-model-insights-head h3{margin:0;font-size:13px}.rp-model-insights-head span{font-size:7px;color:#67e8f9;border:1px solid rgba(34,211,238,.25);padding:4px 7px;border-radius:999px}
 .rp-insight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.rp-insight{padding:9px;border-radius:10px;background:#090f1e;border:1px solid rgba(255,255,255,.06)}.rp-insight small{display:block;color:#94a3b8;font-size:7px}.rp-insight b{display:block;margin-top:3px;font-size:14px;color:#f8fafc}.rp-insight em{display:block;margin-top:2px;font-size:7px;color:#a78bfa;font-style:normal}
 @media(max-width:760px){.rp-insight-grid{grid-template-columns:repeat(2,1fr)}}
+</style>\n<style id="rp-insights-expanded-v10">
+#rpRankInsights{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+#rpRankInsights .rp-insight{position:relative;overflow:hidden}
+#rpRankInsights .rp-insight:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);opacity:.7}
+@media(max-width:1000px){#rpRankInsights{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:600px){#rpRankInsights{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 </style>\n</head>
 <body>
 <div class="app">
@@ -2787,7 +2793,7 @@ document.addEventListener('click',function(e){const b=e.target.closest('#rpBotto
 })();
 </script>
 <script id="rp-rank-insights-js">
-(async()=>{const host=document.getElementById('rpRankInsights');if(!host)return;try{const r=await fetch('data/hr-history.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw 0;const d=await r.json(),a=(d.records||[]).filter(x=>x.status==='hit'||x.status==='miss'),hits=a.filter(x=>x.status==='hit'),rate=x=>x.length?Math.round(x.filter(v=>v.status==='hit').length/x.length*100):null,hi=a.filter(x=>Number(x.trialScore||x.baseScore)>=75),bar=a.filter(x=>Number(x.contact?.barrelRate)>=12);host.innerHTML=[['TRACKED',a.length,'settled HR calls'],['HIT RATE',a.length?Math.round(hits.length/a.length*100)+'%':'—',hits.length+' hits'],['75+ SCORE',rate(hi)==null?'—':rate(hi)+'%',hi.length+' tracked'],['12%+ BARREL',rate(bar)==null?'—':rate(bar)+'%',bar.length+' tracked']].map(x=>'<div class="rp-insight"><small>'+x[0]+'</small><b>'+x[1]+'</b><em>'+x[2]+'</em></div>').join('')}catch(e){host.innerHTML='<div class="rp-insight"><small>MODEL HISTORY</small><b>—</b><em>Waiting for settled data</em></div>'}})();
+(async()=>{const host=document.getElementById('rpRankInsights');if(!host)return;try{const r=await fetch('data/hr-history.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw 0;const d=await r.json(),a=(d.records||[]).filter(x=>x.status==='hit'||x.status==='miss'),hits=a.filter(x=>x.status==='hit'),rate=x=>x.length?Math.round(x.filter(v=>v.status==='hit').length/x.length*100):null,hi=a.filter(x=>Number(x.trialScore||x.baseScore)>=75),bar=a.filter(x=>Number(x.contact?.barrelRate)>=12),hard=a.filter(x=>Number(x.contact?.hardHitRate)>=45),ev=a.filter(x=>Number(x.contact?.exitVelocity)>=90),recent=a.filter(x=>Number(x.recentHR||x.recentHr||0)>=2),pitch=a.filter(x=>Number(x.pitchMatch||x.breakdown?.pitchMatch||0)>=65),damage=a.filter(x=>Number(x.breakdown?.pitcherDamage||0)>=65);host.innerHTML=[['TRACKED',a.length,'settled HR calls'],['HIT RATE',a.length?Math.round(hits.length/a.length*100)+'%':'—',hits.length+' hits'],['75+ SCORE',rate(hi)==null?'—':rate(hi)+'%',hi.length+' tracked'],['12%+ BARREL',rate(bar)==null?'—':rate(bar)+'%',bar.length+' tracked'],['45%+ HARD HIT',rate(hard)==null?'—':rate(hard)+'%',hard.length+' tracked'],['90+ AVG EV',rate(ev)==null?'—':rate(ev)+'%',ev.length+' tracked'],['RECENT POWER',rate(recent)==null?'—':rate(recent)+'%',recent.length+' tracked'],['PITCH FIT',rate(pitch)==null?'—':rate(pitch)+'%',pitch.length+' tracked'],['PITCHER VULN.',rate(damage)==null?'—':rate(damage)+'%',damage.length+' tracked']].map(x=>'<div class="rp-insight"><small>'+x[0]+'</small><b>'+x[1]+'</b><em>'+x[2]+'</em></div>').join('')}catch(e){host.innerHTML='<div class="rp-insight"><small>MODEL HISTORY</small><b>—</b><em>Waiting for settled data</em></div>'}})();
 </script>\n</body>
 </html>
 
