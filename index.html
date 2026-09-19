@@ -2712,7 +2712,19 @@ document.addEventListener('click',function(e){const b=e.target.closest('#rpBotto
   hist.innerHTML=dates.slice(0,5).map(date=>{const rows=settled.filter(x=>x.date===date),h=rows.filter(x=>x.status==='hit').length;return '<div class="rp-history-row"><span>'+esc(date.slice(5))+'</span><b>'+h+' HR hit'+(h===1?'':'s')+' / '+rows.length+' tracked</b><span class="'+(h?'hit':'miss')+'">'+Math.round(h/rows.length*100)+'%</span></div>'}).join('');
  }catch(e){sum.innerHTML='<div class="empty">Model history will appear after tracked games settle.</div>';hist.innerHTML=''}
 })();
-</script>\n</body>
+</script>\n<script id="rp-k-model-tracker">
+(async function(){
+ const host=document.getElementById('rpModelHistory');if(!host)return;
+ try{
+  const r=await fetch('data/pitcher-k-history.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)return;
+  const d=await r.json(),settled=(d.records||[]).filter(x=>['hit','miss','push'].includes(x.status));
+  if(!settled.length)return;
+  const hits=settled.filter(x=>x.status==='hit').length,graded=settled.filter(x=>x.status!=='push').length,rate=graded?Math.round(hits/graded*100):0;
+  const box=document.createElement('div');box.className='rp-history-row';box.innerHTML='<span>PITCHER K</span><b>'+hits+' correct / '+graded+' graded calls</b><span class="'+(rate>=50?'hit':'miss')+'">'+rate+'%</span>';host.prepend(box);
+ }catch(e){}
+})();
+</script>
+</body>
 </html>
 
 
