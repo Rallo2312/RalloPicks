@@ -1262,6 +1262,17 @@ body:before{content:"";position:fixed;inset:-40%;pointer-events:none;z-index:-1;
 #batterRankingsView .note-box{font-size:7px!important;padding:7px 9px!important;margin-top:8px!important}
 @media(min-width:1200px){#dailyRankGames.rank-games{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 @media(max-width:760px){#batterRankingsView{padding:7px!important}#dailyRankGames.rank-games{grid-template-columns:1fr!important}#batterRankingsView .statcast-status-note span{display:none!important}#dailyRankGames .rank-game summary{padding:8px!important}#dailyRankGames .daily-rank-card{grid-template-columns:25px 32px minmax(0,1fr) 45px!important}}
+</style>\n<style id="rp-no-green-v8">
+/* Final palette override: remove legacy green/yellow from visible MLB UI */
+:root{--green:#22d3ee!important;--yellow:#a78bfa!important;--ink:#f8fafc!important;--muted:#94a3b8!important}
+body,.app{background-color:#060913!important}
+.topbar,.nav,.board,.panel,.membership-bar,.locked-dashboard,.home-prop-lab,.rank-game,.daily-rank-card,.nfl-player-card,.nfl-team-rank-card,.weather-edge-card,.hr-list-row,.hr-spot-card,.hr-matchup-spotlight,.r2-matrix-wrap,.rp-dashboard-v2,.rp-dash-card,.rp-results-v2,.rallo-quick-filterbar{background-color:#0b1020!important;background-image:linear-gradient(145deg,rgba(16,24,45,.98),rgba(8,12,25,.98))!important;border-color:rgba(139,92,246,.2)!important}
+button.active,.sport-switch button.active,.platform-switch button.active,.rank-view-tabs button.active,.range-tabs button.active{background:#17152f!important;color:#e9e5ff!important;border-color:rgba(139,92,246,.5)!important}
+.daily-score b,.fair-odds,.hit-rate b,.underrated-tag,.rallo-quick-filterbar button:first-child{color:#67e8f9!important}
+.daily-rank-number,.rank-game-count,.brand h1 em,.section-title h2,.hr-hub-section-label b{color:#c4b5fd!important}
+.statcast-status-note{background:rgba(34,211,238,.06)!important;border-color:rgba(34,211,238,.18)!important}
+.statcast-status-note b{color:#67e8f9!important}
+input,select,.search-box{background:#090f1e!important;border-color:rgba(139,92,246,.2)!important;color:#f8fafc!important}
 </style>\n</head>
 <body>
 <div class="app">
