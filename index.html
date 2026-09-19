@@ -161,6 +161,26 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 /* Full dashboard structure v2 */
 .rp-dashboard-v2{margin:0 0 14px}.rp-dash-hero{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border:1px solid rgba(105,230,167,.18);border-radius:16px;background:linear-gradient(135deg,#0c2a20,#071811 70%)}.rp-dash-hero small{font-size:9px;font-weight:1000;letter-spacing:.12em;color:var(--yellow)}.rp-dash-hero h2{font-size:26px;margin:3px 0}.rp-dash-hero p{margin:0;color:var(--muted);font-size:11px}.rp-dash-live{font-size:9px;font-weight:1000;color:var(--green);padding:7px 9px;border:1px solid rgba(105,230,167,.22);border-radius:999px}.rp-dash-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:9px 0}.rp-dash-actions button{display:grid;grid-template-columns:auto 1fr;text-align:left;column-gap:8px;align-items:center;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:#0b2018;color:#fff;padding:10px 12px;cursor:pointer}.rp-dash-actions button>span{grid-row:1/3;font-size:20px}.rp-dash-actions b{font-size:11px}.rp-dash-actions small{font-size:8px;color:var(--muted)}.rp-dash-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:9px}.rp-dash-card{border:1px solid rgba(255,255,255,.08);border-radius:14px;background:linear-gradient(145deg,#0b2119,#07150f);padding:11px;min-width:0}.rp-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.rp-card-head small{font-size:8px;color:var(--yellow);font-weight:1000}.rp-card-head h3{font-size:15px;margin:2px 0}.rp-card-head button{border:0;background:transparent;color:var(--yellow);font-size:9px;font-weight:1000}.rp-dash-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;padding:7px 5px;border-top:1px solid rgba(255,255,255,.06)}.rp-dash-row:first-child{border-top:0}.rp-dash-row .player-avatar{width:34px;height:34px}.rp-dash-row b{font-size:10px}.rp-dash-row small{display:block;font-size:8px;color:var(--muted)}.rp-dash-score{text-align:right;font-size:14px;font-weight:1000;color:var(--yellow)}
 @media(max-width:899px){.membership-bar,.locked-dashboard{display:none!important}.layout{grid-template-columns:1fr!important}.left-col{display:none!important}.rp-dashboard-v2{margin-top:2px}.rp-dash-hero{padding:13px 12px;border-radius:13px}.rp-dash-hero h2{font-size:20px}.rp-dash-hero p{font-size:9px}.rp-dash-live{display:none}.rp-dash-actions{grid-template-columns:repeat(2,1fr);gap:6px}.rp-dash-actions button{padding:9px}.rp-dash-grid{grid-template-columns:1fr}.rp-dash-card{padding:9px}.home-prop-lab{margin-top:10px!important}.app-main-nav{overflow-x:auto!important;white-space:nowrap!important;scrollbar-width:none}.app-main-nav button{flex:0 0 auto!important}}
+
+/* RalloPicks unified research UI v3 */
+@media (min-width:900px){
+ .layout{grid-template-columns:minmax(0,1fr)!important;gap:0!important}.left-col{display:none!important}.center-col{width:100%!important;max-width:none!important}
+ .board{padding:12px!important}.section-title{padding:8px 2px!important;margin:3px 0 8px!important}.section-title h2{font-size:17px!important}.section-title span{font-size:9px!important}
+ #strikeoutRows{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ #strikeoutRows .k-card{margin:0!important;border-radius:13px!important;padding:52px 11px 11px!important}
+ #top20Rows,#top3HrRows,#sleeperFinderRows{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+ #top20Rows .hr-list-row,#top3HrRows .hr-list-row,#sleeperFinderRows .hr-list-row{margin:0!important}
+ .rank-view-tabs{display:flex!important;gap:6px!important;margin-bottom:8px!important}.rank-view-tabs button{padding:8px 11px!important;font-size:9px!important}
+}
+@media(max-width:899px){
+ .center-col,.panel.center-col{border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important}
+ .board{padding:7px 0!important}
+ .section-title{padding:7px 2px!important;margin:2px 0 6px!important}.section-title h2{font-size:16px!important}.section-title span{font-size:8px!important}
+ #strikeoutRows{display:grid!important;grid-template-columns:1fr!important;gap:7px!important}
+ #strikeoutRows .k-card{margin:0!important;border-radius:12px!important;padding-left:10px!important;padding-right:10px!important}
+ #top20Rows,#top3HrRows,#sleeperFinderRows{grid-template-columns:1fr!important;gap:7px!important}
+ .rank-view-tabs{display:flex!important;overflow-x:auto!important;gap:5px!important}.rank-view-tabs button{flex:0 0 auto!important;padding:8px 10px!important;font-size:9px!important}
+}
 </style>
 <link rel="stylesheet" href="research-upgrades.css?v=0eee3d209c2eea84fa16e3d366069038630be51b">
 <style>
@@ -1175,7 +1195,7 @@ body .app [hidden]{display:none!important}
 @media (hover:none){.hr-mini[title]{cursor:pointer}}
 </style>
 <style id="power-gap-colors">.xhr-card .good-text>b,.xhr-card .good-text>span,.xhr-card .good-text>small{color:#39ff88!important}.xhr-card .bad-text>b,.xhr-card .bad-text>span,.xhr-card .bad-text>small{color:#ff5b67!important}.xhr-card .neutral-text>b,.xhr-card .neutral-text>span,.xhr-card .neutral-text>small{color:#fff!important}</style>
-</head>
+<style id="rp-personal-mode">.membership-bar,.locked-dashboard{display:none!important}</style>\n</head>
 <body>
 <div class="app">
   <header class="topbar">
@@ -1185,12 +1205,12 @@ body .app [hidden]{display:none!important}
   </header>
 
   <nav class="nav app-main-nav" id="mlbNav">
-    <button class="active" data-view="home">🏠 Home</button>
-    <button data-view="top20">🔥 HR Board</button>
-    <button data-view="strikeouts">⚾ Strikeouts</button>
+    <button class="active" data-view="home">🏠 Today</button>
+    <button data-view="top20">🔥 Research</button>
+    <button data-view="strikeouts">⚾ Pitchers</button>
     <button data-view="rankings">📊 Rankings</button>
     <button data-view="batterlab">🔎 Player Lab</button>
-    <button data-view="board">⭐ My Board</button>
+    <button data-view="board">⭐ Board</button>
     <button data-view="moneyline">💵 Moneyline</button>
   </nav>
   <nav class="nav app-main-nav" id="nflNav" hidden>
