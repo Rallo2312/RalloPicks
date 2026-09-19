@@ -186,6 +186,26 @@ button,input,select{font:inherit}.app{max-width:1500px;margin:auto;padding:12px 
 #batterlabView{max-width:1180px;margin:0 auto}.prop-type-tabs{display:flex;gap:6px;margin:4px 0 8px}.prop-type-tabs button{border:1px solid rgba(255,255,255,.08);background:#091b14;color:#9dafaa;border-radius:10px;padding:9px 12px;font-size:9px;font-weight:950}.prop-type-tabs button.active{background:rgba(231,255,65,.1);border-color:rgba(231,255,65,.35);color:#efff6a}.search-box{width:100%;box-sizing:border-box;background:#07140f!important;border:1px solid rgba(105,230,167,.2)!important;border-radius:12px!important;color:#fff!important;padding:12px 13px!important;font-size:12px!important}.search-results{border-radius:12px!important;overflow:hidden}.player-lab-card,.batter-lab-card,.lab-card{border-radius:14px!important;background:linear-gradient(145deg,#0b2119,#07150f)!important;border:1px solid rgba(255,255,255,.08)!important}.rallo-quick-filterbar{margin-top:8px!important;padding:7px!important;border:1px solid rgba(255,255,255,.06);border-radius:12px;background:#07140f}.rallo-quick-filterbar button{background:#0a2018!important;border-color:rgba(105,230,167,.12)!important;color:#b9c8c1!important}.rallo-quick-filterbar button:hover{color:#efff6a!important;border-color:rgba(231,255,65,.3)!important}
 .rp-results-v2{margin:10px 0;padding:12px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:linear-gradient(145deg,#0b2119,#07150f)}.rp-results-v2 .rp-card-head{margin:0}.rp-result-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.rp-result-chips button{border:1px solid rgba(105,230,167,.15);background:#091d16;color:#d6e4dc;border-radius:9px;padding:8px 10px;font-size:9px;font-weight:900}
 @media(max-width:899px){#batterlabView{padding:6px 0!important}.prop-type-tabs{overflow-x:auto}.prop-type-tabs button{flex:1;min-width:130px}.search-box{font-size:16px!important}.rallo-quick-filterbar{margin-left:0!important;margin-right:0!important}.rp-results-v2{padding:10px}.rp-result-chips{display:grid;grid-template-columns:repeat(2,1fr)}.rp-result-chips button{padding:9px 6px}}
+
+/* RalloPicks app finish v5: player detail, pitcher lab, mobile nav */
+#batterLabPlayer .lab-player-head,#batterLabPlayer .player-head,#batterLabPlayer .player-hero{border-radius:16px!important;background:linear-gradient(135deg,#0d2c21,#07160f)!important;border:1px solid rgba(105,230,167,.18)!important;padding:14px!important}
+#batterLabPlayer .player-avatar{border:2px solid rgba(231,255,65,.3)!important}
+#batterLabPlayer .stat-grid,#batterLabPlayer .metrics-grid,#batterLabPlayer .lab-grid{gap:7px!important}
+#batterLabPlayer .stat-card,#batterLabPlayer .metric-card,#batterLabPlayer .lab-stat{border-radius:11px!important;background:#091d16!important;border:1px solid rgba(255,255,255,.07)!important}
+#strikeoutRows .k-card{background:linear-gradient(145deg,#0b2119,#07150f)!important;border:1px solid rgba(105,230,167,.12)!important;box-shadow:none!important}
+#strikeoutRows .k-rank{background:rgba(231,255,65,.08)!important;border-color:rgba(231,255,65,.28)!important;color:#efff6a!important}
+#strikeoutRows .k-line,#strikeoutRows .k-proj,#strikeoutRows .k-lean{border-radius:10px!important}
+.app-bottom-nav{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+@media(max-width:899px){
+ .app{padding-bottom:86px!important}
+ .app-main-nav{display:none!important}
+ .app-bottom-nav{display:grid!important;position:fixed!important;left:8px!important;right:8px!important;bottom:8px!important;z-index:999!important;grid-template-columns:repeat(5,1fr)!important;background:rgba(4,17,12,.96)!important;border:1px solid rgba(105,230,167,.18)!important;border-radius:15px!important;padding:6px!important;box-shadow:0 12px 40px rgba(0,0,0,.5)!important}
+ .app-bottom-nav button{min-width:0!important;padding:7px 2px!important;border:0!important;background:transparent!important;color:#9fb1a8!important;font-size:16px!important}
+ .app-bottom-nav button span{display:block!important;font-size:7px!important;margin-top:2px!important;white-space:nowrap!important}
+ .app-bottom-nav button.active{background:rgba(231,255,65,.09)!important;color:#efff6a!important;border-radius:10px!important}
+ #batterLabPlayer .stat-grid,#batterLabPlayer .metrics-grid,#batterLabPlayer .lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #strikeoutRows .k-card{padding-top:54px!important}
+}
 </style>
 <link rel="stylesheet" href="research-upgrades.css?v=0eee3d209c2eea84fa16e3d366069038630be51b">
 <style>
@@ -1404,13 +1424,13 @@ body .app [hidden]{display:none!important}
     </section>
   </main>
 
-  <nav class="app-bottom-nav" id="appBottomNav" aria-label="App navigation">
-    <button data-app-route="home">🏠<span>Home</span></button>
-    <button data-app-route="research">🔥<span>Research</span></button>
-    <button data-app-route="lab">🔎<span>Lab</span></button>
-    <button data-app-route="board">⭐<span>Board</span></button>
-    <button data-app-route="results">📈<span>Results</span></button>
-  </nav>
+  <nav class="app-bottom-nav" id="rpBottomNav" aria-label="RalloPicks mobile navigation">
+<button class="active" data-rp-route="home" onclick="setSport('MLB');switchView('home')">🏠<span>TODAY</span></button>
+<button data-rp-route="top20" onclick="setSport('MLB');switchView('top20')">🔥<span>RESEARCH</span></button>
+<button data-rp-route="batterlab" onclick="setSport('MLB');switchView('batterlab')">🔎<span>LAB</span></button>
+<button data-rp-route="strikeouts" onclick="setSport('MLB');switchView('strikeouts')">⚾<span>PITCHERS</span></button>
+<button data-rp-route="board" onclick="setSport('MLB');switchView('board')">⭐<span>BOARD</span></button>
+</nav>
 
   <div id="siteLegalFooter"><div class="legal-strip"><strong>Independent sports research • Not a sportsbook • 21+ only</strong><div class="legal-links"><button onclick="showPolicy('terms')">Terms</button><button onclick="showPolicy('privacy')">Privacy</button><button onclick="showPolicy('responsible')">Responsible Play</button><button onclick="showPolicy('subscription')">Subscription & Refunds</button><button onclick="showPolicy('affiliate')">Affiliate Disclosure</button></div></div>
   <div class="footer-note">RalloPicks provides informational sports research only. It does not accept wagers, guarantee outcomes, or promise profits. Team and player names identify factual subjects only. RalloPicks is not affiliated with, sponsored by, or endorsed by Major League Baseball, the National Football League, their clubs, PrizePicks, Underdog, or any sportsbook.</div></div>
@@ -2675,7 +2695,9 @@ document.addEventListener('click',function(e){const card=e.target.closest('.hr-m
  setTimeout(renderDash,900);setTimeout(renderDash,2600);setInterval(renderDash,60000);
 })();
 </script>
-</body>
+<script id="rp-bottom-nav-sync">
+document.addEventListener('click',function(e){const b=e.target.closest('#rpBottomNav button');if(!b)return;document.querySelectorAll('#rpBottomNav button').forEach(x=>x.classList.remove('active'));b.classList.add('active')});
+</script>\n</body>
 </html>
 
 
