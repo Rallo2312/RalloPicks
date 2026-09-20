@@ -3778,8 +3778,10 @@
       },
       "contactCheckedAt": "2026-09-20T11:57:21.908662+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "miss",
+      "hr": 0,
+      "settledAt": "2026-09-20T20:42:39.688817+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/823570/boxscore"
     },
     {
       "key": "2026-09-20:824462:691718",
@@ -3805,8 +3807,10 @@
       },
       "contactCheckedAt": "2026-09-20T11:57:21.908662+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "hit",
+      "hr": 1,
+      "settledAt": "2026-09-20T20:42:39.688817+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/824462/boxscore"
     },
     {
       "key": "2026-09-20:825028:700250",
@@ -3967,8 +3971,10 @@
       },
       "contactCheckedAt": "2026-09-20T11:57:21.908662+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "miss",
+      "hr": 0,
+      "settledAt": "2026-09-20T20:42:39.688817+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/823329/boxscore"
     },
     {
       "key": "2026-09-20:825028:671277",
@@ -4156,9 +4162,11 @@
       },
       "contactCheckedAt": "2026-09-20T11:57:21.908662+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null
+      "status": "hit",
+      "hr": 1,
+      "settledAt": "2026-09-20T20:42:39.688817+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/823329/boxscore"
     }
   ],
-  "updatedAt": "2026-09-20T19:41:03.867191+00:00"
+  "updatedAt": "2026-09-20T20:42:39.688817+00:00"
 }
