@@ -31,5 +31,6 @@
     const next=event.key==='Home'?0:event.key==='End'?2:(i+(event.key==='ArrowRight'?1:2))%3;
     event.preventDefault();window.setSport(sports[next]);document.getElementById('sport'+sports[next]).focus();
   });
+  setInterval(()=>{if(document.getElementById('strikeoutsView')?.getBoundingClientRect().height && state.currentSport==='MLB')renderStrikeoutBoard();},60000);
   sync();
 })();
