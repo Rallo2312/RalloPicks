@@ -80,6 +80,8 @@ sched=js(f"{MLB}/schedule",sportId=1,date=TODAY.isoformat(),hydrate="probablePit
 lines=odds_lines(); rows=[]
 for day in sched.get("dates",[]):
  for g in day.get("games",[]):
+  if g.get("status", {}).get("abstractGameState") != "Preview": continue
+  if datetime.datetime.fromisoformat(g["gameDate"].replace("Z", "+00:00")) <= datetime.datetime.now(datetime.timezone.utc): continue
   teams=g.get("teams") or {}
   for side,opp_side in (("away","home"),("home","away")):
    slot=teams.get(side) or {}; pp=slot.get("probablePitcher") or {}
@@ -127,7 +129,7 @@ rows.sort(key=lambda x:x.get("researchScore") or 0,reverse=True)
 for i,row in enumerate(rows,1):
  row["rank"]=i
 OUT.write_text(json.dumps({"updated_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"season":YEAR,"methodology":"K skill + opponent K tendency + recent workload + recent K production vs current line; missing inputs neutral","rows":rows},indent=2))
-print("Wrote",OUT,"with",len(rows),"probable starters")\n
+print("Wrote",OUT,"with",len(rows),"probable starters")
 # Settle previously tracked K calls, then snapshot today's verified-line calls.
 try:
  history={"version":1,"records":[]}
