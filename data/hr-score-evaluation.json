@@ -1,7 +1,17 @@
 {
-  "updatedAt": "2026-09-23T02:08:01.962437+00:00",
+  "updatedAt": "2026-09-23T02:10:49.125853+00:00",
   "status": "collecting_prospective_results",
   "legacyRecordsExcluded": 176,
+  "experiments": {
+    "comparisons": {},
+    "rules": [
+      "Only frozen pregame challenger scores are evaluated; legacy records are excluded.",
+      "Confirmed lineups and at least four recorded candidates are required.",
+      "Baseline and challenger use the identical recorded pool; missing challenger inputs exclude the whole cohort.",
+      "Pending cohorts wait; void picks are not replaced. Dates and graded counts are shown alongside hits.",
+      "These are tests on published candidate pools, not all MLB hitters. No claim of improved accuracy or profitability; no automatic promotion."
+    ]
+  },
   "versions": {},
   "notes": [
     "Scores are research indices, not HR probabilities.",

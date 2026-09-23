@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['index.html', 'scripts/update_hr_tracking.py', 'scripts/hr_score_snapshot.cjs', 'scripts/hr_score_evaluation.py', '.github/workflows/hr-tracking.yml']
+    paths: ['index.html', 'scripts/update_hr_tracking.py', 'scripts/hr_score_snapshot.cjs', 'scripts/hr_score_evaluation.py', 'scripts/hr_experiment_evaluation.py', '.github/workflows/hr-tracking.yml']
   schedule:
     - cron: '35 * * * *'
 permissions:

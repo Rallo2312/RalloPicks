@@ -3,6 +3,7 @@ import json
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+from hr_experiment_evaluation import compare
 
 def evaluate(records):
     groups=defaultdict(list)
@@ -31,7 +32,7 @@ def evaluate(records):
         v['top3Hits']+=sum(r['status']=='hit' for r in top);v['top3Picks']+=len(top)
         v['poolHits']+=sum(r['status']=='hit' for r in graded);v['poolPicks']+=len(graded)
         v['cohorts'].append({'date':date,'board':board,'recordedCandidates':len(rows),'top3Hits':sum(r['status']=='hit' for r in top),'top3Graded':len(top)})
-    return {'updatedAt':datetime.now(timezone.utc).isoformat(),'status':'collecting_prospective_results','legacyRecordsExcluded':legacy,'versions':versions,'notes':['Scores are research indices, not HR probabilities.','Top three refers to the recorded board pool, not a complete market or a guaranteed published Top 3.','Pending cohorts are withheld; void top picks are not replaced after outcomes.','Different model versions are evaluated separately. No automatic promotion or claim of improved accuracy.','Pitch mix, weather and contact snapshots are stored for future factor tests; missing evidence remains missing.']}
+    return {'updatedAt':datetime.now(timezone.utc).isoformat(),'status':'collecting_prospective_results','legacyRecordsExcluded':legacy,'experiments':compare(records),'versions':versions,'notes':['Scores are research indices, not HR probabilities.','Top three refers to the recorded board pool, not a complete market or a guaranteed published Top 3.','Pending cohorts are withheld; void top picks are not replaced after outcomes.','Different model versions are evaluated separately. No automatic promotion or claim of improved accuracy.','Pitch mix, weather and contact snapshots are stored for future factor tests; missing evidence remains missing.']}
 
 if __name__=='__main__':
     root=Path(__file__).resolve().parents[1]

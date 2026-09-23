@@ -94,6 +94,8 @@ def main():
             record['modelVersion']=result['modelVersion']
             record['baseScore']=result['score']
             record['scoreContributions']=result['contributions']
+            record['scoreComponents']=result['components']
+            record['experiments']=result['experiments']
             # Old contact trial used a different base score: do not mix experiments.
             record['trialScore']=None
             record['evaluationCohort']='prospective-v2'
