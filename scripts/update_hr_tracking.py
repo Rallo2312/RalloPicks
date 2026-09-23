@@ -47,7 +47,7 @@ def main():
     existing={r['key'] for r in archive['records']}
     schedule=json.loads(get(f"{API}/schedule?sportId=1&date={feed['date']}&hydrate=probablePitcher"))
     games={g['gamePk']:g for date in schedule.get('dates',[]) for g in date['games']}
-    lineups={};active={}
+    lineups={};active={};new_records=[]
     for board in ('top10','underrated'):
         for rank,x in enumerate(feed.get(board,[]),1):
             key=f"{feed['date']}:{x['gamePk']}:{x['person']['id']}"
@@ -72,7 +72,31 @@ def main():
                 if num(x.get('score')) is not None:trial=x['score']*(1+change)
             if not upcoming(g):continue
             archive['records'].append({'key':key,'date':feed['date'],'gamePk':g['gamePk'],'gameDate':g['gameDate'],'playerId':pid,'teamId':team,'name':x['person']['fullName'],'board':board,'rank':rank,'recordedAt':datetime.now(timezone.utc).isoformat(),'lineup': 'confirmed' if order else 'pending','baseScore':x.get('score'),'trialScore':trial,'contact':q,'contactCheckedAt':quality['updatedAt'],'source':contact_url,'status':'pending','hr':None})
+            record=archive['records'][-1]
+            batting_order=players.get('ID'+str(pid),{}).get('battingOrder')
+            spot=int(str(batting_order)[0]) if batting_order and str(batting_order)[0] in '123456789' else None
+            inputs=dict(x)
+            inputs['lineup']={'status':'confirmed' if order else 'pending','spot':spot}
+            record['researchSnapshot']=inputs
+            record['researchCheckedAt']=feed.get('checkedAt')
+            record['publishedScore']=record['baseScore']
+            record['snapshotSchema']=2
+            new_records.append(record)
             existing.add(key)
+    # Freeze the exact browser scoring function and its inputs before outcomes.
+    # Legacy records are never backfilled with later research or relabeled.
+    if new_records:
+        calculated=json.loads(subprocess.check_output(
+            ['node',str(ROOT/'scripts/hr_score_snapshot.cjs'),str(ROOT/'index.html')],
+            input=json.dumps([r['researchSnapshot'] for r in new_records]).encode(),timeout=30))
+        if len(calculated)!=len(new_records):raise RuntimeError('Score snapshot count mismatch')
+        for record, result in zip(new_records,calculated):
+            record['modelVersion']=result['modelVersion']
+            record['baseScore']=result['score']
+            record['scoreContributions']=result['contributions']
+            # Old contact trial used a different base score: do not mix experiments.
+            record['trialScore']=None
+            record['evaluationCohort']='prospective-v2'
     # Settle from official final box scores; no PA is void, missing data stays pending.
     pending={r['gamePk'] for r in archive['records'] if r['status']=='pending'}
     for game_pk in pending:

@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['index.html', 'scripts/update_hr_tracking.py', '.github/workflows/hr-tracking.yml']
+    paths: ['index.html', 'scripts/update_hr_tracking.py', 'scripts/hr_score_snapshot.cjs', 'scripts/hr_score_evaluation.py', '.github/workflows/hr-tracking.yml']
   schedule:
     - cron: '35 * * * *'
 permissions:
@@ -19,13 +19,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Research and settle recorded selections
         run: python scripts/update_hr_tracking.py
+      - name: Evaluate frozen score versions
+        run: python scripts/hr_score_evaluation.py
       - name: Save research data
         run: |
           git config user.name 'rallopicks-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add data/hr-quality.json data/hr-history.json
+          git add data/hr-quality.json data/hr-history.json data/hr-score-evaluation.json
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh HR contact research and final results'
             git pull --rebase origin main
