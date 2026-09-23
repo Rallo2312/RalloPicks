@@ -62,7 +62,9 @@ def main():
                 if g['gamePk'] not in lineups:lineups[g['gamePk']]=json.loads(get(f"{API}/game/{g['gamePk']}/boxscore"))
                 players=lineups[g['gamePk']].get('teams',{}).get(side,{}).get('players',{})
                 order={p['person']['id'] for p in players.values() if p.get('battingOrder')}
-                if order and pid not in order:continue
+                # Wait to freeze new predictions until the starting lineup is confirmed.
+                # A pending morning snapshot must not prevent a later eligible snapshot.
+                if not order or pid not in order:continue
             except Exception:continue
             q=quality['players'].get(str(pid));trial=None
             if q and q['bbe'] is not None and q['bbe']>=100 and q['barrelRate'] is not None and q['hardHitRate'] is not None:
