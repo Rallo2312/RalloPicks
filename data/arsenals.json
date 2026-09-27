@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T13:25:19.961046+00:00",
+  "updated_at": "2026-09-27T17:24:12.218419+00:00",
   "season": 2026,
   "source": "Baseball Savant pitch arsenal + pitch movement leaderboards",
   "pitchers": {
@@ -48079,6 +48079,58 @@
           "avg": 1.0,
           "slg": 1.0,
           "hardHit": 0.0,
+          "homeRuns": null
+        }
+      ]
+    },
+    "656557": {
+      "pitches": [
+        {
+          "code": "SI",
+          "type": "Sinker",
+          "pitches": 298,
+          "usage": 39.8,
+          "velo": null,
+          "whiff": 15.3,
+          "avg": 0.253,
+          "slg": 0.533,
+          "hardHit": 47.0,
+          "homeRuns": null
+        },
+        {
+          "code": "ST",
+          "type": "Sweeper",
+          "pitches": 265,
+          "usage": 35.4,
+          "velo": null,
+          "whiff": 32.4,
+          "avg": 0.305,
+          "slg": 0.492,
+          "hardHit": 38.6,
+          "homeRuns": null
+        },
+        {
+          "code": "FS",
+          "type": "Split-Finger",
+          "pitches": 142,
+          "usage": 19.0,
+          "velo": null,
+          "whiff": 18.8,
+          "avg": 0.425,
+          "slg": 0.475,
+          "hardHit": 54.3,
+          "homeRuns": null
+        },
+        {
+          "code": "FF",
+          "type": "4-Seam Fastball",
+          "pitches": 44,
+          "usage": 5.9,
+          "velo": null,
+          "whiff": 12.5,
+          "avg": 0.6,
+          "slg": 1.4,
+          "hardHit": 50.0,
           "homeRuns": null
         }
       ]
@@ -115906,23 +115958,6 @@
         7
       ]
     },
-    "681508": {
-      "bbe": 9,
-      "avgEV": 87.5,
-      "hardHitPct": 33.3,
-      "barrelProxyPct": 22.2,
-      "hr": 1,
-      "bestPitchTypes": [
-        "SI",
-        "CU",
-        "FF"
-      ],
-      "hotZones": [
-        9,
-        8,
-        13
-      ]
-    },
     "655316": {
       "bbe": 23,
       "avgEV": 81.0,
@@ -117613,6 +117648,23 @@
       "hotZones": [
         13,
         5
+      ]
+    },
+    "681987": {
+      "bbe": 6,
+      "avgEV": 78.0,
+      "hardHitPct": 33.3,
+      "barrelProxyPct": 0.0,
+      "hr": 0,
+      "bestPitchTypes": [
+        "SI",
+        "CH",
+        "FF"
+      ],
+      "hotZones": [
+        11,
+        14,
+        12
       ]
     },
     "650402": {
