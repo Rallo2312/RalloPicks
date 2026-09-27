@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T20:44:18.094847+00:00",
+  "updatedAt": "2026-09-27T21:43:41.241136+00:00",
   "status": "collecting_prospective_results",
   "legacyRecordsExcluded": 176,
   "experiments": {
@@ -55,13 +55,21 @@
   },
   "versions": {
     "hr-evidence-813a3332e6c3": {
-      "completedCohorts": 0,
-      "pendingCohorts": 2,
-      "top3Hits": 0,
-      "top3Picks": 0,
-      "poolHits": 0,
-      "poolPicks": 0,
-      "cohorts": []
+      "completedCohorts": 1,
+      "pendingCohorts": 1,
+      "top3Hits": 2,
+      "top3Picks": 3,
+      "poolHits": 2,
+      "poolPicks": 3,
+      "cohorts": [
+        {
+          "date": "2026-09-27",
+          "board": "underrated",
+          "recordedCandidates": 3,
+          "top3Hits": 2,
+          "top3Graded": 3
+        }
+      ]
     }
   },
   "notes": [
