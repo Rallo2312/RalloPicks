@@ -6118,7 +6118,1372 @@
         }
       },
       "evaluationCohort": "prospective-v2"
+    },
+    {
+      "key": "2026-09-27:823408:656941",
+      "date": "2026-09-27",
+      "gamePk": 823408,
+      "gameDate": "2026-09-27T18:30:00Z",
+      "playerId": 656941,
+      "teamId": 143,
+      "name": "Kyle Schwarber",
+      "board": "top10",
+      "rank": 1,
+      "recordedAt": "2026-09-27T16:44:59.463100+00:00",
+      "lineup": "confirmed",
+      "baseScore": 76.1,
+      "trialScore": null,
+      "contact": {
+        "bbe": 364.0,
+        "barrelRate": 15.4,
+        "hardHitRate": 49.2,
+        "exitVelocity": 92.3,
+        "maxExitVelocity": 113.2,
+        "launchAngle": null
+      },
+      "contactCheckedAt": "2026-09-27T16:44:58.900176+00:00",
+      "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+      "status": "pending",
+      "hr": null,
+      "researchSnapshot": {
+        "person": {
+          "id": 656941,
+          "fullName": "Kyle Schwarber",
+          "link": "/api/v1/people/656941"
+        },
+        "team": {
+          "springLeague": {
+            "id": 115,
+            "name": "Grapefruit League",
+            "link": "/api/v1/league/115",
+            "abbreviation": "GL"
+          },
+          "allStarStatus": "N",
+          "id": 143,
+          "name": "Philadelphia Phillies",
+          "link": "/api/v1/teams/143",
+          "season": 2026,
+          "venue": {
+            "id": 2681,
+            "name": "Citizens Bank Park",
+            "link": "/api/v1/venues/2681"
+          },
+          "springVenue": {
+            "id": 2700,
+            "link": "/api/v1/venues/2700"
+          },
+          "teamCode": "phi",
+          "fileCode": "phi",
+          "abbreviation": "PHI",
+          "teamName": "Phillies",
+          "locationName": "Philadelphia",
+          "firstYearOfPlay": "1883",
+          "league": {
+            "id": 104,
+            "name": "National League",
+            "link": "/api/v1/league/104"
+          },
+          "division": {
+            "id": 204,
+            "name": "National League East",
+            "link": "/api/v1/divisions/204"
+          },
+          "sport": {
+            "id": 1,
+            "link": "/api/v1/sports/1",
+            "name": "Major League Baseball"
+          },
+          "shortName": "Philadelphia",
+          "franchiseName": "Philadelphia",
+          "clubName": "Phillies",
+          "active": true
+        },
+        "gamePk": 823408,
+        "gameDate": "2026-09-27T19:05:00Z",
+        "score": 74.3,
+        "chance": null,
+        "reason": "45 season HR in 696 PA; 0 HR in prior 10 games; opposing starter 1.12 HR/9; 30 HR in 438 PA vs RHP",
+        "recentHR": 0,
+        "hr": 45,
+        "pa": 696,
+        "starterId": 607259,
+        "starterName": "Nick Martinez",
+        "oppName": "Tampa Bay Rays",
+        "hr9": 1.1165413533834585,
+        "venue": "Citizens Bank Park",
+        "lineup": {
+          "status": "confirmed",
+          "spot": 2
+        },
+        "lineupSpot": null,
+        "pitchLabel": "Pitch arsenal researched",
+        "weather": {
+          "factor": 1.0184056000000001,
+          "label": "Pitcher-friendly",
+          "tone": "pitcher",
+          "temperature": 63,
+          "windSpeed": 17,
+          "windDirection": "N",
+          "windFlow": "Blowing in",
+          "precipitation": 16,
+          "roof": "Open",
+          "coords": {
+            "latitude": 39.90539086,
+            "longitude": -75.16716957
+          },
+          "source": "https://api.open-meteo.com/v1/forecast?latitude=39.90539086&longitude=-75.16716957&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2"
+        },
+        "research": {
+          "profile": {
+            "recentHR": 0,
+            "recentTB": 5,
+            "windows": [
+              {
+                "window": 5,
+                "n": 5,
+                "hr": 0,
+                "hrGames": 0,
+                "tb": 3
+              },
+              {
+                "window": 10,
+                "n": 10,
+                "hr": 0,
+                "hrGames": 0,
+                "tb": 5
+              },
+              {
+                "window": 20,
+                "n": 20,
+                "hr": 5,
+                "hrGames": 5,
+                "tb": 30
+              }
+            ],
+            "source": "https://statsapi.mlb.com/api/v1/people/656941/stats?stats=season,gameLog,statSplits&group=hitting&season=2026&sitCodes=vr,vl"
+          },
+          "pitcher": {
+            "hr9": 1.1165413533834585,
+            "missing": false,
+            "era": 2.94,
+            "hand": "R",
+            "ip": 177.33333333333334,
+            "lastStarts": {
+              "n": 5,
+              "hr": 5,
+              "outs": 89,
+              "hr9": 1.5168539325842696
+            },
+            "source": "https://statsapi.mlb.com/api/v1/people/607259/stats?stats=season,gameLog&group=pitching&season=2026"
+          },
+          "split": {
+            "hand": "R",
+            "pa": 438,
+            "hr": 30,
+            "slg": 0.49171270718232046
+          },
+          "h2h": {
+            "ab": 5,
+            "pa": 6,
+            "hr": 1,
+            "slg": "1.000",
+            "source": "https://statsapi.mlb.com/api/v1/people/656941/stats?stats=vsPlayer&group=hitting&opposingPlayerId=607259"
+          },
+          "checkedAt": 1790507850824,
+          "pitchData": true
+        },
+        "sources": [
+          "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-27&hydrate=probablePitcher,team,venue(location,fieldInfo)",
+          "https://statsapi.mlb.com/api/v1/teams/143/roster?rosterType=active",
+          "https://www.mlb.com/injury-report",
+          "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+          "https://api.open-meteo.com/v1/forecast?latitude=39.90539086&longitude=-75.16716957&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2",
+          "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year=2026&min=1&minPitches=1&csv=true",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year=2026&min=1&minPitches=1&csv=true",
+          "https://www.mlb.com/news/baseball-injury-updates",
+          "https://www.mlb.com/probable-pitchers"
+        ],
+        "baseScore": 72.52048988913403,
+        "pitchFit": {
+          "factor": 1.0705076500000001,
+          "label": "Balanced pitch mix",
+          "weightedSlugging": 0.623005,
+          "weightedHardHit": 54.3467,
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00"
+        },
+        "marketCrossCheck": null,
+        "contactQuality": {
+          "bbe": 364,
+          "barrelRate": 15.4,
+          "hardHitRate": 49.2,
+          "exitVelocity": 92.3,
+          "maxExitVelocity": 113.2,
+          "launchAngle": null,
+          "scope": "2026 season",
+          "checkedAt": "2026-09-27T10:44:15.649522+00:00",
+          "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true"
+        },
+        "contextNote": "Active roster and probable starter checked for 2026-09-27; starting lineup and batting order remain pending. Forecast: 63°F, 17 mph Blowing in, 16% precipitation. The current sample-adjusted site score determines ranking; pitch mix and park/weather are contextual evidence. Bullpen availability is not scored because verified same-day relief usage was unavailable. Verified same-slate odds are used only as a small market cross-check where a player and game-time match was available; no betting-price value edge is claimed. A matching same-slate odds snapshot was unavailable for this player. Season contact: 15.4% barrels, 49.2% hard-hit, 92.3 mph average exit velocity over 364 batted-ball events. A fully current recent-window Statcast refresh was unavailable; L5/L10/L20 HR results are separate completed-game samples. Pitch-type context (2026 season): Sinker 31.7% usage; hitter 0.681 SLG over 111 PA, 50.7% hard-hit. Changeup 25.9% usage; hitter 0.519 SLG over 62 PA, 56% hard-hit. Cutter 21.8% usage; hitter 0.775 SLG over 45 PA, 59.4% hard-hit. Small pitch-type samples are descriptive, not predictive; no pitch-type score adjustment. Dated recent-contact snapshot (2026-09-26T21:25:19.416958+00:00): 29 tracked batted balls from that feed’s 21-day query, 86.1 mph average exit velocity and 27.6% hard-hit. This snapshot is context only and does not boost the ranking. Dated opposing-pitcher snapshot: 1 HR and 12.5% hard-hit across 32 tracked batted balls. Limited sample; context only.",
+        "news": {
+          "supporting": [
+            "5 of 20 prior completed games included a homer (5 total HR). Historical results are not a probability forecast.",
+            "Season barrel rate 15.4% across 364 batted balls."
+          ],
+          "warnings": [
+            "Final-day starting lineup and batting order pending; recheck before using this selection because teams may rest regulars.",
+            "Current same-game HR odds unavailable; no betting-value claim."
+          ],
+          "checkedAt": "2026-09-27T11:22:04.619Z"
+        },
+        "recentContactSnapshot": {
+          "bbe": 29,
+          "avgEV": 86.1,
+          "hardHitPct": 27.6,
+          "barrelProxyPct": 6.9,
+          "hr": 0,
+          "bestPitchTypes": [
+            "FF",
+            "SI",
+            "FC"
+          ],
+          "hotZones": [
+            11,
+            5,
+            4
+          ],
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00",
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json"
+        },
+        "valid": true,
+        "statusCheckedAt": "2026-09-27T11:22:26.041Z"
+      },
+      "researchCheckedAt": "2026-09-27T11:23:55.602Z",
+      "publishedScore": 74.3,
+      "snapshotSchema": 2,
+      "modelVersion": "hr-evidence-813a3332e6c3",
+      "scoreContributions": [
+        "Season HR/PA +10.8",
+        "Barrels +4.6",
+        "Handedness HR/PA +7.2",
+        "Starter HR tendency -0.2",
+        "Recent HR games +2.0",
+        "Batting order +1.8"
+      ],
+      "scoreComponents": {
+        "Season HR/PA": 10.767857142857142,
+        "Barrels": 4.644137931034483,
+        "Handedness HR/PA": 7.168367346938776,
+        "Starter HR tendency": -0.20879765395894462,
+        "Recent HR games": 1.9500000000000002,
+        "Batting order": 1.7999999999999998
+      },
+      "experiments": {
+        "no-streak-v1": {
+          "version": "no-streak-v1-5aacce906c08",
+          "score": 74.2,
+          "exclusions": []
+        },
+        "contact-first-v1": {
+          "version": "contact-first-v1-656b05a846c0",
+          "score": 69.8,
+          "exclusions": []
+        }
+      },
+      "evaluationCohort": "prospective-v2"
+    },
+    {
+      "key": "2026-09-27:824542:696100",
+      "date": "2026-09-27",
+      "gamePk": 824542,
+      "gameDate": "2026-09-27T19:10:00Z",
+      "playerId": 696100,
+      "teamId": 115,
+      "name": "Hunter Goodman",
+      "board": "top10",
+      "rank": 5,
+      "recordedAt": "2026-09-27T16:44:59.777630+00:00",
+      "lineup": "confirmed",
+      "baseScore": 73.7,
+      "trialScore": null,
+      "contact": {
+        "bbe": 346.0,
+        "barrelRate": 14.5,
+        "hardHitRate": 44.2,
+        "exitVelocity": 89.7,
+        "maxExitVelocity": 116.2,
+        "launchAngle": null
+      },
+      "contactCheckedAt": "2026-09-27T16:44:58.900176+00:00",
+      "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+      "status": "pending",
+      "hr": null,
+      "researchSnapshot": {
+        "person": {
+          "id": 696100,
+          "fullName": "Hunter Goodman",
+          "link": "/api/v1/people/696100"
+        },
+        "team": {
+          "springLeague": {
+            "id": 114,
+            "name": "Cactus League",
+            "link": "/api/v1/league/114",
+            "abbreviation": "CL"
+          },
+          "allStarStatus": "N",
+          "id": 115,
+          "name": "Colorado Rockies",
+          "link": "/api/v1/teams/115",
+          "season": 2026,
+          "venue": {
+            "id": 19,
+            "name": "Coors Field",
+            "link": "/api/v1/venues/19"
+          },
+          "springVenue": {
+            "id": 4249,
+            "link": "/api/v1/venues/4249"
+          },
+          "teamCode": "col",
+          "fileCode": "col",
+          "abbreviation": "COL",
+          "teamName": "Rockies",
+          "locationName": "Denver",
+          "firstYearOfPlay": "1992",
+          "league": {
+            "id": 104,
+            "name": "National League",
+            "link": "/api/v1/league/104"
+          },
+          "division": {
+            "id": 203,
+            "name": "National League West",
+            "link": "/api/v1/divisions/203"
+          },
+          "sport": {
+            "id": 1,
+            "link": "/api/v1/sports/1",
+            "name": "Major League Baseball"
+          },
+          "shortName": "Colorado",
+          "franchiseName": "Colorado",
+          "clubName": "Rockies",
+          "active": true
+        },
+        "gamePk": 824542,
+        "gameDate": "2026-09-27T19:10:00Z",
+        "score": 72.5,
+        "chance": null,
+        "reason": "41 season HR in 570 PA; 4 HR in prior 10 games; opposing starter 1.24 HR/9; 12 HR in 186 PA vs LHP",
+        "recentHR": 4,
+        "hr": 41,
+        "pa": 570,
+        "starterId": 641743,
+        "starterName": "Anthony Kay",
+        "oppName": "Chicago White Sox",
+        "hr9": 1.2352941176470589,
+        "venue": "Rate Field",
+        "lineup": {
+          "status": "confirmed",
+          "spot": 3
+        },
+        "lineupSpot": null,
+        "pitchLabel": "Pitch arsenal researched",
+        "weather": {
+          "factor": 0.98794,
+          "label": "Neutral conditions",
+          "tone": "neutral",
+          "temperature": 63.3,
+          "windSpeed": 7.3,
+          "windDirection": "NE",
+          "windFlow": "Crosswind",
+          "precipitation": 0,
+          "roof": "Open",
+          "coords": {
+            "latitude": 41.83,
+            "longitude": -87.634167
+          },
+          "source": "https://api.open-meteo.com/v1/forecast?latitude=41.83&longitude=-87.634167&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2"
+        },
+        "research": {
+          "profile": {
+            "recentHR": 4,
+            "recentTB": 28,
+            "windows": [
+              {
+                "window": 5,
+                "n": 5,
+                "hr": 2,
+                "hrGames": 1,
+                "tb": 13
+              },
+              {
+                "window": 10,
+                "n": 10,
+                "hr": 4,
+                "hrGames": 3,
+                "tb": 28
+              },
+              {
+                "window": 20,
+                "n": 20,
+                "hr": 5,
+                "hrGames": 4,
+                "tb": 37
+              }
+            ],
+            "source": "https://statsapi.mlb.com/api/v1/people/696100/stats?stats=season,gameLog,statSplits&group=hitting&season=2026&sitCodes=vr,vl"
+          },
+          "pitcher": {
+            "hr9": 1.2352941176470589,
+            "missing": false,
+            "era": 4.53,
+            "hand": "L",
+            "ip": 153,
+            "lastStarts": {
+              "n": 5,
+              "hr": 3,
+              "outs": 63,
+              "hr9": 1.2857142857142858
+            },
+            "source": "https://statsapi.mlb.com/api/v1/people/641743/stats?stats=season,gameLog&group=pitching&season=2026"
+          },
+          "split": {
+            "hand": "L",
+            "pa": 186,
+            "hr": 12,
+            "slg": 0.5212121212121212
+          },
+          "h2h": null,
+          "checkedAt": 1790507877894,
+          "pitchData": true
+        },
+        "sources": [
+          "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-27&hydrate=probablePitcher,team,venue(location,fieldInfo)",
+          "https://statsapi.mlb.com/api/v1/teams/115/roster?rosterType=active",
+          "https://www.mlb.com/injury-report",
+          "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+          "https://api.open-meteo.com/v1/forecast?latitude=41.83&longitude=-87.634167&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2",
+          "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year=2026&min=1&minPitches=1&csv=true",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year=2026&min=1&minPitches=1&csv=true",
+          "https://www.mlb.com/news/baseball-injury-updates",
+          "https://www.mlb.com/probable-pitchers"
+        ],
+        "baseScore": 77.97122510822511,
+        "pitchFit": {
+          "factor": 1.01981488,
+          "label": "Balanced pitch mix",
+          "weightedSlugging": 0.532941,
+          "weightedHardHit": 40.5542,
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00"
+        },
+        "marketCrossCheck": null,
+        "contactQuality": {
+          "bbe": 346,
+          "barrelRate": 14.5,
+          "hardHitRate": 44.2,
+          "exitVelocity": 89.7,
+          "maxExitVelocity": 116.2,
+          "launchAngle": null,
+          "scope": "2026 season",
+          "checkedAt": "2026-09-27T10:44:15.649522+00:00",
+          "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true"
+        },
+        "contextNote": "Active roster and probable starter checked for 2026-09-27; starting lineup and batting order remain pending. Forecast: 63°F, 7 mph Crosswind, 0% precipitation. The current sample-adjusted site score determines ranking; pitch mix and park/weather are contextual evidence. Bullpen availability is not scored because verified same-day relief usage was unavailable. Verified same-slate odds are used only as a small market cross-check where a player and game-time match was available; no betting-price value edge is claimed. A matching same-slate odds snapshot was unavailable for this player. Season contact: 14.5% barrels, 44.2% hard-hit, 89.7 mph average exit velocity over 346 batted-ball events. A fully current recent-window Statcast refresh was unavailable; L5/L10/L20 HR results are separate completed-game samples. Pitch-type context (2026 season): Sweeper 23.4% usage; hitter 0.344 SLG over 64 PA, 28.6% hard-hit. 4-Seam Fastball 21.8% usage; hitter 0.48 SLG over 168 PA, 54.9% hard-hit. Sinker 17.9% usage; hitter 0.812 SLG over 80 PA, 50% hard-hit. Small pitch-type samples are descriptive, not predictive; no pitch-type score adjustment. Dated recent-contact snapshot (2026-09-26T21:25:19.416958+00:00): 30 tracked batted balls from that feed’s 21-day query, 77.3 mph average exit velocity and 13.3% hard-hit. This snapshot is context only and does not boost the ranking. Dated opposing-pitcher snapshot: 1 HR and 31.8% hard-hit across 22 tracked batted balls. Limited sample; context only.",
+        "news": {
+          "supporting": [
+            "4 of 20 prior completed games included a homer (5 total HR). Historical results are not a probability forecast.",
+            "Season barrel rate 14.5% across 346 batted balls."
+          ],
+          "warnings": [
+            "Final-day starting lineup and batting order pending; recheck before using this selection because teams may rest regulars.",
+            "Current same-game HR odds unavailable; no betting-value claim."
+          ],
+          "checkedAt": "2026-09-27T11:22:04.620Z"
+        },
+        "recentContactSnapshot": {
+          "bbe": 30,
+          "avgEV": 77.3,
+          "hardHitPct": 13.3,
+          "barrelProxyPct": 6.7,
+          "hr": 0,
+          "bestPitchTypes": [
+            "FF",
+            "SL",
+            "CH"
+          ],
+          "hotZones": [
+            1,
+            14,
+            5
+          ],
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00",
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json"
+        },
+        "valid": true,
+        "statusCheckedAt": "2026-09-27T11:23:07.911Z"
+      },
+      "researchCheckedAt": "2026-09-27T11:23:55.602Z",
+      "publishedScore": 72.5,
+      "snapshotSchema": 2,
+      "modelVersion": "hr-evidence-813a3332e6c3",
+      "scoreContributions": [
+        "Season HR/PA +12.0",
+        "Barrels +4.0",
+        "Handedness HR/PA +4.8",
+        "Starter HR tendency +0.5",
+        "Recent HR games +1.2",
+        "Batting order +1.2"
+      ],
+      "scoreComponents": {
+        "Season HR/PA": 12,
+        "Barrels": 4.03408071748879,
+        "Handedness HR/PA": 4.776785714285714,
+        "Starter HR tendency": 0.5142857142857151,
+        "Recent HR games": 1.2000000000000002,
+        "Batting order": 1.2
+      },
+      "experiments": {
+        "no-streak-v1": {
+          "version": "no-streak-v1-5aacce906c08",
+          "score": 72.5,
+          "exclusions": []
+        },
+        "contact-first-v1": {
+          "version": "contact-first-v1-656b05a846c0",
+          "score": 68.2,
+          "exclusions": []
+        }
+      },
+      "evaluationCohort": "prospective-v2"
+    },
+    {
+      "key": "2026-09-27:823408:691406",
+      "date": "2026-09-27",
+      "gamePk": 823408,
+      "gameDate": "2026-09-27T18:30:00Z",
+      "playerId": 691406,
+      "teamId": 139,
+      "name": "Junior Caminero",
+      "board": "top10",
+      "rank": 6,
+      "recordedAt": "2026-09-27T16:44:59.891738+00:00",
+      "lineup": "confirmed",
+      "baseScore": 73.1,
+      "trialScore": null,
+      "contact": {
+        "bbe": 489.0,
+        "barrelRate": 13.1,
+        "hardHitRate": 49.6,
+        "exitVelocity": 92.7,
+        "maxExitVelocity": 116.9,
+        "launchAngle": null
+      },
+      "contactCheckedAt": "2026-09-27T16:44:58.900176+00:00",
+      "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+      "status": "pending",
+      "hr": null,
+      "researchSnapshot": {
+        "person": {
+          "id": 691406,
+          "fullName": "Junior Caminero",
+          "link": "/api/v1/people/691406"
+        },
+        "team": {
+          "springLeague": {
+            "id": 115,
+            "name": "Grapefruit League",
+            "link": "/api/v1/league/115",
+            "abbreviation": "GL"
+          },
+          "allStarStatus": "N",
+          "id": 139,
+          "name": "Tampa Bay Rays",
+          "link": "/api/v1/teams/139",
+          "season": 2026,
+          "venue": {
+            "id": 12,
+            "name": "Tropicana Field",
+            "link": "/api/v1/venues/12"
+          },
+          "springVenue": {
+            "id": 2534,
+            "link": "/api/v1/venues/2534"
+          },
+          "teamCode": "tba",
+          "fileCode": "tb",
+          "abbreviation": "TB",
+          "teamName": "Rays",
+          "locationName": "St. Petersburg",
+          "firstYearOfPlay": "1996",
+          "league": {
+            "id": 103,
+            "name": "American League",
+            "link": "/api/v1/league/103"
+          },
+          "division": {
+            "id": 201,
+            "name": "American League East",
+            "link": "/api/v1/divisions/201"
+          },
+          "sport": {
+            "id": 1,
+            "link": "/api/v1/sports/1",
+            "name": "Major League Baseball"
+          },
+          "shortName": "Tampa Bay",
+          "franchiseName": "Tampa Bay",
+          "clubName": "Rays",
+          "active": true
+        },
+        "gamePk": 823408,
+        "gameDate": "2026-09-27T19:05:00Z",
+        "score": 71.9,
+        "chance": null,
+        "reason": "42 season HR in 700 PA; 1 HR in prior 10 games; opposing starter 1.15 HR/9; 34 HR in 505 PA vs RHP",
+        "recentHR": 1,
+        "hr": 42,
+        "pa": 700,
+        "starterId": 554430,
+        "starterName": "Zack Wheeler",
+        "oppName": "Philadelphia Phillies",
+        "hr9": 1.1538461538461537,
+        "venue": "Citizens Bank Park",
+        "lineup": {
+          "status": "confirmed",
+          "spot": 3
+        },
+        "lineupSpot": null,
+        "pitchLabel": "Pitch arsenal researched",
+        "weather": {
+          "factor": 1.0184056000000001,
+          "label": "Pitcher-friendly",
+          "tone": "pitcher",
+          "temperature": 63,
+          "windSpeed": 17,
+          "windDirection": "N",
+          "windFlow": "Blowing in",
+          "precipitation": 16,
+          "roof": "Open",
+          "coords": {
+            "latitude": 39.90539086,
+            "longitude": -75.16716957
+          },
+          "source": "https://api.open-meteo.com/v1/forecast?latitude=39.90539086&longitude=-75.16716957&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2"
+        },
+        "research": {
+          "profile": {
+            "recentHR": 1,
+            "recentTB": 14,
+            "windows": [
+              {
+                "window": 5,
+                "n": 5,
+                "hr": 1,
+                "hrGames": 1,
+                "tb": 8
+              },
+              {
+                "window": 10,
+                "n": 10,
+                "hr": 1,
+                "hrGames": 1,
+                "tb": 14
+              },
+              {
+                "window": 20,
+                "n": 20,
+                "hr": 5,
+                "hrGames": 5,
+                "tb": 38
+              }
+            ],
+            "source": "https://statsapi.mlb.com/api/v1/people/691406/stats?stats=season,gameLog,statSplits&group=hitting&season=2026&sitCodes=vr,vl"
+          },
+          "pitcher": {
+            "hr9": 1.1538461538461537,
+            "missing": false,
+            "era": 3.06,
+            "hand": "R",
+            "ip": 156,
+            "lastStarts": {
+              "n": 5,
+              "hr": 1,
+              "outs": 95,
+              "hr9": 0.28421052631578947
+            },
+            "source": "https://statsapi.mlb.com/api/v1/people/554430/stats?stats=season,gameLog&group=pitching&season=2026"
+          },
+          "split": {
+            "hand": "R",
+            "pa": 505,
+            "hr": 34,
+            "slg": 0.5382932166301969
+          },
+          "h2h": {
+            "ab": 6,
+            "pa": 6,
+            "hr": 0,
+            "slg": ".167",
+            "source": "https://statsapi.mlb.com/api/v1/people/691406/stats?stats=vsPlayer&group=hitting&opposingPlayerId=554430"
+          },
+          "checkedAt": 1790507863414,
+          "pitchData": true
+        },
+        "sources": [
+          "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-27&hydrate=probablePitcher,team,venue(location,fieldInfo)",
+          "https://statsapi.mlb.com/api/v1/teams/139/roster?rosterType=active",
+          "https://www.mlb.com/injury-report",
+          "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+          "https://api.open-meteo.com/v1/forecast?latitude=39.90539086&longitude=-75.16716957&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2",
+          "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year=2026&min=1&minPitches=1&csv=true",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year=2026&min=1&minPitches=1&csv=true",
+          "https://www.mlb.com/news/baseball-injury-updates",
+          "https://www.mlb.com/probable-pitchers"
+        ],
+        "baseScore": 71.97837605754836,
+        "pitchFit": {
+          "factor": 1.0607894900000001,
+          "label": "Balanced pitch mix",
+          "weightedSlugging": 0.5768679999999999,
+          "weightedHardHit": 53.78130000000001,
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00"
+        },
+        "marketCrossCheck": null,
+        "contactQuality": {
+          "bbe": 489,
+          "barrelRate": 13.1,
+          "hardHitRate": 49.6,
+          "exitVelocity": 92.7,
+          "maxExitVelocity": 116.9,
+          "launchAngle": null,
+          "scope": "2026 season",
+          "checkedAt": "2026-09-27T10:44:15.649522+00:00",
+          "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true"
+        },
+        "contextNote": "Active roster and probable starter checked for 2026-09-27; starting lineup and batting order remain pending. Forecast: 63°F, 17 mph Blowing in, 16% precipitation. The current sample-adjusted site score determines ranking; pitch mix and park/weather are contextual evidence. Bullpen availability is not scored because verified same-day relief usage was unavailable. Verified same-slate odds are used only as a small market cross-check where a player and game-time match was available; no betting-price value edge is claimed. A matching same-slate odds snapshot was unavailable for this player. Season contact: 13.1% barrels, 49.6% hard-hit, 92.7 mph average exit velocity over 489 batted-ball events. A fully current recent-window Statcast refresh was unavailable; L5/L10/L20 HR results are separate completed-game samples. Pitch-type context (2026 season): 4-Seam Fastball 35.8% usage; hitter 0.647 SLG over 135 PA, 61.8% hard-hit. Split-Finger 15.9% usage; hitter 0.632 SLG over 24 PA, 54.5% hard-hit. Sinker 15.6% usage; hitter 0.579 SLG over 151 PA, 56.8% hard-hit. Small pitch-type samples are descriptive, not predictive; no pitch-type score adjustment. Dated recent-contact snapshot (2026-09-26T21:25:19.416958+00:00): 30 tracked batted balls from that feed’s 21-day query, 85.3 mph average exit velocity and 26.7% hard-hit. This snapshot is context only and does not boost the ranking. Dated opposing-pitcher snapshot: 0 HR and 7.4% hard-hit across 27 tracked batted balls. Limited sample; context only.",
+        "news": {
+          "supporting": [
+            "5 of 20 prior completed games included a homer (5 total HR). Historical results are not a probability forecast.",
+            "Season barrel rate 13.1% across 489 batted balls."
+          ],
+          "warnings": [
+            "Final-day starting lineup and batting order pending; recheck before using this selection because teams may rest regulars.",
+            "Current same-game HR odds unavailable; no betting-value claim."
+          ],
+          "checkedAt": "2026-09-27T11:22:04.620Z"
+        },
+        "recentContactSnapshot": {
+          "bbe": 30,
+          "avgEV": 85.3,
+          "hardHitPct": 26.7,
+          "barrelProxyPct": 6.7,
+          "hr": 0,
+          "bestPitchTypes": [
+            "SI",
+            "CH",
+            "FC"
+          ],
+          "hotZones": [
+            14,
+            4,
+            6
+          ],
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00",
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json"
+        },
+        "valid": true,
+        "statusCheckedAt": "2026-09-27T11:23:11.992Z"
+      },
+      "researchCheckedAt": "2026-09-27T11:23:55.602Z",
+      "publishedScore": 71.9,
+      "snapshotSchema": 2,
+      "modelVersion": "hr-evidence-813a3332e6c3",
+      "scoreContributions": [
+        "Season HR/PA +9.3",
+        "Barrels +3.4",
+        "Handedness HR/PA +7.2",
+        "Starter HR tendency +0.0",
+        "Recent HR games +2.0",
+        "Batting order +1.2"
+      ],
+      "scoreComponents": {
+        "Season HR/PA": 9.333333333333336,
+        "Barrels": 3.387300509337861,
+        "Handedness HR/PA": 7.194656488549618,
+        "Starter HR tendency": 0.023300970873786325,
+        "Recent HR games": 1.9500000000000002,
+        "Batting order": 1.2
+      },
+      "experiments": {
+        "no-streak-v1": {
+          "version": "no-streak-v1-5aacce906c08",
+          "score": 71.1,
+          "exclusions": []
+        },
+        "contact-first-v1": {
+          "version": "contact-first-v1-656b05a846c0",
+          "score": 66.3,
+          "exclusions": []
+        }
+      },
+      "evaluationCohort": "prospective-v2"
+    },
+    {
+      "key": "2026-09-27:823814:621566",
+      "date": "2026-09-27",
+      "gamePk": 823814,
+      "gameDate": "2026-09-27T19:10:00Z",
+      "playerId": 621566,
+      "teamId": 144,
+      "name": "Matt Olson",
+      "board": "top10",
+      "rank": 9,
+      "recordedAt": "2026-09-27T16:45:00.090363+00:00",
+      "lineup": "confirmed",
+      "baseScore": 70.5,
+      "trialScore": null,
+      "contact": {
+        "bbe": 459.0,
+        "barrelRate": 14.2,
+        "hardHitRate": 51.9,
+        "exitVelocity": 92.5,
+        "maxExitVelocity": 111.6,
+        "launchAngle": null
+      },
+      "contactCheckedAt": "2026-09-27T16:44:58.900176+00:00",
+      "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+      "status": "pending",
+      "hr": null,
+      "researchSnapshot": {
+        "person": {
+          "id": 621566,
+          "fullName": "Matt Olson",
+          "link": "/api/v1/people/621566"
+        },
+        "team": {
+          "springLeague": {
+            "id": 115,
+            "name": "Grapefruit League",
+            "link": "/api/v1/league/115",
+            "abbreviation": "GL"
+          },
+          "allStarStatus": "N",
+          "id": 144,
+          "name": "Atlanta Braves",
+          "link": "/api/v1/teams/144",
+          "season": 2026,
+          "venue": {
+            "id": 4705,
+            "name": "Truist Park",
+            "link": "/api/v1/venues/4705"
+          },
+          "springVenue": {
+            "id": 5380,
+            "link": "/api/v1/venues/5380"
+          },
+          "teamCode": "atl",
+          "fileCode": "atl",
+          "abbreviation": "ATL",
+          "teamName": "Braves",
+          "locationName": "Atlanta",
+          "firstYearOfPlay": "1871",
+          "league": {
+            "id": 104,
+            "name": "National League",
+            "link": "/api/v1/league/104"
+          },
+          "division": {
+            "id": 204,
+            "name": "National League East",
+            "link": "/api/v1/divisions/204"
+          },
+          "sport": {
+            "id": 1,
+            "link": "/api/v1/sports/1",
+            "name": "Major League Baseball"
+          },
+          "shortName": "Atlanta",
+          "franchiseName": "Atlanta",
+          "clubName": "Braves",
+          "active": true
+        },
+        "gamePk": 823814,
+        "gameDate": "2026-09-27T19:10:00Z",
+        "score": 69.3,
+        "chance": null,
+        "reason": "41 season HR in 696 PA; 2 HR in prior 10 games; opposing starter 1.06 HR/9; 25 HR in 416 PA vs RHP",
+        "recentHR": 2,
+        "hr": 41,
+        "pa": 696,
+        "starterId": 676083,
+        "starterName": "Janson Junk",
+        "oppName": "Miami Marlins",
+        "hr9": 1.0588235294117647,
+        "venue": "loanDepot park",
+        "lineup": {
+          "status": "confirmed",
+          "spot": 3
+        },
+        "lineupSpot": null,
+        "pitchLabel": "Pitch arsenal researched",
+        "weather": {
+          "factor": 1.0053485714285715,
+          "label": "Neutral conditions",
+          "tone": "neutral",
+          "temperature": 83.4,
+          "windSpeed": 7.3,
+          "windDirection": "E",
+          "windFlow": "Blowing in",
+          "precipitation": 1,
+          "roof": "Retractable",
+          "coords": {
+            "latitude": 25.77796236,
+            "longitude": -80.21951795
+          },
+          "source": "https://api.open-meteo.com/v1/forecast?latitude=25.77796236&longitude=-80.21951795&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2"
+        },
+        "research": {
+          "profile": {
+            "recentHR": 2,
+            "recentTB": 19,
+            "windows": [
+              {
+                "window": 5,
+                "n": 5,
+                "hr": 1,
+                "hrGames": 1,
+                "tb": 8
+              },
+              {
+                "window": 10,
+                "n": 10,
+                "hr": 2,
+                "hrGames": 2,
+                "tb": 19
+              },
+              {
+                "window": 20,
+                "n": 20,
+                "hr": 4,
+                "hrGames": 4,
+                "tb": 32
+              }
+            ],
+            "source": "https://statsapi.mlb.com/api/v1/people/621566/stats?stats=season,gameLog,statSplits&group=hitting&season=2026&sitCodes=vr,vl"
+          },
+          "pitcher": {
+            "hr9": 1.0588235294117647,
+            "missing": false,
+            "era": 4.31,
+            "hand": "R",
+            "ip": 119,
+            "lastStarts": {
+              "n": 5,
+              "hr": 2,
+              "outs": 62,
+              "hr9": 0.8709677419354839
+            },
+            "source": "https://statsapi.mlb.com/api/v1/people/676083/stats?stats=season,gameLog&group=pitching&season=2026"
+          },
+          "split": {
+            "hand": "R",
+            "pa": 416,
+            "hr": 25,
+            "slg": 0.5027322404371585
+          },
+          "h2h": {
+            "ab": 6,
+            "pa": 7,
+            "hr": 0,
+            "slg": ".667",
+            "source": "https://statsapi.mlb.com/api/v1/people/621566/stats?stats=vsPlayer&group=hitting&opposingPlayerId=676083"
+          },
+          "checkedAt": 1790507854735,
+          "pitchData": true
+        },
+        "sources": [
+          "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-27&hydrate=probablePitcher,team,venue(location,fieldInfo)",
+          "https://statsapi.mlb.com/api/v1/teams/144/roster?rosterType=active",
+          "https://www.mlb.com/injury-report",
+          "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+          "https://api.open-meteo.com/v1/forecast?latitude=25.77796236&longitude=-80.21951795&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2",
+          "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year=2026&min=1&minPitches=1&csv=true",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year=2026&min=1&minPitches=1&csv=true",
+          "https://www.mlb.com/news/baseball-injury-updates",
+          "https://www.mlb.com/probable-pitchers"
+        ],
+        "baseScore": 74.67959950643399,
+        "pitchFit": {
+          "factor": 1.043001168831169,
+          "label": "Balanced pitch mix",
+          "weightedSlugging": 0.5003686313686314,
+          "weightedHardHit": 52.173926073926076,
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00"
+        },
+        "marketCrossCheck": null,
+        "contactQuality": {
+          "bbe": 459,
+          "barrelRate": 14.2,
+          "hardHitRate": 51.9,
+          "exitVelocity": 92.5,
+          "maxExitVelocity": 111.6,
+          "launchAngle": null,
+          "scope": "2026 season",
+          "checkedAt": "2026-09-27T10:44:15.649522+00:00",
+          "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true"
+        },
+        "contextNote": "Active roster and probable starter checked for 2026-09-27; starting lineup and batting order remain pending. Forecast: 83°F, 7 mph Blowing in, 1% precipitation. The current sample-adjusted site score determines ranking; pitch mix and park/weather are contextual evidence. Bullpen availability is not scored because verified same-day relief usage was unavailable. Verified same-slate odds are used only as a small market cross-check where a player and game-time match was available; no betting-price value edge is claimed. A matching same-slate odds snapshot was unavailable for this player. Season contact: 14.2% barrels, 51.9% hard-hit, 92.5 mph average exit velocity over 459 batted-ball events. A fully current recent-window Statcast refresh was unavailable; L5/L10/L20 HR results are separate completed-game samples. Pitch-type context (2026 season): 4-Seam Fastball 34.6% usage; hitter 0.479 SLG over 212 PA, 66.9% hard-hit. Slider 19.5% usage; hitter 0.633 SLG over 82 PA, 53.1% hard-hit. Changeup 17.8% usage; hitter 0.552 SLG over 64 PA, 43.5% hard-hit. Small pitch-type samples are descriptive, not predictive; no pitch-type score adjustment. Dated recent-contact snapshot (2026-09-26T21:25:19.416958+00:00): 28 tracked batted balls from that feed’s 21-day query, 90.3 mph average exit velocity and 50% hard-hit. This snapshot is context only and does not boost the ranking. Dated opposing-pitcher snapshot: 0 HR and 8.6% hard-hit across 35 tracked batted balls. Limited sample; context only.",
+        "news": {
+          "supporting": [
+            "4 of 20 prior completed games included a homer (4 total HR). Historical results are not a probability forecast.",
+            "Season barrel rate 14.2% across 459 batted balls."
+          ],
+          "warnings": [
+            "Final-day starting lineup and batting order pending; recheck before using this selection because teams may rest regulars.",
+            "Current same-game HR odds unavailable; no betting-value claim."
+          ],
+          "checkedAt": "2026-09-27T11:22:04.620Z"
+        },
+        "recentContactSnapshot": {
+          "bbe": 28,
+          "avgEV": 90.3,
+          "hardHitPct": 50,
+          "barrelProxyPct": 3.6,
+          "hr": 1,
+          "bestPitchTypes": [
+            "FF",
+            "SI",
+            "ST"
+          ],
+          "hotZones": [
+            5,
+            14,
+            2
+          ],
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00",
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json"
+        },
+        "valid": true,
+        "statusCheckedAt": "2026-09-27T11:23:30.438Z"
+      },
+      "researchCheckedAt": "2026-09-27T11:23:55.602Z",
+      "publishedScore": 69.3,
+      "snapshotSchema": 2,
+      "modelVersion": "hr-evidence-813a3332e6c3",
+      "scoreContributions": [
+        "Season HR/PA +9.0",
+        "Barrels +4.1",
+        "Handedness HR/PA +5.5",
+        "Starter HR tendency -0.5",
+        "Recent HR games +1.2",
+        "Batting order +1.2"
+      ],
+      "scoreComponents": {
+        "Season HR/PA": 8.982142857142858,
+        "Barrels": 4.072701252236135,
+        "Handedness HR/PA": 5.530035335689047,
+        "Starter HR tendency": -0.5136094674556207,
+        "Recent HR games": 1.2000000000000002,
+        "Batting order": 1.2
+      },
+      "experiments": {
+        "no-streak-v1": {
+          "version": "no-streak-v1-5aacce906c08",
+          "score": 69.3,
+          "exclusions": []
+        },
+        "contact-first-v1": {
+          "version": "contact-first-v1-656b05a846c0",
+          "score": 66.1,
+          "exclusions": []
+        }
+      },
+      "evaluationCohort": "prospective-v2"
+    },
+    {
+      "key": "2026-09-27:823650:608369",
+      "date": "2026-09-27",
+      "gamePk": 823650,
+      "gameDate": "2026-09-27T19:10:00Z",
+      "playerId": 608369,
+      "teamId": 140,
+      "name": "Corey Seager",
+      "board": "underrated",
+      "rank": 1,
+      "recordedAt": "2026-09-27T16:45:00.209304+00:00",
+      "lineup": "confirmed",
+      "baseScore": 66.3,
+      "trialScore": null,
+      "contact": {
+        "bbe": 280.0,
+        "barrelRate": 14.6,
+        "hardHitRate": 48.9,
+        "exitVelocity": 91.9,
+        "maxExitVelocity": 110.3,
+        "launchAngle": null
+      },
+      "contactCheckedAt": "2026-09-27T16:44:58.900176+00:00",
+      "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+      "status": "pending",
+      "hr": null,
+      "researchSnapshot": {
+        "person": {
+          "id": 608369,
+          "fullName": "Corey Seager",
+          "link": "/api/v1/people/608369"
+        },
+        "team": {
+          "springLeague": {
+            "id": 114,
+            "name": "Cactus League",
+            "link": "/api/v1/league/114",
+            "abbreviation": "CL"
+          },
+          "allStarStatus": "N",
+          "id": 140,
+          "name": "Texas Rangers",
+          "link": "/api/v1/teams/140",
+          "season": 2026,
+          "venue": {
+            "id": 5325,
+            "name": "Globe Life Field",
+            "link": "/api/v1/venues/5325"
+          },
+          "springVenue": {
+            "id": 2603,
+            "link": "/api/v1/venues/2603"
+          },
+          "teamCode": "tex",
+          "fileCode": "tex",
+          "abbreviation": "TEX",
+          "teamName": "Rangers",
+          "locationName": "Arlington",
+          "firstYearOfPlay": "1961",
+          "league": {
+            "id": 103,
+            "name": "American League",
+            "link": "/api/v1/league/103"
+          },
+          "division": {
+            "id": 200,
+            "name": "American League West",
+            "link": "/api/v1/divisions/200"
+          },
+          "sport": {
+            "id": 1,
+            "link": "/api/v1/sports/1",
+            "name": "Major League Baseball"
+          },
+          "shortName": "Texas",
+          "franchiseName": "Texas",
+          "clubName": "Rangers",
+          "active": true
+        },
+        "gamePk": 823650,
+        "gameDate": "2026-09-27T19:10:00Z",
+        "score": 65.1,
+        "chance": null,
+        "reason": "19 season HR in 432 PA; 1 HR in prior 10 games; opposing starter 1.84 HR/9; 12 HR in 285 PA vs RHP",
+        "recentHR": 1,
+        "hr": 19,
+        "pa": 432,
+        "starterId": 665152,
+        "starterName": "Dean Kremer",
+        "oppName": "Minnesota Twins",
+        "hr9": 1.836,
+        "venue": "Target Field",
+        "lineup": {
+          "status": "confirmed",
+          "spot": 3
+        },
+        "lineupSpot": null,
+        "pitchLabel": "Pitch arsenal researched",
+        "weather": {
+          "factor": 0.9899457142857143,
+          "label": "Neutral conditions",
+          "tone": "neutral",
+          "temperature": 66.7,
+          "windSpeed": 1.6,
+          "windDirection": "E",
+          "windFlow": "Blowing in",
+          "precipitation": 0,
+          "roof": "Open",
+          "coords": {
+            "latitude": 44.981829,
+            "longitude": -93.277891
+          },
+          "source": "https://api.open-meteo.com/v1/forecast?latitude=44.981829&longitude=-93.277891&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2"
+        },
+        "research": {
+          "profile": {
+            "recentHR": 1,
+            "recentTB": 11,
+            "windows": [
+              {
+                "window": 5,
+                "n": 5,
+                "hr": 1,
+                "hrGames": 1,
+                "tb": 6
+              },
+              {
+                "window": 10,
+                "n": 10,
+                "hr": 1,
+                "hrGames": 1,
+                "tb": 11
+              },
+              {
+                "window": 20,
+                "n": 20,
+                "hr": 5,
+                "hrGames": 5,
+                "tb": 37
+              }
+            ],
+            "source": "https://statsapi.mlb.com/api/v1/people/608369/stats?stats=season,gameLog,statSplits&group=hitting&season=2026&sitCodes=vr,vl"
+          },
+          "pitcher": {
+            "hr9": 1.836,
+            "missing": false,
+            "era": 4.97,
+            "hand": "R",
+            "ip": 83.33333333333333,
+            "lastStarts": {
+              "n": 5,
+              "hr": 3,
+              "outs": 74,
+              "hr9": 1.0945945945945945
+            },
+            "source": "https://statsapi.mlb.com/api/v1/people/665152/stats?stats=season,gameLog&group=pitching&season=2026"
+          },
+          "split": {
+            "hand": "R",
+            "pa": 285,
+            "hr": 12,
+            "slg": 0.39759036144578314
+          },
+          "h2h": {
+            "ab": 8,
+            "pa": 9,
+            "hr": 0,
+            "slg": ".500",
+            "source": "https://statsapi.mlb.com/api/v1/people/608369/stats?stats=vsPlayer&group=hitting&opposingPlayerId=665152"
+          },
+          "checkedAt": 1790507858658,
+          "pitchData": true
+        },
+        "sources": [
+          "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-27&hydrate=probablePitcher,team,venue(location,fieldInfo)",
+          "https://statsapi.mlb.com/api/v1/teams/140/roster?rosterType=active",
+          "https://www.mlb.com/injury-report",
+          "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+          "https://api.open-meteo.com/v1/forecast?latitude=44.981829&longitude=-93.277891&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2",
+          "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year=2026&min=1&minPitches=1&csv=true",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year=2026&min=1&minPitches=1&csv=true",
+          "https://www.mlb.com/news/baseball-injury-updates",
+          "https://www.mlb.com/probable-pitchers"
+        ],
+        "baseScore": 76.40530689725871,
+        "pitchFit": {
+          "factor": 1.00830990990991,
+          "label": "Balanced pitch mix",
+          "weightedSlugging": 0.35685185185185186,
+          "weightedHardHit": 48.630630630630634,
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00"
+        },
+        "marketCrossCheck": null,
+        "contactQuality": {
+          "bbe": 280,
+          "barrelRate": 14.6,
+          "hardHitRate": 48.9,
+          "exitVelocity": 91.9,
+          "maxExitVelocity": 110.3,
+          "launchAngle": null,
+          "scope": "2026 season",
+          "checkedAt": "2026-09-27T10:44:15.649522+00:00",
+          "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true"
+        },
+        "contextNote": "Active roster and probable starter checked for 2026-09-27; starting lineup and batting order remain pending. Forecast: 67°F, 2 mph Blowing in, 0% precipitation. The current sample-adjusted site score determines ranking; pitch mix and park/weather are contextual evidence. Bullpen availability is not scored because verified same-day relief usage was unavailable. Verified same-slate odds are used only as a small market cross-check where a player and game-time match was available; no betting-price value edge is claimed. A matching same-slate odds snapshot was unavailable for this player. Season contact: 14.6% barrels, 48.9% hard-hit, 91.9 mph average exit velocity over 280 batted-ball events. A fully current recent-window Statcast refresh was unavailable; L5/L10/L20 HR results are separate completed-game samples. Pitch-type context (2026 season): 4-Seam Fastball 29% usage; hitter 0.449 SLG over 115 PA, 64.1% hard-hit. Split-Finger 25.8% usage; hitter 0.143 SLG over 17 PA, 33.3% hard-hit. Cutter 17.9% usage; hitter 0.536 SLG over 33 PA, 52% hard-hit. Small pitch-type samples are descriptive, not predictive; no pitch-type score adjustment. Warning: slugging against this throwing hand is below .400. Dated recent-contact snapshot (2026-09-26T21:25:19.416958+00:00): 30 tracked batted balls from that feed’s 21-day query, 81.2 mph average exit velocity and 20% hard-hit. This snapshot is context only and does not boost the ranking. Dated opposing-pitcher snapshot: 0 HR and 13.3% hard-hit across 30 tracked batted balls. Limited sample; context only.",
+        "news": {
+          "supporting": [
+            "5 of 20 prior completed games included a homer (5 total HR). Historical results are not a probability forecast.",
+            "Season barrel rate 14.6% across 280 batted balls.",
+            "Overlooked candidate with fewer than 25 season HR and supporting matchup evidence; the tag does not establish market value."
+          ],
+          "warnings": [
+            "Final-day starting lineup and batting order pending; recheck before using this selection because teams may rest regulars.",
+            "Current same-game HR odds unavailable; no betting-value claim."
+          ],
+          "checkedAt": "2026-09-27T11:22:04.620Z"
+        },
+        "recentContactSnapshot": {
+          "bbe": 30,
+          "avgEV": 81.2,
+          "hardHitPct": 20,
+          "barrelProxyPct": 10,
+          "hr": 1,
+          "bestPitchTypes": [
+            "SI",
+            "FF",
+            "ST"
+          ],
+          "hotZones": [
+            8,
+            13,
+            14
+          ],
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00",
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json"
+        },
+        "valid": true,
+        "statusCheckedAt": "2026-09-27T11:23:45.145Z"
+      },
+      "researchCheckedAt": "2026-09-27T11:23:55.602Z",
+      "publishedScore": 65.1,
+      "snapshotSchema": 2,
+      "modelVersion": "hr-evidence-813a3332e6c3",
+      "scoreContributions": [
+        "Season HR/PA +3.8",
+        "Barrels +3.9",
+        "Handedness HR/PA +2.0",
+        "Starter HR tendency +3.4",
+        "Recent HR games +2.0",
+        "Batting order +1.2"
+      ],
+      "scoreComponents": {
+        "Season HR/PA": 3.822784810126584,
+        "Barrels": 3.890526315789474,
+        "Handedness HR/PA": 1.9827586206896552,
+        "Starter HR tendency": 3.430000000000001,
+        "Recent HR games": 1.9500000000000002,
+        "Batting order": 1.2
+      },
+      "experiments": {
+        "no-streak-v1": {
+          "version": "no-streak-v1-5aacce906c08",
+          "score": 64.3,
+          "exclusions": []
+        },
+        "contact-first-v1": {
+          "version": "contact-first-v1-656b05a846c0",
+          "score": 65.3,
+          "exclusions": []
+        }
+      },
+      "evaluationCohort": "prospective-v2"
     }
   ],
-  "updatedAt": "2026-09-27T15:44:19.432413+00:00"
+  "updatedAt": "2026-09-27T16:44:58.900176+00:00"
 }
