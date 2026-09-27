@@ -5056,7 +5056,258 @@
       "hr": 0,
       "settledAt": "2026-09-23T02:08:00.113003+00:00",
       "resultSource": "https://statsapi.mlb.com/api/v1/game/824867/boxscore"
+    },
+    {
+      "key": "2026-09-27:823490:624413",
+      "date": "2026-09-27",
+      "gamePk": 823490,
+      "gameDate": "2026-09-27T17:05:00Z",
+      "playerId": 624413,
+      "teamId": 110,
+      "name": "Pete Alonso",
+      "board": "top10",
+      "rank": 3,
+      "recordedAt": "2026-09-27T14:44:07.952543+00:00",
+      "lineup": "confirmed",
+      "baseScore": 75.6,
+      "trialScore": null,
+      "contact": {
+        "bbe": 438.0,
+        "barrelRate": 15.3,
+        "hardHitRate": 56.2,
+        "exitVelocity": 93.9,
+        "maxExitVelocity": 114.6,
+        "launchAngle": null
+      },
+      "contactCheckedAt": "2026-09-27T14:44:06.561865+00:00",
+      "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+      "status": "pending",
+      "hr": null,
+      "researchSnapshot": {
+        "person": {
+          "id": 624413,
+          "fullName": "Pete Alonso",
+          "link": "/api/v1/people/624413"
+        },
+        "team": {
+          "springLeague": {
+            "id": 115,
+            "name": "Grapefruit League",
+            "link": "/api/v1/league/115",
+            "abbreviation": "GL"
+          },
+          "allStarStatus": "N",
+          "id": 110,
+          "name": "Baltimore Orioles",
+          "link": "/api/v1/teams/110",
+          "season": 2026,
+          "venue": {
+            "id": 2,
+            "name": "Oriole Park at Camden Yards",
+            "link": "/api/v1/venues/2"
+          },
+          "springVenue": {
+            "id": 2508,
+            "link": "/api/v1/venues/2508"
+          },
+          "teamCode": "bal",
+          "fileCode": "bal",
+          "abbreviation": "BAL",
+          "teamName": "Orioles",
+          "locationName": "Baltimore",
+          "firstYearOfPlay": "1901",
+          "league": {
+            "id": 103,
+            "name": "American League",
+            "link": "/api/v1/league/103"
+          },
+          "division": {
+            "id": 201,
+            "name": "American League East",
+            "link": "/api/v1/divisions/201"
+          },
+          "sport": {
+            "id": 1,
+            "link": "/api/v1/sports/1",
+            "name": "Major League Baseball"
+          },
+          "shortName": "Baltimore",
+          "franchiseName": "Baltimore",
+          "clubName": "Orioles",
+          "active": true
+        },
+        "gamePk": 823490,
+        "gameDate": "2026-09-27T17:05:00Z",
+        "score": 73.8,
+        "chance": null,
+        "reason": "43 season HR in 700 PA; 8 HR in prior 10 games; opposing starter 0.67 HR/9; 34 HR in 486 PA vs RHP",
+        "recentHR": 8,
+        "hr": 43,
+        "pa": 700,
+        "starterId": 695684,
+        "starterName": "Elmer Rodríguez",
+        "oppName": "New York Yankees",
+        "hr9": 0.6749999999999999,
+        "venue": "Yankee Stadium",
+        "lineup": {
+          "status": "confirmed",
+          "spot": 2
+        },
+        "lineupSpot": null,
+        "pitchLabel": "Pitch arsenal researched",
+        "weather": {
+          "factor": 1.0134993142857145,
+          "label": "Pitcher-friendly",
+          "tone": "pitcher",
+          "temperature": 65,
+          "windSpeed": 15.1,
+          "windDirection": "NE",
+          "windFlow": "Blowing in",
+          "precipitation": 49,
+          "roof": "Open",
+          "coords": {
+            "latitude": 40.82919482,
+            "longitude": -73.9264977
+          },
+          "source": "https://api.open-meteo.com/v1/forecast?latitude=40.82919482&longitude=-73.9264977&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2"
+        },
+        "research": {
+          "profile": {
+            "recentHR": 8,
+            "recentTB": 34,
+            "windows": [
+              {
+                "window": 5,
+                "n": 5,
+                "hr": 5,
+                "hrGames": 3,
+                "tb": 22
+              },
+              {
+                "window": 10,
+                "n": 10,
+                "hr": 8,
+                "hrGames": 6,
+                "tb": 34
+              },
+              {
+                "window": 20,
+                "n": 20,
+                "hr": 10,
+                "hrGames": 8,
+                "tb": 49
+              }
+            ],
+            "source": "https://statsapi.mlb.com/api/v1/people/624413/stats?stats=season,gameLog,statSplits&group=hitting&season=2026&sitCodes=vr,vl"
+          },
+          "pitcher": {
+            "hr9": 0.6749999999999999,
+            "missing": false,
+            "era": 5.4,
+            "hand": "R",
+            "ip": 26.666666666666668,
+            "lastStarts": {
+              "n": 5,
+              "hr": 2,
+              "outs": 68,
+              "hr9": 0.7941176470588235
+            },
+            "source": "https://statsapi.mlb.com/api/v1/people/695684/stats?stats=season,gameLog&group=pitching&season=2026"
+          },
+          "split": {
+            "hand": "R",
+            "pa": 486,
+            "hr": 34,
+            "slg": 0.5614457831325301
+          },
+          "h2h": null,
+          "checkedAt": 1790507847287,
+          "pitchData": true
+        },
+        "sources": [
+          "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-27&hydrate=probablePitcher,team,venue(location,fieldInfo)",
+          "https://statsapi.mlb.com/api/v1/teams/110/roster?rosterType=active",
+          "https://www.mlb.com/injury-report",
+          "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+          "https://api.open-meteo.com/v1/forecast?latitude=40.82919482&longitude=-73.9264977&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2",
+          "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year=2026&min=1&minPitches=1&csv=true",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year=2026&min=1&minPitches=1&csv=true",
+          "https://www.reuters.com/sports/mlb-roundup-pete-alonso-hits-hrs-39-40-orioles-top-jays--flm-2026-09-22/",
+          "https://www.mlb.com/news/baseball-injury-updates",
+          "https://www.mlb.com/probable-pitchers"
+        ],
+        "baseScore": 93.17336210200278,
+        "pitchFit": {
+          "factor": 1.0516316533066132,
+          "label": "Balanced pitch mix",
+          "weightedSlugging": 0.4978937875751503,
+          "weightedHardHit": 55.804308617234476,
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "checkedAt": "2026-09-26T21:25:19.416958+00:00"
+        },
+        "marketCrossCheck": null,
+        "contactQuality": {
+          "bbe": 438,
+          "barrelRate": 15.3,
+          "hardHitRate": 56.2,
+          "exitVelocity": 93.9,
+          "maxExitVelocity": 114.6,
+          "launchAngle": null,
+          "scope": "2026 season",
+          "checkedAt": "2026-09-27T10:44:15.649522+00:00",
+          "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true"
+        },
+        "contextNote": "Active roster and probable starter checked for 2026-09-27; starting lineup and batting order remain pending. Forecast: 65°F, 15 mph Blowing in, 49% precipitation. The current sample-adjusted site score determines ranking; pitch mix and park/weather are contextual evidence. Bullpen availability is not scored because verified same-day relief usage was unavailable. Verified same-slate odds are used only as a small market cross-check where a player and game-time match was available; no betting-price value edge is claimed. A matching same-slate odds snapshot was unavailable for this player. Season contact: 15.3% barrels, 56.2% hard-hit, 93.9 mph average exit velocity over 438 batted-ball events. Recent-window Statcast contact quality was unavailable; L5/L10/L20 HR results are separate completed-game samples. Pitch-type context (2026 season): Sinker 46.1% usage; hitter 0.5 SLG over 147 PA, 58.4% hard-hit. 4-Seam Fastball 18.9% usage; hitter 0.623 SLG over 185 PA, 65.8% hard-hit. Curveball 14.5% usage; hitter 0.323 SLG over 65 PA, 43.6% hard-hit. Small pitch-type samples are descriptive, not predictive; no pitch-type score adjustment. Warning: opposing starter has fewer than 40 MLB innings; HR tendency is highly uncertain.",
+        "news": {
+          "supporting": [
+            "8 of 20 prior completed games included a homer (10 total HR). Historical results are not a probability forecast.",
+            "Season barrel rate 15.3% across 438 batted balls.",
+            "Alonso hit two home runs on September 21 and entered the finale with 10 HR across his prior 20 completed games. Recent results are context, not proof of another homer."
+          ],
+          "warnings": [
+            "Final-day starting lineup and batting order pending; recheck before using this selection because teams may rest regulars.",
+            "Current same-game HR odds unavailable; no betting-value claim."
+          ],
+          "checkedAt": "2026-09-27T11:22:04.620Z"
+        },
+        "valid": true,
+        "statusCheckedAt": "2026-09-27T11:22:47.834Z"
+      },
+      "researchCheckedAt": "2026-09-27T11:23:55.602Z",
+      "publishedScore": 73.8,
+      "snapshotSchema": 2,
+      "modelVersion": "hr-evidence-813a3332e6c3",
+      "scoreContributions": [
+        "Season HR/PA +9.8",
+        "Barrels +4.8",
+        "Handedness HR/PA +7.6",
+        "Starter HR tendency -1.3",
+        "Recent HR games +3.0",
+        "Batting order +1.8"
+      ],
+      "scoreComponents": {
+        "Season HR/PA": 9.777777777777777,
+        "Barrels": 4.754498141263942,
+        "Handedness HR/PA": 7.633647798742139,
+        "Starter HR tendency": -1.3217391304347825,
+        "Recent HR games": 3,
+        "Batting order": 1.7999999999999998
+      },
+      "experiments": {
+        "no-streak-v1": {
+          "version": "no-streak-v1-5aacce906c08",
+          "score": 72.6,
+          "exclusions": []
+        },
+        "contact-first-v1": {
+          "version": "contact-first-v1-656b05a846c0",
+          "score": 68.7,
+          "exclusions": []
+        }
+      },
+      "evaluationCohort": "prospective-v2"
     }
   ],
-  "updatedAt": "2026-09-27T13:43:54.453726+00:00"
+  "updatedAt": "2026-09-27T14:44:06.561865+00:00"
 }

@@ -1,9 +1,50 @@
 {
-  "updatedAt": "2026-09-27T13:43:59.834289+00:00",
+  "updatedAt": "2026-09-27T14:44:13.033301+00:00",
   "status": "collecting_prospective_results",
   "legacyRecordsExcluded": 176,
   "experiments": {
-    "comparisons": {},
+    "comparisons": {
+      "hr-evidence-813a3332e6c3 / contact-first-v1-656b05a846c0": {
+        "baselineVersion": "hr-evidence-813a3332e6c3",
+        "challengerVersion": "contact-first-v1-656b05a846c0",
+        "status": "collecting",
+        "excludedCohorts": 1,
+        "pendingCohorts": 0,
+        "completedCohorts": [],
+        "summary": {
+          "dates": 0,
+          "baselineHits": 0,
+          "challengerHits": 0,
+          "baselineGraded": 0,
+          "challengerGraded": 0,
+          "betterDates": 0,
+          "worseDates": 0,
+          "tiedDates": 0,
+          "differentPickCohorts": 0
+        },
+        "automaticPromotion": false
+      },
+      "hr-evidence-813a3332e6c3 / no-streak-v1-5aacce906c08": {
+        "baselineVersion": "hr-evidence-813a3332e6c3",
+        "challengerVersion": "no-streak-v1-5aacce906c08",
+        "status": "collecting",
+        "excludedCohorts": 1,
+        "pendingCohorts": 0,
+        "completedCohorts": [],
+        "summary": {
+          "dates": 0,
+          "baselineHits": 0,
+          "challengerHits": 0,
+          "baselineGraded": 0,
+          "challengerGraded": 0,
+          "betterDates": 0,
+          "worseDates": 0,
+          "tiedDates": 0,
+          "differentPickCohorts": 0
+        },
+        "automaticPromotion": false
+      }
+    },
     "rules": [
       "Only frozen pregame challenger scores are evaluated; legacy records are excluded.",
       "Confirmed lineups and at least four recorded candidates are required.",
@@ -12,7 +53,17 @@
       "These are tests on published candidate pools, not all MLB hitters. No claim of improved accuracy or profitability; no automatic promotion."
     ]
   },
-  "versions": {},
+  "versions": {
+    "hr-evidence-813a3332e6c3": {
+      "completedCohorts": 0,
+      "pendingCohorts": 1,
+      "top3Hits": 0,
+      "top3Picks": 0,
+      "poolHits": 0,
+      "poolPicks": 0,
+      "cohorts": []
+    }
+  },
   "notes": [
     "Scores are research indices, not HR probabilities.",
     "Top three refers to the recorded board pool, not a complete market or a guaranteed published Top 3.",
