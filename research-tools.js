@@ -509,7 +509,7 @@ function finalCardHtml(picks){
 
 function sleeperFinderRows(){
  const rows=(state.dailyBatterRanks||[])
-  .filter(x=>Number(x.rank)>10&&Number(x.rank)<=45&&Number(x.score)>=58&&x.lineup?.status!=='out')
+  .filter(x=>Number(x.rank)>10&&Number(x.rank)<=45&&Number(x.score)>=58&&x.lineup?.status==='confirmed'&&isUpcomingResearchGame(state.games?.find(g=>Number(g.gamePk)===Number(x.gamePk))))
   .map(x=>{
     let sleeperScore=Number(x.score)||0;
     if(Number(x.barrelRate)>=10)sleeperScore+=5;
@@ -623,7 +623,7 @@ window.renderHrMatchupSpotlights=function(){
   const started=abstract==='live'||abstract==='final'||/in progress|game over|final|completed/.test(detailed)||['I','F','O'].includes(coded)||(Number.isFinite(firstPitch)&&Date.now()>=firstPitch);
   return !started;
  };
- const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status!=='out');
+ const rows=(state.dailyBatterRanks||[]).filter(x=>x.lineup?.status==='confirmed'&&isUpcomingResearchGame(state.games?.find(g=>Number(g.gamePk)===Number(x.gamePk))));
  if(!rows.length){host.innerHTML='<div class="empty">No MLB matchup research is available for today yet.</div>';return;}
  const groups=new Map();
  rows.forEach(x=>{const k=[x.teamId,x.gamePk].join(':');if(!groups.has(k))groups.set(k,[]);groups.get(k).push(x)});
@@ -699,7 +699,7 @@ function appAlerts(sport=state.currentSport){
  return alerts.slice(0,5);
 }
 function top6Names(){
- const rows=(state.dailyBatterRanks||[]).filter(x=>Number(x.score)>=72&&x.lineup?.status!=='out').slice(0,6);
+ const rows=(state.dailyBatterRanks||[]).filter(x=>Number(x.score)>=72&&x.lineup?.status==='confirmed'&&isUpcomingResearchGame(state.games?.find(g=>Number(g.gamePk)===Number(x.gamePk)))).slice(0,6);
  if(!state.dailyBatterRanks?.length)return '<p>Full-slate rankings are loading.</p>';
  if(!rows.length)return '<p><b>🛑 NO GREEN LIGHTS YET</b></p><p>RalloPicks is not forcing six plays. Check again after lineup, weather and matchup updates.</p>';
  return '<p><b>🟢 '+rows.length+' GREEN LIGHT'+(rows.length===1?'':'S')+' TODAY</b></p>'+rows.map((x,i)=>'<p><b>#'+(i+1)+' '+esc(x.name)+'</b> • '+Math.round(x.score)+' • '+esc(x.opponent)+'</p>').join('');

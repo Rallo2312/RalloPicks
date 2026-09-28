@@ -146,5 +146,5 @@ function refreshVisibleSix(){
 setInterval(refreshVisibleSix,60000);
 document.addEventListener('visibilitychange',refreshVisibleSix);
 function isUpcomingResearchGame(g){
- return g.status?.abstractGameState==='Preview'&&!/postpon|cancel|delay|suspend/i.test(g.status?.detailedState||'')&&Date.parse(g.gameDate)>Date.now();
+ return !!g&&new Date(g.gameDate).toLocaleDateString('en-CA',{timeZone:'America/Chicago'})===new Date().toLocaleDateString('en-CA',{timeZone:'America/Chicago'})&&g.status?.abstractGameState==='Preview'&&!/postpon|cancel|delay|suspend/i.test(g.status?.detailedState||'')&&Date.parse(g.gameDate)>Date.now();
 }
