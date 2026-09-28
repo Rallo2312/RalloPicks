@@ -552,9 +552,9 @@ window.renderSleeperFinder=function(){
 };
 
 function normHrOddsName(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'')}
-function hrOddsForPlayer(name){
- const rows=state.hrOdds?.rows||[],key=normHrOddsName(name);
- return rows.find(r=>normHrOddsName(r.playerName)===key)||null;
+function hrOddsForPlayer(name,gamePk){
+ const rows=currentHrOddsRows(state.hrOdds),key=normHrOddsName(name),game=state.games?.find(g=>String(g.gamePk)===String(gamePk));
+ return rows.find(r=>normHrOddsName(r.playerName)===key&&hrMarketMatchesGame(r,game))||null;
 }
 async function ensureHrOdds(){
  if(state.hrOddsLoaded||state.hrOddsLoading)return;
@@ -569,11 +569,8 @@ async function ensureHrOdds(){
 let hrOddsExpanded=false;
 function renderHrOddsBoard(){
  const host=document.getElementById('hrOddsBoard');if(!host)return;
- const rows=(state.hrOdds?.rows||[]).filter(o=>{
-  const start=new Date(o.startsAt).getTime();
-  return !Number.isFinite(start)||Date.now()<start;
- });
- if(!rows.length){host.innerHTML='<div class="empty">No verified pregame HR odds are available right now.</div>';return;}
+ const rows=currentHrOddsRows(state.hrOdds);
+ if(!rows.length){host.innerHTML='<div class="empty">'+(state.hrOdds?.refreshStatus==='cached_rate_limited'?'HR odds provider is rate-limited. Cached prices are excluded from research.':'Fresh current-slate HR odds are unavailable.')+'</div>';return;}
  const q=String(document.getElementById('hrHubSearch')?.value||'').trim().toLowerCase();
  const filtered=rows.filter(o=>!q||[o.playerName,o.awayTeam,o.homeTeam,o.bestBookName,(o.books||[]).map(b=>b.bookName).join(' ')].join(' ').toLowerCase().includes(q));
  const shown=hrOddsExpanded?filtered:filtered.slice(0,24);
@@ -601,7 +598,7 @@ window.filterHrHub=function(value){
  document.querySelectorAll('#hrMatchupSpotlights .hr-matchup-spotlight').forEach(el=>el.classList.toggle('hr-filter-hidden',!!q&&!el.textContent.toLowerCase().includes(q)));
 }
 function hrOddsHtml(x){
- const o=hrOddsForPlayer(x?.name);if(!o)return '<div class="hr-verified-odds pending">Verified HR odds pending</div>';
+ const o=hrOddsForPlayer(x?.name,x?.gamePk);if(!o)return '<div class="hr-verified-odds pending">Verified HR odds pending</div>';
  const books=(o.books||[]).slice(0,3).map(b=>esc(b.bookName)+' '+esc(b.odds)).join(' • ');
  const metric=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v))?Number(v):null;
  const implied=metric(o.bestImpliedProbability),fair=metric(o.fairImpliedProbability),edge=metric(o.marketEdgePct),bookCount=metric(o.bookCount);
