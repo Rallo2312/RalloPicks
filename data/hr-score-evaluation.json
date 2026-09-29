@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-29T13:50:10.198136+00:00",
+  "updatedAt": "2026-09-29T14:49:27.289355+00:00",
   "status": "collecting_prospective_results",
   "legacyRecordsExcluded": 176,
   "experiments": {
@@ -8,7 +8,7 @@
         "baselineVersion": "hr-evidence-813a3332e6c3",
         "challengerVersion": "contact-first-v1-656b05a846c0",
         "status": "collecting",
-        "excludedCohorts": 1,
+        "excludedCohorts": 3,
         "pendingCohorts": 1,
         "completedCohorts": [],
         "summary": {
@@ -28,7 +28,7 @@
         "baselineVersion": "hr-evidence-813a3332e6c3",
         "challengerVersion": "no-streak-v1-5aacce906c08",
         "status": "collecting",
-        "excludedCohorts": 1,
+        "excludedCohorts": 3,
         "pendingCohorts": 1,
         "completedCohorts": [],
         "summary": {
@@ -56,7 +56,7 @@
   "versions": {
     "hr-evidence-813a3332e6c3": {
       "completedCohorts": 1,
-      "pendingCohorts": 1,
+      "pendingCohorts": 3,
       "top3Hits": 2,
       "top3Picks": 3,
       "poolHits": 2,
