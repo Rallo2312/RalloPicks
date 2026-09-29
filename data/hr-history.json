@@ -8067,8 +8067,8 @@
       },
       "contactCheckedAt": "2026-09-29T14:49:20.512160+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null,
+      "status": "miss",
+      "hr": 0,
       "researchSnapshot": {
         "person": {
           "id": 621566,
@@ -8297,7 +8297,9 @@
           "exclusions": []
         }
       },
-      "evaluationCohort": "prospective-v2"
+      "evaluationCohort": "prospective-v2",
+      "settledAt": "2026-09-29T20:47:02.821070+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/849845/boxscore"
     },
     {
       "key": "2026-09-29:849845:660670",
@@ -8323,8 +8325,8 @@
       },
       "contactCheckedAt": "2026-09-29T14:49:20.512160+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null,
+      "status": "miss",
+      "hr": 0,
       "researchSnapshot": {
         "person": {
           "id": 660670,
@@ -8554,7 +8556,9 @@
           "exclusions": []
         }
       },
-      "evaluationCohort": "prospective-v2"
+      "evaluationCohort": "prospective-v2",
+      "settledAt": "2026-09-29T20:47:02.821070+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/849845/boxscore"
     },
     {
       "key": "2026-09-29:849845:656941",
@@ -8580,8 +8584,8 @@
       },
       "contactCheckedAt": "2026-09-29T15:49:08.740343+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null,
+      "status": "miss",
+      "hr": 0,
       "researchSnapshot": {
         "person": {
           "id": 656941,
@@ -8810,7 +8814,9 @@
           "exclusions": []
         }
       },
-      "evaluationCohort": "prospective-v2"
+      "evaluationCohort": "prospective-v2",
+      "settledAt": "2026-09-29T20:47:02.821070+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/849845/boxscore"
     },
     {
       "key": "2026-09-29:849849:808959",
@@ -10607,7 +10613,266 @@
         }
       },
       "evaluationCohort": "prospective-v2"
+    },
+    {
+      "key": "2026-09-29:849851:575929",
+      "date": "2026-09-29",
+      "gamePk": 849851,
+      "gameDate": "2026-09-30T00:00:00Z",
+      "playerId": 575929,
+      "teamId": 111,
+      "name": "Willson Contreras",
+      "board": "top10",
+      "rank": 10,
+      "recordedAt": "2026-09-29T20:47:03.466390+00:00",
+      "lineup": "confirmed",
+      "baseScore": 61.6,
+      "trialScore": null,
+      "contact": {
+        "bbe": 317.0,
+        "barrelRate": 13.2,
+        "hardHitRate": 44.2,
+        "exitVelocity": 89.8,
+        "maxExitVelocity": 116.0,
+        "launchAngle": null
+      },
+      "contactCheckedAt": "2026-09-29T20:47:02.821070+00:00",
+      "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+      "status": "pending",
+      "hr": null,
+      "researchSnapshot": {
+        "person": {
+          "id": 575929,
+          "fullName": "Willson Contreras",
+          "link": "/api/v1/people/575929"
+        },
+        "team": {
+          "springLeague": {
+            "id": 115,
+            "name": "Grapefruit League",
+            "link": "/api/v1/league/115",
+            "abbreviation": "GL"
+          },
+          "allStarStatus": "N",
+          "id": 111,
+          "name": "Boston Red Sox",
+          "link": "/api/v1/teams/111",
+          "season": 2026,
+          "venue": {
+            "id": 3,
+            "name": "Fenway Park",
+            "link": "/api/v1/venues/3"
+          },
+          "springVenue": {
+            "id": 4309,
+            "link": "/api/v1/venues/4309"
+          },
+          "teamCode": "bos",
+          "fileCode": "bos",
+          "abbreviation": "BOS",
+          "teamName": "Red Sox",
+          "locationName": "Boston",
+          "firstYearOfPlay": "1901",
+          "league": {
+            "id": 103,
+            "name": "American League",
+            "link": "/api/v1/league/103"
+          },
+          "division": {
+            "id": 201,
+            "name": "American League East",
+            "link": "/api/v1/divisions/201"
+          },
+          "sport": {
+            "id": 1,
+            "link": "/api/v1/sports/1",
+            "name": "Major League Baseball"
+          },
+          "shortName": "Boston",
+          "franchiseName": "Boston",
+          "clubName": "Red Sox",
+          "active": true
+        },
+        "gamePk": 849851,
+        "gameDate": "2026-09-30T00:00:00Z",
+        "score": 60.4,
+        "chance": null,
+        "reason": "27 season HR in 535 PA; 1 HR in prior 10 games; opposing starter 0.74 HR/9; 19 HR in 389 PA vs RHP",
+        "recentHR": 1,
+        "hr": 27,
+        "pa": 535,
+        "starterId": 693645,
+        "starterName": "Cam Schlittler",
+        "oppName": "New York Yankees",
+        "hr9": 0.7435456110154905,
+        "venue": "Yankee Stadium",
+        "lineup": {
+          "status": "confirmed",
+          "spot": 3
+        },
+        "lineupSpot": null,
+        "pitchLabel": "Pitch arsenal researched",
+        "weather": {
+          "factor": 1.0685224000000002,
+          "label": "Neutral conditions",
+          "tone": "neutral",
+          "temperature": 62.1,
+          "windSpeed": 3.1,
+          "windDirection": "NW",
+          "windFlow": "Blowing out",
+          "precipitation": 1,
+          "roof": "Open",
+          "coords": {
+            "latitude": 40.82919482,
+            "longitude": -73.9264977
+          },
+          "source": "https://api.open-meteo.com/v1/forecast?latitude=40.82919482&longitude=-73.9264977&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2"
+        },
+        "research": {
+          "profile": {
+            "recentHR": 1,
+            "recentTB": 12,
+            "windows": [
+              {
+                "window": 5,
+                "n": 5,
+                "hr": 1,
+                "hrGames": 1,
+                "tb": 7
+              },
+              {
+                "window": 10,
+                "n": 10,
+                "hr": 1,
+                "hrGames": 1,
+                "tb": 12
+              },
+              {
+                "window": 20,
+                "n": 20,
+                "hr": 3,
+                "hrGames": 3,
+                "tb": 31
+              }
+            ],
+            "source": "https://statsapi.mlb.com/api/v1/people/575929/stats?stats=season,gameLog,statSplits&group=hitting&season=2026&sitCodes=vr,vl"
+          },
+          "pitcher": {
+            "hr9": 0.7435456110154905,
+            "missing": false,
+            "era": 1.95,
+            "hand": "R",
+            "ip": 193.66666666666666,
+            "lastStarts": {
+              "n": 5,
+              "hr": 2,
+              "outs": 90,
+              "hr9": 0.6
+            },
+            "source": "https://statsapi.mlb.com/api/v1/people/693645/stats?stats=season,gameLog&group=pitching&season=2026"
+          },
+          "split": {
+            "hand": "R",
+            "pa": 389,
+            "hr": 19,
+            "slg": 0.5015197568389058
+          },
+          "h2h": {
+            "ab": 12,
+            "pa": 12,
+            "hr": 0,
+            "slg": ".167",
+            "source": "https://statsapi.mlb.com/api/v1/people/575929/stats?stats=vsPlayer&group=hitting&opposingPlayerId=693645"
+          },
+          "checkedAt": 1790682902730,
+          "pitchData": true
+        },
+        "sources": [
+          "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-29&hydrate=probablePitcher,team,venue(location,fieldInfo)",
+          "https://statsapi.mlb.com/api/v1/teams/111/roster?rosterType=active",
+          "https://www.mlb.com/injury-report",
+          "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
+          "https://api.open-meteo.com/v1/forecast?latitude=40.82919482&longitude=-73.9264977&hourly=temperature_2m,precipitation_probability,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=UTC&forecast_days=2",
+          "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=pitcher&year=2026&min=1&minPitches=1&csv=true",
+          "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?type=batter&year=2026&min=1&minPitches=1&csv=true",
+          "https://www.mlb.com/redsox/news/red-sox-vs-yankees-wild-card-series-starting-lineups-pitching-matchup",
+          "https://www.mlb.com/news/baseball-injury-updates",
+          "https://www.mlb.com/probable-pitchers",
+          "https://www.mlb.com/starting-lineups"
+        ],
+        "baseScore": 61.43569088512103,
+        "pitchFit": {
+          "factor": 1.0225214985014985,
+          "label": "Balanced pitch mix",
+          "weightedSlugging": 0.45850549450549455,
+          "weightedHardHit": 46.99620379620381,
+          "source": "https://github.com/Rallo2312/RalloPicks/blob/main/data/arsenals.json",
+          "checkedAt": "2026-09-28T21:26:28.604909+00:00"
+        },
+        "marketCrossCheck": null,
+        "contactQuality": {
+          "bbe": 317,
+          "barrelRate": 13.2,
+          "hardHitRate": 44.2,
+          "exitVelocity": 89.8,
+          "maxExitVelocity": 116,
+          "launchAngle": null,
+          "scope": "2026 season",
+          "checkedAt": "2026-09-29T11:47:34.126201+00:00",
+          "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true"
+        },
+        "contextNote": "Active roster and probable starter checked for 2026-09-29; starting lineup and batting order remain pending. Forecast: 62°F, 3 mph Blowing out, 1% precipitation. The current sample-adjusted site score determines ranking; pitch mix and park/weather are contextual evidence. Bullpen availability is not scored because verified same-day relief usage was unavailable. Verified same-slate odds are used only as a small market cross-check where a player and game-time match was available; no betting-price value edge is claimed. A matching same-slate odds snapshot was unavailable for this player. Season contact: 13.2% barrels, 44.2% hard-hit, 89.8 mph average exit velocity over 317 batted-ball events. Recent-window Statcast contact quality was unavailable; L5/L10/L20 HR results are separate completed-game samples. Pitch-type context (2026 season): 4-Seam Fastball 44.5% usage; hitter 0.405 SLG over 166 PA, 41.8% hard-hit. Cutter 25.6% usage; hitter 0.333 SLG over 27 PA, 53.3% hard-hit. Sinker 19.3% usage; hitter 0.728 SLG over 113 PA, 45.2% hard-hit. Small pitch-type samples are descriptive, not predictive; no pitch-type score adjustment. Dated opposing-pitcher snapshot: 0 HR and 13.6% hard-hit across 22 tracked batted balls. Limited sample; context only.",
+        "news": {
+          "supporting": [
+            "3 of 20 prior completed games included a homer (3 total HR). Historical results are not a probability forecast.",
+            "Season barrel rate 13.2% across 317 tracked batted balls.",
+            "Contreras returned to Boston's lineup on September 27 and was expected to be available for the Wild Card round."
+          ],
+          "warnings": [
+            "Recent return from injury increases role and workload uncertainty; verify the confirmed lineup.",
+            "Wild Card starting lineup and batting order pending; recheck before using this selection.",
+            "Current same-game HR odds unavailable; no betting-value claim."
+          ],
+          "checkedAt": "2026-09-29T12:02:19.547Z"
+        },
+        "valid": true,
+        "statusCheckedAt": "2026-09-29T12:03:50.275Z"
+      },
+      "researchCheckedAt": "2026-09-29T12:04:00.462Z",
+      "publishedScore": 60.4,
+      "snapshotSchema": 2,
+      "modelVersion": "hr-evidence-813a3332e6c3",
+      "scoreContributions": [
+        "Season HR/PA +6.0",
+        "Barrels +3.2",
+        "Handedness HR/PA +3.4",
+        "Starter HR tendency -2.6",
+        "Recent HR games +0.4",
+        "Batting order +1.2"
+      ],
+      "scoreComponents": {
+        "Season HR/PA": 5.959183673469387,
+        "Barrels": 3.162398081534772,
+        "Handedness HR/PA": 3.399814471243042,
+        "Starter HR tendency": -2.584404924760601,
+        "Recent HR games": 0.44999999999999996,
+        "Batting order": 1.2
+      },
+      "experiments": {
+        "no-streak-v1": {
+          "version": "no-streak-v1-5aacce906c08",
+          "score": 61.1,
+          "exclusions": []
+        },
+        "contact-first-v1": {
+          "version": "contact-first-v1-656b05a846c0",
+          "score": 59.6,
+          "exclusions": []
+        }
+      },
+      "evaluationCohort": "prospective-v2"
     }
   ],
-  "updatedAt": "2026-09-29T19:46:34.320078+00:00"
+  "updatedAt": "2026-09-29T20:47:02.821070+00:00"
 }
