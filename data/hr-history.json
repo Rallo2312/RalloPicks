@@ -8842,8 +8842,8 @@
       },
       "contactCheckedAt": "2026-09-29T17:47:23.445843+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null,
+      "status": "miss",
+      "hr": 0,
       "researchSnapshot": {
         "person": {
           "id": 808959,
@@ -9073,7 +9073,9 @@
           "exclusions": []
         }
       },
-      "evaluationCohort": "prospective-v2"
+      "evaluationCohort": "prospective-v2",
+      "settledAt": "2026-09-30T00:53:44.130625+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/849849/boxscore"
     },
     {
       "key": "2026-09-29:849849:670541",
@@ -9099,8 +9101,8 @@
       },
       "contactCheckedAt": "2026-09-29T17:47:23.445843+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null,
+      "status": "miss",
+      "hr": 0,
       "researchSnapshot": {
         "person": {
           "id": 670541,
@@ -9323,7 +9325,9 @@
           "exclusions": []
         }
       },
-      "evaluationCohort": "prospective-v2"
+      "evaluationCohort": "prospective-v2",
+      "settledAt": "2026-09-30T00:53:44.130625+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/849849/boxscore"
     },
     {
       "key": "2026-09-29:849849:678246",
@@ -9349,8 +9353,8 @@
       },
       "contactCheckedAt": "2026-09-29T17:47:23.445843+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null,
+      "status": "miss",
+      "hr": 0,
       "researchSnapshot": {
         "person": {
           "id": 678246,
@@ -9580,7 +9584,9 @@
           "exclusions": []
         }
       },
-      "evaluationCohort": "prospective-v2"
+      "evaluationCohort": "prospective-v2",
+      "settledAt": "2026-09-30T00:53:44.130625+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/849849/boxscore"
     },
     {
       "key": "2026-09-29:849849:695657",
@@ -9606,8 +9612,8 @@
       },
       "contactCheckedAt": "2026-09-29T17:47:23.445843+00:00",
       "source": "https://baseballsavant.mlb.com/leaderboard/statcast?type=batter&year=2026&position=&team=&min=1&csv=true",
-      "status": "pending",
-      "hr": null,
+      "status": "hit",
+      "hr": 1,
       "researchSnapshot": {
         "person": {
           "id": 695657,
@@ -9837,7 +9843,9 @@
           "exclusions": []
         }
       },
-      "evaluationCohort": "prospective-v2"
+      "evaluationCohort": "prospective-v2",
+      "settledAt": "2026-09-30T00:53:44.130625+00:00",
+      "resultSource": "https://statsapi.mlb.com/api/v1/game/849849/boxscore"
     },
     {
       "key": "2026-09-29:849851:700250",
@@ -11380,5 +11388,5 @@
       "evaluationCohort": "prospective-v2"
     }
   ],
-  "updatedAt": "2026-09-29T23:44:19.545997+00:00"
+  "updatedAt": "2026-09-30T00:53:44.130625+00:00"
 }
