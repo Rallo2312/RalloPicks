@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T04:48:19.520173+00:00",
+  "updatedAt": "2026-09-30T05:47:59.479037+00:00",
   "status": "collecting_prospective_results",
   "legacyRecordsExcluded": 176,
   "experiments": {
@@ -9,17 +9,44 @@
         "challengerVersion": "contact-first-v1-656b05a846c0",
         "status": "collecting",
         "excludedCohorts": 2,
-        "pendingCohorts": 2,
-        "completedCohorts": [],
+        "pendingCohorts": 1,
+        "completedCohorts": [
+          {
+            "date": "2026-09-29",
+            "board": "top10",
+            "poolSize": 10,
+            "baseline": {
+              "players": [
+                808959,
+                691718,
+                670541
+              ],
+              "hits": 0,
+              "graded": 3,
+              "voids": 0
+            },
+            "challenger": {
+              "players": [
+                808959,
+                691718,
+                670541
+              ],
+              "hits": 0,
+              "graded": 3,
+              "voids": 0
+            },
+            "samePicks": true
+          }
+        ],
         "summary": {
-          "dates": 0,
+          "dates": 1,
           "baselineHits": 0,
           "challengerHits": 0,
-          "baselineGraded": 0,
-          "challengerGraded": 0,
+          "baselineGraded": 3,
+          "challengerGraded": 3,
           "betterDates": 0,
           "worseDates": 0,
-          "tiedDates": 0,
+          "tiedDates": 1,
           "differentPickCohorts": 0
         },
         "automaticPromotion": false
@@ -29,18 +56,45 @@
         "challengerVersion": "no-streak-v1-5aacce906c08",
         "status": "collecting",
         "excludedCohorts": 2,
-        "pendingCohorts": 2,
-        "completedCohorts": [],
+        "pendingCohorts": 1,
+        "completedCohorts": [
+          {
+            "date": "2026-09-29",
+            "board": "top10",
+            "poolSize": 10,
+            "baseline": {
+              "players": [
+                808959,
+                691718,
+                670541
+              ],
+              "hits": 0,
+              "graded": 3,
+              "voids": 0
+            },
+            "challenger": {
+              "players": [
+                808959,
+                691718,
+                656941
+              ],
+              "hits": 0,
+              "graded": 3,
+              "voids": 0
+            },
+            "samePicks": false
+          }
+        ],
         "summary": {
-          "dates": 0,
+          "dates": 1,
           "baselineHits": 0,
           "challengerHits": 0,
-          "baselineGraded": 0,
-          "challengerGraded": 0,
+          "baselineGraded": 3,
+          "challengerGraded": 3,
           "betterDates": 0,
           "worseDates": 0,
-          "tiedDates": 0,
-          "differentPickCohorts": 0
+          "tiedDates": 1,
+          "differentPickCohorts": 1
         },
         "automaticPromotion": false
       }
@@ -55,18 +109,25 @@
   },
   "versions": {
     "hr-evidence-813a3332e6c3": {
-      "completedCohorts": 2,
-      "pendingCohorts": 2,
+      "completedCohorts": 3,
+      "pendingCohorts": 1,
       "top3Hits": 2,
-      "top3Picks": 6,
-      "poolHits": 2,
-      "poolPicks": 6,
+      "top3Picks": 9,
+      "poolHits": 5,
+      "poolPicks": 16,
       "cohorts": [
         {
           "date": "2026-09-27",
           "board": "underrated",
           "recordedCandidates": 3,
           "top3Hits": 2,
+          "top3Graded": 3
+        },
+        {
+          "date": "2026-09-29",
+          "board": "top10",
+          "recordedCandidates": 10,
+          "top3Hits": 0,
           "top3Graded": 3
         },
         {
