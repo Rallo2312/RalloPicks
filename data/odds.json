@@ -1,364 +1,6 @@
 {
-  "updated_at": "2026-10-03T19:59:03.289146+00:00",
+  "updated_at": "2026-10-03T23:47:02.804478+00:00",
   "games": [
-    {
-      "id": "5d13b613a334039f0694d8c95af28728",
-      "commence_time": "2026-10-03T17:09:00Z",
-      "home_team": "Cleveland Guardians",
-      "away_team": "Chicago White Sox",
-      "books": [
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "totals": [
-              {
-                "name": "Over",
-                "price": 1260,
-                "point": 3.5
-              },
-              {
-                "name": "Under",
-                "price": -6000,
-                "point": 3.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "markets": {
-            "totals": [
-              {
-                "name": "Over",
-                "price": 1120,
-                "point": 3.5
-              },
-              {
-                "name": "Under",
-                "price": -5700,
-                "point": 3.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "totals": [
-              {
-                "name": "Over",
-                "price": 1600,
-                "point": 3.5
-              },
-              {
-                "name": "Under",
-                "price": -10000,
-                "point": 3.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "totals": [
-              {
-                "name": "Over",
-                "price": 700,
-                "point": 3.5
-              },
-              {
-                "name": "Under",
-                "price": -2000,
-                "point": 3.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "markets": {
-            "totals": [
-              {
-                "name": "Over",
-                "price": 290,
-                "point": 3.5
-              },
-              {
-                "name": "Under",
-                "price": -435,
-                "point": 3.5
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "1632ced04d65127cf6172d3a2c2e2d16",
-      "commence_time": "2026-10-03T20:10:00Z",
-      "home_team": "Los Angeles Dodgers",
-      "away_team": "Atlanta Braves",
-      "books": [
-        {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 173
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -212
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -109,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 198
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -230
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -114,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -106,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 180
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -220
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -110,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "mybookieag",
-          "title": "MyBookie.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 180
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -216
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -105,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -116,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 165
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -200
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -114,
-                "point": 8.0
-              },
-              {
-                "name": "Under",
-                "price": -107,
-                "point": 8.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 195
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -240
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 200
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -223
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -114,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -106,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 200
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -223
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -112,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -103,
-                "point": 8.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betus",
-          "title": "BetUS",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 191
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -221
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 8.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 8.5
-              }
-            ]
-          }
-        }
-      ]
-    },
     {
       "id": "cb4d07dc15440acf3d9ebe1ad41756c1",
       "commence_time": "2026-10-03T22:31:00Z",
@@ -372,23 +14,23 @@
             "h2h": [
               {
                 "name": "New York Yankees",
-                "price": 114
+                "price": 250
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -134
+                "price": -340
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -142,
-                "point": 6.5
+                "price": -168,
+                "point": 4.5
               },
               {
                 "name": "Under",
-                "price": 116,
-                "point": 6.5
+                "price": 126,
+                "point": 4.5
               }
             ]
           }
@@ -400,23 +42,23 @@
             "h2h": [
               {
                 "name": "New York Yankees",
-                "price": 112
+                "price": 226
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -135
+                "price": -312
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
-                "point": 7.0
+                "price": -154,
+                "point": 4.5
               },
               {
                 "name": "Under",
-                "price": -114,
-                "point": 7.0
+                "price": 118,
+                "point": 4.5
               }
             ]
           }
@@ -428,23 +70,23 @@
             "h2h": [
               {
                 "name": "New York Yankees",
-                "price": 115
+                "price": 220
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -135
+                "price": -285
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
-                "point": 7.0
+                "price": -165,
+                "point": 4.5
               },
               {
                 "name": "Under",
-                "price": -115,
-                "point": 7.0
+                "price": 130,
+                "point": 4.5
               }
             ]
           }
@@ -456,23 +98,23 @@
             "h2h": [
               {
                 "name": "New York Yankees",
-                "price": 114
+                "price": 240
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -134
+                "price": -333
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -104,
-                "point": 7.0
+                "price": -111,
+                "point": 5.0
               },
               {
                 "name": "Under",
-                "price": -117,
-                "point": 7.0
+                "price": -125,
+                "point": 5.0
               }
             ]
           }
@@ -484,23 +126,23 @@
             "h2h": [
               {
                 "name": "New York Yankees",
-                "price": 123
+                "price": 205
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -148
+                "price": -315
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -106,
-                "point": 7.0
+                "price": -150,
+                "point": 4.5
               },
               {
                 "name": "Under",
-                "price": -115,
-                "point": 7.0
+                "price": 106,
+                "point": 4.5
               }
             ]
           }
@@ -512,107 +154,23 @@
             "h2h": [
               {
                 "name": "New York Yankees",
-                "price": 114
+                "price": 250
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -136
+                "price": -350
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
-                "point": 7.0
+                "price": -110,
+                "point": 5.0
               },
               {
                 "name": "Under",
-                "price": -115,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 118
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -130
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -104,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": -116,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 118
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -130
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -101,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": -114,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betus",
-          "title": "BetUS",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 118
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -130
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -105,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": -115,
-                "point": 7.0
+                "price": -120,
+                "point": 5.0
               }
             ]
           }
@@ -632,22 +190,22 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -209
+                "price": -218
               },
               {
                 "name": "San Diego Padres",
-                "price": 171
+                "price": 178
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
+                "price": -103,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -115,
+                "price": -117,
                 "point": 7.0
               }
             ]
@@ -660,11 +218,11 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -210
+                "price": -200
               },
               {
                 "name": "San Diego Padres",
-                "price": 176
+                "price": 180
               }
             ],
             "totals": [
@@ -716,22 +274,22 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -210
+                "price": -208
               },
               {
                 "name": "San Diego Padres",
-                "price": 170
+                "price": 169
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
+                "price": 100,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -115,
+                "price": -120,
                 "point": 7.0
               }
             ]
@@ -744,23 +302,23 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -240
+                "price": -200
               },
               {
                 "name": "San Diego Padres",
-                "price": 195
+                "price": 163
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -109,
-                "point": 7.0
+                "price": -125,
+                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -112,
-                "point": 7.0
+                "price": 102,
+                "point": 6.5
               }
             ]
           }
@@ -772,22 +330,22 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -200
+                "price": -204
               },
               {
                 "name": "San Diego Padres",
-                "price": 168
+                "price": 172
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -107,
+                "price": -105,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -114,
+                "price": -117,
                 "point": 7.0
               }
             ]
@@ -880,6 +438,238 @@
       ]
     },
     {
+      "id": "583202487b52f61769b2404a64e01c77",
+      "commence_time": "2026-10-05T00:00:00Z",
+      "home_team": "Los Angeles Dodgers",
+      "away_team": "Atlanta Braves",
+      "books": [
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 130
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -154
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 114,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -140,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 125
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -150
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -118,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -102,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 121
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -146
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -116,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -104,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 140
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -155
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 105,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -125,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 140
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -155
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 107,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -123,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 130
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -157
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 112,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -136,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 138
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -155
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 105,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -125,
+                "point": 7.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 130
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -155
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 115,
+                "point": 7.5
+              },
+              {
+                "name": "Under",
+                "price": -135,
+                "point": 7.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "ccd487a87bb73145e3f12dd3a765ad47",
       "commence_time": "2026-10-05T21:10:00Z",
       "home_team": "Cleveland Guardians",
@@ -930,13 +720,209 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -120,
+                "price": -119,
                 "point": 6.5
               },
               {
                 "name": "Under",
                 "price": -101,
                 "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 135
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -160
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -105,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 128
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -151
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -121,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -101,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 136
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -150
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 103,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -118,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 136
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -150
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 100,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -120,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 131
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -157
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -125,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": 105,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 128
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -152
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -118,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -104,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 134
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -150
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 100,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -120,
+                "point": 7.0
               }
             ]
           }
