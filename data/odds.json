@@ -1,240 +1,36 @@
 {
-  "updated_at": "2026-10-03T23:47:02.804478+00:00",
+  "updated_at": "2026-10-04T17:34:28.913556+00:00",
   "games": [
     {
-      "id": "cb4d07dc15440acf3d9ebe1ad41756c1",
-      "commence_time": "2026-10-03T22:31:00Z",
-      "home_team": "Tampa Bay Rays",
-      "away_team": "New York Yankees",
-      "books": [
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 250
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -340
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -168,
-                "point": 4.5
-              },
-              {
-                "name": "Under",
-                "price": 126,
-                "point": 4.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 226
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -312
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -154,
-                "point": 4.5
-              },
-              {
-                "name": "Under",
-                "price": 118,
-                "point": 4.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 220
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -285
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -165,
-                "point": 4.5
-              },
-              {
-                "name": "Under",
-                "price": 130,
-                "point": 4.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "mybookieag",
-          "title": "MyBookie.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 240
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -333
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -111,
-                "point": 5.0
-              },
-              {
-                "name": "Under",
-                "price": -125,
-                "point": 5.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 205
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -315
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -150,
-                "point": 4.5
-              },
-              {
-                "name": "Under",
-                "price": 106,
-                "point": 4.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "markets": {
-            "h2h": [
-              {
-                "name": "New York Yankees",
-                "price": 250
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -350
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 5.0
-              },
-              {
-                "name": "Under",
-                "price": -120,
-                "point": 5.0
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "347a2e725dd11a54a1d964eae3d04dd2",
-      "commence_time": "2026-10-04T00:30:00Z",
+      "id": "6da40e91a31110e51e84ba5671996deb",
+      "commence_time": "2026-10-04T20:00:00Z",
       "home_team": "Milwaukee Brewers",
       "away_team": "San Diego Padres",
       "books": [
         {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -218
-              },
-              {
-                "name": "San Diego Padres",
-                "price": 178
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -103,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": -117,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
           "key": "fanduel",
           "title": "FanDuel",
           "markets": {
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -200
+                "price": -134
               },
               {
                 "name": "San Diego Padres",
-                "price": 180
+                "price": 114
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -144,
-                "point": 6.5
+                "price": 106,
+                "point": 7.5
               },
               {
                 "name": "Under",
-                "price": 118,
-                "point": 6.5
+                "price": -130,
+                "point": 7.5
               }
             ]
           }
@@ -246,22 +42,78 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -220
+                "price": -135
               },
               {
                 "name": "San Diego Padres",
-                "price": 180
+                "price": 115
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
+                "price": -115,
                 "point": 7.0
               },
               {
                 "name": "Under",
+                "price": -105,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -136
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 113
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
                 "price": -115,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -105,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -136
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 116
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -107,
                 "point": 7.0
               }
             ]
@@ -274,22 +126,22 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -208
+                "price": -135
               },
               {
                 "name": "San Diego Padres",
-                "price": 169
+                "price": 113
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": 100,
+                "price": -115,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -120,
+                "price": -105,
                 "point": 7.0
               }
             ]
@@ -302,78 +154,22 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -200
+                "price": -148
               },
               {
                 "name": "San Diego Padres",
-                "price": 163
+                "price": 123
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -125,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": 102,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "mybookieag",
-          "title": "MyBookie.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -204
-              },
-              {
-                "name": "San Diego Padres",
-                "price": 172
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -105,
+                "price": -112,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -117,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -205
-              },
-              {
-                "name": "San Diego Padres",
-                "price": 184
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -104,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": -116,
+                "price": -109,
                 "point": 7.0
               }
             ]
@@ -386,22 +182,50 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -205
+                "price": -128
               },
               {
                 "name": "San Diego Padres",
-                "price": 184
+                "price": 116
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -101,
+                "price": -115,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -114,
+                "price": 100,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -128
+              },
+              {
+                "name": "San Diego Padres",
+                "price": 116
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -117,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -103,
                 "point": 7.0
               }
             ]
@@ -414,22 +238,22 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -205
+                "price": -128
               },
               {
                 "name": "San Diego Padres",
-                "price": 178
+                "price": 117
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
+                "price": -115,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -115,
+                "price": -105,
                 "point": 7.0
               }
             ]
@@ -450,11 +274,11 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": 130
+                "price": 128
               },
               {
                 "name": "Los Angeles Dodgers",
-                "price": -154
+                "price": -152
               }
             ],
             "totals": [
@@ -478,22 +302,22 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": 125
+                "price": 130
               },
               {
                 "name": "Los Angeles Dodgers",
-                "price": -150
+                "price": -155
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -118,
+                "price": -110,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -102,
+                "price": -110,
                 "point": 7.0
               }
             ]
@@ -502,90 +326,6 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 121
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -146
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -116,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": -104,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 140
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -155
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": 105,
-                "point": 7.5
-              },
-              {
-                "name": "Under",
-                "price": -125,
-                "point": 7.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Atlanta Braves",
-                "price": 140
-              },
-              {
-                "name": "Los Angeles Dodgers",
-                "price": -155
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": 107,
-                "point": 7.5
-              },
-              {
-                "name": "Under",
-                "price": -123,
-                "point": 7.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
           "markets": {
             "h2h": [
               {
@@ -600,13 +340,125 @@
             "totals": [
               {
                 "name": "Over",
-                "price": 112,
-                "point": 7.5
+                "price": -110,
+                "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -136,
-                "point": 7.5
+                "price": -110,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 135
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -159
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -112,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -109,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 137
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -151
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -113,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -107,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 137
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -151
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -104,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Atlanta Braves",
+                "price": 140
+              },
+              {
+                "name": "Los Angeles Dodgers",
+                "price": -167
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": -106,
+                "point": 7.0
               }
             ]
           }
@@ -618,23 +470,23 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": 138
+                "price": 134
               },
               {
                 "name": "Los Angeles Dodgers",
-                "price": -155
+                "price": -150
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": 105,
-                "point": 7.5
+                "price": -115,
+                "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -125,
-                "point": 7.5
+                "price": -105,
+                "point": 7.0
               }
             ]
           }
@@ -646,23 +498,23 @@
             "h2h": [
               {
                 "name": "Atlanta Braves",
-                "price": 130
+                "price": 129
               },
               {
                 "name": "Los Angeles Dodgers",
-                "price": -155
+                "price": -154
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": 115,
-                "point": 7.5
+                "price": -110,
+                "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -135,
-                "point": 7.5
+                "price": -110,
+                "point": 7.0
               }
             ]
           }
@@ -682,11 +534,11 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 128
+                "price": 132
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -152
+                "price": -156
               }
             ],
             "totals": [
@@ -710,22 +562,22 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 135
+                "price": 129
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -164
+                "price": -157
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -119,
+                "price": -122,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -101,
+                "price": 101,
                 "point": 6.5
               }
             ]
@@ -748,12 +600,12 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -115,
+                "price": -120,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -105,
+                "price": 100,
                 "point": 6.5
               }
             ]
@@ -776,12 +628,12 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -121,
+                "price": -119,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -101,
+                "price": -103,
                 "point": 6.5
               }
             ]
@@ -804,13 +656,13 @@
             "totals": [
               {
                 "name": "Over",
-                "price": 103,
-                "point": 7.0
+                "price": -118,
+                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -118,
-                "point": 7.0
+                "price": 103,
+                "point": 6.5
               }
             ]
           }
@@ -832,13 +684,13 @@
             "totals": [
               {
                 "name": "Over",
-                "price": 100,
-                "point": 7.0
+                "price": -120,
+                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -120,
-                "point": 7.0
+                "price": 100,
+                "point": 6.5
               }
             ]
           }
@@ -878,23 +730,23 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 128
+                "price": 130
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -152
+                "price": -157
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -118,
-                "point": 6.5
+                "price": -104,
+                "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -104,
-                "point": 6.5
+                "price": -118,
+                "point": 7.0
               }
             ]
           }
@@ -916,13 +768,273 @@
             "totals": [
               {
                 "name": "Over",
-                "price": 100,
-                "point": 7.0
+                "price": -120,
+                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -120,
-                "point": 7.0
+                "price": 100,
+                "point": 6.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "4be245ad03895bcafcdc42d7d926b675",
+      "commence_time": "2026-10-06T00:00:00Z",
+      "home_team": "Tampa Bay Rays",
+      "away_team": "New York Yankees",
+      "books": [
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -130
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 110
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -114,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -106,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -131
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 109
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -105,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -130
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 110
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -105,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -125
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 113
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -113,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -102,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -125
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 113
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -105,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -129
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 108
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -106,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -126
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 106
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -125
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 114
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -115,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -105,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "New York Yankees",
+                "price": -128
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 109
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -114,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -107,
+                "point": 6.5
               }
             ]
           }
