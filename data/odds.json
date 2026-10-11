@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T17:51:17.557251+00:00",
+  "updated_at": "2026-10-11T00:14:52.863089+00:00",
   "games": [
     {
       "id": "62bf363a77455f7a8b48838e7792f60b",
@@ -14,23 +14,23 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 120
+                "price": 136
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -142
+                "price": -174
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": 108,
-                "point": 7.5
+                "price": -128,
+                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -132,
-                "point": 7.5
+                "price": -104,
+                "point": 6.5
               }
             ]
           }
@@ -42,23 +42,23 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 118
+                "price": 136
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -143
+                "price": -178
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -120,
-                "point": 7.0
+                "price": -132,
+                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": 100,
-                "point": 7.0
+                "price": 102,
+                "point": 6.5
               }
             ]
           }
@@ -74,18 +74,18 @@
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -141
+                "price": -154
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -122,
+                "price": -125,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": 100,
+                "price": -111,
                 "point": 7.0
               }
             ]
@@ -98,22 +98,22 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 122
+                "price": 118
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -135
+                "price": -130
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -117,
+                "price": -121,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": -103,
+                "price": 101,
                 "point": 7.0
               }
             ]
@@ -126,22 +126,22 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 122
+                "price": 118
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -135
+                "price": -130
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -118,
+                "price": -119,
                 "point": 7.0
               },
               {
                 "name": "Under",
-                "price": 103,
+                "price": 104,
                 "point": 7.0
               }
             ]
@@ -154,11 +154,67 @@
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 121
+                "price": 120
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -144
+                "price": -143
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -125,
+                "point": 7.0
+              },
+              {
+                "name": "Under",
+                "price": 105,
+                "point": 7.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 143
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -205
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -130,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -107,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Chicago White Sox",
+                "price": 122
+              },
+              {
+                "name": "Cleveland Guardians",
+                "price": -135
               }
             ],
             "totals": [
@@ -176,85 +232,29 @@
           }
         },
         {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Chicago White Sox",
-                "price": 115
-              },
-              {
-                "name": "Cleveland Guardians",
-                "price": -137
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -125,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": 102,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
-          "key": "betus",
-          "title": "BetUS",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Chicago White Sox",
-                "price": 123
-              },
-              {
-                "name": "Cleveland Guardians",
-                "price": -136
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 7.0
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 7.0
-              }
-            ]
-          }
-        },
-        {
           "key": "betmgm",
           "title": "BetMGM",
           "markets": {
             "h2h": [
               {
                 "name": "Chicago White Sox",
-                "price": 115
+                "price": 140
               },
               {
                 "name": "Cleveland Guardians",
-                "price": -135
+                "price": -180
               }
             ],
             "totals": [
               {
                 "name": "Over",
                 "price": -125,
-                "point": 7.0
+                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": 105,
-                "point": 7.0
+                "price": -102,
+                "point": 6.5
               }
             ]
           }
@@ -284,12 +284,12 @@
             "totals": [
               {
                 "name": "Over",
-                "price": 110,
+                "price": 114,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -134,
+                "price": -140,
                 "point": 6.5
               }
             ]
@@ -312,12 +312,12 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -105,
+                "price": -110,
                 "point": 6.0
               },
               {
                 "name": "Under",
-                "price": -115,
+                "price": -110,
                 "point": 6.0
               }
             ]
@@ -358,7 +358,7 @@
             "h2h": [
               {
                 "name": "Los Angeles Dodgers",
-                "price": -107
+                "price": -103
               },
               {
                 "name": "Milwaukee Brewers",
@@ -368,12 +368,12 @@
             "totals": [
               {
                 "name": "Over",
-                "price": -111,
+                "price": -110,
                 "point": 6.0
               },
               {
                 "name": "Under",
-                "price": -110,
+                "price": -111,
                 "point": 6.0
               }
             ]
@@ -470,11 +470,11 @@
             "h2h": [
               {
                 "name": "Los Angeles Dodgers",
-                "price": -102
+                "price": -103
               },
               {
                 "name": "Milwaukee Brewers",
-                "price": -108
+                "price": -107
               }
             ],
             "totals": [
@@ -498,22 +498,22 @@
             "h2h": [
               {
                 "name": "Los Angeles Dodgers",
-                "price": -112
+                "price": -113
               },
               {
                 "name": "Milwaukee Brewers",
-                "price": -107
+                "price": -106
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -120,
+                "price": -108,
                 "point": 6.0
               },
               {
                 "name": "Under",
-                "price": -103,
+                "price": -113,
                 "point": 6.0
               }
             ]
