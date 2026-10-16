@@ -1,745 +1,503 @@
 {
   "source": "SportsGameOdds",
-  "updatedAt": "2026-10-15T23:41:42.276458+00:00",
+  "updatedAt": "2026-10-16T17:23:30.424336+00:00",
   "league": "MLB",
   "market": "Anytime Home Run",
   "methodology": "Best available book price, implied probability, provider fair probability, and price edge; matchup scoring remains separate.",
   "refreshStatus": "fresh",
-  "count": 54,
+  "count": 18,
   "rows": [
     {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "DAVID_HAMILTON_1_MLB",
-      "playerName": "David Hamilton",
-      "marketName": "David Hamilton Any Home Runs Yes/No",
-      "bestBook": "caesars",
-      "bestBookName": "Caesars",
-      "bestOdds": "+2000",
-      "bestImpliedProbability": 4.76,
-      "fairOdds": "+1503",
-      "fairImpliedProbability": 6.24,
-      "marketEdgePct": 1.48,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+2000",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1520",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "MIGUEL_ROJAS_1_MLB",
-      "playerName": "Miguel Rojas",
-      "marketName": "Miguel Rojas Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1120",
-      "bestImpliedProbability": 8.2,
-      "fairOdds": "+957",
-      "fairImpliedProbability": 9.46,
-      "marketEdgePct": 1.26,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1120",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "CHRISTIAN_YELICH_1_MLB",
-      "playerName": "Christian Yelich",
-      "marketName": "Christian Yelich Any Home Runs Yes/No",
-      "bestBook": "caesars",
-      "bestBookName": "Caesars",
-      "bestOdds": "+1100",
-      "bestImpliedProbability": 8.33,
-      "fairOdds": "+956",
-      "fairImpliedProbability": 9.47,
-      "marketEdgePct": 1.14,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1080",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1040",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1000",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+625",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "SAL_FRELICK_1_MLB",
-      "playerName": "Sal Frelick",
-      "marketName": "Sal Frelick Any Home Runs Yes/No",
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "JONNY_DELUCA_1_MLB",
+      "playerName": "Jonny Deluca",
+      "marketName": "Jonny DeLuca Any Home Runs Yes/No",
       "bestBook": "draftkings",
       "bestBookName": "DraftKings",
-      "bestOdds": "+1780",
-      "bestImpliedProbability": 5.32,
-      "fairOdds": "+1459",
-      "fairImpliedProbability": 6.41,
-      "marketEdgePct": 1.09,
+      "bestOdds": "+1500",
+      "bestImpliedProbability": 6.25,
+      "fairOdds": "+1163",
+      "fairImpliedProbability": 7.92,
+      "marketEdgePct": 1.67,
       "bookCount": 6,
       "books": [
         {
           "book": "draftkings",
           "bookName": "DraftKings",
-          "odds": "+1780",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
           "odds": "+1500",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
         },
         {
           "book": "fanduel",
           "bookName": "FanDuel",
           "odds": "+1400",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+1200",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1200",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "FREDDIE_FREEMAN_1_MLB",
-      "playerName": "Freddie Freeman",
-      "marketName": "Freddie Freeman Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+850",
-      "bestImpliedProbability": 10.53,
-      "fairOdds": "+773",
-      "fairImpliedProbability": 11.45,
-      "marketEdgePct": 0.92,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+850",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+790",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+775",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+750",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+550",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "MOOKIE_BETTS_1_MLB",
-      "playerName": "Mookie Betts",
-      "marketName": "Mookie Betts Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+680",
-      "bestImpliedProbability": 12.82,
-      "fairOdds": "+628",
-      "fairImpliedProbability": 13.74,
-      "marketEdgePct": 0.92,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+675",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+670",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+625",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+550",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+425",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "GARRETT_MITCHELL_1_MLB",
-      "playerName": "Garrett Mitchell",
-      "marketName": "Garrett Mitchell Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+1060",
-      "bestImpliedProbability": 8.62,
-      "fairOdds": "+989",
-      "fairImpliedProbability": 9.18,
-      "marketEdgePct": 0.56,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1060",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1040",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1000",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+950",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+775",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "JACKSON_CHOURIO_1_MLB",
-      "playerName": "Jackson Chourio",
-      "marketName": "Jackson Chourio Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+556",
-      "bestImpliedProbability": 15.24,
-      "fairOdds": "+533",
-      "fairImpliedProbability": 15.8,
-      "marketEdgePct": 0.56,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+556",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+490",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+475",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+475",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+390",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "JONATHAN_ARANDA_1_MLB",
-      "playerName": "Jonathan Aranda",
-      "marketName": "Jonathan Aranda Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+790",
-      "bestImpliedProbability": 11.24,
-      "fairOdds": "+749",
-      "fairImpliedProbability": 11.78,
-      "marketEdgePct": 0.54,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+790",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+775",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+700",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+700",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+690",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "STEVEN_KWAN_1_MLB",
-      "playerName": "Steven Kwan",
-      "marketName": "Steven Kwan Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+2300",
-      "bestImpliedProbability": 4.17,
-      "fairOdds": "+2029",
-      "fairImpliedProbability": 4.7,
-      "marketEdgePct": 0.53,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+2300",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+2000",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1600",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "MIGUEL_ROJAS_1_MLB",
-      "playerName": "Miguel Rojas",
-      "marketName": "Miguel Rojas Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1120",
-      "bestImpliedProbability": 8.2,
-      "fairOdds": "+1048",
-      "fairImpliedProbability": 8.71,
-      "marketEdgePct": 0.51,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1120",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+950",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "WILLIAM_CONTRERAS_1_MLB",
-      "playerName": "William Contreras",
-      "marketName": "William Contreras Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+680",
-      "bestImpliedProbability": 12.82,
-      "fairOdds": "+653",
-      "fairImpliedProbability": 13.28,
-      "marketEdgePct": 0.46,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+675",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+660",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+625",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+550",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "COOPER_PRATT_1_MLB",
-      "playerName": "Cooper Pratt",
-      "marketName": "Cooper Pratt Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+1320",
-      "bestImpliedProbability": 7.04,
-      "fairOdds": "+1250",
-      "fairImpliedProbability": 7.41,
-      "marketEdgePct": 0.37,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1320",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
         },
         {
           "book": "caesars",
           "bookName": "Caesars",
           "odds": "+1300",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
         },
         {
           "book": "bovada",
           "bookName": "Bovada",
           "odds": "+1200",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
         },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1100",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+900",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "JUNIOR_CAMINERO_1_MLB",
+      "playerName": "Junior Caminero",
+      "marketName": "Junior Caminero Any Home Runs Yes/No",
+      "bestBook": "fanduel",
+      "bestBookName": "FanDuel",
+      "bestOdds": "+640",
+      "bestImpliedProbability": 13.51,
+      "fairOdds": "+567",
+      "fairImpliedProbability": 14.99,
+      "marketEdgePct": 1.48,
+      "bookCount": 6,
+      "books": [
         {
           "book": "fanduel",
           "bookName": "FanDuel",
-          "odds": "+1200",
+          "odds": "+640",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+575",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+525",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+500",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+375",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "YANDY_DIAZ_1_MLB",
+      "playerName": "Yandy Diaz",
+      "marketName": "Yandy D\u00edaz Any Home Runs Yes/No",
+      "bestBook": "fanduel",
+      "bestBookName": "FanDuel",
+      "bestOdds": "+1100",
+      "bestImpliedProbability": 8.33,
+      "fairOdds": "+943",
+      "fairImpliedProbability": 9.59,
+      "marketEdgePct": 1.26,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+1100",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+1060",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+1000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+950",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+800",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "TAYLOR_WALLS_1_MLB",
+      "playerName": "Taylor Walls",
+      "marketName": "Taylor Walls Any Home Runs Yes/No",
+      "bestBook": "fanduel",
+      "bestBookName": "FanDuel",
+      "bestOdds": "+2000",
+      "bestImpliedProbability": 4.76,
+      "fairOdds": "+1677",
+      "fairImpliedProbability": 5.63,
+      "marketEdgePct": 0.87,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+2000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+1880",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+1750",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+1500",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+1500",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "BRAYAN_ROCCHIO_1_MLB",
+      "playerName": "Brayan Rocchio",
+      "marketName": "Brayan Rocchio Any Home Runs Yes/No",
+      "bestBook": "fanduel",
+      "bestBookName": "FanDuel",
+      "bestOdds": "+1400",
+      "bestImpliedProbability": 6.67,
+      "fairOdds": "+1236",
+      "fairImpliedProbability": 7.49,
+      "marketEdgePct": 0.82,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+1400",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+1380",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+1300",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+1300",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
         },
         {
           "book": "espnbet",
           "bookName": "ESPN BET",
           "odds": "+1200",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
         },
         {
           "book": "betmgm",
           "bookName": "BetMGM",
-          "odds": "+1200",
+          "odds": "+1150",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
         }
       ]
     },
     {
       "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "VICTOR_MESA_1_MLB",
+      "playerName": "Victor Mesa",
+      "marketName": "Victor Mesa Jr. Any Home Runs Yes/No",
+      "bestBook": "draftkings",
+      "bestBookName": "DraftKings",
+      "bestOdds": "+650",
+      "bestImpliedProbability": 13.33,
+      "fairOdds": "+607",
+      "fairImpliedProbability": 14.14,
+      "marketEdgePct": 0.81,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+650",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+650",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        },
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+640",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+575",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+525",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "STEVEN_KWAN_1_MLB",
+      "playerName": "Steven Kwan",
+      "marketName": "Steven Kwan Any Home Runs Yes/No",
+      "bestBook": "bovada",
+      "bestBookName": "Bovada",
+      "bestOdds": "+2500",
+      "bestImpliedProbability": 3.85,
+      "fairOdds": "+2074",
+      "fairImpliedProbability": 4.6,
+      "marketEdgePct": 0.75,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+2500",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+2200",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+2200",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+2000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+1500",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "JOSE_RAMIREZ_1_MLB",
+      "playerName": "Jose Ramirez",
+      "marketName": "Jos\u00e9 Ram\u00edrez Any Home Runs Yes/No",
+      "bestBook": "fanduel",
+      "bestBookName": "FanDuel",
+      "bestOdds": "+700",
+      "bestImpliedProbability": 12.5,
+      "fairOdds": "+655",
+      "fairImpliedProbability": 13.25,
+      "marketEdgePct": 0.75,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+700",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+680",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+650",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+625",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
       "awayTeam": "Tampa Bay Rays",
       "homeTeam": "Cleveland Guardians",
       "playerID": "CHANDLER_SIMPSON_1_MLB",
@@ -749,833 +507,119 @@
       "bestBookName": "Caesars",
       "bestOdds": "+4000",
       "bestImpliedProbability": 2.44,
-      "fairOdds": "+3537",
-      "fairImpliedProbability": 2.75,
-      "marketEdgePct": 0.31,
-      "bookCount": 5,
+      "fairOdds": "+3084",
+      "fairImpliedProbability": 3.14,
+      "marketEdgePct": 0.7,
+      "bookCount": 6,
       "books": [
         {
           "book": "caesars",
           "bookName": "Caesars",
           "odds": "+4000",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+3600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
         },
         {
           "book": "fanduel",
           "bookName": "FanDuel",
           "odds": "+3500",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
         },
         {
           "book": "bovada",
           "bookName": "Bovada",
           "odds": "+3500",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
         },
         {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+3400",
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+2800",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
         },
         {
           "book": "espnbet",
           "bookName": "ESPN BET",
           "odds": "+2000",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "TEOSCAR_HERNANDEZ_1_MLB",
-      "playerName": "Teoscar Hernandez",
-      "marketName": "Teoscar Hern\u00e1ndez Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+680",
-      "bestImpliedProbability": 12.82,
-      "fairOdds": "+664",
-      "fairImpliedProbability": 13.09,
-      "marketEdgePct": 0.27,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+630",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+625",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+625",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+550",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
         }
       ]
     },
     {
       "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
+      "startsAt": "2026-10-17T00:00:00.000Z",
       "awayTeam": "Tampa Bay Rays",
       "homeTeam": "Cleveland Guardians",
-      "playerID": "JUNIOR_CAMINERO_1_MLB",
-      "playerName": "Junior Caminero",
-      "marketName": "Junior Caminero Any Home Runs Yes/No",
+      "playerID": "JONATHAN_ARANDA_1_MLB",
+      "playerName": "Jonathan Aranda",
+      "marketName": "Jonathan Aranda Any Home Runs Yes/No",
       "bestBook": "fanduel",
       "bestBookName": "FanDuel",
-      "bestOdds": "+540",
-      "bestImpliedProbability": 15.62,
-      "fairOdds": "+535",
-      "fairImpliedProbability": 15.75,
-      "marketEdgePct": 0.13,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+540",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+525",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+485",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+475",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "TRAVIS_BAZZANA_1_MLB",
-      "playerName": "Travis Bazzana",
-      "marketName": "Travis Bazzana Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+970",
-      "bestImpliedProbability": 9.35,
-      "fairOdds": "+962",
-      "fairImpliedProbability": 9.42,
-      "marketEdgePct": 0.07,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+970",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+920",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+850",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "BRICE_TURANG_1_MLB",
-      "playerName": "Brice Turang",
-      "marketName": "Brice Turang Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+940",
-      "bestImpliedProbability": 9.62,
-      "fairOdds": "+943",
-      "fairImpliedProbability": 9.59,
-      "marketEdgePct": -0.03,
+      "bestOdds": "+870",
+      "bestImpliedProbability": 10.31,
+      "fairOdds": "+816",
+      "fairImpliedProbability": 10.92,
+      "marketEdgePct": 0.61,
       "bookCount": 6,
       "books": [
         {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+940",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
           "book": "fanduel",
           "bookName": "FanDuel",
-          "odds": "+920",
+          "odds": "+870",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+850",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+575",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "KYLE_TUCKER_1_MLB",
-      "playerName": "Kyle Tucker",
-      "marketName": "Kyle Tucker Any Home Runs Yes/No",
-      "bestBook": "caesars",
-      "bestBookName": "Caesars",
-      "bestOdds": "+700",
-      "bestImpliedProbability": 12.5,
-      "fairOdds": "+708",
-      "fairImpliedProbability": 12.38,
-      "marketEdgePct": -0.12,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+700",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
         },
         {
           "book": "draftkings",
           "bookName": "DraftKings",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+675",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+600",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+475",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "CHASE_DELAUTER_1_MLB",
-      "playerName": "Chase Delauter",
-      "marketName": "Chase DeLauter Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+820",
-      "bestImpliedProbability": 10.87,
-      "fairOdds": "+832",
-      "fairImpliedProbability": 10.73,
-      "marketEdgePct": -0.14,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
           "odds": "+820",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
         },
         {
           "book": "bovada",
           "bookName": "Bovada",
           "odds": "+800",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
         },
         {
           "book": "espnbet",
           "bookName": "ESPN BET",
           "odds": "+800",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+790",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
         },
         {
           "book": "caesars",
           "bookName": "Caesars",
           "odds": "+750",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "JONNY_DELUCA_1_MLB",
-      "playerName": "Jonny Deluca",
-      "marketName": "Jonny DeLuca Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+1140",
-      "bestImpliedProbability": 8.06,
-      "fairOdds": "+1171",
-      "fairImpliedProbability": 7.87,
-      "marketEdgePct": -0.19,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1140",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1120",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1000",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "BRAYAN_ROCCHIO_1_MLB",
-      "playerName": "Brayan Rocchio",
-      "marketName": "Brayan Rocchio Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1200",
-      "bestImpliedProbability": 7.69,
-      "fairOdds": "+1235",
-      "fairImpliedProbability": 7.49,
-      "marketEdgePct": -0.2,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1200",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1200",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1160",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "SHOHEI_OHTANI_1_MLB",
-      "playerName": "Shohei Ohtani",
-      "marketName": "Shohei Ohtani Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+490",
-      "bestImpliedProbability": 16.95,
-      "fairOdds": "+498",
-      "fairImpliedProbability": 16.72,
-      "marketEdgePct": -0.23,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+490",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+489",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+475",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+475",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+450",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
         },
         {
           "book": "betmgm",
           "bookName": "BetMGM",
-          "odds": "+340",
+          "odds": "+650",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
         }
       ]
     },
     {
       "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "YANDY_DIAZ_1_MLB",
-      "playerName": "Yandy Diaz",
-      "marketName": "Yandy D\u00edaz Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+920",
-      "bestImpliedProbability": 9.8,
-      "fairOdds": "+946",
-      "fairImpliedProbability": 9.56,
-      "marketEdgePct": -0.24,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+920",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+850",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+850",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "TAYLOR_WALLS_1_MLB",
-      "playerName": "Taylor Walls",
-      "marketName": "Taylor Walls Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+1420",
-      "bestImpliedProbability": 6.58,
-      "fairOdds": "+1483",
-      "fairImpliedProbability": 6.32,
-      "marketEdgePct": -0.26,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1420",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+1300",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "JAKE_BAUERS_1_MLB",
-      "playerName": "Jake Bauers",
-      "marketName": "Jake Bauers Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+590",
-      "bestImpliedProbability": 14.49,
-      "fairOdds": "+603",
-      "fairImpliedProbability": 14.22,
-      "marketEdgePct": -0.27,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+590",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+589",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+575",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+525",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "CHRISTIAN_YELICH_1_MLB",
-      "playerName": "Christian Yelich",
-      "marketName": "Christian Yelich Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1040",
-      "bestImpliedProbability": 8.77,
-      "fairOdds": "+1078",
-      "fairImpliedProbability": 8.49,
-      "marketEdgePct": -0.28,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1040",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "GARRETT_MITCHELL_1_MLB",
-      "playerName": "Garrett Mitchell",
-      "marketName": "Garrett Mitchell Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1040",
-      "bestImpliedProbability": 8.77,
-      "fairOdds": "+1078",
-      "fairImpliedProbability": 8.49,
-      "marketEdgePct": -0.28,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1040",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "PETEY_HALPIN_1_MLB",
-      "playerName": "Petey Halpin",
-      "marketName": "Petey Halpin Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+1020",
-      "bestImpliedProbability": 8.93,
-      "fairOdds": "+1057",
-      "fairImpliedProbability": 8.64,
-      "marketEdgePct": -0.29,
-      "bookCount": 4,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1020",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1000",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+980",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+950",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
+      "startsAt": "2026-10-17T00:00:00.000Z",
       "awayTeam": "Tampa Bay Rays",
       "homeTeam": "Cleveland Guardians",
       "playerID": "LIAM_HICKS_1_MLB",
@@ -1583,53 +627,304 @@
       "marketName": "Liam Hicks Any Home Runs Yes/No",
       "bestBook": "fanduel",
       "bestBookName": "FanDuel",
-      "bestOdds": "+1200",
-      "bestImpliedProbability": 7.69,
-      "fairOdds": "+1254",
-      "fairImpliedProbability": 7.39,
-      "marketEdgePct": -0.3,
-      "bookCount": 5,
+      "bestOdds": "+1300",
+      "bestImpliedProbability": 7.14,
+      "fairOdds": "+1213",
+      "fairImpliedProbability": 7.62,
+      "marketEdgePct": 0.48,
+      "bookCount": 6,
       "books": [
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+1300",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+1300",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+1220",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1200",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+1150",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+1100",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "RICHARD_PALACIOS_1_MLB",
+      "playerName": "Richard Palacios",
+      "marketName": "Richie Palacios Any Home Runs Yes/No",
+      "bestBook": "draftkings",
+      "bestBookName": "DraftKings",
+      "bestOdds": "+1220",
+      "bestImpliedProbability": 7.58,
+      "fairOdds": "+1141",
+      "fairImpliedProbability": 8.06,
+      "marketEdgePct": 0.48,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+1220",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
         {
           "book": "fanduel",
           "bookName": "FanDuel",
           "odds": "+1200",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
         },
         {
           "book": "bovada",
           "bookName": "Bovada",
-          "odds": "+1200",
+          "odds": "+1100",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1160",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
         },
         {
           "book": "caesars",
           "bookName": "Caesars",
           "odds": "+1100",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
         },
         {
           "book": "espnbet",
           "bookName": "ESPN BET",
           "odds": "+1100",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+1050",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
         }
       ]
     },
     {
       "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "PETEY_HALPIN_1_MLB",
+      "playerName": "Petey Halpin",
+      "marketName": "Petey Halpin Any Home Runs Yes/No",
+      "bestBook": "betmgm",
+      "bestBookName": "BetMGM",
+      "bestOdds": "+1150",
+      "bestImpliedProbability": 8.0,
+      "fairOdds": "+1085",
+      "fairImpliedProbability": 8.44,
+      "marketEdgePct": 0.44,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+1150",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        },
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+1100",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+1100",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+1080",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+1000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "PATRICK_BAILEY_1_MLB",
+      "playerName": "Patrick Bailey",
+      "marketName": "Patrick Bailey Any Home Runs Yes/No",
+      "bestBook": "espnbet",
+      "bestBookName": "ESPN BET",
+      "bestOdds": "+1000",
+      "bestImpliedProbability": 9.09,
+      "fairOdds": "+955",
+      "fairImpliedProbability": 9.48,
+      "marketEdgePct": 0.39,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+980",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+950",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+900",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+900",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+850",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "TRAVIS_BAZZANA_1_MLB",
+      "playerName": "Travis Bazzana",
+      "marketName": "Travis Bazzana Any Home Runs Yes/No",
+      "bestBook": "fanduel",
+      "bestBookName": "FanDuel",
+      "bestOdds": "+1100",
+      "bestImpliedProbability": 8.33,
+      "fairOdds": "+1053",
+      "fairImpliedProbability": 8.67,
+      "marketEdgePct": 0.34,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+1100",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+1060",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+1000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+1000",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+950",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+825",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
       "awayTeam": "Tampa Bay Rays",
       "homeTeam": "Cleveland Guardians",
       "playerID": "NATHANIEL_LOWE_1_MLB",
@@ -1637,883 +932,176 @@
       "marketName": "Nathaniel Lowe Any Home Runs Yes/No",
       "bestBook": "draftkings",
       "bestBookName": "DraftKings",
-      "bestOdds": "+830",
-      "bestImpliedProbability": 10.75,
-      "fairOdds": "+857",
-      "fairImpliedProbability": 10.45,
-      "marketEdgePct": -0.3,
-      "bookCount": 5,
+      "bestOdds": "+910",
+      "bestImpliedProbability": 9.9,
+      "fairOdds": "+883",
+      "fairImpliedProbability": 10.17,
+      "marketEdgePct": 0.27,
+      "bookCount": 6,
       "books": [
         {
           "book": "draftkings",
           "bookName": "DraftKings",
-          "odds": "+830",
+          "odds": "+910",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
         },
         {
           "book": "fanduel",
           "bookName": "FanDuel",
-          "odds": "+820",
+          "odds": "+900",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+750",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "PATRICK_BAILEY_1_MLB",
-      "playerName": "Patrick Bailey",
-      "marketName": "Patrick Bailey Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+920",
-      "bestImpliedProbability": 9.8,
-      "fairOdds": "+957",
-      "fairImpliedProbability": 9.46,
-      "marketEdgePct": -0.34,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+920",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
         },
         {
           "book": "bovada",
           "bookName": "Bovada",
           "odds": "+900",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+900",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+880",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
         },
         {
           "book": "caesars",
           "bookName": "Caesars",
           "odds": "+850",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "RICHARD_PALACIOS_1_MLB",
-      "playerName": "Richard Palacios",
-      "marketName": "Richie Palacios Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1120",
-      "bestImpliedProbability": 8.2,
-      "fairOdds": "+1180",
-      "fairImpliedProbability": 7.81,
-      "marketEdgePct": -0.39,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1120",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+1100",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "ANDY_PAGES_1_MLB",
-      "playerName": "Andy Pages",
-      "marketName": "Andy Pages Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+710",
-      "bestImpliedProbability": 12.35,
-      "fairOdds": "+738",
-      "fairImpliedProbability": 11.93,
-      "marketEdgePct": -0.42,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+710",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+700",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+700",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+700",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+600",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "JOSE_RAMIREZ_1_MLB",
-      "playerName": "Jose Ramirez",
-      "marketName": "Jos\u00e9 Ram\u00edrez Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+610",
-      "bestImpliedProbability": 14.08,
-      "fairOdds": "+632",
-      "fairImpliedProbability": 13.66,
-      "marketEdgePct": -0.42,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+610",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+600",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+600",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+550",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+525",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "ENRIQUE_HERNANDEZ_1_MLB",
-      "playerName": "Enrique Hernandez",
-      "marketName": "Enrique Hern\u00e1ndez Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+880",
-      "bestImpliedProbability": 10.2,
-      "fairOdds": "+928",
-      "fairImpliedProbability": 9.73,
-      "marketEdgePct": -0.47,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+880",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+875",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
         },
         {
           "book": "espnbet",
           "bookName": "ESPN BET",
           "odds": "+800",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+750",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "JO_ADELL_1_MLB",
+      "playerName": "Jo Adell",
+      "marketName": "Jo Adell Any Home Runs Yes/No",
+      "bestBook": "draftkings",
+      "bestBookName": "DraftKings",
+      "bestOdds": "+640",
+      "bestImpliedProbability": 13.51,
+      "fairOdds": "+627",
+      "fairImpliedProbability": 13.76,
+      "marketEdgePct": 0.25,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+640",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+640",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
+        },
+        {
+          "book": "betmgm",
+          "bookName": "BetMGM",
+          "odds": "+600",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
+        },
+        {
+          "book": "caesars",
+          "bookName": "Caesars",
+          "odds": "+575",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+550",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        }
+      ]
+    },
+    {
+      "eventID": "Z8pud8SKKEBRRWLZXsXK",
+      "startsAt": "2026-10-17T00:00:00.000Z",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "playerID": "CHASE_DELAUTER_1_MLB",
+      "playerName": "Chase Delauter",
+      "marketName": "Chase DeLauter Any Home Runs Yes/No",
+      "bestBook": "draftkings",
+      "bestBookName": "DraftKings",
+      "bestOdds": "+840",
+      "bestImpliedProbability": 10.64,
+      "fairOdds": "+853",
+      "fairImpliedProbability": 10.49,
+      "marketEdgePct": -0.15,
+      "bookCount": 6,
+      "books": [
+        {
+          "book": "draftkings",
+          "bookName": "DraftKings",
+          "odds": "+840",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:17:56.119Z"
+        },
+        {
+          "book": "fanduel",
+          "bookName": "FanDuel",
+          "odds": "+810",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:18:25.506Z"
+        },
+        {
+          "book": "espnbet",
+          "bookName": "ESPN BET",
+          "odds": "+800",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:20:14.769Z"
+        },
+        {
+          "book": "bovada",
+          "bookName": "Bovada",
+          "odds": "+775",
+          "line": null,
+          "lastUpdatedAt": "2026-10-16T17:19:17.199Z"
         },
         {
           "book": "caesars",
           "bookName": "Caesars",
           "odds": "+750",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
+          "lastUpdatedAt": "2026-10-16T17:15:14.699Z"
         },
         {
           "book": "betmgm",
           "bookName": "BetMGM",
-          "odds": "+575",
+          "odds": "+700",
           "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Smlj0GhN9tPA4eJREzZL",
-      "startsAt": "2026-10-16T00:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "WILL_SMITH_2_MLB",
-      "playerName": "Will Smith",
-      "marketName": "Will Smith Any Home Runs Yes/No",
-      "bestBook": "draftkings",
-      "bestBookName": "DraftKings",
-      "bestOdds": "+531",
-      "bestImpliedProbability": 15.85,
-      "fairOdds": "+552",
-      "fairImpliedProbability": 15.34,
-      "marketEdgePct": -0.51,
-      "bookCount": 6,
-      "books": [
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+531",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+520",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:43.730Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:15.730Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.230Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:57.358Z"
-        },
-        {
-          "book": "betmgm",
-          "bookName": "BetMGM",
-          "odds": "+475",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:50.230Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "JO_ADELL_1_MLB",
-      "playerName": "Jo Adell",
-      "marketName": "Jo Adell Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+570",
-      "bestImpliedProbability": 14.93,
-      "fairOdds": "+594",
-      "fairImpliedProbability": 14.41,
-      "marketEdgePct": -0.52,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+570",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+559",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+550",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+525",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        },
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        }
-      ]
-    },
-    {
-      "eventID": "Z8pud8SKKEBRRWLZXsXK",
-      "startsAt": "2026-10-16T22:00:00.000Z",
-      "awayTeam": "Tampa Bay Rays",
-      "homeTeam": "Cleveland Guardians",
-      "playerID": "VICTOR_MESA_1_MLB",
-      "playerName": "Victor Mesa",
-      "marketName": "Victor Mesa Jr. Any Home Runs Yes/No",
-      "bestBook": "espnbet",
-      "bestBookName": "ESPN BET",
-      "bestOdds": "+550",
-      "bestImpliedProbability": 15.38,
-      "fairOdds": "+577",
-      "fairImpliedProbability": 14.77,
-      "marketEdgePct": -0.61,
-      "bookCount": 5,
-      "books": [
-        {
-          "book": "espnbet",
-          "bookName": "ESPN BET",
-          "odds": "+550",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:47.206Z"
-        },
-        {
-          "book": "draftkings",
-          "bookName": "DraftKings",
-          "odds": "+542",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:27.485Z"
-        },
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+520",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        },
-        {
-          "book": "bovada",
-          "bookName": "Bovada",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:53.942Z"
-        },
-        {
-          "book": "caesars",
-          "bookName": "Caesars",
-          "odds": "+500",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:36:39.942Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "BRICE_TURANG_1_MLB",
-      "playerName": "Brice Turang",
-      "marketName": "Brice Turang Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+920",
-      "bestImpliedProbability": 9.8,
-      "fairOdds": "+1012",
-      "fairImpliedProbability": 8.99,
-      "marketEdgePct": -0.81,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+920",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "ENRIQUE_HERNANDEZ_1_MLB",
-      "playerName": "Enrique Hernandez",
-      "marketName": "Enrique Hern\u00e1ndez Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+880",
-      "bestImpliedProbability": 10.2,
-      "fairOdds": "+968",
-      "fairImpliedProbability": 9.36,
-      "marketEdgePct": -0.84,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+880",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "FREDDIE_FREEMAN_1_MLB",
-      "playerName": "Freddie Freeman",
-      "marketName": "Freddie Freeman Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+790",
-      "bestImpliedProbability": 11.24,
-      "fairOdds": "+869",
-      "fairImpliedProbability": 10.32,
-      "marketEdgePct": -0.92,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+790",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "ANDY_PAGES_1_MLB",
-      "playerName": "Andy Pages",
-      "marketName": "Andy Pages Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+710",
-      "bestImpliedProbability": 12.35,
-      "fairOdds": "+781",
-      "fairImpliedProbability": 11.35,
-      "marketEdgePct": -1.0,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+710",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "KYLE_TUCKER_1_MLB",
-      "playerName": "Kyle Tucker",
-      "marketName": "Kyle Tucker Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+680",
-      "bestImpliedProbability": 12.82,
-      "fairOdds": "+748",
-      "fairImpliedProbability": 11.79,
-      "marketEdgePct": -1.03,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "MOOKIE_BETTS_1_MLB",
-      "playerName": "Mookie Betts",
-      "marketName": "Mookie Betts Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+680",
-      "bestImpliedProbability": 12.82,
-      "fairOdds": "+748",
-      "fairImpliedProbability": 11.79,
-      "marketEdgePct": -1.03,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "WILLIAM_CONTRERAS_1_MLB",
-      "playerName": "William Contreras",
-      "marketName": "William Contreras Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+680",
-      "bestImpliedProbability": 12.82,
-      "fairOdds": "+748",
-      "fairImpliedProbability": 11.79,
-      "marketEdgePct": -1.03,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+680",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "TEOSCAR_HERNANDEZ_1_MLB",
-      "playerName": "Teoscar Hernandez",
-      "marketName": "Teoscar Hern\u00e1ndez Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+630",
-      "bestImpliedProbability": 13.7,
-      "fairOdds": "+693",
-      "fairImpliedProbability": 12.61,
-      "marketEdgePct": -1.09,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+630",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "JAKE_BAUERS_1_MLB",
-      "playerName": "Jake Bauers",
-      "marketName": "Jake Bauers Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+590",
-      "bestImpliedProbability": 14.49,
-      "fairOdds": "+649",
-      "fairImpliedProbability": 13.35,
-      "marketEdgePct": -1.14,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+590",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "WILL_SMITH_2_MLB",
-      "playerName": "Will Smith",
-      "marketName": "Will Smith Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+520",
-      "bestImpliedProbability": 16.13,
-      "fairOdds": "+572",
-      "fairImpliedProbability": 14.88,
-      "marketEdgePct": -1.25,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+520",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "JACKSON_CHOURIO_1_MLB",
-      "playerName": "Jackson Chourio",
-      "marketName": "Jackson Chourio Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+490",
-      "bestImpliedProbability": 16.95,
-      "fairOdds": "+539",
-      "fairImpliedProbability": 15.65,
-      "marketEdgePct": -1.3,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+490",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "SHOHEI_OHTANI_1_MLB",
-      "playerName": "Shohei Ohtani",
-      "marketName": "Shohei Ohtani Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+490",
-      "bestImpliedProbability": 16.95,
-      "fairOdds": "+539",
-      "fairImpliedProbability": 15.65,
-      "marketEdgePct": -1.3,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+490",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "DAVID_HAMILTON_1_MLB",
-      "playerName": "David Hamilton",
-      "marketName": "David Hamilton Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1800",
-      "bestImpliedProbability": 5.26,
-      "fairOdds": null,
-      "fairImpliedProbability": null,
-      "marketEdgePct": null,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1800",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "SAL_FRELICK_1_MLB",
-      "playerName": "Sal Frelick",
-      "marketName": "Sal Frelick Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1400",
-      "bestImpliedProbability": 6.67,
-      "fairOdds": null,
-      "fairImpliedProbability": null,
-      "marketEdgePct": null,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1400",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
-        }
-      ]
-    },
-    {
-      "eventID": "RXdyl5oJPfe6EixtEryF",
-      "startsAt": "2026-10-17T01:00:00.000Z",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Los Angeles Dodgers",
-      "playerID": "COOPER_PRATT_1_MLB",
-      "playerName": "Cooper Pratt",
-      "marketName": "Cooper Pratt Any Home Runs Yes/No",
-      "bestBook": "fanduel",
-      "bestBookName": "FanDuel",
-      "bestOdds": "+1200",
-      "bestImpliedProbability": 7.69,
-      "fairOdds": null,
-      "fairImpliedProbability": null,
-      "marketEdgePct": null,
-      "bookCount": 1,
-      "books": [
-        {
-          "book": "fanduel",
-          "bookName": "FanDuel",
-          "odds": "+1200",
-          "line": null,
-          "lastUpdatedAt": "2026-10-15T23:35:54.740Z"
+          "lastUpdatedAt": "2026-10-16T17:19:42.199Z"
         }
       ]
     }
