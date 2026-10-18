@@ -1,40 +1,12 @@
 {
-  "updated_at": "2026-10-17T23:07:22.335565+00:00",
+  "updated_at": "2026-10-18T16:30:56.782620+00:00",
   "games": [
     {
-      "id": "bf41baaebfa23a202d2f3a6811425ff9",
-      "commence_time": "2026-10-18T00:00:00Z",
+      "id": "f4ca2d8a09898a94722dde0633e0a7e1",
+      "commence_time": "2026-10-18T21:10:00Z",
       "home_team": "Cleveland Guardians",
       "away_team": "Tampa Bay Rays",
       "books": [
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Cleveland Guardians",
-                "price": -104
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -108
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -114,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -106,
-                "point": 6.5
-              }
-            ]
-          }
-        },
         {
           "key": "draftkings",
           "title": "DraftKings",
@@ -42,106 +14,50 @@
             "h2h": [
               {
                 "name": "Cleveland Guardians",
-                "price": -103
+                "price": 110
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -108
+                "price": -132
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -117,
+                "price": -102,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -103,
+                "price": -118,
                 "point": 6.5
               }
             ]
           }
         },
         {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
+          "key": "fanduel",
+          "title": "FanDuel",
           "markets": {
             "h2h": [
               {
                 "name": "Cleveland Guardians",
-                "price": 101
+                "price": 112
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -111
+                "price": -132
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -113,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -107,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Cleveland Guardians",
-                "price": 101
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -111
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
                 "price": -104,
                 "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "mybookieag",
-          "title": "MyBookie.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Cleveland Guardians",
-                "price": -104
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": -113
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -107,
+                "price": -118,
                 "point": 6.5
               }
             ]
@@ -154,78 +70,78 @@
             "h2h": [
               {
                 "name": "Cleveland Guardians",
-                "price": -105
+                "price": 110
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -115
+                "price": -130
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -115,
+                "price": -102,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -105,
+                "price": -118,
                 "point": 6.5
               }
             ]
           }
         },
         {
-          "key": "betus",
-          "title": "BetUS",
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
           "markets": {
             "h2h": [
               {
                 "name": "Cleveland Guardians",
-                "price": -102
+                "price": 116
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -108
+                "price": -128
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -110,
+                "price": 100,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -110,
+                "price": -120,
                 "point": 6.5
               }
             ]
           }
         },
         {
-          "key": "bovada",
-          "title": "Bovada",
+          "key": "lowvig",
+          "title": "LowVig.ag",
           "markets": {
             "h2h": [
               {
                 "name": "Cleveland Guardians",
-                "price": -106
+                "price": 116
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -114
+                "price": -128
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -115,
+                "price": -102,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -105,
+                "price": -113,
                 "point": 6.5
               }
             ]
@@ -238,22 +154,106 @@
             "h2h": [
               {
                 "name": "Cleveland Guardians",
-                "price": -107
+                "price": 110
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": -112
+                "price": -132
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -112,
+                "price": -118,
+                "point": 6.0
+              },
+              {
+                "name": "Under",
+                "price": -104,
+                "point": 6.0
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 107
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -128
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -105,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -109,
+                "price": -115,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betus",
+          "title": "BetUS",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 113
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -124
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": 100,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -120,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Cleveland Guardians",
+                "price": 112
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -132
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -102,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -120,
                 "point": 6.5
               }
             ]
