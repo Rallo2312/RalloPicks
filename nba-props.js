@@ -34,6 +34,7 @@ function mount(){
  if(typeof original==='function'&&!original.__nbaReady){
   const wrapped=function(name){
    if(name==='NBA'){
+    localStorage.setItem('ralloSport','NBA');
     document.body.dataset.sport='nba';
     ['sportMLB','sportNFL','sportUFC','sportNBA'].forEach(id=>{const b=el(id);if(b)b.classList.toggle('active',id==='sportNBA')});
     ['mlbNav','nflNav'].forEach(id=>{if(el(id))el(id).hidden=true});
