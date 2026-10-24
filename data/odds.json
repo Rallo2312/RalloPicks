@@ -1,40 +1,12 @@
 {
-  "updated_at": "2026-10-23T23:51:22.046087+00:00",
+  "updated_at": "2026-10-24T16:34:52.472736+00:00",
   "games": [
     {
-      "id": "e4c03eec29795f56b6b06c313d3af271",
-      "commence_time": "2026-10-24T00:00:00Z",
+      "id": "238f598685f7210fbfbbe3de39289264",
+      "commence_time": "2026-10-25T00:00:00Z",
       "home_team": "Milwaukee Brewers",
       "away_team": "Tampa Bay Rays",
       "books": [
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -184
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 164
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -110,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -110,
-                "point": 6.5
-              }
-            ]
-          }
-        },
         {
           "key": "draftkings",
           "title": "DraftKings",
@@ -42,50 +14,22 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -186
+                "price": -120
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": 165
+                "price": 100
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -115,
+                "price": -110,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -105,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -190
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 155
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
+                "price": -110,
                 "point": 6.5
               }
             ]
@@ -98,123 +42,11 @@
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -191
+                "price": -121
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": 161
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -106,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -183
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 165
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -113,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -102,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -183
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 165
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -194
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 159
-              }
-            ],
-            "totals": [
-              {
-                "name": "Over",
-                "price": -115,
-                "point": 6.5
-              },
-              {
-                "name": "Under",
-                "price": -105,
-                "point": 6.5
-              }
-            ]
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "h2h": [
-              {
-                "name": "Milwaukee Brewers",
-                "price": -195
-              },
-              {
-                "name": "Tampa Bay Rays",
-                "price": 160
+                "price": 103
               }
             ],
             "totals": [
@@ -232,29 +64,197 @@
           }
         },
         {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -120
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 102
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -118
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": -102
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -115
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 104
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -115
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 104
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -107,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -107,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "bovada",
+          "title": "Bovada",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -123
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 103
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 6.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 6.5
+              }
+            ]
+          }
+        },
+        {
           "key": "betus",
           "title": "BetUS",
           "markets": {
             "h2h": [
               {
                 "name": "Milwaukee Brewers",
-                "price": -183
+                "price": -117
               },
               {
                 "name": "Tampa Bay Rays",
-                "price": 161
+                "price": 107
               }
             ],
             "totals": [
               {
                 "name": "Over",
-                "price": -115,
+                "price": -110,
                 "point": 6.5
               },
               {
                 "name": "Under",
-                "price": -105,
+                "price": -110,
                 "point": 6.5
+              }
+            ]
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "h2h": [
+              {
+                "name": "Milwaukee Brewers",
+                "price": -118
+              },
+              {
+                "name": "Tampa Bay Rays",
+                "price": 100
+              }
+            ],
+            "totals": [
+              {
+                "name": "Over",
+                "price": -118,
+                "point": 6.0
+              },
+              {
+                "name": "Under",
+                "price": -104,
+                "point": 6.0
               }
             ]
           }
