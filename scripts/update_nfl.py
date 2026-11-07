@@ -396,7 +396,7 @@ def canonical_prop_name(value):
     }
     return aliases.get(key)
 
-feed_status = {"status": "unavailable", "updated_at": now.isoformat(), "projection_count": 0, "matched_players": 0}
+feed_status = {"status": "unavailable", "updated_at": now.isoformat(), "projection_count": 0, "matched_players": 0, "line_count": 0}
 try:
     prizepicks = get_json(
         "https://partner-api.prizepicks.com/projections",
@@ -430,6 +430,12 @@ for projection in prizepicks.get("data", []):
         matched_players.add(player["id"])
 feed_status["projection_count"] = len(prizepicks.get("data", []))
 feed_status["matched_players"] = len(matched_players)
+feed_status["line_count"] = sum(len(player["lines"].get("PrizePicks", {})) for player in players)
+print(
+    "PrizePicks NFL feed: "
+    f"status={feed_status['status']} projections={feed_status['projection_count']} "
+    f"matched_players={feed_status['matched_players']} exact_lines={feed_status['line_count']}"
+)
 position_order = {"QB": 0, "RB": 1, "WR": 2, "TE": 3}
 players.sort(key=lambda player: (position_order[player["position"]], player["team"], player["name"] or ""))
 
