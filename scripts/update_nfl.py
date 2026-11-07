@@ -8,6 +8,7 @@ import urllib.parse
 import urllib.error
 import urllib.request
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 OUT = Path("data/nfl.json")
@@ -80,6 +81,16 @@ with urllib.request.urlopen(request, timeout=60) as response:
 season_rows = [row for row in schedule_rows
                if row.get("season") == str(season) and row.get("game_type") == "REG"]
 
+EASTERN = ZoneInfo("America/New_York")
+
+def game_event_time(row):
+    day, clock = row.get("gameday"), row.get("gametime") or "12:00"
+    try:
+        local = dt.datetime.combine(dt.date.fromisoformat(day), dt.time.fromisoformat(clock))
+        return local.replace(tzinfo=EASTERN).astimezone(dt.timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
 teams = []
 for abbr, (name, conference) in TEAM_INFO.items():
     team_games = [row for row in season_rows
@@ -126,11 +137,8 @@ window_start = now - dt.timedelta(hours=12)
 window_end = now + dt.timedelta(days=10)
 games = []
 for row in season_rows:
-    try:
-        event_time = dt.datetime.fromisoformat(
-            f"{row.get('gameday')}T{row.get('gametime') or '12:00'}:00-04:00"
-        ).astimezone(dt.timezone.utc)
-    except (TypeError, ValueError):
+    event_time = game_event_time(row)
+    if event_time is None:
         continue
     if not window_start <= event_time <= window_end:
         continue
@@ -143,7 +151,7 @@ for row in season_rows:
         }
 
     games.append({
-        "id": row.get("game_id"), "date": event_time.isoformat(),
+        "id": row.get("game_id"), "week": int(number(row.get("week"))), "date": event_time.isoformat(),
         "name": f"{side('away')['name']} at {side('home')['name']}",
         "short_name": f"{row.get('away_team')} @ {row.get('home_team')}",
         "status": "Final" if row.get("home_score") not in (None, "") else "Scheduled",
@@ -200,6 +208,31 @@ for game in games:
     }
 
 games.sort(key=lambda game: game.get("date") or "")
+
+# Keep the full remaining regular-season schedule separate from the near-term
+# matchup board so long-range TD research can use each week's actual opponent.
+remaining_by_week = {}
+for row in season_rows:
+    event_time = game_event_time(row)
+    if event_time is None or event_time < now:
+        continue
+    week = int(number(row.get("week")))
+    if week < 1:
+        continue
+    def scheduled_side(home_away):
+        abbr = row.get(f"{home_away}_team")
+        name = TEAM_INFO.get(abbr, (abbr, "NFL"))[0]
+        return {"id": abbr, "name": name, "abbr": abbr, "logo": None}
+    remaining_by_week.setdefault(week, []).append({
+        "id": row.get("game_id"), "date": event_time.isoformat(), "week": week,
+        "short_name": f"{row.get('away_team')} @ {row.get('home_team')}",
+        "home": scheduled_side("home"), "away": scheduled_side("away"),
+    })
+remaining_weeks = [
+    {"week": week, "games": sorted(rows, key=lambda game: game["date"])}
+    for week, rows in sorted(remaining_by_week.items())
+]
+
 teams.sort(key=lambda team: (-team["win_pct"], -team["point_diff"], team["name"] or ""))
 
 roster_request = urllib.request.Request(NFLVERSE_ROSTER, headers={"User-Agent": "RalloPicks/1.0"})
@@ -259,7 +292,9 @@ for row in weekly_rows:
     game = {
         "week": int(number(row.get("week"))), "opponent": row.get("opponent_team"),
         "pass_yards": number(row.get("passing_yards")), "pass_tds": number(row.get("passing_tds")),
+        "pass_attempts": number(row.get("attempts", row.get("passing_attempts"))),
         "rush_yards": number(row.get("rushing_yards")), "rush_tds": number(row.get("rushing_tds")),
+        "rush_attempts": number(row.get("carries", row.get("rushing_attempts"))),
         "receptions": number(row.get("receptions")), "targets": number(row.get("targets")),
         "rec_yards": number(row.get("receiving_yards")), "rec_tds": number(row.get("receiving_tds")),
     }
@@ -315,7 +350,9 @@ for row in previous_rows:
     game = {
         "week": int(number(row.get("week"))), "opponent": row.get("opponent_team"),
         "pass_yards": number(row.get("passing_yards")), "pass_tds": number(row.get("passing_tds")),
+        "pass_attempts": number(row.get("attempts", row.get("passing_attempts"))),
         "rush_yards": number(row.get("rushing_yards")), "rush_tds": number(row.get("rushing_tds")),
+        "rush_attempts": number(row.get("carries", row.get("rushing_attempts"))),
         "receptions": number(row.get("receptions")), "targets": number(row.get("targets")),
         "rec_yards": number(row.get("receiving_yards")), "rec_tds": number(row.get("receiving_tds")),
     }
@@ -339,13 +376,36 @@ if previous_rows and history_matches == 0:
         f"Loaded {len(previous_rows)} rows for {previous_season} but matched zero active players"
     )
 
+def canonical_prop_name(value):
+    key = normalized(value)
+    aliases = {
+        "passyards": "Pass Yards", "passingyards": "Pass Yards",
+        "passyds": "Pass Yards", "passingyds": "Pass Yards",
+        "passtd": "Pass TDs", "passtds": "Pass TDs",
+        "passingtd": "Pass TDs", "passingtds": "Pass TDs",
+        "rushyards": "Rush Yards", "rushingyards": "Rush Yards",
+        "rushyds": "Rush Yards", "rushingyds": "Rush Yards",
+        "recyards": "Receiving Yards", "receivingyards": "Receiving Yards",
+        "receivingyds": "Receiving Yards", "recyds": "Receiving Yards",
+        "receptions": "Receptions", "catches": "Receptions",
+        "targets": "Targets",
+        "rushrecyards": "Rush + Rec Yards", "rushingreceivingyards": "Rush + Rec Yards",
+        "fantasyscore": "Fantasy Score", "fantasypoints": "Fantasy Score",
+        "rushingtds": "Rush TDs", "rushtds": "Rush TDs",
+        "receivingtds": "Receiving TDs", "rectds": "Receiving TDs",
+    }
+    return aliases.get(key)
+
+feed_status = {"status": "unavailable", "updated_at": now.isoformat(), "projection_count": 0, "matched_players": 0}
 try:
     prizepicks = get_json(
         "https://partner-api.prizepicks.com/projections",
         {"league_id": 9, "per_page": 250},
     )
-except (urllib.error.HTTPError, urllib.error.URLError):
+    feed_status["status"] = "available"
+except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError) as exc:
     prizepicks = {"data": [], "included": []}
+    feed_status["error"] = type(exc).__name__
 
 pp_players = {
     item.get("id"): item.get("attributes", {})
@@ -353,17 +413,23 @@ pp_players = {
     if item.get("type") == "new_player"
 }
 players_by_name = {normalized(player["name"]): player for player in players}
+matched_players = set()
 for projection in prizepicks.get("data", []):
     attrs = projection.get("attributes", {})
-    if attrs.get("status") != "pre_game" or attrs.get("odds_type") != "standard":
+    if attrs.get("status") not in (None, "", "pre_game"):
+        continue
+    if attrs.get("odds_type") not in (None, "", "standard"):
         continue
     player_ref = projection.get("relationships", {}).get("new_player", {}).get("data") or {}
     pp_player = pp_players.get(player_ref.get("id"), {})
     player = players_by_name.get(normalized(pp_player.get("display_name") or pp_player.get("name")))
-    stat_name = attrs.get("stat_display_name") or attrs.get("stat_type")
+    stat_name = canonical_prop_name(attrs.get("stat_display_name") or attrs.get("stat_type"))
     line = attrs.get("line_score")
     if player and stat_name and line is not None:
         player["lines"]["PrizePicks"][stat_name] = number(line)
+        matched_players.add(player["id"])
+feed_status["projection_count"] = len(prizepicks.get("data", []))
+feed_status["matched_players"] = len(matched_players)
 position_order = {"QB": 0, "RB": 1, "WR": 2, "TE": 3}
 players.sort(key=lambda player: (position_order[player["position"]], player["team"], player["name"] or ""))
 
@@ -371,6 +437,8 @@ OUT.write_text(json.dumps({
     "updated_at": now.isoformat(),
     "season": season,
     "games": games,
+    "remaining_weeks": remaining_weeks,
+    "prizepicks_feed": feed_status,
     "teams": teams,
     "players": players,
 }, indent=2), encoding="utf-8")
