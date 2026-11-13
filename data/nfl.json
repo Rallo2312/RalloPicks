@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T20:47:45.046798+00:00",
+  "updated_at": "2026-11-13T01:48:41.715902+00:00",
   "season": 2026,
   "games": [
     {
@@ -26,12 +26,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -130,
-        "away_moneyline": 110,
-        "home_spread": -2.5,
-        "spread_price": -110,
-        "total": 40.5,
-        "over_price": -115
+        "home_moneyline": 132,
+        "away_moneyline": -175,
+        "home_spread": 3.5,
+        "spread_price": -133,
+        "total": 33.5,
+        "over_price": -110
       }
     },
     {
@@ -58,12 +58,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -155,
-        "away_moneyline": 130,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
         "home_spread": -2.5,
         "spread_price": -120,
-        "total": 51.5,
-        "over_price": 100
+        "total": 49.5,
+        "over_price": -118
       }
     },
     {
@@ -154,10 +154,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -155,
-        "away_moneyline": 130,
+        "home_moneyline": -148,
+        "away_moneyline": 124,
         "home_spread": -3.0,
-        "spread_price": -112,
+        "spread_price": -105,
         "total": 41.5,
         "over_price": -115
       }
@@ -186,8 +186,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -205,
-        "away_moneyline": 170,
+        "home_moneyline": -198,
+        "away_moneyline": 164,
         "home_spread": -3.5,
         "spread_price": -118,
         "total": 38.5,
@@ -314,8 +314,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 390,
-        "away_moneyline": -520,
+        "home_moneyline": 380,
+        "away_moneyline": -500,
         "home_spread": 9.5,
         "spread_price": -108,
         "total": 39.5,
@@ -570,8 +570,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -470,
-        "away_moneyline": 360,
+        "home_moneyline": -485,
+        "away_moneyline": 370,
         "home_spread": -9.5,
         "spread_price": -110,
         "total": 48.5,
@@ -697,13 +697,141 @@
         "score": ""
       },
       "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": null,
+        "away_moneyline": null,
+        "home_spread": 0,
+        "spread_price": null,
+        "total": null,
+        "over_price": null
+      }
+    },
+    {
+      "id": "2026_11_NYJ_LAC",
+      "week": 11,
+      "date": "2026-11-22T21:05:00+00:00",
+      "name": "New York Jets at Los Angeles Chargers",
+      "short_name": "NYJ @ LAC",
+      "status": "Scheduled",
+      "venue": "SoFi Stadium",
+      "home": {
+        "id": "LAC",
+        "name": "Los Angeles Chargers",
+        "abbr": "LAC",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "NYJ",
+        "name": "New York Jets",
+        "abbr": "NYJ",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
         "book": "DraftKings",
-        "home_moneyline": 215,
-        "away_moneyline": -265,
-        "home_spread": 6.0,
+        "home_moneyline": -125,
+        "away_moneyline": 105,
+        "home_spread": -1.5,
         "spread_price": -110,
-        "total": 44.5,
+        "total": 42.5,
         "over_price": -110
+      }
+    },
+    {
+      "id": "2026_11_LV_DEN",
+      "week": 11,
+      "date": "2026-11-22T21:25:00+00:00",
+      "name": "Las Vegas Raiders at Denver Broncos",
+      "short_name": "LV @ DEN",
+      "status": "Scheduled",
+      "venue": "Empower Field at Mile High",
+      "home": {
+        "id": "DEN",
+        "name": "Denver Broncos",
+        "abbr": "DEN",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "LV",
+        "name": "Las Vegas Raiders",
+        "abbr": "LV",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": -440,
+        "away_moneyline": 340,
+        "home_spread": -8.5,
+        "spread_price": -110,
+        "total": 41.5,
+        "over_price": -110
+      }
+    },
+    {
+      "id": "2026_11_PIT_PHI",
+      "week": 11,
+      "date": "2026-11-22T21:25:00+00:00",
+      "name": "Pittsburgh Steelers at Philadelphia Eagles",
+      "short_name": "PIT @ PHI",
+      "status": "Scheduled",
+      "venue": "Lincoln Financial Field",
+      "home": {
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "abbr": "PHI",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "PIT",
+        "name": "Pittsburgh Steelers",
+        "abbr": "PIT",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": 164,
+        "away_moneyline": -198,
+        "home_spread": 4.5,
+        "spread_price": -110,
+        "total": 38.5,
+        "over_price": -110
+      }
+    },
+    {
+      "id": "2026_11_MIN_SF",
+      "week": 11,
+      "date": "2026-11-23T01:20:00+00:00",
+      "name": "Minnesota Vikings at San Francisco 49ers",
+      "short_name": "MIN @ SF",
+      "status": "Scheduled",
+      "venue": "Estadio Banorte",
+      "home": {
+        "id": "SF",
+        "name": "San Francisco 49ers",
+        "abbr": "SF",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "abbr": "MIN",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": -205,
+        "away_moneyline": 170,
+        "home_spread": -3.5,
+        "spread_price": -115,
+        "total": 45.5,
+        "over_price": -115
       }
     }
   ],
@@ -711,24 +839,6 @@
     {
       "week": 10,
       "games": [
-        {
-          "id": "2026_10_WAS_NYG",
-          "date": "2026-11-13T01:15:00+00:00",
-          "week": 10,
-          "short_name": "WAS @ NYG",
-          "home": {
-            "id": "NYG",
-            "name": "New York Giants",
-            "abbr": "NYG",
-            "logo": null
-          },
-          "away": {
-            "id": "WAS",
-            "name": "Washington Commanders",
-            "abbr": "WAS",
-            "logo": null
-          }
-        },
         {
           "id": "2026_10_NE_DET",
           "date": "2026-11-15T14:30:00+00:00",
@@ -3204,10 +3314,10 @@
   ],
   "prizepicks_feed": {
     "status": "available",
-    "updated_at": "2026-11-12T20:47:45.046798+00:00",
-    "projection_count": 6369,
-    "matched_players": 203,
-    "line_count": 418
+    "updated_at": "2026-11-13T01:48:41.715902+00:00",
+    "projection_count": 5802,
+    "matched_players": 192,
+    "line_count": 397
   },
   "teams": [
     {
@@ -4094,7 +4204,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 220.5,
+          "Pass Yards": 218.5,
           "Fantasy Score": 14.5,
           "Rush Yards": 6.5
         },
@@ -8086,8 +8196,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 210.5,
-          "Rush Yards": 27.5,
+          "Pass Yards": 209.5,
+          "Rush Yards": 24.5,
           "Fantasy Score": 15.0
         },
         "Underdog": {}
@@ -12023,6 +12133,7 @@
       "lines": {
         "PrizePicks": {
           "Pass Yards": 182.5,
+          "Fantasy Score": 12.0,
           "Rush Yards": 7.5
         },
         "Underdog": {}
@@ -14069,7 +14180,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 211.5
+          "Pass Yards": 209.5
         },
         "Underdog": {}
       },
@@ -15279,7 +15390,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 180.5,
+          "Pass Yards": 179.5,
           "Rush Yards": 12.5,
           "Fantasy Score": 12.0
         },
@@ -15325,6 +15436,7 @@
       "lines": {
         "PrizePicks": {
           "Pass Yards": 159.5,
+          "Fantasy Score": 10.0,
           "Rush Yards": 6.5
         },
         "Underdog": {}
@@ -17200,7 +17312,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 251.5,
+          "Pass Yards": 252.5,
           "Fantasy Score": 18.5,
           "Rush Yards": 16.5
         },
@@ -17709,11 +17821,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 201.5,
-          "Rush Yards": 15.5,
-          "Fantasy Score": 15.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -18206,7 +18314,8 @@
       "lines": {
         "PrizePicks": {
           "Pass Yards": 220.5,
-          "Rush Yards": 6.5
+          "Fantasy Score": 14.0,
+          "Rush Yards": 5.5
         },
         "Underdog": {}
       },
@@ -19022,7 +19131,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 237.5,
+          "Pass Yards": 239.5,
           "Fantasy Score": 15.5,
           "Pass TDs": 1.5,
           "Rush Yards": 0.5
@@ -20560,7 +20669,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 255.5,
+          "Pass Yards": 254.5,
           "Fantasy Score": 21.0,
           "Rush Yards": 19.5
         },
@@ -22529,11 +22638,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 201.5,
-          "Rush Yards": 37.5,
-          "Fantasy Score": 17.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -23691,7 +23796,7 @@
         "PrizePicks": {
           "Rush Yards": 37.5,
           "Receiving Yards": 10.5,
-          "Fantasy Score": 9.5
+          "Fantasy Score": 9.0
         },
         "Underdog": {}
       },
@@ -24736,7 +24841,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 9.5,
-          "Receiving Yards": 1.5
+          "Receiving Yards": 2.5
         },
         "Underdog": {}
       },
@@ -27271,7 +27376,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 15.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -30296,7 +30403,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 20.5,
+          "Rush Yards": 19.5,
           "Receiving Yards": 4.5
         },
         "Underdog": {}
@@ -31142,7 +31249,7 @@
       "lines": {
         "PrizePicks": {
           "Receiving Yards": 21.5,
-          "Rush Yards": 19.5,
+          "Rush Yards": 18.5,
           "Fantasy Score": 8.5
         },
         "Underdog": {}
@@ -32790,7 +32897,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 62.5,
+          "Rush Yards": 64.5,
           "Fantasy Score": 15.5,
           "Receiving Yards": 13.5
         },
@@ -34771,8 +34878,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 96.5,
-          "Receiving Yards": 32.5,
+          "Rush Yards": 95.5,
+          "Receiving Yards": 31.5,
           "Fantasy Score": 24.0
         },
         "Underdog": {}
@@ -38446,9 +38553,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 68.5,
+          "Rush Yards": 69.5,
           "Receiving Yards": 20.5,
-          "Fantasy Score": 15.0
+          "Fantasy Score": 15.5
         },
         "Underdog": {}
       },
@@ -38970,7 +39077,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 24.5,
-          "Receiving Yards": 3.5
+          "Receiving Yards": 2.5
         },
         "Underdog": {}
       },
@@ -41407,7 +41514,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 56.5,
+          "Rush Yards": 58.5,
           "Fantasy Score": 10.5,
           "Receiving Yards": 6.5
         },
@@ -41930,8 +42037,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 65.5,
-          "Receiving Yards": 20.5,
+          "Rush Yards": 64.5,
+          "Receiving Yards": 19.5,
           "Fantasy Score": 15.5
         },
         "Underdog": {}
@@ -45500,7 +45607,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 12.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -45838,7 +45947,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 73.5,
-          "Receiving Yards": 8.5
+          "Receiving Yards": 5.5
         },
         "Underdog": {}
       },
@@ -46921,7 +47030,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 44.5,
+          "Rush Yards": 45.5,
           "Receiving Yards": 2.5
         },
         "Underdog": {}
@@ -47455,9 +47564,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 48.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -49182,11 +49289,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 63.5,
-          "Fantasy Score": 11.5,
-          "Receiving Yards": 7.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -49453,11 +49556,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 23.5,
-          "Receiving Yards": 8.5,
-          "Fantasy Score": 6.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -50552,8 +50651,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 34.5,
-          "Receiving Yards": 7.5
+          "Rush Yards": 33.5,
+          "Receiving Yards": 6.5
         },
         "Underdog": {}
       },
@@ -50710,7 +50809,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 56.5,
+          "Rush Yards": 54.5,
           "Receiving Yards": 16.5,
           "Fantasy Score": 12.5
         },
@@ -55367,8 +55466,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 43.5,
-          "Receiving Yards": 10.5,
+          "Rush Yards": 42.5,
+          "Receiving Yards": 9.5,
           "Fantasy Score": 9.0
         },
         "Underdog": {}
@@ -55908,7 +56007,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 62.5,
-          "Receiving Yards": 31.5,
+          "Receiving Yards": 33.5,
           "Fantasy Score": 21.0
         },
         "Underdog": {}
@@ -56471,7 +56570,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 34.5
+          "Rush Yards": 33.5
         },
         "Underdog": {}
       },
@@ -59307,8 +59406,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 55.5,
-          "Receiving Yards": 13.5,
+          "Rush Yards": 58.5,
+          "Receiving Yards": 11.5,
           "Fantasy Score": 11.5
         },
         "Underdog": {}
@@ -60236,11 +60335,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 29.5,
-          "Receiving Yards": 10.5,
-          "Fantasy Score": 6.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -60339,11 +60434,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 38.5,
-          "Receiving Yards": 12.5,
-          "Fantasy Score": 9.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -64504,7 +64595,7 @@
         "PrizePicks": {
           "Receiving Yards": 69.5,
           "Fantasy Score": 14.5,
-          "Rush Yards": 2.5
+          "Rush Yards": 3.5
         },
         "Underdog": {}
       },
@@ -67306,7 +67397,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 48.5,
+          "Receiving Yards": 47.5,
           "Fantasy Score": 11.0
         },
         "Underdog": {}
@@ -73301,7 +73392,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 87.5,
+          "Receiving Yards": 90.5,
           "Fantasy Score": 19.5
         },
         "Underdog": {}
@@ -78415,7 +78506,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 15.5,
+          "Receiving Yards": 17.5,
           "Fantasy Score": 4.5
         },
         "Underdog": {}
@@ -81168,7 +81259,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 16.5
+          "Receiving Yards": 17.5
         },
         "Underdog": {}
       },
@@ -82453,7 +82544,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 30.5,
+          "Receiving Yards": 33.5,
           "Fantasy Score": 7.0
         },
         "Underdog": {}
@@ -82497,7 +82588,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 26.5,
+          "Receiving Yards": 28.5,
           "Fantasy Score": 6.5
         },
         "Underdog": {}
@@ -83343,7 +83434,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 7.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -83723,7 +83816,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 17.5
+          "Receiving Yards": 17.5,
+          "Fantasy Score": 4.5
         },
         "Underdog": {}
       },
@@ -83766,7 +83860,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 28.5
+          "Receiving Yards": 27.5,
+          "Fantasy Score": 6.5
         },
         "Underdog": {}
       },
@@ -84386,7 +84481,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 12.5
+          "Receiving Yards": 8.5
         },
         "Underdog": {}
       },
@@ -85357,7 +85452,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 6.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -85892,7 +85989,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 9.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -87990,7 +88089,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 25.5
+          "Receiving Yards": 28.5
         },
         "Underdog": {}
       },
@@ -88806,7 +88905,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 27.5
+          "Receiving Yards": 29.5
         },
         "Underdog": {}
       },
@@ -92682,7 +92781,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 6.5
+          "Receiving Yards": 4.5
         },
         "Underdog": {}
       },
@@ -94782,7 +94881,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 31.5,
+          "Receiving Yards": 30.5,
           "Fantasy Score": 8.0
         },
         "Underdog": {}
@@ -95767,7 +95866,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 42.5,
+          "Receiving Yards": 41.5,
           "Fantasy Score": 9.0
         },
         "Underdog": {}
@@ -101040,10 +101139,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 14.5,
-          "Fantasy Score": 3.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -101717,10 +101813,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 25.5,
-          "Fantasy Score": 6.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -101761,10 +101854,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 66.5,
-          "Fantasy Score": 14.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -101920,7 +102010,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 36.5
+          "Receiving Yards": 35.5,
+          "Fantasy Score": 7.5
         },
         "Underdog": {}
       },
@@ -102414,7 +102505,7 @@
       "lines": {
         "PrizePicks": {
           "Receiving Yards": 61.5,
-          "Fantasy Score": 13.5
+          "Fantasy Score": 13.0
         },
         "Underdog": {}
       },
@@ -103159,7 +103250,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 31.5
+          "Receiving Yards": 37.5,
+          "Fantasy Score": 7.5
         },
         "Underdog": {}
       },
@@ -105645,7 +105737,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 48.5,
+          "Receiving Yards": 50.5,
           "Fantasy Score": 10.5
         },
         "Underdog": {}
@@ -105730,7 +105822,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 21.5,
+          "Receiving Yards": 19.5,
           "Fantasy Score": 5.5
         },
         "Underdog": {}
@@ -106786,7 +106878,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 18.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -107333,7 +107427,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 7.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -108008,7 +108104,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 37.5,
+          "Receiving Yards": 35.5,
           "Fantasy Score": 9.5,
           "Rush Yards": 5.5
         },
@@ -108503,7 +108599,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 25.5
+          "Receiving Yards": 27.5
         },
         "Underdog": {}
       },
@@ -112082,7 +112178,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 11.5
+          "Receiving Yards": 14.5
         },
         "Underdog": {}
       },
@@ -112323,7 +112419,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 54.5,
+          "Receiving Yards": 55.5,
           "Fantasy Score": 11.5
         },
         "Underdog": {}
@@ -112886,7 +112982,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 23.5,
+          "Receiving Yards": 25.5,
           "Fantasy Score": 5.0
         },
         "Underdog": {}
@@ -113380,7 +113476,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 37.5,
+          "Receiving Yards": 39.5,
           "Fantasy Score": 9.5
         },
         "Underdog": {}
@@ -113873,10 +113969,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 37.5,
-          "Fantasy Score": 8.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -114212,10 +114305,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 39.5,
-          "Fantasy Score": 9.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -114734,10 +114824,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 26.5,
-          "Fantasy Score": 5.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -115004,10 +115091,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 6.5,
-          "Fantasy Score": 2.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -116065,7 +116149,7 @@
       "lines": {
         "PrizePicks": {
           "Receiving Yards": 59.5,
-          "Fantasy Score": 15.0
+          "Fantasy Score": 14.5
         },
         "Underdog": {}
       },
@@ -118401,7 +118485,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 41.5,
+          "Receiving Yards": 40.5,
           "Fantasy Score": 9.5
         },
         "Underdog": {}
@@ -118783,7 +118867,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 11.5
+          "Receiving Yards": 11.5,
+          "Fantasy Score": 3.5
         },
         "Underdog": {}
       },
@@ -121249,7 +121334,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 13.5
+          "Receiving Yards": 13.5,
+          "Fantasy Score": 4.5
         },
         "Underdog": {}
       },
@@ -128612,7 +128698,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 30.5,
+          "Receiving Yards": 31.5,
           "Fantasy Score": 8.0
         },
         "Underdog": {}
@@ -131276,7 +131362,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 13.5
+          "Receiving Yards": 9.5
         },
         "Underdog": {}
       },
@@ -132811,7 +132897,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 32.5
+          "Receiving Yards": 31.5
         },
         "Underdog": {}
       },
@@ -137543,7 +137629,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 35.5
+          "Receiving Yards": 35.5,
+          "Fantasy Score": 8.5
         },
         "Underdog": {}
       },
@@ -138064,7 +138151,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 21.5,
+          "Receiving Yards": 23.5,
           "Fantasy Score": 6.0
         },
         "Underdog": {}
@@ -139192,10 +139279,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 48.5,
-          "Fantasy Score": 11.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -139574,10 +139658,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 5.5,
-          "Fantasy Score": 1.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -140646,7 +140727,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 20.5
+          "Receiving Yards": 21.5,
+          "Fantasy Score": 5.5
         },
         "Underdog": {}
       },
@@ -140689,7 +140771,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 15.5
+          "Receiving Yards": 15.5,
+          "Fantasy Score": 4.5
         },
         "Underdog": {}
       },
@@ -146828,7 +146911,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 17.5,
+          "Receiving Yards": 21.5,
           "Fantasy Score": 5.5
         },
         "Underdog": {}
@@ -147995,10 +148078,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 35.5,
-          "Fantasy Score": 8.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -148840,9 +148920,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 0.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
