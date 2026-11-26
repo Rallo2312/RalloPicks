@@ -1,69 +1,37 @@
 {
-  "updated_at": "2026-11-25T22:29:48.258374+00:00",
+  "updated_at": "2026-11-26T22:19:52.322760+00:00",
   "season": 2026,
   "games": [
-    {
-      "id": "2026_12_GB_LA",
-      "week": 12,
-      "date": "2026-11-26T01:00:00+00:00",
-      "name": "Green Bay Packers at Los Angeles Rams",
-      "short_name": "GB @ LA",
-      "status": "Scheduled",
-      "venue": "SoFi Stadium",
-      "home": {
-        "id": "LA",
-        "name": "Los Angeles Rams",
-        "abbr": "LA",
-        "logo": null,
-        "score": ""
-      },
-      "away": {
-        "id": "GB",
-        "name": "Green Bay Packers",
-        "abbr": "GB",
-        "logo": null,
-        "score": ""
-      },
-      "odds": {
-        "book": "DraftKings",
-        "home_moneyline": -138,
-        "away_moneyline": 117,
-        "home_spread": -2.5,
-        "spread_price": -115,
-        "total": 43.5,
-        "over_price": -112
-      }
-    },
     {
       "id": "2026_12_CHI_DET",
       "week": 12,
       "date": "2026-11-26T18:00:00+00:00",
       "name": "Chicago Bears at Detroit Lions",
       "short_name": "CHI @ DET",
-      "status": "Scheduled",
+      "status": "Final",
       "venue": "Ford Field",
       "home": {
         "id": "DET",
         "name": "Detroit Lions",
         "abbr": "DET",
         "logo": null,
-        "score": ""
+        "score": "35"
       },
       "away": {
         "id": "CHI",
         "name": "Chicago Bears",
         "abbr": "CHI",
         "logo": null,
-        "score": ""
+        "score": "39"
       },
       "odds": {
-        "book": "DraftKings",
-        "home_moneyline": 104,
-        "away_moneyline": -122,
+        "book": "nflverse consensus",
+        "home_moneyline": -101.0,
+        "away_moneyline": -116.0,
         "home_spread": 1.5,
-        "spread_price": -109,
-        "total": 55.5,
-        "over_price": -104
+        "spread_price": -117.0,
+        "total": 56.5,
+        "over_price": -106.0
       }
     },
     {
@@ -90,12 +58,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -480,
-        "away_moneyline": 370,
-        "home_spread": -8.5,
-        "spread_price": -111,
+        "home_moneyline": -1260,
+        "away_moneyline": 670,
+        "home_spread": -14.5,
+        "spread_price": -104,
         "total": 47.5,
-        "over_price": -116
+        "over_price": -114
       }
     },
     {
@@ -122,12 +90,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -148,
-        "away_moneyline": 125,
+        "home_moneyline": -153,
+        "away_moneyline": 130,
         "home_spread": -3.0,
-        "spread_price": 100,
-        "total": 46.5,
-        "over_price": -108
+        "spread_price": -101,
+        "total": 45.5,
+        "over_price": -113
       }
     },
     {
@@ -154,12 +122,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 169,
-        "away_moneyline": -202,
-        "home_spread": 3.5,
-        "spread_price": -106,
+        "home_moneyline": 209,
+        "away_moneyline": -254,
+        "home_spread": 4.5,
+        "spread_price": 101,
         "total": 36.5,
-        "over_price": -114
+        "over_price": -119
       }
     },
     {
@@ -186,12 +154,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -539,
-        "away_moneyline": 409,
+        "home_moneyline": -562,
+        "away_moneyline": 423,
         "home_spread": -10.0,
-        "spread_price": -107,
+        "spread_price": -106,
         "total": 49.5,
-        "over_price": -111
+        "over_price": -106
       }
     },
     {
@@ -218,8 +186,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -324,
-        "away_moneyline": 261,
+        "home_moneyline": -332,
+        "away_moneyline": 267,
         "home_spread": -6.5,
         "spread_price": -112,
         "total": 47.5,
@@ -250,10 +218,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 261,
-        "away_moneyline": -322,
-        "home_spread": 6.5,
-        "spread_price": -106,
+        "home_moneyline": 235,
+        "away_moneyline": -286,
+        "home_spread": 6.0,
+        "spread_price": -110,
         "total": 41.5,
         "over_price": -111
       }
@@ -282,12 +250,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -1160,
-        "away_moneyline": 740,
+        "home_moneyline": -1260,
+        "away_moneyline": 780,
         "home_spread": -14.5,
         "spread_price": -104,
-        "total": 48.5,
-        "over_price": -109
+        "total": 49.5,
+        "over_price": -106
       }
     },
     {
@@ -314,12 +282,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 169,
-        "away_moneyline": -202,
-        "home_spread": 3.5,
+        "home_moneyline": 200,
+        "away_moneyline": -241,
+        "home_spread": 4.5,
         "spread_price": -104,
-        "total": 40.5,
-        "over_price": -104
+        "total": 39.5,
+        "over_price": -117
       }
     },
     {
@@ -349,9 +317,9 @@
         "home_moneyline": -310,
         "away_moneyline": 252,
         "home_spread": -7.0,
-        "spread_price": 100,
+        "spread_price": -101,
         "total": 41.5,
-        "over_price": -113
+        "over_price": -109
       }
     },
     {
@@ -378,10 +346,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -106,
-        "away_moneyline": -112,
-        "home_spread": 1.5,
-        "spread_price": -123,
+        "home_moneyline": 116,
+        "away_moneyline": -137,
+        "home_spread": 2.5,
+        "spread_price": -111,
         "total": 35.5,
         "over_price": -109
       }
@@ -410,10 +378,10 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": 258,
-        "away_moneyline": -318,
-        "home_spread": 7.0,
-        "spread_price": -112,
+        "home_moneyline": 282,
+        "away_moneyline": -352,
+        "home_spread": 6.5,
+        "spread_price": -102,
         "total": 41.5,
         "over_price": -111
       }
@@ -442,12 +410,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -147,
-        "away_moneyline": 124,
-        "home_spread": -2.5,
-        "spread_price": -121,
-        "total": 44.5,
-        "over_price": -109
+        "home_moneyline": -152,
+        "away_moneyline": 129,
+        "home_spread": -3.0,
+        "spread_price": -102,
+        "total": 43.5,
+        "over_price": -112
       }
     },
     {
@@ -474,12 +442,12 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -242,
-        "away_moneyline": 200,
+        "home_moneyline": -244,
+        "away_moneyline": 201,
         "home_spread": -4.5,
         "spread_price": -105,
-        "total": 39.5,
-        "over_price": -116
+        "total": 40.5,
+        "over_price": -103
       }
     },
     {
@@ -506,8 +474,8 @@
       },
       "odds": {
         "book": "DraftKings",
-        "home_moneyline": -158,
-        "away_moneyline": 133,
+        "home_moneyline": -157,
+        "away_moneyline": 132,
         "home_spread": -3.0,
         "spread_price": -107,
         "total": 43.5,
@@ -542,7 +510,359 @@
         "away_moneyline": -108,
         "home_spread": -1.5,
         "spread_price": 102,
-        "total": 45.5,
+        "total": 44.5,
+        "over_price": -110
+      }
+    },
+    {
+      "id": "2026_13_DET_ATL",
+      "week": 13,
+      "date": "2026-12-06T18:00:00+00:00",
+      "name": "Detroit Lions at Atlanta Falcons",
+      "short_name": "DET @ ATL",
+      "status": "Scheduled",
+      "venue": "Mercedes-Benz Stadium",
+      "home": {
+        "id": "ATL",
+        "name": "Atlanta Falcons",
+        "abbr": "ATL",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "DET",
+        "name": "Detroit Lions",
+        "abbr": "DET",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": null,
+        "away_moneyline": null,
+        "home_spread": 0,
+        "spread_price": null,
+        "total": null,
+        "over_price": null
+      }
+    },
+    {
+      "id": "2026_13_JAX_CHI",
+      "week": 13,
+      "date": "2026-12-06T18:00:00+00:00",
+      "name": "Jacksonville Jaguars at Chicago Bears",
+      "short_name": "JAX @ CHI",
+      "status": "Scheduled",
+      "venue": "Soldier Field",
+      "home": {
+        "id": "CHI",
+        "name": "Chicago Bears",
+        "abbr": "CHI",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "JAX",
+        "name": "Jacksonville Jaguars",
+        "abbr": "JAX",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "nflverse consensus",
+        "home_moneyline": null,
+        "away_moneyline": null,
+        "home_spread": 0,
+        "spread_price": null,
+        "total": null,
+        "over_price": null
+      }
+    },
+    {
+      "id": "2026_13_CIN_CLE",
+      "week": 13,
+      "date": "2026-12-06T18:00:00+00:00",
+      "name": "Cincinnati Bengals at Cleveland Browns",
+      "short_name": "CIN @ CLE",
+      "status": "Scheduled",
+      "venue": "Huntington Bank Field",
+      "home": {
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "abbr": "CLE",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "abbr": "CIN",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": 211,
+        "away_moneyline": -255,
+        "home_spread": 6.0,
+        "spread_price": -110,
+        "total": 46.5,
+        "over_price": -113
+      }
+    },
+    {
+      "id": "2026_13_GB_NO",
+      "week": 13,
+      "date": "2026-12-06T18:00:00+00:00",
+      "name": "Green Bay Packers at New Orleans Saints",
+      "short_name": "GB @ NO",
+      "status": "Scheduled",
+      "venue": "Caesars Superdome",
+      "home": {
+        "id": "NO",
+        "name": "New Orleans Saints",
+        "abbr": "NO",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "abbr": "GB",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": 189,
+        "away_moneyline": -227,
+        "home_spread": 4.5,
+        "spread_price": -102,
+        "total": 46.5,
+        "over_price": -104
+      }
+    },
+    {
+      "id": "2026_13_SF_NYG",
+      "week": 13,
+      "date": "2026-12-06T18:00:00+00:00",
+      "name": "San Francisco 49ers at New York Giants",
+      "short_name": "SF @ NYG",
+      "status": "Scheduled",
+      "venue": "MetLife Stadium",
+      "home": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "abbr": "NYG",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "SF",
+        "name": "San Francisco 49ers",
+        "abbr": "SF",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": 241,
+        "away_moneyline": -295,
+        "home_spread": 6.5,
+        "spread_price": -110,
+        "total": 47.5,
+        "over_price": -110
+      }
+    },
+    {
+      "id": "2026_13_LAC_TB",
+      "week": 13,
+      "date": "2026-12-06T18:00:00+00:00",
+      "name": "Los Angeles Chargers at Tampa Bay Buccaneers",
+      "short_name": "LAC @ TB",
+      "status": "Scheduled",
+      "venue": "Raymond James Stadium",
+      "home": {
+        "id": "TB",
+        "name": "Tampa Bay Buccaneers",
+        "abbr": "TB",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "LAC",
+        "name": "Los Angeles Chargers",
+        "abbr": "LAC",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": -254,
+        "away_moneyline": 209,
+        "home_spread": -5.5,
+        "spread_price": -110,
+        "total": 40.5,
+        "over_price": -110
+      }
+    },
+    {
+      "id": "2026_13_WAS_TEN",
+      "week": 13,
+      "date": "2026-12-06T18:00:00+00:00",
+      "name": "Washington Commanders at Tennessee Titans",
+      "short_name": "WAS @ TEN",
+      "status": "Scheduled",
+      "venue": "Nissan Stadium",
+      "home": {
+        "id": "TEN",
+        "name": "Tennessee Titans",
+        "abbr": "TEN",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "WAS",
+        "name": "Washington Commanders",
+        "abbr": "WAS",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": 191,
+        "away_moneyline": -230,
+        "home_spread": 4.5,
+        "spread_price": -110,
+        "total": 47.5,
+        "over_price": -110
+      }
+    },
+    {
+      "id": "2026_13_PHI_ARI",
+      "week": 13,
+      "date": "2026-12-06T21:05:00+00:00",
+      "name": "Philadelphia Eagles at Arizona Cardinals",
+      "short_name": "PHI @ ARI",
+      "status": "Scheduled",
+      "venue": "State Farm Stadium",
+      "home": {
+        "id": "ARI",
+        "name": "Arizona Cardinals",
+        "abbr": "ARI",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "abbr": "PHI",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": 131,
+        "away_moneyline": -155,
+        "home_spread": 3.0,
+        "spread_price": -110,
+        "total": 36.5,
+        "over_price": -115
+      }
+    },
+    {
+      "id": "2026_13_MIA_DEN",
+      "week": 13,
+      "date": "2026-12-06T21:05:00+00:00",
+      "name": "Miami Dolphins at Denver Broncos",
+      "short_name": "MIA @ DEN",
+      "status": "Scheduled",
+      "venue": "Empower Field at Mile High",
+      "home": {
+        "id": "DEN",
+        "name": "Denver Broncos",
+        "abbr": "DEN",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "MIA",
+        "name": "Miami Dolphins",
+        "abbr": "MIA",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": -1120,
+        "away_moneyline": 710,
+        "home_spread": -14.5,
+        "spread_price": -105,
+        "total": 39.5,
+        "over_price": -110
+      }
+    },
+    {
+      "id": "2026_13_CAR_MIN",
+      "week": 13,
+      "date": "2026-12-06T21:25:00+00:00",
+      "name": "Carolina Panthers at Minnesota Vikings",
+      "short_name": "CAR @ MIN",
+      "status": "Scheduled",
+      "venue": "U.S. Bank Stadium",
+      "home": {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "abbr": "MIN",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "CAR",
+        "name": "Carolina Panthers",
+        "abbr": "CAR",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": -243,
+        "away_moneyline": 201,
+        "home_spread": -5.5,
+        "spread_price": -109,
+        "total": 43.5,
+        "over_price": -104
+      }
+    },
+    {
+      "id": "2026_13_BUF_NE",
+      "week": 13,
+      "date": "2026-12-06T21:25:00+00:00",
+      "name": "Buffalo Bills at New England Patriots",
+      "short_name": "BUF @ NE",
+      "status": "Scheduled",
+      "venue": "Gillette Stadium",
+      "home": {
+        "id": "NE",
+        "name": "New England Patriots",
+        "abbr": "NE",
+        "logo": null,
+        "score": ""
+      },
+      "away": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "abbr": "BUF",
+        "logo": null,
+        "score": ""
+      },
+      "odds": {
+        "book": "DraftKings",
+        "home_moneyline": 548,
+        "away_moneyline": -780,
+        "home_spread": 12.5,
+        "spread_price": -110,
+        "total": 44.5,
         "over_price": -110
       }
     }
@@ -551,60 +871,6 @@
     {
       "week": 12,
       "games": [
-        {
-          "id": "2026_12_GB_LA",
-          "date": "2026-11-26T01:00:00+00:00",
-          "week": 12,
-          "short_name": "GB @ LA",
-          "home": {
-            "id": "LA",
-            "name": "Los Angeles Rams",
-            "abbr": "LA",
-            "logo": null
-          },
-          "away": {
-            "id": "GB",
-            "name": "Green Bay Packers",
-            "abbr": "GB",
-            "logo": null
-          }
-        },
-        {
-          "id": "2026_12_CHI_DET",
-          "date": "2026-11-26T18:00:00+00:00",
-          "week": 12,
-          "short_name": "CHI @ DET",
-          "home": {
-            "id": "DET",
-            "name": "Detroit Lions",
-            "abbr": "DET",
-            "logo": null
-          },
-          "away": {
-            "id": "CHI",
-            "name": "Chicago Bears",
-            "abbr": "CHI",
-            "logo": null
-          }
-        },
-        {
-          "id": "2026_12_PHI_DAL",
-          "date": "2026-11-26T21:30:00+00:00",
-          "week": 12,
-          "short_name": "PHI @ DAL",
-          "home": {
-            "id": "DAL",
-            "name": "Dallas Cowboys",
-            "abbr": "DAL",
-            "logo": null
-          },
-          "away": {
-            "id": "PHI",
-            "name": "Philadelphia Eagles",
-            "abbr": "PHI",
-            "logo": null
-          }
-        },
         {
           "id": "2026_12_KC_BUF",
           "date": "2026-11-27T01:20:00+00:00",
@@ -2548,10 +2814,10 @@
   ],
   "prizepicks_feed": {
     "status": "available",
-    "updated_at": "2026-11-25T22:29:48.258374+00:00",
-    "projection_count": 7920,
-    "matched_players": 251,
-    "line_count": 503
+    "updated_at": "2026-11-26T22:19:52.322760+00:00",
+    "projection_count": 6393,
+    "matched_players": 205,
+    "line_count": 386
   },
   "teams": [
     {
@@ -2569,7 +2835,7 @@
       "point_diff": 110.0,
       "win_pct": 0.9,
       "offense_rank": 1,
-      "defense_rank": 8,
+      "defense_rank": 7,
       "differential_rank": 2
     },
     {
@@ -2587,8 +2853,26 @@
       "point_diff": 105.0,
       "win_pct": 0.9,
       "offense_rank": 2,
-      "defense_rank": 9,
+      "defense_rank": 8,
       "differential_rank": 4
+    },
+    {
+      "id": "CHI",
+      "name": "Chicago Bears",
+      "abbr": "CHI",
+      "logo": null,
+      "conference": "NFC",
+      "wins": 9,
+      "losses": 2,
+      "ties": 0,
+      "games_played": 11,
+      "points_for": 301.0,
+      "points_against": 232.0,
+      "point_diff": 69.0,
+      "win_pct": 0.8181818181818182,
+      "offense_rank": 7,
+      "defense_rank": 11,
+      "differential_rank": 7
     },
     {
       "id": "KC",
@@ -2604,45 +2888,9 @@
       "points_against": 163.0,
       "point_diff": 108.0,
       "win_pct": 0.8,
-      "offense_rank": 7,
+      "offense_rank": 8,
       "defense_rank": 2,
       "differential_rank": 3
-    },
-    {
-      "id": "DET",
-      "name": "Detroit Lions",
-      "abbr": "DET",
-      "logo": null,
-      "conference": "NFC",
-      "wins": 8,
-      "losses": 2,
-      "ties": 0,
-      "games_played": 10,
-      "points_for": 288.0,
-      "points_against": 220.0,
-      "point_diff": 68.0,
-      "win_pct": 0.8,
-      "offense_rank": 5,
-      "defense_rank": 15,
-      "differential_rank": 6
-    },
-    {
-      "id": "CHI",
-      "name": "Chicago Bears",
-      "abbr": "CHI",
-      "logo": null,
-      "conference": "NFC",
-      "wins": 8,
-      "losses": 2,
-      "ties": 0,
-      "games_played": 10,
-      "points_for": 262.0,
-      "points_against": 197.0,
-      "point_diff": 65.0,
-      "win_pct": 0.8,
-      "offense_rank": 8,
-      "defense_rank": 6,
-      "differential_rank": 7
     },
     {
       "id": "DEN",
@@ -2659,8 +2907,26 @@
       "point_diff": 26.0,
       "win_pct": 0.8,
       "offense_rank": 13,
-      "defense_rank": 11,
+      "defense_rank": 10,
       "differential_rank": 11
+    },
+    {
+      "id": "DET",
+      "name": "Detroit Lions",
+      "abbr": "DET",
+      "logo": null,
+      "conference": "NFC",
+      "wins": 8,
+      "losses": 3,
+      "ties": 0,
+      "games_played": 11,
+      "points_for": 323.0,
+      "points_against": 259.0,
+      "point_diff": 64.0,
+      "win_pct": 0.7272727272727273,
+      "offense_rank": 5,
+      "defense_rank": 17,
+      "differential_rank": 8
     },
     {
       "id": "JAX",
@@ -2730,7 +2996,7 @@
       "points_against": 214.0,
       "point_diff": 12.0,
       "win_pct": 0.65,
-      "offense_rank": 15,
+      "offense_rank": 14,
       "defense_rank": 12,
       "differential_rank": 16
     },
@@ -2740,17 +3006,17 @@
       "abbr": "LA",
       "logo": null,
       "conference": "NFC",
-      "wins": 6,
+      "wins": 7,
       "losses": 4,
       "ties": 0,
-      "games_played": 10,
-      "points_for": 248.0,
-      "points_against": 187.0,
-      "point_diff": 61.0,
-      "win_pct": 0.6,
+      "games_played": 11,
+      "points_for": 274.0,
+      "points_against": 200.0,
+      "point_diff": 74.0,
+      "win_pct": 0.6363636363636364,
       "offense_rank": 12,
       "defense_rank": 5,
-      "differential_rank": 8
+      "differential_rank": 6
     },
     {
       "id": "SEA",
@@ -2766,7 +3032,7 @@
       "points_against": 175.0,
       "point_diff": 48.0,
       "win_pct": 0.6,
-      "offense_rank": 16,
+      "offense_rank": 15,
       "defense_rank": 4,
       "differential_rank": 9
     },
@@ -2785,26 +3051,8 @@
       "point_diff": 13.0,
       "win_pct": 0.6,
       "offense_rank": 22,
-      "defense_rank": 7,
+      "defense_rank": 6,
       "differential_rank": 15
-    },
-    {
-      "id": "GB",
-      "name": "Green Bay Packers",
-      "abbr": "GB",
-      "logo": null,
-      "conference": "NFC",
-      "wins": 6,
-      "losses": 4,
-      "ties": 0,
-      "games_played": 10,
-      "points_for": 226.0,
-      "points_against": 221.0,
-      "point_diff": 5.0,
-      "win_pct": 0.6,
-      "offense_rank": 14,
-      "defense_rank": 16,
-      "differential_rank": 17
     },
     {
       "id": "CLE",
@@ -2823,6 +3071,24 @@
       "offense_rank": 27,
       "defense_rank": 14,
       "differential_rank": 21
+    },
+    {
+      "id": "GB",
+      "name": "Green Bay Packers",
+      "abbr": "GB",
+      "logo": null,
+      "conference": "NFC",
+      "wins": 6,
+      "losses": 5,
+      "ties": 0,
+      "games_played": 11,
+      "points_for": 239.0,
+      "points_against": 247.0,
+      "point_diff": -8.0,
+      "win_pct": 0.5454545454545454,
+      "offense_rank": 20,
+      "defense_rank": 16,
+      "differential_rank": 17
     },
     {
       "id": "CAR",
@@ -2856,7 +3122,7 @@
       "points_against": 242.0,
       "point_diff": -21.0,
       "win_pct": 0.5,
-      "offense_rank": 18,
+      "offense_rank": 17,
       "defense_rank": 19,
       "differential_rank": 19
     },
@@ -2892,7 +3158,7 @@
       "points_against": 243.0,
       "point_diff": -25.0,
       "win_pct": 0.45,
-      "offense_rank": 20,
+      "offense_rank": 19,
       "defense_rank": 20,
       "differential_rank": 20
     },
@@ -2911,7 +3177,7 @@
       "point_diff": 37.0,
       "win_pct": 0.4,
       "offense_rank": 9,
-      "defense_rank": 17,
+      "defense_rank": 15,
       "differential_rank": 10
     },
     {
@@ -2928,7 +3194,7 @@
       "points_against": 294.0,
       "point_diff": -52.0,
       "win_pct": 0.36363636363636365,
-      "offense_rank": 19,
+      "offense_rank": 18,
       "defense_rank": 26,
       "differential_rank": 23
     },
@@ -2964,8 +3230,8 @@
       "points_against": 209.0,
       "point_diff": 14.0,
       "win_pct": 0.3,
-      "offense_rank": 17,
-      "defense_rank": 10,
+      "offense_rank": 16,
+      "defense_rank": 9,
       "differential_rank": 14
     },
     {
@@ -3237,7 +3503,10 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Pass Yards": 162.5,
+          "Rush Yards": 12.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -3333,6 +3602,105 @@
             "rush_yards": 0.0,
             "rush_tds": 0.0,
             "rush_attempts": 1.0,
+            "receptions": 0.0,
+            "targets": 0.0,
+            "rec_yards": 0.0,
+            "rec_tds": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "00-0039577",
+      "name": "Kedon Slovis",
+      "team": "ARI",
+      "position": "QB",
+      "jersey": "18",
+      "status": "ACT",
+      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/nm8a2s0az2xryr4l2aho",
+      "college": "BYU; Pittsburgh; USC",
+      "experience": 2,
+      "season": {
+        "games": 0,
+        "pass_yards": 0,
+        "pass_tds": 0,
+        "rush_yards": 0,
+        "rush_tds": 0,
+        "receptions": 0,
+        "targets": 0,
+        "rec_yards": 0,
+        "rec_tds": 0
+      },
+      "recent": [],
+      "lines": {
+        "PrizePicks": {},
+        "Underdog": {}
+      },
+      "previous_season": {
+        "season": 2025,
+        "games": 2,
+        "pass_yards": -2.0,
+        "pass_tds": 0.0,
+        "rush_yards": 0.0,
+        "rush_tds": 0.0,
+        "receptions": 0.0,
+        "targets": 0.0,
+        "rec_yards": 0.0,
+        "rec_tds": 0.0,
+        "recent": [
+          {
+            "week": 12,
+            "opponent": "JAX",
+            "pass_yards": -2.0,
+            "pass_tds": 0.0,
+            "pass_attempts": 1.0,
+            "rush_yards": 0.0,
+            "rush_tds": 0.0,
+            "rush_attempts": 0.0,
+            "receptions": 0.0,
+            "targets": 0.0,
+            "rec_yards": 0.0,
+            "rec_tds": 0.0
+          },
+          {
+            "week": 10,
+            "opponent": "SEA",
+            "pass_yards": 0.0,
+            "pass_tds": 0.0,
+            "pass_attempts": 1.0,
+            "rush_yards": 0.0,
+            "rush_tds": 0.0,
+            "rush_attempts": 0.0,
+            "receptions": 0.0,
+            "targets": 0.0,
+            "rec_yards": 0.0,
+            "rec_tds": 0.0
+          }
+        ],
+        "game_log": [
+          {
+            "week": 12,
+            "opponent": "JAX",
+            "pass_yards": -2.0,
+            "pass_tds": 0.0,
+            "pass_attempts": 1.0,
+            "rush_yards": 0.0,
+            "rush_tds": 0.0,
+            "rush_attempts": 0.0,
+            "receptions": 0.0,
+            "targets": 0.0,
+            "rec_yards": 0.0,
+            "rec_tds": 0.0
+          },
+          {
+            "week": 10,
+            "opponent": "SEA",
+            "pass_yards": 0.0,
+            "pass_tds": 0.0,
+            "pass_attempts": 1.0,
+            "rush_yards": 0.0,
+            "rush_tds": 0.0,
+            "rush_attempts": 0.0,
             "receptions": 0.0,
             "targets": 0.0,
             "rec_yards": 0.0,
@@ -3561,7 +3929,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 198.5,
+          "Pass Yards": 196.5,
           "Fantasy Score": 12.0,
           "Rush Yards": 8.5
         },
@@ -4336,7 +4704,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 239.5,
+          "Pass Yards": 235.5,
           "Rush Yards": 4.5
         },
         "Underdog": {}
@@ -4815,9 +5183,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 215.5,
-          "Rush Yards": 36.5,
-          "Fantasy Score": 20.0
+          "Pass Yards": 216.5,
+          "Rush Yards": 38.5,
+          "Fantasy Score": 20.5
         },
         "Underdog": {}
       },
@@ -6154,12 +6522,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 261.5,
-          "Rush Yards": 22.5,
-          "Fantasy Score": 21.0,
-          "Pass TDs": 2.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -7497,7 +7860,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 228.5,
+          "Pass Yards": 230.5,
           "Rush Yards": 24.5
         },
         "Underdog": {}
@@ -8171,12 +8534,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 261.5,
-          "Fantasy Score": 19.5,
-          "Rush Yards": 9.5,
-          "Pass TDs": 2.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -9371,12 +9729,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 278.5,
-          "Fantasy Score": 19.0,
-          "Pass TDs": 2.0,
-          "Rush Yards": 1.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -10050,12 +10403,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 267.5,
-          "Fantasy Score": 17.0,
-          "Rush Yards": 3.5,
-          "Pass TDs": 1.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -10730,7 +11078,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 254.5,
+          "Pass Yards": 257.5,
           "Rush Yards": 9.5
         },
         "Underdog": {}
@@ -11887,9 +12235,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 263.5,
-          "Fantasy Score": 20.0,
-          "Rush Yards": 8.5
+          "Pass Yards": 266.5,
+          "Fantasy Score": 20.5,
+          "Rush Yards": 7.5
         },
         "Underdog": {}
       },
@@ -12746,10 +13094,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 237.5,
+          "Pass Yards": 232.5,
           "Fantasy Score": 17.0,
-          "Rush Yards": 11.5,
-          "Pass TDs": 1.5
+          "Rush Yards": 12.5
         },
         "Underdog": {}
       },
@@ -13185,10 +13532,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 232.5,
-          "Fantasy Score": 14.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -13694,47 +14038,6 @@
       "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/s0eo3fstv6rkitzbefzu",
       "college": "Georgia; Jones County JC",
       "experience": 3,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      },
-      "previous_season": {
-        "season": 2025,
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0,
-        "recent": [],
-        "game_log": []
-      }
-    },
-    {
-      "id": "00-0041568",
-      "name": "Ty Simpson",
-      "team": "LA",
-      "position": "QB",
-      "jersey": "15",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/lbvqgmsidrpxh1jyyey6",
-      "college": "Alabama",
-      "experience": 0,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -14620,7 +14923,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 184.5,
+          "Pass Yards": 172.5,
           "Fantasy Score": 10.5,
           "Rush Yards": 7.5
         },
@@ -14849,7 +15152,7 @@
       "lines": {
         "PrizePicks": {
           "Pass Yards": 247.5,
-          "Fantasy Score": 16.5,
+          "Fantasy Score": 17.5,
           "Rush Yards": 0.5
         },
         "Underdog": {}
@@ -16157,7 +16460,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 174.5,
+          "Pass Yards": 175.5,
           "Rush Yards": 20.5
         },
         "Underdog": {}
@@ -16496,7 +16799,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 245.5,
+          "Pass Yards": 243.5,
           "Rush Yards": 18.5,
           "Fantasy Score": 17.5
         },
@@ -17332,7 +17635,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Rush Yards": 3.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -17501,7 +17806,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 215.5,
+          "Pass Yards": 203.5,
           "Fantasy Score": 13.0,
           "Rush Yards": 3.5
         },
@@ -18008,12 +18313,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Pass Yards": 198.5,
-          "Rush Yards": 31.5,
-          "Fantasy Score": 16.0,
-          "Pass TDs": 1.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -18301,497 +18601,6 @@
       }
     },
     {
-      "id": "00-0023459",
-      "name": "Aaron Rodgers",
-      "team": "PIT",
-      "position": "QB",
-      "jersey": "8",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/dypvakakxhccxs67tb0y",
-      "college": "California; Butte College",
-      "experience": 21,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      },
-      "previous_season": {
-        "season": 2025,
-        "games": 16,
-        "pass_yards": 3322.0,
-        "pass_tds": 24.0,
-        "rush_yards": 61.0,
-        "rush_tds": 1.0,
-        "receptions": 1.0,
-        "targets": 1.0,
-        "rec_yards": -9.0,
-        "rec_tds": 0.0,
-        "recent": [
-          {
-            "week": 18,
-            "opponent": "BAL",
-            "pass_yards": 294.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 47.0,
-            "rush_yards": 20.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 17,
-            "opponent": "CLE",
-            "pass_yards": 168.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 39.0,
-            "rush_yards": 6.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 16,
-            "opponent": "DET",
-            "pass_yards": 266.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 41.0,
-            "rush_yards": 9.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 2.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 15,
-            "opponent": "MIA",
-            "pass_yards": 224.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 27.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 14,
-            "opponent": "BAL",
-            "pass_yards": 284.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 34.0,
-            "rush_yards": 0.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 2.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": -9.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 13,
-            "opponent": "BUF",
-            "pass_yards": 117.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 21.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 11,
-            "opponent": "CIN",
-            "pass_yards": 116.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 15.0,
-            "rush_yards": 8.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 10,
-            "opponent": "LAC",
-            "pass_yards": 161.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 31.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 9,
-            "opponent": "IND",
-            "pass_yards": 203.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 35.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 2.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 8,
-            "opponent": "GB",
-            "pass_yards": 219.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 36.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "CIN",
-            "pass_yards": 249.0,
-            "pass_tds": 4.0,
-            "pass_attempts": 34.0,
-            "rush_yards": 6.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "CLE",
-            "pass_yards": 235.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 30.0,
-            "rush_yards": 1.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "MIN",
-            "pass_yards": 200.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 22.0,
-            "rush_yards": 8.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 3.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "NE",
-            "pass_yards": 139.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 23.0,
-            "rush_yards": 1.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 4.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "SEA",
-            "pass_yards": 203.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 33.0,
-            "rush_yards": 3.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 1,
-            "opponent": "NYJ",
-            "pass_yards": 244.0,
-            "pass_tds": 4.0,
-            "pass_attempts": 30.0,
-            "rush_yards": -1.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          }
-        ],
-        "game_log": [
-          {
-            "week": 18,
-            "opponent": "BAL",
-            "pass_yards": 294.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 47.0,
-            "rush_yards": 20.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 17,
-            "opponent": "CLE",
-            "pass_yards": 168.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 39.0,
-            "rush_yards": 6.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 16,
-            "opponent": "DET",
-            "pass_yards": 266.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 41.0,
-            "rush_yards": 9.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 2.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 15,
-            "opponent": "MIA",
-            "pass_yards": 224.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 27.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 14,
-            "opponent": "BAL",
-            "pass_yards": 284.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 34.0,
-            "rush_yards": 0.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 2.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": -9.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 13,
-            "opponent": "BUF",
-            "pass_yards": 117.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 21.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 11,
-            "opponent": "CIN",
-            "pass_yards": 116.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 15.0,
-            "rush_yards": 8.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 10,
-            "opponent": "LAC",
-            "pass_yards": 161.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 31.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 9,
-            "opponent": "IND",
-            "pass_yards": 203.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 35.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 2.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 8,
-            "opponent": "GB",
-            "pass_yards": 219.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 36.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "CIN",
-            "pass_yards": 249.0,
-            "pass_tds": 4.0,
-            "pass_attempts": 34.0,
-            "rush_yards": 6.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "CLE",
-            "pass_yards": 235.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 30.0,
-            "rush_yards": 1.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "MIN",
-            "pass_yards": 200.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 22.0,
-            "rush_yards": 8.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 3.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "NE",
-            "pass_yards": 139.0,
-            "pass_tds": 2.0,
-            "pass_attempts": 23.0,
-            "rush_yards": 1.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 4.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "SEA",
-            "pass_yards": 203.0,
-            "pass_tds": 1.0,
-            "pass_attempts": 33.0,
-            "rush_yards": 3.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 1,
-            "opponent": "NYJ",
-            "pass_yards": 244.0,
-            "pass_tds": 4.0,
-            "pass_attempts": 30.0,
-            "rush_yards": -1.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          }
-        ]
-      }
-    },
-    {
       "id": "00-0041565",
       "name": "Drew Allar",
       "team": "PIT",
@@ -18856,9 +18665,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 173.5,
-          "Fantasy Score": 10.5,
-          "Rush Yards": 5.5
+          "Pass Yards": 175.5,
+          "Fantasy Score": 11.5,
+          "Rush Yards": 6.5
         },
         "Underdog": {}
       },
@@ -19339,8 +19148,8 @@
       "lines": {
         "PrizePicks": {
           "Pass Yards": 230.5,
-          "Fantasy Score": 14.5,
-          "Rush Yards": 5.5
+          "Fantasy Score": 15.0,
+          "Rush Yards": 4.5
         },
         "Underdog": {}
       },
@@ -19861,8 +19670,9 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 235.5,
-          "Rush Yards": 16.5
+          "Pass Yards": 233.5,
+          "Rush Yards": 14.5,
+          "Pass TDs": 1.5
         },
         "Underdog": {}
       },
@@ -21874,9 +21684,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Pass Yards": 230.5,
-          "Rush Yards": 26.5,
-          "Pass TDs": 1.5
+          "Pass Yards": 224.5,
+          "Rush Yards": 31.5
         },
         "Underdog": {}
       },
@@ -22440,7 +22249,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 25.5,
+          "Rush Yards": 27.5,
           "Receiving Yards": 6.5
         },
         "Underdog": {}
@@ -23033,8 +22842,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 33.5,
-          "Receiving Yards": 6.5
+          "Rush Yards": 32.5,
+          "Receiving Yards": 5.5
         },
         "Underdog": {}
       },
@@ -24304,8 +24113,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 54.5,
-          "Receiving Yards": 9.5
+          "Rush Yards": 55.5,
+          "Receiving Yards": 7.5
         },
         "Underdog": {}
       },
@@ -24826,7 +24635,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 16.5
+          "Receiving Yards": 19.5
         },
         "Underdog": {}
       },
@@ -26133,7 +25942,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 4.5
+          "Rush Yards": 3.5
         },
         "Underdog": {}
       },
@@ -26654,8 +26463,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 15.5,
-          "Fantasy Score": 4.5,
+          "Receiving Yards": 16.5,
+          "Fantasy Score": 5.0,
           "Rush Yards": 1.5
         },
         "Underdog": {}
@@ -28414,11 +28223,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 46.5,
-          "Receiving Yards": 15.5,
-          "Fantasy Score": 13.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -28909,11 +28714,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 34.5,
-          "Fantasy Score": 7.0,
-          "Receiving Yards": 3.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -29410,15 +29211,15 @@
       }
     },
     {
-      "id": "00-0039021",
-      "name": "Roschon Johnson",
+      "id": "00-0036020",
+      "name": "Salvon Ahmed",
       "team": "CHI",
       "position": "RB",
-      "jersey": "23",
+      "jersey": "36",
       "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/mzfm6qlgvsa9i5bstqoa",
-      "college": "Texas",
-      "experience": 3,
+      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/hic7tce2wdcqy01ucjjw",
+      "college": "Washington",
+      "experience": 6,
       "season": {
         "games": 0,
         "pass_yards": 0,
@@ -29437,187 +29238,17 @@
       },
       "previous_season": {
         "season": 2025,
-        "games": 6,
-        "pass_yards": 0.0,
-        "pass_tds": 0.0,
-        "rush_yards": 17.0,
-        "rush_tds": 0.0,
-        "receptions": 0.0,
-        "targets": 0.0,
-        "rec_yards": 0.0,
-        "rec_tds": 0.0,
-        "recent": [
-          {
-            "week": 11,
-            "opponent": "MIN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "NO",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 11.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "WAS",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 6.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "LV",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "DAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "DET",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          }
-        ],
-        "game_log": [
-          {
-            "week": 11,
-            "opponent": "MIN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "NO",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 11.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "WAS",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 6.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 1.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "LV",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "DAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "DET",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 0.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 0.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          }
-        ]
+        "games": 0,
+        "pass_yards": 0,
+        "pass_tds": 0,
+        "rush_yards": 0,
+        "rush_tds": 0,
+        "receptions": 0,
+        "targets": 0,
+        "rec_yards": 0,
+        "rec_tds": 0,
+        "recent": [],
+        "game_log": []
       }
     },
     {
@@ -32597,6 +32228,47 @@
       }
     },
     {
+      "id": "00-0037410",
+      "name": "Jashaun Corbin",
+      "team": "DAL",
+      "position": "RB",
+      "jersey": "36",
+      "status": "ACT",
+      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/ovzlcbe1osd6ugfxu55d",
+      "college": "Florida State",
+      "experience": 4,
+      "season": {
+        "games": 0,
+        "pass_yards": 0,
+        "pass_tds": 0,
+        "rush_yards": 0,
+        "rush_tds": 0,
+        "receptions": 0,
+        "targets": 0,
+        "rec_yards": 0,
+        "rec_tds": 0
+      },
+      "recent": [],
+      "lines": {
+        "PrizePicks": {},
+        "Underdog": {}
+      },
+      "previous_season": {
+        "season": 2025,
+        "games": 0,
+        "pass_yards": 0,
+        "pass_tds": 0,
+        "rush_yards": 0,
+        "rush_tds": 0,
+        "receptions": 0,
+        "targets": 0,
+        "rec_yards": 0,
+        "rec_tds": 0,
+        "recent": [],
+        "game_log": []
+      }
+    },
+    {
       "id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -32619,11 +32291,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 76.5,
-          "Fantasy Score": 15.0,
-          "Receiving Yards": 7.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -33499,329 +33167,6 @@
       }
     },
     {
-      "id": "00-0036158",
-      "name": "J.K. Dobbins",
-      "team": "DEN",
-      "position": "RB",
-      "jersey": "27",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/cevotvl3ho5h1mioruyg",
-      "college": "Ohio State",
-      "experience": 6,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      },
-      "previous_season": {
-        "season": 2025,
-        "games": 10,
-        "pass_yards": 0.0,
-        "pass_tds": 0.0,
-        "rush_yards": 772.0,
-        "rush_tds": 4.0,
-        "receptions": 11.0,
-        "targets": 14.0,
-        "rec_yards": 37.0,
-        "rec_tds": 0.0,
-        "recent": [
-          {
-            "week": 10,
-            "opponent": "LV",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 77.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 18.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 7.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 9,
-            "opponent": "HOU",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 61.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 15.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": -2.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 8,
-            "opponent": "DAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 111.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 15.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 10.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "NYG",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 81.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 14.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": -1.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "NYJ",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 40.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 14.0,
-            "receptions": 0.0,
-            "targets": 1.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 5,
-            "opponent": "PHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 79.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 20.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 5.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "CIN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 101.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 16.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 4.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "LAC",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 83.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 11.0,
-            "receptions": 1.0,
-            "targets": 2.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "IND",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 76.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 14.0,
-            "receptions": 1.0,
-            "targets": 2.0,
-            "rec_yards": 9.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 1,
-            "opponent": "TEN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 63.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 16.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 5.0,
-            "rec_tds": 0.0
-          }
-        ],
-        "game_log": [
-          {
-            "week": 10,
-            "opponent": "LV",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 77.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 18.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 7.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 9,
-            "opponent": "HOU",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 61.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 15.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": -2.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 8,
-            "opponent": "DAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 111.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 15.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 10.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "NYG",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 81.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 14.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": -1.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "NYJ",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 40.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 14.0,
-            "receptions": 0.0,
-            "targets": 1.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 5,
-            "opponent": "PHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 79.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 20.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 5.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "CIN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 101.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 16.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 4.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "LAC",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 83.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 11.0,
-            "receptions": 1.0,
-            "targets": 2.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "IND",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 76.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 14.0,
-            "receptions": 1.0,
-            "targets": 2.0,
-            "rec_yards": 9.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 1,
-            "opponent": "TEN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 63.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 16.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 5.0,
-            "rec_tds": 0.0
-          }
-        ]
-      }
-    },
-    {
       "id": "00-0041496",
       "name": "Jonah Coleman",
       "team": "DEN",
@@ -33847,7 +33192,7 @@
         "PrizePicks": {
           "Rush Yards": 75.5,
           "Receiving Yards": 21.5,
-          "Fantasy Score": 16.5
+          "Fantasy Score": 17.0
         },
         "Underdog": {}
       },
@@ -34240,11 +33585,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 92.5,
-          "Receiving Yards": 35.5,
-          "Fantasy Score": 24.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -34763,11 +34104,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 9.5,
-          "Fantasy Score": 3.0,
-          "Receiving Yards": 1.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -35034,11 +34371,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 6.5,
-          "Rush Yards": 6.5,
-          "Fantasy Score": 4.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -35535,469 +34868,6 @@
       }
     },
     {
-      "id": "00-0035700",
-      "name": "Josh Jacobs",
-      "team": "GB",
-      "position": "RB",
-      "jersey": "8",
-      "status": "ACT",
-      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/uceokxeo0uqrqms3e3vl",
-      "college": "Alabama",
-      "experience": 7,
-      "season": {
-        "games": 0,
-        "pass_yards": 0,
-        "pass_tds": 0,
-        "rush_yards": 0,
-        "rush_tds": 0,
-        "receptions": 0,
-        "targets": 0,
-        "rec_yards": 0,
-        "rec_tds": 0
-      },
-      "recent": [],
-      "lines": {
-        "PrizePicks": {},
-        "Underdog": {}
-      },
-      "previous_season": {
-        "season": 2025,
-        "games": 15,
-        "pass_yards": 0.0,
-        "pass_tds": 0.0,
-        "rush_yards": 929.0,
-        "rush_tds": 13.0,
-        "receptions": 36.0,
-        "targets": 44.0,
-        "rec_yards": 282.0,
-        "rec_tds": 1.0,
-        "recent": [
-          {
-            "week": 17,
-            "opponent": "BAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 3.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 4.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 16,
-            "opponent": "CHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 36.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 12.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 12.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 15,
-            "opponent": "DEN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 73.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 12.0,
-            "receptions": 2.0,
-            "targets": 3.0,
-            "rec_yards": 19.0,
-            "rec_tds": 1.0
-          },
-          {
-            "week": 14,
-            "opponent": "CHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 86.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 20.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 6.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 13,
-            "opponent": "DET",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 83.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 17.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 8.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 11,
-            "opponent": "NYG",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 40.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 7.0,
-            "receptions": 0.0,
-            "targets": 1.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 10,
-            "opponent": "PHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 74.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 21.0,
-            "receptions": 5.0,
-            "targets": 6.0,
-            "rec_yards": 33.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 9,
-            "opponent": "CAR",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 87.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 17.0,
-            "receptions": 4.0,
-            "targets": 5.0,
-            "rec_yards": 13.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 8,
-            "opponent": "PIT",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 33.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 13.0,
-            "receptions": 3.0,
-            "targets": 3.0,
-            "rec_yards": 12.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "ARI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 55.0,
-            "rush_tds": 2.0,
-            "rush_attempts": 13.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 3.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "CIN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 93.0,
-            "rush_tds": 2.0,
-            "rush_attempts": 18.0,
-            "receptions": 5.0,
-            "targets": 5.0,
-            "rec_yards": 57.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "DAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 86.0,
-            "rush_tds": 2.0,
-            "rush_attempts": 22.0,
-            "receptions": 4.0,
-            "targets": 4.0,
-            "rec_yards": 71.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "CLE",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 30.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 16.0,
-            "receptions": 5.0,
-            "targets": 9.0,
-            "rec_yards": 44.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "WAS",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 84.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 23.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 1,
-            "opponent": "DET",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 66.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 19.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 4.0,
-            "rec_tds": 0.0
-          }
-        ],
-        "game_log": [
-          {
-            "week": 17,
-            "opponent": "BAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 3.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 4.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 16,
-            "opponent": "CHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 36.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 12.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 12.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 15,
-            "opponent": "DEN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 73.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 12.0,
-            "receptions": 2.0,
-            "targets": 3.0,
-            "rec_yards": 19.0,
-            "rec_tds": 1.0
-          },
-          {
-            "week": 14,
-            "opponent": "CHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 86.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 20.0,
-            "receptions": 2.0,
-            "targets": 2.0,
-            "rec_yards": 6.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 13,
-            "opponent": "DET",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 83.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 17.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 8.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 11,
-            "opponent": "NYG",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 40.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 7.0,
-            "receptions": 0.0,
-            "targets": 1.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 10,
-            "opponent": "PHI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 74.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 21.0,
-            "receptions": 5.0,
-            "targets": 6.0,
-            "rec_yards": 33.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 9,
-            "opponent": "CAR",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 87.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 17.0,
-            "receptions": 4.0,
-            "targets": 5.0,
-            "rec_yards": 13.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 8,
-            "opponent": "PIT",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 33.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 13.0,
-            "receptions": 3.0,
-            "targets": 3.0,
-            "rec_yards": 12.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 7,
-            "opponent": "ARI",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 55.0,
-            "rush_tds": 2.0,
-            "rush_attempts": 13.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 3.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 6,
-            "opponent": "CIN",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 93.0,
-            "rush_tds": 2.0,
-            "rush_attempts": 18.0,
-            "receptions": 5.0,
-            "targets": 5.0,
-            "rec_yards": 57.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 4,
-            "opponent": "DAL",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 86.0,
-            "rush_tds": 2.0,
-            "rush_attempts": 22.0,
-            "receptions": 4.0,
-            "targets": 4.0,
-            "rec_yards": 71.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 3,
-            "opponent": "CLE",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 30.0,
-            "rush_tds": 0.0,
-            "rush_attempts": 16.0,
-            "receptions": 5.0,
-            "targets": 9.0,
-            "rec_yards": 44.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 2,
-            "opponent": "WAS",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 84.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 23.0,
-            "receptions": 0.0,
-            "targets": 0.0,
-            "rec_yards": 0.0,
-            "rec_tds": 0.0
-          },
-          {
-            "week": 1,
-            "opponent": "DET",
-            "pass_yards": 0.0,
-            "pass_tds": 0.0,
-            "pass_attempts": 0.0,
-            "rush_yards": 66.0,
-            "rush_tds": 1.0,
-            "rush_attempts": 19.0,
-            "receptions": 1.0,
-            "targets": 1.0,
-            "rec_yards": 4.0,
-            "rec_tds": 0.0
-          }
-        ]
-      }
-    },
-    {
       "id": "00-0040142",
       "name": "Kaleb Johnson",
       "team": "GB",
@@ -36020,9 +34890,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 31.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -36345,11 +35213,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 11.5,
-          "Receiving Yards": 6.5,
-          "Fantasy Score": 4.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -36392,7 +35256,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 44.5,
-          "Receiving Yards": 6.5
+          "Receiving Yards": 7.5
         },
         "Underdog": {}
       },
@@ -37293,7 +36157,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 28.5,
-          "Receiving Yards": 6.5
+          "Receiving Yards": 7.5
         },
         "Underdog": {}
       },
@@ -37969,7 +36833,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 66.5,
+          "Rush Yards": 68.5,
           "Fantasy Score": 14.0,
           "Receiving Yards": 13.5
         },
@@ -40275,7 +39139,7 @@
         "PrizePicks": {
           "Rush Yards": 81.5,
           "Receiving Yards": 30.5,
-          "Fantasy Score": 19.0
+          "Fantasy Score": 20.0
         },
         "Underdog": {}
       },
@@ -40879,11 +39743,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 57.5,
-          "Receiving Yards": 13.5,
-          "Fantasy Score": 11.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -41402,11 +40262,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 53.5,
-          "Receiving Yards": 22.5,
-          "Fantasy Score": 14.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -42544,8 +41400,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 22.5,
-          "Receiving Yards": 7.5
+          "Rush Yards": 19.5,
+          "Receiving Yards": 8.5
         },
         "Underdog": {}
       },
@@ -42954,8 +41810,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 61.5,
-          "Receiving Yards": 7.5
+          "Rush Yards": 65.5,
+          "Receiving Yards": 8.5
         },
         "Underdog": {}
       },
@@ -43408,7 +42264,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 40.5,
-          "Receiving Yards": 29.5,
+          "Receiving Yards": 28.5,
           "Fantasy Score": 13.0
         },
         "Underdog": {}
@@ -44968,7 +43824,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 11.5
+          "Rush Yards": 10.5
         },
         "Underdog": {}
       },
@@ -45306,8 +44162,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 72.5,
-          "Fantasy Score": 14.0,
+          "Rush Yards": 65.5,
+          "Fantasy Score": 13.0,
           "Receiving Yards": 10.5
         },
         "Underdog": {}
@@ -46926,7 +45782,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 29.5
+          "Rush Yards": 31.5
         },
         "Underdog": {}
       },
@@ -47475,8 +46331,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 48.5,
-          "Receiving Yards": 14.5
+          "Rush Yards": 52.5,
+          "Receiving Yards": 13.5
         },
         "Underdog": {}
       },
@@ -49007,7 +47863,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 71.5,
+          "Rush Yards": 75.5,
           "Receiving Yards": 15.5,
           "Fantasy Score": 15.5
         },
@@ -50375,7 +49231,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 39.5,
+          "Rush Yards": 44.5,
           "Receiving Yards": 8.5
         },
         "Underdog": {}
@@ -50533,7 +49389,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 56.5,
+          "Rush Yards": 59.5,
           "Receiving Yards": 19.5,
           "Fantasy Score": 14.0
         },
@@ -52024,11 +50880,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 64.5,
-          "Fantasy Score": 12.0,
-          "Receiving Yards": 8.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -52519,11 +51371,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Rush Yards": 13.5,
-          "Receiving Yards": 5.5,
-          "Fantasy Score": 4.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -55239,7 +54087,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 25.5,
+          "Rush Yards": 24.5,
           "Receiving Yards": 9.5,
           "Fantasy Score": 7.0
         },
@@ -55780,7 +54628,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 53.5,
-          "Receiving Yards": 31.5,
+          "Receiving Yards": 27.5,
           "Fantasy Score": 16.0
         },
         "Underdog": {}
@@ -56880,7 +55728,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 81.5,
-          "Receiving Yards": 18.5,
+          "Receiving Yards": 16.5,
           "Fantasy Score": 16.5
         },
         "Underdog": {}
@@ -59304,7 +58152,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 23.5,
-          "Receiving Yards": 10.5
+          "Receiving Yards": 9.5
         },
         "Underdog": {}
       },
@@ -59405,7 +58253,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Rush Yards": 49.5,
+          "Rush Yards": 54.5,
           "Receiving Yards": 5.5
         },
         "Underdog": {}
@@ -59928,7 +58776,7 @@
       "lines": {
         "PrizePicks": {
           "Rush Yards": 18.5,
-          "Receiving Yards": 8.5
+          "Receiving Yards": 7.5
         },
         "Underdog": {}
       },
@@ -61009,7 +59857,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 24.5
+          "Receiving Yards": 23.5
         },
         "Underdog": {}
       },
@@ -61093,7 +59941,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 18.5
+          "Receiving Yards": 19.5
         },
         "Underdog": {}
       },
@@ -63192,7 +62040,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 20.5
+          "Receiving Yards": 22.5
         },
         "Underdog": {}
       },
@@ -63235,7 +62083,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 35.5
+          "Receiving Yards": 33.5
         },
         "Underdog": {}
       },
@@ -64165,8 +63013,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 48.5,
-          "Fantasy Score": 10.0,
+          "Receiving Yards": 47.5,
+          "Fantasy Score": 10.5,
           "Rush Yards": 0.5
         },
         "Underdog": {}
@@ -65067,7 +63915,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 22.5,
+          "Receiving Yards": 21.5,
           "Fantasy Score": 5.5
         },
         "Underdog": {}
@@ -65449,7 +64297,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 39.5,
+          "Receiving Yards": 36.5,
           "Fantasy Score": 9.0
         },
         "Underdog": {}
@@ -66798,7 +65646,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 41.5,
+          "Receiving Yards": 44.5,
           "Fantasy Score": 9.0
         },
         "Underdog": {}
@@ -67152,7 +66000,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 9.5
+          "Receiving Yards": 10.5
         },
         "Underdog": {}
       },
@@ -67561,7 +66409,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 54.5,
+          "Receiving Yards": 56.5,
           "Fantasy Score": 12.0
         },
         "Underdog": {}
@@ -68756,10 +67604,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 25.5,
-          "Fantasy Score": 6.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -69222,11 +68067,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 60.5,
-          "Fantasy Score": 13.5,
-          "Rush Yards": 0.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -69689,10 +68530,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 47.5,
-          "Fantasy Score": 10.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -70071,10 +68909,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 9.5,
-          "Fantasy Score": 3.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -70198,7 +69033,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 90.5,
+          "Receiving Yards": 91.5,
           "Fantasy Score": 19.5
         },
         "Underdog": {}
@@ -70959,7 +69794,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 68.5,
+          "Receiving Yards": 69.5,
           "Fantasy Score": 14.5
         },
         "Underdog": {}
@@ -71425,7 +70260,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 48.5,
+          "Receiving Yards": 45.5,
           "Fantasy Score": 9.0
         },
         "Underdog": {}
@@ -73265,10 +72100,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 87.5,
-          "Fantasy Score": 19.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -73675,10 +72507,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 69.5,
-          "Fantasy Score": 15.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -74380,11 +73209,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 5.5,
-          "Rush Yards": 3.5,
-          "Fantasy Score": 3.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -74847,10 +73672,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 30.5,
-          "Fantasy Score": 7.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -76571,7 +75393,7 @@
         "PrizePicks": {
           "Receiving Yards": 8.5,
           "Fantasy Score": 2.5,
-          "Rush Yards": 1.5
+          "Rush Yards": 2.5
         },
         "Underdog": {}
       },
@@ -77446,7 +76268,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 3.5,
+          "Receiving Yards": 4.5,
           "Fantasy Score": 1.5
         },
         "Underdog": {}
@@ -77967,10 +76789,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 82.5,
-          "Fantasy Score": 19.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -78644,10 +77463,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 19.5,
-          "Fantasy Score": 4.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -79082,10 +77898,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 57.5,
-          "Fantasy Score": 11.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -80110,10 +78923,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 73.5,
-          "Fantasy Score": 14.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -80477,10 +79287,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 74.5,
-          "Fantasy Score": 15.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -80915,11 +79722,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 15.5,
-          "Fantasy Score": 5.0,
-          "Rush Yards": 4.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -81818,7 +80621,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 19.5
+          "Receiving Yards": 18.5
         },
         "Underdog": {}
       },
@@ -82636,7 +81439,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 55.5
+          "Receiving Yards": 57.5
         },
         "Underdog": {}
       },
@@ -83536,7 +82339,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 32.5
+          "Receiving Yards": 34.5
         },
         "Underdog": {}
       },
@@ -83579,7 +82382,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 28.5
+          "Receiving Yards": 30.5
         },
         "Underdog": {}
       },
@@ -84072,7 +82875,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 17.5,
+          "Receiving Yards": 18.5,
           "Fantasy Score": 4.0
         },
         "Underdog": {}
@@ -84426,7 +83229,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 14.5,
+          "Receiving Yards": 16.5,
           "Fantasy Score": 4.0
         },
         "Underdog": {}
@@ -84852,7 +83655,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 21.5,
+          "Receiving Yards": 22.5,
           "Fantasy Score": 4.5
         },
         "Underdog": {}
@@ -85993,7 +84796,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 48.5,
+          "Receiving Yards": 51.5,
           "Fantasy Score": 10.5
         },
         "Underdog": {}
@@ -86487,7 +85290,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 24.5,
+          "Receiving Yards": 25.5,
           "Fantasy Score": 5.5
         },
         "Underdog": {}
@@ -86531,7 +85334,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 70.5,
+          "Receiving Yards": 72.5,
           "Fantasy Score": 14.5
         },
         "Underdog": {}
@@ -87025,7 +85828,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 8.5
+          "Receiving Yards": 7.5
         },
         "Underdog": {}
       },
@@ -87451,7 +86254,7 @@
       "lines": {
         "PrizePicks": {
           "Receiving Yards": 36.5,
-          "Fantasy Score": 8.0
+          "Fantasy Score": 8.5
         },
         "Underdog": {}
       },
@@ -87944,7 +86747,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 47.5,
+          "Receiving Yards": 44.5,
           "Fantasy Score": 11.0
         },
         "Underdog": {}
@@ -88215,7 +87018,7 @@
       "lines": {
         "PrizePicks": {
           "Receiving Yards": 20.5,
-          "Fantasy Score": 6.0
+          "Fantasy Score": 5.5
         },
         "Underdog": {}
       },
@@ -88629,6 +87432,47 @@
       }
     },
     {
+      "id": "00-0040597",
+      "name": "Brennan Presley",
+      "team": "LA",
+      "position": "WR",
+      "jersey": "81",
+      "status": "ACT",
+      "headshot": "https://static.www.nfl.com/image/upload/f_auto,q_auto/league/v5cydesy5zo4njavqwxb",
+      "college": "Oklahoma State",
+      "experience": 1,
+      "season": {
+        "games": 0,
+        "pass_yards": 0,
+        "pass_tds": 0,
+        "rush_yards": 0,
+        "rush_tds": 0,
+        "receptions": 0,
+        "targets": 0,
+        "rec_yards": 0,
+        "rec_tds": 0
+      },
+      "recent": [],
+      "lines": {
+        "PrizePicks": {},
+        "Underdog": {}
+      },
+      "previous_season": {
+        "season": 2025,
+        "games": 0,
+        "pass_yards": 0,
+        "pass_tds": 0,
+        "rush_yards": 0,
+        "rush_tds": 0,
+        "receptions": 0,
+        "targets": 0,
+        "rec_yards": 0,
+        "rec_tds": 0,
+        "recent": [],
+        "game_log": []
+      }
+    },
+    {
       "id": "00-0041399",
       "name": "CJ Daniels",
       "team": "LA",
@@ -88651,10 +87495,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 24.5,
-          "Fantasy Score": 5.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -88695,10 +87536,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 33.5,
-          "Fantasy Score": 8.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -89021,10 +87859,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 22.5,
-          "Fantasy Score": 5.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -89291,10 +88126,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 6.5,
-          "Fantasy Score": 2.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -90500,7 +89332,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 35.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -90991,7 +89825,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 28.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -91398,7 +90234,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 28.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -92775,7 +91613,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 8.5
+          "Receiving Yards": 10.5
         },
         "Underdog": {}
       },
@@ -93774,7 +92612,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 31.5
+          "Receiving Yards": 28.5
         },
         "Underdog": {}
       },
@@ -94295,7 +93133,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 49.5,
+          "Receiving Yards": 44.5,
           "Fantasy Score": 10.5
         },
         "Underdog": {}
@@ -94339,7 +93177,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 12.5
+          "Receiving Yards": 14.5
         },
         "Underdog": {}
       },
@@ -94873,7 +93711,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 35.5,
+          "Receiving Yards": 28.5,
           "Fantasy Score": 8.5
         },
         "Underdog": {}
@@ -95395,7 +94233,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 27.5,
+          "Receiving Yards": 28.5,
           "Fantasy Score": 6.5
         },
         "Underdog": {}
@@ -99424,7 +98262,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 27.5
+          "Receiving Yards": 22.5
         },
         "Underdog": {}
       },
@@ -99943,7 +98781,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 68.5,
+          "Receiving Yards": 70.5,
           "Fantasy Score": 14.5
         },
         "Underdog": {}
@@ -100735,7 +99573,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 42.5,
+          "Receiving Yards": 41.5,
           "Fantasy Score": 10.0
         },
         "Underdog": {}
@@ -101869,7 +100707,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 33.5
+          "Receiving Yards": 38.5
         },
         "Underdog": {}
       },
@@ -102362,8 +101200,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 55.5,
-          "Fantasy Score": 13.0
+          "Receiving Yards": 53.5,
+          "Fantasy Score": 12.0
         },
         "Underdog": {}
       },
@@ -103107,9 +101945,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 30.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -103768,10 +102604,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 30.5,
-          "Fantasy Score": 6.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -103982,10 +102815,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 63.5,
-          "Fantasy Score": 13.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -104799,10 +103629,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 30.5,
-          "Fantasy Score": 7.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -107210,7 +106037,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 94.5,
+          "Receiving Yards": 97.5,
           "Fantasy Score": 19.5
         },
         "Underdog": {}
@@ -108282,7 +107109,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 5.5,
+          "Receiving Yards": 3.5,
           "Fantasy Score": 1.5
         },
         "Underdog": {}
@@ -109523,7 +108350,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 5.5,
+          "Receiving Yards": 3.5,
           "Fantasy Score": 1.5
         },
         "Underdog": {}
@@ -110417,7 +109244,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 22.5,
+          "Receiving Yards": 21.5,
           "Fantasy Score": 6.0
         },
         "Underdog": {}
@@ -110715,7 +109542,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 38.5,
+          "Receiving Yards": 34.5,
           "Fantasy Score": 9.5
         },
         "Underdog": {}
@@ -111756,7 +110583,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 25.5,
+          "Receiving Yards": 24.5,
           "Fantasy Score": 6.0
         },
         "Underdog": {}
@@ -111800,7 +110627,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 14.5,
+          "Receiving Yards": 15.5,
           "Fantasy Score": 4.0
         },
         "Underdog": {}
@@ -112266,7 +111093,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 10.5
+          "Receiving Yards": 13.5
         },
         "Underdog": {}
       },
@@ -112551,7 +111378,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 27.5,
+          "Receiving Yards": 28.5,
           "Fantasy Score": 6.5
         },
         "Underdog": {}
@@ -113073,8 +111900,8 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 25.5,
-          "Fantasy Score": 7.0
+          "Receiving Yards": 26.5,
+          "Fantasy Score": 6.0
         },
         "Underdog": {}
       },
@@ -113567,7 +112394,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 10.5
+          "Receiving Yards": 9.5
         },
         "Underdog": {}
       },
@@ -113668,7 +112495,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 36.5
+          "Receiving Yards": 41.5
         },
         "Underdog": {}
       },
@@ -114006,7 +112833,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 47.5
+          "Receiving Yards": 43.5
         },
         "Underdog": {}
       },
@@ -114527,7 +113354,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 32.5
+          "Receiving Yards": 24.5
         },
         "Underdog": {}
       },
@@ -114796,7 +113623,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 5.5
+          "Receiving Yards": 6.5
         },
         "Underdog": {}
       },
@@ -115233,7 +114060,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 12.5
+          "Receiving Yards": 11.5
         },
         "Underdog": {}
       },
@@ -115754,7 +114581,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 2.5
+          "Receiving Yards": 1.5
         },
         "Underdog": {}
       },
@@ -116094,7 +114921,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 54.5
+          "Receiving Yards": 59.5
         },
         "Underdog": {}
       },
@@ -117864,7 +116691,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 22.5
+          "Receiving Yards": 24.5
         },
         "Underdog": {}
       },
@@ -118426,7 +117253,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 39.5,
+          "Receiving Yards": 33.5,
           "Fantasy Score": 8.5
         },
         "Underdog": {}
@@ -118808,7 +117635,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 9.5,
+          "Receiving Yards": 11.5,
           "Fantasy Score": 3.0
         },
         "Underdog": {}
@@ -121741,10 +120568,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 52.5,
-          "Fantasy Score": 13.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -122235,10 +121059,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 7.5,
-          "Fantasy Score": 2.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -122419,7 +121240,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 6.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -122798,7 +121621,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 5.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -124012,10 +122837,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 13.5,
-          "Fantasy Score": 4.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -125124,9 +123946,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 2.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -126012,7 +124832,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 20.5,
+          "Receiving Yards": 21.5,
           "Fantasy Score": 5.5
         },
         "Underdog": {}
@@ -126718,9 +125538,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 4.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -126987,10 +125805,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 44.5,
-          "Fantasy Score": 10.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -127285,9 +126100,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 0.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -127498,9 +126311,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 0.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -128060,10 +126871,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 38.5,
-          "Fantasy Score": 9.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -129918,7 +128726,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 28.5,
+          "Receiving Yards": 29.5,
           "Fantasy Score": 8.0
         },
         "Underdog": {}
@@ -131809,7 +130617,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 43.5,
+          "Receiving Yards": 44.5,
           "Fantasy Score": 10.5
         },
         "Underdog": {}
@@ -132330,10 +131138,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 17.5,
-          "Fantasy Score": 5.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -132768,10 +131573,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 11.5,
-          "Fantasy Score": 3.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -133275,10 +132077,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 29.5,
-          "Fantasy Score": 8.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -133601,7 +132400,9 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {},
+        "PrizePicks": {
+          "Receiving Yards": 16.5
+        },
         "Underdog": {}
       },
       "previous_season": {
@@ -134823,7 +133624,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 66.5
+          "Receiving Yards": 63.5
         },
         "Underdog": {}
       },
@@ -135908,7 +134709,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 26.5,
+          "Receiving Yards": 24.5,
           "Fantasy Score": 6.0
         },
         "Underdog": {}
@@ -136288,7 +135089,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 2.5
+          "Receiving Yards": 0.5
         },
         "Underdog": {}
       },
@@ -137372,7 +136173,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 18.5
+          "Receiving Yards": 16.5
         },
         "Underdog": {}
       },
@@ -137415,7 +136216,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 23.5
+          "Receiving Yards": 24.5
         },
         "Underdog": {}
       },
@@ -140555,7 +139356,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 18.5,
+          "Receiving Yards": 16.5,
           "Fantasy Score": 5.5
         },
         "Underdog": {}
@@ -140964,10 +139765,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 31.5,
-          "Fantasy Score": 8.0
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -142145,9 +140943,7 @@
       },
       "recent": [],
       "lines": {
-        "PrizePicks": {
-          "Receiving Yards": 2.5
-        },
+        "PrizePicks": {},
         "Underdog": {}
       },
       "previous_season": {
@@ -142555,7 +141351,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 17.5,
+          "Receiving Yards": 16.5,
           "Fantasy Score": 4.5
         },
         "Underdog": {}
@@ -142965,7 +141761,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 21.5,
+          "Receiving Yards": 20.5,
           "Fantasy Score": 5.5
         },
         "Underdog": {}
@@ -144713,7 +143509,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 48.5,
+          "Receiving Yards": 46.5,
           "Fantasy Score": 11.0
         },
         "Underdog": {}
@@ -145515,7 +144311,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 27.5,
+          "Receiving Yards": 28.5,
           "Fantasy Score": 6.5
         },
         "Underdog": {}
@@ -147107,7 +145903,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 23.5,
+          "Receiving Yards": 22.5,
           "Fantasy Score": 6.0
         },
         "Underdog": {}
@@ -148277,7 +147073,7 @@
       "recent": [],
       "lines": {
         "PrizePicks": {
-          "Receiving Yards": 39.5
+          "Receiving Yards": 37.5
         },
         "Underdog": {}
       },
